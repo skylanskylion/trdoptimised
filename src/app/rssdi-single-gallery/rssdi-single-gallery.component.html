@@ -1,0 +1,152 @@
+<style>
+  @media (max-width:768px){
+    .back2{
+      padding:0px !important;
+    }
+    .mar-top{
+      margin-top:60px;
+    }
+  }
+  .mar-top{
+    padding:20px 0px;
+  }
+</style>
+
+
+<section class="back2" *ngIf="logged">
+  <app-nav></app-nav>
+  <section class="container">
+    <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap="20px" class="mar-top" style="clear:both">
+      <div fxFlex="30%">
+        <img src="{{catagory['url']}}" alt="">
+        <div class="mrg">
+          <!-- <div fxFlex="50%">-->
+          <div class="share-buttons mrg_top_m">
+            <!-- <mat-nav-list>
+              <a class="share-btn fb-icon" href="https://www.facebook.com/dialog/feed?app_id=1066226316760891
+&redirect_uri=https://therightdoctors.com/wockhardt-rssdi-tv-ahmedabad-2018/the-last-word/{{slug}}/{{id}}
+&link=https://therightdoctors.com/wockhardt-rssdi-tv-ahmedabad-2018/the-last-word/{{slug}}/{{id}}
+&picture=https://twitter.com/intent/tweet?url=https://therightdoctors.com/wockhardt-rssdi-tv-ahmedabad-2018/the-last-word/{{slug}}/{{id}}
+&caption=The Last Word
+&description= Event Images
+&name= The Last Word" title="Share on Facebook" data-service="facebook" target="_blank">
+              </a>
+            </mat-nav-list>
+
+            <mat-nav-list>
+              <a class="share-btn tw-icon"
+                 href="https://twitter.com/intent/tweet?url=https://therightdoctors.com/wockhardt-rssdi-tv-ahmedabad-2018/the-last-word/{{slug}}/{{id}}  &image-src=https://twitter.com/intent/tweet?url=https://therightdoctors.com/wockhardt-rssdi-tv-ahmedabad-2018/the-last-word/{{slug}}/{{id}} &hashtags=Wockhardt RSSDI tv 2018 images &text=TheRightDoctors.com  &via=TheRightDoctors"
+                 title="Share on Twitter" data-service="twitter" target="_blank">
+              </a>
+            </mat-nav-list>
+            <mat-nav-list>
+              <a class="share-btn ln-icon"
+                 href="https://www.linkedin.com/shareArticle?mini=true&url=https://therightdoctors.com/wockhardt-rssdi-tv-ahmedabad-2018/the-last-word/{{slug}}/{{id}}"
+                 title="Share on Linkedin" data-service="linkedin"
+                 target="_blank">
+              </a>
+            </mat-nav-list>
+            <mat-nav-list>
+              <a class="share-btn gp-icon"
+                 href="https://plus.google.com/share?url=https://therightdoctors.com/wockhardt-rssdi-tv-ahmedabad-2018/the-last-word/{{slug}}/{{id}}"
+                 title="Share on Google Plus" data-service="gplus" target="_blank">
+              </a>
+            </mat-nav-list> -->
+            <!--11 <li>
+              <a class="share-btn yt-icon" href="https://www.youtube.com/channel/UCUZIhLsNbgkCqymAZshSVHQ" title="Share on Youtube" data-service="youtube" target="_blank">
+              </a>
+            </li> -->
+            <!-- href="http://whatsapp://send?text=https://therightdoctors.com/{{ catagory[0]['category']}}/{{ catagory[0]['slug']}}" -->
+            <!-- <mat-nav-list><a class="share-btn wa-icon"
+                             href="https://plus.google.com/share?url=https://therightdoctors.com/wockhardt-rssdi-tv-ahmedabad-2018/the-last-word/{{slug}}/{{id}}"
+                             data-action="share/whatsapp/share" title="Share on Whatsapp" data-service="whatsapp"
+                             target="_blank">
+            </a>
+            </mat-nav-list>
+            <mat-nav-list>
+              <a class="share-btn email-icon"
+                 href="mailto:?subject= TheRightDoctors Images &amp; body=Snapse Images. Check out this site https://therightdoctors.com/wockhardt-rssdi-tv-ahmedabad-2018/the-last-word/{{slug}}/{{id}}/{{slug}}/ ."
+                 title="Share by Email" data-service="email" target="_blank">
+              </a>
+             
+            </mat-nav-list>
+            <mat-nav-list>
+              <a class="share-btn sms-icon"
+                 href="sms:?body=Snapse Images Check out this site https://therightdoctors.com/wockhardt-rssdi-tv-ahmedabad-2018/the-last-word/{{slug}}/{{id}}/{{slug}}/"
+                 title="Share on SMS" data-service="sms" target="_blank">
+              </a>
+            </mat-nav-list> -->
+
+            <ul class="list-inline list-icons-top">
+          
+                <!-- <li><a href=https://www.facebook.com/dialog/feed?app_id=1066226316760891
+                  &redirect_uri=https://therightdoctors.com/wockhardt-rssdi-tv-ahmedabad-2018/the-last-word/{{slug}}/{{id}}
+                  &link=https://therightdoctors.com/wockhardt-rssdi-tv-ahmedabad-2018/the-last-word/{{slug}}/{{id}}
+                  &picture=https://twitter.com/intent/tweet?url=https://therightdoctors.com/wockhardt-rssdi-tv-ahmedabad-2018/the-last-word/{{slug}}/{{id}}
+                  &caption=The Last Word
+                  &description= Event Images
+                  &name= The Last Word" title="Share on Facebook" data-service="facebook" target="_blank"><i
+                        class="fa fa-facebook fb" aria-hidden="true"></i> </a></li> -->
+                        <li><a
+                  href="https://www.facebook.com/dialog/feed?app_id=1066226316760891
+                  &redirect_uri=https://therightdoctors.com/wockhardt-rssdi-tv-ahmedabad-2018/the-last-word/{{slug}}/{{id}}
+                  &link=https://therightdoctors.com/wockhardt-rssdi-tv-ahmedabad-2018/the-last-word/{{slug}}/{{id}}
+                  &picture=https://twitter.com/intent/tweet?url=https://therightdoctors.com/wockhardt-rssdi-tv-ahmedabad-2018/the-last-word/{{slug}}/{{id}}
+                  &caption=The Last Word
+                  &description= Event Images
+                  &name= The Last Word"
+                                title="Share on Facebook" data-service="facebook" target="_blank"><i
+                                class="fa fa-facebook fb" aria-hidden="true"></i></a></li>
+                <li><a
+                  href="https://twitter.com/intent/tweet?url=https://therightdoctors.com/wockhardt-rssdi-tv-ahmedabad-2018/the-last-word/{{slug}}/{{id}}  &image-src=https://twitter.com/intent/tweet?url=https://therightdoctors.com/wockhardt-rssdi-tv-ahmedabad-2018/the-last-word/{{slug}}/{{id}} &hashtags=Wockhardt RSSDI tv 2018 images &text=TheRightDoctors.com  &via=TheRightDoctors"
+                        title="Share on Twitter" data-service="twitter" target="_blank"><i
+                        class="fa fa-twitter twit-clr" aria-hidden="true"></i></a></li>
+                <!-- <li><a
+                  href="https://plus.google.com/share?url=https://therightdoctors.com/wockhardt-rssdi-tv-ahmedabad-2018/the-last-word/{{slug}}/{{id}}"
+                        title="Share on Google Plus" data-service="gplus" target="_blank"><i
+                        class="fa fa-google-plus google-plus" aria-hidden="true"></i></a></li> -->
+                <li><a   href="https://www.linkedin.com/shareArticle?mini=true&url=https://therightdoctors.com/wockhardt-rssdi-tv-ahmedabad-2018/the-last-word/{{slug}}/{{id}}"
+                       target="_blank"><i class="fa fa-linkedin linkd" aria-hidden="true"></i></a></li>
+                <!-- <li><a
+                  href="http://whatsapp://send?text=https://therightdoctors.com/{{ catagory[0]['category']}}/{{ catagory[0]['slug']}}"
+                        data-action="share/whatsapp/share" title="Share on Whatsapp" data-service="whatsapp"
+                        target="_blank"><i class="fa fa-whatsapp whats-app" aria-hidden="true"
+                                           style="font-size:18px;"></i></a></li> -->
+                <li><a
+                  href="mailto:?subject= TheRightDoctors Images &amp; body=Snapse Images. Check out this site https://therightdoctors.com/wockhardt-rssdi-tv-ahmedabad-2018/the-last-word/{{slug}}/{{id}}/{{slug}}/ ."
+                        title="Share by Email" data-service="email" target="_blank"><i class="fa  fa-envelope envo"
+                                                                                       aria-hidden="true"></i></a>
+                </li>
+              
+            </ul>
+          </div>
+        </div>
+      </div>
+
+
+      <div fxFlex="75%">
+        <div class="download_img_paid">
+          <div class="vdo_inr_line mrg_btm">
+            <h3 style="font-size:24px;margin:0px 0 10px 0" >Wockhardt Presents RSSDI tv</h3>
+            <p style="margin-bottom: 10px"><b>{{catagory['doctor_name']}}</b></p>
+            <p style="margin-bottom: 10px">Image ID: {{id}}</p>
+            <p style="margin-bottom: 10px">Please click on download button to download of high resolution image</p>
+          </div>
+          <div *ngIf="islogin1">
+            <a href="{{catagory['url']}}" download> <button  class="btn-sm btn-primary btn mrg_btm" style="margin-top:30px" ><i class="fa fa-download" style="padding-right: 10px;padding: 1px;width: 10px;font-size: 10px"></i>Download</button></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+  <app-footer></app-footer>
+</section>
+
+<div *ngIf="!logged">
+  <p align="center" style="margin-top: 250px;font-size: 15px;color: brown">Please login to see image
+    <!--<li *ngIf="!logged" (click)="changestoPage('login')">Login </li>
+    <li *ngIf="!logged" style="margin-right:0px;" (click)="changestoPage('register')">Sign Up </li>-->
+    <button (click)="changestoPage('login')">Signup</button></p>
+</div>
+

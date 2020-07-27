@@ -1,0 +1,163 @@
+<app-nav></app-nav>
+<section class="container back2">
+  <div class="">
+    <div class="col-md-12"><div class="hd2 heading-journel m-top-journel" style="color: #000;font-size: 20px;" >Journal Scan</div></div></div>
+
+  <div class="row mar-m">
+    <div class="col-md-12 col-xs-12 col-sm-12">
+      <div class="col-md-4 col-sm-12 col-xs-12">
+        <div class="hd2 heading-journel">New England Journal Of Medicine</div>
+        <ul class="journal-list">
+          <ng-template ngFor let-item [ngForOf]="createRange(feed.length-1)" let-currentIndex="index+1">
+            <a target="_blank" href="{{feed[currentIndex]['link']}}">
+              <li class="hd5"><span class="bor-left-blue2">{{feed[currentIndex]['title'] | slice:0:40}}... </span><br>
+                <p class="bor-left-red2">{{feed[currentIndex]['author']| slice:0:40}}</p></li>
+            </a>
+          </ng-template>
+        </ul>
+      </div>
+      <div class="col-md-4 col-sm-12 col-xs-12">
+        <div class="hd2 heading-journel">The Journal Of The American Medical Association</div>
+        <ul class=" journal-list">
+          <ng-template ngFor let-item [ngForOf]="createRange(feeds.length-2)" let-currentIndex="index">
+            <a target="_blank" href="{{feeds[currentIndex]['link']}}">
+              <li class="hd5"><span class="bor-left-blue2">{{feeds[currentIndex]['title'] | slice:0:40}}... </span><br>
+                <p class="bor-left-red2">{{feeds[currentIndex]['author']| slice:0:40}}...</p></li></a>
+
+          </ng-template>
+        </ul>
+      </div>
+
+      <div class="col-md-4 col-sm-12 col-xs-12">
+        <div class="hd2 heading-journel">The Lancet</div>
+        <ul class=" journal-list">
+          <ng-template ngFor let-item [ngForOf]="createRange(feed3.length-4)" let-currentIndex="index">
+            <a target="_blank" href="{{feed3[currentIndex]['link']}}">
+              <li class="hd5"><span class="bor-left-blue2">{{feed3[currentIndex]['title'] | slice:0:40}}... </span><br>
+                <p class="bor-left-red2">{{feed3[currentIndex]['author']| slice:0:40}}</p></li></a>
+          </ng-template>
+        </ul>
+      </div>
+    </div>
+    <div class="col-md-12 col-xs-12 col-sm-12 mrg_top">
+
+      <div class="col-md-4 col-sm-12 col-xs-12">
+        <div class="hd2 heading-journel">Heart Failure Clinics</div>
+        <ul class="journal-list">
+
+          <ng-template ngFor let-item [ngForOf]="createRange(feed4.length-4)" let-currentIndex="index+4">
+            <a target="_blank" href="{{feed4[currentIndex]['link']}}">
+              <li class="hd5"><span class="bor-left-blue2">{{feed4[currentIndex]['title'] | slice:0:40}}... </span><br>
+                <p class="bor-left-red2">{{feed4[currentIndex]['author']| slice:0:40}}</p></li></a>
+          </ng-template>
+        </ul>
+      </div>
+      <div class="col-md-4 col-sm-12 col-xs-12">
+        <div class="hd2 heading-journel">Mayo Clinic Proceedings</div>
+        <ul class=" journal-list">
+          <ng-template ngFor let-item [ngForOf]="createRange(feed5.length-4)" let-currentIndex="index">
+            <a target="_blank" href="{{feed5[currentIndex]['link']}}">
+              <li class="hd5"><span class="bor-left-blue2">{{feed5[currentIndex]['title'] | slice:0:40}}... </span><br>
+                <p class="bor-left-red2">{{feed5[currentIndex]['author']  | slice:0:40}}...</p></li></a>
+          </ng-template>
+        </ul>
+
+      </div>
+
+      <div class="col-md-4 col-sm-12 col-xs-12">
+        <div class="hd2 heading-journel">Annals Of Internal Medicine</div>
+        <ul class=" journal-list">
+          <ng-template ngFor let-item [ngForOf]="createRange(feed6.length-4)" let-currentIndex="index">
+            <a target="_blank" href="{{feed6[currentIndex]['link']}}">
+              <li class="hd5"><span class="bor-left-blue2">{{feed6[currentIndex]['title'] | slice:0:40}}... </span><br>
+                <p class="bor-left-red2">{{feed6[currentIndex]['author']| slice:0:40}}</p></li></a>
+          </ng-template>
+        </ul>
+
+      </div>
+
+    </div>
+
+    <div class="col-md-12 col-xs-12 col-sm-12 mrg_top">
+
+      <div class="col-md-4 col-sm-12 col-xs-12">
+        <div class="hd2 heading-journel">The British Medical Journal</div>
+        <ul class="journal-list">
+
+          <ng-template ngFor let-item [ngForOf]="createRange(feed7.length-1)" let-currentIndex="index+1">
+            <a target="_blank" href="{{feed7[currentIndex]['link']}}">
+              <li class="hd5"><span class="bor-left-blue2">{{feed7[currentIndex]['title'] | slice:0:40}}... </span><br>
+                <p class="bor-left-red2">{{feed7[currentIndex]['author'] | slice:0:40}}</p></li></a>
+          </ng-template>
+        </ul>
+      </div>
+      <div class="col-md-4 col-sm-12 col-xs-12">
+        <div class="hd2 heading-journel">JAMA Internal Medicine</div>
+        <ul class=" journal-list">
+          <ng-template ngFor let-item [ngForOf]="createRange(feed8.length-2)" let-currentIndex="index+1">
+            <a target="_blank" href="{{feed8[currentIndex]['link']}}">
+              <li class="hd5"><span class="bor-left-blue2">{{feed8[currentIndex]['title'] | slice:0:40}}... </span><br>
+                <p class="bor-left-red2">{{feed8[currentIndex]['author']  | slice:0:40}}...</p></li></a>
+          </ng-template>
+        </ul>
+
+      </div>
+
+      <div class="col-md-4 col-sm-12 col-xs-12">
+        <div class="hd2 heading-journel">Open Heart - BMJ</div>
+        <ul class=" journal-list">
+          <ng-template ngFor let-item [ngForOf]="createRange(feed9.length-3)" let-currentIndex="index">
+            <a target="_blank" href="{{feed9[currentIndex]['link']}}">
+              <li class="hd5"><span class="bor-left-blue2">{{feed9[currentIndex]['title'] | slice:0:40}}... </span><br>
+                <p class="bor-left-red2">{{feed9[currentIndex]['author']| slice:0:40}}</p></li></a>
+          </ng-template>
+        </ul>
+
+      </div>
+
+    </div>
+    <div class="col-md-12 col-xs-12 col-sm-12 mrg_top">
+
+      <div class="col-md-4 col-sm-12 col-xs-12">
+        <div class="hd2 heading-journel">Heart Rhythm Case Reports</div>
+        <ul class="journal-list">
+
+          <ng-template ngFor let-item [ngForOf]="createRange(feed10.length)" let-currentIndex="index">
+            <a target="_blank" href="{{feed10[currentIndex]['link']}}">
+              <li class="hd5"><span class="bor-left-blue2">{{feed10[currentIndex]['title'] | slice:0:40}}... </span><br>
+                <p class="bor-left-red2">{{feed10[currentIndex]['author'] | slice:0:40}}</p></li></a>
+          </ng-template>
+        </ul>
+      </div>
+      <!--<div class="col-md-4 col-sm-12 col-xs-12">-->
+        <!--<div class="hd2 heading-journel">JAMA Internal Medicine</div>-->
+        <!--<ul class=" journal-list">-->
+          <!--<ng-template ngFor let-item [ngForOf]="createRange(feed11.length)" let-currentIndex="index">-->
+            <!--<a target="_blank" href="{{feed11[currentIndex]['link']}}">-->
+              <!--<li class="hd5"><span class="bor-left-blue2">{{feed11[currentIndex]['title'] | slice:0:40}}... </span><br>-->
+                <!--<p class="bor-left-red2">{{feed11[currentIndex]['author']  | slice:0:40}}...</p></li></a>-->
+          <!--</ng-template>-->
+        <!--</ul>-->
+
+      <!--</div>-->
+
+      <!--<div class="col-md-4 col-sm-12 col-xs-12">-->
+        <!--<div class="hd2 heading-journel">Open Heart - BMJ</div>-->
+        <!--<ul class=" journal-list">-->
+          <!--<ng-template ngFor let-item [ngForOf]="createRange(feed9.length-3)" let-currentIndex="index">-->
+            <!--<a target="_blank" href="{{feed9[currentIndex]['link']}}">-->
+              <!--<li class="hd5"><span class="bor-left-blue2">{{feed9[currentIndex]['title'] | slice:0:40}}... </span><br> <p class="bor-left-red2">{{feed9[currentIndex]['author']| slice:0:40}}</p></li></a>-->
+          <!--</ng-template>-->
+        <!--</ul>-->
+
+      <!--</div>-->
+
+    </div>
+  </div>
+
+  <!--<div class="row">
+    <div class="col-md-12">
+    <a  href="#"><button class="btn btn-primary btn_sm_m">View All</button></a>
+    </div></div>-->
+</section>
+<app-footer></app-footer>

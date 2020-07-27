@@ -1,0 +1,97 @@
+<div class="login-wrapper" fxLayout="row" fxLayoutAlign="center center" style="padding-top: 200px;">
+    
+
+  
+  <router-outlet></router-outlet>
+
+  <div class="login" style="background-color: white;">
+    <div >
+      <h1 style="text-align: center;font-family: 'Times New Roman', Times, serif;"><b>Add Contact</b></h1>
+    </div>
+
+  <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" class="form-horizontal">
+
+
+      <div class="form-group">
+          <input id="salutation" class="form-control" formControlName="salutation" matInput placeholder="Salutation">
+          </div>
+
+          <div class="form-group">
+              <input id="firstname" class="form-control" formControlName="firstname" matInput placeholder="First Name">
+              </div>
+
+        <div class="form-group">
+          <input id="lastname" class="form-control" formControlName="lastname" matInput placeholder="Last Name">
+          </div>
+      <!-- </mat-form-field> -->
+
+      <!-- <mat-form-field class="example-full-width"> -->
+        <div class="form-group">
+        <input ngModel email id="email" class="form-control" type="email" formControlName="email" matInput placeholder="Email">
+        </div>
+      <!-- </mat-form-field> -->
+
+      <!-- <mat-form-field class="example-full-width"> -->
+        <div class="form-group">
+        <input id="designation" class="form-control" formControlName="designation" matInput placeholder="Designation">
+        </div>
+      <!-- </mat-form-field> -->
+      <div class="form-group">
+          <input id="companyName" class="form-control" formControlName="companyName" matInput placeholder="Company Name">
+          </div>
+
+      <!-- <mat-form-field class="example-full-width"> -->
+        <div class="form-group">
+        <input type="number" class="form-control" id="mobile" formControlName="mobile" matInput placeholder="Mobile No.">
+        </div>
+      <!-- </mat-form-field> -->
+      <div class="form-group">
+          <input id="address" class="form-control" formControlName="address" matInput placeholder="Address">
+          </div>
+
+
+
+    <!-- </mat-card-content> -->
+        <div style="text-align: center;">
+          <button color="accent" class="btn btn-primary" type="submit" [disabled]="!registerForm.valid">Add</button>
+
+        </div>
+    <!-- (click)="addUser(name.value,email.value,password.value,mobile.value)" -->
+  </form>
+ 
+  
+  
+  </div>
+<!-- </mat-card> -->
+</div>
+
+
+
+
+<!-- <span class="nav-tool-items">
+      <a mat-button routerLink="login" routerLinkActive="active">Sign In</a>
+      <a mat-button mat-raised-button routerLink="register" routerLinkActive="active">Sign Up</a>
+    </span> -->
+
+<!-- <mat-form-field class="example-full-width">
+        <mat-label>Choose a role...</mat-label>
+        <mat-select [(value)]="selected">
+          <mat-option [value]="roles" *ngFor="let roles of Roles">{{roles}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field> -->
+
+
+<!-- <form [formGroup]="registerForm" style="padding-top: 100px;">
+
+<label>
+Full Name:
+<input type="text" formControlName="fullName">
+</label>
+
+<label>
+E-mail:
+<input type="text" formControlName="email">
+</label>
+
+</form> -->

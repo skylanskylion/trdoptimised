@@ -1,0 +1,251 @@
+<app-nav></app-nav>
+<div class="container" style="clear: both;">
+<div fxLayout="row" fxLayoutAlign="center" fxLayout.xs="column"  fxLayout.sm="row"> 
+  <form class="example-form" novalidate #f="ngForm">
+  <div fxLayout="column" class="main-class-registration" >
+    <h1>Register On TheRightDoctors</h1>
+    <div fxLayout="row" fxLayout.xs="column" fxLayout.sm="column" fxFlex="100%">
+      <div fxFlex="50%"><p style="font-size:12px;color: #939393;">All fields required unless specified</p></div>
+      <div fxFlex="50%"><i class="material-icons" style="font-size: 12px;color: #939393;">
+          lock
+          </i><p style="display:inline;font-size:12px;color: #939393;"> Secure Registration</p>
+      </div>
+    </div>
+      <div fxLayout="column" class="bg1" >
+        <h3 >About You</h3>
+          <mat-form-field>
+              <mat-label>Country of Practice</mat-label>
+              <mat-select name="country_of_practice" required [(ngModel)]="model2.country_of_practice" #country_of_practice="ngModel" >
+                <mat-option>--</mat-option>
+                <mat-option *ngFor="let country of countriesName"[value]="country.country_name">
+                  {{country.country_name}}
+                </mat-option>
+              </mat-select>
+              <mat-error *ngIf="countryControl.hasError('required')">Country of residence is required.</mat-error>
+         </mat-form-field>     
+
+         <mat-form-field>
+          <mat-label>Salutation</mat-label>
+
+          <mat-select required name="salutation" [(ngModel)]="model2.salutation" #salutation="ngModel" >
+            <mat-option>--</mat-option>
+            <mat-option *ngFor="let salutation of salutations" [value]="salutation.name">
+              {{salutation.name}}
+            </mat-option>
+          </mat-select>
+          <mat-error *ngIf="professionControl.hasError('required')">Salutation is required.</mat-error>
+        </mat-form-field> 
+
+
+         <mat-form-field class="example-full-width">
+            <input matInput placeholder="First Name"  type="firstname" name="firstname" [(ngModel)]="model2.firstname" #username="ngModel"  required >
+          </mat-form-field>
+
+
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="Last Name"  type="lastname" name="lastname" [(ngModel)]="model2.lastname" #username="ngModel"  required >
+          </mat-form-field>
+
+
+          <mat-form-field class="example-full-width">
+              <input matInput placeholder="Work Zip Code/Postal Code" type="postalcode" name="country_of_practice_postalcode" [(ngModel)]="model2.country_of_practice_postalcode" #country_of_practice_postalcode="ngModel"  required >
+            </mat-form-field>
+    </div>
+    <div fxLayout="column" class="bg1">
+      <h3 >Your TheRightDoctors Account</h3>
+        
+            <mat-form-field class="example-full-width">
+              <input matInput placeholder="Email" type="email" name="email" [(ngModel)]="model2.email" #email="ngModel"  required >
+              <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+                Please enter a valid email address
+              </mat-error>
+              <mat-error *ngIf="emailFormControl.hasError('required')">
+                Email is <strong>required</strong>
+              </mat-error>
+            </mat-form-field>
+          
+         
+          <!-- <mat-form-field>
+              <input matInput placeholder="Enter your password" [type]="hide ? 'password' : 'text'" style="border:none;box-shadow: none;" name="password" [(ngModel)]="model2.password" #password="ngModel"  required>
+              <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+              <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+              </button>
+          </mat-form-field>
+          <mat-form-field>
+                <input matInput placeholder="Confirm your password" validateEqual="password" [type]="hide ? 'password' : 'text'" style="border:none;box-shadow: none;" name="confirmpassword" [(ngModel)]="model2.confirmpassword" #confirmpassword="ngModel"  required >
+                <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </button>
+          </mat-form-field> -->
+    </div>
+
+    <div fxLayout="column" class="bg1">
+      <!-- <mat-form-field>
+          <mat-select  name="country_code" placeholder="Select Country Code" [(value)]="selected" #country_code="ngModel"
+                       [(ngModel)]="model2.country_code"  required>
+              <mat-option> Select Country Code</mat-option>
+              <mat-option value="+91">India +91</mat-option>
+              <mat-option value="+1"> +1 United state +1</mat-option>
+              <mat-option value="+44">+44 United Kingdom</mat-option>
+              <mat-option value="+971"> +971 United Arab Emirates</mat-option>
+              <mat-option value="+92">+92 pakistan</mat-option>
+              <mat-option value="+977"> +977 Nepal</mat-option>
+          </mat-select>
+           <mat-error *ngIf="country_code.invalid">You must make a selection</mat-error>
+      </mat-form-field> -->
+
+      <mat-form-field class="example-full-width">
+          <input matInput type="text" name ="mobile" (keypress)="keyPress($event)" minlength=10 maxlength=10 id="mobile" placeholder="Mobile No."  [(ngModel)]="model2.mobile" #mobile="ngModel" required>
+        <mat-error *ngIf="mobile.invalid">
+            Number is <b>required</b>
+        </mat-error>
+      </mat-form-field>
+  </div>
+
+    <div fxLayout="column" class="bg1">
+      <h3 >Your Professional Profile</h3>
+
+        <mat-form-field>
+            <!-- <mat-label>Profession</mat-label>
+            <mat-select required name="speciality1" [(ngModel)]="model2.speciality1"   #speciality1="ngModel"  >
+              <mat-option>--</mat-option>
+              <mat-option *ngFor="let profession of professions" [value]="profession.name">
+                {{profession.name}}
+              </mat-option>
+            </mat-select> -->
+
+            <mat-select  name="speciality1" [(ngModel)]="model2.speciality1" #specialty="ngModel" >
+              <!--<mat-option value="">Speciality</mat-option>-->
+              <mat-option value="Acupressurist">Acupressurist</mat-option>
+              <mat-option value="Aesthetic Medicine Specialist">Aesthetic Medicine Specialist</mat-option>
+              <mat-option value="Allergist/Immunologist">Allergist/Immunologist</mat-option>
+              <mat-option value="Alternative Medicine Specialist">Alternative Medicine Specialist</mat-option>
+              <mat-option value="Anesthesiologist">Anesthesiologist</mat-option>
+              <mat-option value="Audiologist">Audiologist</mat-option>
+              <mat-option value="Ayurveda Specialist">Ayurveda Specialist</mat-option>
+              <mat-option value="Bariatrician">Bariatrician</mat-option>
+              <mat-option value="Cardiologist">Cardiologist</mat-option>
+              <mat-option value="Cosmetic Physician">Cosmetic Physician</mat-option>
+              <mat-option value="Cosmetic/Plastic Surgeon">Cosmetic/Plastic Surgeon</mat-option>
+              <mat-option value="Dentist">Dentist</mat-option>
+              <mat-option value="Dermatologist">Dermatologist</mat-option>
+              <mat-option value="Diabetologist">Diabetologist</mat-option>
+              <mat-option value="Dietitian/Nutritionist">Dietitian/Nutritionist</mat-option>
+              <mat-option value="Ear-Nose-Throat (ENT) Specialist">Ear-Nose-Throat (ENT) Specialist</mat-option>
+              <mat-option value="Endocrinologist">Endocrinologist</mat-option>
+              <mat-option value="Endocrinologist">Epidemiologist</mat-option>
+              <mat-option value="Gastroenterologist">Gastroenterologist</mat-option>
+              <mat-option value="General Physician">General Physician</mat-option>
+              <mat-option value="General Surgeon">General Surgeon</mat-option>
+              <mat-option value="Geneticist">Geneticist</mat-option>
+              <mat-option value="Geriatrician">Geriatrician</mat-option>
+              <mat-option value="Gynaecologist">Gynaecologist</mat-option>
+              <mat-option value="Hematologist">Hematologist</mat-option>
+              <mat-option value="Hepatologist">Hepatologist</mat-option>
+              <mat-option value="Homeopath">Homeopath</mat-option>
+              <mat-option value="IVF Specialist">IVF Specialist</mat-option>
+              <mat-option value="Integrated Medicine Specialist">Integrated Medicine Specialist</mat-option>
+              <mat-option value="Internal Medicine Specialist">Internal Medicine Specialist</mat-option>
+              <mat-option value="Microbiologist">Microbiologist</mat-option>
+              <mat-option value="Mother and Child Care">Mother and Child Care</mat-option>
+              <mat-option value="Nephrologist">Nephrologist</mat-option>
+              <mat-option value="Neurologist">Neurologist</mat-option>
+              <mat-option value="Neurosurgeon">Neurosurgeon</mat-option>
+              <mat-option value="Non-invasive Cardiologist">Non-invasive Cardiologist</mat-option>
+              <mat-option value="Nuclear Medicine Physician">Nuclear Medicine Physician</mat-option>
+              <mat-option value="Obstetrician">Obstetrician</mat-option>
+              <mat-option value="Occupational Therapist">Occupational Therapist</mat-option>
+              <mat-option value="Oncologist">Oncologist</mat-option>
+              <mat-option value="Ophthalmologist">Ophthalmologist</mat-option>
+              <mat-option value="Optometrist">Optometrist</mat-option>
+              <mat-option value="Oral And Maxillofacial Surgeon">Oral And Maxillofacial Surgeon</mat-option>
+              <mat-option value="Orthopedist">Orthopedist</mat-option>
+              <mat-option value="PMR (Physical Medicine &amp; Rehabilitation) Specialist">PMR (Physical Medicine &amp;
+                Rehabilitation) Specialist
+              </mat-option>
+              <mat-option value="Pain Management Specialist">Pain Management Specialist</mat-option>
+              <mat-option value="Pathologist">Pathologist</mat-option>
+              <mat-option value="Pediatric Surgeon">Pediatric Surgeon</mat-option>
+              <mat-option value="Pediatrician">Pediatrician</mat-option>
+              <mat-option value="Phlebologist">Phlebologist</mat-option>
+              <mat-option value="Physiotherapist">Physiotherapist</mat-option>
+              <mat-option value="Podiatrist">Podiatrist</mat-option>
+              <mat-option value="Proctologist">Proctologist</mat-option>
+              <mat-option value="Psychiatrist">Psychiatrist</mat-option>
+              <mat-option value="Psychologist">Psychologist</mat-option>
+              <mat-option value="Pulmonologist">Pulmonologist</mat-option>
+              <mat-option value="Radiologist">Radiologist</mat-option>
+              <mat-option value="Rheumatologist">Rheumatologist</mat-option>
+              <mat-option value="Robotic Surgeon">Robotic Surgeon</mat-option>
+              <mat-option value="Sexologist">Sexologist</mat-option>
+              <mat-option value="Siddha Specialist">Siddha Specialist</mat-option>
+              <mat-option value="Somnologist">Somnologist</mat-option>
+              <mat-option value="Speech Therapist">Speech Therapist</mat-option>
+              <mat-option value="Toxicologist">Toxicologist</mat-option>
+              <mat-option value="Trichologist">Trichologist</mat-option>
+              <mat-option value="Unani Specialist">Unani Specialist</mat-option>
+              <mat-option value="Urologist">Urologist</mat-option>
+              <mat-option value="Venereologist">Venereologist</mat-option>
+              <mat-option value="Veterinarian">Veterinarian</mat-option>
+              <mat-option value="other"(click)="otherSpeciality()" >Other</mat-option>
+            </mat-select>
+
+           
+            <mat-error *ngIf="professionControl.hasError('required')">Profession is required.</mat-error>
+       </mat-form-field> 
+       <div  *ngIf="otherSpecialityStatus" >
+
+       <mat-form-field class="example-full-width">
+        <input matInput placeholder="Other Speciality" type="speciality2" name="speciality2" [(ngModel)]="model2.speciality2" #speciality2="ngModel"  required >
+      </mat-form-field>
+    </div>
+
+    </div>
+    <div fxLayout="column" class="bg1">
+      <h3 >Submit Registration</h3>
+      <mat-checkbox><span style="white-space:normal;">  I agree to TheRightDoctors's <a href="#">Terms ofUse</a> and <a href="#">Privacy Policy</a> and to the use of cookies described therein.</span></mat-checkbox>
+      <button (click)="register()" mat-button class="submit-btn btn-lg" [disabled]="!f.form.valid">Submit</button>
+    </div>
+  </div>
+</form>
+  <div fxLayout="column" fxFlex.lt-lg="50%" fxFlex.lt-xl="50%" class="bg3" fxShow="true" fxHide.lt-sm="true" fxHide.lt-md="true">
+      <mat-card class="example-card">
+          <i class="material-icons bg2">
+              desktop_windows
+              </i>
+          <mat-card-content>
+            <h2>Insights from The Worlds Best Medical Minds </h2>
+            <p align=" justify">
+              
+              Watch the best medical minds discuss and deliberate current issues, innovations, best practices, guidelines and more. Podcats, Blogs, Conference coverage and Key Take-Aways across leading medical specialties.
+            </p>
+          </mat-card-content>
+        </mat-card>
+        <mat-card class="example-card">
+            <i class="material-icons bg2">
+                search
+                </i>
+                               
+            <mat-card-content>
+              <h2>We are a Google Launchpad Digital Health Start-Up</h2>
+              <p align=" justify">
+                We are amplifying content from the pages of medical journals and conferences through video interviews, podcasts, blogs and presentations from thought leaders across the world .
+              </p>
+            </mat-card-content>
+          </mat-card>
+          <!-- <mat-card class="example-card">
+              <i class="material-icons bg2">
+                  message
+                  </i>                  
+              <mat-card-content>
+                <h2>Easily meet continuing education requirements</h2>
+                <p>
+                    Take free accredited courses to fulfill professional development and licensure requirements across 1,000+ clinical topics.
+                </p>
+              </mat-card-content>
+            </mat-card> -->
+            
+  </div>
+</div>
+</div>
+<app-footer></app-footer>

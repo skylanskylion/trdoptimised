@@ -1,0 +1,42 @@
+
+<app-nav></app-nav>
+ <!--<app-video-home></app-video-home>-->
+<app-top-home [$toparticles]="top" [$topimpactarticles] = "topimpact" [$popularstory] = "popular"></app-top-home>
+<!--<app-journels></app-journels>-->
+<app-the-interview-home [the_interview]="allarticles"></app-the-interview-home>
+<app-conversation-home [in_conversation]="allarticles"></app-conversation-home>
+<app-one-more-home [onemore]="allarticles"></app-one-more-home>
+<app-speaker-home [spk_data]="allarticles"></app-speaker-home>
+<app-surgery-home [surgery_data]="allarticles"></app-surgery-home>
+<app-presentation-home [presentations]="pr"></app-presentation-home>
+<!--<app-image-home></app-image-home>-->
+<!-- <app-healthy-living-home></app-healthy-living-home> -->
+<!--<app-lastword-home></app-lastword-home>-->
+<!--<app-startup-home></app-startup-home>-->
+<app-footer></app-footer>
+<!--</ng-template>-->
+<!--download app and cookies-->
+<!--
+<div *ngIf="!accepts && !v" style="position: fixed;bottom:0;left:0;width: 100%;background-color:#323232;padding:1px;">
+    <p style="margin-top:1px;margin-left:10px;" ngStyle.xs="font-size:10px;">
+        <b style="color: tomato;">Cookies and Privacy : </b>
+        <span style="color:whitesmoke" >This website uses cookies to ensure you get the best experience on our website</span>
+        <span class="pull-right" ngStyle.xs="font-size:12px">
+        <a href="https://en.wikipedia.org/wiki/HTTP_cookie" target="_blank" ngStyle.xs="font-size:12px;" class="btn btn-primary btn-xs" style="color:white;">Learn More>></a>
+    </span>
+    </p>
+
+</div>
+
+<div style="position: fixed;bottom:0;left:0;width: 100%;" *ngIf="pop && !v2">
+    <mat-card style="border-radius:0" class="back-download-pop aaa">
+        &lt;!&ndash;<i class="fa fa-times icon-close" (click)="closebuttom()"></i>&ndash;&gt;
+        <p>Insights from the</p>
+        <h3>World's Best Medical Minds</h3>
+        <p>with the TRD app </p>
+        <a href="https://play.google.com/store/apps/details?id=com.therightdoctors.app" target="_blank"><button type="button">
+            Download Free App
+        </button></a>
+    </mat-card>
+</div>
+-->

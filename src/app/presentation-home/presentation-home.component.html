@@ -1,0 +1,337 @@
+
+
+
+<!--<section class="back2">
+  <section class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="hd2 mrg_btm no_mrg_m">Trending Presentations</div>
+      </div>
+    </div>
+
+
+      <div class="row">
+        <div class="col-md-4 col-sm-12 col-xs-12 top-space-m">
+
+          <div class=" panel_light_grey2 brder_top back_white_m ">
+            <img src="https://storage.googleapis.com/web-assets/images/presentations/thumbs/Dr.OPYadava.jpg" style="width:100%"/>
+            <div class="content-part ">
+              <h4 class=" h4p-h color_blue color_base_m line-clamp ">Role Of CT Angio In Predicting Cardiac Risks</h4><p class="color_orange color_base_m"><b>Dr. HK Chopra and Dr. Mona Bhatia and Dr.S Ramakrishnan</b></p>
+
+              <ul class="list-items">
+                <li> Options for the heart failure patients  <p  class="color_orange color_base_m"><b>Dr. Prof. Ani Anyanwu</b></p></li>
+                <li> Options for the heart failure patients  <p  class="color_orange color_base_m"><b>Dr. Prof. Ani Anyanwu</b></p></li>
+                <li> Options for the heart failure patients  <p  class="color_orange color_base_m"><b>Dr. Prof. Ani Anyanwu</b></p></li>
+              </ul>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="col-md-4 col-sm-12 col-xs-12 top-space-m">
+
+          <div class=" panel_light_grey2 brder_top back_white_m ">
+
+            <div class="content-part ">
+
+              <ul class="list-items">
+                <li class="no-bor"> Options for the heart failure patients  <p  class="color_orange color_base_m"><b>Dr. Prof. Ani Anyanwu</b></p></li>
+                <li> Options for the heart failure patients  <p  class="color_orange color_base_m"><b>Dr. Prof. Ani Anyanwu</b></p></li>
+                <li> Options for the heart failure patients  <p  class="color_orange color_base_m"><b>Dr. Prof. Ani Anyanwu</b></p></li>
+              </ul>
+              <h4 class=" h4p-h color_blue color_base_m line-clamp  bor-top">Role Of CT Angio In Predicting Cardiac Risks</h4><p class="color_orange color_base_m"><b>Dr. HK Chopra and Dr. Mona Bhatia and Dr.S Ramakrishnan</b></p>
+
+            </div>
+
+            <img src="https://storage.googleapis.com/web-assets/images/presentations/thumbs/Ramakrishnan.jpg" style="width:100%"/>
+          </div>
+
+        </div>
+
+        <div class="col-md-4 col-sm-12 col-xs-12 top-space-m">
+
+          <div class=" panel_light_grey2 brder_top back_white_m ">
+            <img src="https://storage.googleapis.com/web-assets/images/presentations/thumbs/Dr.JS%20Hiremath.jpg" style="width:100%"/>
+            <div class="content-part ">
+              <h4 class="h4p-h color_blue color_base_m line-clamp ">Role Of CT Angio In Predicting Cardiac Risks</h4><p class="color_orange color_base_m"><b>Dr. HK Chopra and Dr. Mona Bhatia and Dr.S Ramakrishnan</b></p>
+
+              <ul class="list-items">
+                <li> Options for the heart failure patients  <p  class="color_orange color_base_m"><b>Dr. Prof. Ani Anyanwu</b></p></li>
+                <li> Options for the heart failure patients  <p  class="color_orange color_base_m"><b>Dr. Prof. Ani Anyanwu</b></p></li>
+                <li> Options for the heart failure patients  <p  class="color_orange color_base_m"><b>Dr. Prof. Ani Anyanwu</b></p></li>
+              </ul>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+      </div>
+
+    <div class="row mar-top-view">
+      <div class="col-md-12">
+        <a [routerLink]="['/specials/wccpci-2015/presentation/slide/home']">
+          <button class="btn btn-primary btn_sm_m">View All</button>
+        </a>
+      </div>
+    </div>
+
+  </section>
+</section>-->
+
+
+<!-- <section class="back4">
+  <section class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="hd2 mrg_btm no_mrg_m">The Last Word</div>
+      </div>
+    </div>
+      <div class="col-md-12 pad-adj" >
+        <angular-image-slider [images]="imagesUrl"></angular-image-slider>
+      </div>
+  </section>
+</section> -->
+<!--healthy living-->
+<!-- <section class="back2">
+  <section class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="hd2 mrg_btm no_mrg_m">MedSlides</div>
+      </div>
+    </div>
+    <div class="mrg_btm">
+      <div class="row">
+        <ng-template ngFor let-item [ngForOf]="createRange(4)" let-currentIndex="index">
+          <div class="col-md-3 col-sm-12 col-xs-12 margin-bot-tab">
+            <div class="panel_one panel_light_grey brder_top back_white_m border_m">
+              <div class="row">
+                <a class="testPresentation"
+                  [routerLink]="['/specials/wccpci-2016/presentation/'+presentations[currentIndex]['alt']+'/'+presentations[currentIndex]['_id']]">
+                  <div class="col-md-12 col-sm-4 col-xs-5 pull_right_m"><img
+                    src="{{presentations[currentIndex]['url']}}" alt="{{presentations[currentIndex]['alt']}}"/></div>
+                  <div class="col-md-12 col-sm-8 col-xs-7 pull_left_m pdg_no_rt_m">
+                    <div class="pdg1 pdgrt"><h4 class="hd4 color_blue color_base_m line-clamp line-clamp-2">
+                      {{presentations[currentIndex]['headline']}}</h4>
+                      <p class="color_orange color_base_m"><b>{{presentations[currentIndex]['doctor_name']}} </b></p>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </ng-template>
+      </div>
+    </div>
+    <div class="mrg_btm">
+      <div class="row">
+        <ng-template ngFor let-item [ngForOf]="createRange(4)" let-currentIndex="index+4">
+          <div class="col-md-3 col-sm-12 col-xs-12 margin-bot-tab">
+            <div class="panel_one panel_light_grey brder_top back_white_m border_m">
+              <div class="row">
+                <a class="testPresentation"
+                  [routerLink]="['/specials/wccpci-2016/presentation/'+presentations[currentIndex]['alt']+'/'+presentations[currentIndex]['_id']]">
+                  <div class="col-md-12 col-sm-4 col-xs-5 pull_right_m"><img
+                    src="{{presentations[currentIndex]['url']}}" alt="{{presentations[currentIndex]['alt']}}"/></div>
+                  <div class="col-md-12 col-sm-8 col-xs-7 pull_left_m pdg_no_rt_m">
+                    <div class="pdg1 pdgrt"><h4 class="hd4 color_blue color_base_m line-clamp line-clamp-2">
+                      {{presentations[currentIndex]['headline']}}</h4>
+                      <p class="color_orange color_base_m"><b>{{presentations[currentIndex]['doctor_name']}}</b></p>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </ng-template>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <a [routerLink]="['/specials/wccpci-2016/presentation/Dr.HK%20Chopra/57e3ee37ab1e463f67f08767']">
+          <button class="btn btn-primary btn_sm_m">View All</button>
+        </a>
+      </div>
+    </div>
+  </section>
+</section> -->
+
+
+<!--<section class="back2">
+  <section class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="hd2 mrg_btm no_mrg_m">Trending Presentations</div>
+      </div>
+    </div>
+
+
+      <div class="row">
+        <div class="col-md-4 col-sm-12 col-xs-12 top-space-m">
+
+          <div class=" panel_light_grey2 brder_top back_white_m ">
+            <img src="https://storage.googleapis.com/web-assets/images/presentations/thumbs/Dr.OPYadava.jpg" style="width:100%"/>
+            <div class="content-part ">
+              <h4 class=" h4p-h color_blue color_base_m line-clamp ">Role Of CT Angio In Predicting Cardiac Risks</h4><p class="color_orange color_base_m"><b>Dr. HK Chopra and Dr. Mona Bhatia and Dr.S Ramakrishnan</b></p>
+
+              <ul class="list-items">
+                <li> Options for the heart failure patients  <p  class="color_orange color_base_m"><b>Dr. Prof. Ani Anyanwu</b></p></li>
+                <li> Options for the heart failure patients  <p  class="color_orange color_base_m"><b>Dr. Prof. Ani Anyanwu</b></p></li>
+                <li> Options for the heart failure patients  <p  class="color_orange color_base_m"><b>Dr. Prof. Ani Anyanwu</b></p></li>
+              </ul>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="col-md-4 col-sm-12 col-xs-12 top-space-m">
+
+          <div class=" panel_light_grey2 brder_top back_white_m ">
+
+            <div class="content-part ">
+
+              <ul class="list-items">
+                <li class="no-bor"> Options for the heart failure patients  <p  class="color_orange color_base_m"><b>Dr. Prof. Ani Anyanwu</b></p></li>
+                <li> Options for the heart failure patients  <p  class="color_orange color_base_m"><b>Dr. Prof. Ani Anyanwu</b></p></li>
+                <li> Options for the heart failure patients  <p  class="color_orange color_base_m"><b>Dr. Prof. Ani Anyanwu</b></p></li>
+              </ul>
+              <h4 class=" h4p-h color_blue color_base_m line-clamp  bor-top">Role Of CT Angio In Predicting Cardiac Risks</h4><p class="color_orange color_base_m"><b>Dr. HK Chopra and Dr. Mona Bhatia and Dr.S Ramakrishnan</b></p>
+
+            </div>
+
+            <img src="https://storage.googleapis.com/web-assets/images/presentations/thumbs/Ramakrishnan.jpg" style="width:100%"/>
+          </div>
+
+        </div>
+
+        <div class="col-md-4 col-sm-12 col-xs-12 top-space-m">
+
+          <div class=" panel_light_grey2 brder_top back_white_m ">
+            <img src="https://storage.googleapis.com/web-assets/images/presentations/thumbs/Dr.JS%20Hiremath.jpg" style="width:100%"/>
+            <div class="content-part ">
+              <h4 class="h4p-h color_blue color_base_m line-clamp ">Role Of CT Angio In Predicting Cardiac Risks</h4><p class="color_orange color_base_m"><b>Dr. HK Chopra and Dr. Mona Bhatia and Dr.S Ramakrishnan</b></p>
+
+              <ul class="list-items">
+                <li> Options for the heart failure patients  <p  class="color_orange color_base_m"><b>Dr. Prof. Ani Anyanwu</b></p></li>
+                <li> Options for the heart failure patients  <p  class="color_orange color_base_m"><b>Dr. Prof. Ani Anyanwu</b></p></li>
+                <li> Options for the heart failure patients  <p  class="color_orange color_base_m"><b>Dr. Prof. Ani Anyanwu</b></p></li>
+              </ul>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+      </div>
+
+    <div class="row mar-top-view">
+      <div class="col-md-12">
+        <a [routerLink]="['/specials/wccpci-2015/presentation/slide/home']">
+          <button class="btn btn-primary btn_sm_m">View All</button>
+        </a>
+      </div>
+    </div>
+
+  </section>
+</section>-->
+
+
+<!-- <section class="back4">
+  <section class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="hd2 mrg_btm no_mrg_m">The Last Word</div>
+      </div>
+    </div>
+      <div class="col-md-12 pad-adj" >
+        <angular-image-slider [images]="imagesUrl"></angular-image-slider>
+      </div>
+  </section>
+</section> -->
+
+<div class="new-screen14">
+  <div class="container" fxLayout="column">
+    <h5 class="all-head">Med Slides</h5>
+    <div fxLayout.lt-md="column" fxLayout.gt-sm="row" fxLayoutGap.gt-sm="20px">
+      <div fxFlex.lt-md="100%" fxFlex.gt-sm="33.33%">
+        <div fxLayout="column">
+          <ng-template ngFor let-item [ngForOf]="createRange(7)" let-currentIndex="index">
+            <div fxLayout="column" class="brdr-btm-red">
+              <a href="/specials/{{conv[currentIndex]['event']}}/presentation/{{conv[currentIndex]['slug']}}/{{conv[currentIndex]['_id']}}">
+                <div fxLayout="column">
+                      <p class="internal-dr-name">{{conv[currentIndex]['doctor_name']}}</p>
+                      <p class="internal-updates-head">{{conv[currentIndex]['headline']}}</p>
+                </div>
+              </a>
+            </div>
+          </ng-template>
+        </div>
+      </div>
+      <div fxFlex.lt-md="100%" fxFlex.gt-sm="33.33%">
+        <div fxLayout="column">
+          <ng-template ngFor let-item [ngForOf]="createRange(1)" let-currentIndex="index+9">
+            <div fxLayout="column" class="brdr-btm-red">
+              <a href="/specials/{{conv[currentIndex]['event']}}/presentation/{{conv[currentIndex]['slug']}}/{{conv[currentIndex]['_id']}}">
+                <div class="mrg-after-imgvid">
+                  <img src="{{conv[currentIndex]['url']}}" alt="{{conv[currentIndex]['alt']}}"/>
+                </div>
+                <div fxLayout="column">
+                      <p class="internal-dr-name">{{conv[currentIndex]['doctor_name']}}</p>
+                      <p class="internal-updates-head">{{conv[currentIndex]['headline']}}</p>
+                </div>
+              </a>
+            </div>
+          </ng-template>
+          <ng-template ngFor let-item [ngForOf]="createRange(4)" let-currentIndex="index+10">
+            <div fxLayout="column" class="brdr-btm-red">
+              <a href="/specials/{{conv[currentIndex]['event']}}/presentation/{{conv[currentIndex]['slug']}}/{{conv[currentIndex]['_id']}}">
+                <div fxLayout="column">
+                      <p class="internal-dr-name">{{conv[currentIndex]['doctor_name']}}</p>
+                      <p class="internal-updates-head">{{conv[currentIndex]['headline']}}</p>
+                </div>
+              </a>
+            </div>
+          </ng-template>
+        </div>
+      </div>
+
+
+      <div fxFlex.lt-md="100%" fxFlex.gt-sm="33.33%">
+        <div fxLayout="column">
+          <ng-template ngFor let-item [ngForOf]="createRange(1)" let-currentIndex="index+15">
+            <div fxLayout="column" class="brdr-btm-red">
+              <a href="/specials/{{conv[currentIndex]['event']}}/presentation/{{conv[currentIndex]['slug']}}/{{conv[currentIndex]['_id']}}">
+                <div class="mrg-after-imgvid">
+                  <img src="{{conv[currentIndex]['url']}}" alt="{{conv[currentIndex]['alt']}}"/>
+                </div>
+                <div fxLayout="column">
+                      <p class="internal-dr-name">{{conv[currentIndex]['doctor_name']}}</p>
+                      <p class="internal-updates-head">{{conv[currentIndex]['headline']}}</p>
+                </div>
+              </a>
+            </div>
+          </ng-template>
+          <ng-template ngFor let-item [ngForOf]="createRange(4)" let-currentIndex="index+17">
+            <div fxLayout="column" class="brdr-btm-red">
+              <a href="/specials/{{conv[currentIndex]['event']}}/presentation/{{conv[currentIndex]['slug']}}/{{conv[currentIndex]['_id']}}">
+                <div fxLayout="column">
+                      <p class="internal-dr-name">{{conv[currentIndex]['doctor_name']}}</p>
+                      <p class="internal-updates-head">{{conv[currentIndex]['headline']}}</p>
+                </div>
+              </a>
+            </div>
+          </ng-template>
+        </div>
+      </div>
+    </div>
+   <a  [routerLink]="['/specials/wccpci-2016/presentation/Dr.HK%2520Chopra/57e3ee37ab1e463f67f08767']"> <button mat-flat-button class="view-all-btn">View all</button></a>
+  </div>
+</div>

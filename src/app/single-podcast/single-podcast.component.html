@@ -1,0 +1,205 @@
+<app-nav></app-nav>
+<div class="container  mar-top-podcast" >
+
+  <div class="row">
+    <div class="col-md-3"></div>
+
+    <div class="col-md-6" align="center">
+      <img src="{{single_podcast['image_url']}}" style="width:100%"/>
+      <!--<audio controls style="width:100%" >
+        <source src="{{single_podcast['video_url']}}" type="audio/mp3">
+        <source src="{{single_podcast['video_url']}}" type="audio/mp3">
+        Your browser does not support the audio element.
+      </audio>
+
+-->
+      <div class="content-podcast-doc">
+      <h2>{{single_podcast['headline']}}</h2>
+        <h5>by {{single_podcast['guest1']}}</h5>
+        <p>{{single_podcast['guest1_designation']}}</p>
+      <audio controls style="width:100%"
+             src="{{single_podcast['video_url']}}" >
+        Your browser does not support the audio element.
+      </audio>
+
+
+      <div class="m-top-10">
+        <button type="button" class="btn  share" [matMenuTriggerFor]="menu"><i  aria-hidden="true" class="fa fa-share-alt-square"></i></button>
+        <mat-menu #menu="matMenu" >
+          <ul class="list-icons-top">
+           <li><a  class="" data-service="facebook" target="_blank" title="Share on Facebook"
+                                     href="https://www.facebook.com/dialog/feed?app_id=1066226316760891
+            &redirect_uri=https://therightdoctors.com/podcast/{{ single_podcast['slug']}}
+            &link=https://therightdoctors.com/podcast/{{ single_podcast['slug']}}
+            &picture={{ single_podcast['image_url'] }}
+            &caption=TheRightDoctors.com%20|%20BY%20%20{{ single_podcast['sub_headline']}},%20%20{{ single_podcast['designation']}}
+            &description={{ single_podcast['description']}}
+            &name={{ single_podcast['headline']}}"><i
+                  class="fa fa-facebook fb" aria-hidden="true"></i> Facebook</a></li>
+          <li><a  class="" data-service="twitter" target="_blank" title="Follow us on Twitter"
+                                    href="https://twitter.com/intent/tweet?url=https://therightdoctors.com/podcast/{{ single_podcast['slug']}}&text={{ single_podcast['sub_headline']}}%20-{{ single_podcast['headline']}}&via=TheRightDoctors"><i
+                  class="fa fa-twitter twit-clr" aria-hidden="true"></i>Twitter</a></li>
+           <li><a  class="" data-service="linkedin" target="_blank" title="Follow us on Linkedin"
+                                      href="https://www.linkedin.com/shareArticle?mini=true&url=https://therightdoctors.com/podcast/{{ single_podcast['slug']}}&title={{ single_podcast['headline']}}
+&summary={{ single_podcast['headline2']}}&source=therightdoctors.com"><i class="fa fa-linkedin linkd" aria-hidden="true"></i>Linkedin</a>
+             </li>
+          <!-- <li><a class="" data-service="youtube" target="_blank" title="Follow us by Youtube"
+                                   href="https://www.youtube.com/channel/UCUZIhLsNbgkCqymAZshSVHQ"><i class="fa fa-youtube youtube" aria-hidden="true"
+                                                                                                      style="font-size:18px;"></i>Youtube</a></li>
+          <li><a data-flip-widget="shareflip" target="_blank" title="Follow us on Flipit"
+                                   href="https://share.flipboard.com/bookmarklet/popout?ext=sharethis&
+title={{single_podcast['headline']}}&url=https://therightdoctors.com/podcast/{{ single_podcast['slug']}}&utm_campaign=widgets&utm_content={{single_podcast['sub_headline']}}&utm_source=sharethis&v=2"><img src="https://cdn.flipboard.com/badges/flipboard_srsw.png" style="width: 27px;height: 27px;margin-top: -3px;
+    border-radius: 100%;">FlipBoard</a></li> -->
+
+       </ul>
+        </mat-menu>
+        <a href="{{single_podcast['video_url']}}" download>
+        <button type="button" class="btn download"><i class="fa fa-download" aria-hidden="true"></i></button></a></div>
+        </div>
+    </div>
+    <div class="col-md-3"></div>
+  </div>
+
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <p class="para-podcast"><!--In this episode number 161, you’re going to learn how to identify your genius and leverage it.
+        You’ll also learn how to find or even create a peer group of high performers as well as take your relationships to a whole new level. Our guest is Mike Zeller. He’s a social entrepreneur who started eight different businesses in five different industries producing over $100 million in sales. He’s been featured in the Huffington Post,
+        Business Insider and Entrepreneur. In addition to having his own marketing agency,
+        he mentors and educates other budding entrepreneurs.--></p>
+      <div *ngIf="((sing_podcast.length)>1)" class="bor-top-q-a">
+        <div *ngFor=" let tra of sing_podcast; let i=index">
+          <p class="para-p" *ngIf="single_podcast['event'] === 'podcast'">
+            {{tra.split(':')[0]}} </p> <br>
+          <p class="para-p" *ngIf="single_podcast['event'] != 'podcast'">
+            {{tra.split(':')[0]}}</p>
+
+
+          <div class="pad-1-hi" *ngIf="i === 1">
+            <h4 class="listen"> Listen to the podcast here:</h4>
+            <div class="row" style="background: #272727;
+    padding: 15px 0px;
+    margin: 0px;">
+              <div class="col-md-2">
+                <img src="{{single_podcast['image_url']}}" style="width:100%"/>
+              </div>
+              <div class="col-md-10">
+                <!-- <audio controls style="width:100%;margin-top:15px;">
+                   <source src="{{single_podcast['video_url']}}" type="audio/ogg">
+                   <source src="{{single_podcast['video_url']}}" type="audio/mpeg">
+                   Your browser does not support the audio element.
+                 </audio>-->
+                <audio controls style="width:100%"
+                       src="{{single_podcast['video_url']}}" >
+                  Your browser does not support the audio element.
+                </audio>
+              </div>
+            </div>
+          </div>
+
+          <div *ngIf= "i=== 6">
+            <div class="row" style="margin-bottom:20px;">
+              <div class="col-md-offset-3 col-md-6" style="border: 1px solid #ccc;
+    padding-left: 0px;
+    padding-right: 0px;">
+                <img src="{{single_podcast['image_url']}}" style="width:100%"/>
+                <p class="p-para">{{single_podcast['headline']}}</p>
+              </div>
+            </div>
+          <p class="para-p">{{tra.split('>')[1]}}</p>
+        </div>
+
+      </div>
+
+    <!--  <h4 class="listen"> Listen to the podcast here:</h4>
+      <div class="row" style="    background: #272727;
+    padding: 15px 0px;
+    margin: 0px;">
+
+        <div class="col-md-2">
+          <img src="{{single_podcast['image_url']}}" style="width:100%"/>
+        </div>
+        <div class="col-md-10">
+         &lt;!&ndash; <audio controls style="width:100%;margin-top:15px;">
+            <source src="{{single_podcast['video_url']}}" type="audio/ogg">
+            <source src="{{single_podcast['video_url']}}" type="audio/mpeg">
+            Your browser does not support the audio element.
+          </audio>&ndash;&gt;
+
+          <audio controls style="width:100%"
+                 src="{{single_podcast['video_url']}}" >
+            Your browser does not support the audio element.
+          </audio>
+
+        </div>
+
+      </div>-->
+
+
+      <!--<h4 class="check"> Your Checklist of Actions to Take:</h4>
+
+      <div class="arrowList1">
+        <ul  class="list-cq5">
+          <li>In this episode number 161, you’re going to learn how to identify your genius and leverage it.</li>
+          <li>In this episode number 161, you’re going to learn how to identify your genius and leverage it.You’ll also learn how to find or even create a peer group of high performers as well as take your relationships to a whole new level.</li>
+          <li>In this episode number 161, you’re going to learn how to identify your genius and leverage it.You’ll also learn how to find or even create a peer group of high performers as well as take your relationships to a whole new level.</li>
+          <li>In this episode number 161, you’re going to learn how to identify your genius and leverage it.You’ll also learn how to find or even create a peer group of high performers as well as take your relationships to a whole new level.</li>
+          <li>In this episode number 161, you’re going to learn how to identify your genius and leverage it.You’ll also learn how to find or even create a peer group of high performers as well as take your relationships to a whole new level.</li>
+          <li>In this episode number 161, you’re going to learn how to identify your genius and leverage it.You’ll also learn how to find or even create a peer group of high performers as well as take your relationships to a whole new level.</li>
+          <li>In this episode number 161, you’re going to learn how to identify your genius and leverage it.You’ll also learn how to find or even create a peer group of high performers as well as take your relationships to a whole new level.</li>
+          <li>In this episode number 161, you’re going to learn how to identify your genius and leverage it.You’ll also learn how to find or even create a peer group of high performers as well as take your relationships to a whole new level.</li>
+        </ul></div>
+
+
+      <h2 class="head-quetion-answers">Identify Your Genius And Leverage It with Mike Zeller</h2>
+
+
+      <p class="para-b">In this episode number 161, you’re going to learn how to identify your genius and leverage it.?</p>
+      <p class="para-podcast">In this episode number 161, you’re going to learn how to identify your genius and leverage it.
+        You’ll also learn how to find or even create a peer group of high performers as well as take your relationships to a whole new level. Our guest is Mike Zeller. He’s a social entrepreneur who started eight different businesses in five different industries producing over $100 million in sales. He’s been featured in the Huffington Post,
+        Business Insider and Entrepreneur. In addition to having his own marketing agency,
+        he mentors and educates other budding entrepreneurs.</p>
+      <p class="para-b">In this episode number 161, you’re going to learn how to identify your genius and leverage it.?</p>
+      <p class="para-podcast">In this episode number 161, you’re going to learn how to identify your genius and leverage it.
+        You’ll also learn how to find or even create a peer group of high performers as well as take your relationships to a whole new level. Our guest is Mike Zeller. He’s a social entrepreneur who started eight different businesses in five different industries producing over $100 million in sales. He’s been featured in the Huffington Post,
+        Business Insider and Entrepreneur. In addition to having his own marketing agency,
+        he mentors and educates other budding entrepreneurs.</p>
+      <p class="para-b">In this episode number 161, you’re going to learn how to identify your genius and leverage it.?</p>
+      <p class="para-podcast">In this episode number 161, you’re going to learn how to identify your genius and leverage it.
+        You’ll also learn how to find or even create a peer group of high performers as well as take your relationships to a whole new level. Our guest is Mike Zeller. He’s a social entrepreneur who started eight different businesses in five different industries producing over $100 million in sales. He’s been featured in the Huffington Post,
+        Business Insider and Entrepreneur. In addition to having his own marketing agency,
+        he mentors and educates other budding entrepreneurs.</p>
+      <p class="para-b">In this episode number 161, you’re going to learn how to identify your genius and leverage it.?</p>
+      <p class="para-podcast">In this episode number 161, you’re going to learn how to identify your genius and leverage it.
+        You’ll also learn how to find or even create a peer group of high performers as well as take your relationships to a whole new level. Our guest is Mike Zeller. He’s a social entrepreneur who started eight different businesses in five different industries producing over $100 million in sales. He’s been featured in the Huffington Post,
+        Business Insider and Entrepreneur. In addition to having his own marketing agency,
+        he mentors and educates other budding entrepreneurs.</p>-->
+      <!--<div class="row" style="margin-bottom:20px;">
+        <div class="col-md-offset-3 col-md-6" style="border: 1px solid #ccc;
+    padding-left: 0px;
+    padding-right: 0px;">
+          <img src="{{single_podcast['image_url']}}" style="width:100%"/>
+          <p class="p-para">In this episode number 161, you’re going to learn how to identify your genius and leverage it.learn how to identify your genius and leveragelearn how to identify your genius and leveragelearn how to identify your genius and leverage</p>
+        </div>
+      </div>-->
+
+
+
+     <!-- <p class="para-b">In this episode number 161, you’re going to learn how to identify your genius and leverage it.?</p>
+      <p class="para-podcast">In this episode number 161, you’re going to learn how to identify your genius and leverage it.
+        You’ll also learn how to find or even create a peer group of high performers as well as take your relationships to a whole new level. Our guest is Mike Zeller. He’s a social entrepreneur who started eight different businesses in five different industries producing over $100 million in sales. He’s been featured in the Huffington Post,
+        Business Insider and Entrepreneur. In addition to having his own marketing agency,
+        he mentors and educates other budding entrepreneurs.</p>
+
+      <p class="para-b">In this episode number 161, you’re going to learn how to identify your genius and leverage it.?</p>
+      <p class="para-podcast">In this episode number 161, you’re going to learn how to identify your genius and leverage it.
+        You’ll also learn how to find or even create a peer group of high performers as well as take your relationships to a whole new level. Our guest is Mike Zeller. He’s a social entrepreneur who started eight different businesses in five different industries producing over $100 million in sales. He’s been featured in the Huffington Post,
+        Business Insider and Entrepreneur. In addition to having his own marketing agency,
+        he mentors and educates other budding entrepreneurs.</p>-->
+    </div>
+  </div>
+
+</div>
+</div>
+<app-footer></app-footer>

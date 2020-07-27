@@ -1,0 +1,315 @@
+
+<app-nav xmlns="http://www.w3.org/1999/html"></app-nav>
+
+
+<div class="container mar-top mar-btm-con" style="clear: both">
+    <p class="live-updates"> TheRightDoctors | Live Updates | AOC 2020 </p>
+  <div fxLayout="row" fxLayoutGap="30px" fxLayoutGap.lt-sm="0px" fxLayout.lt-sm="column" fxLayout.lt-md="column">
+   
+    <div fxFlex="75">
+      <!-- <mat-card class="panel_thin_grey mat-content">
+        <p><small style="color:#fba866;font-weight: 600;font-family:'Open Sans', sans-serif!important">TheRightDoctors | Sep 28th 2018</small></p>
+        <a [routerLink]="['/'+catagory[0]['event']+'/'+catagory[0]['category']+'/'+catagory[0]['slug']]">
+        <div fxLayout="row" fxLayoutGap="25px" fxLayout.lt-sm="column">
+          <div fxFlex="20">
+            <img src="{{finaldata[0]['f_image_url']}}" class="img-src"/>
+          </div>
+          <div fxFlex="80">
+           
+            <h1 style="font-famliy:'Open Sans', sans-serif!important;">{{finaldata[0]['f_title']}}</h1>
+          </div>
+        </div>
+        </a>
+        <div fxLayout="row" class="pad-top" fxLayout.lt-sm="column" fxLayout.lt-md="column">
+          <p>{{finaldata[0]['f_subheadline']}}</p>
+        </div>
+      </mat-card> -->
+
+      <!-- <div fxLayout="row" class="bor pad-liveupdate" fxLayout.lt-sm="column" fxLayout.lt-md="column">
+        <div fxFlex="20">
+          <h4 class="live-update">Live Updates</h4></div>
+        <div fxFlex="80">
+          <section class="example-section" >
+            <b style="color: #21a7e7; font-size: 11px;">FilterUpdates >></b>
+            <mat-checkbox class="example-margin">Text</mat-checkbox>
+            <mat-checkbox class="example-margin">photos</mat-checkbox>
+            <mat-checkbox class="example-margin">videos</mat-checkbox>
+          </section></div>
+
+      </div> -->
+      <div *ngIf="finaldata">
+      <div  *ngFor="let d of finaldata"> 
+      <div fxLayout="row" fxLayoutGap="30px" fxLayoutGap.lt-sm="0px" class="marg-btm-news" fxLayout.lt-sm="column" >
+        
+        <!-- <div fxFlex="10">
+        </div> -->
+        
+        <div fxFlex="100" class="head-news">
+            <button mat-stroked-button color="primary" class="btn-radius">{{d['f_date']}}</button>
+          <h2 style="color:#000; font-weight:bold; word-break: break-all;">{{d['f_title']}}</h2>
+          <img src="{{d['f_image_url']}}">
+          <!-- <p class="justi-text">{{d['f_description']}}</p> -->
+          <div class="justi-text" style="word-break: break-all;" [innerHtml]="d['f_description']"></div>
+
+        </div>
+      </div>
+      </div>
+    </div>
+
+     
+      <!--<div *ngFor="let docs of finaldata">
+        <div *ngFor="let doc of docs">
+          <p>file name: {{doc.f_title}}</p>
+
+        </div>
+      </div>-->
+      <!-- <div *ngFor="let doc of finaldata">
+        <div fxLayout="row" fxLayoutGap="30px" fxLayoutGap.lt-sm="0px" class="marg-btm-news" fxLayout.lt-sm="column" >
+          <div fxFlex="10">
+            <button mat-stroked-button color="primary" class="btn-radius" *ngIf="doc.f_date">{{doc.f_date}}</button>
+            <button mat-stroked-button color="primary" class="btn-radius" *ngIf="!doc.f_date">28/09/2018</button>
+          </div>
+
+          <div fxFlex="90" class="head-news">
+            <h2>{{doc.f_title}}</h2>
+            <img src="{{doc.f_image_url}}">
+            <p class="justi-text" *ngIf="doc.f_description">{{doc.f_description}}</p>
+          </div>
+        </div>
+      </div> -->
+      <!--<div fxLayout="row" fxLayoutGap="30px" fxLayoutGap.lt-sm="0px" class="marg-btm-news" fxLayout.lt-sm="column" >
+          <div fxFlex="10">
+              <button mat-stroked-button color="primary">28/09/2018</button>
+          </div>
+
+          <div fxFlex="90" class="head-news">
+              <h2>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</h2>
+              <p class="justi-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+          </div>
+      </div>-->
+
+    </div>
+    <div fxFlex="25">
+      <mat-card class="vedios-pad">
+        <h2 style="margin-bottom: 5px;">Videos</h2>
+        <div fxLayout="column" class="mar-btm">
+
+          <img src="{{catagory[4]['image_url']}}" width="100%">
+          <p class="title">{{catagory[4]['headline'] | slice:0:40}}</p>
+          <p class="dr-name-live-u">{{catagory[4]['sub_headline']}}</p>
+        </div>
+
+        <div fxLayout="row" fxLayoutGap="10px" class="mar-btm" >
+          <div fxFlex="50">
+            <img src="{{catagory[5]['image_url']}}" width="100%">
+            <p class="title">{{catagory[5]['headline'] | slice:0:40}}</p>
+            <p class="dr-name-live-u"> {{catagory[5]['sub_headline']}}</p>
+          </div>
+          <div fxFlex="50">
+            <img src="{{catagory[6]['image_url']}}" width="100%">
+            <p class="title">{{catagory[6]['headline'] | slice:0:40}}</p>
+
+             <p class="dr-name-live-u"> {{catagory[6]['sub_headline']}}</p>
+          </div>
+        </div>
+
+        <div fxLayout="row" fxLayoutGap="10px" class="mar-btm" >
+          <div fxFlex="50">
+            <img src="{{catagory[7]['image_url']}}" width="100%">
+            <p class="title">{{catagory[7]['headline'] | slice:0:40}}</p>
+            <p class="dr-name-live-u"> {{catagory[7]['sub_headline']}}</p>
+          </div>
+          <div fxFlex="50" fxLayoutGap="10px">
+            <img src="{{catagory[8]['image_url']}}" width="100%">
+            <p class="title">{{catagory[8]['headline'] | slice:0:40}}</p><p class="dr-name-live-u" > {{catagory[8]['sub_headline']}}</p>
+          </div>
+        </div>
+
+        <div fxLayout="row" fxLayoutGap="10px" class="mar-btm" >
+          <div fxFlex="50">
+            <img src="{{catagory[9]['image_url']}}" width="100%">
+            <p class="title">{{catagory[9]['headline'] | slice:0:40}}</p>
+            <p class="dr-name-live-u"> {{catagory[9]['sub_headline']}}</p>
+          </div>
+          <div fxFlex="50">
+            <img src="{{catagory[10]['image_url']}}" width="100%">
+            <p class="title">{{catagory[10]['headline'] | slice:0:40}}</p>
+            <p class="dr-name-live-u"> {{catagory[10]['sub_headline']}}</p>
+          </div>
+
+        </div>
+        <div fxLayout="row" fxLayoutGap="10px" class="mar-btm" >
+          <div fxFlex="50">
+            <img src="{{catagory[11]['image_url']}}" width="100%">
+            <p  class="title">{{catagory[11]['headline'] | slice:0:40}}</p><p class="dr-name-live-u"> {{catagory[11]['sub_headline']}}</p>
+          </div>
+          <div fxFlex="50">
+            <img src="{{catagory[12]['image_url']}}" width="100%">
+            <p class="title">{{catagory[12]['headline'] | slice:0:40}}</p><p class="dr-name-live-u"> {{catagory[12]['sub_headline']}}</p>
+
+          </div>
+
+        </div>
+
+      </mat-card>
+
+
+    </div>
+
+  </div>
+
+
+</div>
+<app-footer></app-footer>
+
+
+<!--<app-nav xmlns="http://www.w3.org/1999/html"></app-nav>
+
+&lt;!&ndash;
+<div *ngFor="let docs of finaldata">
+  <div *ngFor="let doc of docs">
+    <p>file name: {{doc.f_title}}</p>
+
+  </div>
+</div>
+&ndash;&gt;
+
+
+<div class="container mar-top mar-btm-con">
+  <div fxLayout="row" fxLayoutGap="30px" fxLayoutGap.lt-sm="0px" fxLayout.lt-sm="column" fxLayout.lt-md="column">
+    <div fxFlex="75">
+      <div *ngFor="let docs of finaldata">
+        <div *ngFor="let doc of docs">
+      <mat-card class="panel_thin_grey mat-content">
+        <p><small style="color:#fba866;font-weight: 600;">TheRightDoctors | August 16th 2018</small></p>
+        <a [routerLink]="['/'+catagory[0]['event']+'/'+catagory[0]['category']+'/'+catagory[0]['slug']]">
+          <div fxLayout="row" fxLayoutGap="25px" fxLayout.lt-sm="column">
+            <div fxFlex="20">
+              <img src="{{doc.f_image_url}}" class="img-src"/>
+            </div>
+            <div fxFlex="80">
+              <h1>{{doc.f_title}}</h1>
+            </div>
+          </div>
+        </a>
+
+        <div fxLayout="row" class="pad-top" fxLayout.lt-sm="column" fxLayout.lt-md="column">
+          <p>{{doc.f_description}}</p>
+
+        </div>
+      </mat-card>
+        </div></div>
+      <div fxLayout="row" class="bor pad-liveupdate" fxLayout.lt-sm="column" fxLayout.lt-md="column">
+        <div fxFlex="20">
+          <h4 class="live-update">Live Updates</h4></div>
+        <div fxFlex="80">
+          <section class="example-section" >
+            <b style="color: #21a7e7; font-size: 11px;">FilterUpdates >></b>
+            <mat-checkbox class="example-margin">Text</mat-checkbox>
+            <mat-checkbox class="example-margin">photos</mat-checkbox>
+            <mat-checkbox class="example-margin">vedios</mat-checkbox>
+          </section></div>
+
+      </div>
+
+      <div fxLayout="row" fxLayoutGap="30px" fxLayoutGap.lt-sm="0px"  class="marg-btm-news" fxLayout.lt-sm="column" fxLayout.lt-md="column">
+        <div fxFlex="10">
+          <button mat-stroked-button color="primary">7/6/2017</button>
+        </div>
+
+        <div fxFlex="90" class="head-news">
+          <h2>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</h2>
+          <p class="justi-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+        </div>
+
+
+      </div>
+
+      <div fxLayout="row" fxLayoutGap="30px"  fxLayoutGap.lt-sm="0px" class="marg-btm-news" fxLayout.lt-sm="column" >
+        <div fxFlex="10">
+          <button mat-stroked-button color="primary">7/6/2017</button>
+        </div>
+
+        <div fxFlex="90" class="head-news">
+          <h2>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</h2>
+          <img src="https://storage.googleapis.com/web-assets/images/EMCURE_CSICON2017/Day3_new/VivekGupta/VivekGupta-large.jpg" class="wid-img"/>
+          <p class="justi-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+        </div>
+      </div>
+      <div fxLayout="row" fxLayoutGap="30px" fxLayoutGap.lt-sm="0px" class="marg-btm-news" fxLayout.lt-sm="column" >
+        <div fxFlex="10">
+          <button mat-stroked-button color="primary">7/6/2017</button>
+        </div>
+
+        <div fxFlex="90" class="head-news">
+          <h2>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</h2>
+          <p class="justi-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+        </div>
+      </div>
+
+
+    </div>
+    <div fxFlex="25">
+      <mat-card class="vedios-pad">
+        <h2 style="margin-bottom: 5px;">Videos</h2>
+        <div fxLayout="column" class="mar-btm">
+
+          <img src="https://storage.googleapis.com/web-assets/images/EMCURE_CSICON2017/Day3_new/VivekGupta/VivekGupta-large.jpg" width="100%">
+          <p>lorem ipsm color<br> full website</p>
+        </div>
+        <div fxLayout="row" fxLayoutGap="10px" class="mar-btm" >
+          <div fxFlex="50">
+            <img src="https://storage.googleapis.com/web-assets/images/EMCURE_CSICON2017/Day3_new/VivekGupta/VivekGupta-large.jpg" width="100%">
+            <p>lorem ipsm color<br> full website</p>
+          </div>
+          <div fxFlex="50">
+            <img src="https://storage.googleapis.com/web-assets/images/EMCURE_CSICON2017/Day3_new/VivekGupta/VivekGupta-large.jpg" width="100%">
+            <p>lorem ipsm color<br> full website</p>
+          </div>
+        </div>
+
+        <div fxLayout="row" fxLayoutGap="10px" class="mar-btm" >
+          <div fxFlex="50">
+            <img src="https://storage.googleapis.com/web-assets/images/EMCURE_CSICON2017/Day3_new/VivekGupta/VivekGupta-large.jpg" width="100%">
+            <p>lorem ipsm color<br> full website</p>
+          </div>
+          <div fxFlex="50" fxLayoutGap="10px">
+            <img src="https://storage.googleapis.com/web-assets/images/EMCURE_CSICON2017/Day3_new/VivekGupta/VivekGupta-large.jpg" width="100%">
+            <p>lorem ipsm color<br> full website</p>
+          </div>
+        </div>
+
+        <div fxLayout="row" fxLayoutGap="10px" class="mar-btm" >
+          <div fxFlex="50">
+            <img src="https://storage.googleapis.com/web-assets/images/EMCURE_CSICON2017/Day3_new/VivekGupta/VivekGupta-large.jpg" width="100%">
+            <p>lorem ipsm color<br> full website</p>
+          </div>
+          <div fxFlex="50">
+            <img src="https://storage.googleapis.com/web-assets/images/EMCURE_CSICON2017/Day3_new/VivekGupta/VivekGupta-large.jpg" width="100%">
+            <p>lorem ipsm color<br> full website</p>
+          </div>
+
+        </div>
+        <div fxLayout="row" fxLayoutGap="10px" class="mar-btm" >
+          <div fxFlex="50">
+            <img src="https://storage.googleapis.com/web-assets/images/EMCURE_CSICON2017/Day3_new/VivekGupta/VivekGupta-large.jpg" width="100%">
+            <p>lorem ipsm color<br> full website</p>
+          </div>
+          <div fxFlex="50">
+            <img src="https://storage.googleapis.com/web-assets/images/EMCURE_CSICON2017/Day3_new/VivekGupta/VivekGupta-large.jpg" width="100%">
+            <p>lorem ipsm color<br> full website</p>
+
+          </div>
+
+        </div>
+
+      </mat-card>
+
+
+    </div>
+
+  </div>
+
+
+</div>
+<app-footer></app-footer>-->

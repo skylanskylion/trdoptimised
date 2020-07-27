@@ -1,0 +1,127 @@
+<app-nav></app-nav>
+<div class="login-wrapper" style="padding-top: 90px;">
+  
+
+  
+  <router-outlet></router-outlet>
+
+
+    <div class = "container text-center">
+      <label class="for-checkbox" for="general"></label>
+        <h1 style="font-family: 'Times New Roman', Times, serif;color: cornflowerblue; font-size:40px"><b>TheRightDoctors</b></h1>
+        <h3 style="text-align: center;">already have an account? <b><a routerLink="../subscription-login" routerLinkActive="active">Sign In!</a> </b></h3>
+      </div>
+
+    <div class="form-v4">
+      <div class="page-content">
+        <div class="form-v4-content">
+          <div class="form-left">
+            <h2>Insights from World's Best Medical Minds</h2>
+            <p class="text-1">Your payment method will be automatically charged ₹60.00 every 30 days for the first year.
+            </p>
+            <p class="text-2"> It will then be automatically charged ₹270.00 every 30 days thereafter, starting after a
+              year of subscription..</p>
+            <p class="text-2"> Your subscription will continue until you cancel. You can cancel anytime.</p>
+  
+          </div>
+
+  <!-- <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" class="form-horizontal"> -->
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" class="form-detail" id="myform">
+      <h2>Register</h2>
+
+    <!-- <mat-card-content> -->
+      <!-- <mat-form-field class="example-full-width"> -->
+        <div class="form-row">
+          <label class="control-label col-sm-2" for="name">FullName</label>
+          <input id="name" class="input-text" formControlName="name" matInput placeholder="Full Name">
+          </div>
+      <!-- </mat-form-field> -->
+
+      <!-- <mat-form-field class="example-full-width"> -->
+        <div class="form-row">
+          <label class="control-label col-sm-2" for="email">Email</label>
+        <input ngModel email id="email" class="input-text" type="email" formControlName="email" matInput placeholder="Email">
+        </div>
+    
+      <!-- </mat-form-field> -->
+
+      <!-- <mat-form-field class="example-full-width"> -->
+        <div class="form-row">
+          <label class="control-label col-sm-2" for="password">Password</label>
+        <input type="password" id="password" class="input-text" formControlName="password" matInput placeholder="Password">
+        </div>
+      <!-- </mat-form-field> -->
+
+      <!-- <mat-form-field class="example-full-width"> -->
+        <div class="form-row">
+          <label class="control-label col-sm-2" for="mobile">Mobile</label>
+        <input type="number" class="input-text" id="mobile" formControlName="mobile" matInput placeholder="Mobile No.">
+        </div>
+      <!-- </mat-form-field> -->
+
+    <!-- </mat-card-content> -->
+        <div style="text-align: center;">
+          <button color="accent" class="btn btn-primary" type="submit" [disabled]="!registerForm.valid">Register</button>
+
+        </div>
+    <!-- (click)="addUser(name.value,email.value,password.value,mobile.value)" -->
+  </form>
+  <div style="margin-top: 10px;">
+
+  <div *ngIf="registerForm.invalid">
+    <div *ngIf="name.invalid && (name.dirty || name.touched)" class="alert alert-danger">
+
+      <div *ngIf="name.errors.required">
+        Name is required.
+      </div>
+      <div *ngIf="name.errors.minlength">
+        Name must be at least 4 characters long.
+      </div>
+      
+    </div>
+
+    <div *ngIf="name.valid && email.invalid && (email.dirty || email.touched)" class="alert alert-danger">
+      <div *ngIf="email.errors.required">
+        Email is required.
+      </div>
+      <div *ngIf="email.errors.email">
+        Email is of invalid type.
+      </div>
+    </div>
+
+    <div *ngIf="name.valid && email.valid && password.invalid && (password.dirty || password.touched)" class="alert alert-danger">
+      <div *ngIf="password.errors.required">
+        Password is required.
+      </div>
+      <!-- <div *ngIf="password.length<=5">
+        Password should be of minimum length 5.
+      </div> -->
+    </div>
+
+    <div *ngIf="name.valid && email.valid && password.valid && mobile.invalid && (mobile.dirty || mobile.touched)" class="alert alert-danger">
+      <div *ngIf="mobile.errors.required">
+        Mobile Number is required.
+      </div>
+    </div>
+
+  </div>
+  </div>
+  
+  <div class="success" *ngIf="situation">
+    User Registered Successfully
+  </div>
+
+  <div class="success" *ngIf="notReg">
+    User not registered <br>
+    Email or Mobile Number is being already used.
+  </div>
+  </div>
+<!-- </mat-card> -->
+</div>
+
+      </div>
+    </div>
+  
+
+
+

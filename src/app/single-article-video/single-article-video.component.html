@@ -1,0 +1,1375 @@
+<style>
+    .pad-adject-text {
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+</style>
+<app-nav></app-nav>
+<div (mouseover) = "changeUrl()">
+    <div *ngIf="load_data">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2 class="video_hd1_single video_hd1 mrg_btm"><span class="video_hd1_drname">{{single_article['sub_headline']}}</span>
+                        : <span class="video_hd1_description_headline">{{single_article['headline']}}</span></h2>
+
+                </div>
+            </div>
+            <div class="row" style="margin-bottom:10px">
+                <div class="col-md-7 col-sm-6 col-xs-12">
+                    <div class="head-line-2">
+                        {{single_article['headline2']}}
+                    </div>
+                </div>
+
+                <div class="col-md-5 col-sm-6 col-xs-12" style="text-align:right;">
+                    <ul class="list-inline list-icons-top">
+                        <li class="views_single views">{{single_article['anchor']}}<br>Views</li>
+                        <li><a href="https://www.facebook.com/dialog/feed?app_id=1066226316760891&
+&rredirect_uri=https://therightdoctors.com/{{single_article['event']}}/{{ single_article['category']}}/{{ single_article['slug']}}
+&link=https://therightdoctors.com/{{single_article['event']}}/{{ single_article['category']}}/{{ single_article['slug']}}
+&picture={{ single_article['image_url'] }}
+&caption=TheRightDoctors.com%20|%20BY%20%20{{ single_article['sub_headline']}},%20%20{{ single_article['designation']}}
+&description={{ single_article['description']}}
+&name={{ single_article['headline']}}" title="Share on Facebook" data-service="facebook" target="_blank"><i
+                                class="fa fa-facebook fb" aria-hidden="true"></i> </a></li>
+                        <li><a
+                                href="https://twitter.com/intent/tweet?url=https://therightdoctors.com/{{single_article['event']}}/{{ single_article['category']}}/{{ single_article['slug']}}&text={{ single_article['sub_headline']}}%20-{{ single_article['headline']}}&via=TheRightDoctors"
+                                title="Share on Twitter" data-service="twitter" target="_blank"> <i
+                                class="fa fa-twitter twit-clr" aria-hidden="true"></i></a></li>
+                        <!-- <li><a
+                                href="https://plus.google.com/share?url=https://therightdoctors.com/{{single_article['event']}}/{{ single_article['category']}}/{{ single_article['slug']}}"
+                                title="Share on Google Plus" data-service="gplus" target="_blank"><i
+                                class="fa fa-google-plus google-plus" aria-hidden="true"></i></a></li> -->
+                        <li><a href="https://www.linkedin.com/shareArticle?mini=true&url=https://therightdoctors.com/{{single_article['event']}}/{{ single_article['category']}}/{{ single_article['slug']}}&title={{ single_article['headline']}}
+&summary={{ single_article['headline2']}}&source=therightdoctors.com" title="Share on Linkedin" data-service="linkedin"
+                               target="_blank"><i class="fa fa-linkedin linkd" aria-hidden="true"></i></a></li>
+                        <li><a
+                                href="https://api.whatsapp.com/send?text=https://therightdoctors.com/{{single_article['event']}}/{{ single_article['category']}}/{{ single_article['slug']}}"
+                                data-action="share/whatsapp/share" title="Share on Whatsapp" data-service="whatsapp"
+                                target="_blank"><i class="fa fa-whatsapp whats-app" aria-hidden="true"
+                                                   style="font-size:18px;"></i></a></li>
+                        <li><a
+                                href="mailto:?subject={{ single_article['sub_headline']}} : {{ single_article['headline']}}&amp;body={{ single_article['headline2']}}. Check out this site https://therightdoctors.com/{{single_article['event']}}/{{ single_article['category']}}/{{ single_article['slug']}} ."
+                                title="Share by Email" data-service="email" target="_blank"><i class="fa  fa-envelope envo"
+                                                                                               aria-hidden="true"></i></a>
+                        </li>
+                        <li><a data-flip-widget="shareflip" title="Share on Flipit" target="_blank"
+                               href="https://share.flipboard.com/bookmarklet/popout?ext=sharethis&
+title={{single_article['headline']}}&url=https://therightdoctors.com/{{single_article['event']}}/{{ single_article['category']}}/{{ single_article['slug']}}&utm_campaign=widgets&utm_content={{single_article['sub_headline']}}&utm_source=sharethis&v=2">
+                            <img style="width: 30px;height: 30px;margin-top: -2px;
+    border-radius: 100%;" src="../../assets/flipboard_srsw.png" alt="flipboard icon"/></a></li>
+                        <li><a (click)="get_embed_code(single_article['video_url'])"
+                               title="Share by Email" data-service="email" target="_blank"><i class="fa fa-code backcode" aria-hidden="true"></i></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+
+        </div>
+        <div class="embed_code" *ngIf="iframe_html">
+            <button style="float:right" (click)="close_embed_code()"><i class="fa fa-remove"></i></button>
+            <div [innerHTML]="iframe_html"></div>
+        </div>
+        <div class="container">
+            <div class="row" *ngIf="(sing_art)">
+                <div class="col-md-9" style="margin-top: 10px;" *ngIf="(sing_art.length<=0)">
+                    <div *ngIf="true">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="text-center" *ngIf="isbrowser">
+                                    <vg-player class="vid_img ratio-4-3" style="width:100%" *ngIf="sources.length>0">
+                                        <vg-overlay-play></vg-overlay-play>
+                                        <vg-buffering></vg-buffering>
+                                        <vg-scrub-bar style="bottom: 36px !important;">
+                                            <vg-scrub-bar-current-time></vg-scrub-bar-current-time>
+                                            <vg-scrub-bar-buffering-time></vg-scrub-bar-buffering-time>
+                                        </vg-scrub-bar>
+                                        <vg-controls style="height:36px !important;" [vgAutohide]="true"
+                                                     [vgAutohideTime]="1.5">
+                                            <vg-play-pause></vg-play-pause>
+                                            <vg-playback-button></vg-playback-button>
+                                            <img width="30px;" (click)="backward(media)" class="control-fr"
+                                                 src="../assets/backward2.jpg">
+                                            &nbsp;
+                                            <img width="30px;" (click)="forward(media)" class="control-br"
+                                                 src="../assets/forward2.jpg">
+
+
+                                            <vg-time-display vgProperty="current" vgFormat="mm:ss"></vg-time-display>
+                                            <vg-scrub-bar style="pointer-events: none;"></vg-scrub-bar>
+                                            <vg-time-display vgProperty="total" vgFormat="mm:ss"></vg-time-display>
+
+                                            <vg-track-selector></vg-track-selector>
+                                            <vg-mute></vg-mute>
+                                            <vg-volume></vg-volume>
+
+                                            <vg-fullscreen></vg-fullscreen>
+                                        </vg-controls>
+                                        <video autoplay [vgMedia]="media" (ended)="nextVideo()" #media id="singleVideo"
+                                               preload="auto"
+                                               (play)="loveit(single_article['anchor'])"
+                                               poster="{{single_article['image_url']}}">
+                                            <source *ngFor="let item of sources" [src]="item.src" type="video/mp4">
+                                        </video>
+                                    </vg-player>
+                                    <div *ngIf="sources.length>0"></div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <br>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-3 pad-1-hi" *ngIf="single_article['a_highlights1'].length>1">
+                            <h2 class="highlight-new">Highlights</h2>
+                            <ul *ngIf="single_article['a_highlights1']" class="hi-lets">
+                                <li *ngIf="single_article['a_highlights1']">{{single_article['a_highlights1']}}</li>
+                                <li *ngIf="single_article['a_highlights2']">{{single_article['a_highlights2']}}</li>
+                                <li *ngIf="single_article['a_highlights3']">{{single_article['a_highlights3']}}</li>
+                                <li *ngIf="single_article['a_highlights4']">{{single_article['a_highlights4']}}</li>
+                            </ul>
+
+                        </div>
+                        <div class="col-md-9 content-sing">
+                            <div class="row">
+                                <div class="col-md-6 col-xs-12 col-sm-12 mar-top" *ngIf="single_article['guest1']">
+                                    <div class="row">
+                                        <div class="col-md-3 col-xs-3 col-sm-3 pad-right-0-img"
+                                             *ngIf="single_article['guest1_image_url'].length>0">
+                                            <img src="{{ single_article['guest1_image_url']}}" class="imag-stry"/></div>
+                                        <div class="col-md-9 col-xs-9 col-sm-9 "><h5 class="dr-name-sv">{{
+                                            single_article['guest1']}}</h5>
+                                            <p>{{ single_article['guest1_designation']}} {{
+                                                single_article['guest1_hospital']}}</p>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-xs-12 col-sm-12 mar-top" *ngIf="single_article['guest2']">
+                                    <div class="row">
+                                        <div class="col-md-3 col-xs-3 col-sm-3 pad-right-0-img">
+                                            <img src="{{ single_article['guest2_image_url']}}" class="imag-stry"/></div>
+                                        <div class="col-md-9 col-xs-9 col-sm-9 "><h5 class="dr-name-sv">{{
+                                            single_article['guest2']}}</h5>
+                                            <p>{{ single_article['guest2_designation']}} {{
+                                                single_article['guest2_hospital']}}</p>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                            </div>
+                            <p class="mar-btm-p" *ngIf="video_list.length>0">
+                                <b>Also Read:</b> <a
+                                    href="/{{video_list[0]['event']}}/{{video_list[0]['category']}}/{{video_list[0]['slug']}}"><span
+                                    style="color:#ff0000">&nbsp;{{video_list[0]['headline']}} {{video_list[0]['sub_headline']}}
+
+                                </span></a></p>
+                            <!--<div *ngIf="gus">
+                              <div class="row">
+                                <div class="col-md-6 col-xs-12 col-sm-12 mar-top" *ngIf="single_article['guest3']">
+                                  <div class="row">
+                                    <div class="col-md-3 col-xs-3 col-sm-3 pad-right-0-img">
+                                      <img src="{{ single_article['guest3_image_url']}}" class="imag-stry"/></div>
+                                    <div class="col-md-9 col-xs-9 col-sm-9 "> <h5 class="dr-name-sv">{{ single_article['guest3']}}</h5>
+                                      <p>{{ single_article['guest3_designation']}} {{ single_article['guest3_hospital']}}</p>
+                                    </div>
+
+                                  </div>
+                                </div>
+                                <div class="col-md-6 col-xs-12 col-sm-12 mar-top" *ngIf="single_article['guest4']">
+                                  <div class="row">
+                                    <div class="col-md-3 col-xs-3 col-sm-3 pad-right-0-img">
+                                      <img src="{{ single_article['guest4_image_url']}}" class="imag-stry"/></div>
+                                    <div class="col-md-9 col-xs-9 col-sm-9 "> <h5 class="dr-name-sv">{{ single_article['guest4']}}</h5>
+                                      <p>{{ single_article['guest4_designation']}} {{ single_article['guest4_hospital']}}</p>
+                                    </div>
+
+                                  </div>
+                                </div>
+
+                              </div>
+                            </div>
+                            <div *ngIf="single_article['guest5'].length > 0 || single_article['guest6'].length > 0">
+                              <div class="row">
+                                <div class="col-md-6 col-xs-12 col-sm-12 mar-top" *ngIf="single_article['guest5']">
+                                  <div class="row">
+                                    <div class="col-md-3 col-xs-3 col-sm-3 pad-right-0-img">
+                                      <img src="{{ single_article['guest5_image_url']}}" class="imag-stry"/></div>
+                                    <div class="col-md-9 col-xs-9 col-sm-9 "> <h5 class="dr-name-sv">{{ single_article['guest5']}}</h5>
+                                      <p>{{ single_article['guest5_designation']}} {{ single_article['guest5_hospital']}}</p>
+                                    </div>
+
+                                  </div>
+                                </div>
+                                <div class="col-md-6 col-xs-12 col-sm-12 mar-top" *ngIf="single_article['guest6']">
+                                  <div class="row">
+                                    <div class="col-md-3 col-xs-3 col-sm-3 pad-right-0-img">
+                                      <img src="{{ single_article['guest6_image_url']}}" class="imag-stry"/></div>
+                                    <div class="col-md-9 col-xs-9 col-sm-9 "> <h5 class="dr-name-sv">{{ single_article['guest6']}}</h5>
+                                      <p>{{ single_article['guest6_designation']}} {{ single_article['guest6_hospital']}}</p>
+                                    </div>
+
+                                  </div>
+                                </div>
+
+                              </div>
+                            </div>-->
+                            <br>
+
+                            <p class="para-p" *ngIf="single_article['description'].length>0">
+                                {{single_article['description']}}</p>
+                            <br>
+
+
+                            <div *ngIf="(sing_art)">
+                                <div *ngIf="(sing_art.length>1)" class="bor-top-q-a">
+                                    <div *ngFor=" let tra of sing_art">
+                                        <p class="para-p" *ngIf="single_article['event'] === 'stemi-india-lucknow-2018'">
+                                            {{tra.split(':')[1]}} </p> <br>
+                                        <p class="para-p">{{tra.split(':')[0]}} </p>
+                                        <p class="para-p">{{tra.split(':')[1]}} </p>
+
+                                        <p class="para-p">{{tra.split('>')[1]}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div *ngIf="single_article['category'] == 'feature'">
+                                 <div *ngIf="single_article['transcript_list'].length>0" class="bor-top-q-a">
+                            <div *ngFor="let tr of single_article['transcript_list'];let i=index" >
+                                 <p class="para-p">{{single_article['transcript_list'][i]['question']}}</p></div></div>
+                            </div> 
+                            <div *ngIf="single_article['category'] != 'feature'">
+                            <div *ngIf="single_article['transcript_list'].length>0" class="bor-top-q-a">
+                                <div *ngFor="let tr of single_article['transcript_list'];let i=index" >
+                                    <p class="para-p">{{tr['question'].split(':')[0]}}</p>
+                                    <p class="para-p">{{tr['question'].split(':')[1]}}</p>
+
+                                    <p class="para-p">{{tr['answer'].split(':')[0]}}</p>
+                                    <p class="para-p"> {{tr['answer'].split(':')[1]}}</p>
+                                </div>
+                            </div>
+                            </div>
+                            <div *ngIf="single_article['similar_topic'].length>0">
+
+                                <p><b>Tags:</b></p>
+                                <ul class="tages-li mar-btm-p">
+                                    <li *ngFor="let topic of single_article['similar_topic'].split(',')">{{topic}}</li>
+
+                                </ul>
+                            </div>
+                            <div class="p-mail">Mail Us At <i>
+                                <a href="mailto:editorial@therightdoctors.com" style="color:#ff0000"> editorial@therightdoctors.com.</a></i>
+                                Stay Updated On  
+                                <a href="https://www.facebook.com/therightdoctors">Facebook</a>, 
+                                <a href="https://twitter.com/therightdoctors">Twitter</a>, 
+                                <a href="https://www.youtube.com/channel/UCUZIhLsNbgkCqymAZshSVHQ">YouTube</a> 
+                                and <a href="https://www.linkedin.com/company/therightdoctors-com">LinkedIn</a>.
+                            </div>
+
+
+                            <div class="para para-whatsup"><em>Join <b>TheRightDoctors</b> On WhatsApp. Type "JOIN" And Send
+                                To
+                                9676401536</em></div>
+                        </div>
+
+                        <div class="col-md-12" *ngIf="video_list.length > 0">
+                            <h3 class="head-style-top-stories" style="margin-left:0px">Popular Videos</h3>
+                            <div class="row">
+
+                                <div class="col-md-4 col-xs-6 col-sm-6 item-part" *ngIf="s_list.length>0">
+                                    <a [routerLink]="['/'+s_list[0]['category']+'/'+s_list[0]['slug']]">
+                                        <img src="{{s_list[0]['image_url']}}" alt="{{s_list[0]['image_alt']}}"/>
+                                        <h4 class="hd4 color_base_m line-clamp line-clamp-2">{{s_list[0]['headline'] |
+                                            slice:0:50}}...</h4>
+                                        <p class="color_orange">{{s_list[0]['sub_headline']}}</p>
+                                    </a>
+                                </div>
+
+                                <div class="col-md-4 col-xs-6 col-sm-6 item-part" *ngIf="a_list.length>0">
+                                    <a [routerLink]="['/'+a_list[0]['category']+'/'+a_list[0]['slug']]">
+                                        <img src="{{a_list[0]['image_url']}}" alt="{{a_list[0]['image_alt']}}"/>
+                                        <h4 class="hd4 color_base_m line-clamp line-clamp-2">{{a_list[0]['headline'] |
+                                            slice:0:50}}...</h4>
+                                        <p class="color_orange">{{a_list[0]['sub_headline']}}</p>
+                                    </a>
+                                </div>
+
+                                <div class="col-md-4 col-xs-6 col-sm-6 item-part" *ngIf="w_list.length>0">
+                                    <a [routerLink]="['/'+w_list[0]['category']+'/'+w_list[0]['slug']]">
+                                        <img src="{{w_list[0]['image_url']}}" alt="{{w_list[0]['image_alt']}}"/>
+                                        <h4 class="hd4 color_base_m line-clamp line-clamp-2">{{w_list[0]['headline'] |
+                                            slice:0:50}}...</h4>
+                                        <p class="color_orange">{{w_list[0]['sub_headline']}}</p>
+                                    </a>
+                                </div>
+
+                                <div class="col-md-4 col-xs-6 col-sm-6 item-part">
+                                    <a [routerLink]="['/'+c_list[0]['category']+'/'+c_list[0]['slug']]">
+                                        <img src="{{c_list[0]['image_url']}}" alt="{{c_list[0]['image_alt']}}"/>
+                                        <h4 class="hd4 color_base_m line-clamp line-clamp-2">{{c_list[0]['headline'] |
+                                            slice:0:50}}...</h4>
+                                        <p class="color_orange">{{c_list[0]['sub_headline']}}</p>
+                                    </a>
+                                </div>
+
+                                <div class="col-md-4 col-xs-6 col-sm-6 item-part">
+                                    <a [routerLink]="['/'+wc_list[0]['category']+'/'+wc_list[0]['slug']]">
+                                        <img src="{{wc_list[0]['image_url']}}" alt="{{wc_list[0]['image_alt']}}"/>
+                                        <h4 class="hd4 color_base_m line-clamp line-clamp-2">{{wc_list[0]['headline'] |
+                                            slice:0:50}}...</h4>
+                                        <p class="color_orange">{{wc_list[0]['sub_headline']}}</p>
+                                    </a>
+                                </div>
+
+                                <div class="col-md-4 col-xs-6 col-sm-6 item-part">
+                                    <a [routerLink]="['/'+cs_list[0]['category']+'/'+cs_list[0]['slug']]">
+                                        <img src="{{cs_list[0]['image_url']}}" alt="{{cs_list[0]['image_alt']}}"/>
+                                        <h4 class="hd4 color_base_m line-clamp line-clamp-2">{{cs_list[0]['headline'] |
+                                            slice:0:50}}...</h4>
+                                        <p class="color_orange">{{cs_list[0]['sub_headline']}}</p>
+                                    </a>
+                                </div>
+
+                            </div>
+                            <!--  </ng-template>-->
+                            <br/>
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <h4 class="live-part-head1">Live Surgeries</h4>
+
+                                    <div class="surgeries">
+                                        <div class="row mar-btm-live1 ">
+                                            <a href="/csinic-2016/live-case/dr-manjunath-live-case-jaideva-bangalore">
+                                                <div class="col-md-5 col-xs-6 col-sm-6 img-part">
+                                                    <img src="https://storage.googleapis.com/web-assets/images/CSI-NIC_Images/LiveCases/Manjunath/Manjunath-large.jpg"
+                                                         alt="https://storage.googleapis.com/web-assets/images/CSI-NIC_Images/LiveCases/Manjunath/Manjunath-large.jpg">
+
+                                                </div>
+                                                <div class="col-md-7 col-xs-6 col-sm-6 content-part">
+                                                    <h4 class="hd4 color_base_m line-clamp line-clamp-2">Balloon Mitral
+                                                        Valvotomy By Dr. CN Manjunath From Jaideva...</h4>
+                                                    <p class="color_orange">Dr. Manjunath</p>
+                                                </div>
+                                            </a>
+                                        </div>
+
+                                        <div class="row mar-btm-live1">
+                                            <a href="/csinic-2016/live-case/dr-samin-sharma-live-case-apollo-hospital-jubilee-hills">
+                                                <div class="col-md-5 col-xs-6 col-sm-6 img-part">
+                                                    <img src="https://storage.googleapis.com/web-assets/images/CSI-NIC_Images/LiveCases/samin/samin-large.jpg"
+                                                         alt="https://storage.googleapis.com/web-assets/images/CSI-NIC_Images/LiveCases/samin/samin-large.jpg">
+
+                                                </div>
+                                                <div class="col-md-7 col-xs-6 col-sm-6 content-part">
+                                                    <h4 class="hd4 color_base_m line-clamp line-clamp-2">LAD Bifurcation
+                                                        Lesion
+                                                        By Dr. Samin Sharma From Mount ...</h4>
+                                                    <p class="color_orange">Dr. Samin Sharma</p>
+                                                </div>
+                                            </a>
+                                        </div>
+
+                                        <!--<div class="row mar-btm-live1">
+                                            <a href="/csinic-2016/live-case/dr-seshgiri-rao-live-case-nizam-hospital-hyderabad">
+                                                <div class="col-md-5 col-xs-6 col-sm-6 img-part">
+                                                    <img src="https://storage.googleapis.com/web-assets/images/CSI-NIC_Images/LiveCases/Seshagiri/Seshagiri-large.jpg"
+                                                         alt="https://storage.googleapis.com/web-assets/images/CSI-NIC_Images/LiveCases/Seshagiri/Seshagiri-large.jpg">
+                                                </div>
+                                                <div class="col-md-7 col-xs-6 col-sm-6 content-part">
+                                                    <h4 class="hd4 color_base_m line-clamp line-clamp-2">Tapered Stent in LAD by
+                                                        Dr. Seshgiri Rao Live From NIMS Hyderabad</h4>
+                                                    <p class="color_orange">Dr. Seshgiri Rao</p>
+                                                </div>
+                                            </a>
+                                        </div>-->
+
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6 last">
+                                    <h4 class="live-part-head1">Revolution Talk</h4>
+
+                                    <div class="surgeries">
+                                        <div class="row mar-btm-live1 ">
+                                            <a href="/revolution-talk/in-conversation/dr-p-manokar-senior-interventional-cardiologist-heart-failure-and-atrial-Fibrillation-epidemic-of-the-next-decade">
+                                                <div class="col-md-5 col-xs-6 col-sm-6 img-part">
+                                                    <img src="https://storage.googleapis.com/web-assets/optimized-images/revolution-talk/Dr.Manokar-large.jpg">
+
+                                                </div>
+                                                <div class="col-md-7 col-xs-6 col-sm-6 content-part">
+                                                    <h4 class="hd4 color_base_m line-clamp line-clamp-2"> Heart Failure and
+                                                        Atrial Fibrillation: Epidemic of the...</h4>
+                                                    <p class="color_orange"> Dr. P Manokar</p>
+                                                </div>
+                                            </a>
+                                        </div>
+
+                                        <div class="row mar-btm-live1">
+                                            <a href="/revolution-talk/in-conversation/dr-sarthak-sahu-senior-cardiologist-atrial-fibrillation-detection-and-drugs">
+                                                <div class="col-md-5 col-xs-6 col-sm-6 img-part">
+                                                    <img src="https://storage.googleapis.com/web-assets/optimized-images/revolution-talk/Dr.SarthakSahu-large.jpg">
+
+                                                </div>
+                                                <div class="col-md-7 col-xs-6 col-sm-6 content-part">
+                                                    <h4 class="hd4 color_base_m line-clamp line-clamp-2">Atrial
+                                                        Fibrillation:
+                                                        Detection and Drugs...</h4>
+                                                    <p class="color_orange">Dr. Sarthak Sahu</p>
+                                                </div>
+                                            </a>
+                                        </div>
+
+                                        <!--<div class="row mar-btm-live1">
+                                            <a href="/revolution-talk/in-conversation/dr-guruprasad-sogunuru-senior-consultant-cardiologist-undetected-non-valvular-atrial-fibrillation-prevalent-in-Indians">
+                                                <div class="col-md-5 col-xs-6 col-sm-6 img-part">
+                                                    <img src="https://storage.googleapis.com/web-assets/optimized-images/revolution-talk/Dr.GuruprasadSogunuru-large.jpg">
+
+                                                </div>
+                                                <div class="col-md-7 col-xs-6 col-sm-6 content-part">
+                                                    <h4 class="hd4 color_base_m line-clamp line-clamp-2"> Undetected
+                                                        non-valvular Atrial Fibrillation (AF) prevalent in Indians</h4>
+                                                    <p class="color_orange"> Dr. Guruprasad Sogunuru</p>
+                                                </div>
+                                            </a>
+                                        </div>-->
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+
+
+                <!-- new-->
+
+
+                <div class="col-md-9" style="margin-top: 10px;" *ngIf="(sing_art)">
+                    <div *ngIf="(sing_art.length>0)">
+
+
+                        <div *ngIf="sing_art.length>1">
+                            <img src="{{single_article['image_url1']}}">
+                        </div>
+
+
+                        <div class="row">
+
+
+                            <div class="col-md-12 content-sing">
+
+                                <p class="para-p" *ngIf="single_article['description'].length>1">
+                                    {{single_article['description']}} <br></p>
+
+
+                                <div *ngIf="(sing_art)">
+                                    <div *ngIf="((this.sing_art.length)>1)" class="">
+                                        <div *ngFor=" let tra of sing_art; let i=index">
+                                            <p class="para-p"
+                                               *ngIf="single_article['event'] === 'stemi-india-lucknow-2018'">
+                                                {{tra}} </p> <br>
+                                            <p class="para-p" *ngIf="single_article['event'] != 'stemi-india-lucknow-2018'">
+                                                {{tra}}</p>
+                                            <!-- <p class="para-p">{{tra.split(':')[0]}}</p>-->
+                                            <div class="pad-1-hi" *ngIf="i === 2">
+                                                <ul *ngIf="single_article['highlights1']" class="hi-lets2">
+                                                    <li *ngIf="single_article['highlights1']">"
+                                                        {{single_article['highlights1']}}
+                                                        "
+                                                    </li>
+                                                </ul>
+                                            </div>
+
+                                            <div class="pad-1-hi" *ngIf="i === 4">
+                                                <ul *ngIf="single_article['highlights2']" class="hi-lets2">
+                                                    <li *ngIf="single_article['highlights2']">"
+                                                        {{single_article['highlights2']}}
+                                                        "
+                                                    </li>
+                                                </ul>
+                                            </div>
+
+                                            <div class="pad-1-hi" *ngIf="i === 6">
+                                                <ul *ngIf="single_article['highlights3']" class="hi-lets2">
+                                                    <li *ngIf="single_article['highlights3']">"
+                                                        {{single_article['highlights3']}}
+                                                        "
+                                                    </li>
+                                                </ul>
+                                            </div>
+
+                                            <div class="pad-1-hi" *ngIf="i === 8">
+                                                <ul *ngIf="single_article['highlights4']" class="hi-lets2">
+                                                    <li *ngIf="single_article['highlights4']">"
+                                                        {{single_article['highlights4']}}
+                                                        "
+                                                    </li>
+                                                </ul>
+                                            </div>
+
+                                            <p class="para-p">{{tra.split('>')[1]}}</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                              <div *ngIf="single_article['category'] == 'feature'">
+                            <div *ngFor="let tr of single_article['transcript_list'];let i=index" >
+                                 <p class="para-p">{{single_article['transcript_list'][i]['question']}}</p><br><br></div>
+                            </div> 
+                            <div *ngIf="single_article['category'] != 'feature'">
+                            <div *ngIf="single_article['transcript_list'].length>0" class="bor-top-q-a">
+                                <div *ngFor="let tr of single_article['transcript_list'];let i=index" >
+                                    <p class="para-p">{{tr['question'].split(':')[0]}}</p>
+                                    <p class="para-p">{{tr['question'].split(':')[1]}}</p>
+
+                                    <p class="para-p">{{tr['answer'].split(':')[0]}}</p>
+                                    <p class="para-p"> {{tr['answer'].split(':')[1]}}</p>
+                                </div>
+                            </div>
+                            </div>
+                                <!--<div class="col-md-12 content-sing">
+                                <div  *ngIf="single_article['similar_topic'].length>0">
+                                  <p><b>Tags:</b></p>
+                                  <ul class="tages-li mar-btm-p">
+                                    <li *ngFor="let topic of single_article['similar_topic'].split(',')">{{topic}}</li>
+                                  </ul>
+                                </div>
+
+                                <div class="p-mail">Mail Us At <i>
+                                  <a href="mailto:editorial@therightdoctors.com" style="color:#ff0000"> editorial@therightdoctors.com.</a></i>
+                                  Stay Updated On  
+                                  <a href="https://www.facebook.com/therightdoctors">Facebook</a>, 
+                                  <a href="https://twitter.com/therightdoctors">Twitter</a>, 
+                                  <a href="https://www.youtube.com/channel/UCUZIhLsNbgkCqymAZshSVHQ">YouTube</a> 
+                                  and <a href="https://www.linkedin.com/company/therightdoctors-com">LinkedIn</a>.</div>
+                                <div class="para para-whatsup para-whatsup2"><em>Join <b>TheRightDoctors</b> On WhatsApp. Type "JOIN" And Send To 9676401536</em></div>
+                                </div>-->
+                            </div>
+                            <div class="col-md-12">
+                                <div class="text-center" *ngIf="isbrowser">
+                                    <vg-player class="vid_img ratio-4-3" style="width:100%" *ngIf="sources.length>0">
+                                        <vg-overlay-play></vg-overlay-play>
+                                        <vg-buffering></vg-buffering>
+                                        <vg-scrub-bar style="bottom: 36px !important;">
+                                            <vg-scrub-bar-current-time></vg-scrub-bar-current-time>
+                                            <vg-scrub-bar-buffering-time></vg-scrub-bar-buffering-time>
+                                        </vg-scrub-bar>
+                                        <vg-controls style="height:36px !important;" [vgAutohide]="true"
+                                                     [vgAutohideTime]="1.5">
+                                            <vg-play-pause></vg-play-pause>
+                                            <vg-playback-button></vg-playback-button>
+                                            <img width="30px;" (click)="backward(media)" class="control-fr"
+                                                 src="../assets/backward2.jpg">
+                                            &nbsp;
+                                            <img width="30px;" (click)="forward(media)" class="control-br"
+                                                 src="../assets/forward2.jpg">
+
+
+                                            <vg-time-display vgProperty="current" vgFormat="mm:ss"></vg-time-display>
+                                            <vg-scrub-bar style="pointer-events: none;"></vg-scrub-bar>
+                                            <vg-time-display vgProperty="total" vgFormat="mm:ss"></vg-time-display>
+
+                                            <vg-track-selector></vg-track-selector>
+                                            <vg-mute></vg-mute>
+                                            <vg-volume></vg-volume>
+
+                                            <vg-fullscreen></vg-fullscreen>
+                                        </vg-controls>
+                                        <video autoplay [vgMedia]="media" (ended)="nextVideo()" #media id="singleVideo1"
+                                               preload="auto"
+                                               (play)="loveit(single_article['anchor'])"
+                                               poster="{{single_article['image_url']}}">
+                                            <source *ngFor="let item of sources" [src]="item.src" type="video/mp4">
+                                        </video>
+                                    </vg-player>
+                                    <div *ngIf="sources.length>0"></div>
+                                </div>
+                                <!-- *ngIf="c_like" -->
+                                <div class="row" style="margin-top:20px;">
+
+                                    <div class="col-md-3 pad-1-hi" *ngIf="single_article['a_highlights1'].length >1">
+                                        <h2 class="highlight-new">Highlights</h2>
+                                        <ul *ngIf="single_article['a_highlights1']" class="hi-lets">
+                                            <li *ngIf="single_article['a_highlights1']">
+                                                {{single_article['a_highlights1']}}
+                                            </li>
+                                            <li *ngIf="single_article['a_highlights2']">
+                                                {{single_article['a_highlights2']}}
+                                            </li>
+                                            <li *ngIf="single_article['a_highlights3']">
+                                                {{single_article['a_highlights3']}}
+                                            </li>
+                                            <li *ngIf="single_article['a_highlights4']">
+                                                {{single_article['a_highlights4']}}
+                                            </li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="col-md-9">
+                                        <div class="row">
+                                            <div class="col-md-6 col-xs-12 col-sm-12 mar-top"
+                                                 *ngIf="single_article['guest1']">
+                                                <div class="row">
+                                                    <div class="col-md-3 col-xs-3 col-sm-3 pad-right-0-img">
+                                                        <!--*ngIf="single_article['guest1_image_url'].length>0"-->
+                                                        <img src="{{ single_article['guest1_image_url']}}"
+                                                             class="imag-stry guestimage"/>
+                                                    </div>
+                                                    <div class="col-md-9 col-xs-9 col-sm-9 "><h1 style="font-size:15px;"
+                                                                                                 class="guest_drname dr-name-sv">{{
+                                                        single_article['guest1']}}</h1>
+                                                        <p class="guest_designation_single" style="font-size: 11px;">{{
+                                                               single_article['guest1_designation']}}</p>
+                                                        <p class="guest_hospital_single" style="font-size: 11px;">{{
+                                                            single_article['guest1_hospital']}}</p>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 col-xs-12 col-sm-12 mar-top"
+                                                 *ngIf="single_article['guest2']">
+                                                <div class="row">
+                                                    <div class="col-md-3 col-xs-3 col-sm-3 pad-right-0-img">
+                                                        <img src="{{ single_article['guest2_image_url']}}"
+                                                             class="imag-stry"/></div>
+                                                    <div class="col-md-9 col-xs-9 col-sm-9 "><h5 class="dr-name-sv">{{
+                                                        single_article['guest2']}}</h5>
+                                                        <p style="font-size: 11px;">{{
+                                                            single_article['guest2_designation']}} {{
+                                                            single_article['guest2_hospital']}}</p>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <p class="mar-btm-p"
+                                           *ngIf="single_article['description'].length>0 && video_list.length>0"><b>Also
+                                            Read:</b>
+                                            <a href="/{{video_list[0]['event']}}/{{video_list[0]['category']}}/{{video_list[0]['slug']}}">
+                <span style="color:#ff0000">&nbsp;{{video_list[0]['headline']}} {{video_list[0]['sub_headline']}}
+                 </span></a></p>
+
+
+                                    </div>
+                                </div>
+
+
+
+
+                                <div class="like-comment-btns" style="margin-top:20px;" >
+                                    <button mat-stroked-button (click)="like_btn()" [ngClass]="'this.toggle1 = 1'? 'liked':'notLike'"> <i class="material-icons" style="font-size:20px">
+                                        thumb_up
+                                    </i> &nbsp;Like({{single_article['like'] + counter}})</button>
+                                    <!-- <button mat-stroked-button (click)="like_btn()"> <i class="material-icons" style="font-size:20px">
+                                        thumb_up
+                                    </i> &nbsp;Like</button>{{single_article['like'] + counter}} -->
+                                    <button mat-stroked-button (click)="toggled()"><i class="material-icons" style="font-size:20px">
+                                        comment
+                                    </i>&nbsp;Comment</button>
+                                    <!-- // --------------------------------------Changes made 12/6/19--------------------------------------------- -->
+                                    <button mat-stroked-button *ngIf="!follow_toggle" (click)="follow()"><i class="material-icons" style="font-size:20px">
+                                        add_circle_outline
+                                    </i>&nbsp;Follow</button>
+                                    <button mat-stroked-button *ngIf="follow_toggle"><i class="material-icons" style="font-size:20px">
+                                        check_circle_outline
+                                    </i>&nbsp;Following</button>
+
+                                   <button mat-stroked-button *ngIf="!playlist_toggle" (click)="add_to_list(); add_to_your_list()" ><i class="material-icons" style="font-size:20px">
+                                        playlist_add
+                                    </i> Add to List</button>
+                                    <button mat-stroked-button *ngIf="playlist_toggle"><i class="material-icons" style="font-size:20px">
+                                        playlist_add_check
+                                    </i> Added </button>
+                                    
+                                </div>
+                                <h1 class="cmt-head">Comments</h1>
+
+                                <div *ngIf="this.pip2 == 1">
+                                    <form class="example-form" #f='ngForm' novalidate>
+                                        <mat-form-field class="example-full-width">
+                                            <textarea matInput rows="3" [(ngModel)]="this.p" #comment="ngModel" name="comment"  placeholder="Add your comment" required></textarea>
+                                            <mat-error *ngIf="comment.invalid">
+                                                Please add your comment
+                                            </mat-error>
+                                        </mat-form-field>
+                                        <button mat-raised-button color="primary" type="button" (click)="cmmnt_btn()" style="margin-bottom:15px;" [disabled]="f.form.invalid"> Add Comment </button>
+
+                                    </form>
+                                </div>
+
+
+                                <button mat-raised-button color="warn" type="button" (click)="toggle()">{{buttonName}} comments</button>
+                                <div *ngIf="show">
+                                    <!--                                    <button mat-raised-button color="warn" type="button" (click)="untoggle()">Remove comments</button>-->
+                                    <div fxLayout="row" fxLayoutGap="10px" class="commemts-section" *ngFor="let pr_list of p_list; let i=index">
+                                        <div fxFlex="8" fxFlex.lt-sm="15">
+                                            <img src="assets/user.png" class="img-src-user"/>
+                                        </div>
+                                        <div fxFlex="92"  fxFlex.lt-sm="85" class="back-part-form">
+                                            <div  >
+                                                <div fxLayout="column">
+                                                    <p class="name-c"><b>{{pr_list['name']}}</b></p>
+                                                    <p class="cmt-res">{{pr_list['response']}} </p>
+                                                </div>
+                                                <div>
+                                                    <ul class="rply-ul">
+                                                        <li><span (click)="reply_btn(i)" > Reply </span></li>
+                                                        <li *ngIf="this.username==pr_list.name"><span  (click)="comment_delete(i)"> Delete Reply </span></li>
+                                                    </ul>
+                                                </div>
+                                                <div *ngIf="this.recom_toggle==1">
+                                                    <div *ngIf=" i==this.IC " >
+                                                        <mat-form-field class="example-full-width">
+                                                            <p> @{{this.reply_user}}</p>
+                                                            <textarea matInput name="bank_name" [(ngModel)]="this.reply_temp.response" #name="ngModel" value="" id="bank_name"></textarea>
+                                                        </mat-form-field><br>
+                                                        <div>
+                                                            <button mat-flat-button color="primary" type="button" (click)="add_reply(i)"> Add Reply  </button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div fxLayout="column" class="child-cmts">
+                                                    <div class="example-form">
+                                                        <div *ngIf="pr_list['replies'].length>0">
+                                                            <div *ngFor="let plist of pr_list['replies']; let j=index" >
+                                                                <div fxLayout="row" fxLayoutGap="10px">
+                                                                    <div fxFLex="10">
+                                                                        <img src="assets/user.png" class="img-src-user"/>
+                                                                    </div>
+                                                                    <div fxFlex="90">
+                                                                        <p class="name-c"><b> {{j+1}} ) {{plist['name']}}</b></p>
+                                                                        <p class="cmt-res"><b>@{{plist['replyto_id']}}</b> {{plist['response']}}</p>
+                                                                        <ul class="rply-ul">
+                                                                            <li><span (click)="toggle_reply(i,j)"> Reply </span></li>
+                                                                            <li *ngIf="this.username==plist.name"><span  (click)="reply_delete(i,j)"> Delete Reply </span></li>
+                                                                        </ul>
+
+                                                                        <div >
+                                                                        </div>
+                                                                        <div *ngIf="this.reply_toggle==1">
+                                                                            <div *ngIf=" i==this.I && j==this.J " >
+
+                                                                                <mat-form-field class="example-full-width">
+                                                                                    <p> @{{this.reply_user}}</p>
+                                                                                    <textarea matInput name="bank_name" [(ngModel)]="this.reply_temp.response" #name="ngModel" value="" id="bank_name"></textarea>
+                                                                                </mat-form-field><br>
+                                                                                <div>
+                                                                                    <button mat-raised-button color="primary" type="button" (click)="add_reply(i)"> Add Reply  </button>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+
+                                <div class="row">
+                                    <div class="col-md-12 content-sing">
+                                        <div *ngIf="single_article['similar_topic'].length>0">
+                                            <p><b>Tags:</b></p>
+                                            <ul class="tages-li mar-btm-p">
+                                                <li *ngFor="let topic of single_article['similar_topic'].split(',')">
+                                                    {{topic}}
+                                                </li>
+                                            </ul>
+                                        </div>
+
+                                        <div class="p-mail">Mail Us At <i>
+                                            <a href="mailto:editorial@therightdoctors.com" style="color:#ff0000"> editorial@therightdoctors.com.</a></i>
+                                            Stay Updated On  
+                                            <a href="https://www.facebook.com/therightdoctors">Facebook</a>, 
+                                            <a href="https://twitter.com/therightdoctors">Twitter</a>, 
+                                            <a href="https://www.youtube.com/channel/UCUZIhLsNbgkCqymAZshSVHQ">YouTube</a> 
+                                            and <a href="https://www.linkedin.com/company/therightdoctors-com">LinkedIn</a>.
+                                        </div>
+                                        <div class="para para-whatsup para-whatsup2"><em>Join <b>TheRightDoctors</b>
+                                            On WhatsApp. Type
+                                            "JOIN" And Send To 9676401536</em></div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="col-md-12 pad-m-ad" *ngIf="video_list.length > 0">
+                            <h3 class="head-style-top-stories" style="margin-left:0px">Popular Videos</h3>
+
+                            <div class="row">
+
+                                <div class="col-md-4 col-xs-6 col-sm-6 item-part" *ngIf="s_list.length>0">
+                                    <a [routerLink]="['/'+s_list[0]['category']+'/'+s_list[0]['slug']]">
+                                        <img src="{{s_list[0]['image_url']}}" alt="{{s_list[0]['image_alt']}}"/>
+                                        <h4 class="hd4 color_base_m line-clamp line-clamp-2">{{s_list[0]['headline'] |
+                                            slice:0:50}}...</h4>
+                                        <p class="color_orange">{{s_list[0]['sub_headline']}}</p>
+                                    </a>
+                                </div>
+
+                                <div class="col-md-4 col-xs-6 col-sm-6 item-part">
+                                    <a [routerLink]="['/'+a_list[0]['category']+'/'+a_list[0]['slug']]">
+                                        <img src="{{a_list[0]['image_url']}}" alt="{{a_list[0]['image_alt']}}"/>
+                                        <h4 class="hd4 color_base_m line-clamp line-clamp-2">{{a_list[0]['headline'] |
+                                            slice:0:50}}...</h4>
+                                        <p class="color_orange">{{a_list[0]['sub_headline']}}</p>
+                                    </a>
+                                </div>
+
+                                <div class="col-md-4 col-xs-6 col-sm-6 item-part">
+                                    <a [routerLink]="['/'+w_list[0]['category']+'/'+w_list[0]['slug']]">
+                                        <img src="{{w_list[0]['image_url']}}" alt="{{w_list[0]['image_alt']}}"/>
+                                        <h4 class="hd4 color_base_m line-clamp line-clamp-2">{{w_list[0]['headline'] |
+                                            slice:0:50}}...</h4>
+                                        <p class="color_orange">{{w_list[0]['sub_headline']}}</p>
+                                    </a>
+                                </div>
+
+                                <div class="col-md-4 col-xs-6 col-sm-6 item-part">
+                                    <a [routerLink]="['/'+c_list[0]['category']+'/'+c_list[0]['slug']]">
+                                        <img src="{{c_list[0]['image_url']}}" alt="{{c_list[0]['image_alt']}}"/>
+                                        <h4 class="hd4 color_base_m line-clamp line-clamp-2">{{c_list[0]['headline'] |
+                                            slice:0:50}}...</h4>
+                                        <p class="color_orange">{{c_list[0]['sub_headline']}}</p>
+                                    </a>
+                                </div>
+
+                                <div class="col-md-4 col-xs-6 col-sm-6 item-part">
+                                    <a [routerLink]="['/'+wc_list[0]['category']+'/'+wc_list[0]['slug']]">
+                                        <img src="{{wc_list[0]['image_url']}}" alt="{{wc_list[0]['image_alt']}}"/>
+                                        <h4 class="hd4 color_base_m line-clamp line-clamp-2">{{wc_list[0]['headline'] |
+                                            slice:0:50}}...</h4>
+                                        <p class="color_orange">{{wc_list[0]['sub_headline']}}</p>
+                                    </a>
+                                </div>
+
+                                <div class="col-md-4 col-xs-6 col-sm-6 item-part">
+                                    <a [routerLink]="['/'+cs_list[0]['category']+'/'+cs_list[0]['slug']]">
+                                        <img src="{{cs_list[0]['image_url']}}" alt="{{cs_list[0]['image_alt']}}"/>
+                                        <h4 class="hd4 color_base_m line-clamp line-clamp-2">{{cs_list[0]['headline'] |
+                                            slice:0:50}}...</h4>
+                                        <p class="color_orange">{{cs_list[0]['sub_headline']}}</p>
+                                    </a>
+                                </div>
+
+                            </div>
+
+                            <br/>
+
+
+                        </div>
+
+                    </div>
+                </div>
+
+
+
+                <div class="col-md-3 pad-0-d">
+                    <div class="mar-top-right">
+                        <mat-tab-group>
+                            <mat-tab label="Recommended">
+                                <div *ngIf="!showrecom">
+                                    <div class="row  item-tops" style="clear:both;width:100%" *ngFor="let data of notagrecom">
+                                          <a href="/{{data['event']}}/{{data['category']}}/{{data['slug']}}">
+<!--                                        <a [routerLink]="['/'+data['category']+'/'+data['slug']]">-->
+                                            <div class="col-md-4 col-xs-4 col-sm-4 pad-left-0-d">
+                                                <img src="{{data.image_url}}" style="width:100%"/>
+                                            </div>
+
+                                            <div class="col-md-8 col-xs-8 col-sm-8 pad-adject-text">
+                                                <p>{{data['headline'] | slice:0:50}}...</p>
+                                                <p class="color_orange mar-adj"><b>{{data['sub_headline']}}</b></p>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <!--</ng-template>-->
+
+                                </div>
+
+
+
+                                <div *ngIf="showrecom">
+                                    <div class="row  item-tops" style="clear:both;width:100%" *ngFor="let data of articles">
+                                        <!--                                <a [routerLink]="['/articles'+'/'+data['slug']+'/'+data['doctor_articles_id']]">-->
+<!--                                        <a [routerLink]="['/'+data['category']+'/'+data['slug']]">-->
+                                        <a href="/{{data['event']}}/{{data['category']}}/{{data['slug']}}">
+
+                                        <div class="col-md-4 col-xs-4 col-sm-4 pad-left-0-d">
+                                            <img src="{{data.image_url}}" style="width:100%"/>
+                                        </div>
+
+                                        <div class="col-md-8 col-xs-8 col-sm-8 pad-adject-text">
+                                            <p>{{data['headline'] | slice:0:50}}...</p>
+                                            <p class="color_orange mar-adj"><b>{{data['sub_headline']}}</b></p>
+                                        </div>
+                                        </a>
+                                    </div>
+                                    <!--</ng-template>-->
+                                </div>
+
+
+
+                            </mat-tab>
+                            <mat-tab label="Your List">
+    <!--  item1-->
+                                <!-- <div class="add-list" style="clear:both;width:100%" *ngIf="s_list1.length>0"> -->
+                                        <div class="row  item-tops" style="clear:both;width:100%" *ngIf="s_list1.length>0">
+                                    <!-- <div fxLayout="row" fxLayoutGap="10px"> -->
+                                            <div *ngFor="let s of s_list1">
+                                            <a [routerLink]="['/'+s['video_category']+'/'+s['video_slug']]">
+                                                <div class="col-md-4 col-xs-4 col-sm-4 pad-left-0-d">
+                                                    <img src="{{s['video_image_url']}}" style="width:100%"/>
+                                                </div>
+                                                <div class="col-md-8 col-xs-8 col-sm-8 pad-adject-text">
+                                            <p> {{s['video_headline'] | slice:0:50}}...</p>
+                                            <p class="color_orange mar-adj"><b>{{s['video_sub_headline']}}</b></p>
+                                        </div>
+                                    </a>
+                                            </div>
+                                    </div>
+                                
+                                <!--  item2-->
+                                <div class="row  item-tops" style="clear:both;width:100%" *ngIf="w_list1.length>0">
+                                        <!-- <div fxLayout="row" fxLayoutGap="10px"> -->
+                                                <div *ngFor="let w of w_list1">
+                                                <a [routerLink]="['/'+w['video_category']+'/'+w['video_slug']]">
+                                                    <div class="col-md-4 col-xs-4 col-sm-4 pad-left-0-d">
+                                                        <img src="{{w['video_image_url']}}" style="width:100%"/>
+                                                    </div>
+                                                    <div class="col-md-8 col-xs-8 col-sm-8 pad-adject-text">
+                                                <p> {{w['video_headline'] | slice:0:50}}...</p>
+                                                <p class="color_orange mar-adj"><b>{{w['video_sub_headline']}}</b></p>
+                                            </div>
+                                        </a>
+                                                </div>
+                                        </div>
+                                <!--  item3-->
+                                <div class="row  item-tops" style="clear:both;width:100%" *ngIf="a_list1.length>0">
+                                        <!-- <div fxLayout="row" fxLayoutGap="10px"> -->
+                                            <div *ngFor="let a of a_list1">
+                                                <a [routerLink]="['/'+a['video_category']+'/'+a['video_slug']]">
+                                                    <div class="col-md-4 col-xs-4 col-sm-4 pad-left-0-d">
+                                                        <img src="{{a['video_image_url']}}" style="width:100%"/>
+                                                    </div>
+                                                    <div class="col-md-8 col-xs-8 col-sm-8 pad-adject-text">
+                                                <p> {{a['video_headline'] | slice:0:50}}...</p>
+                                                <p class="color_orange mar-adj"><b>{{a['video_sub_headline']}}</b></p>
+                                            </div>
+                                        </a>
+                                            </div>
+                                        </div>
+
+                                        <div class="row  item-tops" style="clear:both;width:100%" *ngIf="c_list1.length>0">
+                                                <!-- <div fxLayout="row" fxLayoutGap="10px"> -->
+                                                        <div *ngFor="let c of c_list1">
+                                                        <a [routerLink]="['/'+c['video_category']+'/'+c['video_slug']]">
+                                                            <div class="col-md-4 col-xs-4 col-sm-4 pad-left-0-d">
+                                                                <img src="{{c['video_image_url']}}" style="width:100%"/>
+                                                            </div>
+                                                            <div class="col-md-8 col-xs-8 col-sm-8 pad-adject-text">
+                                                        <p> {{c['video_headline'] | slice:0:50}}...</p>
+                                                        <p class="color_orange mar-adj"><b>{{c['video_sub_headline']}}</b></p>
+                                                    </div>
+                                                </a>
+                                                        </div>
+                                                </div>
+                                                <div class="row  item-tops" style="clear:both;width:100%" *ngIf="wc_list1.length>0">
+                                                        <!-- <div fxLayout="row" fxLayoutGap="10px"> -->
+                                                                <div *ngFor="let wc of wc_list1">
+                                                                <a [routerLink]="['/'+wc['video_category']+'/'+wc['video_slug']]">
+                                                                    <div class="col-md-4 col-xs-4 col-sm-4 pad-left-0-d">
+                                                                        <img src="{{wc['video_image_url']}}" style="width:100%"/>
+                                                                    </div>
+                                                                    <div class="col-md-8 col-xs-8 col-sm-8 pad-adject-text">
+                                                                <p> {{wc['video_headline'] | slice:0:50}}...</p>
+                                                                <p class="color_orange mar-adj"><b>{{wc['video_sub_headline']}}</b></p>
+                                                            </div>
+                                                        </a>
+                                                        </div>
+                                                        </div>
+                                                        <div class="row  item-tops" style="clear:both;width:100%" *ngIf="cs_list1.length>0">
+                                                                <!-- <div fxLayout="row" fxLayoutGap="10px"> -->
+                                                                        <div *ngFor="let cs of cs_list1">
+                                                                        <a [routerLink]="['/'+cs['video_category']+'/'+cs['video_slug']]">
+                                                                            <div class="col-md-4 col-xs-4 col-sm-4 pad-left-0-d">
+                                                                                <img src="{{cs['video_image_url']}}" style="width:100%"/>
+                                                                            </div>
+                                                                            <div class="col-md-8 col-xs-8 col-sm-8 pad-adject-text">
+                                                                        <p> {{cs['video_headline'] | slice:0:50}}...</p>
+                                                                        <p class="color_orange mar-adj"><b>{{cs['video_sub_headline']}}</b></p>
+                                                                    </div>
+                                                                </a>
+                                                                </div>
+                                                                </div>
+    
+                            </mat-tab>
+
+<!--                            <mat-tab label="TopStories">-->
+<!--    &lt;!&ndash;                            <ng-template ngFor let-item [ngForOf]="createRange(4)" let-currentIndex="index+6">&ndash;&gt;-->
+<!--                                <div class="row  item-tops" style="clear:both;width:100%" *ngIf="s_list.length>0">-->
+<!--                                    <a [routerLink]="['/'+s_list[1]['category']+'/'+s_list[1]['slug']]">-->
+<!--                                        <div class="col-md-4 col-xs-4 col-sm-4 pad-left-0-d">-->
+<!--                                            <img src="{{s_list[1]['image_url']}}" style="width:100%"/>-->
+<!--                                        </div>-->
+
+<!--                                        <div class="col-md-8 col-xs-8 col-sm-8 pad-adject-text">-->
+<!--                                            <p>{{s_list[1]['headline'] | slice:0:50}}...</p>-->
+<!--                                            <p class="color_orange mar-adj"><b>{{s_list[1]['sub_headline']}}</b></p>-->
+<!--                                        </div>-->
+<!--                                    </a>-->
+<!--                                </div>-->
+<!--                                <div class="row  item-tops" style="clear:both;width:100%" *ngIf="a_list.length>0" >-->
+<!--                                    <a [routerLink]="['/'+a_list[1]['category']+'/'+a_list[1]['slug']]">-->
+<!--                                        <div class="col-md-4 col-xs-4 col-sm-4 pad-left-0-d">-->
+<!--                                            <img src="{{a_list[1]['image_url']}}" style="width:100%"/>-->
+<!--                                        </div>-->
+
+<!--                                        <div class="col-md-8 col-xs-8 col-sm-8 pad-adject-text">-->
+<!--                                            <p>{{a_list[1]['headline'] | slice:0:50}}...</p>-->
+<!--                                            <p class="color_orange mar-adj"><b>{{a_list[1]['sub_headline']}}</b></p>-->
+<!--                                        </div>-->
+<!--                                    </a>-->
+<!--                                </div>-->
+<!--                                <div class="row  item-tops" style="clear:both;width:100%" *ngIf="w_list.length>0">-->
+<!--                                    <a [routerLink]="['/'+w_list[1]['category']+'/'+w_list[1]['slug']]">-->
+<!--                                        <div class="col-md-4 col-xs-4 col-sm-4 pad-left-0-d">-->
+<!--                                            <img src="{{w_list[1]['image_url']}}" style="width:100%"/>-->
+<!--                                        </div>-->
+
+<!--                                        <div class="col-md-8 col-xs-8 col-sm-8 pad-adject-text">-->
+<!--                                            <p>{{w_list[1]['headline'] | slice:0:50}}...</p>-->
+<!--                                            <p class="color_orange mar-adj"><b>{{w_list[1]['sub_headline']}}</b></p>-->
+<!--                                        </div>-->
+<!--                                    </a>-->
+<!--                                </div>-->
+<!--                                <div class="row  item-tops" style="clear:both;width:100%" *ngIf="c_list.length>0">-->
+<!--                                    <div class="row  item-tops" style="clear:both;width:100%">-->
+<!--                                        <a [routerLink]="['/'+c_list[1]['category']+'/'+c_list[1]['slug']]">-->
+<!--                                            <div class="col-md-4 col-xs-4 col-sm-4 pad-left-0-d">-->
+<!--                                                <img src="{{c_list[1]['image_url']}}" style="width:100%"/>-->
+<!--                                            </div>-->
+
+<!--                                            <div class="col-md-8 col-xs-8 col-sm-8 pad-adject-text">-->
+<!--                                                <p>{{c_list[1]['headline'] | slice:0:50}}...</p>-->
+<!--                                                <p class="color_orange mar-adj"><b>{{c_list[1]['sub_headline']}}</b></p>-->
+<!--                                            </div>-->
+<!--                                        </a>-->
+<!--                                    </div>-->
+
+<!--                                    &lt;!&ndash;</ng-template>&ndash;&gt;-->
+
+<!--                                </div>-->
+<!--    &lt;!&ndash;                            </ng-template>&ndash;&gt;-->
+<!--                            </mat-tab>-->
+                        </mat-tab-group>
+                    </div>
+
+
+
+                <!-- <div class="col-md-3 pad-0-d"> -->
+
+                    <div class=" mar-top-right">
+                        <div class="subscribe">
+                            <h3>Subscribe to TheRightDoctors</h3>
+                            <form role="form" (ngSubmit)="subscribe_email()" novalidate #f="ngForm">
+                                <div class="input-group">
+                                    <input type="email" class="form-control" aria-label="..." placeholder="Enter Email" name="email" [(ngModel)]="model.email" required>
+                                    <div class="input-group-btn">
+                                        <button type="submit" class="btn btn-success btn-custom" [disabled]="!f.form.valid">Subscribe</button>
+                                    </div>
+                                </div>
+                            </form>
+                            <h5 class="news-what-fb-head">News and Other Updates</h5>
+                            <div class="one_full_less" style="clear:both; float:left">
+                                <div class="one_half_less wht-fb" align="center">
+                                    <h5><span><img src="assets/icon-whatsapp.svg" class="wid-what-app"/></span>&nbsp;Whatsapp</h5>
+                                    <a href="https://api.whatsapp.com/send?text=JOIN&phone=919676401536" target="_blank">
+                                        <button type="button" class="btn btn-success" style="margin-top:10px">Subscribe</button>
+                                    </a>
+                                </div>
+                                <div class="one_half_less last wht-fb" align="center">
+                                    <h5><span><img src="assets/icon-facebook.svg" class="wid-what-app"/></span>&nbsp;Fb Messenger</h5>
+                                    <a href="https://www.facebook.com/therightdoctors/" target="_blank">
+                                        <button type="button" class="btn btn-fb" style="margin-top:10px">Subscribe</button>
+                                    </a>
+                                </div>
+                            </div>
+
+
+                        </div>
+
+                    </div>
+
+
+<!--                    <div class=" mar-top-right " style="clear:both;float:left;">-->
+                        <!--                            <ng-template ngFor let-item [ngForOf]="createRange(4)" let-currentIndex="index+6">-->
+<!--                        <div *ngIf="!showrecom">-->
+<!--                            <div class="row  item-tops" style="clear:both;width:100%" *ngIf="s_list.length>0">-->
+<!--                                <a [routerLink]="['/'+s_list[1]['category']+'/'+s_list[1]['slug']]">-->
+<!--                                    <div class="col-md-4 col-xs-4 col-sm-4 pad-left-0-d">-->
+<!--                                        <img src="{{s_list[1]['image_url']}}" style="width:100%"/>-->
+<!--                                    </div>-->
+
+<!--                                    <div class="col-md-8 col-xs-8 col-sm-8 pad-adject-text">-->
+<!--                                        <p>{{s_list[1]['headline'] | slice:0:50}}...</p>-->
+<!--                                        <p class="color_orange mar-adj"><b>{{s_list[1]['sub_headline']}}</b></p>-->
+<!--                                    </div>-->
+<!--                                </a>-->
+<!--                            </div>-->
+<!--                            <div class="row  item-tops" style="clear:both;width:100%" *ngIf="a_list.length>0">-->
+<!--                                <a [routerLink]="['/'+a_list[1]['category']+'/'+a_list[1]['slug']]">-->
+<!--                                    <div class="col-md-4 col-xs-4 col-sm-4 pad-left-0-d">-->
+<!--                                        <img src="{{a_list[1]['image_url']}}" style="width:100%"/>-->
+<!--                                    </div>-->
+
+<!--                                    <div class="col-md-8 col-xs-8 col-sm-8 pad-adject-text">-->
+<!--                                        <p>{{a_list[1]['headline'] | slice:0:50}}...</p>-->
+<!--                                        <p class="color_orange mar-adj"><b>{{a_list[1]['sub_headline']}}</b></p>-->
+<!--                                    </div>-->
+<!--                                </a>-->
+<!--                            </div>-->
+<!--                            <div class="row  item-tops" style="clear:both;width:100%" *ngIf="w_list.length>0">-->
+<!--                                <a [routerLink]="['/'+w_list[1]['category']+'/'+w_list[1]['slug']]">-->
+<!--                                    <div class="col-md-4 col-xs-4 col-sm-4 pad-left-0-d">-->
+<!--                                        <img src="{{w_list[1]['image_url']}}" style="width:100%"/>-->
+<!--                                    </div>-->
+
+<!--                                    <div class="col-md-8 col-xs-8 col-sm-8 pad-adject-text">-->
+<!--                                        <p>{{w_list[1]['headline'] | slice:0:50}}...</p>-->
+<!--                                        <p class="color_orange mar-adj"><b>{{w_list[1]['sub_headline']}}</b></p>-->
+<!--                                    </div>-->
+<!--                                </a>-->
+<!--                            </div>-->
+<!--                            <div class="row  item-tops" style="clear:both;width:100%" *ngIf="c_list.length>0">-->
+<!--                                <div class="row  item-tops" style="clear:both;width:100%">-->
+<!--                                    <a [routerLink]="['/'+c_list[1]['category']+'/'+c_list[1]['slug']]">-->
+<!--                                        <div class="col-md-4 col-xs-4 col-sm-4 pad-left-0-d">-->
+<!--                                            <img src="{{c_list[1]['image_url']}}" style="width:100%"/>-->
+<!--                                        </div>-->
+
+<!--                                        <div class="col-md-8 col-xs-8 col-sm-8 pad-adject-text">-->
+<!--                                            <p>{{c_list[1]['headline'] | slice:0:50}}...</p>-->
+<!--                                            <p class="color_orange mar-adj"><b>{{c_list[1]['sub_headline']}}</b></p>-->
+<!--                                        </div>-->
+<!--                                    </a>-->
+<!--                                </div>-->
+
+<!--                                &lt;!&ndash;</ng-template>&ndash;&gt;-->
+
+<!--                            </div>-->
+<!--                        </div>-->
+
+<!--                        <div *ngIf="showrecom">-->
+<!--                            <div class="row  item-tops" style="clear:both;width:100%" *ngFor="let data of articles">-->
+<!--                                <a [routerLink]="['/articles'+'/'+data['slug']+'/'+data['doctor_articles_id']]">-->
+<!--                                    <div class="col-md-4 col-xs-4 col-sm-4 pad-left-0-d">-->
+<!--                                        <img src="{{data.image_url}}" style="width:100%"/>-->
+<!--                                    </div>-->
+
+<!--                                    <div class="col-md-8 col-xs-8 col-sm-8 pad-adject-text">-->
+<!--                                        <p>{{data['headline'] | slice:0:50}}...</p>-->
+<!--                                        <p class="color_orange mar-adj"><b>{{data['sub_headline']}}</b></p>-->
+<!--                                    </div>-->
+<!--                                </a>-->
+<!--                            </div>-->
+<!--                            &lt;!&ndash;</ng-template>&ndash;&gt;-->
+<!--                        </div>-->
+
+                        <!--                            </ng-template>-->
+
+<!--                    </div>-->
+
+
+                    <div class=" mar-top-right " style="clear:both;float:left;">
+<!--                        <h4 class="top">Recommended</h4>-->
+<!--                        &lt;!&ndash;<ng-template ngFor let-item [ngForOf]="createRange(4)" let-currentIndex="index+6">&ndash;&gt;-->
+<!--                        <div *ngIf="!showrecom">-->
+<!--                            <div class="row  item-tops" style="clear:both;width:100%" *ngFor="let data of notagrecom">-->
+<!--                                &lt;!&ndash;  <a href="/{{data['event']}}/{{data['category']}}/{{data['slug']}}">&ndash;&gt;-->
+<!--                                <a [routerLink]="['/'+data['category']+'/'+data['slug']]">-->
+<!--                                    <div class="col-md-4 col-xs-4 col-sm-4 pad-left-0-d">-->
+<!--                                        <img src="{{data.image_url}}" style="width:100%"/>-->
+<!--                                    </div>-->
+
+<!--                                    <div class="col-md-8 col-xs-8 col-sm-8 pad-adject-text">-->
+<!--                                        <p>{{data['headline'] | slice:0:50}}...</p>-->
+<!--                                        <p class="color_orange mar-adj"><b>{{data['sub_headline']}}</b></p>-->
+<!--                                    </div>-->
+<!--                                </a>-->
+<!--                            </div>-->
+<!--                                &lt;!&ndash;</ng-template>&ndash;&gt;-->
+
+<!--                            </div>-->
+                        </div>
+
+                        <div class=" mar-top-right">
+                            <h4 class="top" style="text-align:center;">Connect with TheRightDoctors</h4>
+                            <ul class="icons-fallow-new" >
+                                <li><i class="fa fa-facebook fb" aria-hidden="true"></i>
+                                    <a data-service="facebook" target="_blank" title="Share on Facebook"
+                                       href="https://www.facebook.com/therightdoctors">&nbsp;&nbsp;<b>Like</b> us on
+                                        Facebook</a>
+                                </li>
+
+                                <li><i class="fa fa-twitter twit-clr" aria-hidden="true"></i>
+                                    <a data-service="twitter" target="_blank" title="Follow us on Twitter"
+                                       href="https://twitter.com/therightdoctors">&nbsp;&nbsp;<b>Follow</b> us on Twitter
+                                    </a>
+                                </li>
+
+                                <!-- <li><i class="fa fa-google-plus google-plus" aria-hidden="true"></i>
+                                    <a data-service="gplus" target="_blank" title="Follow us on Google Plus"
+                                       href="https://plus.google.com/+TheRightDoctors">&nbsp;&nbsp;<b>Circle</b> us on
+                                        Google+</a>
+                                </li> -->
+
+                                <li><i class="fa fa-linkedin linkd" aria-hidden="true"></i>
+                                    <a data-service="linkedin" target="_blank" title="Follow us on Linkedin"
+                                       href="https://www.linkedin.com/company/therightdoctors-com">&nbsp;&nbsp;<b>Add</b> us
+                                        on
+                                        Linkedin</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="clearfix"></div>
+                        <div class=" mar-top-right">
+                            <h4 class="top">Trending Presentations</h4>
+
+                            <div class="row item-tops" style="clear:both;width:100%">
+                                <a [routerLink]="['/specials/wccpci-2016/presentation/Dr.%20Samin%20K%20Sharma%20MD,NOAC%20in%20NVAF:%20Status%202016/57e664f55ea33af71b22942c']">
+                                    <div class="col-md-4 col-xs-4 col-sm-4 pad-left-0-d">
+                                        <img src="https://storage.googleapis.com/web-assets/images/presentations/thumbs/Saumitra%20Ray.jpg"
+                                             alt="Dr Saumitra ray" style="width:100%"/>
+                                    </div>
+
+                                    <div class="col-md-8 col-xs-8 col-sm-8 pad-adject-text">
+                                        <p> NOAC in NVAF: Status 2016</p>
+                                        <p class="color_orange mar-adj"><b>Dr. Saumitra Ray</b></p>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="row item-tops" style="clear:both;width:100%">
+                                <a [routerLink]="['/specials/wccpci-2016/presentation/dr-s-ramakrishnan-stemi-care-in-India-challenges-ahead/57e6370fa273e4660f965cc2']">
+
+                                    <div class="col-md-4 col-xs-4 col-sm-4 pad-left-0-d">
+                                        <img src="https://storage.googleapis.com/web-assets/images/presentations/thumbs/Ramakrishnan.jpg"
+                                             alt="Dr Ramakrishna" style="width:100%"/>
+                                    </div>
+
+                                    <div class="col-md-8 col-xs-8 col-sm-8 pad-adject-text">
+                                        <p>STEMI care in India Challenges ahead</p>
+                                        <p class="color_orange mar-adj"><b>Dr. Ramakrishna</b></p>
+                                    </div>
+
+                                </a>
+                            </div>
+                            <div class="row item-tops" style="clear:both;width:100%">
+                                <a [routerLink]="['/specials/wccpci-2016/presentation/dr-jagdish-s-hiremath-oral-anticoagulants-in-cardiology-new-frontiers/567a2365a3ecfead3f7f2e39']">
+
+                                    <div class="col-md-4 col-xs-4 col-sm-4 pad-left-0-d">
+                                        <img src="https://storage.googleapis.com/web-assets/images/presentations/thumbs/Dr.JS%20Hiremath.jpg"
+                                             alt="Dr JS Hiremath" style="width:100%"/>
+                                    </div>
+
+                                    <div class="col-md-8 col-xs-8 col-sm-8 pad-adject-text">
+                                        <p>Oral Anticoagulants in Cardiology...</p>
+                                        <p class="color_orange mar-adj"><b>Dr. JS Hiremath</b></p>
+                                    </div>
+
+                                </a>
+
+                            </div>
+                            <div class="row item-tops" style="clear:both;width:100%">
+                                <a [routerLink]="['/specials/wccpci-2016/presentation/Prof%20Shashank%20R%20Joshi,%20Endocrinologist,%20Edible%20Oils%20CVD%20Impacts/57e64fd9d0d9221817a73a29']">
+
+                                    <div class="col-md-4 col-xs-4 col-sm-4 pad-left-0-d">
+                                        <img src="https://storage.googleapis.com/web-assets/images/presentations/thumbs/Shashank%20Joshi.jpg"
+                                             alt="Dr Shashank" style="width:100%"/>
+                                    </div>
+
+                                    <div class="col-md-8 col-xs-8 col-sm-8 pad-adject-text">
+                                        <p> Edible Oils CVD Impacts</p>
+                                        <p class="color_orange mar-adj"><b>Dr. Shashank Joshi</b></p>
+                                    </div>
+
+                                </a>
+
+                            </div>
+
+
+                        </div>
+
+
+                        <div class=" mar-top-right">
+                            <h4 class="top">Connect with TheRightDoctors</h4>
+                            <ul class="icons-fallow-new">
+                                <li><i class="fa fa-instagram insta" aria-hidden="true"></i>
+                                    <a data-service="youtube" target="_blank" title="Follow us by Instagram"
+                                       href="https://www.instagram.com/therightdoctors/">&nbsp;&nbsp;<b>Follow</b> us on
+                                        Instagram</a>
+                                </li>
+
+                                <li><i class="fa fa-youtube youtube" aria-hidden="true"></i>
+                                    <a data-service="youtube" target="_blank" title="Follow us by Youtube"
+                                       href="https://www.youtube.com/channel/UCUZIhLsNbgkCqymAZshSVHQ">&nbsp;&nbsp;<b>Follow</b>
+                                        us on
+                                        Youtube</a>
+                                </li>
+
+                                <li><i class="fa fa-pinterest-p pin" aria-hidden="true"></i>
+                                    <a data-service="youtube" target="_blank" title="Follow us by Pinterest"
+                                       href="https://in.pinterest.com/pin/388154061619065576/?lp=true">&nbsp;&nbsp;<b>Follow</b>
+                                        us on
+                                        Pinterest</a></li>
+                                <li><img style="width: 29px;height: 29px;margin-top: -2px;margin-right: 9px;
+    border-radius: 100%;" src="https://cdn.flipboard.com/badges/flipboard_srsw.png" alt="flipboard"/>
+                                    <a data-flip-widget="shareflip" title="Follow us by flipit" target="_blank"
+                                       href="https://flipboard.com/@TheRightDoctors">&nbsp;&nbsp;<b>Follow</b> us on
+                                        Flipboard</a></li>
+                                <!-- <li><i class="fa fa-rss rss" aria-hidden="true"></i> &nbsp;<b>Subscribe</b> us on RSS </li>-->
+                            </ul>
+                        </div>
+
+                        <div class="clearfix"></div>
+                        <div class="mar-top-right">
+                            <app-polls></app-polls>
+                        </div>
+
+                    </div>
+                <!-- </div> -->
+
+
+            </div>
+
+            <!--<div class="divider-next" align="center">
+              <p>Next Story</p>
+            </div>-->
+        </div>
+    </div>
+</div>
+<div *ngIf="ads.length>0 && isbrowser">
+    <app-ad-banner [ads]="ads"></app-ad-banner>
+</div>
+
+<app-footer></app-footer>

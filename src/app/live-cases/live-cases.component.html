@@ -1,0 +1,74 @@
+<app-nav></app-nav>
+
+<!--<img style="width: 100%;" src="/new-home-page/single/images/CSI-NIC.jpg">-->
+<!--one ore thing-->
+<section class="back2">
+  <section class="container marg-top">
+
+    <div fxLayout="row">
+
+      <h2 class="main_heading mrg_btm">CSINIC 2016: Live Cases<span class="hdg_line"></span></h2>
+
+    </div>
+
+    <!-- <div class="">
+          <div fxLayout="row" fxLayout.lt-sm="column" fxLayout.lt-md="column">
+
+
+            <div fxFlxe="25%" *ngFor="let con of conv">
+              <div class="panel_one panel_light_grey brder_top">
+                <div fxLayout="row">
+                  <a href="/{{ con['category'] }}/{{ con['slug'] }}">
+                    <div fxFlex.lt-sm="33" fxFlex.lt-md="25"><img src="{{ con['image_url']}}" alt="{{ con['image_url']  }}" /></div>
+                    <div  fxFlex.lt-sm="67" fxFlex.lt-md="75"><div class="pdg1 pdgrt"><h4 class="hd4 hd4_m color_blue">{{ con['headline'] |applicationTruncate: 50 }}<p class="color_orange">{{ con['sub_headline'] }}</p></h4></div></div>
+
+
+                  </a>
+                </div>
+              </div>
+            </div>
+
+
+
+
+          </div>
+        </div>-->
+
+
+    <mat-grid-list cols="4" rowHeight="250px" fxShow.xl="true" fxShow.lt-md="false" fxShow.sm="false" class="gap-part">
+
+      <mat-grid-tile style="width: calc(((25% - 24.75px) * 1) + 0px)!important;" fxLayoutGap="40px"
+                     *ngFor="let con of conv" class="panel_one panel_light_grey brder_top">
+        <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap="20px" style="clear:both">
+          <div class="tips_img mrg2">
+            <a [routerLink]="['/'+con['event']+'/'+con['category']+'/'+con['slug']]">
+              <div fxFlex.lt-sm="33" fxFlex.lt-md="25"><img src="{{ con['image_url']}}" alt="{{ con['image_url']  }}"/>
+              </div>
+              <div fxFlex.lt-sm="67" fxFlex.lt-md="75">
+                <div class="pdg1 pdgrt">
+                  <h4 class="hd4 hd4_m color_blue">{{ con['headline']  }}<p class="color_orange">{{con['sub_headline'] }}</p></h4>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </mat-grid-tile>
+
+    </mat-grid-list>
+
+
+    <div fxShow="false" fxShow.xs="true" fxShow.lt-md="true">
+      <div class="tips_img mrg2" *ngFor="let con of conv">
+        <a [routerLink]="['/'+con['event']+'/'+con['category']+'/'+con['slug']]">
+          <img src="{{ con['image_url']}}" alt="{{ con['image_url']  }}"/>
+        </a>
+        <div class="pdg1 pdgrt">
+          <h4 class="hd4 hd4_m color_blue">{{ con['headline']  }}<p class="color_orange">{{con['sub_headline'] }}</p></h4>
+        </div>
+      </div>
+    </div>
+
+
+  </section>
+</section>
+<app-footer></app-footer>

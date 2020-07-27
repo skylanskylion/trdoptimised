@@ -1,0 +1,776 @@
+<!-- <div ng-sticky [offSet]="0" [addClass]="'is-sticky'">
+  <div class="top_line wow fadeIn animated "
+        class="desktop-view bor-nav-top"
+       xmlns="http://www.w3.org/1999/html">
+    <div class="container relative">
+      <div>
+        <div class="pull-left col-md-3 pad-left-nopx" fxLayout.gt-sm="row">
+          <div fxLayout="column" class="logos">
+          <img src="/assets/new-home-page/single/images/logo.jpg" alt="TheRightDoctors Logo">
+          <div class="pre_alpha">Pre Alpha</div>
+        </div>
+    
+        </div>
+        <div class="pull-5 col-md-7" align="center">
+          <div class="insight_frm" >Insights from the World's Best Medical Minds</div>
+        </div>
+        <div class="col-md-2 img-nine pad-right-nopx" style="display: inline !important;" fxLayout="row" fxLayoutAlign="end" fxLayoutGap="15px">
+          <button type="button" style="background-color: #3f51b5;color:#fff;font-weight: bold;" [routerLink]="['/plan']">Contribute</button>
+          <a [routerLink]="['/showcase']"><img src="/assets/new-home-page/single/images/nine.png" alt="nine"></a>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="nav-desk">
+    <mat-toolbar class="newsty" >
+      <span class="fill-remaining-space"></span>
+      <div class="container">
+        <ul class="menustyle">
+          <li><a [routerLink]="['/']">Home</a></li>
+          <li><a [routerLink]="['/live']">Live</a></li>
+          <li><a [routerLink]="['/coronavirus/live-updates']">Live Updates</a></li>
+          <li><a [routerLink]="['/the-interview']">The Interview</a></li>
+          <li><a [routerLink]="['/one-more-thing']">One More Thing</a></li>
+          <li><a [routerLink]="['/the-speakers']">Speakers</a></li>
+          <li><a [routerLink]="['/in-conversation']">In Conversation</a></li>
+            <li><a [routerLink]="['/journals']">Journals</a></li>
+          <li><a [routerLink]="['/specials']">Specials</a></li>
+		  <li><a [routerLink]="['/podcast']">Podcast</a></li>
+          <li><a [routerLink]="['/synapse']">The Last Word</a></li>
+     
+         <li *ngIf = "Logged===true"><button type="button" (click)="openDialog()"  class="login-botton" >Login</button></li>
+         <li *ngIf = "Logged===false"><a [routerLink]="['/profile']">Profile</a></li>
+         <li *ngIf = "Logged===false"><button type="button"  (click)="logout()"  class="logout-botton">Logout</button></li>
+        </ul>
+      </div>
+    </mat-toolbar>
+    <div *ngIf="isShow">
+      <div class="container search-design" >
+           <input type="text" class="in-put-form"placeholder="Search....."/>
+
+       </div>
+   </div>
+  </div>
+</div>
+<div ng-sticky [offSet]="0" [addClass]="'is-sticky'" >
+  <div class="height-adj-m">
+    <div class="top_line wow fadeIn animated mobile-view bor-top-nav-mobile">
+      <div class="container relative">
+        <div class="pull-left" style="background:#fff">
+          <img src="/assets/new-home-page/single/images/logo.jpg" alt="TheRightDoctors Logo"  class="logo-m">
+          <span *ngIf="this.home==='Home'"
+                class="span-page-title">
+        <a [routerLink]="['/']">Home</a>
+      </span>
+          <span *ngIf="this.home==='The-Interview'"
+                class="span-page-title">
+        <a [routerLink]="['/the-interview']">The Interview</a>
+      </span>
+      <span *ngIf="this.home==='Live-Updates'"
+      class="span-page-title">
+<a [routerLink]="['/coronavirus/live-updates']">COVID-19 Live-Updates</a>
+</span>
+          <span *ngIf="this.home=='The-Speakers'"
+                class="span-page-title">
+        <a [routerLink]="['/the-speakers']">The Speakers</a>
+      </span>
+          <span *ngIf="this.home==='One-More-Thing'"
+                class="span-page-title">
+        <a [routerLink]="['/one-more-thing']">One More Thing</a>
+      </span>
+          <span *ngIf="this.home==='In-Conversation'"
+                class="span-page-title">
+        <a [routerLink]="['/in-conversation']">In Conversation</a>
+      </span>
+          <span *ngIf="((this.home==='Specials'))"
+                class="span-page-title">
+        <a [routerLink]="['/specials']">Specials</a>
+      </span>
+          <span *ngIf="((this.home==='Dr-Hk-Chopra'))"
+                class="span-page-title">
+        <a [routerLink]="['/Dr-Hk-Chopra-Sr-Cardiologist-Moolchand-Hospital-Delhi']"> Dr Hk Chopra</a>
+      </span>
+          <span *ngIf="((this.home==='Dr-Manish-Verma'))"
+                class="span-page-title">
+        <a [routerLink]="['/Dr-Manish-Verma-Sr-Cardiologist-Fortis-Hospital-Bangalore']">Dr Manish Verma</a>
+      </span>
+          <span *ngIf="((this.home==='Dr-Rishi-Jain'))"
+                class="span-page-title">
+        <a [routerLink]="['/Dr-Rishi-Jain-Sr-Cardiologist']">Dr Rishi Jain</a>
+      </span>
+          <span *ngIf="this.home==='Revolution-Talk'"
+                class="span-page-title">
+        <a [routerLink]="['/revolution-talk']">Revolution Talk</a>
+      </span>
+          <span *ngIf="this.home==='Synapse'"
+                class="span-page-title">
+        <a [routerLink]="['/synapse']">Synapse</a>
+      </span>
+          <span *ngIf="this.home==='Live'"
+                class="span-page-title">
+        <a [routerLink]="['/the-interview']">Live</a>
+      </span>
+          <span *ngIf="this.home==='Live-Cases'"
+                class="span-page-title">
+        <a [routerLink]="['/csinic-2016/live_cases']">Live Cases</a>
+      </span>
+          <span *ngIf="this.category==='the-interview'"
+                class="span-page-title">
+        <a [routerLink]="['/the-interview']">The Interview</a>
+      </span>
+          <span *ngIf="this.category==='the-speakers'"
+                class="span-page-title">
+        <a [routerLink]="['/the-speakers']">The Speakers</a>
+      </span>
+          <span *ngIf="this.category==='one-more-thing'"
+                class="span-page-title">
+        <a [routerLink]="['/one-more-thing']">One More Thing</a>
+      </span>
+          <span *ngIf="this.category==='in-conversation'"
+                class="span-page-title">
+        <a [routerLink]="['/in-conversation']">In Conversation</a>
+      </span>
+          <span *ngIf="(this.category==='live-case')"
+                class="span-page-title">
+        <a [routerLink]="['/csinic-2016/live_cases']">Live Cases</a>
+      </span>
+          <span *ngIf="this.category==='revolution-talk'"
+                class="span-page-title">
+        <a [routerLink]="['/revolution-talk']">Revolution Talk</a>
+      </span>
+          <span *ngIf="(this.category==='highlights')"
+                class="span-page-title">
+        <a [routerLink]="['/']">Highlights</a>
+      </span>
+          <span *ngIf="(this.category==='ias-2014')"
+                class="span-page-title">
+        <a [routerLink]="['/specials/ias-2014']">IAS 2014</a>
+      </span>
+          <span *ngIf="(this.category==='wcchd-2015')"
+                class="span-page-title">
+        <a [routerLink]="['/specials/wcchd-2015']">WCCHD 2015</a>
+      </span>
+          <span *ngIf="(this.category==='csicon-2014')"
+                class="span-page-title">
+        <a [routerLink]="['/specials/csicon-2014']">CSICON 2014</a>
+      </span>
+          <span *ngIf="(this.category==='wccpci-2015')"
+                class="span-page-title">
+        <a [routerLink]="['/specials/wccpci-2015']">WCCPCI 2015</a>
+      </span>
+          <span *ngIf="(this.category==='cardiac-prevent-2015')"
+                class="span-page-title">
+        <a [routerLink]="['/specials/cardiac-prevent-2015']">Cardiac Prevent 2015</a>
+      </span>
+          <span *ngIf="(this.category==='ihj-2015')"
+                class="span-page-title">
+        <a [routerLink]="['/specials/ihj-2015']">IHJ 2015</a>
+      </span>
+          <span *ngIf="(this.category==='wccpci-2016')"
+                class="span-page-title">
+        <a [routerLink]="['/specials/wccpci-2016']">WCCPCI 2016</a>
+      </span>
+          <span *ngIf="(this.category==='csikochi-2016')"
+                class="span-page-title">
+        <a [routerLink]="['/specials/csikochi-2016']">CSIKochi 2016</a>
+      </span>
+          <span *ngIf="(this.category==='csinic-2016')"
+                class="span-page-title">
+        <a [routerLink]="['/specials/csinic-2016']">CSINIC 2016</a>
+      </span>
+          <span *ngIf="(this.category==='apvic')"
+                class="span-page-title">
+        <a [routerLink]="['/specials/apvic']">APVIC</a>
+      </span>
+          <span *ngIf="(this.category==='c3')"
+                class="span-page-title">
+        <a [routerLink]="['/specials/c3']">C3</a>
+      </span>
+          <span *ngIf="(this.category==='wccicc-2017')"
+                class="span-page-title">
+        <a [routerLink]="['/specials/wccicc-2017']">WCCICC 2017</a>
+      </span>
+
+            <span *ngIf="(this.category==='rssdi-ahmedabad-2018')"
+                  class="span-page-title">
+        <a [routerLink]="['/specials/rssdi-ahmedabad-2018']">Wockhardt RSSDI tv</a>
+      </span>
+
+          <span *ngIf="(this.category==='stemi-india-lucknow-2018')"
+                class="span-page-title">
+        <a [routerLink]="['/specials/stemi-india-lucknow-2018']">STEMI India 2018</a>
+      </span>
+
+          <span *ngIf="((this.categoryy==='highlights') && (this.categorye == 'wccicc-2017'))"
+                class="span-page-title">
+        <a [routerLink]="['/specials/wccicc-2017']"
+          class="log-side-title" >WCCICC 2017  <span> Highlights </span></a>
+      </span>
+          <span *ngIf="((this.categoryy==='highlights') && (this.categorye == 'csinic-2016'))"
+                class="span-page-title">
+        <a [routerLink]="['/specials/wccicc-2017']"
+           class="log-side-title" >CSINIC 2016 <span> Highlights </span></a>
+      </span>
+          <span *ngIf="((this.categoryy==='highlights') && (this.categorye == 'wccpci-2015'))"
+                class="span-page-title">
+        <a [routerLink]="['/specials/wccicc-2017']"
+           class="log-side-title">WCCPCI 2015 <span> Highlights </span></a>
+      </span>
+          <span *ngIf="((this.categoryy==='highlights') && (this.categorye == 'wccpci-2016'))">
+        <a [routerLink]="['/specials/wccicc-2017']"
+           class="log-side-title">WCCPCI 2016 <span> Highlights </span></a>
+      </span>
+          <span *ngIf="((this.categoryy==='the-speakers') && (this.categorye == 'wccpci-2016'))">
+        <a [routerLink]="['/specials/wccpci-2016/the-speakers']" class="log-side-title">WCCPCI 2016 <span> The Speakers </span></a>
+      </span>
+          <span *ngIf="((this.categoryy==='the-interview') && (this.categorye == 'wccpci-2016'))">
+        <a [routerLink]="['/specials/wccpci-2016/the-interview']" class="log-side-title">WCCPCI 2016 <span> The Interview </span></a>
+      </span>
+          <span *ngIf="((this.categoryy==='one-more-thing') && (this.categorye == 'wccpci-2016'))">
+        <a [routerLink]="['/specials/wccpci-2016/one-more-thing']" class="log-side-title">WCCPCI 2016 <span> One More Thing </span></a>
+      </span>
+          <span *ngIf="((this.categoryy==='the-speakers') && (this.categorye == 'wccpci-2015'))">
+        <a [routerLink]="['/specials/wccpci-2015/the-speakers']" class="log-side-title">WCCPCI 2015 <span> The Speakers </span></a>
+      </span>
+          <span *ngIf="((this.categoryy==='the-interview') && (this.categorye == 'wccpci-2015'))">
+        <a [routerLink]="['/specials/wccpci-2015/the-interview']" class="log-side-title">WCCPCI 2015 <span> The Interview </span></a>
+      </span>
+          <span *ngIf="((this.categoryy==='one-more-thing') && (this.categorye == 'wccpci-2015'))">
+        <a [routerLink]="['/specials/wccpci-2015/one-more-thing']" class="log-side-title">WCCPCI 2015 <span> One More Thing </span></a>
+      </span>
+          <span *ngIf="((this.categoryy==='the-speakers') && (this.categorye == 'csinic-2016'))">
+        <a [routerLink]="['/specials/csinic-2016/the-speakers']" class="log-side-title">CSINIC 2016 <span> The Speakers </span></a>
+      </span>
+
+          <span *ngIf="((this.categoryy==='the-interview') && (this.categorye == 'stemi-india-lucknow-2018'))">
+        <a [routerLink]="['/specials/stemi-india-lucknow-2018/the-interview']"
+           style="color: #333;font-size:18px;margin-top:27px;">STEMI India 2018 <span class="mobile-title-logo"> The Interview </span></a>
+      </span>
+
+            <span *ngIf="((this.categoryy==='the-interview') && (this.categorye == 'rssdi-ahmedabad-2018'))">
+        <a [routerLink]="['/specials/rssdi-ahmedabad-2018/the-interview']"
+           style="color: #333;font-size:18px;margin-top:27px;">Wockhardt RSSDI tv<span class="mobile-title-logo"> The Interview </span></a>
+      </span>
+
+            <span *ngIf="((this.categoryy==='highlights') && (this.categorye == 'rssdi-ahmedabad-2018'))">
+        <a [routerLink]="['/specials/rssdi-ahmedabad-2018/highlights']"
+           style="color: #333;font-size:18px;margin-top:27px;">Wockhardt RSSDI tv<span class="mobile-title-logo">Highlights</span></a>
+      </span>
+
+
+          <span *ngIf="((this.categoryy==='live_cases') && (this.categorye == 'csinic-2016'))">
+        <a [routerLink]="['/specials/csinic-2016/live_cases']" class="log-side-title">CSINIC 2016 <span> Live Cases </span></a>
+      </span>
+          <span *ngIf="((this.categoryy==='the-interview') && (this.categorye == 'csinic-2016'))">
+        <a [routerLink]="['/specials/csinic-2016/the-interview']" class="log-side-title">CSINIC 2016 <span> The Interview </span></a>
+      </span>
+          <span *ngIf="((this.categoryy==='one-more-thing') && (this.categorye == 'csinic-2016'))">
+        <a [routerLink]="['/specials/csinic-2016/one-more-thing']" class="log-side-title">CSINIC 2016 <span> One More Thing </span></a>
+      </span>
+          <span *ngIf="((this.categoryy==='the-interview') && (this.categorye == 'ias-2014'))">
+        <a [routerLink]="['/specials/ias-2014/the-interview']" class="log-side-title">IAS 2014 <span> The Interview </span></a>
+      </span>
+          <span *ngIf="((this.categoryy==='the-interview') && (this.categorye == 'wcchd-2015'))">
+        <a [routerLink]="['/specials/wcchd-2015/the-interview']" class="log-side-title">WCCHD 2015 <span> The Interview </span></a>
+      </span>
+          <span *ngIf="((this.categoryy==='highlights') && (this.categorye == 'csicon-2014'))">
+        <a [routerLink]="['/specials/csicon-2014/highlights']" class="log-side-title">CSICON 2014 <span> Highlights </span></a>
+      </span>
+          <span *ngIf="((this.categoryy==='the-speakers') && (this.categorye == 'csicon-2014'))">
+        <a [routerLink]="['/specials/csicon-2014/the-speakers']" class="log-side-title">CSICON 2014 <span> The Speakers </span></a>
+      </span>
+          <span *ngIf="((this.categoryy==='the-interview') && (this.categorye == 'csicon-2014'))">
+        <a [routerLink]="['/specials/csicon-2014/the-interview']" class="log-side-title">CSICON 2014 <span> The Interview </span></a>
+      </span>
+          <span *ngIf="((this.categoryy==='one-more-thing') && (this.categorye == 'csicon-2014'))">
+        <a [routerLink]="['/specials/csicon-2014/one-more-thing']" class="log-side-title">CSICON 2014 <span> One More Thing </span></a>
+      </span>
+          <span *ngIf="((this.categoryy==='highlights') && (this.categorye == 'apvic'))">
+        <a [routerLink]="['/specials/apvic/highlights']"
+           class="log-side-title">APVIC <span> Highlights </span></a>
+      </span>
+          <span *ngIf="((this.categoryy==='the-interview') && (this.categorye == 'apvic'))">
+        <a [routerLink]="['/specials/apvic/the-interview']"
+           class="log-side-title">APVIC <span> The Interview </span></a>
+      </span>
+          <span *ngIf="((this.categoryy==='one-more-thing') && (this.categorye == 'apvic'))">
+        <a [routerLink]="['/specials/apvic/one-more-thing']"
+           class="log-side-title">APVIC <span> One More Thing </span></a>
+      </span>
+          <span *ngIf="((this.categoryy==='highlights') && (this.categorye == 'c3'))">
+        <a [routerLink]="['/specials/c3/highlights']" class="log-side-title">C3 <span> Highlights </span></a>
+      </span>
+          <span *ngIf="((this.categoryy==='highlights') && (this.categorye == 'csikochi-2016'))">
+        <a [routerLink]="['/specials/csikochi-2016/highlights']" class="log-side-title">CSIKochi <span> Highlights </span></a>
+      </span>
+          <span *ngIf="((this.categoryy==='the-speakers') && (this.categorye == 'csikochi-2016'))">
+        <a [routerLink]="['/specials/csikochi-2016/the-speakers']" class="log-side-title">CSIKochi 2016 <span> The Speakers </span></a>
+      </span>
+          <span *ngIf="((this.categoryy==='live_cases') && (this.categorye == 'csikochi-2016'))">
+        <a [routerLink]="['/specials/csikochi-2016/live_cases']" class="log-side-title">CSIKochi 2016 <span> Live Cases </span></a>
+      </span>
+          <span *ngIf="((this.categoryy==='the-interview') && (this.categorye == 'csikochi-2016'))">
+        <a [routerLink]="['/specials/csikochi-2016/the-interview']" class="log-side-title">CSIKochi 2016 <span> The Interview </span></a>
+      </span>
+          <span *ngIf="((this.categoryy==='one-more-thing') && (this.categorye == 'csikochi-2016'))">
+        <a [routerLink]="['/specials/csikochi-2016/one-more-thing']"
+           class="log-side-title">CSIKochi 2016 <span> One More Thing </span></a>
+      </span>
+          <span *ngIf="((this.categoryy==='the-speakers') && (this.categorye == 'wccicc-2017'))">
+        <a [routerLink]="['/specials/wccicc-2017/the-speakers']" class="log-side-title">WCCICC 2017 <span> The Speakers </span></a>
+      </span>
+          <span *ngIf="((this.categoryy==='live_cases') && (this.categorye == 'wccicc-2017'))">
+        <a [routerLink]="['/specials/wccicc-2017/live_cases']" class="log-side-title">WCCICC 2017 <span> Live Cases </span></a>
+      </span>
+          <span *ngIf="((this.categoryy==='the-interview') && (this.categorye == 'wccicc-2017'))">
+        <a [routerLink]="['/specials/wccicc-2017/the-interview']" class="log-side-title">WCCICC 2017 <span> The Interview </span></a>
+      </span>
+          <span *ngIf="((this.categoryy==='one-more-thing') && (this.categorye == 'wccicc-2017'))">
+        <a [routerLink]="['/specials/wccicc-2017/one-more-thing']" class="log-side-title">WCCICC 2017 <span> One More Thing </span></a>
+      </span>
+
+        </div>
+        <div class="pull-right nne">
+
+     <div fxLayout="column" class="sub-con">
+      <button mat-flat-buton [routerLink]="['/plan']">Contribute</button>
+    </div>
+          <i class="fa fa-bars mobile-view iphn-x-menu" [matMenuTriggerFor]="menu"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="mobile-view">
+    <mat-menu #menu="matMenu" [overlapTrigger]="false" yPosition="above">
+      <button mat-menu-item [routerLink]="['/']">Home</button>
+      <button mat-menu-item [routerLink]="['/live']">Live</button>
+      <button mat-menu-item [routerLink]="['/coronavirus/live-updates']">Live Updates</button>
+
+        <button mat-menu-item href="https://rssdi2019.therightdoctors.com">Torrent RSSDI tv</button>
+    
+      <button mat-menu-item [routerLink]="['/the-interview']">The Interview</button>
+      <button mat-menu-item [routerLink]="['/one-more-thing']">One More Thing</button>
+      <button mat-menu-item [routerLink]="['/the-speakers']">The Speakers</button>
+      <button mat-menu-item [routerLink]="['/in-conversation']">In Conversation</button>
+      <button mat-menu-item [routerLink]="['/specials']">Specials</button>
+      <button mat-menu-item [routerLink]="['/synapse/the-last-word']">Synapse</button>
+     <button mat-menu-item [routerLink]="['/podcast']">Podcast</button>
+    </mat-menu>
+  </div>
+</div> -->
+
+
+<!-- ------------------------------------------------------------ -->
+
+
+
+<div ng-sticky [offSet]="0" [addClass]="'is-sticky'">
+  <div class="top_line wow fadeIn animated "
+        class="desktop-view bor-nav-top"
+       xmlns="http://www.w3.org/1999/html">
+    <div class="container relative">
+      <div>
+        <div class="pull-left col-md-3 pad-left-nopx" fxLayout.gt-sm="row">
+          <div fxLayout="column" class="logos">
+          <img src="/assets/new-home-page/single/images/logo.jpg" alt="TheRightDoctors Logo">
+          <div class="pre_alpha">Pre Alpha</div>
+        </div>
+        <!-- <div fxLayout="column" class="sub-con">
+          <button mat-flat-buton>Contribute</button>
+          <button mat-flat-buton>Subscribe</button>
+        </div> -->
+        </div>
+        <div class="pull-5 col-md-7" align="center">
+          <div class="insight_frm" >Insights from the World's Best Medical Minds</div>
+        </div>
+        <div class="col-md-2 img-nine pad-right-nopx" style="display: inline !important;" fxLayout="row" fxLayoutAlign="end" fxLayoutGap="15px">
+          <button type="button" style="background-color: #3f51b5;color:#fff;font-weight: bold;" [routerLink]="['/plan']">Contribute</button>
+          <button type="button" style="background-color: #3f51b5;color:#fff;font-weight: bold;" [routerLink]="['/subscription']">Subscribe</button>
+          <!-- <a [routerLink]="['/showcase']"><img src="/assets/new-home-page/single/images/nine.png" alt="nine"></a> -->
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="nav-desk">
+    <mat-toolbar class="newsty" >
+      <span class="fill-remaining-space"></span>
+      <div class="container">
+        <ul class="menustyle">
+      
+          <li><a [routerLink]="['/']">Home</a></li>
+          <li><a [routerLink]="['/live']">Live</a></li>
+          <li><a [routerLink]="['/coronavirus/live-updates']">Live Updates</a></li>
+          <!-- <li><a href="https://rssdi2019.therightdoctors.com">Torrent RSSDI tv</a></li> -->
+          <li><a href="https://insights.therightdoctors.com">Insights</a></li>
+          <li><a href="https://podcast.therightdoctors.com">Podcast</a></li>
+          <li><a href="https://tv.therightdoctors.com">TV</a></li>
+          <li><a href="https://images.therightdoctors.com">Images</a></li>
+            <li><a href="https://slides.therightdoctors.com">Slides</a></li>
+          <li><a [routerLink]="['/specials']">Specials</a></li>
+		  <li><a [routerLink]="['/survey-100119']">Survey</a></li>
+          <!-- <li><a [routerLink]="['/synapse']">The Last Word</a></li> -->
+          <!-- <li>
+            <i class="fa fa-search serch-box" aria-hidden="true" (click)="toggleSearch()"></i>
+        </li> -->
+        
+         <li *ngIf = "Logged===false"><a [routerLink]="['/profile']">Profile</a></li>
+         <li>
+          <button mat-button [matMenuTriggerFor]="menu1"  style="background-color: #cc1318 !important;"><span class="material-icons">more_horiz</span></button>
+            <mat-menu #menu1="matMenu">
+          <!-- <a href="https://podcast.therightdoctors.com"><button mat-menu-item> Podcast </button> </a> -->
+          <a [routerLink]="['/the-interview']">  <button mat-menu-item>The Interview</button></a>
+            <a [routerLink]="['/one-more-thing']">     <button mat-menu-item>One More Thing</button></a>
+              <a [routerLink]="['/the-speakers']">    <button mat-menu-item>Speakers</button></a>
+                <a [routerLink]="['/in-conversation']">    <button mat-menu-item>In Conversation</button></a>
+                  <a [routerLink]="['/journals']">     <button mat-menu-item>Journals</button></a>
+                    <!-- <a [routerLink]="['/survey-100119']">     <button mat-menu-item>The Last Word</button> -->
+                      <a [routerLink]="['/synapse']">     <button mat-menu-item>Synapse</button></a>
+                        <!-- <a [routerLink]="['/survey-100119']">     <button mat-menu-item>Profile</button> -->
+
+            </mat-menu>
+        </li>
+        <li *ngIf = "Logged===true">
+          <!-- <div class="loginbtn"> -->
+          <button type="button" (click)="openDialog()"  class="login-botton" style="margin-top: 5px;">Login</button>
+        <!-- </div> -->
+        </li>
+        
+         <li *ngIf = "Logged===false">
+          <!-- <div class="loginbtn"> -->
+           <button type="button"  (click)="logout()"  class="logout-botton" style="margin-top: 5px;">Logout</button>
+          <!-- </div> -->
+          </li>
+        
+         <!-- <li><button type="button" style="background-color: #fff;color:#000 !important;font-weight: bold;">Contribute</button></li> -->
+        </ul>
+      </div>
+    </mat-toolbar>
+    <div *ngIf="isShow">
+      <div class="container search-design" >
+           <input type="text" class="in-put-form"placeholder="Search....."/>
+ <!--         <form class="example-form">
+   <mat-form-field class="example-full-width">
+     <input matInput placeholder="Favorite food" >
+   </mat-form-field>
+ </form> -->
+       </div>
+   </div>
+  </div>
+</div>
+<div ng-sticky [offSet]="0" [addClass]="'is-sticky'" >
+  <div class="height-adj-m">
+    <div class="top_line wow fadeIn animated mobile-view bor-top-nav-mobile">
+      <div class="container relative">
+        <div class="pull-left" style="background:#fff">
+          <img src="/assets/new-home-page/single/images/logo.jpg" alt="TheRightDoctors Logo"  class="logo-m">
+          <span *ngIf="this.home==='Home'"
+                class="span-page-title">
+        <a [routerLink]="['/']">Home</a>
+      </span>
+          <span *ngIf="this.home==='The-Interview'"
+                class="span-page-title">
+        <a [routerLink]="['/the-interview']">The Interview</a>
+      </span>
+      <span *ngIf="this.home==='Live-Updates'"
+      class="span-page-title">
+<a [routerLink]="['/coronavirus/live-updates']">COVID-19 Live-Updates</a>
+</span>
+          <span *ngIf="this.home=='The-Speakers'"
+                class="span-page-title">
+        <a [routerLink]="['/the-speakers']">The Speakers</a>
+      </span>
+          <span *ngIf="this.home==='One-More-Thing'"
+                class="span-page-title">
+        <a [routerLink]="['/one-more-thing']">One More Thing</a>
+      </span>
+          <span *ngIf="this.home==='In-Conversation'"
+                class="span-page-title">
+        <a [routerLink]="['/in-conversation']">In Conversation</a>
+      </span>
+          <span *ngIf="((this.home==='Specials'))"
+                class="span-page-title">
+        <a [routerLink]="['/specials']">Specials</a>
+      </span>
+          <span *ngIf="((this.home==='Dr-Hk-Chopra'))"
+                class="span-page-title">
+        <a [routerLink]="['/Dr-Hk-Chopra-Sr-Cardiologist-Moolchand-Hospital-Delhi']"> Dr Hk Chopra</a>
+      </span>
+          <span *ngIf="((this.home==='Dr-Manish-Verma'))"
+                class="span-page-title">
+        <a [routerLink]="['/Dr-Manish-Verma-Sr-Cardiologist-Fortis-Hospital-Bangalore']">Dr Manish Verma</a>
+      </span>
+          <span *ngIf="((this.home==='Dr-Rishi-Jain'))"
+                class="span-page-title">
+        <a [routerLink]="['/Dr-Rishi-Jain-Sr-Cardiologist']">Dr Rishi Jain</a>
+      </span>
+          <span *ngIf="this.home==='Revolution-Talk'"
+                class="span-page-title">
+        <a [routerLink]="['/revolution-talk']">Revolution Talk</a>
+      </span>
+          <span *ngIf="this.home==='Synapse'"
+                class="span-page-title">
+        <a [routerLink]="['/synapse']">Synapse</a>
+      </span>
+          <span *ngIf="this.home==='Live'"
+                class="span-page-title">
+        <a [routerLink]="['/the-interview']">Live</a>
+      </span>
+          <span *ngIf="this.home==='Live-Cases'"
+                class="span-page-title">
+        <a [routerLink]="['/csinic-2016/live_cases']">Live Cases</a>
+      </span>
+          <span *ngIf="this.category==='the-interview'"
+                class="span-page-title">
+        <a [routerLink]="['/the-interview']">The Interview</a>
+      </span>
+          <span *ngIf="this.category==='the-speakers'"
+                class="span-page-title">
+        <a [routerLink]="['/the-speakers']">The Speakers</a>
+      </span>
+          <span *ngIf="this.category==='one-more-thing'"
+                class="span-page-title">
+        <a [routerLink]="['/one-more-thing']">One More Thing</a>
+      </span>
+          <span *ngIf="this.category==='in-conversation'"
+                class="span-page-title">
+        <a [routerLink]="['/in-conversation']">In Conversation</a>
+      </span>
+          <span *ngIf="(this.category==='live-case')"
+                class="span-page-title">
+        <a [routerLink]="['/csinic-2016/live_cases']">Live Cases</a>
+      </span>
+          <span *ngIf="this.category==='revolution-talk'"
+                class="span-page-title">
+        <a [routerLink]="['/revolution-talk']">Revolution Talk</a>
+      </span>
+          <span *ngIf="(this.category==='highlights')"
+                class="span-page-title">
+        <a [routerLink]="['/']">Highlights</a>
+      </span>
+          <span *ngIf="(this.category==='ias-2014')"
+                class="span-page-title">
+        <a [routerLink]="['/specials/ias-2014']">IAS 2014</a>
+      </span>
+          <span *ngIf="(this.category==='wcchd-2015')"
+                class="span-page-title">
+        <a [routerLink]="['/specials/wcchd-2015']">WCCHD 2015</a>
+      </span>
+          <span *ngIf="(this.category==='csicon-2014')"
+                class="span-page-title">
+        <a [routerLink]="['/specials/csicon-2014']">CSICON 2014</a>
+      </span>
+          <span *ngIf="(this.category==='wccpci-2015')"
+                class="span-page-title">
+        <a [routerLink]="['/specials/wccpci-2015']">WCCPCI 2015</a>
+      </span>
+          <span *ngIf="(this.category==='cardiac-prevent-2015')"
+                class="span-page-title">
+        <a [routerLink]="['/specials/cardiac-prevent-2015']">Cardiac Prevent 2015</a>
+      </span>
+          <span *ngIf="(this.category==='ihj-2015')"
+                class="span-page-title">
+        <a [routerLink]="['/specials/ihj-2015']">IHJ 2015</a>
+      </span>
+          <span *ngIf="(this.category==='wccpci-2016')"
+                class="span-page-title">
+        <a [routerLink]="['/specials/wccpci-2016']">WCCPCI 2016</a>
+      </span>
+          <span *ngIf="(this.category==='csikochi-2016')"
+                class="span-page-title">
+        <a [routerLink]="['/specials/csikochi-2016']">CSIKochi 2016</a>
+      </span>
+          <span *ngIf="(this.category==='csinic-2016')"
+                class="span-page-title">
+        <a [routerLink]="['/specials/csinic-2016']">CSINIC 2016</a>
+      </span>
+          <span *ngIf="(this.category==='apvic')"
+                class="span-page-title">
+        <a [routerLink]="['/specials/apvic']">APVIC</a>
+      </span>
+          <span *ngIf="(this.category==='c3')"
+                class="span-page-title">
+        <a [routerLink]="['/specials/c3']">C3</a>
+      </span>
+          <span *ngIf="(this.category==='wccicc-2017')"
+                class="span-page-title">
+        <a [routerLink]="['/specials/wccicc-2017']">WCCICC 2017</a>
+      </span>
+
+            <span *ngIf="(this.category==='rssdi-ahmedabad-2018')"
+                  class="span-page-title">
+        <a [routerLink]="['/specials/rssdi-ahmedabad-2018']">Wockhardt RSSDI tv</a>
+      </span>
+
+          <span *ngIf="(this.category==='stemi-india-lucknow-2018')"
+                class="span-page-title">
+        <a [routerLink]="['/specials/stemi-india-lucknow-2018']">STEMI India 2018</a>
+      </span>
+
+          <span *ngIf="((this.categoryy==='highlights') && (this.categorye == 'wccicc-2017'))"
+                class="span-page-title">
+        <a [routerLink]="['/specials/wccicc-2017']"
+          class="log-side-title" >WCCICC 2017  <span> Highlights </span></a>
+      </span>
+          <span *ngIf="((this.categoryy==='highlights') && (this.categorye == 'csinic-2016'))"
+                class="span-page-title">
+        <a [routerLink]="['/specials/wccicc-2017']"
+           class="log-side-title" >CSINIC 2016 <span> Highlights </span></a>
+      </span>
+          <span *ngIf="((this.categoryy==='highlights') && (this.categorye == 'wccpci-2015'))"
+                class="span-page-title">
+        <a [routerLink]="['/specials/wccicc-2017']"
+           class="log-side-title">WCCPCI 2015 <span> Highlights </span></a>
+      </span>
+          <span *ngIf="((this.categoryy==='highlights') && (this.categorye == 'wccpci-2016'))">
+        <a [routerLink]="['/specials/wccicc-2017']"
+           class="log-side-title">WCCPCI 2016 <span> Highlights </span></a>
+      </span>
+          <span *ngIf="((this.categoryy==='the-speakers') && (this.categorye == 'wccpci-2016'))">
+        <a [routerLink]="['/specials/wccpci-2016/the-speakers']" class="log-side-title">WCCPCI 2016 <span> The Speakers </span></a>
+      </span>
+          <span *ngIf="((this.categoryy==='the-interview') && (this.categorye == 'wccpci-2016'))">
+        <a [routerLink]="['/specials/wccpci-2016/the-interview']" class="log-side-title">WCCPCI 2016 <span> The Interview </span></a>
+      </span>
+          <span *ngIf="((this.categoryy==='one-more-thing') && (this.categorye == 'wccpci-2016'))">
+        <a [routerLink]="['/specials/wccpci-2016/one-more-thing']" class="log-side-title">WCCPCI 2016 <span> One More Thing </span></a>
+      </span>
+          <span *ngIf="((this.categoryy==='the-speakers') && (this.categorye == 'wccpci-2015'))">
+        <a [routerLink]="['/specials/wccpci-2015/the-speakers']" class="log-side-title">WCCPCI 2015 <span> The Speakers </span></a>
+      </span>
+          <span *ngIf="((this.categoryy==='the-interview') && (this.categorye == 'wccpci-2015'))">
+        <a [routerLink]="['/specials/wccpci-2015/the-interview']" class="log-side-title">WCCPCI 2015 <span> The Interview </span></a>
+      </span>
+          <span *ngIf="((this.categoryy==='one-more-thing') && (this.categorye == 'wccpci-2015'))">
+        <a [routerLink]="['/specials/wccpci-2015/one-more-thing']" class="log-side-title">WCCPCI 2015 <span> One More Thing </span></a>
+      </span>
+          <span *ngIf="((this.categoryy==='the-speakers') && (this.categorye == 'csinic-2016'))">
+        <a [routerLink]="['/specials/csinic-2016/the-speakers']" class="log-side-title">CSINIC 2016 <span> The Speakers </span></a>
+      </span>
+
+          <span *ngIf="((this.categoryy==='the-interview') && (this.categorye == 'stemi-india-lucknow-2018'))">
+        <a [routerLink]="['/specials/stemi-india-lucknow-2018/the-interview']"
+           style="color: #333;font-size:18px;margin-top:27px;">STEMI India 2018 <span class="mobile-title-logo"> The Interview </span></a>
+      </span>
+
+            <span *ngIf="((this.categoryy==='the-interview') && (this.categorye == 'rssdi-ahmedabad-2018'))">
+        <a [routerLink]="['/specials/rssdi-ahmedabad-2018/the-interview']"
+           style="color: #333;font-size:18px;margin-top:27px;">Wockhardt RSSDI tv<span class="mobile-title-logo"> The Interview </span></a>
+      </span>
+
+            <span *ngIf="((this.categoryy==='highlights') && (this.categorye == 'rssdi-ahmedabad-2018'))">
+        <a [routerLink]="['/specials/rssdi-ahmedabad-2018/highlights']"
+           style="color: #333;font-size:18px;margin-top:27px;">Wockhardt RSSDI tv<span class="mobile-title-logo">Highlights</span></a>
+      </span>
+
+
+          <span *ngIf="((this.categoryy==='live_cases') && (this.categorye == 'csinic-2016'))">
+        <a [routerLink]="['/specials/csinic-2016/live_cases']" class="log-side-title">CSINIC 2016 <span> Live Cases </span></a>
+      </span>
+          <span *ngIf="((this.categoryy==='the-interview') && (this.categorye == 'csinic-2016'))">
+        <a [routerLink]="['/specials/csinic-2016/the-interview']" class="log-side-title">CSINIC 2016 <span> The Interview </span></a>
+      </span>
+          <span *ngIf="((this.categoryy==='one-more-thing') && (this.categorye == 'csinic-2016'))">
+        <a [routerLink]="['/specials/csinic-2016/one-more-thing']" class="log-side-title">CSINIC 2016 <span> One More Thing </span></a>
+      </span>
+          <span *ngIf="((this.categoryy==='the-interview') && (this.categorye == 'ias-2014'))">
+        <a [routerLink]="['/specials/ias-2014/the-interview']" class="log-side-title">IAS 2014 <span> The Interview </span></a>
+      </span>
+          <span *ngIf="((this.categoryy==='the-interview') && (this.categorye == 'wcchd-2015'))">
+        <a [routerLink]="['/specials/wcchd-2015/the-interview']" class="log-side-title">WCCHD 2015 <span> The Interview </span></a>
+      </span>
+          <span *ngIf="((this.categoryy==='highlights') && (this.categorye == 'csicon-2014'))">
+        <a [routerLink]="['/specials/csicon-2014/highlights']" class="log-side-title">CSICON 2014 <span> Highlights </span></a>
+      </span>
+          <span *ngIf="((this.categoryy==='the-speakers') && (this.categorye == 'csicon-2014'))">
+        <a [routerLink]="['/specials/csicon-2014/the-speakers']" class="log-side-title">CSICON 2014 <span> The Speakers </span></a>
+      </span>
+          <span *ngIf="((this.categoryy==='the-interview') && (this.categorye == 'csicon-2014'))">
+        <a [routerLink]="['/specials/csicon-2014/the-interview']" class="log-side-title">CSICON 2014 <span> The Interview </span></a>
+      </span>
+          <span *ngIf="((this.categoryy==='one-more-thing') && (this.categorye == 'csicon-2014'))">
+        <a [routerLink]="['/specials/csicon-2014/one-more-thing']" class="log-side-title">CSICON 2014 <span> One More Thing </span></a>
+      </span>
+          <span *ngIf="((this.categoryy==='highlights') && (this.categorye == 'apvic'))">
+        <a [routerLink]="['/specials/apvic/highlights']"
+           class="log-side-title">APVIC <span> Highlights </span></a>
+      </span>
+          <span *ngIf="((this.categoryy==='the-interview') && (this.categorye == 'apvic'))">
+        <a [routerLink]="['/specials/apvic/the-interview']"
+           class="log-side-title">APVIC <span> The Interview </span></a>
+      </span>
+          <span *ngIf="((this.categoryy==='one-more-thing') && (this.categorye == 'apvic'))">
+        <a [routerLink]="['/specials/apvic/one-more-thing']"
+           class="log-side-title">APVIC <span> One More Thing </span></a>
+      </span>
+          <span *ngIf="((this.categoryy==='highlights') && (this.categorye == 'c3'))">
+        <a [routerLink]="['/specials/c3/highlights']" class="log-side-title">C3 <span> Highlights </span></a>
+      </span>
+          <span *ngIf="((this.categoryy==='highlights') && (this.categorye == 'csikochi-2016'))">
+        <a [routerLink]="['/specials/csikochi-2016/highlights']" class="log-side-title">CSIKochi <span> Highlights </span></a>
+      </span>
+          <span *ngIf="((this.categoryy==='the-speakers') && (this.categorye == 'csikochi-2016'))">
+        <a [routerLink]="['/specials/csikochi-2016/the-speakers']" class="log-side-title">CSIKochi 2016 <span> The Speakers </span></a>
+      </span>
+          <span *ngIf="((this.categoryy==='live_cases') && (this.categorye == 'csikochi-2016'))">
+        <a [routerLink]="['/specials/csikochi-2016/live_cases']" class="log-side-title">CSIKochi 2016 <span> Live Cases </span></a>
+      </span>
+          <span *ngIf="((this.categoryy==='the-interview') && (this.categorye == 'csikochi-2016'))">
+        <a [routerLink]="['/specials/csikochi-2016/the-interview']" class="log-side-title">CSIKochi 2016 <span> The Interview </span></a>
+      </span>
+          <span *ngIf="((this.categoryy==='one-more-thing') && (this.categorye == 'csikochi-2016'))">
+        <a [routerLink]="['/specials/csikochi-2016/one-more-thing']"
+           class="log-side-title">CSIKochi 2016 <span> One More Thing </span></a>
+      </span>
+          <span *ngIf="((this.categoryy==='the-speakers') && (this.categorye == 'wccicc-2017'))">
+        <a [routerLink]="['/specials/wccicc-2017/the-speakers']" class="log-side-title">WCCICC 2017 <span> The Speakers </span></a>
+      </span>
+          <span *ngIf="((this.categoryy==='live_cases') && (this.categorye == 'wccicc-2017'))">
+        <a [routerLink]="['/specials/wccicc-2017/live_cases']" class="log-side-title">WCCICC 2017 <span> Live Cases </span></a>
+      </span>
+          <span *ngIf="((this.categoryy==='the-interview') && (this.categorye == 'wccicc-2017'))">
+        <a [routerLink]="['/specials/wccicc-2017/the-interview']" class="log-side-title">WCCICC 2017 <span> The Interview </span></a>
+      </span>
+          <span *ngIf="((this.categoryy==='one-more-thing') && (this.categorye == 'wccicc-2017'))">
+        <a [routerLink]="['/specials/wccicc-2017/one-more-thing']" class="log-side-title">WCCICC 2017 <span> One More Thing </span></a>
+      </span>
+          <!--<span *ngIf="(this.category==='wccpci-2015')">-->
+          <!--<a [routerLink]="['/specials/wccpci-2015/presentation/slide/home']">wccpci-2015</a>-->
+          <!--</span>-->
+          <!--<div class="pre_alpha">Pre Alpha</div>-->
+        </div>
+        <div class="pull-right nne">
+          <!-- <mat-icon [matMenuTriggerFor]="menu" class="mobile-view" >menu</mat-icon>
+     -->
+     <div fxLayout="row" class="sub-con" fxLayoutGap="10px">
+      <button mat-flat-buton style="background-color: #3f51b5;color:#fff;font-weight: bold;" [routerLink]="['/plan']">Contribute</button>
+      <button mat-flat-buton style="background-color: #3f51b5;color:#fff;font-weight: bold;" [routerLink]="['/subscription']">Subscribe</button>
+      <!-- <button mat-flat-buton>Subscribe</button> -->
+    </div>
+          <i class="fa fa-bars mobile-view iphn-x-menu" [matMenuTriggerFor]="menu"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="mobile-view">
+    <mat-menu #menu="matMenu" [overlapTrigger]="false" yPosition="above">
+      <button mat-menu-item [routerLink]="['/']">Home</button>
+      <button mat-menu-item [routerLink]="['/live']">Live</button>
+      <button mat-menu-item [routerLink]="['/coronavirus/live-updates']">Live Updates</button>
+
+        <!-- <button mat-menu-item href="https://rssdi2019.therightdoctors.com">Torrent RSSDI tv</button> -->
+      <!--<button mat-menu-item [routerLink]="['/specials/rssdi-ahmedabad-2018']">Wockhardt RSSDI tv </button>-->
+      <!--<li><a [routerLink]="['/specials/stemi-india-2018']">STEMI India tv</a></li>-->
+      <!--<li><a [routerLink]="['/specials/stemi-india-2018']">STEMI India tv</a></li>-->
+<a href="https://insights.therightdoctors.com">     <button mat-menu-item>Insights</button></a>
+
+<a href="https://tv.therightdoctors.com"> <button mat-menu-item [routerLink]="['/one-more-thing']">TV</button></a>
+<a href="https://podcast.therightdoctors.com">   <button mat-menu-item [routerLink]="['/the-speakers']">Podcast</button></a>
+<a href="https://images.therightdoctors.com">      <button mat-menu-item [routerLink]="['/in-conversation']">Images</button></a>
+<a href="https://slides.therightdoctors.com">  <button mat-menu-item [routerLink]="['/specials']">Slides</button></a>
+         <li><a [routerLink]="['/specials']">Specials</a></li>
+		  <li><a [routerLink]="['/survey-100119']">Survey</a></li>
+    </mat-menu> 
+  </div>
+</div>

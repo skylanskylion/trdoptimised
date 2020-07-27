@@ -1,0 +1,35 @@
+<div class="jumbotron"style="padding-top: 150px;">
+
+  <div class="jumbotron" style="text-align: center;">
+    <h1 style="font-weight: 800;font-size: xx-large;color: blue;">Contacts</h1>
+  </div>
+
+  <mat-accordion>
+
+      <div *ngFor="let contact of contacts">
+
+      
+      <mat-expansion-panel (opened)="panelOpenState = true"
+                           (closed)="panelOpenState = false">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+             {{ contact.fields.all.title }} {{ contact.fields.all.firstname }} {{ contact.fields.all.lastname }}<br>
+              
+          </mat-panel-title>
+           
+        </mat-expansion-panel-header>
+        First Name: {{ contact.fields.all.firstname }} <br>
+        Last Name: {{ contact.fields.all.lastname }} <br>
+        Mobile:{{ contact.fields.all.mobile }}<br>
+        Email:{{ contact.fields.all.email }} <br>
+        Address: {{ contact.fields.all.address1 }} <br>
+        Designation: {{ contact.fields.all.currentdesignation }} <br>
+        Company Name: {{ contact.fields.all.companyname }} 
+      </mat-expansion-panel>
+
+      </div>
+
+
+
+    </mat-accordion>
+</div>

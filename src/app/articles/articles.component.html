@@ -1,0 +1,1159 @@
+<style type="text/css">
+  #headingThree {
+  }
+</style><h2>Articles/Videos</h2>
+
+
+<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingOne">
+      <h4 class="panel-title">
+
+      </h4>
+    </div>
+    <mat-accordion>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Table
+          </mat-panel-title>
+          <mat-panel-description>
+
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+
+        <mat-card>
+
+
+          <mat-form-field>
+            <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+          </mat-form-field>
+
+        </mat-card>
+        <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 display" id="articles-table">
+
+          <!--- Note that these columns can be defined in any order.
+                The actual rendered columns are set as a property on the row definition" -->
+
+          <!-- Position Column -->
+
+          <ng-container matColumnDef="headline">
+            <th mat-header-cell *matHeaderCellDef>Headline</th>
+            <td mat-cell *matCellDef="let element"> {{element.headline}}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="sub_headline">
+            <th mat-header-cell *matHeaderCellDef>sub-headline</th>
+            <td mat-cell *matCellDef="let element"> {{element.sub_headline}}</td>
+          </ng-container>
+
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="slug">
+            <th mat-header-cell *matHeaderCellDef> Slug</th>
+            <td mat-cell *matCellDef="let element"> {{element.slug}}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="category">
+            <th mat-header-cell *matHeaderCellDef>Category</th>
+            <td mat-cell *matCellDef="let element"> {{element.category}}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="event">
+            <th mat-header-cell *matHeaderCellDef> Event</th>
+            <td mat-cell *matCellDef="let element"> {{element.event}}</td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+        <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+
+
+        <!-- <table   class="display" cellspacing="0" width="100%" border="1">
+           <thead>
+           <tr style="color:red;">
+             <th>Status</th>
+             <th>Admin Message</th>
+             <th>Is Live</th>
+             <th>Title</th>
+             <th>Headline</th>
+             <th>Dr. Name</th>
+             <th>Slug</th>
+             <th>Video URL</th>
+             <th>Total Views</th>
+             <th>similartopics</th>
+             <th>guest1_img_url</th>
+             <th>Category</th>
+             <th>Event</th>
+           </tr>
+           </thead>
+           <ng-template ngFor let-item [ngForOf]="createRange(articles.length)" let-currentIndex="index">
+             <tr style="color:black;">
+
+               <td> </td>
+               <td> {{articles[currentIndex]['admin_note']}}</td>
+               <td> {{articles[currentIndex]['is_live']}}</td>
+               <td> {{articles[currentIndex]['title']}}</td>
+               <td> {{articles[currentIndex]['headline']}}</td>
+               <td> {{articles[currentIndex]['sub_headline']}}</td>
+               <td> {{articles[currentIndex]['slug']}}</td>
+               <td> {{articles[currentIndex]['video_url']}}</td>
+               <td> {{articles[currentIndex]['total_views']}}</td>
+               <td> {{articles[currentIndex]['similar_topic']}}</td>
+               <td> {{articles[currentIndex]['guest1_img_url']}}</td>
+               <td> {{articles[currentIndex]['category']}}</td>
+               <td> {{articles[currentIndex]['event']}}</td>
+             </tr>
+           </ng-template>
+           <tfoot>
+           <tr style="color:red;">
+             <th>Status</th>
+             <th>Admin Message</th>
+             <th>Is Live</th>
+             <th>Title</th>
+             <th>Headline</th>
+             <th>Dr. Name</th>
+             <th>Slug</th>
+             <th>Video URL</th>
+             <th>Total Views</th>
+             <th>similartopics</th>
+             <th>guest1_img_url</th>
+             <th>Category</th>
+             <th>Event</th>
+           </tr>
+           </tfoot>
+         </table>-->
+
+
+      </mat-expansion-panel>
+    </mat-accordion>
+
+
+  </div>
+
+  <div class="panel panel-default">
+
+
+    <mat-accordion>
+      <!--
+            <mat-expansion-panel (opened)="panelOpenState = true"
+                                 (closed)="panelOpenState = false">-->
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Create item
+          </mat-panel-title>
+          <mat-panel-description>
+
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+
+        <div fxLayout="column" fxLayoutAlign="center center" class="marg-top" style="margin-bottom: 20px">
+
+
+          <mat-card>
+            <form class="example-form" name="form" (submit)="create()">
+
+
+              <mat-form-field class="example-full-width">
+                <input matInput id="article_title" placeholder="Enter Article page title" name="title"
+                       [(ngModel)]="model.title">
+                <p id="valid6" class="text-danger"></p>
+              </mat-form-field>
+
+
+              <mat-form-field class="example-full-width">
+                <input matInput id="article_headline" placeholder="Enter article headline" name="headline"
+                       [(ngModel)]="model.headline">
+
+              </mat-form-field>
+
+              <mat-form-field class="example-full-width">
+                <input matInput id="article_doctor_name" placeholder="Enter subheadline" name="sub_headline"
+                       [(ngModel)]="model.sub_headline">
+              </mat-form-field>
+
+              <mat-form-field class="example-full-width">
+                <input matInput id="article_sub_headline" placeholder="Enter article doctor name" name="doc_name"
+                       [(ngModel)]="model.doc_name">
+
+              </mat-form-field>
+
+              <mat-form-field class="example-full-width">
+                <input matInput id="article_doctor_speciality" class="form-control" placeholder="Enter speciality"
+                       name="speciality" [(ngModel)]="model.speciality">
+
+              </mat-form-field>
+
+              <mat-form-field class="example-full-width">
+                <input matInput id="article_doctor_designation" placeholder="Enter Designation " name="designation"
+                       [(ngModel)]="model.designation">
+
+              </mat-form-field>
+
+              <mat-form-field class="example-full-width">
+                <input matInput id="article_doctor_hospital" placeholder="Enter Hospital" name="hospital"
+                       [(ngModel)]="model.hospital">
+
+              </mat-form-field>
+
+              <mat-form-field class="example-full-width">
+                <input matInput id="article_bio" placeholder="Enter Bio" name="bio" [(ngModel)]="model.bio">
+
+              </mat-form-field>
+
+
+              <mat-form-field class="example-full-width">
+                <input matInput id="article_anchor" placeholder="Enter the total views" name="totalview"
+                       [(ngModel)]="model.totalview">
+
+              </mat-form-field>
+
+              <mat-form-field class="example-full-width">
+                <input matInput id="article_guest1" placeholder="Enter Guest1 Name" name="guest1"
+                       [(ngModel)]="model.guest1">
+
+              </mat-form-field>
+
+              <mat-form-field class="example-full-width">
+                <input matInput id="article_designation_guest1" placeholder="Enter Guest1 Designation " name="g1_des"
+                       [(ngModel)]="model.g1_des">
+
+              </mat-form-field>
+
+              <mat-form-field class="example-full-width">
+                <input matInput id="article_img_url_g1"
+                       placeholder="Enter Public Image URL from Google Cloud Storage Bucket of the Guest1"
+                       name="guest1_image_url" [(ngModel)]="model.guest1_image_url">
+
+
+              </mat-form-field>
+              <mat-form-field class="example-full-width">
+                <input matInput id="article_hospital_g1" placeholder="Enter Guest1 Hospital" name="guest1_hospital"
+                       [(ngModel)]="model.guest1_hospital">
+
+              </mat-form-field>
+              <mat-form-field class="example-full-width">
+                <input matInput id="article_guest2" placeholder="Enter Guest name" name="guest2"
+                       [(ngModel)]="model.guest2">
+
+              </mat-form-field>
+
+              <mat-form-field class="example-full-width">
+                <input matInput id="article_designation_guest2" placeholder="Enter Guest2 Designation "
+                       name="guest2_designation"
+                       [(ngModel)]="model.guest2_designation">
+
+              </mat-form-field>
+
+              <mat-form-field class="example-full-width">
+                <input matInput id="article_img_url_g2" name="guest1_image_url" [(ngModel)]="model.guest1_image_url"
+                       placeholder="Enter Public Image URL from Google Cloud Storage Bucket of the Guest2">
+
+              </mat-form-field>
+
+              <mat-form-field class="example-full-width">
+                <input matInput id="article_hospital_g2" name="guest2_hospital" [(ngModel)]="model.guest2_hospital"
+                       placeholder="Enter Guest2 Hospital">
+
+              </mat-form-field>
+
+
+              <mat-form-field class="example-full-width">
+                <input matInput id="article_guest3" name="guest3" [(ngModel)]="model.guest3"
+                       placeholder="Enter Guest name">
+
+              </mat-form-field>
+
+              <mat-form-field class="example-full-width">
+                <input matInput id="article_designation_guest3" name="guest3_designation"
+                       [(ngModel)]="model.guest3_designation"
+                       placeholder="Enter Guest3 Designation ">
+
+              </mat-form-field>
+
+              <mat-form-field class="example-full-width">
+                <input matInput id="article_img_url_g3" name="guest3_image_url" [(ngModel)]="model.guest3_image_url"
+                       placeholder="Enter Public Image URL from Google Cloud Storage Bucket of the Guest3">
+
+              </mat-form-field>
+
+              <mat-form-field class="example-full-width">
+                <input matInput id="article_hospital_g3" name="guest3_hospital" [(ngModel)]="model.guest3_hospital"
+                       placeholder="Enter Guest3Hospital">
+
+              </mat-form-field>
+
+              <mat-form-field class="example-full-width">
+                <input matInput id="article_guest4" name="guest4" [(ngModel)]="model.guest4"
+                       placeholder="Enter Guest name">
+
+              </mat-form-field>
+
+              <mat-form-field class="example-full-width">
+                <input matInput id="article_designation_guest4" name="guest4_designation"
+                       [(ngModel)]="model.guest4_designation"
+                       placeholder="Enter Guest4 Designation ">
+
+              </mat-form-field>
+
+              <mat-form-field class="example-full-width">
+                <input matInput id="article_img_url_g4" name="guest4_image_url" [(ngModel)]="model.guest4_image_url"
+                       placeholder="Enter Public Image URL from Google Cloud Storage Bucket of the Guest4">
+
+              </mat-form-field>
+
+
+              <mat-form-field class="example-full-width">
+                <input matInput id="article_hospital_g4" name="guest4_hospital" [(ngModel)]="model.guest4_hospital"
+                       placeholder="Enter Guest4Hospital">
+
+              </mat-form-field>
+
+              <mat-form-field class="example-full-width">
+                <input matInput id="article_guest5" name="guest5" [(ngModel)]="model.guest5"
+                       placeholder="Enter Guest name">
+
+              </mat-form-field>
+
+              <mat-form-field class="example-full-width">
+                <input matInput id="article_designation_guest5" class="form-control" name="guest5_designation"
+                       [(ngModel)]="model.guest5_designation" placeholder="Enter Guest5 Designation ">
+
+              </mat-form-field>
+
+              <mat-form-field class="example-full-width">
+                <input matInput id="article_img_url_g5" name="guest5_image_url" [(ngModel)]="model.guest5_image_url"
+                       placeholder="Enter Public Image URL from Google Cloud Storage Bucket of the Guest5">
+
+              </mat-form-field>
+
+              <mat-form-field class="example-full-width">
+                <input matInput id="article_hospital_g5" class="form-control" name="guest5_hospital"
+                       [(ngModel)]="model.guest5_hospital" placeholder="Enter Guest5Hospital">
+
+              </mat-form-field>
+
+
+              <mat-form-field class="example-full-width">
+                <input matInput id="article_guest6" name="guest6" [(ngModel)]="model.guest6"
+                       placeholder="Enter Guest name">
+
+              </mat-form-field>
+
+              <mat-form-field class="example-full-width">
+                <input matInput id="article_designation_guest6" name="guest6_designation"
+                       [(ngModel)]="model.guest6_designation" placeholder="Enter Guest5 Designation ">
+
+              </mat-form-field>
+
+              <mat-form-field class="example-full-width">
+                <input matInput id="article_img_url_g6" name="guest6_image_url" [(ngModel)]="model.guest6_image_url"
+                       placeholder="Enter Public Image URL from Google Cloud Storage Bucket of the Guest6">
+
+              </mat-form-field>
+
+              <mat-form-field class="example-full-width">
+                <input matInput id="article_hospital_g6" name="guest6_hospital" [(ngModel)]="model.guest6_hospital"
+                       placeholder="Enter Guest5Hospital">
+
+              </mat-form-field>
+
+              <mat-form-field class="example-full-width">
+                <input matInput data-validation="required" name="slug" [(ngModel)]="model.slug" id="article_slug"
+                       placeholder="Enter article headline">
+                <p id="valid5" class="text-danger"></p>
+              </mat-form-field>
+
+
+              <mat-form-field class="example-full-width">
+                <mat-select name="category" [(ngModel)]="model.category">
+                  <mat-option value="">Choose one</mat-option>
+                  <mat-option value="highlights">Highlights</mat-option>
+                  <mat-option value="in-conversation">In Conversation</mat-option>
+                  <mat-option value="the-interview">The Interview</mat-option>
+                  <mat-option value="the-speakers">The Speakers</mat-option>
+                  <mat-option value="one-more-thing">One More Thing</mat-option>
+                  <mat-option value="revolution-talk">Revolution Talk</mat-option>
+                  <mat-option value="live-case">Live Cases</mat-option>
+                  <mat-option value="cme">CME</mat-option>
+                  <mat-option value="testimonial">testimonial</mat-option>
+                  <mat-option value="highlights-podcast">Highlights Podcast</mat-option>
+                  <mat-option value="in-conversation-podcast">In Conversation Podcast</mat-option>
+                  <mat-option value="the-interview-podcast">The Interview Podcast</mat-option>
+                  <mat-option value="the-speakers-podcast">The Speakers Podcast</mat-option>
+                  <mat-option value="one-more-thing-podcast">One More Thing Podcast</mat-option>
+                  <mat-option value="revolution-talk-podcast">Revolution Talk Podcast</mat-option>
+                  <mat-option value="live-case-podcast">Live Cases Podcast</mat-option>
+                  <mat-option value="journal">Journals</mat-option>
+                </mat-select>
+              </mat-form-field>
+
+              <mat-form-field class="example-full-width">
+                <mat-select data-validation="required" class="form-control" id="article_event" name="event"
+                            [(ngModel)]="model.event">
+                  <mat-option value="">Choose one</mat-option>
+                  <mat-option value="aicog-2018">AICOG 2018</mat-option>
+                  <mat-option value="csi-2017">Emcure CSI 2017</mat-option>
+                  <mat-option value="csikochi-2016">CSI Kochi 2016</mat-option>
+                  <mat-option value="csicon-2014">CSICON 2014</mat-option>
+                  <mat-option value="csicon-2015">CSICON 2015</mat-option>
+                  <mat-option value="wccpci-2015">WCCPCI 2015</mat-option>
+                  <mat-option value="jacc">JACC</mat-option>
+                  <mat-option value="cardiac-prevent-2015">Cardiac Prevent 2015</mat-option>
+                  <mat-option value="ias-2014">IAS</mat-option>
+                  <mat-option value="wcchd-2015">WCCHD</mat-option>
+                  <mat-option value="ihj-2015">IHJ</mat-option>
+                  <mat-option value="revolution-talk">revolution talk</mat-option>
+                  <mat-option value="csinic-2016">csinic-2016</mat-option>
+                  <mat-option value="cme">CME</mat-option>
+                  <mat-option value="apvic">APVIC</mat-option>
+                  <mat-option value="wccpci-2016">WCCPCI 2016</mat-option>
+                  <mat-option value="c3">C3</mat-option>
+                  <mat-option value="tct">TCT</mat-option>
+                  <mat-option value="wccicc-2017">WCCICC 2017</mat-option>
+                  <mat-option value="journal">Journals</mat-option>
+                  <mat-option value="wcce-2017">WCCE 2017</mat-option>
+                  <mat-option value="csitv">CSI tv</mat-option>
+                  <mat-option value="podcast">podcast</mat-option>
+                  <mat-option value="testimonial">testimonial</mat-option>
+                  <mat-option value="live-case">Live Cases</mat-option>
+
+                </mat-select>
+
+              </mat-form-field>
+
+
+              <mat-form-field class="example-full-width">
+                <input matInput id="article_description" class="form-control" name="description"
+                       [(ngModel)]="model.description" placeholder="Enter Description">
+              </mat-form-field>
+
+              <mat-form-field class="example-full-width">
+                <input matInput id="article_img_url" name="image_url1" [(ngModel)]="model.image_url1"
+                       placeholder="Enter Public Image URL from Google Cloud Storage Bucket">
+              </mat-form-field>
+
+              <mat-form-field class="example-full-width">
+                <input matInput id="article_img_alt" name="image_alt1" [(ngModel)]="model.image_alt1"
+                       placeholder="Enter Image Alternative text">
+              </mat-form-field>
+
+              <mat-form-field class="example-full-width">
+                <input matInput id="article_thumb_url" name="thumbnail_url1" [(ngModel)]="model.thumbnail_url1"
+                       placeholder="Enter Public Thumbnail URL from Google Cloud Storage Bucket">
+              </mat-form-field>
+
+              <mat-form-field class="example-full-width">
+                <input matInput id="article_medium_url" name="medium_url1" [(ngModel)]="model.medium_url1"
+                       placeholder="Enter Public Medium URL from Google Cloud Storage Bucket">
+              </mat-form-field>
+
+              <mat-form-field class="example-full-width">
+                <input matInput id="article_small_url" name="small_url1" [(ngModel)]="model.small_url1"
+                       placeholder="Enter Public Small URL from Google Cloud Storage Bucket">
+              </mat-form-field>
+
+              <mat-form-field class="example-full-width">
+                <input matInput id="article_img_url" name="image_url" [(ngModel)]="model.image_url"
+                       placeholder="Enter Public Image URL from Google Cloud Storage Bucket">
+              </mat-form-field>
+
+
+              <mat-form-field class="example-full-width">
+                <input matInput id="article_img_alt" name="image_alt" [(ngModel)]="model.image_alt"
+                       placeholder="Enter Image Alternative text">
+              </mat-form-field>
+
+              <mat-form-field class="example-full-width">
+                <input matInput id="article_thumb_url" name="thumbnail_url" [(ngModel)]="model.thumbnail_url"
+                       placeholder="Enter Public Thumbnail URL from Google Cloud Storage Bucket">
+              </mat-form-field>
+
+              <mat-form-field class="example-full-width">
+                <input matInput id="article_medium_url" name="medium_url" [(ngModel)]="model.medium_url"
+                       placeholder="Enter Public Medium URL from Google Cloud Storage Bucket">
+              </mat-form-field>
+
+              <mat-form-field class="example-full-width">
+                <input matInput id="article_small_url" name="small_url" [(ngModel)]="model.small_url"
+                       placeholder="Enter Public Small URL from Google Cloud Storage Bucket">
+              </mat-form-field>
+
+              <mat-form-field class="example-full-width">
+                <input matInput id="article_video_url" name="video_url" [(ngModel)]="model.video_url"
+                       placeholder="Enter Public Video URL from Google Cloud Storage Bucket">
+              </mat-form-field>
+
+              <mat-form-field class="example-full-width">
+                <input matInput id="article_subtitle_file" name="subtitle_file" [(ngModel)]="model.subtitle_file"
+                       placeholder="Enter Public Subtitle URL from Google Cloud Storage Bucket">
+              </mat-form-field>
+
+
+              <mat-form-field class="example-full-width">
+                <input matInput id="article_seo_description" class="form-control" name="seo_description"
+                       [(ngModel)]="model.seo_description"
+                       placeholder="Enter Description">
+              </mat-form-field>
+
+              <mat-form-field class="example-full-width">
+                <input matInput id="article_seo_keywords" class="form-control" name="seo_keywords"
+                       [(ngModel)]="model.seo_keywords" placeholder="Enter Description">
+              </mat-form-field>
+
+              <mat-form-field class="example-full-width">
+                <input matInput id="article_transcript" class="form-control" name="transcript"
+                       [(ngModel)]="model.transcript" placeholder="Enter Transcript">
+              </mat-form-field>
+
+
+              <script type="text/javascript">
+                function replicate() {
+                  //alert('repla');
+                  var presc = document.getElementById("con");
+                  var itm = presc.lastElementChild;
+                  //console.log(itm)
+                  // Copy the <li> element and its child nodes
+                  var cln = itm.cloneNode(true);
+                  var newid = parseInt((itm.id).split("-")[1]) + 1;
+                  cln.id = "item-" + newid;
+
+                  $(cln).find('input[type="text"]').val('');
+                  $(cln).find('input[type="textarea"]').val('');
+
+                  $(cln).find('input[type="file"]').val('');
+                  $(cln).find("#imgurl").val('');
+
+
+                  presc.appendChild(cln);
+                }
+
+                2
+
+                function removePresc(node) {
+
+                  if (node.parentNode.childNodes.length > 3) {
+
+                    node.parentNode.removeChild(node);
+                  }
+                }
+
+              </script>
+
+
+              <div id="con">
+                <div id="item-1">
+
+
+                  <mat-form-field class="example-full-width">
+                    <input matInput id="t_question" class="form-control" placeholder="Enter Transcript question"
+                           name="question" [(ngModel)]="model.question">
+                  </mat-form-field>
+
+
+                  <mat-form-field class="example-full-width">
+                    <input matInput id="t_answer" class="form-control" placeholder="Enter Transcript answer"
+                           name="answer" [(ngModel)]="model.answer">
+                  </mat-form-field>
+
+
+                  <mat-form-field class="example-full-width">
+                    <input matInput id="t_image" class="form-control" placeholder="Enter Transcript answer"
+                           name="graphic_image" [(ngModel)]="model.graphic_image">
+                  </mat-form-field>
+
+
+                  <mat-form-field class="example-full-width">
+                    <input matInput id="t_quote" class="form-control" placeholder="Enter Transcript answer" name="quote"
+                           [(ngModel)]="model.quote">
+                  </mat-form-field>
+
+
+                  <div class="col-lg-offset-2 col-sm-10">
+                    <div class="pull-right">
+                      <button onclick="replicate()" class="btn btn-info"><i class="fa fa-plus"></i> add</button>
+                      <button onclick="removePresc(this.parentNode.parentNode.parentNode.parentNode)"
+                              class="btn btn-danger"><i class="fa fa-remove"></i> remove
+                      </button>
+                    </div>
+                  </div>
+
+
+                  <mat-form-field class="example-full-width">
+                    <input matInput id="article_similar_topic" class="form-control" placeholder="Enter Similar Topic"
+                           name="similar_topic" [(ngModel)]="model.similar_topic">
+                  </mat-form-field>
+
+                  <mat-form-field class="example-full-width">
+                    <input matInput id="article_highlights1" class="form-control"
+                           placeholder="Enter Highlight 1 of Article" name="highlights1"
+                           [(ngModel)]="model.highlights1">
+                  </mat-form-field>
+
+
+                  <mat-form-field class="example-full-width">
+                    <input matInput id="article_highlights2" class="form-control"
+                           placeholder="Enter Highlight 2 of Article" name="highlights2"
+                           [(ngModel)]="model.highlights2">
+                  </mat-form-field>
+
+
+                  <mat-form-field class="example-full-width">
+                    <input matInput id="article_highlights3" class="form-control"
+                           placeholder="Enter Highlight 3 of Article" name="highlights3"
+                           [(ngModel)]="model.highlights3">
+                  </mat-form-field>
+
+
+                  <mat-form-field class="example-full-width">
+                    <input matInput id="article_highlights4" class="form-control"
+                           placeholder="Enter Highlight 4 of Article" name="highlights4"
+                           [(ngModel)]="model.highlights4">
+                  </mat-form-field>
+
+
+                  <mat-form-field class="example-full-width">
+                    <input matInput id="article_updated_at" class="form-control" placeholder="Enter Last Updated time"
+                           name="update_time" [(ngModel)]="model.update_time">
+                  </mat-form-field>
+
+                  <mat-form-field class="example-full-width">
+                    <mat-select class="form-control">
+
+                      <mat-option value="not_reviewed">send for review</mat-option>
+
+
+                    </mat-select>
+                  </mat-form-field>
+
+
+                  <mat-checkbox id="article_is_top_story">Is Top story:
+                  </mat-checkbox>
+
+
+                  <mat-checkbox id="article_is_home_vidio">Is Home Video:
+                  </mat-checkbox>
+
+
+                  <mat-checkbox id="article_is_popular_story">Is popular Story:
+                  </mat-checkbox>
+
+
+                  <button mat-button type="submit" class="btn btn-md btn-primary">Create</button>
+
+
+                </div>
+              </div>
+
+
+            </form>
+          </mat-card>
+
+
+        </div>
+      </mat-expansion-panel>
+    </mat-accordion>
+
+
+    <!--edit item-->
+    <mat-accordion>
+
+      <!--<mat-expansion-panel (opened)="panelOpenState = true"
+                           (closed)="panelOpenState = false">-->
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Edit item
+          </mat-panel-title>
+          <mat-panel-description>
+
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <div class="panel panel-default marg-top" fxLayout="column" fxLayoutAlign="center center"
+             style="margin-bottom: 20px">
+
+
+          <mat-card>
+
+            <form class="example-form" (submit)="displayform()">
+
+              <mat-form-field class="example-full-width">
+                <input matInput placeholder=" Enter article slug:" id="article_search_slug" name="e_slug"
+                       [(ngModel)]="model1.e_slug">
+              </mat-form-field>
+              <button mat-button class="btn-md btn-primary" type="submit" id="btnArticleSearch">Search</button>
+            </form>
+          </mat-card>
+
+
+          <br><br>
+          <mat-card>
+            <form class="example-form" name="form" (ngSubmit)="update_edit()">
+
+              <mat-form-field class="example-full-width">
+                <input matInput [value]="model.title" name="title" [(ngModel)]="model.title"
+                       placeholder="Enter Article page title">
+
+              </mat-form-field>
+
+              <mat-form-field class="example-full-width">
+                <input matInput id="article_edit_headline" placeholder="Enter article headline 1"
+                       value="{{ model.headline}}" name="headline"
+                       [(ngModel)]="model.headline">
+              </mat-form-field>
+
+
+              <mat-form-field class="example-full-width">
+                <input matInput id="article_edit_headline2" placeholder="Enter article headline 2"
+                       value="{{ model.headline2}}" name="headline2"
+                       [(ngModel)]="model.headline2">
+              </mat-form-field>
+
+
+              <mat-form-field class="example-full-width">
+                <input matInput id="article_edit_sub_headline" placeholder="Enter Doctor name"
+                       value="{{ model['sub_headline']}}" name="sub_headline"
+                       [(ngModel)]="model.sub_headline">
+              </mat-form-field>
+
+              <mat-form-field class="example-full-width">
+                <input matInput id="article_edit_speciality" class="form-control" placeholder="Enter speciality"
+                       name="speciality" [(ngModel)]="model.speciality"><!--{{model['speciality']}}-->
+              </mat-form-field>
+
+              <mat-form-field class="example-full-width">
+                <input matInput id="article_edit_designation" class="form-control" placeholder="Enter Designation "
+                       name="designation" [(ngModel)]="model.designation"><!--{{model['designation']}}-->
+              </mat-form-field>
+
+
+              <mat-form-field class="example-full-width">
+                <input matInput id="article_edit_hospital" class="form-control" placeholder="Enter Hospital"
+                       name="hospital" [(ngModel)]="model.hospital"><!--{{model.hospital}}-->
+              </mat-form-field>
+
+              <mat-form-field class="example-full-width">
+                <input matInput id="article_edit_bio" class="form-control" placeholder="Enter Bio" name="bio"
+                       [(ngModel)]="model.bio"><!--{{model.bio}}-->
+              </mat-form-field>
+
+              <mat-form-field class="example-full-width">
+                <input matInput id="article_edit_anchor" placeholder="Enter Anchor slug" value="{{model.anchor}}"
+                       name="anchor" [(ngModel)]="model.anchor">
+              </mat-form-field>
+
+
+              <mat-form-field class="example-full-width">
+                <mat-select data-validation="required" class="form-control" id="article_event" name="event"
+                            [(ngModel)]="model.event">
+                  <mat-option value="">Choose one</mat-option>
+                  <mat-option value="aicog-2018">AICOG 2018</mat-option>
+                  <mat-option value="csi-2017">Emcure CSI 2017</mat-option>
+                  <mat-option value="csikochi-2016">CSI Kochi 2016</mat-option>
+                  <mat-option value="csicon-2014">CSICON 2014</mat-option>
+                  <mat-option value="csicon-2015">CSICON 2015</mat-option>
+                  <mat-option value="wccpci-2015">WCCPCI 2015</mat-option>
+                  <mat-option value="jacc">JACC</mat-option>
+                  <mat-option value="cardiac-prevent-2015">Cardiac Prevent 2015</mat-option>
+                  <mat-option value="ias-2014">IAS</mat-option>
+                  <mat-option value="wcchd-2015">WCCHD</mat-option>
+                  <mat-option value="ihj-2015">IHJ</mat-option>
+                  <mat-option value="revolution-talk">revolution talk</mat-option>
+                  <mat-option value="csinic-2016">csinic-2016</mat-option>
+                  <mat-option value="cme">CME</mat-option>
+                  <mat-option value="apvic">APVIC</mat-option>
+                  <mat-option value="wccpci-2016">WCCPCI 2016</mat-option>
+                  <mat-option value="c3">C3</mat-option>
+                  <mat-option value="tct">TCT</mat-option>
+                  <mat-option value="wccicc-2017">WCCICC 2017</mat-option>
+                  <mat-option value="journal">Journals</mat-option>
+                  <mat-option value="wcce-2017">WCCE 2017</mat-option>
+                  <mat-option value="csitv">CSI tv</mat-option>
+                  <mat-option value="podcast">podcast</mat-option>
+                  <mat-option value="testimonial">testimonial</mat-option>
+                  <mat-option value="live-case">Live Cases</mat-option>
+
+                </mat-select>
+
+              </mat-form-field>
+
+              <mat-form-field class="example-full-width">
+                <mat-select name="category" [(ngModel)]="model.category">
+                  <mat-option value="">Choose one</mat-option>
+                  <mat-option value="highlights">Highlights</mat-option>
+                  <mat-option value="in-conversation">In Conversation</mat-option>
+                  <mat-option value="the-interview">The Interview</mat-option>
+                  <mat-option value="the-speakers">The Speakers</mat-option>
+                  <mat-option value="one-more-thing">One More Thing</mat-option>
+                  <mat-option value="revolution-talk">Revolution Talk</mat-option>
+                  <mat-option value="live-case">Live Cases</mat-option>
+                  <mat-option value="cme">CME</mat-option>
+                  <mat-option value="testimonial">testimonial</mat-option>
+                  <mat-option value="highlights-podcast">Highlights Podcast</mat-option>
+                  <mat-option value="in-conversation-podcast">In Conversation Podcast</mat-option>
+                  <mat-option value="the-interview-podcast">The Interview Podcast</mat-option>
+                  <mat-option value="the-speakers-podcast">The Speakers Podcast</mat-option>
+                  <mat-option value="one-more-thing-podcast">One More Thing Podcast</mat-option>
+                  <mat-option value="revolution-talk-podcast">Revolution Talk Podcast</mat-option>
+                  <mat-option value="live-case-podcast">Live Cases Podcast</mat-option>
+                  <mat-option value="journal">Journals</mat-option>
+                </mat-select>
+              </mat-form-field>
+
+
+              <mat-form-field class="example-full-width">
+                <input matInput id="article_edit_guest1" placeholder="Enter Guest1 Name" name="guest1"
+                       [(ngModel)]="model.guest1">
+
+              </mat-form-field>
+
+              <mat-form-field class="example-full-width">
+                <input matInput id="article_edit_designation_guest1" placeholder="Enter Guest1 Designation "
+                       name="g1_des" [(ngModel)]="model.g1_des">
+
+              </mat-form-field>
+
+              <mat-form-field class="example-full-width">
+                <input matInput id="article_edit_img_url_g1"
+                       placeholder="Enter Public Image URL from Google Cloud Storage Bucket of the Guest1"
+                       name="guest1_image_url" [(ngModel)]="model.guest1_image_url">
+
+
+              </mat-form-field>
+              <mat-form-field class="example-full-width">
+                <input matInput id="article_edit_hospital_g1" placeholder="Enter Guest1 Hospital" name="guest1_hospital"
+                       [(ngModel)]="model.guest1_hospital">
+
+              </mat-form-field>
+
+              <mat-form-field class="example-full-width">
+                <input matInput id="article_edit_guest2" placeholder="Enter Guest name" name="guest2"
+                       [(ngModel)]="model.guest2">
+
+              </mat-form-field>
+
+              <mat-form-field class="example-full-width">
+                <input matInput id="article_designation_guest2" placeholder="Enter Guest2 Designation "
+                       name="guest2_designation"
+                       [(ngModel)]="model.guest2_edit_designation">
+
+              </mat-form-field>
+
+              <mat-form-field class="example-full-width">
+                <input matInput id="article_edit_img_url_g2" name="guest1_image_url"
+                       [(ngModel)]="model.guest1_image_url"
+                       placeholder="Enter Public Image URL from Google Cloud Storage Bucket of the Guest2">
+
+              </mat-form-field>
+
+              <mat-form-field class="example-full-width">
+                <input matInput id="article_edit_hospital_g2" name="guest2_hospital" [(ngModel)]="model.guest2_hospital"
+                       placeholder="Enter Guest2 Hospital">
+
+              </mat-form-field>
+
+
+              <mat-form-field class="example-full-width">
+                <input matInput id="article_edit_guest3" name="guest3" [(ngModel)]="model.guest3"
+                       placeholder="Enter Guest name">
+
+              </mat-form-field>
+
+              <mat-form-field class="example-full-width">
+                <input matInput id="article_edit_designation_guest3" name="guest3_designation"
+                       [(ngModel)]="model.guest3_designation"
+                       placeholder="Enter Guest3 Designation ">
+
+              </mat-form-field>
+
+              <mat-form-field class="example-full-width">
+                <input matInput id="article_edit_img_url_g3" name="guest3_image_url"
+                       [(ngModel)]="model.guest3_image_url"
+                       placeholder="Enter Public Image URL from Google Cloud Storage Bucket of the Guest3">
+
+              </mat-form-field>
+
+              <mat-form-field class="example-full-width">
+                <input matInput id="article_edit_hospital_g3" name="guest3_hospital" [(ngModel)]="model.guest3_hospital"
+                       placeholder="Enter Guest3Hospital">
+
+              </mat-form-field>
+
+              <mat-form-field class="example-full-width">
+                <input matInput id="article_edit_guest4" name="guest4" [(ngModel)]="model.guest4"
+                       placeholder="Enter Guest name">
+
+              </mat-form-field>
+
+              <mat-form-field class="example-full-width">
+                <input matInput id="article_edit_designation_guest4" name="guest4_designation"
+                       [(ngModel)]="model.guest4_designation"
+                       placeholder="Enter Guest4 Designation ">
+
+              </mat-form-field>
+
+              <mat-form-field class="example-full-width">
+                <input matInput id="article_edit_img_url_g4" name="guest4_image_url"
+                       [(ngModel)]="model.guest4_image_url"
+                       placeholder="Enter Public Image URL from Google Cloud Storage Bucket of the Guest4">
+
+              </mat-form-field>
+
+
+              <mat-form-field class="example-full-width">
+                <input matInput id="article_edit_hospital_g4" name="guest4_hospital" [(ngModel)]="model.guest4_hospital"
+                       placeholder="Enter Guest4Hospital">
+
+              </mat-form-field>
+
+
+              <mat-form-field class="example-full-width">
+                <input matInput id="article_edit_guest5" name="guest5" [(ngModel)]="model.guest5"
+                       placeholder="Enter Guest name">
+
+              </mat-form-field>
+
+              <mat-form-field class="example-full-width">
+                <input matInput id="article_edit_designation_guest5" class="form-control" name="guest5_designation"
+                       [(ngModel)]="model.guest5_designation" placeholder="Enter Guest5 Designation ">
+
+              </mat-form-field>
+
+              <mat-form-field class="example-full-width">
+                <input matInput id="article_edit_img_url_g5" name="guest5_image_url"
+                       [(ngModel)]="model.guest5_image_url"
+                       placeholder="Enter Public Image URL from Google Cloud Storage Bucket of the Guest5">
+
+              </mat-form-field>
+
+              <mat-form-field class="example-full-width">
+                <input matInput id="article_edit_hospital_g5" class="form-control" name="guest5_hospital"
+                       [(ngModel)]="model.guest5_hospital" placeholder="Enter Guest5Hospital">
+
+              </mat-form-field>
+
+
+              <mat-form-field class="example-full-width">
+                <input matInput id="article_edit_guest6" name="guest6" [(ngModel)]="model.guest6"
+                       placeholder="Enter Guest name">
+
+              </mat-form-field>
+
+              <mat-form-field class="example-full-width">
+                <input matInput id="article_edit_designation_guest6" name="guest6_designation"
+                       [(ngModel)]="model.guest6_designation" placeholder="Enter Guest5 Designation ">
+
+              </mat-form-field>
+
+              <mat-form-field class="example-full-width">
+                <input matInput id="article_edit_img_url_g6" name="guest6_image_url"
+                       [(ngModel)]="model.guest6_image_url"
+                       placeholder="Enter Public Image URL from Google Cloud Storage Bucket of the Guest6">
+
+              </mat-form-field>
+
+              <mat-form-field class="example-full-width">
+                <input matInput id="article_edit_hospital_g6" name="guest6_hospital" [(ngModel)]="model.guest6_hospital"
+                       placeholder="Enter Guest5Hospital">
+
+              </mat-form-field>
+              <mat-form-field class="example-full-width">
+                <input matInput id="article_edit_new_slug" class="form-control" placeholder="Enter new slug"
+                       value="{{model.slug}}">
+              </mat-form-field>
+
+              <mat-form-field class="example-full-width">
+                <input matInput id="test" class="form-control" placeholder="testing" name="test"
+                       [(ngModel)]="model.test">
+              </mat-form-field>
+
+
+              <mat-form-field class="example-full-width">
+                <input matInput id="article_edit_description" class="form-control" placeholder="Enter Description"
+                       name="description" [(ngModel)]="model.description">
+              </mat-form-field>
+
+              <mat-form-field class="example-full-width">
+                <input matInput id="article_edit_img_url" name="image_url" [(ngModel)]="model.image_url"
+                       placeholder="Enter Public Image URL from Google Cloud Storage Bucket">
+              </mat-form-field>
+
+
+              <mat-form-field class="example-full-width">
+                <input matInput id="article_edit_img_alt" name="image_alt" [(ngModel)]="model.image_alt"
+                       placeholder="Enter Image Alternative text">
+              </mat-form-field>
+
+              <mat-form-field class="example-full-width">
+                <input matInput id="article_edit_thumb_url" name="thumbnail_url" [(ngModel)]="model.thumbnail_url"
+                       placeholder="Enter Public Thumbnail URL from Google Cloud Storage Bucket">
+              </mat-form-field>
+
+              <mat-form-field class="example-full-width">
+                <input matInput id="article_edit_medium_url" name="medium_url" [(ngModel)]="model.medium_url"
+                       placeholder="Enter Public Medium URL from Google Cloud Storage Bucket">
+              </mat-form-field>
+
+              <mat-form-field class="example-full-width">
+                <input matInput id="article_edit_small_url" name="small_url" [(ngModel)]="model.small_url"
+                       placeholder="Enter Public Small URL from Google Cloud Storage Bucket">
+              </mat-form-field>
+
+
+              <mat-form-field class="example-full-width">
+                <input matInput id="article_edit_img_url1" name="image_url1" [(ngModel)]="model.image_url1"
+                       placeholder="Enter Public Image URL from Google Cloud Storage Bucket">
+              </mat-form-field>
+
+
+              <mat-form-field class="example-full-width">
+                <input matInput id="article_edit_img_alt1" name="image_alt1" [(ngModel)]="model.image_alt1"
+                       placeholder="Enter Image Alternative text">
+              </mat-form-field>
+
+              <mat-form-field class="example-full-width">
+                <input matInput id="article_edit_thumb_url1" name="thumbnail_url1" [(ngModel)]="model.thumbnail_url1"
+                       placeholder="Enter Public Thumbnail URL from Google Cloud Storage Bucket">
+              </mat-form-field>
+
+              <mat-form-field class="example-full-width">
+                <input matInput id="article_edit_medium_url1" name="medium_url1" [(ngModel)]="model.medium_url1"
+                       placeholder="Enter Public Medium URL from Google Cloud Storage Bucket">
+              </mat-form-field>
+
+              <mat-form-field class="example-full-width">
+                <input matInput id="article_edit_small_url1" name="small_url1" [(ngModel)]="model.small_url1"
+                       placeholder="Enter Public Small URL from Google Cloud Storage Bucket">
+              </mat-form-field>
+
+
+              <mat-form-field class="example-full-width">
+                <input matInput id="article_edit_video_url" name="video_url" [(ngModel)]="model.video_url"
+                       value="{{model.video_url}}"
+                       placeholder="Enter Public Video URL from Google Cloud Storage Bucket">
+              </mat-form-field>
+
+              <mat-form-field class="example-full-width">
+                <input matInput id="article_edit_subtitle_file" name="subtitle_file" [(ngModel)]="model.subtitle_file"
+                       placeholder="Enter Public Subtitle URL from Google Cloud Storage Bucket">
+              </mat-form-field>
+
+
+              <mat-form-field class="example-full-width">
+                <input matInput id="article_edit_seo_description" class="form-control" placeholder="Enter Description"
+                       name="seo_description" [(ngModel)]="model.seo_description">
+              </mat-form-field>
+
+              <mat-form-field class="example-full-width">
+                <input matInput id="article_edit_seo_keywords" class="form-control" placeholder="Enter Description"
+                       name="seo_keywords" [(ngModel)]="model.seo_keywords">
+              </mat-form-field>
+
+              <mat-form-field class="example-full-width">
+                <input matInput id="article_edit_transcript" class="form-control" placeholder="Enter Transcript"
+                       name="transcript" [(ngModel)]="model.transcript">
+              </mat-form-field>
+              <mat-checkbox id="article_edit_is_top_story">Is Top story:
+              </mat-checkbox>
+
+              <button mat-button type="submit" class="btn btn-md btn-primary">Update</button>
+
+
+            </form>
+          </mat-card>
+
+
+        </div>
+      </mat-expansion-panel>
+    </mat-accordion>
+
+
+    <!--delete item -->
+
+    <mat-accordion>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Delete item
+          </mat-panel-title>
+          <mat-panel-description>
+
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+
+
+        <div fxLayout="column" fxLayoutAlign="center center" class="marg-top" style="margin-bottom: 20px">
+          <mat-card>
+            <form class="example-form" name="form" (submit)="deleteform()">
+
+
+              <mat-form-field class="example-full-width">
+                <input matInput placeholder="Enter article slug:" id="article_delete_slug" name="slug"
+                       [(ngModel)]="model.slug">
+              </mat-form-field>
+
+
+              <button class="btn-md btn-danger" type="submit" id="btnDeleteArticle">Delete</button>
+
+            </form>
+          </mat-card>
+        </div>
+
+      </mat-expansion-panel>
+    </mat-accordion>
+
+
+  </div>
+
+
+  <mat-accordion>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Send notification
+        </mat-panel-title>
+        <mat-panel-description>
+
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+
+
+      <div fxLayout="column" fxLayoutAlign="center center" class="marg-top" style="margin-bottom: 20px">
+        <mat-card>
+          <form class="example-form" name="form">
+
+
+            <mat-form-field class="example-full-width">
+              <input matInput id="send_title" name="title" [(ngModel)]="model.title"
+                     placeholder="Enter Notification title">
+              <p id="valid6" class="text-danger"></p>
+            </mat-form-field>
+
+            <mat-form-field class="example-full-width">
+              <input matInput id="send_headline" name="headline" [(ngModel)]="model.headline"
+                     placeholder="Enter Notification headline">
+            </mat-form-field>
+
+            <mat-form-field class="example-full-width">
+              <input matInput id="send_img" name="image_url" [(ngModel)]="model.image_url"
+                     placeholder="Enter Notification image Url">
+            </mat-form-field>
+
+            <mat-form-field class="example-full-width">
+              <input matInput id="send_slug" name="slug" [(ngModel)]="model.slug"
+                     placeholder="Enter Notification slug (page URL)">
+            </mat-form-field>
+
+
+            <button mat-button class="btn-md btn-danger" type="submit" id="send_notification">Send</button>
+
+          </form>
+        </mat-card>
+      </div>
+
+    </mat-expansion-panel>
+  </mat-accordion>
+
+
+</div>

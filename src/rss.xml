@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">-->
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/"
+     xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" version="2.0">
+    <channel>
+        <atom:link href="https://therightdoctors.com/rss.xml" rel="self" type="application/rss+xml" />
+        <title><![CDATA[TheRightDoctors]]></title>
+        <link>https://therightdoctors.com/rss</link>
+        <description>
+            <![CDATA[Insights from the World's Best Medical Minds.Connect With Us to Connect With Them. We are a Digital Health Google LaunchPad Start-up.]]>
+        </description>
+
+        <image>
+            <url>https://storage.googleapis.com/web-assets/logo.jpg</url>
+            <title><![CDATA[TheRightDoctors]]></title>
+            <link>https://therightdoctors.com/rss</link>
+        </image>
+
+        <language><![CDATA[en-us]]></language>
+
+        <item>
+            <title><![CDATA[Dr.Rishi Sethi: Pharmacoinvasive Approach- A Tool To Treat STEMI In The Peripheral Areas | STEMI India Lucknow 2018 | TheRightDoctors]]> </title>
+            <link>https://therightdoctors.com/stemi-india-lucknow-2018/the-interview/stemi-india-tv-dr-rishi-sethi-pharmacoinvasive-approach-a-tool-to-treat-stemi-in-peripheral-india</link>
+            <guid isPermaLink="true">https://therightdoctors.com/stemi-india-lucknow-2018/the-interview/stemi-india-tv-dr-rishi-sethi-pharmacoinvasive-approach-a-tool-to-treat-stemi-in-peripheral-india</guid>
+            <description><![CDATA[Dr. Rishi Sethi, Prof of Cardiology, KGMU, Executive Council,
+            Cardiological Society of India the man behind STEMI India Lucknow 2018 spoke to Hiral Bhat. This is what he said:
+' Heart has coronary arteries supplying blood to heart muscles, whenever the arteries gets 100% blocked suddenly by thrombus,
+it leads to infarction or death of that region of heart muscle'
+'The success rate of opening the artery is between 50-80% by thrombolysis while by primary angioplasty it is more than 90%.'
+" STEMI Is The Biggest Killer In India Especially In Rural Areas "
+'Globally in developed countries, primary angioplasty is standard of care, however, for it to happen you need to have angioplasty centers all across the country'
+'Any person who has a heart attack should be able to reach angioplasty centers within 1-6 hours from his chest pain, which is not possible in peripheral areas.'
+" Angioplasty: Not Accessible In Peripheral Areas "
+'Thrombolyse the patient first, establish flow in the blood vessels then shift the patient to an angioplasty center within 24 hours.'
+'We should have thrombolytic, pharmacoinvasive and primary angioplasty setups across the country to reduce STEMI deaths.'
+" STEMI India: Thrombolysis In Periphery & Stent In Cath Lab Within 24 hours "
+]]> </description>
+            <media:group>
+                <media:content medium="image" url="https://storage.googleapis.com/web-assets/images/second-thumbnails/Rishi.jpg" height="619" width="1100" />
+                <media:content medium="image" url="https://storage.googleapis.com/web-assets/images/STEMIINDIA-2018/Rishi2/Rishi2-large.jpg" height="619" width="1100" />
+
+            </media:group>
+        </item>
+
+        <item>
+            <title><![CDATA[Dr. VS Narain | STEMI India Lucknow 2018 | TheRightDoctors]]> </title>
+            <link>https://therightdoctors.com/stemi-india-lucknow-2018/the-interview/stemi-india-tv-dr-vs-narain-management-of-heart-attack-in-india-problems-and-solutions</link>
+            <guid isPermaLink="true">https://therightdoctors.com/stemi-india-lucknow-2018/the-interview/stemi-india-tv-dr-vs-narain-management-of-heart-attack-in-india-problems-and-solutions</guid>
+            <description><![CDATA[Dr.VS Narain, Professor & Head-Department Of Cardiology King George Medical University, Lucknow, spoke to Hiral Bhatt at
+            STEMI India, Lucknow. This is what he said:
+'The ideal STEMI management is to reperfuse the affected artery as soon as possible within the first hour which is possible in the west but not in India'
+'If you thrombolyse within the first 3 hours, then the results are good, you are able to open up the artery and restore blood flow'
+" STEMI Deaths In India Are More Than The West Due To Lack Of Funds & System "
+'We have several peripheral hospitals, where thrombolysis is done immediately, then within the first 24 hours this patient is shifted to the
+Hub Hospital where an angioplasty facility is available'
+'Regarding the funding, in the West, a methodology has been developed in the southern part of India, you have identified the total costs that are going to
+come for the entire population in that area and some insurance company takes up the challenge'
+" STEMI India: Give Thrombolysis & Then PCI Within 24 Hours Of An Attack "
+'We are working with STEMI India, where we would train the nurses, the technicians, the doctors and the specialist to create a Heart Attack Management Team.'
+]]> </description>
+            <media:group>
+                <media:content medium="image" url="https://storage.googleapis.com/web-assets/images/STEMIINDIA-2018/Dr-VS-Narain/Dr-VS-Narain-large.jpg" height="619" width="1100" />
+                <media:content medium="image" url="https://storage.googleapis.com/web-assets/images/second-thumbnails/VS-Narain.jpg" height="619" width="1100" />
+
+            </media:group>
+        </item>
+
+        <item>
+            <title> <![CDATA[Dr. ZS Meherwal: Ventricular Septal Defect- Meaning, Causes & Treatment | STEMI India Lucknow 2018 | TheRightDoctors]]></title>
+            <link>https://therightdoctors.com/stemi-india-lucknow-2018/the-interview/stemi-india-tv-dr-zs-meherwal-mi-ventricular-septal-defect-rare-but-fatal</link>
+            <guid isPermaLink="true">https://therightdoctors.com/stemi-india-lucknow-2018/the-interview/stemi-india-tv-dr-zs-meherwal-mi-ventricular-septal-defect-rare-but-fatal</guid>
+            <description> <![CDATA[Dr. ZS Meherwal, Director of Cardiovascular Surgery, Fortis Escort Hospital, Delhi, spoke to Hiral Bhat at STEMI India 2018, Lucknow. This is what he said:
+' Ventricular septal defect is not a very common condition It is rare, but at the same time, it is very devastating.'
+'With the introduction of thrombolysis and PCI, the incidence has reduced to less than 0.5%, but the mortality is still high.'
+'Ventricular septal rupture needs to be diagnosed in time and the best way to diagnose would the echocardiography.'
+'After a diagnosis of the ventricular septal defect, we stabilize the patient by medications and intra aortic balloon pump and operate these patients.'
+'Intraoperatively we have good techniques to repair the ventricular septal defect and to repair the ventricle which is infracted by proper revascularization by coronary artery bypass grafting.']]></description>
+            <media:group>
+                <media:content medium="image" url="https://storage.googleapis.com/web-assets/images-extra/Dr-ZS-Meherwal-large.jpg" height="619" width="1100" />
+                <media:content medium="image" url="https://storage.googleapis.com/web-assets/images-extra/Dr-ZS-Meherwal-large.jpg" height="619" width="1100" />
+            </media:group>
+        </item>
+
+        <item>
+            <title> <![CDATA[Dr. Thomas Alexander : The STEMI India Model has Reduced Deaths By 22 percentage| STEMI India Lucknow 2018 | TheRightDoctors]]></title>
+            <link>https://therightdoctors.com/stemi-india-lucknow-2018/the-interview/stemi-india-tv-dr-thomas-alexander-the-stemi-india-model-has-reduced-deaths-by-22-percentage</link>
+            <guid isPermaLink="true">https://therightdoctors.com/stemi-india-lucknow-2018/the-interview/stemi-india-tv-dr-thomas-alexander-the-stemi-india-model-has-reduced-deaths-by-22-percentage</guid>
+            <description> <![CDATA[Dr. Thomas Alexander, Senior Interventional Cardiologist and a founding director of STEMI India, Head of Division of Cardiology Kovai Medical Center And Hospital,
+            Coimbatore spoke to Hiral Bhatt t at STEMI India 2018, Lucknow. what he said:
+' Tamil Nadu STEMI program was a program that was sponsored by the Indian Council of Medical Research it is now known as STEMI India model which really is the hub and spoke model.'
+" STEMI India Hub & Spoke Model: ECG In Periphery & Treatment In The Cath Lab "
+'A Hub hospital with a Cath Lab is connected to multiple peripherals centers and these were linked electronically using a device that we call the STEMI kit.'
+'It handholds the physicians in a small hospital and starts treatment early in case of a heart attack.'
+" The Model Trains Doctors To Treat STEMI & Is 60% Funded By The Government "
+'This model is unique and within a period of 9 months we reduced mortality by 22%. These models are very cost intense, you need very high quality of doctors.'
+'The government of India will pay 60% of the cost of setting up this program. '
+" The Model Has Benefited The Peripheral Areas And Reduced Deaths By 22% "]]></description>
+            <media:group>
+                <media:content medium="image" url="https://storage.googleapis.com/web-assets/images-extra/thomas-large.jpg" height="619" width="1100" />
+                <media:content medium="image" url="https://storage.googleapis.com/web-assets/images-extra/thomas-large.jpg" height="619" width="1100" />
+            </media:group>
+        </item>
+
+        <item>
+            <title> <![CDATA[Dr. PP Mohanan: Oral Treatment For Managing STEMI And Reducing Deaths | STEMI India Lucknow 2018 | TheRightDoctors]]></title>
+            <link>https://therightdoctors.com/stemi-india-lucknow-2018/the-interview/stemi-india-tv-dr-pp-mohanan-newer-molecules-have-helped-in-treating-stemi-patients</link>
+            <guid isPermaLink="true">https://therightdoctors.com/stemi-india-lucknow-2018/the-interview/stemi-india-tv-dr-pp-mohanan-newer-molecules-have-helped-in-treating-stemi-patients</guid>
+            <description> <![CDATA[Dr. P P Mohanan. Director and head of the Department of Cardiology, Westfort Hospital, Thrissur, Kerala.
+            spoke to Hiral Bhatt t at STEMI India 2018, Lucknow. This is what he said:
+' Newer molecules or new oral anticoagulants have helped in treating STEMI. We have been using the dual antiplatelet drugs, which involve the aspirin and clopidogrel.'
+'If one uses an intravenous preparation of aspirin in the dose of 250 to 500 mg, it may be better than the conventional oral dose of aspirin.'
+" Antiplatelet Drugs: Helps In Treating STEMI Orally "
+'There are Ticagrelor & Prasugrel as well but systemic analysis shows that maybe Ticagrelor is a better drug than Prasugrel in STEMI management.'
+'We have been using Heparin for the last many years. Heparin is efficient and is commonly used worldwide during STEMI treatment.'
+" Ticagrelor, An Antiplatelet Drug Has Reduced Death Rate Considerably "
+'There is a drug like fondaparinux which we use but not in the Cath lab for the Fondaparinux has its value in STEMI patients who undergo fibrinolytic treatment.'
+'Right now in the Cath Lab, in STEMI management, the principal anticoagulant used is Heparin.'
+" Anticoagulants Also Help In Curing STEMI. Heparin Is The Most Used Drug "]]></description>
+            <media:group>
+                <media:content medium="image" url="https://storage.googleapis.com/web-assets/images/second-thumbnails/PP-Mohanam.jpg" height="619" width="1100" />
+                <media:content medium="image" url="https://storage.googleapis.com/web-assets/images/STEMIINDIA-2018/Dr-PP-Mohanan/Dr-PP-Mohanan-large.jpg" height="619" width="1100" />
+            </media:group>
+        </item>
+
+    </channel>
+</rss>

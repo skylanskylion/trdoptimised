@@ -1,0 +1,99 @@
+<section class="back2">
+
+    <section>
+        <div class="row">
+
+            <div class="col-md-12">
+                <h4 class="hd2 mrg_btm no_mrg_m" style="    padding: 4px 15px;
+    color: white;
+    background-color: dodgerblue;
+    font-family: 'Roboto', sans-serif;">Poll
+                    <span style="float:right;color:white;margin-right:10px;font-size:12px;text-transform: capitalize" *ngIf="mobile_verified" title="Logged in as {{phone}}"><i class="fa fa-user"></i> {{phone[0]}}
+        <button mat-raised-button (click)="change_number()" style="background-color:white;color:dodgerblue;margin-left:5px;margin-top:-5px;line-height:2.2;border-radius:100px" ngStyle.xs="font-size:12px">Change</button></span>
+                </h4>
+            </div>
+
+            <div class="content">
+                <!--registration-->
+                <div *ngIf="isRegister" style="margin:15px;background-color:aliceblue" class="text-center">
+                    <form role="form" (ngSubmit)="mail_check()" #f="ngForm" novalidate>
+                        <div>
+                            <mat-form-field style="width:80%;margin:10px" ngStyle.xs="width:100%">
+                                <input matInput placeholder="Full Name" name="username" [(ngModel)]="model2.username" style="box-shadow:none;border:0;background:transparent" required>
+                            </mat-form-field>
+                            <mat-form-field style="width:80%;margin:10px" ngStyle.xs="width:100%">
+                                <input matInput placeholder="Email" type="email" name="email" [(ngModel)]="model2.email" style="box-shadow:none;border:0;background:transparent" required>
+                            </mat-form-field>
+                            <mat-form-field style="width:80%;margin:10px" ngStyle.xs="width:100%">
+                                <input matInput placeholder="Password" type="password" name="password" [(ngModel)]="model2.password" style="box-shadow:none;border:0;background:transparent" required>
+                            </mat-form-field>
+                            <mat-form-field style="width:80%;margin:10px" ngStyle.xs="width:100%">
+                                <input matInput placeholder="Enter your mobile number" name="user_id" [(ngModel)]="model2.user_id" style="box-shadow:none;border:0;background:transparent" required>
+                            </mat-form-field>
+                        </div>
+                        <div>
+                            <div *ngIf="verification_code">
+                                <mat-form-field style="width:50%;margin:10px" ngStyle.xs="width:100%">
+                                    <input matInput placeholder="Enter your code" name="token" [(ngModel)]="model2.token" style="box-shadow:none;border:0;background:transparent" required>
+                                </mat-form-field>
+
+                                <button mat-raised-button color="primary" type="button" (click)="verify_code()">Verify Code</button>
+                            </div>
+                            <button mat-raised-button color="primary" type="button" *ngIf="!m_verify" (click)="phone_btn_onclick()">Verify Mobile Number</button>
+                        </div><br>
+                        <div style="width:100%">
+                            <button type="submit" mat-raised-button color="primary" [disabled]="!(f.form.valid && m_verify && !verification_code)">Register</button><br/><br/>
+                            Already Registered? <button type="submit" mat-raised-button color="primary" (click)="change_number()">Login</button>
+                        </div>
+
+                    </form>
+                </div>
+                <!--login-->
+                <div *ngIf="isLogin" style="margin:15px;background-color:aliceblue" class="text-center">
+                    <form role="form" (ngSubmit)="login_validation()" #ff="ngForm" novalidate>
+                        <div>
+                            <mat-form-field style="width:80%;margin:10px" ngStyle.xs="width:100%">
+                                <input matInput placeholder="Email" type="email" name="user_id" [(ngModel)]="model3.user_id" style="box-shadow:none;border:0;background:transparent" required>
+                            </mat-form-field>
+                            <mat-form-field style="width:80%;margin:10px" ngStyle.xs="width:100%">
+                                <input matInput placeholder="Password" type="password" name="password" [(ngModel)]="model3.password" style="box-shadow:none;border:0;background:transparent" required>
+                            </mat-form-field><br/>
+                            <button mat-raised-button color="primary" [disabled]="!ff.form.valid">Login</button><br/>
+                            Login with : <button (click)="loginfb()" class="fa fa-facebook" style="border-radius:100px;margin:5px;"></button>
+                            <button (click)="email_login()" class="fa fa-google-plus" style="border-radius:100px;margin:5px;"></button><br/>
+                            <!--<button (click)="logintwitter()" class="fa fa-twitter" style="border-radius:100px;margin:5px;"></button><br/>-->
+                            Create an account? <button mat-raised-button color="primary" type="button" (click)="check_verified()">Register</button>
+                        </div>
+
+                    </form>
+                </div>
+
+
+                <div *ngIf="!isLogin && !isRegister && question" style="margin-left:15px;margin-right:15px;margin-top:-15px">
+                    <div class="col-md-12" style="padding:10px;background-color:aliceblue">
+                        <form role="form" (ngSubmit)="polling()" #f="ngForm" novalidate>
+                            <h3 class="questions">{{question['question']}}</h3>
+                            <mat-radio-group class="list-option" [(ngModel)]="model.o_id" name="o_id" *ngFor="let opt of option" required>
+                                <mat-radio-button value="{{opt.o_id}}" style="font-size:12px">{{opt.option}}</mat-radio-button>
+                            </mat-radio-group>
+                            <div class="botton-section center-block">
+                                <button mat-raised-button color="primary" type="button" [disabled]="!f.form.valid && !verified" (click)="check_verified()">Vote</button>
+                                <!--<button mat-raised-button color="default" type="button">Hide Answers</button>-->
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col-md-12" *ngIf="p_voted">
+                        <div class="progress-sec">
+                            <p style="font-size:12px">{{opt1}} <span style="float:right">{{(opp1)}}%</span></p>
+                            <p style="font-size:12px">{{opt2}} <span style="float:right">{{(opp2)}}%</span></p>
+                            <p style="font-size:12px">{{opt3}} <span style="float:right">{{(opp3)}}%</span></p>
+                        </div>
+                    </div>
+                </div>
+                <div *ngIf="!question" style="margin-left:15px;margin-right:15px;padding:10px;background-color:lightskyblue">
+                    <p style="color:tomato;text-align:center">No Question Found</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</section>

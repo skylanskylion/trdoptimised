@@ -1,0 +1,28 @@
+<app-nav></app-nav>
+<div class="container mar-top-bottom" style="clear:both">
+    <div fxLayout="row" fxLayout.lt-md="column">
+        <div fxFlex="20"></div>
+        <div fxFlex="60" >
+<mat-card ngStyle.lt-md="margin-top:30px;">
+<h2 class="sign-up">Login</h2>
+        <form role="form" (ngSubmit)="login_validation()" #ff="ngForm" novalidate>
+            <div class="example-form">
+                <mat-form-field  class="example-full-width">
+                    <input matInput placeholder="Email" type="email" name="user_id" [(ngModel)]="model.user_id" style="box-shadow:none;border:0;background:transparent" required>
+                </mat-form-field>
+                <!-- <mat-form-field  class="example-full-width">
+                    <input matInput placeholder="Password" type="password" name="password" [(ngModel)]="model.password" style="box-shadow:none;border:0;background:transparent" required>
+                    
+                </mat-form-field><br/> -->
+                <button mat-raised-button color="primary" [disabled]="!ff.form.valid">Login</button><br/>
+                <a [routerLink]="['/import-contact-register/'+slug]"> Don't have an Account? <span  style="cursor:pointer;text-decoration:underline;color:#334c83" >Register</span> </a>
+                <!--<button (click)="logintwitter()" class="fa fa-twitter" style="border-radius:100px;margin:5px;"></button><br/>-->
+                <!-- <a [routerLink]="['/import-contact-register']">Create an account? <span style="color:#334c83;text-decoration:underline;cursor:pointer;">Register</span></a> -->
+            </div>
+        </form>
+</mat-card>
+</div>
+<div fxFlex="20"></div>
+</div>
+</div>
+<app-footer></app-footer>

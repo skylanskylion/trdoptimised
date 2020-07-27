@@ -1,0 +1,97 @@
+<!--  <form role="form" (ngSubmit)="mail_check()" #f="ngForm" novalidate class="example-form">-->
+
+<!--      <mat-form-field  class="example-full-width">-->
+<!--        <input matInput placeholder="Full Name" name="username" [(ngModel)]="model2.username" style="box-shadow:none;border:0;background:transparent" required>-->
+<!--      </mat-form-field>-->
+<!--      <mat-form-field  class="example-full-width">-->
+<!--        <input matInput placeholder="Email" type="email" name="email" [(ngModel)]="model2.email" style="box-shadow:none;border:0;background:transparent" required>-->
+<!--      </mat-form-field>-->
+<!--      <mat-form-field class="example-full-width">-->
+<!--        <input matInput placeholder="Password" type="password" name="password" [(ngModel)]="model2.password" style="box-shadow:none;border:0;background:transparent" required>-->
+<!--      </mat-form-field>-->
+<!--      <mat-form-field class="example-full-width">-->
+<!--        <input matInput placeholder="Enter your mobile number" name="user_id" [(ngModel)]="model2.user_id" style="box-shadow:none;border:0;background:transparent" required>-->
+<!--      </mat-form-field>-->
+
+<!--    <div>-->
+<!--      <div *ngIf="verification_code">-->
+<!--        <mat-form-field class="example-full-width">-->
+<!--          <input matInput placeholder="Enter your code" name="token" [(ngModel)]="model2.token" style="box-shadow:none;border:0;background:transparent" required>-->
+<!--        </mat-form-field>-->
+
+<!--        <button mat-raised-button color="primary" type="button" (click)="verify_code()">Verify Code</button>-->
+<!--      </div>-->
+<!--      <button mat-raised-button color="primary" type="button" *ngIf="!m_verify" (click)="phone_btn_onclick()">Verify Mobile Number</button>-->
+<!--    </div><br>-->
+<!--      <div style="width:100%">-->
+<!--          <button type="submit" mat-raised-button color="primary" (click)="login_popup()" [disabled]="!f.form.valid" id="submit">Register</button><br/><br/>-->
+<!--          Already Registered? <span  (click)="login_popup()" style="cursor:pointer;text-decoration:underline;color:#334c83" >Go to Login Page</span>-->
+<!--          &lt;!&ndash; Already Registered?       <a [routerLink]="['/'+event+'/'+category+'/'+slug]">Go to Login Page</a> &ndash;&gt;-->
+<!--          &lt;!&ndash;      Already Registered?       <a [routerLink]="[]">Go to Login Page</a>&ndash;&gt;-->
+<!--      </div>-->
+<!--  </form>-->
+
+
+<form role="form" (ngSubmit)="register()" #f="ngForm"  novalidate class="example-form">
+    <mat-form-field class="example-full-width">
+        <input matInput type="text" name="username" id="username"  placeholder="Full Name" style="box-shadow:none;border:0;background:transparent" [(ngModel)]="model2.username" #username="ngModel" required >
+        <mat-error *ngIf="inputChecking.hasError('required')">
+            First name is <b>required</b>
+        </mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+        <input matInput type="text" name="email" id="email"  placeholder="Email"  style="box-shadow:none;border:0;background:transparent" [(ngModel)]="model2.email" #email="ngModel" required>
+        <mat-error *ngIf="inputChecking.hasError('required')">
+            Please enter valid email address (<b>Ex: abc@gmail.com</b>)
+        </mat-error>
+    </mat-form-field >
+
+    <mat-form-field class="example-full-width">
+        <input matInput type="password" name="password1" id="password1" [(ngModel)]="model2.password"  style="box-shadow:none;border:0;background:transparent" #password="ngModel"  placeholder="Password" required >
+        <mat-error *ngIf="inputChecking.hasError('required')">
+            Password is <b>required</b>
+        </mat-error>
+
+    </mat-form-field>
+    <div>
+        <mat-form-field class="example-full-width">
+            <mat-select  name="country_code" placeholder="Select Country Code" [(value)]="selected" #country_code="ngModel"
+                         [(ngModel)]="model2.country_code"  required>
+                <mat-option> Select Country Code</mat-option>
+                <mat-option value="+91">India +91</mat-option>
+                <mat-option value="+1"> +1 United state +1</mat-option>
+                <mat-option value="+44">+44 United Kingdom</mat-option>
+                <mat-option value="+971"> +971 United Arab Emirates</mat-option>
+                <mat-option value="+92">+92 pakistan</mat-option>
+                <mat-option value="+977"> +977 Nepal</mat-option>
+            </mat-select>
+            <mat-error *ngIf="inputChecking.hasError('required')">You must make a selection</mat-error>
+        </mat-form-field>
+    </div>
+
+    <mat-form-field class="example-full-width">
+        <input matInput type="number" name ="mobile" id="mobile" placeholder="Mobile No." style="box-shadow:none;border:0;background:transparent" [(ngModel)]="model2.mobile" #mobile="ngModel" required>
+        <mat-error *ngIf="inputChecking.hasError('required')">
+            Number is <b>required</b>
+        </mat-error>
+    </mat-form-field>
+
+<!--          <mat-form-field class="full-width">-->
+<!--              <input matInput type="password" name="confirmpassword1" id="confirmpassword1" [(ngModel)]="model2.confirmpassword1" style="box-shadow:none;border:0;background:transparent" #confirmpassword1="ngModel"  placeholder="Password" required >-->
+<!--              <mat-error *ngIf="inputChecking.hasError('required')">-->
+<!--                  Password is <b>required</b>-->
+<!--              </mat-error>-->
+<!--              <mat-error class="error-msg" *ngIf="model2.password !== model2.confirmpassword1">-->
+<!--                  Passwords don't match.-->
+<!--              </mat-error>-->
+<!--          </mat-form-field>-->
+
+    <div style="width:100%">
+        <button type="submit" mat-raised-button color="primary" (click)="login_popup()" [disabled]="!f.form.valid" id="submit">Register</button><br/><br/>
+        Already Registered? <span  (click)="login_popup()" style="cursor:pointer;text-decoration:underline;color:#334c83" >Go to Login Page</span>
+        <!-- Already Registered?       <a [routerLink]="['/'+event+'/'+category+'/'+slug]">Go to Login Page</a> -->
+        <!--      Already Registered?       <a [routerLink]="[]">Go to Login Page</a>-->
+    </div>
+
+</form>

@@ -1,0 +1,4 @@
+Sitemap: https://www.therightdoctors.com/sitemap.xml
+Sitemap: https://www.therightdoctors.com/sitemap_live_updates.xml
+User-agent: *
+Allow : /

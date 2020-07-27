@@ -1,0 +1,85 @@
+.header-popup h2{
+    text-align: left;
+    font-size: 28px;
+    background: #f1f1f1;
+    color: #333;
+    padding-left: 10px;
+}
+
+.content{
+    margin-top:-15px;
+}
+.list-option .mat-radio-button{
+    display:block;
+    font-size:12px!important;
+    padding-bottom: 10px;
+}
+.list-option .mat-radio-button{
+    font-size:12px!important;
+}
+
+.questions{
+    padding-bottom: 10px;
+    font-size: 14px;
+    font-family: 'Open Sans', sans-serif;
+    color: #000;
+    font-weight: 600;
+}
+.vote-btn{
+    background: #0b770a;
+    padding: 7px 24px;
+    margin-right: 20px;
+    font-size: 13px;
+}
+.hide-btn{
+    background: #272727;
+    padding: 7px 24px;
+    margin-right: 20px;
+    font-size: 13px;
+}
+.botton-section{
+
+    padding-bottom: 10px ;
+}
+.progress-sec{
+    margin-top:10px;
+}
+.progress-sec p{
+    padding-bottom: 10px;
+}
+
+@media (max-width:599px) {
+    .vote-btn {
+        background: #0b770a;
+        padding: 7px 20px;
+        margin-right: 13px;
+        font-size: 13px;
+    }
+    .hide-btn{
+        background: #272727;
+        padding: 7px 20px;
+        margin-right: 13px;
+        font-size: 13px;
+    }
+    .list-option .mat-radio-button{
+        font-size:12px!important;
+    }
+    .questions{
+        font-size:14px;
+    }
+
+}
+.example-section {
+    display: flex;
+    align-content: center;
+    align-items: center;
+    height: 60px;
+}
+
+.example-margin {
+    margin: 0 10px;
+}
+.list-option span{
+    float:left;
+    clear:both;
+}

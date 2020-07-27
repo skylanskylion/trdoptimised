@@ -1,0 +1,286 @@
+<div class="collage_revolution">
+  <img id="img" src="{{single_article['thumbnail_url']}}"/>
+</div>
+<section>
+  <div class="container"
+       fxLayout
+       fxLayoutGap="10px"
+       fxFlexAlign="center">
+    <div class="item item-1" fxFlex="100%">
+      <h1 class="head1">{{single_article['headline']}}</h1>
+
+      <div class="">
+
+        <h2 class="head2"> {{single_article['headline2']}}</h2>
+        <h3 class="head3">{{single_article['sub_headline']}}</h3>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="back2">
+  <section class="container">
+    <div class="row">
+
+      <div class="mrg_btm">
+        <div class="row">
+
+        </div>
+      </div>
+
+      <div class="container"
+           fxLayout
+           fxLayoutGap="10px"
+           fxLayoutAlign="center">
+        <div class="item item-1" fxFlex="90%">
+          <div class="mrg_btm3">
+            <!--<vg-player *ngIf="single_article['video_url']" class="vid_img ratio-4-3">-->
+              <video autoplay="true" #media id="singleVideo" preload="auto" controls>
+                <source src="{{single_article['video_url']}}" type="video/mp4">
+              </video>
+            <!--</vg-player>-->
+
+          </div>
+        </div>
+      </div>
+
+      <div>
+
+
+        <div class="container"
+             fxLayout
+             fxLayoutAlign="center"
+             dir="rtl" fxLayoutGap="10px"
+             fxLayoutGap.xs="0" style="margin-bottom:15px">
+
+          <div class="item iconsdiv" fxFlex="37%" fxFlexOrder="3" style="text-align: left">
+            <ul class="share-buttons mrg_top_m">
+              <li>
+
+                <a class="share-btn fb-icon" href="https://www.facebook.com/dialog/feed?app_id=1066226316760891
+                      &redirect_uri=https://therightdoctors.com
+                     &link=https://therightdoctors.com/{{ single_article['category']}}/{{ single_article['slug']}}
+                     &picture={{ single_article['image_url'] }}
+                     &caption=TheRightDoctors.com%20|%20BY%20%20{{ single_article['sub_headline']}},%20%20{{ single_article['designation']}}
+                     &description={{ single_article['description']}}
+                     &name={{ single_article['headline']}}" title="Share on Facebook" data-service="facebook"
+                   target="_blank">
+                </a>
+              </li>
+              <li>
+                <a class="share-btn tw-icon"
+                   href="https://twitter.com/intent/tweet?url=https://therightdoctors.com/{{ single_article['category']}}/{{ single_article['slug']}}&text={{ single_article['sub_headline']}}%20-{{ single_article['headline']}}&via=TheRightDoctors"
+                   title="Share on Twitter" data-service="twitter" target="_blank">
+                </a>
+              </li>
+              <li>
+                <a class="share-btn ln-icon" href="https://www.linkedin.com/shareArticle?mini=true&url=https://therightdoctors.com/{{ single_article['category']}}/{{ single_article['slug']}}&title={{ single_article['headline']}}
+&summary={{ single_article['headline2']}}&source=therightdoctors.com" title="Share on Linkedin" data-service="linkedin"
+                   target="_blank">
+                </a>
+              </li>
+              <!-- <li>
+                <a class="share-btn gp-icon"
+                   href="https://plus.google.com/share?url=https://therightdoctors.com/{{ single_article['category']}}/{{ single_article['slug']}}"
+                   title="Share on Google Plus" data-service="gplus" target="_blank">
+                </a>
+              </li> -->
+
+              <li><a class="share-btn wa-icon"
+                     href="https://api.whatsapp.com/send?text=https://therightdoctors.com/{{ single_article['category']}}/{{ single_article['slug']}}"
+                     data-action="share/whatsapp/share" title="Share on Whatsapp" data-service="whatsapp"
+                     target="_blank">
+              </a>
+
+              </li>
+
+              <li>
+                <a class="share-btn email-icon"
+                   href="mailto:?subject={{ single_article['sub_headline']}} : {{ single_article['headline']}}&amp;body={{ single_article['headline2']}}. Check out this site https://therightdoctors.com/{{ single_article['category']}}/{{ single_article['slug']}} ."
+                   title="Share by Email" data-service="email" target="_blank">
+                </a>
+
+              </li>
+
+              <li>
+                <a data-flip-widget="shareflip" target="_blank"
+                   href="https://share.flipboard.com/bookmarklet/popout?ext=sharethis&
+title={{single_article['headline']}}&url=https://wcce2017.therightdoctors.com/{{
+single_article['category']}}/{{
+single_article['slug']}}&utm_campaign=widgets&utm_content={{single_article['sub_headline']}}&utm_source=sharethis&v=2"><img
+                  src="https://cdn.flipboard.com/badges/flipboard_srsw.png"/></a>
+              </li>
+              <li class="story-views lazy slab" style="border:none"><p style="padding-left:20px;line-height:25px"
+                                                                       ng-bind=""><span
+                style="color:black;font-size:32px;padding-right:10px;">{{single_article['anchor']}}</span><span
+                style="font-size:10px;">Total Views</span></p></li>
+
+            </ul>
+
+
+          </div>
+
+          <div class="item item-3" fxFlex="37%">
+            <div class="add_txt slab"><p>Supported by an Unrestricted <br> Educational Grant from</p>
+              <img src="/assets/new-assets/single/images/zyduslogo.png"/>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+      <div class="" *ngIf="single_article['transcript_list'].length>0">
+        {{single_article['transcript_list']}}
+      </div>
+
+    </div>
+
+
+  </section>
+
+
+  <!--<div class="wrapper">
+    <ui-carousel [infinite]="true" [fade]="true" [speed]="500" height="300px" width="700px">
+      <ui-carousel-item>
+        <img src="https://storage.googleapis.com/web-assets/images/ECHO2017/Keytakaways/04/04-large.jpg" alt="" draggable="true">
+      </ui-carousel-item>
+      <ui-carousel-item>
+        <img src="https://storage.googleapis.com/web-assets/images/ECHO2017/Keytakaways/03/03-large.jpg" alt="" draggable="true">
+      </ui-carousel-item>
+      <ui-carousel-item>
+        <img src="https://storage.googleapis.com/web-assets/images/ECHO2017/Keytakaways/05/05-large.jpg" alt="" draggable="true">
+      </ui-carousel-item>
+    </ui-carousel>
+
+  </div>
+
+  <ui-carousel [infinite]="true" [fade]="false" [speed]="200" >
+    <ui-carousel-item *ngFor="let item of revolution">
+      <img src="{{item.thumbnail_url}}">
+    </ui-carousel-item>
+  </ui-carousel>-->
+
+
+  <div class="container"
+       fxLayout
+       fxLayoutAlign="center"
+       fxLayoutGap="10px"
+       fxLayoutGap.xs="0">
+    <!--
+     fxLayout
+       fxLayoutAlign="center"
+       fxLayoutGap="10px"
+       fxLayoutGap.xs="0"           fxLayoutGap.xs="0"-->
+
+    <div class="item item-1 " fxFlex="70%">
+
+      <div class="pdg_no_m">
+        <div class="vid_p">
+          <div ng-hide="single_article['highlights1']" class="para">
+            <div *ngIf="single_article['highlights1']" class="story_highlights">
+              <div class="mrg_btm">
+                <h1 class="story_highlights_h1"><span class="fw_six">Story highlights</span></h1>
+                <ul class="story_highlights_list">
+                  <li *ngIf="single_article['highlights1']"> {{single_article['highlights1']}}</li>
+                  <li *ngIf="single_article['highlights2']">{{single_article['highlights2']}}</li>
+                  <li *ngIf="single_article['highlights3']"> {{single_article['highlights3']}}</li>
+                  <li *ngIf="single_article['highlights4']"> {{single_article['highlights4']}}</li>
+                </ul>
+              </div>
+            </div>
+            {{single_article['description']}}
+          </div>
+          <div style="padding-left:20px;padding-top:20px;padding-bottom:20px;">
+            <hr class="hrcla" style="border:1px solid #fff1e5">
+
+            <div style="padding-left:20px;" class="para"><span class="fw_six">Also Read -</span> <a
+              href="/{{video_list[0]['category']}}/{{video_list[0]['slug']}}" class="red_link"
+              style="color: #e5002d !important;width: 215px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;">{{video_list[0]['headline']}}
+              {{video_list[0]['sub_headline']}}</a></div>
+            <hr class="hrcla" style="border:1px solid #fff1e5">
+          </div>
+        </div>
+        <!-- <p>hii :{{sing_art[0].length}}</p>-->
+        <section *ngIf="((this.sing_art[0].length)<=5)">
+          <section *ngIf="single_article['similar_topic'].length>0" class="col-md-12">
+            <div class=" pdg_no_m" style="padding-left: 26px ; padding-bottom: 23px;">
+              <section class="similar_topics_label"
+                       style="float: left;display: block;color: #666;font-weight: 500;padding: 47px 0px; margin:-40px;">
+                Tags
+              </section>
+              <ul class="tags" *ngFor="let topic of single_article['similar_topic'].split(',')">
+                <li>
+                  <div class="similar_topics_label" style="float: left;display: block;color: #666; background: #f1f1f1;font-weight: 500;padding: 5px 12px;margin: 3px;
+    border: 1px solid #dbdbdb;" [routerLink]="['#']">{{topic}}
+                  </div>
+                </li>
+              </ul>
+              <div class="clearfix"></div>
+            </div>
+          </section>
+        </section>
+
+        <div class="vid_p">
+          <div class="para" style="padding-left: 3px; padding-bottom: 12px;">
+            <em>Mail us at</em> <a target="_blank" href=""
+                                   class="red_link"><em>editorial@therightdoctors.com</em></a><em style="color:#987777">.
+            Stay updated on&nbsp;</em><a target="_blank" href="https://www.facebook.com/therightdoctors"
+                                         class="red_link"><em
+            style="color:#987777">Facebook</em></a><em>&nbsp;,&nbsp;</em><a target="_blank"
+                                                                            href="https://twitter.com/therightdoctors"
+                                                                            class="red_link"><em style="color:#987777">Twitter</em></a><em>&nbsp;,&nbsp;</em><a
+            target="_blank" href="https://www.youtube.com/channel/UCUZIhLsNbgkCqymAZshSVHQ" class="red_link"><em
+            style="color:#987777">You
+            Tube</em></a><em>&nbsp;and&nbsp;</em><a target="_blank"
+                                                    href="https://www.linkedin.com/company/therightdoctors-com"
+                                                    class="red_link"><em
+            style="color:#987777">LinkedIn</em></a><em>.</em>
+          </div>
+        </div>
+
+        <section *ngIf="((this.sing_art.length)>1)" class="mrg_btm">
+          <div *ngFor=" let tra of sing_art">
+            <span class="rev_doc_nm" style="font-family: 'Roboto Slab', serif;font-weight: 700;font-size: 14px;"> {{tra.split(':')[0]}}</span>
+            <p class="revo_p" style=" font-family: 'Roboto Slab', serif;color: #3C3C3C;line-height: 22px;">
+              {{tra.split('>')[1]}}</p><br>
+          </div>
+        </section>
+
+        <section *ngIf="((this.sing_art[0].length)>5)">
+          <section *ngIf="single_article['similar_topic'].length>0" class="col-md-12">
+            <div class="pdg_no_m" style="padding-left: 26px">
+              <section class="similar_topics_label"
+                       style="float: left;display: block;color: #666;font-weight: 500;padding: 47px 0px; margin:-40px;">
+                Tags
+              </section>
+              <ul class="tags" *ngFor="let topic of single_article['similar_topic'].split(',')">
+                <li>
+                  <div class="similar_topics_label" style="float: left;display: block;color: #666; background: #f1f1f1;font-weight: 500;padding: 5px 12px;margin: 3px;
+    border: 1px solid #dbdbdb;" [routerLink]="['#']">{{topic}}
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <div style="padding-left: 3px;">
+          <div class="vid_p">
+            <div class="para"><em>Join <b>TheRightDoctors</b> on WhatsApp. Type "JOIN" and send to 9676401536</em></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--<div id="demo" style="height:200px;">
+    <div id="owl-demo" class="owl-carousel">
+      <ng-template ngFor let-item [ngForOf]="createRange(20)" let-currentIndex="index">
+
+      <div class="item"  style="float:left"><a href="/{{revolution[currentIndex]['category']}}/{{revolution[currentIndex]['slug']}}"><img src="{{revolution[currentIndex]['thumbnail_url']}}" alt=""></a></div>
+
+      </ng-template>
+    </div></div>-->
+

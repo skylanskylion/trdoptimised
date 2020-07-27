@@ -1,0 +1,190 @@
+
+<div class="main-div"> 
+    <div fxLayout.lt-md="column" fxLayout.gt-sm="row">
+            <div fxFlex.lt-md="0%" fxFlex.gt-sm="15%"></div>
+
+    <div fxFlex.lt-md="0%" fxFlex.gt-sm="70%">
+    <div class="layer2" fxLayout="column">
+        <div class="layer1">
+            <div fxLayout="column">
+                <div fxLayout="row" class="one">
+                    <div fxFlex.lt-sm="100%" fxFlex.gt-xs="50%" fxLayoutAlign="start center">
+                        <h4>TheRightDoctors</h4>
+                    </div>
+                    <div class="mob-hide" fxFlex.lt-sm="0%" fxFlex.gt-xs="50%" fxLayoutAlign="end center">
+                        <p>Need help?<a href="#">Email Customer Care</a></p>
+                    </div>
+                </div>
+            </div>
+      
+    </div>
+        <div class="layer3" fxLayout="column" fxLayoutAlign="center center">
+            <div fxLayout="row" class="heads">
+                <div fxFlex="33.33%" fxLayoutAlign="center center">
+                    <p>Account</p>
+                </div>
+                <div fxFlex="33.33%" fxLayoutAlign="center center">
+                    <p>Billing</p>
+                </div>
+                <div fxFlex="33.33%" fxLayoutAlign="center center">
+                    <p>Confirmation</p>
+                </div>
+            </div>
+            <div *ngIf="this.payment_success != 1">
+            <mat-progress-bar mode="determinate" value="60"></mat-progress-bar></div>
+            <div *ngIf="this.payment_success == 1">
+            <mat-progress-bar mode="determinate" value="100"></mat-progress-bar></div>
+
+        </div>
+        <!-- <div fxLayout="column" class="log-width">
+            <img src="assets/bg-log.jpg">
+        </div> -->
+        <div fxLayout="column" class="center-pos" fxLayoutAlign="center center">
+            <div fxLayout="column" class="mob-inner">
+        <!-- <div fxLayout="row" fxLayoutAlign="center center">
+            <h5>Welcome back – please log in</h5>
+        </div> -->
+        <div fxLayout.lt-md="column" fxLayout.gt-sm="row" fxLayoutGap.gt-sm="50px">
+            <div fxFlex.lt-md="100%" fxFlex.gt-sm="50%" fxLayout="column">
+                <div fxLayout="column">
+                    <div fxLayout="column" class="top-header">
+                        <!-- <h6>Choose payment method</h6> -->
+                        <button mat-flat-button *ngIf="show == false && AuthenticateUser() && !canPay"  id='rzp-button1'(click)="annual();notOther(2);initPay()" class="button" ><span class="material-icons" style="margin-right: 15px;">credit_card</span>Pay with Credit card</button>
+                    </div>
+                    <!-- <input *ngIf="Authenticate()" class="checkbox-tools" type="radio" name="tools" id="tool-2" routerLink="../login" routerLinkActive="active"> -->
+                  <label style=" text-align: center; padding-bottom: 20px;"  *ngIf="Authenticate()" class="for-checkbox-tools" for="tool-2" routerLink="../subscription-login" routerLinkActive="active">
+                      <button class = "button" mat-flat-button *ngIf="Authenticate()" class="button"routerLink="../subscription-login" routerLinkActive="active" >
+                          <!-- <i class='uil uil-vector-square'></i> -->
+                          <span style=" font-size:16px">SIGN IN</span>
+                      </button>
+                  </label>
+
+                  <!-- <input *ngIf="show == false && AuthenticateUser() && !canPay" (click)="monthly();notOther(1);initPay()" class="checkbox-tools" type="radio" name="tools" id="tool-2" > -->
+                  <label style=" text-align: center; padding-bottom: 20px;" *ngIf="show == false && AuthenticateUser() && !canPay" class="for-checkbox-tools" for="tool-2">
+                      <button class="button" mat-flat-button *ngIf="show == false && AuthenticateUser() && !canPay"  id='rzp-button1'(click)="annual();notOther(1);initPay()" class="button" >
+                      <!-- <i class='uil uil-vector-square'></i> -->
+                      <span style=" font-size:16px">PAY with Razorpay</span>
+                  </button>
+                  </label>
+
+                  <!-- <input *ngIf="(show == true) && AuthenticateUser() && !canPay" (click)="monthly();notOther(2);initPay()" class="checkbox-tools" type="radio" name="tools" id="tool-2" > -->
+                  <label style=" text-align: center; padding-bottom: 20px;"  *ngIf="(show == true) && AuthenticateUser() && !canPay" class="for-checkbox-tools" for="tool-2">
+                      <button style="text-align:center"  *ngIf="(show == true) && AuthenticateUser() && !canPay" id='rzp-button1' (click)="annual();notOther(2);initPay()" class="button" >
+                      <!-- <i class='uil uil-vector-square'></i> -->
+                      <span style=" font-size:16px">PAY with Razorpay</span>
+                  </button>
+                  </label>
+
+                   <div fxLayout="column" class="top-head2">
+                    <!-- <h6>Enter payment details</h6> -->
+                    <!-- <form class="example-form">
+                        <div fxLayout.lt-md="column" fxLayout.gt-sm="row" fxLayoutGap.gt-sm="10px">
+                            <div fxFlex.lt-md="100%" fxFlex.gt-sm="50%">
+                                <mat-form-field class="example-full-width">
+                                    <mat-label>First name</mat-label>
+                                    <input matInput>
+                                </mat-form-field>
+                            </div>
+                            <div fxFlex.lt-md="100%" fxFlex.gt-sm="50%">
+                                <mat-form-field class="example-full-width">
+                                    <mat-label>Last name</mat-label>
+                                    <input matInput>
+                                </mat-form-field>
+                            </div>
+                        </div>
+                        <mat-form-field class="example-full-width">
+                            <mat-label>Card Number</mat-label>
+                            <input type="tel" matInput placeholder="555-555-1234">
+                            <mat-icon matSuffix>credit_card</mat-icon>
+                        </mat-form-field>
+                        <div fxLayout.lt-md="column" fxLayout.gt-sm="row" fxLayoutGap.gt-sm="10px">
+                            <div fxFlex.lt-md="100%" fxFlex.gt-sm="50%">
+                                <mat-form-field class="example-full-width">
+                                    <mat-label>Expiration Date</mat-label>
+                                    <input matInput placeholder="MM/YY">
+                                </mat-form-field>
+                            </div>
+                            <div fxFlex.lt-md="100%" fxFlex.gt-sm="50%">
+                                <mat-form-field class="example-full-width">
+                                    <mat-label>Security code</mat-label>
+                                    <input matInput placeholder="CVV">
+                                </mat-form-field>
+                            </div>
+                        </div>
+                        <div fxLayout.lt-md="column" fxLayout.gt-sm="row" fxLayoutGap.gt-sm="10px">
+                            <div fxFlex.lt-md="100%" fxFlex.gt-sm="50%">
+                                <mat-form-field>
+                                    <mat-label>Country</mat-label>
+                                    <mat-select [(ngModel)]="selectedValue" name="country">
+                                    <mat-option *ngFor="let country of countries" [value]="country.value">
+                                        {{country.viewValue}}
+                                    </mat-option>
+                                    </mat-select>
+                                </mat-form-field>
+                            </div>
+                            <div fxFlex.lt-md="100%" fxFlex.gt-sm="50%">
+                                <mat-form-field class="example-full-width">
+                                    <mat-label>Zip/Postal code</mat-label>
+                                    <input matInput>
+                                </mat-form-field>
+                            </div>
+                        </div>
+                      </form> -->
+                      
+                      <p class="bottom-para">By subscribing, you agree to the Terms of Sale, including the Cancellation and Refund Policy. Your subscription will renew automatically, and you will be charged in advance. You may cancel at any time. The cancellation goes into effect at the start of your following billing cycle.</p>
+                      <p class="bottom-para">Your subscription payment will be managed through Razorpay.</p>
+                      <!-- <button mat-flat-button>Purchase Subscription</button> -->
+                      <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="5px" fxHide fxShow.gt-sm="true" class="secure">
+                        <span class="material-icons" style="font-size: 10px;">lock</span><p style="font-size: 10px;">secure transaction</p>
+                        
+                    </div>
+                    <div *ngIf="this.payment_success == 1" style="text-align: center;">
+                        <img style="width: 100px ; padding-top: 30px; padding-bottom: 30px;" src ="../../assets/tick.png">
+    
+                        <p> Payment Successfull !</p>
+                        <button style = "padding-top: 20px; padding-bottom: 20px;" mat-flat-button [routerLink] = "['/subscription-newsletters-new']"> Subscribe To Newsletters </button>
+
+                        <!-- <div>Icons made by <a href="https://www.flaticon.com/authors/alfredo-hernandez" title="Alfredo Hernandez">Alfredo Hernandez</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div> -->
+            </div>
+                    </div>
+                </div>
+            </div>
+            <div fxFlex.lt-md="100%" fxFlex.gt-sm="50%">
+                <div fxLayout="column" class="over-all-pad">
+                    <div fxLayout="row" class="basic">
+                        <div fxFlex="70%">
+                            <h6 class="pay-head">BASIC DIGITAL ACCESS</h6>
+                        </div>
+                        <div fxFlex="30%" fxLayoutAlign="end">
+                            <h6 class="pay-head">₹60.00</h6>
+                        </div>
+                    </div>
+                    <div fxLayout="column" class="paras">
+                        <p class="para-font">Enjoy unlimited articles, podcasts, videos and more on TheRightDoctors.com and the Progressive Web application.</p>
+                        <h6 class="para-head">PAYMENT INFORMATION</h6>
+                        <p class="para-font">Your payment method will be automatically charged ₹60.00 every 30 days for the first year.</p>
+                        <p class="para-font">It will then be automatically charged ₹270.00 every 30 days thereafter.</p>
+                        <p class="para-font">Your subscription will continue until you cancel. You can cancel anytime.</p>
+                        <p class="para-font-last">Sales tax may apply.</p>
+                        <div fxLayout="row" class="total">
+                            <div fxFlex="70%">
+                                <h6 class="pay-head">TOTAL</h6>
+                            </div>
+                            <div fxFlex="30%" fxLayoutAlign="end">
+                                <h6 class="pay-head"><s>270₹&nbsp;</s>&nbsp;₹60.00</h6>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+  
+</div>
+    </div>
+    </div>
+
+    <div fxFlex.lt-md="0%" fxFlex.gt-sm="15%"></div>
+</div>
+</div>

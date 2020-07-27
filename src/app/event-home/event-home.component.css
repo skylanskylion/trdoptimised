@@ -1,0 +1,135 @@
+.container {
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 15px;
+  padding-left: 15px;
+
+}
+
+@media (max-width: 600px) {
+  .container {
+    max-width: 100%;
+  }
+
+  .gap-part1 mat-grid-list {
+    width: calc(((25% - 64.25px) * 1) + 0px) !important;
+    height: calc(200px) !important;
+    padding-bottom: 10px;
+  }
+
+  .panel_three {
+    height: auto !important;
+  }
+
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    max-width: 960px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
+}
+
+.gap-part mat-grid-tile {
+  width: calc(((25% - 12.75px) * 1) + 0px) !important;
+  height: calc(208px) !important;
+  padding-bottom: 10px;
+
+}
+
+.hdg_line, .hdg_line2, .hdg_line3 {
+  border-bottom: 3px solid #d9534f;
+  border-top: 3px solid #d9534f;
+  height: 1px;
+  position: absolute;
+  width: 100%;
+  margin: 20px;
+}
+
+.img-doc img {
+  margin-top: 91px;
+
+}
+
+.h5-size {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.panel_three {
+  height: 76px;
+}
+
+.mar-top{
+  margin-top:20px!important;
+}
+
+.dis{
+  display: none;
+}
+@media (max-width: 599px) {
+  .dis{
+    display: block;
+  }
+}
+
+@media (max-width: 978px) {
+  .dis1{
+    display: block;
+  }
+}
+@media (max-width: 599px) {
+  .dis1{
+    display: none;
+  }
+}
+@media (max-width: 768px){
+  .hd4_mobile{
+    font-size: 12.5px !important;
+    font-weight: 500;
+    line-height: 18px;
+    padding:0px;
+  }
+  .color_orange1 {
+    color: #e27520;
+  }
+}
+
+.pad-highlet{
+  padding:10px 10px;
+}
+.p-class{
+  font-size:13px;
+  color:#000;
+}
+.pad-highlet:hover{
+  color:#337ab7;
+}
+.pad-highlet h4{   font-weight: 600;  color:#337ab7;}
+ @media (max-width:768px){
+   .pad-highlet h4{   font-weight: 500;}
+   .p-l-r{
+     padding-left:0px;
+     padding-right:10px;
+   }
+ }
+
+.last-word-img img{
+  background: #fdfdfd;
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+.last-word-img{
+  padding:25px 0px;
+}

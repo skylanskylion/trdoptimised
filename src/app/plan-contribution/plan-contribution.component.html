@@ -1,0 +1,186 @@
+<app-nav></app-nav>
+
+
+<div class="section over-hide z-bigger  " >
+
+    <!-- <div  *ngIf="this.user.amount">
+        You're contributing {{ currency[user.country] }}{{ user.amount }} {{user.period}} to our community till {{ user.expiry }}.
+        Thank you for your support!
+    </div> -->
+<!-- 
+    <h1 style="font-family: 'Times New Roman', Times, serif;color: cornflowerblue;"><b>Support The Right Doctors</b></h1>
+    <h4 style="margin-top: -15px;">Be a part of responsible journalism.</h4> -->
+
+    <!-- <div class="background-color"></div> -->
+
+    <div class="section over-hide z-bigger" style="padding-top:20px;padding-left: 0px;padding-right: 0px;margin-left: 0px;margin-right: 0px;">
+        <div class="container">
+        <div style="padding-left: 0px;padding-right: 0px;margin-left: 0px;margin-right: 0px;">
+            <div class="row justify-content-center pb-5">
+
+                <div class="col-lg-6 nopadding" style="text-align: center;">
+
+                    <div class="padd-l" style="padding-top: 50px;text-align: left;width: 80%">
+                        
+
+                <div>
+                    <mat-form-field>
+                        <mat-label>Select Your Country </mat-label>
+                        <mat-select  [(value)]="countrySelected">
+                          <mat-option (click)="onSelect('International')" value="International">International</mat-option>
+                          <mat-option (click)="onSelect('India')" value="India">India</mat-option>
+                          <mat-option (click)="onSelect('USA')" value="USA">USA</mat-option>
+                          <mat-option (click)="onSelect('Canada')" value="Canada">Canada</mat-option>
+                          <mat-option (click)="onSelect('UK')" value="UK">UK</mat-option>
+                          <mat-option (click)="onSelect('Europe')" value="Europe">Europe</mat-option>
+                          <mat-option (click)="onSelect('Australia')" value="Australia">Australia</mat-option>
+                        </mat-select>
+                      </mat-form-field>
+                </div>
+                
+                  
+                  <!-- <p>You selected: {{countrySelected}}</p> -->
+
+                
+
+                <div style="margin-bottom: 0px;padding: 0px;">
+                    <div>
+                        <h3 style="font-family: 'Lucida Sans';font-size: larger;">Select Your Plan</h3>
+                    </div>
+                    <input (click)="single()" class="checkbox-tools" type="radio" name="tools" id="tool-1" checked>
+                    <label class="for-checkbox-tools" for="tool-1">
+                        <i class='uil uil-line-alt'></i>
+                        Single
+                    </label><!--
+                    --><input (click)="monthly()" class="checkbox-tools" type="radio" name="tools" id="tool-2">
+                    <label class="for-checkbox-tools" for="tool-2">
+                        <i class='uil uil-vector-square'></i>
+                        Monthly
+                    </label><!--
+                    --><input (click)="annual()" class="checkbox-tools" type="radio" name="tools" id="tool-3">
+                    <label class="for-checkbox-tools" for="tool-3">
+                        <i class='uil uil-ruler'></i>
+                        Annual
+                    </label>
+                </div>
+                <!-- <div class="col-12 pt-1" style="margin-top: -20px;padding-top: -10px;">
+                    <p class="mb-4 pb-2" style="color: black;">Amount You Want To Contribute</p>
+                </div> -->
+                <div >
+                    <input (click)="notOther(0)" class="checkbox-budget" type="radio" name="budget" id="budget-1" checked>
+                    <label class="for-checkbox-budget" for="budget-1">
+                        <span >{{ plan[countrySelected][selectedPlan][0] }}{{ currency[countrySelected] }}</span>
+                    </label><!--
+                    --><input (click)="notOther(1)" class="checkbox-budget" type="radio" name="budget" id="budget-2">
+                    <label class="for-checkbox-budget" for="budget-2">							
+                        <span>{{ plan[countrySelected][selectedPlan][1] }}{{ currency[countrySelected] }}</span>
+                    </label><!--
+                    --><input (click)="notOther(2)" class="checkbox-budget" type="radio" name="budget" id="budget-3">
+                    <label class="for-checkbox-budget" for="budget-3">							
+                        <span>{{ plan[countrySelected][selectedPlan][2] }}{{ currency[countrySelected] }}</span>
+                    </label><!--
+                    --><input (click)="other()" class="checkbox-budget" type="radio" name="budget" id="budget-4">
+                    <label class="for-checkbox-budget" for="budget-4">							
+                        <span>Other</span>
+                    </label>
+                    <div *ngIf="selectOther">
+                        <form action="" class="">
+                            <div class="form-group">
+                                <input (keyup)="onKey($event)" type="text" class="form-control" placeholder="Enter amount">
+                            </div>
+                            
+                        </form>
+                        
+                    </div>
+
+                    
+
+                    <!-- <button id="rzp-button1" (click)="initPay();">Pay</button> -->
+
+                    <form [formGroup]="planForm" class="form-horizontal">
+                        <!-- <mat-card-content> -->
+                          <!-- <mat-form-field class="example-full-width"> -->
+                  
+                            <div class="form-group">
+                              <!-- <label class="control-label col-sm-2" for="email">Email</label> -->
+                              
+                              <input type="email" class="form-control" id="email" formControlName="email" matInput placeholder="Email">
+                  
+                            </div>
+
+                            <div class="form-group">
+                                <!-- <label class="control-label col-sm-2" for="name">Name</label> -->
+                                
+                                <input class="form-control" id="name" formControlName="name" matInput placeholder="Name">
+                    
+                              </div>
+
+                              <div class="form-group">
+                                <!-- <label class="control-label col-sm-2" for="email">Email</label> -->
+                                
+                                <input type="number" class="form-control" id="mobile" formControlName="mobile" matInput placeholder="Mobile">
+                    
+                              </div>
+
+                              <div class="form-group">
+                                <button [disabled]='planForm.invalid' type="submit" id='rzp-button1' (click)="initPay()" class="btn btn-primary" style="background-color: #3f51b5;font-weight:bold;margin: 16px 0px;color:#fff;">Contribute  {{ currency[countrySelected] }}{{ amount }} {{planDict[selectedPlan]}}</button>
+                            </div>
+
+                            </form>
+
+
+                    
+
+                    <!-- <div *ngIf="AuthenticateUser() && canPay" class="form-group">
+                        <button (click)="openDialog()" class="btn btn-primary">Change Payment Details</button>
+                        <button (click)="saveCard()" class="btn btn-primary">Make Payment</button>
+                    </div> -->
+
+
+
+                </div>
+                </div>
+                </div>
+
+                <div class="col-lg-6" style="padding-right: 0px;background-color:aliceblue">
+                    <div style="    
+                    top: 0;
+                    align-self: start;
+                    width: 100%;
+                    text-align: left;">
+                        <h1 style="padding-bottom: 20px; "><b>Support TheRightDoctors</b></h1>
+                        <div style="padding-right:15px" class="parags">
+                            <p style="padding-bottom: 20px; ">
+                                The Coronavirus Pandemic has taken the world by storm. We are witnessing a paradox of information overload and unanswered questions among both the lay public and the medical community.
+                            </p>
+                            <p style="padding-bottom: 20px ; ">
+                                TheRightDoctors brings you Insights from thought leaders across leading medical specialities. Views which help correct the information asymmetry and articulate the voice of medical science and reason.
+                            </p>
+                            <p style="padding-bottom: 20px; ">
+                                This effort, however, needs your support. Medical journalism is a niche which can survive only when it is adequately funded.
+                            </p>
+                            <p style="padding-bottom: 20px; ">
+                                If you appreciate the work we do and the effort we are putting in even during this lockdown, we would like to request your support. Every contribution however big or small is valuable to us. The options on this page enable you to choose between a one-time, monthly or annual payment. This is inclusive of GST. If you are a firm with GST numbers, we will issue a GST invoice. Please reach out to us at
+                                 <a>
+                                    support@therightdoctors.com
+                                </a>
+                            </p>
+                            <p style="padding-bottom: 20px; ">
+                                Help us fight the epidemic of misinformation and fear-mongering that this pandemic has unleashed on us. 
+                            </p>
+                            <p style="padding-bottom: 20px; ">
+                                We thank you for your trust and your support.
+                            </p>
+                          
+                            <p ></p>
+                        </div>
+                    </div>
+                   </div>
+
+                
+            </div>
+        </div>	
+    </div>
+    </div>
+</div>
+   <app-footer></app-footer> 

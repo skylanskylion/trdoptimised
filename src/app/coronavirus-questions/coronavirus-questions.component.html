@@ -1,0 +1,312 @@
+<!--book appointment-->
+<!--  <app-nav></app-nav> -->
+
+<section class="back2">
+  <section class="container">
+    <div class="book-slot-page">
+      <div class="row">
+          <!-- <img src="https://www.miamibeachfl.gov/wp-content/uploads/2020/03/CORONA-VIRUS-BANNER-1024x269.jpg" style="width: 100%;" /> -->
+        <div class="col-md-12">
+          <div class="vid_p mrg_btm paragrph">
+            <div class="row">
+              <div class="col-md-3"></div>
+              <div class="col-md-6" align="center">
+                <!-- <img src="https://storage.googleapis.com/web-assets/RSSDI_2019/torrent_presents_rssdi.jpg">    -->
+                <!-- <img style="width : 100%" src="./assets/doctor.png"> -->
+                <!-- <p><b>Dr. Rajesh Chandra Mishra</b><br><i> -->
+                    <!-- Organizing Secretary, CRITICARE 2020</i></p> -->
+<!-- Dr. Subhal Dixit
+
+President, ISCCM
+Chairman, CRITICARE 2020 -->
+              </div>
+              <div class="col-md-3"></div>
+            </div>
+            <!-- <br> -->
+            <!-- <p><b>TheRightDoctors is collecting the questions and we will be answering them by consulting the world's best medical minds.</b></p> -->
+
+          </div>
+        </div>
+      </div>
+      <div fxLayout="row" fxLayout.lt-md="column">
+        <div fxFlex="10" fxShow.lt-md="false"></div>
+        <div fxFlex="80">
+
+          <form name="form" (ngSubmit)="submitformquestions() " #f="ngForm" novalidate>
+            <div fxLayout="row" fxLayout.lt-md="column">
+              <div fxFlex="20"></div>
+              <div fxFlex="60">
+                <h3 class="book-heading"> Send us your questions about Coronavirus </h3>
+
+                <mat-card>
+                  <form class="example-form">
+                    <mat-form-field class="example-full-width">
+                      <input matInput placeholder="Name" name="name" [(ngModel)]="model.name"
+                        #firstname="ngModel" required>
+                    </mat-form-field>
+                    <mat-form-field class="example-full-width">
+                      <input matInput placeholder="Email" name="lastname" [(ngModel)]="model.email"
+                        #lastname="ngModel" required>
+                    </mat-form-field>
+                    <!-- <mat-form-field class="example-full-width">
+                        <input matInput placeholder="Designation (up to 60 characters)"
+                               name="qualifications_c"
+                               [(ngModel)]="model.qualifications_c" #qualifications_c="ngModel" required maxlength="65">
+                      </mat-form-field> -->
+                    <!-- <mat-form-field class="example-full-width">
+                        <input matInput placeholder="Institution name" name="event_name"
+                               [(ngModel)]="model.event_name" #event_name="ngModel" required>
+                      </mat-form-field> -->
+                    <!-- <mat-form-field class="example-full-width">
+                      <input matInput placeholder="Session Name" name="session_name" [(ngModel)]="model.session_name"
+                        #session_name="ngModel" required>
+                    </mat-form-field> -->
+                    <!-- <mat-form-field class="example-full-width">
+                        <input matInput placeholder="topic_name" name="topic_name"
+                               [(ngModel)]="model.topic_name" #email_c="ngModel" required>
+                      </mat-form-field> -->
+                    <!-- <mat-form-field class="example-full-width">
+                        <input matInput name="question" placeholder=""
+                               [(ngModel)]="model.mobile_number_i" #mobile_number_i="ngModel" required maxlength="14">
+                      </mat-form-field> -->
+                    <!-- <mat-form-field class="example-full-width">
+                        <textarea matInput placeholder="Your Question (up to 60 characters)" matInput name="question" [(ngModel)]="model.question"
+                                   #question="ngModel" maxlength="300"
+                                  placeholder="Your Question (up to 250 characters)" maxlength="255"></textarea>
+                          </mat-form-field> -->
+                    <!-- <mat-form-field class="example-full-width">
+                      <input matInput placeholder="Your Topic (up to 60 characters)" name="topic_name"
+                        [(ngModel)]="model2.topic_name" #topic_name="ngModel" placeholder="Your Topic" maxlength="65"
+                        required>
+                    </mat-form-field> -->
+
+                    <form [formGroup]="myForm">
+                      <div formArrayName="questions" class="ques">
+                        <div *ngFor="let comp of myForm.get('questions')['controls']; let i=index"
+                          style="padding-top:15px;">
+                          <fieldset>
+                            <legend>
+                              <h3 style="font-size: 22px;">Question {{i+1}}: </h3>
+                            </legend>
+                            <div [formGroupName]="i" class="text-area">
+                              <textarea matInput name="title" placeholder="Question"
+                                style="border:2px solid black;padding: 1px 5px;border-radius: 4px;" formControlName="question"></textarea>
+                              <!-- <label>Question:&nbsp;</label><input formControlName="question" /> -->
+                              <br><br>
+
+                              <!-- <div fxLayout="row">
+                                <div fxFlex="70%">
+                                  <h6 class="ques-opt">Options</h6>
+                                </div>
+                                <div fxFlex="30%">
+                                  <h6 class="ques-opt">Correct Option</h6>
+                                </div>
+                              </div> -->
+                              <!-- <div fxLayout="row" style="padding-bottom: 10px;">
+                                <div fxFlex.lt-lg="60%" fxFlex.gt-md="60%" fxLayout="row" fxLayoutAlign="start center">
+                                  <label style="margin-bottom: 0px;">1.&nbsp;&nbsp;&nbsp;</label><input
+                                    formControlName="Option1" style="width:100%;padding:1px 5px;" />
+                                </div>
+                                <div fxFlex.lt-lg="40%" fxFlex.gt-md="40%" fxLayout="column"
+                                  fxLayoutAlign="center center">
+                                  <input type="radio" value="1" formControlName="Answer" />
+                                </div>
+                              </div>
+                              <div fxLayout="row" style="padding-bottom: 10px;">
+                                <div fxFlex.lt-lg="60%" fxFlex.gt-md="60%" fxLayout="row" fxLayoutAlign="start center">
+                                  <label style="margin-bottom: 0px;">2.&nbsp;&nbsp;&nbsp;</label><input
+                                    formControlName="Option2" style="width:100%;padding:1px 5px;" />
+                                </div>
+                                <div fxFlex.lt-lg="40%" fxFlex.gt-md="40%" fxLayout="column"
+                                  fxLayoutAlign="center center">
+                                  <input type="radio" value="2" formControlName="Answer" />
+                                </div>
+                              </div>
+                              <div fxLayout="row" style="padding-bottom: 10px;">
+                                <div fxFlex.lt-lg="60%" fxFlex.gt-md="60%" fxLayout="row" fxLayoutAlign="start center">
+                                  <label style="margin-bottom: 0px;">3.&nbsp;&nbsp;&nbsp;</label><input
+                                    formControlName="Option3" style="width:100%;padding:1px 5px;" />
+                                </div>
+                                <div fxFlex.lt-lg="40%" fxFlex.gt-md="40%" fxLayout="column"
+                                  fxLayoutAlign="center center">
+                                  <input type="radio" value="3" formControlName="Answer" />
+                                </div>
+                              </div> -->
+                              <!-- <div fxLayout="row" style="padding-bottom: 10px;">
+                                <div fxFlex.lt-lg="60%" fxFlex.gt-md="60%" fxLayout="row" fxLayoutAlign="start center">
+                                  <label style="margin-bottom: 0px;">4.&nbsp;&nbsp;&nbsp;</label><input
+                                    formControlName="Option4" style="width:100%;padding:1px 5px;" />
+                                </div>
+                                <div fxFlex.lt-lg="40%" fxFlex.gt-md="40%" fxLayout="column"
+                                  fxLayoutAlign="center center">
+                                  <input type="radio" value="4" formControlName="Answer" />
+                                </div>
+                              </div> -->
+                              <!-- <label>Option1:&nbsp;&nbsp;&nbsp;</label><input formControlName="Option1" />&nbsp;
+        <input type="radio" value="1" formControlName="Answer"/><br>
+        <label>Option2:&nbsp;&nbsp;&nbsp;</label><input formControlName="Option2" />&nbsp;
+        <input type="radio" value="2" formControlName="Answer"/><br>
+        <label>Option3:&nbsp;&nbsp;&nbsp;</label><input formControlName="Option3" />&nbsp;
+        <input type="radio" value="3" formControlName="Answer"/><br>
+        <label>Option4:&nbsp;&nbsp;&nbsp;</label><input formControlName="Option4" />&nbsp;
+        <input type="radio" value="4" formControlName="Answer"/><br> --><br>
+
+                              <span><button (click)="deleteQuestion(i)" mat-flat-button color="primary"
+                                  style="line-height: 30px;padding: 0 5px; right;">Delete Question</button></span>
+                            </div>
+                          </fieldset>
+                        </div>
+                      </div><br>
+
+                    </form>
+                    <button (click)="addNewQuestion()" mat-flat-button color="primary" >Add new Question</button>
+                    <!-- <p class="key-t-away">Key Take-Away from your talk-1 </p>
+                    <mat-form-field class="example-full-width">
+                      <textarea matInput name="key_values" [(ngModel)]="model2.key_values" #key_values="ngModel"
+                        placeholder="(up to 250 characters)" maxlength="255"></textarea>
+                    </mat-form-field>
+                    <p class="key-t-away">Key Take-Away from your talk-2 (optional)</p>
+                    <mat-form-field class="example-full-width">
+                      <textarea matInput name="headline1" [(ngModel)]="model2.headline1" #headline1="ngModel"
+                        maxlength="300" placeholder="(up to 250 characters)" maxlength="255"></textarea>
+                    </mat-form-field>
+                    <p class="key-t-away">Key Take-Away from your talk-3 (optional)</p>
+                    <mat-form-field class="example-full-width">
+                      <textarea matInput maxlength="300" name="key_values2" [(ngModel)]="model2.key_values2"
+                        #key_values2="ngModel" placeholder="(up to 250 characters)" maxlength="255"></textarea>
+                    </mat-form-field>
+                    <p class="key-t-away">Key Take-Away from your talk-4 (optional)</p>
+                    <mat-form-field class="example-full-width">
+                      <textarea matInput maxlength="300" name="key_values3" [(ngModel)]="model2.key_values3"
+                        #key_values2="ngModel" placeholder="(up to 250 characters)" maxlength="255"></textarea>
+                    </mat-form-field> -->
+                    <!-- <button (click)="addNewQuestion()">Add new Question</button><br><br> -->
+
+
+             <br><br>
+             <!-- <div class="example-full-width">
+              <label class="key-t-away" for="imgFileUpload">Upload your Photo</label><br>
+          <input  type="file" #fileImportInput name="Image_Upload" id="imgFileUpload" 
+          (change)="selectFileforImage($event)" />
+        </div><br> -->
+                    <!-- 
+                      <select style="width: 100%;height: 31px;color: #858383;border: none;
+                      border-bottom: 1px solid #ccc;margin-bottom:20px;"   name="s_time"
+                              [(ngModel)]="model.poll_time" #s_time="ngModel" placeholder="Select Your Time slot" value="select your time slot" required>
+                              <option *ngFor="let time of times" [value]="time">{{time}}</option>
+               
+
+                      </select> -->
+
+                  </form>
+                  <button mat-raised-button color="primary" class="btn-class" type="submit"
+                    [disabled]="loading">Submit</button>
+                    <p style="font-size : 12px; padding-top: 20px;">If you are unable to submit, please mail us the details at editorial@therightdoctors.com or call us at +91-9676038855.</p>
+                </mat-card>
+              </div>
+              <div fxFlex="20"></div>
+            </div>
+          </form>
+        </div>
+        <div fxFlex="10" fxShow.lt-md="false"></div>
+      </div>
+      <!--<div fxLayout="column" fxLayoutAlign="center center">-->
+      <!--<img style="border:none;outline:none;text-decoration:none;-->
+      <!--margin-bottom:5px;"-->
+      <!--class="img-responsive center-block"-->
+      <!--src="https://storage.googleapis.com/web-assets/images/RSSIDI/Logo-f-c.png">-->
+      <!--<p >-->
+      <!--Wockhardt</p>-->
+      <!--</div>-->
+      <br />
+      <!--<div class="vid_p mrg_btm ">-->
+      <!--<p  class="small-text-p">-->
+      <!--Wockhardt Ltd. is a Global pharmaceutical and biotechnology company headquartered in Mumbai, India. The company has manufacturing plants in India, UK, Ireland,-->
+      <!--France and US, and subsidiaries in US, UK, Ireland and France. It is a global company with more than half of its revenue coming from Europe.</p><br>-->
+      <!--</div>-->
+
+      <div fxLayout="column" fxLayoutAlign="center center">
+        <img style="border:none;outline:none;text-decoration:none; margin-bottom:5px;"
+          class="img-responsive center-block"
+          src="https://storage.googleapis.com/web-assets/footer/TheRightDoctors.png" style="width:100px;">
+        <p style="font-size: 14px;">
+          Insights from the World's Best Medical Minds</p>
+      </div>
+      
+      <div class="vid_p mrg_btm">
+        <p class="small-text-p" style="text-align:justify;padding-top:5px;font-size: 8px !important;
+        line-height: 11px !important;">
+          TheRightDoctors, a Google Launchpad Digital Health StartUp, is one of the leaders in production and
+          dissemination of
+          Medical Information. They bring Insights
+          from the World's Best Medical Minds to digital audiences worldwide across leading digital and social media
+          platforms.
+        </p>
+      </div>
+    </div>
+  </section>
+</section>
+<!--book appointment//-->
+<!--<app-footer></app-footer>-->
+
+<!-- <section class="back9">
+
+  <div class="container">
+    <div class="row" style="margin:0px;background-color: #fff;padding: 0px 15px;">
+      <div class="col-4 " style="padding:0px 0px 0px 0px">
+        <h5 class="head-power" style="font-size: 12px;margin:0px;">Powered by:</h5>
+        <img src="../../assets/footer/new-poweredby-google.png" class="" alt="new-poweredby-google"
+          style="width:100%;" />
+
+      </div>
+
+      <div class="col-md-8 marg-btm-m" style="padding:0px">
+        <h5 class="head-power" style="font-size: 12px;margin:0px;">Awards & Recognitions:</h5>
+        <div class="row img-wid" style="margin:0px;">
+          <div class="col-3" style="padding:0px;">
+            <img src="assets/footer/awars01.png" alt="award" style="width:100%;" />
+          </div>
+          <div class="col-3" style="padding:0px;">
+            <img src="assets/footer/1000awards.png" alt="1000 awards" style="width:100%;" />
+
+          </div>
+          <div class="col-3" style="padding:0px;">
+
+            <img src="assets/footer/SBC_global_logo-L-2.png" style="margin-top:13px;width:100%;"
+              alt="SBC Global Logo" />
+          </div>
+          <div class="col-3" style="padding:0px;">
+            <img src="assets/footer/startup.png" style="margin-top: 13px;width:100%;" alt="Start Up" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section> -->
+<app-footer></app-footer>
+
+<!-- <section class="back3 post_footer_pdg" style="background-color: #0c0c0c;">
+  <section class="container">
+    <div class="row" style="margin:0px;padding:15px 15px 15px 15px;">
+      <div class="post_footer row" style="width:100%;margin:0px;">
+        <div class="col-xs-12 col-sm-12 col-md-6 text-left" style="padding:0px">
+          <ul fxLayout="row" style="list-style: none;padding-left:0px;margin:0px;">
+            <li style="font-size: 12px;padding-right: 10px;"><a [routerLink]="['/terms-of-service']"
+                style="color:#fff;">Terms of Service</a></li>
+            <li style="font-size: 12px;padding-right: 10px;"><a [routerLink]="['/privacy-policy']"
+                style="color:#fff;">Privacy Policy</a></li>
+            <li style="font-size: 12px;padding-right: 10px;"><a [routerLink]="['/disclaimer']"
+                style="color:#fff;">Disclaimer</a></li>
+          </ul>
+          <div class="clearfix"></div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-6 text_left_m pad-text" style="font-size: 12px;padding: 0px;color:#fff;">
+          © TheRightDoctors Network. All Rights Reserved
+          <div class="clearfix"></div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+</section> -->

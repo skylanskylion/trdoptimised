@@ -1,0 +1,58 @@
+
+<app-nav></app-nav>
+<div class="container marg-top-sender">
+    <div fxLayout="row" fxLayout.lt-md="column">
+           <div fxFlex="20"></div>
+ <div fxFlex="60">
+  <h2 class="mail-sender">Mail Send to Doctor</h2>
+  <mat-card style="padding:10px;">
+  <form class="example-form">
+
+  <mat-form-field  class="example-full-width">
+      <mat-label>Select Doctor </mat-label>
+      <mat-select [(ngModel)]="event" id="as" name="as" #as='ngModel' required >
+          <!-- <mat-option>
+              <ngx-mat-select-search [(ngModel)]="bankFilterCtrl" ></ngx-mat-select-search>
+            </mat-option> -->
+
+        <mat-option *ngFor="let q of event_list" value={{q}}>
+          {{q}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  
+  <button mat-flat-button color="primary" (click)="get_doctors(event)"> Go</button> 
+
+<div *ngIf="pp">
+<p>
+    <input type="checkbox" name="allNonTrades" [value]="all_doc" (change)="SelectAll($event)">Select All {{event}} videos
+</p><br>
+    <ng-container *ngFor="let ntrd of all_doc; let i=index">
+       <div>
+        {{i+1}} )  <input type="checkbox" name="nontrades" [checked]="ntrd.selected" [(ngModel)]="ntrd.selected"
+        (change)="changeTradesByCategory($event)">
+          <p>{{ ntrd.event }} : {{ntrd.category}}</p>
+          {{ ntrd.headline }}
+       </div>
+      </ng-container>
+</div>
+
+<!-- <mat-form-field class="example-full-width">
+  <input matInput type="email_list" placeholder="Enter Email" name="email" [(ngModel)]="email" >
+</mat-form-field> -->
+
+<mat-form-field class="example-full-width">
+    <input matInput placeholder="Enter From Address name - Without spaces 
+    (ex: Event Organising Secretary name - Dr_PC_Manoria)" 
+    name="from_name" [(ngModel)]="from_name" >
+  </mat-form-field>
+
+<button mat-flat-button color="primary" (click)="send_email()" > Send </button>
+
+</form>
+</mat-card>
+</div>
+<div fxFlex="20"></div>
+</div>
+</div>
+<app-footer></app-footer>

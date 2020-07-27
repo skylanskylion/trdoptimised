@@ -1,0 +1,18 @@
+<h2 class="page-heading">Upload Salesforce Contacts</h2>
+<section class="content">
+      <!--<button href="">upload files</button>-->
+      <form class="form-part" #f="ngForm">
+
+        <h4>Upload File</h4>
+        <input type="file" #fileImportInput name="File Upload" id="txtFileUpload" 
+        (change)="fileChangeListener($event)" accept=".csv" />
+        
+        <br>
+          <br>
+        <button (click)="submit()" type="button" mat-raised-button color="primary" >submit</button>
+      </form>
+<small style="color:#ff0000;">*Using choose file, Upload only .csv, .txt, or .vcf files, then click on submit button</small>
+<br>
+<br>
+Example .CSV file:
+<img src="https://storage.googleapis.com/web-assets/salesforceDocs/trd-import-img/image%20(4).png">

@@ -1,0 +1,362 @@
+<!--<app-nav></app-nav>-->
+
+<div class="back-part">
+<div class="container" >
+  <div class="logo-part-kpp">
+    <div fxLayout="row" fxLayoutGap="10px">
+      <div fxFlex="10">
+        <img src="/assets/new-home-page/single/images/logo.jpg" alt="TheRightDoctors Logo">
+      </div>
+      <div fxFlex="90">
+        <h2 class="head-kpp-req">Requirement Form for Digital Knowledge Partner Services</h2>
+      </div>
+    </div>
+  </div>
+
+  <mat-card>
+  <mat-horizontal-stepper linear #stepper>
+    <mat-step >
+      <form>
+        <p>Email address</p>
+        <mat-form-field>
+          <input matInput placeholder="Email address" required>
+        </mat-form-field>
+        <div class="submit-btn">
+          <button mat-flat-button color="primary" matStepperNext>Next</button>
+        </div>
+      </form>
+    </mat-step>
+
+    <mat-step >
+      <form>
+        <p>Name of the Event</p>
+        <mat-form-field>
+          <input matInput placeholder="Name of the Event" required>
+        </mat-form-field>
+        <div class="submit-btn">
+          <button mat-button matStepperPrevious>Back</button>
+          <button mat-flat-button color="primary" matStepperNext>Next</button>
+        </div>
+      </form>
+    </mat-step>
+    <mat-step >
+      <form>
+        <p>Number of speakers expected at the event?
+        </p>
+        <mat-form-field>
+          <input matInput placeholder="Name of the Event"  required>
+        </mat-form-field>
+        <div class="submit-btn">
+          <button mat-button matStepperPrevious>Back</button>
+          <button mat-flat-button color="primary" matStepperNext>Next</button>
+        </div>
+      </form>
+    </mat-step>
+    <mat-step [stepControl]="">
+      <form>
+        <p>Number of International Speakers expected at the event?
+        </p>
+        <mat-form-field>
+          <input matInput placeholder="Name of the Event"  required>
+        </mat-form-field>
+        <div class="submit-btn">
+          <button mat-button matStepperPrevious>Back</button>
+          <button mat-flat-button color="primary" matStepperNext>Next</button>
+        </div>
+      </form>
+    </mat-step>
+    <mat-step >
+      <form>
+        <p>Number of delegates expected to attend the event?
+        </p>
+        <mat-form-field>
+          <input matInput placeholder="Name of the Event"  required>
+        </mat-form-field>
+        <div class="submit-btn">
+          <button mat-button matStepperPrevious>Back</button>
+          <button mat-flat-button color="primary" matStepperNext>Next</button>
+        </div>
+      </form>
+    </mat-step>
+    <mat-step >
+      <form>
+        <p>Kindly indicate number of halls at the venue for speaker sessions?
+        </p>
+        <mat-form-field>
+          <input matInput placeholder="Name of the Event"  required>
+        </mat-form-field>
+        <div class="submit-btn">
+          <button mat-button matStepperPrevious>Back</button>
+          <button mat-flat-button color="primary" matStepperNext>Next</button>
+        </div>
+      </form>
+    </mat-step>
+
+    <mat-step >
+      <p id="example-radio-group-p">Does the main hall have a large LED screen? </p>
+      <mat-radio-group
+              aria-labelledby="example-radio-group-label"
+              class="example-radio-group"
+              >
+        <mat-radio-button class="example-radio-button" *ngFor="let season of seasons" [value]="season">
+          {{season}}
+        </mat-radio-button>
+      </mat-radio-group>
+      <div class="submit-btn">
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-flat-button color="primary" matStepperNext>Next</button>
+      </div>
+    </mat-step>
+
+    <mat-step >
+      <form>
+        <p>Have you appointed an AV person at the event? (If Yes, kindly share the details of AV person to enable us to co-ordinate)
+        </p>
+        <mat-form-field>
+          <input matInput placeholder="Name of the Event"  required>
+        </mat-form-field>
+        <div class="submit-btn">
+          <button mat-button matStepperPrevious>Back</button>
+          <button mat-flat-button color="primary" matStepperNext>Next</button>
+        </div>
+      </form>
+    </mat-step>
+
+    <mat-step >
+      <p>Do you have cameras in every hall? </p>
+      <mat-radio-group
+              aria-labelledby="example-radio-group-label"
+              class="example-radio-group"
+              >
+        <mat-radio-button class="example-radio-button" *ngFor="let season of seasons" [value]="season">
+          {{season}}
+        </mat-radio-button>
+      </mat-radio-group>
+      <div class="submit-btn">
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-flat-button color="primary" matStepperNext>Next</button>
+      </div>
+    </mat-step>
+
+    <mat-step >
+      <p> We prepare key faculty videos for main speakers like foreign faculty speakers and top Indian faculty speakers highlighting their career for about 30-40 sec which will be played on LED screens in the hall as speakers approach the podium. Would you be interested in key faculty videos? * </p>
+      <mat-radio-group
+              aria-labelledby="example-radio-group-label"
+              class="example-radio-group"
+              >
+        <mat-radio-button class="example-radio-button" *ngFor="let season of seasons" [value]="season">
+          {{season}}
+        </mat-radio-button>
+      </mat-radio-group>
+      <div class="submit-btn">
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-flat-button color="primary" matStepperNext>Next</button>
+      </div>
+    </mat-step>
+    <mat-step >
+      <form>
+        <p>If Yes in the above question, kindly indicate number of faculty videos needed?
+        </p>
+        <mat-form-field>
+          <input matInput placeholder="Name of the Event"  required>
+        </mat-form-field>
+        <div class="submit-btn">
+          <button mat-button matStepperPrevious>Back</button>
+          <button mat-flat-button color="primary" matStepperNext>Next</button>
+        </div>
+      </form>
+    </mat-step>
+    <mat-step >
+      <p>Before the event, we create promo videos and promote them across social media and dedicated WhatsApp groups. Would this be of interest to you?  </p>
+      <mat-radio-group
+              aria-labelledby="example-radio-group-label"
+              class="example-radio-group"
+              >
+        <mat-radio-button class="example-radio-button" *ngFor="let season of seasons" [value]="season">
+          {{season}}
+        </mat-radio-button>
+      </mat-radio-group>
+      <div class="submit-btn">
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-flat-button color="primary" matStepperNext>Next</button>
+      </div>
+    </mat-step>
+    <mat-step >
+      <form>
+        <p> If Yes in the above question, kindly indicate the number of videos needed.
+        </p>
+        <mat-form-field>
+          <input matInput placeholder="Name of the Event"  required>
+        </mat-form-field>
+        <div class="submit-btn">
+          <button mat-button matStepperPrevious>Back</button>
+          <button mat-flat-button color="primary" matStepperNext>Next</button>
+        </div>
+      </form>
+    </mat-step>
+    <mat-step >
+      <p>We set up a High Definition Studio at the venue to take interviews of faculty/speakers/delegates as selected by organizing committee. This is branded as a TV Channel of the conference. Ex: CSI Tv, WCCICC Tv. Organizing committee can leverage the conference Tv Channel as a branding opportunity from interested sponsors.Would this be of interest to you? </p>
+      <mat-radio-group
+              aria-labelledby="example-radio-group-label"
+              class="example-radio-group"
+              >
+        <mat-radio-button class="example-radio-button" *ngFor="let season of seasons" [value]="season">
+          {{season}}
+        </mat-radio-button>
+      </mat-radio-group>
+      <div class="submit-btn">
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-flat-button color="primary" matStepperNext>Next</button>
+      </div>
+    </mat-step>
+    <mat-step >
+      <p> During the event, we make daily highlight videos and play them on LED screens at the venue and also send them to delegates through WhatsApp. Would this be of interest to you? </p>
+      <mat-radio-group
+              aria-labelledby="example-radio-group-label"
+              class="example-radio-group"
+              >
+        <mat-radio-button class="example-radio-button" *ngFor="let season of seasons" [value]="season">
+          {{season}}
+        </mat-radio-button>
+      </mat-radio-group>
+      <div class="submit-btn">
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-flat-button color="primary" matStepperNext>Next</button>
+      </div>
+    </mat-step>
+    <mat-step >
+      <p>During the event, we post photos, key takeaways, and short videos of the conference across all social media channels. Would be this of interest to you?</p>
+      <mat-radio-group
+              aria-labelledby="example-radio-group-label"
+              class="example-radio-group"
+              >
+        <mat-radio-button class="example-radio-button" *ngFor="let season of seasons" [value]="season">
+          {{season}}
+        </mat-radio-button>
+      </mat-radio-group>
+      <div class="submit-btn">
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-flat-button color="primary"matStepperNext>Next</button>
+      </div>
+    </mat-step>
+    <mat-step >
+      <p>During the event, we post photos, key takeaways, and short videos of the conference across all social media channels. Would be this of interest to you? </p>
+      <mat-radio-group
+              aria-labelledby="example-radio-group-label"
+              class="example-radio-group"
+              >
+        <mat-radio-button class="example-radio-button" *ngFor="let season of seasons" [value]="season">
+          {{season}}
+        </mat-radio-button>
+      </mat-radio-group>
+      <div class="submit-btn">
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-flat-button color="primary" matStepperNext>Next</button>
+      </div>
+    </mat-step>
+    <mat-step >
+      <p>Mailers will be sent to all delegates for 12-52 weeks after the event with links of key videos and thumbnails displaying a thank you from organizers. Would this be of interest to you?</p>
+      <mat-radio-group
+              aria-labelledby="example-radio-group-label"
+              class="example-radio-group"
+              >
+        <mat-radio-button class="example-radio-button" *ngFor="let season of seasons" [value]="season">
+          {{season}}
+        </mat-radio-button>
+      </mat-radio-group>
+      <div class="submit-btn">
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-flat-button color="primary" matStepperNext>Next</button>
+      </div>
+    </mat-step>
+    <mat-step >
+      <p>Do you require live streaming of the event?</p>
+      <mat-radio-group
+              aria-labelledby="example-radio-group-label"
+              class="example-radio-group"
+              >
+        <mat-radio-button class="example-radio-button" *ngFor="let season of seasons" [value]="season">
+          {{season}}
+        </mat-radio-button>
+      </mat-radio-group>
+      <div class="submit-btn">
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-flat-button color="primary" matStepperNext>Next</button>
+      </div>
+    </mat-step>
+    <mat-step >
+      <form>
+        <p> Will you, the organizers be budgeting the Knowledge Partner investment or would any of your sponsoring companies support this initiative?
+        </p>
+        <mat-form-field>
+          <input matInput placeholder="Name of the Event"  required>
+        </mat-form-field>
+        <div class="submit-btn">
+          <button mat-button matStepperPrevious>Back</button>
+          <button mat-flat-button color="primary" matStepperNext>Next</button>
+        </div>
+      </form>
+    </mat-step>
+    <mat-step >
+      <p>Will you be interested in getting an android app/tailor made website made for the conference. The app/website would have videos of all the speaker sessions, presentations, interviews from the studio, papers and posters presented at the conference and photographs from the event</p>
+      <mat-radio-group
+              aria-labelledby="example-radio-group-label"
+              class="example-radio-group"
+              >
+        <mat-radio-button class="example-radio-button" *ngFor="let season of seasons" [value]="season">
+          {{season}}
+        </mat-radio-button>
+      </mat-radio-group>
+      <div class="submit-btn">
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-flat-button color="primary" matStepperNext>Next</button>
+      </div>
+    </mat-step>
+    <mat-step >
+      <form>
+        <p> Will you be interested in having a dedicated YouTube channel which would have recordings of all speaker videos and interviews recorded at the studio
+        </p>
+        <mat-radio-group
+                aria-labelledby="example-radio-group-label"
+                class="example-radio-group"
+                >
+          <mat-radio-button class="example-radio-button" value="1">
+          Option 1
+          </mat-radio-button>
+        </mat-radio-group>
+        <div class="submit-btn">
+          <button mat-button matStepperPrevious>Back</button>
+          <button mat-flat-button color="primary" matStepperNext>Next</button>
+        </div>
+      </form>
+    </mat-step>
+    <mat-step >
+      <form>
+        <p> Kindly use the box below to mention any other requirements you might have?
+        </p>
+        <mat-form-field>
+          <input matInput placeholder="Name of the Event"  required>
+        </mat-form-field>
+        <div class="submit-btn">
+          <button mat-button matStepperPrevious>Back</button>
+          <button mat-flat-button color="primary" matStepperNext>Next</button>
+        </div>
+      </form>
+    </mat-step>
+    <mat-step>
+      <ng-template matStepp>Done</ng-template>
+      You are now done.
+      <br/>
+      <button mat-flat-button color="primary" style="margin:15px 0px;">Save</button>
+      <br/>
+      <div class="submit-btn">
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-flat-button color="warn" (click)="stepper.reset()">Reset</button>
+      </div>
+    </mat-step>
+  </mat-horizontal-stepper>
+  </mat-card>
+</div>
+
+</div>
+<!--<app-footer></app-footer>-->

@@ -1,0 +1,359 @@
+import { Component, OnInit } from '@angular/core';
+import {UserServiceService} from "../user-service.service";
+import * as moment from 'moment';
+import {AngularFireAuth} from 'angularfire2/auth';
+import * as firebase from 'firebase/app';
+
+@Component({
+  selector: 'app-polls',
+  templateUrl: './polls.component.html',
+  styleUrls: ['./polls.component.css']
+})
+export class PollsComponent implements OnInit {
+    phone: any;
+  countrycode: any;
+  model2: any ={};
+    model3: any ={};
+    mobile_verified: any;
+  verified: any;
+  mail_checked: any;
+  p_voted: any;
+  option1: any;
+  option2: any;
+  option3: any;
+  opt1: any;
+  opt2: any;
+  opt3: any;
+  opp1: any;
+  opp2: any;
+  opp3: any;
+  model: any ={};
+  today: any;
+  question: any;
+  option: any;
+  total: any;
+  isLogin: boolean = false;
+  isRegister:boolean = false;
+  m_verify: boolean = false;
+  verification_code: boolean = false;
+  users: any = {};
+  phone2: any;
+  constructor(private user: UserServiceService,
+              public af: AngularFireAuth) {
+      this.af.authState.subscribe(
+          (auth) =>{
+              if(auth!=null){
+                  this.users=af.authState;
+                  console.log(this.users);
+              }
+          }
+      );
+  }
+
+  ngOnInit() {
+      // AccountKit.init({
+      //     appId: '1066226316760891',
+      //     state: 'awse#456tfg',
+      //     version: 'v1.1'
+      // });
+      this.p_voted = false;
+    this.today = moment(new Date()).format('DD-MM-YYYY');
+    console.log(this.today);
+    this.questions(this.today);
+      this.phone2 = JSON.parse(localStorage.getItem('verified_mobile_number'));
+      if(this.phone2!=null){
+          this.phone = JSON.parse(localStorage.getItem('verified_mobile_number'))['phone_number'];
+          this.isLogin = false;
+          this.isRegister = false;
+          this.mobile_verified = true;
+          this.model.user_id = this.phone;
+      } else{
+          this.isLogin = true;
+          this.isRegister = false;
+          this.mobile_verified = false;
+      }
+  }
+
+    //social media api login
+    //facebook login
+    async loginfb(){
+        console.log('hahhsgah');
+        const g = await this.lf();
+        console.log('facebook results came');
+        /*sending data into database*/
+        const user_mail =JSON.parse(JSON.stringify(g['user']['email']));
+        this.model2.username = JSON.parse(JSON.stringify(g['user']['displayName']));
+        this.model2.email = user_mail;
+        this.user.mail_checking_details(this.model2.email).subscribe
+        (data=> {
+            if(data['success']){
+                //alert('Login successful');
+                let myObj = {phone_number: user_mail};
+                localStorage.setItem('verified_mobile_number', JSON.stringify(myObj));
+                this.model.user_id = user_mail;
+                this.phone = user_mail;
+                this.isLogin = false;
+                this.isRegister = false;
+                this.mobile_verified = true;
+            } else{
+                //alert('New user....Going to register now');
+                this.user.mobile_add(JSON.stringify(this.model2)).subscribe
+                (data2=> {
+                    if(data2['success']){
+                        alert('Registered Successfully....');
+                        let myObj = {phone_number: user_mail};
+                        localStorage.setItem('verified_mobile_number', JSON.stringify(myObj));
+                        this.model.user_id = user_mail;
+                        this.phone = user_mail;
+                        this.isLogin = false;
+                        this.isRegister = false;
+                        this.mobile_verified = true;
+                    } else{
+                        alert('Error');
+                    }
+                });
+            }
+        });
+        /*end of data sending*/
+    }
+    async lf() {
+        const facebook = this.af.auth.signInWithPopup(new firebase.auth.FacebookAuthProvider());
+        return facebook;
+    }
+    //twitter login
+    async logintwitter() {
+        var t= await this.tw();
+    }
+    async tw() {
+        const twitter = this.af.auth.signInWithPopup(new firebase.auth.TwitterAuthProvider());
+        return twitter;
+    }
+    //gmail login
+    async email_login() {
+        console.log('hi');
+        var c = await this.lg();
+        console.log('results are coming....');
+        /*sending data into database*/
+        const user_mail =JSON.parse(JSON.stringify(c['user']['email']));
+        this.model2.username = JSON.parse(JSON.stringify(c['user']['displayName']));
+        this.model2.email = user_mail;
+        this.user.mail_checking_details(this.model2.email).subscribe
+        (data=> {
+            if(data['success']){
+                //alert('Login successful');
+                let myObj = {phone_number: user_mail};
+                localStorage.setItem('verified_mobile_number', JSON.stringify(myObj));
+                this.model.user_id = user_mail;
+                this.phone = user_mail;
+                this.isLogin = false;
+                this.isRegister = false;
+                this.mobile_verified = true;
+            } else{
+                //alert('New user....Going to register now');
+                this.user.mobile_add(JSON.stringify(this.model2)).subscribe
+                (data2=> {
+                    if(data2['success']){
+                        alert('Registered Successfully....');
+                        let myObj = {phone_number: user_mail};
+                        localStorage.setItem('verified_mobile_number', JSON.stringify(myObj));
+                        this.model.user_id = user_mail;
+                        this.phone = user_mail;
+                        this.isLogin = false;
+                        this.isRegister = false;
+                        this.mobile_verified = true;
+                    } else{
+                        alert('Error');
+                    }
+                });
+            }
+        });
+        /*end of data sending*/
+    }
+    async lg() {
+        var google = this.af.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider());
+        return google;
+    }
+
+    change_number(){
+        this.isLogin = true;
+        this.isRegister = false;
+        this.mobile_verified = false;
+    }
+    //checking the number has been logged in or not before voting
+    check_verified(){
+        if(this.mobile_verified){
+            //alert('voting...');
+            this.polling();
+        } else if(!this.isLogin || !this.isRegister && !this.mobile_verified) {
+            //alert('Please Register to vote');
+            this.isRegister = true;
+            this.isLogin = false;
+        }
+    }
+
+  questions(today){
+    this.user.poll_questions(today).subscribe(
+        data=>{
+          this.question=data['data'][0];
+          this.option=data['data'];
+            this.opt1=data['data'][0]['option'];
+            this.opt2=data['data'][1]['option'];
+            this.opt3=data['data'][2]['option'];
+            this.option1=data['data'][0]['votes'];
+            this.option2=data['data'][1]['votes'];
+            this.option3=data['data'][2]['votes'];
+          this.total = this.option1+this.option2+this.option3;
+            this.opp1=Math.round((this.option1/this.total)*100);
+            this.opp2=Math.round((this.option2/this.total)*100);
+            this.opp3=Math.round((this.option3/this.total)*100);
+            if(this.option1==0 && this.option2==0 && this.option3==0){
+                this.opp1=0;
+                this.opp2=0;
+                this.opp3=0;
+            }
+          console.log(this.opp1);
+            console.log(this.opp2);
+            console.log(this.opp3);
+
+        });
+  }
+  mail_check() {
+      console.log(this.model2.user_id);
+      delete this.model2.phone_number;
+      delete this.model2.country_code;
+      delete this.model2.via;
+      delete this.model2.token;
+      if (this.model2.username && this.model2.email) {
+          this.user.mail_checking_details(this.model2.email).subscribe
+          (data=> {
+              console.log(data);
+              if(data['success']==false) {
+                  this.user.mail_checkingadd(JSON.stringify(this.model2)).subscribe
+                  (data=> {
+                      console.log(data);
+                      if (data['success']) {
+                          alert('Registered successfully...');
+                          this.isRegister = false;
+                          this.isLogin = false;
+                          this.mobile_verified = true;
+                          let myObj = {phone_number: this.model2.email};
+                          localStorage.setItem('verified_mobile_number', JSON.stringify(myObj));
+                          this.model.user_id = this.model2.email;
+                          this.phone = this.model2.email;
+                      } else {
+                          alert('Error');
+                          // alert('failed');
+                          // this.verified = true;
+                          // this.phone_btn_onclick();
+                      }
+                  });
+              } else{
+                  alert('Already registered with this email');
+              }
+          });
+      } else{
+          alert('Please fill all fields');
+      }
+    }
+    login_validation(){
+        console.log(this.model3.user_id);
+        if(this.model3.user_id.length>3) {
+            this.user.mail_checking_login(this.model3.user_id,this.model3.password).subscribe
+            (data=> {
+                console.log(data);
+                if (data['success']) {
+                    //alert('found');
+                    this.isLogin = false;
+                    this.isRegister = false;
+                    this.mobile_verified = true;
+                    let myObj = { phone_number: this.model3.user_id};
+                    localStorage.setItem('verified_mobile_number', JSON.stringify(myObj));
+                    this.model.user_id = this.model3.user_id;
+                    this.phone = this.model3.user_id;
+                } else {
+                    alert('Wrong email and password');
+                    // alert('failed');
+                    // this.verified = true;
+                    // this.phone_btn_onclick();
+                }
+            });
+        }
+    }
+    verify_code(){
+        this.user.verify_code(this.model2.token,this.model2.user_id).subscribe
+        (data=> {
+            console.log(data);
+            if(data['success']){
+                alert('Verification Done');
+                this.verification_code = false;
+                this.m_verify=true;
+            } else{
+                alert('Already Verified this number...Try with another number');
+                this.verification_code = true;
+                this.m_verify=false;
+            }
+        });
+    }
+    phone_btn_onclick() {
+        this.user.mail_checking(this.model2.user_id).subscribe
+        (data=> {
+            console.log(data);
+            if (data['success']) {
+               alert('Already registered with this mobile number');
+            } else{
+                //alert('Processing....');
+                this.model2.phone_number = this.model2.user_id;
+                this.model2.country_code ='+91';
+                this.model2.via ='sms';
+                this.user.verification_code_send(this.model2.phone_number,this.model2.country_code).subscribe
+                (data=> {
+                    console.log(data);
+                    if(data['success']){
+                        //alert('Verification code sent to your mobile number');
+                        this.verification_code = true;
+                        this.m_verify = true;
+                    } else{
+                        alert('Error');
+                    }
+                });
+            }
+        });
+    }
+  polling(){
+    this.model.q_id=this.question['q_id'].toString();
+      console.log(JSON.stringify(this.model));
+    //this.model.votes=1;
+    this.user.poll(JSON.stringify(this.model)).subscribe(
+        data=>{
+          //console.log(data);
+            console.log(data['success']);
+            if(data['success']){
+                alert('Thank you for participation');
+                this.user.poll_questions(this.today).subscribe(
+                    data=>{
+                        this.question=data['data'][0];
+                        this.option=data['data'];
+                        this.opt1=data['data'][0]['option'];
+                        this.opt2=data['data'][1]['option'];
+                        this.opt3=data['data'][2]['option'];
+                        this.option1=data['data'][0]['votes'];
+                        this.option2=data['data'][1]['votes'];
+                        this.option3=data['data'][2]['votes'];
+                        this.total = this.option1+this.option2+this.option3;
+                        this.opp1=Math.round((this.option1/this.total)*100);
+                        this.opp2=Math.round((this.option2/this.total)*100);
+                        this.opp3=Math.round((this.option3/this.total)*100);
+                        console.log(this.opp1);
+                        console.log(this.opp2);
+                        console.log(this.opp3);
+
+                    });
+                this.p_voted = true;
+            } else{
+                alert('Already voted');
+                this.p_voted = true;
+            }
+    });
+  }
+
+}

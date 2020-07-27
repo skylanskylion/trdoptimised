@@ -1,0 +1,238 @@
+<style>
+    .close-btn{
+        font-size: 20px;
+        color: #ff0000;
+        float: right;
+        position: relative;
+        top: -38px;
+        right: -9px;
+    }
+
+    .pop-up-back-image{
+        clear: both;
+        width: 100%;
+        height: 412px;
+        /*background: #0000009c;*/}
+    .logo-popup{
+        margin-bottom: 20px;
+        border-right: 1px solid #f4f4f4;
+        padding-right: 10px;
+    }
+    .mar-popup{
+        margin:100px 0px;
+    }
+    .head-pop{
+        font-weight: 500;
+        margin-top: -15px;
+        font-size: 23px;
+        text-align: left;
+    }
+    .btn-sub-pop{
+        background: #d80404;
+        color: #fff;
+        padding: 6px 40px;
+        border-color: #ccc;
+    }
+    .btn-sub-pop:hover{
+        background: #d80404;
+        color: #fff;
+        padding: 6px 40px;
+        border-color: #ccc;
+    }
+    @media (max-width:599px){
+        .head-pop {
+            font-weight: 500;
+            margin-top: -23px;
+            font-size: 14px;
+            text-align: left;
+        }
+        .mar-popup {
+            margin: 66px 0px;
+        }
+        .pop-up-back-image {
+            clear: both;
+            width: 100%;
+            height: 269px;
+            /*background: #0000009c;*/
+
+        }
+    }
+
+    /*new log in vedantus popup */
+    .wel-head{    color: #ff0000;
+        font-size: 22px;
+        padding-top: 10px;}
+    .log-in-style{
+        font-size:26px;
+        font-weight:500;
+        color:#000;
+    }
+    .sign-log{ text-align: center;
+        font-size: 16px;
+        margin: 5px 0px 30px!important;}
+    .sign-log a{
+        color:#ff0000;
+        font-size:17px;
+    }
+    .form-part{
+        padding: 40px 15px;
+        background:#fff ;
+    }
+    .btn-cust-log{
+        background: #ff0000;
+        color: #fff;
+        padding: 8px 40px;
+        /* border-radius: 46.5%; */
+        border-radius: 20px;
+        font-size: 15px;
+        width: 90%;}
+
+    .reg-back{
+        background:#fff;
+        padding:40px 15px;
+    }
+
+    @media(max-width:768px) {
+        .sign-log{
+            text-align: center;
+            font-size: 16px;
+            margin: 5px 0px 20px!important;
+        }
+        .close-btn {
+            top: -13px;
+        }
+        .form-part{
+            padding: 15px 15px;
+            background:#fff ;
+        }
+        .sign-log a {
+            color: #ff0000!important;
+            font-size: 15px}
+
+
+    }
+
+
+</style>
+
+
+<section>
+    <div class="row" style="margin:0px;background: #f8f8f8;">
+        <div class="" *ngIf="islogin">
+
+            <div class="row" style="margin:0px;">
+
+
+                <div class="col-md-4 hidden-xs hidden-sm" style="padding-top:40px;" align="center">
+                    <img src="/assets/new-home-page/single/images/logo.jpg"/>
+                    <h1 class="wel-head">
+                        Please register for a free download of high resolution image</h1>
+
+                </div>
+                <div class="col-md-8  col-xs-12 col-sm-12 form-part">
+                    <i class="fa fa-times close-btn" aria-hidden="true" (click)="close()"></i>
+                    <h1 class="text-center log-in-style">LOGIN</h1>
+                    <h4 class="sign-log">Don’t have an account?<a  (click)="lreg()">&nbsp;SIGN UP</a></h4>
+
+                    <form role="form" (ngSubmit)="validateLogin()" novalidate #f="ngForm">
+                        <mat-form-field style="width:100%">
+                            <input matInput type="email" style="box-shadow:none;border:0" placeholder="Email" [(ngModel)]="model2.email" name="email" required>
+                        </mat-form-field>
+
+                        <mat-form-field style="width:100%">
+                            <input matInput type="password" style="box-shadow:none;border:0" placeholder="Password" [(ngModel)]="model2.password" name="password" required>
+                        </mat-form-field>
+                        <div align="center">
+                            <button type="submit" class="btn btn-cust-log btn-sm"  [disabled]="!f.form.valid">LOGIN <i class="fa fa-spinner fa-spin" *ngIf="load4"></i></button></div>
+                        <!--<b style="margin-left:145px;margin-right:10px;">Create new account</b>-->
+                        <!--  <button style="margin:10px" type="button" class="btn btn-info btn-sm" (click)="lreg()">Signup</button>-->
+                    </form></div>
+            </div>
+        </div>
+
+
+        <div class="row" *ngIf="isregister" style="margin:0px;">
+            <div class="col-md-4 hidden-xs hidden-sm" style="padding-top:40px;" align="center">
+                <img src="/assets/new-home-page/single/images/logo.jpg"/>
+                <h1 class="wel-head">If You Registered Please LogIn for a free download of high resolution image</h1>
+            </div>
+
+            <!--registration form-->
+            <div class="col-md-8 reg-back" *ngIf="isRegister1">
+                <i class="fa fa-times close-btn" aria-hidden="true" (click)="close()"></i>
+                <h3 class="text-center log-in-style">SIGN UP</h3>
+                <h4 class="sign-log">Already a member? <a  (click)="lreg()">&nbsp;LOG IN</a></h4>
+                <p style="color:maroon;text-align:center">{{message}}</p>
+                <form role="form" (ngSubmit)="validateRegister()" novalidate #f="ngForm">
+                    <mat-form-field style="width:100%">
+                        <input matInput placeholder="First Name" [(ngModel)]="model3.first_name_c" name="doctor_fname" required>
+                    </mat-form-field>
+                    <mat-form-field style="width:100%">
+                        <input matInput placeholder="Last Name" [(ngModel)]="model3.last_name_c" name="doctor_lname" required>
+                    </mat-form-field>
+                    <mat-form-field style="width:100%">
+                        <input matInput type="email" style="box-shadow:none;border:0" placeholder="Email" [(ngModel)]="model3.email" name="email" required>
+                    </mat-form-field>
+                    <mat-form-field style="width:100%">
+                        <input matInput type="password" style="box-shadow:none;border:0" placeholder="Password" [(ngModel)]="model3.password" name="password" required>
+                    </mat-form-field>
+                    <div align="center">
+                        <button type="submit" class="btn btn-cust-log btn-sm" [disabled]="!f.form.valid">SIGN UP <i class="fa fa-spinner fa-spin" *ngIf="load1"></i></button>
+                    </div>
+                    <!--<b style="margin-left:105px;margin-right:10px;">Already have an account</b>-->
+                    <!--  <button style="margin:10px" type="button" class="btn btn-info btn-sm" (click)="lreg()">Login</button>-->
+                </form>
+            </div>
+
+            <!--mobile number-->
+            <div class="col-md-8 reg-back" *ngIf="isRegister2">
+                <i class="fa fa-times close-btn" aria-hidden="true" (click)="close()"></i>
+                <h3 class="text-center log-in-style" style="font-size:20px">Almost Done!</h3>
+                <h4 class="sign-log">Verify phone to continue</h4>
+                <!--<p style="color:maroon;text-align:center">{{message}}</p>-->
+                <form role="form" style="margin:40px;" (ngSubmit)="phone_btn_onclick()" novalidate #f2="ngForm">
+                    <mat-form-field style="width:15%;margin:5px;">
+                        <input matInput style="box-shadow:none;border:0" placeholder="Code" [(ngModel)]="model4.country_code" name="country_code" required>
+                    </mat-form-field>
+                    <mat-form-field style="width:75%;margin:5px;">
+                        <input matInput type="number" style="box-shadow:none;border:0" placeholder="Mobile Number" [(ngModel)]="model4.phone_number" name="phone_number" required>
+                    </mat-form-field>
+                    <br/><br/><br/>
+                    <div align="center">
+                        <button type="submit" class="btn btn-cust-log btn-sm" [disabled]="!f2.form.valid">CONTINUE <i class="fa fa-spinner fa-spin" *ngIf="load2"></i></button>
+                    </div>
+                </form>
+            </div>
+
+
+            <!--verification code-->
+            <div class="col-md-8 reg-back" *ngIf="isRegister3">
+                <i class="fa fa-times close-btn" aria-hidden="true" (click)="close()"></i>
+                <h3 class="text-center log-in-style" style="font-size:20px;color:lightgray" *ngIf="!m_verify">OTP sent to</h3>
+                <h3 class="text-center log-in-style" style="font-size:20px;color:lightgray" *ngIf="m_verify">Verified Successfully</h3>
+                <h4 class="sign-log" style="font-size:20px;">{{model4.country_code}}&nbsp;&nbsp;&nbsp; {{model4.phone_number}}
+                    <a *ngIf="!m_verify" (click)="editPhone()"><i class="fa fa-pencil"></i> Edit </a>&nbsp;
+                    <i class="fa fa-check-circle" style="color:lightseagreen" *ngIf="m_verify"></i></h4>
+                <p style="color:tomato;text-align:center" *ngIf="m_verify">
+                    <a href="https://gmail.com" ><i class="fa fa-envelope" style="color:tomato"></i> Verify your gmail to activate account</a></p>
+                <form role="form" style="margin:40px;" (ngSubmit)="verify_code()" novalidate #f3="ngForm" *ngIf="!m_verify">
+                    <div>
+                        <mat-form-field style="width:100%;margin:10px;text-align:center;" ngStyle.xs="width:100%">
+                            <input matInput type="number" placeholder="Enter Verification Code" name="token" [(ngModel)]="model4.token" style="box-shadow:none;border:0;background:transparent" required>
+                        </mat-form-field>
+                        <br/>
+                        <h4 class="sign-log"><a (click)="phone_btn_onclick()">Resend OTP</a></h4>
+                        <div align="center">
+                            <button type="submit" [disabled]="!f3.form.valid" class="btn btn-cust-log btn-sm">VERIFY <i class="fa fa-spinner fa-spin" *ngIf="load3"></i></button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <!--end of registration-->
+
+
+        </div>
+    </div>
+</section>
+

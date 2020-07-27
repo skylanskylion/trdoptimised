@@ -1,0 +1,133 @@
+<app-nav></app-nav>
+
+<div class="container" style="">
+
+  <label class="for-checkbox" for="general"></label>
+  <h1 style="text-align:center;font-family: 'Times New Roman', Times, serif;color: cornflowerblue; font-size:40px"><b>TheRightDoctors</b></h1>
+  
+  <h4 style="margin-top: 10px; font-size:20px;text-align: center;">Read the World Today.</h4>
+
+  <div class="section over-hide z-bigger" style="padding-top:20px; color: white">
+
+      <div class="row">
+          <div class="col-xs-12 col-sm-12 col-md-6 col-lg-3">
+
+              <div class="panel price panel-red">
+                  <div class="panel-heading arrow_box text-center">
+                      <h3>WEEKDAYS</h3>
+                  </div>
+                  <div class="panel-body text-center">
+                      <p class="lead" style="font-size:relative"><strong>Coronavirus Briefing</strong></p>
+                  </div>
+                      <p style="height: 120px;" class="card-text text-muted my-2">An informed guide to the global outbreak, with the latest developments and expert advice about prevention and treatment.</p>
+                  
+                  <input *ngIf="Authenticate()" class="checkbox-tools" type="radio" name="tools" id="tool-2" routerLink="../subscription-login" routerLinkActive="active">
+                  <label *ngIf="Authenticate()" class="for-checkbox-tools" for="tool-2" routerLink="../subscription-login" routerLinkActive="active">
+                      <button *ngIf="Authenticate()" class="button"routerLink="../subscription-login" routerLinkActive="active" >
+                          <i class='uil uil-vector-square'></i>
+                          <span style=" font-size:16px">SIGN IN</span>
+                      </button>
+                  </label>
+                  <input *ngIf="!Authenticate()" class="checkbox-tools"(click)="monthly();notOther(0);" type="radio" name="tools" id="tool-2" routerLink="../subscription-plan" routerLinkActive="active">
+                  <label *ngIf="!Authenticate()" class="for-checkbox-tools" (click)="monthly();notOther(0);"for="tool-2" routerLink="../subscription-plan" routerLinkActive="active">
+                      <button *ngIf="!Authenticate()" class="button"routerLink="../subscription-plan" (click)="monthly();notOther(0);" routerLinkActive="active" >
+                          <i class='uil uil-vector-square'></i>
+                          <span style=" font-size:16px">SUBSCRIBE</span>
+                      </button>
+                  </label>
+                  
+              </div>
+
+          </div>
+
+          <div class="col-xs-12 col-sm-12 col-md-6 col-lg-3">
+
+              <div class="panel price panel-red">
+                  <div class="panel-heading arrow_box text-center">
+                      <h3>WEEKDAYS</h3>
+                  </div>
+                  <div class="panel-body text-center" style="height: relative;">
+                      <p class="lead" style="font-size:relative"><strong>Evening Briefing</strong></p>
+                  </div>
+                      <p style="height: 120px;" class="card-text text-muted my-2">Top 10 most important thing that happen today.</p>
+                                          
+                  <input *ngIf="Authenticate()" class="checkbox-tools" type="radio" name="tools" id="tool-2" routerLink="../subscription-login" routerLinkActive="active">
+                  <label *ngIf="Authenticate()" class="for-checkbox-tools" for="tool-2" routerLink="../subscription-login" routerLinkActive="active">
+                      <button *ngIf="Authenticate()" class="button"routerLink="../subscription-login" routerLinkActive="active" >
+                          <i class='uil uil-vector-square'></i>
+                          <span style=" font-size:16px">SIGN IN</span>
+                      </button>
+                  </label>
+                  <input *ngIf="!Authenticate()" class="checkbox-tools"(click)="monthly();notOther(0);" type="radio" name="tools" id="tool-2" routerLink="../subscription-plan" routerLinkActive="active">
+                  <label *ngIf="!Authenticate()" class="for-checkbox-tools" (click)="monthly();notOther(0);"for="tool-2" routerLink="../subscription-plan" routerLinkActive="active">
+                      <button *ngIf="!Authenticate()" class="button"routerLink="../subscription-plan" (click)="monthly();notOther(0);" routerLinkActive="active" >
+                          <i class='uil uil-vector-square'></i>
+                          <span style=" font-size:16px">SUBSCRIBE</span>
+                      </button>
+                  </label>
+              </div>
+
+          </div>
+          <div class="col-xs-12 col-sm-12 col-md-6 col-lg-3">
+
+              <div class="panel price panel-red">
+                  <div class="panel-heading arrow_box text-center">
+                      <h3>WEEKDAYS</h3>
+                  </div>
+                  <div class="panel-body text-center">
+                      <p class="lead" style="font-size:relative"><strong>Coronavirus Briefing</strong></p>
+                  </div>
+                      <p style="height: 120px;"  class="card-text text-muted my-2">An informed guide to the global outbreak, with the latest developments and expert advice about prevention and treatment.</p>
+                  
+                  <input *ngIf="Authenticate()" class="checkbox-tools" type="radio" name="tools" id="tool-2" routerLink="../subscription-login" routerLinkActive="active">
+                  <label *ngIf="Authenticate()" class="for-checkbox-tools" for="tool-2" routerLink="../subscription-login" routerLinkActive="active">
+                      <button *ngIf="Authenticate()" class="button"routerLink="../subscription-login" routerLinkActive="active" >
+                          <i class='uil uil-vector-square'></i>
+                          <span style=" font-size:16px">SIGN IN</span>
+                      </button>
+                  </label>
+                  <input *ngIf="!Authenticate()" class="checkbox-tools" type="radio" name="tools" id="tool-2" routerLink="../subscription-plan" routerLinkActive="active">
+                  <label *ngIf="!Authenticate()" class="for-checkbox-tools" for="tool-2" routerLink="../subscription-plan" routerLinkActive="active">
+                      <button *ngIf="!Authenticate()" class="button"routerLink="../subscription-plan" routerLinkActive="active" >
+                          <i class='uil uil-vector-square'></i>
+                          <span style=" font-size:16px">SUBSCRIBE</span>
+                      </button>
+                  </label>
+              </div>
+
+          </div>
+          <div class="col-xs-12 col-sm-12 col-md-6 col-lg-3">
+
+              <div class="panel price panel-red">
+                  <div class="panel-heading arrow_box text-center">
+                      <h3>WEEKDAYS</h3>
+                  </div>
+                  <div class="panel-body text-center">
+                      <p class="lead" style="font-size:relative"><strong>Coronavirus Briefing</strong></p>
+                  </div>
+                      <p style="height: 120px;"  class="card-text text-muted my-2">An informed guide to the global outbreak, with the latest developments and expert advice about prevention and treatment.</p>
+                  
+                  <input *ngIf="Authenticate()" class="checkbox-tools" type="radio" name="tools" id="tool-2" routerLink="../subscription-login" routerLinkActive="active">
+                  <label *ngIf="Authenticate()" class="for-checkbox-tools" for="tool-2" routerLink="../subscription-login" routerLinkActive="active">
+                      <button *ngIf="Authenticate()" class="button"routerLink="../subscription-login" routerLinkActive="active" >
+                          <i class='uil uil-vector-square'></i>
+                          <span style=" font-size:16px">SIGN IN</span>
+                      </button>
+                  </label>
+                  <input *ngIf="!Authenticate()" class="checkbox-tools" type="radio" name="tools" id="tool-2" routerLink="../subscription-plan" routerLinkActive="active">
+                  <label *ngIf="!Authenticate()" class="for-checkbox-tools" for="tool-2" routerLink="../subscription-plan" routerLinkActive="active">
+                      <button *ngIf="!Authenticate()" class="button"routerLink="../subscription-plan" routerLinkActive="active" >
+                          <i class='uil uil-vector-square'></i>
+                          <span style=" font-size:16px">SUBSCRIBE</span>
+                      </button>
+                  </label>
+              </div>
+
+          </div>
+
+          
+
+
+      </div>
+  </div>
+</div>

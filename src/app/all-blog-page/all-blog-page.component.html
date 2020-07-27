@@ -1,0 +1,63 @@
+<app-nav></app-nav>
+
+<style>
+
+
+  .panel_six {
+    height: 340px !important;
+    margin-top: 10px !important;
+  }
+
+  @media (max-width:599px) {
+    .panel_six {
+      height: 260px !important;
+      margin-top: 10px;
+    }
+    .hd5 {
+      font-size: 12px !important;
+      font-weight: 400 !important;
+      color:#666;
+    }
+
+  }
+</style>
+<!--div>
+  <img style="width: 100%;" src="../../assets/img/All Doctors2.jpg">
+</div>-->
+
+<section class="back2" *ngIf="blog_data.length>0">
+  <section class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h2 class="main_heading mrg_btm">Blogpage <span class="hdg_line"></span></h2>
+      </div>
+    </div>
+    <div class="row mrg_btm" *ngIf="blog_data.length>0">
+      <ng-template ngFor let-item [ngForOf]="createRange(blog_data.length)" let-currentIndex="index">
+        <a [routerLink]="['blog/'+'blog'+'/'+blog_data[currentIndex]['slug']]">
+          <div class="col-md-3 col-sm-12 col-xs-12">
+            <div class="panel_sixx panel_light_grey border_yellow">
+              <img src="{{blog_data[currentIndex]['image_url']}}"  alt="images" style="width:100%"/>
+              <div class="pdg1">
+                <h4 class="hd4 dis1">{{blog_data[currentIndex]['headline']}}</h4>
+                <h4 class="hd4 dis1"><span
+                        class="color_orange">{{blog_data[currentIndex]['sub_headline']}}</span></h4>
+
+
+                <h4 class="hd4_mobile dis">{{ blog_data[currentIndex]['headline']}}</h4>
+                <h4 class="hd4 dis"><span
+                        class="color_orange hd4_mobile">{{ blog_data[currentIndex]['sub_headline'] }}</span></h4>
+              </div>
+              <div class="clearfix"></div>
+            </div>
+          </div>
+        </a>
+      </ng-template>
+    </div>
+
+
+  </section>
+</section>
+
+<div class="banner">
+</div>

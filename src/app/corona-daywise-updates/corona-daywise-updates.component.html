@@ -1,0 +1,161 @@
+<body>
+
+<div class="corona1">
+  <div class="container">
+    <div fxLayout="row" fxLayoutAlign="start center">
+      <div class="border" fxLayoutAlign="center center">
+        <div class="circle red"></div>
+      </div>
+        <h3>CORONAVIRUS Day {{day}} Updates | {{day_wise_list[0]['headline']}}</h3>
+    </div>
+  </div>
+</div>
+
+<div class="corona2">
+  <div class="container">
+    <div>
+      <!-- <h1>Welcome to {{ title }}!</h1> -->
+      <!-- <h3>BREAKING</h3> -->
+      <!-- <div>Some tags before</div> -->
+        <!-- <owl-carousel-o [options]="customOptions"> -->
+        <ng-template carouselSlide>
+          
+        </ng-template>  
+        <ng-template carouselSlide>
+          <a [routerLink]="['']">
+            <div fxLayout="column" class="margin-rgt">
+              <p class="para2"><span style="color:#737373;">Live 2hr ago</span></p>
+              <h4>Britain’s Leader Is in Intensive Care; U.S. Official Warned of Risks Early</h4>
+            </div>
+          </a>
+        </ng-template>  
+        <ng-template carouselSlide>
+          <a [routerLink]="['']">
+            <div fxLayout="column" class="margin-rgt">
+              <p class="para2"><span style="color:#737373;">Live 2hr ago</span></p>
+              <h4>Britain’s Leader Is in Intensive Care; U.S. Official Warned of Risks Early</h4>
+            </div>
+          </a>
+        </ng-template>  
+        <ng-template carouselSlide>
+          <a [routerLink]="['']">
+            <div fxLayout="column" class="margin-rgt">
+              <p class="para2"><span style="color:#737373;">Live 2hr ago</span></p>
+              <h4>Britain’s Leader Is in Intensive Care; U.S. Official Warned of Risks Early</h4>
+            </div>
+          </a>
+        </ng-template>  
+        <ng-template carouselSlide>
+          <a [routerLink]="['']">
+            <div fxLayout="column" class="margin-rgt">
+              <p class="para2"><span style="color:#737373;">Live 2hr ago</span></p>
+              <h4>Britain’s Leader Is in Intensive Care; U.S. Official Warned of Risks Early</h4>
+            </div>
+          </a>
+        </ng-template>  
+      <!-- </owl-carousel-o> -->
+      <!-- <div>Some tags after</div> -->
+    
+  </div>
+</div>
+</div>
+
+
+<div class="main">
+  <div class="container">
+    <div fxLayout.lt-sm="column" fxLayout.lt-md="column" fxLayout.gt-sm="row" fxLayoutGap.gt-sm="40px">
+      <div fxFlex.lt-sm="100%" fxFlex.lt-md="100%" fxFlex.gt-sm="70%">
+          <div class="corona4">
+              <!-- <div fxLayout="row" fxLayoutAlign="start center">
+                <div class="border" fxLayoutAlign="center center">
+                  <div class="circle red"></div>
+                </div>
+                  <h2>CORONAVIRUS Daywise Updates</h2>
+              </div> -->
+              <div fxLayout.lt-sm="column" fxLayout.lt-md="column" fxLayout.gt-sm="row" fxLayoutAlign.gt-sm="start center">
+                <div fxFlex.lt-sm="100%" fxFlex.lt-md="100%" fxFlex.gt-sm="50%" fxLayout="column">
+                  <h4 style="color: #133b5a;">TRD Editor's Desk</h4>
+                </div>
+                <div fxFlex.lt-sm="100%" fxFlex.lt-md="100%" fxFlex.gt-sm="50%" fxLayoutAlign.gt-sm="end">
+                  <p class="time">UPDATED: {{day_wise_list[0]['updated_at'] | date : 'medium'}}   </p>
+                </div>
+              </div>
+          </div>
+          <div class="corona3">
+            <div fxLayout="column">
+              <ng-template ngFor let-item [ngForOf]="day_wise_list" let-currentIndex="index">
+              <a [routerLink]="['']">
+                <div fxLayout="column">
+                  <!-- <div fxLayout="row">
+                    <ul class="list-inline list-icons-top">
+                      <li class="views_single views"  ><i class="fa fa-eye" aria-hidden="true" style="background-color: #337ab7;"></i>&nbsp;&nbsp;Views</li>
+                          <li class="views_single views"><i class="fa fa-thumbs-up" aria-hidden="true" style="background-color: #337ab7;"></i>&nbsp;&nbsp;Likes</li>
+                             <li><a href="" title="Share on Facebook"  target="_blank" ><i class="fa fa-facebook fb" aria-hidden="true"></i></a></li> 
+               
+                             <li><a href=""
+                                     title="Share on Twitter" target="_blank"> <i
+                                     class="fa fa-twitter twit-clr" aria-hidden="true"></i></a></li>
+                    
+                             <li><a href="" title="Share on Linkedin"
+                                    target="_blank"><i class="fa fa-linkedin linkd" aria-hidden="true"></i></a></li>
+                           <li><a href=""
+                                     data-action="" title="Share on Whatsapp" 
+                                     target="_blank"><i class="fa fa-whatsapp whats-app" aria-hidden="true" style="font-size:18px;"></i></a></li>                  
+                         </ul>
+                  </div> -->
+                <div fxLayout="column" class="borderall">
+                  <div class="paddall">
+                    <p class="time">{{day_wise_list[currentIndex]['updated_at'] | date : 'medium'}}</p>
+                    <h4 class="headingcorona">{{day_wise_list[currentIndex]['headline']}}</h4>
+                  </div>
+                  <div *ngIf="day_wise_list[currentIndex]['image_url']">
+                    <img src="{{day_wise_list[currentIndex]['image_url']}}" class="img-res">
+                  </div>
+                  <div [ngSwitch] = "day_wise_list[currentIndex]['category']">
+                    <div *ngSwitchCase = "'cme'">
+                      <div *ngFor = "let item of day_wise_list[currentIndex]['transcript_list']; let i = index ">
+                        <div *ngIf="i < 2">
+                        <p class="para">{{item['question']}}</p>
+                      </div>
+                      </div>
+                      <div style="text-align : right ; margin-right: 20px;">
+                      <a class="button button2" href="https://insights.therightdoctors.com/blog/cme/{{day_wise_list[currentIndex]['blog_category']}}/{{day_wise_list[currentIndex]['slug']}}"> Read More</a>
+                    </div>
+                    </div>
+                    <div *ngSwitchCase = "'day-wise-update'">
+                      <div *ngFor = "let item of day_wise_list[currentIndex]['transcript_list']; let i = index ">
+                        <p class="para">{{item['question']}}</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+              </a>
+              </ng-template>
+            </div>
+          </div>
+      </div>
+      <div fxFlex.lt-sm="100%" fxFlex.lt-md="100%" fxFlex.gt-sm="30%">
+        <div fxLayout="column">
+          <ng-template ngFor let-item [ngForOf]="createRange(4)" let-currentIndex="index">
+            <a href="#">
+              <div fxLayout="column" class="borderbtm">
+                <div>
+                  <img src="assets/DrSundeepMishra_1-large.jpg" class="img-res">
+                </div>
+                <div fxLayout="column" class="padbtm">
+                  <h4 class="headingcorona">Britain’s Leader Is in Intensive Care; U.S. Official Warned of Risks Early</h4>
+                  <!-- <h6 class="dr-name">Dr. Name</h6> -->
+                  <!-- <p class="para1">The condition of Prime Minister Boris Johnson of Britain, who was hospitalized with the coronavirus, has worsened.</p> -->
+                  <!-- <p class="para2">Live 2hr ago</p> -->
+              </div>
+              </div>
+            </a>
+          </ng-template>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>

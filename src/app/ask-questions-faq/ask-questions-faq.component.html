@@ -1,0 +1,682 @@
+<div class="backgroundd">
+  <div class="container">
+
+    <!-- <div class="header">
+          <div fxLayout="row">
+              <div fxLayout="column" fxFlex="40%" fxLayoutAlign="center start">
+                  <p style="font-size: 6px !important;color:#000;">18th - 19th january, 2020, The Lalit, Mumbai</p>
+                  <img src="/assets/vaicon.png" style="" class="logo">
+              </div>
+              <div fxFlex="10%"></div>
+              <div fxLayout="column" fxFlex="60%">
+                  <img src="/assets/unnamed (3).png" style="width:100%;">
+                  <div fxLayout="row">
+                      <div fxFlex="33.33%" fxLayoutAlign="center center">
+                          <p style="font-size: 10px;color:#3f51b5;">Dr. Harinder</p>
+                      </div>
+                      <div fxFlex="33.33%" fxLayoutAlign="center center">
+                          <p style="font-size: 10px;color:#3f51b5;">Dr. Harinder</p>
+                      </div>
+                      <div fxFlex="33.33%" fxLayoutAlign="center center">
+                          <p style="font-size: 10px;color:#3f51b5;">Dr. Harinder</p>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div> -->
+    <div class="question">
+      <!-- <div class="heading">
+              <mat-card>
+                  <h2>Requirement Form for Digital Knowledge Partner</h2>
+              </mat-card>
+          </div> -->
+      <!-- <form  (ngSubmit)="about_form()">
+              
+          <div class="questions">
+              <mat-card>
+                  <h6>Email Address</h6>
+                  <mat-form-field class="example-full-width">
+                      <input name=”email“
+                      matInput placeholder="Your Email" [(ngModel)]="kp_model.email">
+                  </mat-form-field>               
+              </mat-card>
+              <mat-card>
+                  <h6>Name of the Event</h6>
+                  <mat-form-field class="example-full-width">
+                      <input matInput name=”name_of_Event“ 
+                      placeholder="Your Event" [(ngModel)]="kp_model.name_of_event">
+                  </mat-form-field>               
+              </mat-card>
+              <mat-card>
+                  <h6>Q1) Number of speakers expected at the event? </h6>
+                  <mat-form-field class="example-full-width">
+                      <input name=”number_of_speakers“ 
+                      matInput placeholder="Your Answer"  [(ngModel)]="kp_model.number_of_speakers">
+                  </mat-form-field>               
+              </mat-card>
+              <mat-card>
+                  <h6>Q2) Number of International Speakers expected at the event?
+                  </h6>
+                  <mat-form-field class="example-full-width">
+                      <input name=”number_of_International_Speakers“ 
+                      matInput placeholder="Your Answer"  [(ngModel)]="kp_model.number_of_International_Speakers">
+                  </mat-form-field>               
+              </mat-card>
+              <mat-card>
+                  <h6>Q3) Number of delegates expected to attend the event? </h6>
+                  <mat-form-field class="example-full-width">
+                      <input name=”number_of_delegates“ 
+                      matInput placeholder="Your Answer" [(ngModel)]="kp_model.number_of_delegates">
+                  </mat-form-field>               
+              </mat-card>
+              <mat-card>
+                  <h6>Q4) Kindly indicate number of halls at the venue for speaker sessions?</h6>
+                  <mat-form-field class="example-full-width">
+                      <input name=”number_of_halls“ 
+                      matInput placeholder="Your Answer" [(ngModel)]="kp_model.number_of_halls">
+                  </mat-form-field>               
+              </mat-card>
+              <mat-card>
+                  <h6 style="padding-bottom: 10px">Q5) Does the main hall have a large LED screen?</h6>
+                          <mat-radio-group  style= "margin-bottom:15px;" name=”largeLEDscreen_at_mainhall“ 
+                          fxLayout="column" [(ngModel)]="kp_model.largeLEDscreen_at_mainhall">
+                                  <mat-radio-button value="Yes">Yes</mat-radio-button>
+                                  <mat-radio-button value="No">No</mat-radio-button>
+                                </mat-radio-group>  
+              </mat-card>
+              <mat-card>
+                  <h6>Q6) Have you appointed an AV person at the event? (If Yes, kindly share the details of AV person to enable us to co-ordinate) 
+                  </h6>
+                  <mat-form-field class="example-full-width">
+                      <input matInput name=”details_of_av_person“ 
+                      placeholder="Your Answer" [(ngModel)]="kp_model.details_of_av_person">
+                  </mat-form-field>               
+              </mat-card>
+              <mat-card>
+                  <h6>Q7) Do you have cameras in every hall?</h6>
+                  <mat-radio-group name=”camera_at_every_hall“ 
+                  style= "margin-bottom:15px;" fxLayout="column" [(ngModel)]="kp_model.camera_at_every_hall">
+                          <mat-radio-button value="Yes">Yes</mat-radio-button>
+                          <mat-radio-button value="No">No</mat-radio-button>
+                        </mat-radio-group>                
+              </mat-card>
+              <mat-card>
+                  <h6>Q8) We prepare key faculty videos for main speakers like foreign faculty speakers and top Indian faculty speakers highlighting their career for about 30-40 sec which will be played on LED screens in the hall as speakers approach the podium. Would you be interested in key faculty videos?</h6>
+                  <mat-radio-group  name=”interested_key_faculty_videos“ 
+                  style= "margin-bottom:15px;"  fxLayout="column" [(ngModel)]="kp_model.interested_key_faculty_videos">
+                          <mat-radio-button value="Yes">Yes</mat-radio-button>
+                          <mat-radio-button value="No">No</mat-radio-button>
+                        </mat-radio-group>              
+              </mat-card>
+              <mat-card>
+                  <h6>Q9) If Yes in the above question, kindly indicate number of faculty videos needed?</h6>
+                  <mat-form-field  name=”number_of_key_faculty_videos“ 
+                  class="example-full-width">
+                      <input matInput placeholder="Your Answer" [(ngModel)]="kp_model.number_of_key_faculty_videos">
+                  </mat-form-field>               
+              </mat-card>
+              <mat-card>
+                  <h6>Q10) For important/Keynote/foreign speakers we can do a special edit where the presentation content will have animation and rich graphics</h6>
+                  <mat-radio-group  style= "margin-bottom:15px;"  name=”important_speakers_special_edit“ 
+                  fxLayout="column" [(ngModel)]="kp_model.important_speakers_special_edit">
+                          <mat-radio-button value="Yes">Yes</mat-radio-button>
+                          <mat-radio-button value="No">No</mat-radio-button>
+                        </mat-radio-group>               
+              </mat-card>
+              <mat-card>
+                  <h6>Q11)Do you need graphic representation (with high definition photographs) of upcoming talks to be displayed at the venue and shared on the venue with delegates</h6>
+                  <mat-radio-group  style= "margin-bottom:15px;"  name=”need_of_hd_photos_of_upcoming_talks“ 
+                  fxLayout="column" [(ngModel)]="kp_model.need_of_hd_photos_of_upcoming_talks">
+                          <mat-radio-button value="Yes">Yes</mat-radio-button>
+                          <mat-radio-button value="No">No</mat-radio-button>
+                        </mat-radio-group>                
+              </mat-card>
+              <mat-card>
+                  <h6>Q12) Before the event, we create promo videos and promote them across social media and dedicated WhatsApp groups. Would this be of interest to you?</h6>
+                  <mat-radio-group  style= "margin-bottom:15px;"  name=”advertise_with_promos“ 
+                  fxLayout="column" [(ngModel)]="kp_model.advertise_with_promos">
+                          <mat-radio-button value="Yes">Yes</mat-radio-button>
+                          <mat-radio-button value="No">No</mat-radio-button>
+                        </mat-radio-group>              
+              </mat-card>
+              <mat-card>
+                  <h6>Q13) If Yes in the above question, kindly indicate the number of videos needed.</h6>
+                  <mat-form-field class="example-full-width">
+                      <input name=”number_of_promos“ 
+                      matInput placeholder="Your Answer" [(ngModel)]="kp_model.number_of_promos">
+                  </mat-form-field>               
+              </mat-card>
+              <mat-card>
+                  <h6>Q14) We set up a High Definition Studio at the venue to take interviews of faculty/speakers/delegates as selected by organizing committee. This is branded as a TV Channel of the conference. Ex: CSI Tv, WCCICC Tv. Organizing committee can leverage the conference Tv Channel as a branding opportunity from interested sponsors.Would this be of interest to you? </h6>
+                  <mat-radio-group  style= "margin-bottom:15px;" name=”interested_in_studio_for_interviewers“ 
+                  fxLayout="column" [(ngModel)]="kp_model.interested_in_studio_for_interviewers">
+                          <mat-radio-button value="Yes">Yes</mat-radio-button>
+                          <mat-radio-button value="No">No</mat-radio-button>
+                        </mat-radio-group>            
+              </mat-card>
+              <mat-card>
+                  <h6>Q15) During the event, we make daily highlight videos and play them on LED screens at the venue and also send them to delegates through WhatsApp. Would this be of interest to you?</h6>
+                  <mat-radio-group  style= "margin-bottom:15px;" name=”daily_highlights_videos_whatsapp“ 
+                  fxLayout="column" [(ngModel)]="kp_model.daily_highlights_videos_whatsapp">
+                          <mat-radio-button value="Yes">Yes</mat-radio-button>
+                          <mat-radio-button value="No">No</mat-radio-button>
+                        </mat-radio-group>              
+              </mat-card>
+              <mat-card fxLayoutGap="10px ">
+                  <h6  style="padding-bottom: 10px;">Q16)During the event, we post photos, key takeaways, and short videos of the conference across all social media channels. Would be this of interest to you? </h6>
+                  <mat-radio-group  style= "margin-bottom:15px;"  name=”live_posts_on_socialmedia“ 
+                  fxLayout="column" [(ngModel)]="kp_model.live_posts_on_socialmedia">
+                          <mat-radio-button value="Yes">Yes</mat-radio-button>
+                          <mat-radio-button value="No">No</mat-radio-button>
+                        </mat-radio-group>            
+              </mat-card>
+              <mat-card>
+                  <h6>Q17)Mailers will be sent to all delegates for 12-52 weeks after the event with links of key videos and thumbnails displaying a thank you from organizers. Would this be of interest to you? </h6>
+                  <mat-radio-group  style= "margin-bottom:15px;"  name=”mailers_to_delegates“ 
+                  fxLayout="column" [(ngModel)]="kp_model.mailers_to_delegates">
+                          <mat-radio-button value="Yes">Yes</mat-radio-button>
+                          <mat-radio-button value="No">No</mat-radio-button>
+                        </mat-radio-group>       
+              </mat-card>
+              <mat-card>
+                  <h6>Q18)Do you require live streaming of the event? </h6>
+                  <mat-radio-group  style= "margin-bottom:15px;"  name=”live_streaming“ 
+                  fxLayout="column" [(ngModel)]="kp_model.live_streaming">
+                          <mat-radio-button value="Yes">Yes</mat-radio-button>
+                          <mat-radio-button value="No">No</mat-radio-button>
+                        </mat-radio-group>                
+              </mat-card>
+              <mat-card>
+                  <h6>Q19) Will you, the organizers be budgeting the Knowledge Partner investment or would any of your sponsoring companies support this initiative?</h6>
+                  <mat-form-field class="example-full-width">
+                          <input matInput  name=”budget_sponsor“ 
+                          placeholder="Your Answer" [(ngModel)]="kp_model.budget_sponsor">
+                      </mat-form-field>               
+              </mat-card>
+              <mat-card>
+                  <h6>Q20)Will you be interested in getting an android app/tailor made website made for the conference. The app/website would have videos of all the speaker sessions, presentations, interviews from the studio, papers and posters presented at the conference and photographs from the event</h6>
+                  <mat-radio-group  style= "margin-bottom:15px;"  name=”app_for_event“ 
+                  fxLayout="column" [(ngModel)]="kp_model.app_for_event">
+                          <mat-radio-button value="Yes">Yes</mat-radio-button>
+                          <mat-radio-button value="No">No</mat-radio-button>
+                          <mat-radio-button value="Maybe">Maybe</mat-radio-button>
+                        </mat-radio-group>             
+              </mat-card>
+              <mat-card>
+                  <h6>Q21)Will you be interested in having a dedicated YouTube channel which would have recordings of all speaker videos and interviews recorded at the studio
+                  </h6>
+                  <mat-radio-group  style= "margin-bottom:15px;"  name=”dedicated_videos_on_youtube_channel“ 
+                  fxLayout="column" [(ngModel)]="kp_model.dedicated_videos_on_youtube_channel">
+                          <mat-radio-button value="Yes">Yes</mat-radio-button>
+                          <mat-radio-button value="No">No</mat-radio-button>
+                        </mat-radio-group>               
+              </mat-card>
+              <mat-card>
+                  <h6>Q22)Kindly use the box below to mention any other requirements you might have?</h6>
+                  <mat-form-field class="example-full-width">
+                          <input name=”any_other_requirements“ 
+                          matInput placeholder="Your Answer" [(ngModel)]="kp_model.any_other_requirements">
+                      </mat-form-field> 
+              </mat-card>
+          </div>
+          <div class="submit">
+              <button mat-flat-button style="color:#fff;background-color: #3f51b5;">SUBMIT</button>
+               <button mat-flat-button style="color:#000;background-color: #fff;">SUBMIT</button> 
+          </div>
+
+      </form> -->
+
+      <form role="form" #f="ngForm" (ngSubmit)="response_form()">
+
+        <div class="questions">
+          <br>
+
+          <mat-card>
+              <p style="font-size: 18px; font-weight: bold; color:#336699;">Share your valuable Insights on Coronavirus and other Medical Stories of Importance.  </p>
+              <!-- <p style="font-size: 14px; font-weight: bold; color:#993366	;"> Here's why it is not over yet.</p> -->
+              
+          </mat-card>
+          <mat-card>
+            <p> You could write a column, participate in Q & A sessions or be available for a phone in.</p>
+            <!-- <p> Choose your convenient time slot for Telecon.</p> -->
+
+          </mat-card>
+
+          <!-- <mat-card>
+            <h6>Q1) What about the video recordings of the faculty, who shared their wisdom, insights, and
+              recommendations with delegates? ? <span style="color: red;"></span></h6> -->
+          <!-- <mat-form-field class="example-full-width">
+                      <input name="concept" matInput placeholder="Your Answer" [(ngModel)]="model2.concept" required>
+                  
+                      <mat-error *ngIf="kpFormControl.hasError('required')">This field is required.</mat-error>
+                  </mat-form-field>                -->
+          <!-- <mat-radio-group style="margin-bottom:15px;" name=”concept“ fxLayout="column" required
+                          [(ngModel)]="model2.concept">
+                          <mat-radio-button value="Yes">Yes</mat-radio-button>
+                          <mat-radio-button value="No">No</mat-radio-button> -->
+          <!-- <mat-error *ngIf="kpFormControl.hasError('required')">This field is required.</mat-error> -->
+          <!-- </mat-radio-group> -->
+          <!-- <div fxLayout="row" fxLayoutAlign="center center" class="smileys" fxLayoutGap="">
+                          <div class='sim1' style="padding-right: 10px;"> 
+                          <div style="border-radius: 100%; " (click)="enableDisableRule($event)" class='sim1'><p style="font-size: 9px; ">0%</p>
+                              <div [style.background-color]="toggle ? '' : '#EB7F84'" style=" border-radius:100%" > 
+                                  
+                                  <img class="smiley1" src="/assets/smiley/smilie5.png">
+                              </div>
+
+                          </div>
+                         <p style="font-size: 9px"> Not Interested</p>
+                      </div>
+                      <div class='sim1' style="padding-right: 10px;"> 
+                          <div style="border-radius: 100%" (click)="enableDisableRule1($event)" class='sim1'><p style="font-size: 9px">25%</p>
+                              <div [style.background-color]="toggle1 ? '' : '#FBDC25'" style="border-radius: 100%; " >
+
+                                  <img class="smiley2" src="/assets/smiley/smilie4.png"></div>
+                          </div>
+
+                         <p style="font-size: 9px"> Don't Know</p>
+                      </div>
+                      <div class='sim1' style="padding-right: 10px;"> 
+
+                          <div style="border-radius: 100%; " (click)="enableDisableRule2($event)" class='sim1'><p style="font-size: 9px">50%</p>
+                          
+                          <div [style.background-color]="toggle2 ? '' : '#FBDC25'" style="border-radius: 100%; "> <img class="smiley3"
+                                  src="/assets/smiley/smilie3.png"></div>
+                          </div>
+                         <p style="font-size: 9px"> May be Interested</p>
+                      </div>
+                      <div class='sim1' style="padding-right: 10px;"> 
+
+                          <div style="border-radius: 100%; " (click)="enableDisableRule3($event)" class='sim1'><p style="font-size: 9px">75%</p>
+
+                          <div [style.background-color]="toggle3 ? '' : '#FBDC25'" style="border-radius: 100%; " > <img class="smiley4"
+                                  src="/assets/smiley/smilie2.png"></div>
+                                  </div>
+                                 <p style="font-size: 9px"> Interested</p>
+                              </div>
+
+                              <div class='sim1' style="padding-right: 10px;"> 
+                          <div style="border-radius: 100%; " (click)="enableDisableRule4($event)" class='sim1'><p style="font-size: 9px">100%</p>
+
+                          <div [style.background-color]="toggle4 ? '' : '#FBDC25'" style="border-radius: 100%;  "
+                              > <img class="smiley5"
+                                  src="/assets/smiley/smilie1.png"></div>
+                                  </div>
+                                 <p style="font-size: 9px">Let's do it</p>
+                              </div>
+                      </div> -->
+          <!-- 
+            <div fxLayout="row" fxLayoutAlign="center center" class="smileys" fxLayoutGap="">
+              <div class='sim1' style="padding-right: 5px;">
+                <div style="border-radius: 100%; " (click)="enableDisableRule($event)" class='sim1'>
+                  <p style="font-size: 9px; ">0%</p>
+                  <div [style.background-color]="toggle ? '' : '#EB7F84'" style=" border-radius:100%">
+
+                    <img class="smiley1" src="/assets/smiley/smiley_angry_gray.22ea6062.svg">
+                  </div>
+
+                </div>
+                <p style="font-size: 9px"> Not Interested</p>
+              </div>
+              <div class='sim1' style="padding-right: 5px;">
+                <div style="border-radius: 100%" (click)="enableDisableRule1($event)" class='sim1'>
+                  <p style="font-size: 9px">25%</p>
+                  <div [style.background-color]="toggle1 ? '' : '#FBDC25'" style="border-radius: 100%; ">
+
+                    <img class="smiley2" src="/assets/smiley/smiley_annoyed_gray.5534ff50.svg"></div>
+                </div>
+
+                <p style="font-size: 9px"> Don't Know</p>
+              </div>
+              <div class='sim1' style="padding-right: 5px;">
+
+                <div style="border-radius: 100%; " (click)="enableDisableRule2($event)" class='sim1'>
+                  <p style="font-size: 9px">50%</p>
+
+                  <div [style.background-color]="toggle2 ? '' : '#FBDC25'" style="border-radius: 100%; "> <img
+                      class="smiley3" src="/assets/smiley/smiley_neutral_gray.abd60ee6.svg"></div>
+                </div>
+                <p style="font-size: 9px"> May be Interested</p>
+              </div>
+              <div class='sim1' style="padding-right: 5px;">
+
+                <div style="border-radius: 100%; " (click)="enableDisableRule3($event)" class='sim1'>
+                  <p style="font-size: 9px">75%</p>
+
+                  <div [style.background-color]="toggle3 ? '' : '#FBDC25'" style="border-radius: 100%; "> <img
+                      class="smiley4" src="/assets/smiley/smiley_happy_gray.9aa04fd8.svg"></div>
+                </div>
+                <p style="font-size: 9px"> Interested</p>
+              </div>
+
+              <div class='sim1' style="padding-right: 5px;">
+                <div style="border-radius: 100%; " (click)="enableDisableRule4($event)" class='sim1'>
+                  <p style="font-size: 9px">100%</p>
+
+                  <div [style.background-color]="toggle4 ? '' : '#FBDC25'" style="border-radius: 100%;  "> <img
+                      class="smiley5" src="/assets/smiley/smiley_very_happy_gray.c046d495.svg"></div>
+                </div>
+                <p style="font-size: 9px">Let's do it</p>
+              </div>
+            </div>
+          </mat-card> -->
+          <!-- <mat-card>
+                      <h6>Q2) What about the video recordings of the faculty, who shared their wisdom, insights, and recommendations with delegates? <span style="color: red;"></span></h6> -->
+          <!-- <mat-form-field class="example-full-width">
+                      <input name="budget" matInput placeholder="Your Answer" (keypress)="numberOnly($event)" [(ngModel)]="model2.budget"  required>
+                      <mat-error *ngIf="kpFormControl.hasError('required')">This field is required.</mat-error>
+
+                  </mat-form-field>                -->
+          <!-- <mat-radio-group style="margin-bottom:15px;" name=”budget“ fxLayout="column"
+                          [(ngModel)]="model2.budget" required>
+                          <mat-radio-button value="Yes">Yes</mat-radio-button>
+                          <mat-radio-button value="No">No</mat-radio-button> -->
+          <!-- <mat-error *ngIf="kpFormControl.hasError('required')">This field is required.</mat-error> -->
+          <!-- </mat-radio-group> -->
+
+          <!-- <mat-radio-group style="margin-bottom:15px;" name=budget fxLayout="column"
+                      [(ngModel)]="model2.budget" required>
+                    <mat-radio-button value="Yes">Yes</mat-radio-button>
+                      <mat-radio-button value="No">No</mat-radio-button>
+                    </mat-radio-group>  
+
+                    <div *ngIf="model2.budget=='Yes'">
+                              <mat-radio-group style="margin-bottom:15px;" name=sponsors fxLayout="column"
+                                  [(ngModel)]="model2.sponsors" required>
+                                  Would you like our marketing team to reach out potential sponsors ?
+                                  <mat-radio-button value="Yes">Yes</mat-radio-button>
+                                  <mat-radio-button value="No">No</mat-radio-button>
+                                </mat-radio-group>  
+                          </div>
+                          <div *ngIf="model2.sponsors=='Yes'">
+                             <a (click)="showAppointmentLetter()">  Click here to see the appointment letter.</a>
+                                <div *ngIf="appointLetter">
+                                      
+                                  <img 
+                                  src="/assets/smiley/iages_approval.png">
+                                      </div>
+                                  </div> -->
+
+          <!-- <div fxLayout="row" fxLayoutAlign="center center" class="smileys" fxLayoutGap="">
+                          <div style="border-radius: 100%; " (click)="enableDisableRuleEvent($event)">
+                              <div [style.background-color]="toggleevent ? '' : '#EB7F84'" style="margin-right: 10px; border-radius:100%">
+                                  <img class="smiley1" src="/assets/smiley/smiley_angry_gray.22ea6062.svg">
+                              </div>
+                          </div>
+
+                          <div style="border-radius: 100%" (click)="enableDisableRuleEvent1($event)">
+                              <div [style.background-color]="toggleevent1 ? '' : '#FBDC25'" style="border-radius: 100%; margin-right: 10px;" >
+
+                                  <img class="smiley2" src="/assets/smiley/smiley_annoyed_gray.5534ff50.svg"></div>
+                          </div>
+                          <div style="border-radius: 100%; " (click)="enableDisableRuleEvent2($event)">
+                          
+                          <div [style.background-color]="toggleevent2 ? '' : '#FBDC25'" style="border-radius: 100%; margin-right: 10px;"> <img class="smiley3"
+                                  src="/assets/smiley/smiley_neutral_gray.abd60ee6.svg"></div>
+                          </div>
+
+                          <div style="border-radius: 100%; " (click)="enableDisableRuleEvent3($event)">
+
+                          <div [style.background-color]="toggleevent3 ? '' : '#FBDC25'" style="border-radius: 100%; margin-right: 10px;" > <img class="smiley4"
+                                  src="/assets/smiley/smiley_happy_gray.9aa04fd8.svg"></div>
+                                  </div>
+
+                          <div style="border-radius: 100%; " (click)="enableDisableRuleEvent4($event)">
+
+                          <div [style.background-color]="toggleevent4 ? '' : '#FBDC25'" style="border-radius: 100%;  margin-right: 10px;"
+                              > <img class="smiley5"
+                                  src="/assets/smiley/smiley_very_happy_gray.c046d495.svg"></div>
+                                  </div>
+                      </div> -->
+          <!-- </mat-card> -->
+
+
+          <!-- <mat-card>
+                          <h6>Q3) Would you like to set up a television studio ? <span
+                                  style="color: red;"></span></h6> -->
+          <!-- <mat-form-field class="example-full-width">
+                          <input name="investment" 
+                          matInput placeholder="Your Answer" [(ngModel)]="model2.investment" required >
+                          <mat-error *ngIf="kpFormControl.hasError('required')">This field is required.</mat-error> -->
+          <!-- <div fxLayout="row" fxLayoutAlign="center center" class="smileys" fxLayoutGap="">
+                                  <div style="border-radius: 100%; " name="1" (click)="enableDisableRules($event)">
+                                      <div [style.background-color]="toggles ? '' : '#EB7F84'" style="margin-right: 10px; border-radius:100%">
+                                          <img class="smiley1" src="/assets/smiley/smiley_angry_gray.22ea6062.svg">
+                                      </div>
+                                  </div>
+      
+                                  <div style="border-radius: 100%"  (click)="enableDisableRules1($event)">
+                                      <div [style.background-color]="toggles1 ? '' : '#FBDC25'" style="border-radius: 100%; margin-right: 10px;" >
+      
+                                          <img class="smiley2" src="/assets/smiley/smiley_annoyed_gray.5534ff50.svg"></div>
+                                  </div>
+                                  <div style="border-radius: 100%; " (click)="enableDisableRules2($event)">
+                                  
+                                  <div [style.background-color]="toggles2 ? '' : '#FBDC25'" style="border-radius: 100%; margin-right: 10px;"> <img class="smiley3"
+                                          src="/assets/smiley/smiley_neutral_gray.abd60ee6.svg"></div>
+                                  </div>
+      
+                                  <div style="border-radius: 100%; " (click)="enableDisableRules3($event)">
+      
+                                  <div [style.background-color]="toggles3 ? '' : '#FBDC25'" style="border-radius: 100%; margin-right: 10px;" > <img class="smiley4"
+                                          src="/assets/smiley/smiley_happy_gray.9aa04fd8.svg"></div>
+                                          </div>
+      
+                                  <div style="border-radius: 100%; " (click)="enableDisableRules4($event)">
+      
+                                  <div [style.background-color]="toggles4 ? '' : '#FBDC25'" style="border-radius: 100%;  margin-right: 10px;"
+                                      > <img class="smiley5"
+                                          src="/assets/smiley/smiley_very_happy_gray.c046d495.svg"></div>
+                                          </div>
+                              </div> -->
+          <!-- </mat-form-field>                -->
+          <!-- </mat-card>
+                      <div *ngIf="!toggles4">
+                          <mat-card>
+                              <mat-radio-group style="margin-bottom:15px;" name=backDrop fxLayout="column"
+                                  [(ngModel)]="model2.backDrop" required>
+                                  Show me how it will look.
+                                  <mat-radio-button value="Yes">Yes</mat-radio-button>
+                                  <mat-radio-button value="No">No</mat-radio-button>
+                                </mat-radio-group>  
+                              </mat-card>
+                          </div>
+                      <div *ngIf="model2.backDrop=='Yes'">
+                              <mat-card>
+
+                              <img 
+                              src="/assets/smiley/B_P_Center_Panel.jpg">
+
+                              </mat-card>
+                          </div> -->
+          <mat-card>
+              <mat-form-field style="width:100%;" ngStyle.xs="width:100%">
+                  <input matInput placeholder="First Name" name="first name" [(ngModel)]="model2.firstname" style="box-shadow:none;border:0;background:transparent" required>
+              </mat-form-field><br>
+              <mat-form-field style="width:100%;" ngStyle.xs="width:100%">
+                <input matInput placeholder="Last Name" name="username" [(ngModel)]="model2.lastname" style="box-shadow:none;border:0;background:transparent" required>
+            </mat-form-field><br>
+              
+              <mat-form-field style="width:100%;" ngStyle.xs="width:100%">
+                <input matInput placeholder="Email" type="email" name="email" style="box-shadow:none;border:0;background:transparent"[(ngModel)]="model2.email" #email="ngModel" pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}$"  required>
+                  <mat-error *ngIf="emailFormControl.hasError('required')">
+                   Valid email address Required
+                  </mat-error>
+              </mat-form-field> <br>
+              <mat-form-field style="width:100%;" ngStyle.xs="width:100%">
+                  <input matInput placeholder="Country Code" type="Country Code" name="country_code" style="box-shadow:none;border:0;background:transparent"[(ngModel)]="model2.country_code" #country_code="ngModel" pattern="[+][0-9]{0,12}"  required>
+                    <mat-error *ngIf="emailFormControl.hasError('required')">
+                     Enter Valid Country Code(Eg:+91)
+                    </mat-error>
+                </mat-form-field>
+              <p>
+                  <mat-form-field style="width:100%;" ngStyle.xs="width:100%">
+                    <mat-label>Enter Your Mobile Number </mat-label>
+                      <input matInput type="number" name="user_id" id="user_id" placeholder="Mobile Number" style="box-shadow:none;border:0;background:transparent" [(ngModel)]="model2.user_id" #user_id="ngModel" pattern="[1-9]{1}[0-9]{9}" maxlength="10"required>
+                  </mat-form-field>
+                </p> 
+              <div>
+                  <div *ngIf="verification_code">
+                      <div fxLayout="row">
+                          <div fxFlex="50%">
+                      <mat-form-field style="width:50%;" ngStyle.xs="width:100%">
+                          <input matInput placeholder="Enter your code" name="token" [(ngModel)]="model2.token" style="box-shadow:none;border:0;background:transparent" required>
+                      </mat-form-field>
+                    </div>
+                    <div fxFlex="50%">
+                      <button mat-raised-button color="primary" type="button" (click)="verify_code()">Verify</button>
+                    </div>
+                    </div>
+                  </div>
+                  <button mat-raised-button color="primary" type="button" *ngIf="!m_verify" (click)="phone_btn_onclick()">Verify Mobile Number</button>
+              </div>
+              <!-- <div style="width:100%">
+                  <button (click)="submit()" type="submit" mat-raised-button color="primary" [disabled]="!(f.form.valid && m_verify && !verification_code)" style="cursor: pointer;margin: 20px 0px;">Register</button><br>
+              </div> -->
+           
+          </mat-card>
+          <!-- <mat-card>
+            <a (click)="showKeyTakeAwayNew()"> Click to see how Key Take-Aways from your conference will look : </a>
+            <br>
+            <div *ngIf="ktNew">
+
+              <img src="/assets/smiley/keytakenew.jpg">
+
+              <p style="text-align: center;"> Please share your level of interest?</p>
+              <div fxLayout="row" fxLayoutAlign="center center" class="smileys" fxLayoutGap="">
+                <div style="border-radius: 100%; " name="1" (click)="enableDisableRuleKey($event)">
+                  <div [style.background-color]="toggleKey ? '' : '#EB7F84'"
+                    style="margin-right: 10px; border-radius:100%">
+                    <img class="smiley1" src="/assets/smiley/smiley_angry_gray.22ea6062.svg">
+                  </div>
+                </div>
+  
+                <div style="border-radius: 100%" (click)="enableDisableRuleKey1($event)">
+                  <div [style.background-color]="toggleKey1 ? '' : '#FBDC25'"
+                    style="border-radius: 100%; margin-right: 10px;">
+  
+                    <img class="smiley2" src="/assets/smiley/smiley_annoyed_gray.5534ff50.svg"></div>
+                </div>
+                <div style="border-radius: 100%; " (click)="enableDisableRuleKey2($event)">
+  
+                  <div [style.background-color]="toggleKey2 ? '' : '#FBDC25'"
+                    style="border-radius: 100%; margin-right: 10px;"> <img class="smiley3"
+                      src="/assets/smiley/smiley_neutral_gray.abd60ee6.svg"></div>
+                </div>
+  
+                <div style="border-radius: 100%; " (click)="enableDisableRuleKey3($event)">
+  
+                  <div [style.background-color]="toggleKey3 ? '' : '#FBDC25'"
+                    style="border-radius: 100%; margin-right: 10px;"> <img class="smiley4"
+                      src="/assets/smiley/smiley_happy_gray.9aa04fd8.svg"></div>
+                </div>
+  
+                <div style="border-radius: 100%; " (click)="enableDisableRuleKey4($event)">
+  
+                  <div [style.background-color]="toggleKey4 ? '' : '#FBDC25'"
+                    style="border-radius: 100%;  margin-right: 10px;"> <img class="smiley5"
+                      src="/assets/smiley/smiley_very_happy_gray.c046d495.svg"></div>
+                </div>
+              </div>
+            </div>
+            
+   
+
+
+          </mat-card> -->
+
+          <div *ngIf="m_verify && !verification_code">
+              <mat-card>
+                
+                For a phone in, how would you like us to contact you ?  
+                <!-- <mat-form-field class="example-full-width">
+                                          <input name="investment" 
+                                          matInput placeholder="Your Answer" [(ngModel)]="model2.investment" required >
+                                          <mat-error *ngIf="kpFormControl.hasError('required')">This field is required.</mat-error> -->
+                <mat-radio-group style="margin-bottom:15px;" name=”investment“ fxLayout="column"
+                                              [(ngModel)]="model2.investment" required>
+                                              <mat-radio-button value="callme">Call me</mat-radio-button>
+                                              <div *ngIf="model2.investment=='callme'">
+                                                Mobile number<br>
+                                                <!-- <mat-form-field class="example-full-width"> -->
+                                                  <input name=”mobile“ matInput placeholder="Mobile Number" [(ngModel)]="model2.mobile"><br>
+                                                <!-- </mat-form-field><br> -->
+                                                Please confirm a convenient date
+                                                <!-- <mat-form-field class="example-full-width">
+                                                                        <input name=”date_and_time“ 
+                                                                        matInput placeholder="Date and Time" [(ngModel)]="date_and_time">
+                                                                    </mat-form-field>  -->
+                                                <!-- <mat-form-field> -->
+                                                  <input matInput [matDatepicker]="picker" placeholder="Choose a date" name="date"
+                                                    [(ngModel)]="model2.date">
+                                                  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                                                  <mat-datepicker #picker></mat-datepicker>
+                                                <!-- </mat-form-field><br> --><br>
+                                                Please confirm a convenient Time<br>
+                                                <!-- <mat-form-field> -->
+                                                  <input matInput type="time" name="time" class="bg-none" placeholder="Time" [(ngModel)]="model2.time">
+                                                <!-- </mat-form-field>                                                      -->
+                                              </div>
+                                              <mat-radio-button value="email">Mail me to schedule a time</mat-radio-button>
+                                              <div *ngIf="model2.investment == 'email'">
+                                                E-mail as entered earlier<br>
+                                                <!-- <mat-form-field class="example-full-width"> -->
+                                                  <input name=”email“ matInput placeholder="E-mail ID " [(ngModel)]="model2.email">
+                                                <!-- </mat-form-field> -->
+                                              </div>
+                                              <mat-radio-button value="follow_up_details">Follow up with the following person</mat-radio-button>
+                </mat-radio-group>
+              
+              </mat-card>
+            </div>
+            
+              <div *ngIf="model2.investment=='follow_up_details'">
+                <mat-card>
+                  Name :<br>
+                  <!-- <mat-form-field class="example-full-width"> -->
+                    <input name=”name“ matInput placeholder="Name" [(ngModel)]="model2.name_follow_up">
+                  <!-- </mat-form-field> <br> --><br>
+                  Mobile number :<br>
+                  <!-- <mat-form-field class="example-full-width"> -->
+                    <input name=”mobile“ matInput placeholder="Mobile Number" [(ngModel)]="model2.mobile_follow_up">
+                  <!-- </mat-form-field><br> --><br>
+                  Email-id :<br>
+                  <!-- <mat-form-field class="example-full-width"> -->
+                    <input name=”email“ matInput placeholder="E-mail ID " [(ngModel)]="model2.email_follow_up">
+                  <!-- </mat-form-field> -->
+                
+                </mat-card>
+              </div>
+
+        </div>
+        <div *ngIf = "m_verify && !verification_code" class="submit">
+          <button [disabled]="!( m_verify )" mat-flat-button style="color:#fff;background-color: #3f51b5;">SUBMIT</button>
+          <!-- <button mat-flat-button style="color:#000;background-color: #fff;">SUBMIT</button> -->
+        </div>
+      
+        <!-- <div class="submit" *ngIf="!(f.form.valid)">
+          <p style="color: red;">Please fill all the details to Submit.</p>
+        </div> -->
+      </form>
+      <div class="footer" fxLayoutAlign="center center">
+        <img src="https://storage.googleapis.com/web-assets/footer/TheRightDoctors.png" style="width:200px;">
+      </div>
+      <!-- <div fxLayout="row" style="">
+              <div fxFlex="20%" fxLayout="column">
+                <div fxLayout="row"><p style="font-size:10px;color:#000;">Powered by:</p></div>
+                <div fxLayout="row" fxLayoutAlign="center center" class="google-cloud"><img style="width:100%" src="https://storage.googleapis.com/web-assets/footer/google%20cloud%20platform%20(1).png"></div>
+              </div>
+              <div fxFlex="3%"></div>
+              <div fxFlex="77%" fxLayout="column">
+                <div fxLayout="row"><p style="font-size:10px;color:#000;">Awards and Recognitions:</p></div>
+                <div fxLayout="row">
+                  <div fxFlex="25%" fxLayoutAlign="center center"><img src="https://storage.googleapis.com/web-assets/footer/awars01.png" style="width:100%;"></div>
+                  <div fxFlex="25%" fxLayoutAlign="center center"><img src="https://storage.googleapis.com/web-assets/footer/1000awards.png" style="width:100%;"></div>
+                  <div fxFlex="25%" fxLayoutAlign="center center"><img src="https://storage.googleapis.com/web-assets/footer/SBC_global_logo-L-2.png" style="width:100%;"></div>
+                  <div fxFlex="25%" fxLayoutAlign="center center"><img src="https://storage.googleapis.com/web-assets/footer/startup.png" style="width:100%;"></div>
+                </div>
+              </div>
+            </div> -->
+          </div>
+    </div>
+    </div>

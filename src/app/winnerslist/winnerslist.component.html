@@ -1,0 +1,67 @@
+<body>
+        <div class="background">
+               
+                <div class="container" style="padding:0px;">
+                   <div fxLayout="column" fxLayoutAlign="center" class="quiz">
+                        <div fxLayout="row">
+                                <img src="https://storage.googleapis.com/web-assets/quiz/rssdipartnerlogo.jpg" style="width:100%;">
+                             </div>
+                      <div style="padding:0px 25px 20px 25px;">
+                         <h3 style="margin-top: 0px;border-bottom: 2px;color: #3f51b5;line-height: 1.25em;padding:20px 0px 20px 0px;">Winners of the last Torrent RSSDI tv Question of the Hour are:</h3>
+                         <div fxLayout="row">
+                            <div fxFlex="30%" fxFlex.lt-sm="0%"></div>
+                            <div fxFlex.lt-sm="100%" fxFlex.gt-xs="40%" fxLayoutAlign="start">
+                               <ol style="list-style-position: inside;" >
+                                  <li *ngFor="let opt of winnerList">{{opt.username}}</li>
+                               </ol>
+                            </div>
+                            <div fxFlex="30%" fxFlex.lt-sm="0%"></div>
+                         </div>
+                         <div fxLayout="column" style="padding:20px 0px;">
+                            <h6><span style="color:red;">The Question was: </span>{{question}}</h6>
+                            <h6><span style="color:green;">The Right Answer: </span>{{answer}}</h6>
+                         </div>
+                         <!-- <div>
+                            <h6 style="font-weight:normal;font-size:14px;text-align: center;line-height: 1.25em;padding:20px 0px 0px 0px;"><a href="#" style="color: #3f51b5;width:auto;font-weight: bold;">Click here&nbsp;</a>to enable notifications</h6>
+                            </div> -->
+                         <div fxLayout="row" fxLayoutAlign="center"> 
+                            <img src="https://storage.googleapis.com/web-assets/quiz/trdkp.png" style="width:120px;height:50px;">
+                         </div>
+                      </div>
+                   </div>
+                </div>
+             </div>
+<!-- 
+    <div class="background">
+            <div class="container">
+                <div fxLayout="column" fxLayoutAlign="center" class="quiz">
+        
+                        <div fxLayout="row">
+                            <div fxFlex="50%" fxLayoutAlign="start">
+                                <img src="/assets/rssdi.png" style="width:50px;height:50px;">
+                            </div>
+                            <div fxFlex="50%" fxLayoutAlign="end">
+                                    <img src="/assets/rssditorrent.png" style="width:100px;height:50px;">
+                                </div>
+                            </div>
+                            <h3 style="font-size: 24px;text-align:center;margin-top: 0px;border-bottom: 2px;color: #3f51b5;">Winners of the last hours Torrent RSSDI tv Question of the Hour are</h3>
+                            <ol style="text-align: center;">
+                                <li>One</li>
+                                <li>Two</li>
+                                <li>Three</li>
+                                <li>Four</li>
+                                <li>Five</li>
+                                <li>Six</li>
+                            </ol>
+
+                   
+                            <div>
+                            <h6 style="font-weight:normal;font-size:14px;text-align: center;">If you want to participate in the quiz click here to allow the notification</h6></div>
+                        
+                        <div fxLayout="row" fxLayoutAlign="center"> <img src="https://storage.googleapis.com/web-assets/images/salesforce/TRD%2012.png" style="width:150px;height:50px;"></div>
+                       
+                    </div>
+                   
+                </div>
+            </div> -->
+        </body>

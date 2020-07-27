@@ -1,0 +1,15 @@
+table {
+  width: 100%;
+}
+
+.form-horizontal {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.type-input {
+  background: none;
+  box-shadow: none;
+  border: none;
+}

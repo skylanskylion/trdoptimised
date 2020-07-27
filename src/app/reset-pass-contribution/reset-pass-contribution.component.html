@@ -1,0 +1,41 @@
+<div  class="login-wrapper" fxLayout="row" fxLayoutAlign="center center" style="margin-top: 60px;">
+
+  
+
+
+  
+  <!-- <mat-card class="box" style="height: auto;"> -->
+    <!-- <mat-card-header> -->
+    <!-- <mat-card-title>Sign In</mat-card-title> -->
+    <!-- </mat-card-header> -->
+
+    <router-outlet></router-outlet>
+    
+    <div class="login" style="background-color: white;">
+      <div >
+        <h1 style="text-align: center;font-family: 'Times New Roman', Times, serif;"><a routerLink="../contribution-login" routerLinkActive="active"><b>Sign In To The Right Doctors</b></a></h1>
+        <h3 style="text-align: center;">Don't have an account? <b><a routerLink="../contribution-register" routerLinkActive="active">Sign Up Now!</a> </b></h3>
+      </div>
+
+      <!-- <h2 style="text-align: center;">Sign In</h2> -->
+
+    <form [formGroup]="resetForm" (ngSubmit)="onSubmit()" class="form-horizontal">
+      <!-- <mat-card-content> -->
+        <!-- <mat-form-field class="example-full-width"> -->
+          <h3>Enter your email to get</h3>
+          <div class="form-group">
+            <label class="control-label col-sm-2" for="email">Email</label>
+            
+            <input type="email" class="form-control" id="email" formControlName="email" matInput placeholder="Email">
+
+          </div>
+
+          <div style="text-align: center;">
+              <button style="align-self: auto;" [disabled]="resetForm.invalid" type="submit" class="btn btn-primary">Confirm</button>
+    
+            </div>
+
+          </form>
+          </div>
+          </div>
+  

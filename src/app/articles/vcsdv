@@ -1,0 +1,807 @@
+
+    <div id="collapseCreate" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+      <div class="panel-body">
+        <form class="form-horizontal" role="form" (submit)="create()">
+          <div class="form-group">
+            <label class="control-label col-sm-2" for="article_title">Title:</label>
+            <div class="col-sm-10">
+              <input required type="text" class="form-control" id="article_title" placeholder="Enter Article page title" name="title" [(ngModel)]="model.title">
+              <p id="valid6" class="text-danger"></p>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="control-label col-sm-2" for="article_headline">Headline:</label>
+            <div class="col-sm-10">
+              <input  type="text" class="form-control" id="article_headline" placeholder="Enter article headline" name="headline" [(ngModel)]="model.headline">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="control-label col-sm-2" for="article_doctor_name"> Sub HeadLine:</label>
+            <div class="col-sm-10">
+              <input  type="text" class="form-control" id="article_doctor_name" placeholder="Enter subheadline" name="sub_headline" [(ngModel)]="model.sub_headline">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="control-label col-sm-2" for="article_sub_headline">Doctor Name:</label>
+            <div class="col-sm-10">
+              <input  type="text" class="form-control" id="article_sub_headline" placeholder="Enter article doctor name" name="doc_name" [(ngModel)]="model.doc_name">
+            </div>
+          </div>
+
+
+
+          <div class="form-group">
+            <label class="control-label col-sm-2" for="article_doctor_speciality"> Doctor Speciality: </label>
+            <div class="col-sm-10">
+              <textarea  id="article_doctor_speciality" class="form-control" placeholder="Enter speciality" name="speciality" [(ngModel)]="model.speciality"></textarea>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="control-label col-sm-2" for="article_doctor_designation"> Doctor Designation:</label>
+            <div class="col-sm-10">
+              <textarea  id="article_doctor_designation" class="form-control" placeholder="Enter Designation " name="designation" [(ngModel)]="model.designation"></textarea>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="control-label col-sm-2" for="article_doctor_hospital">Doctor Hospital</label>
+            <div class="col-sm-10">
+              <textarea  id="article_doctor_hospital" class="form-control" placeholder="Enter Hospital" name="hospital" [(ngModel)]="model.hospital"></textarea>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="control-label col-sm-2" for="article_bio">Bio</label>
+            <div class="col-sm-10">
+              <textarea  id="article_bio" class="form-control" placeholder="Enter Bio" name="bio" [(ngModel)]="model.bio"></textarea>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="control-label col-sm-2" for="article_anchor">Total View :</label>
+            <div class="col-sm-10">
+              <input  type="text" class="form-control" id="article_anchor" placeholder="Enter the total views" name="totalview" [(ngModel)]="model.totalview">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="control-label col-sm-2" for="article_guest1">Guest1 :</label>
+            <div class="col-sm-10">
+              <input  type="text" class="form-control" id="article_guest1" placeholder="Enter Guest1 Name" name="guest1" [(ngModel)]="model.guest1">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="control-label col-sm-2" for="article_designation_guest1"> Guest1 Designation:</label>
+            <div class="col-sm-10">
+              <textarea  id="article_designation_guest1" class="form-control" placeholder="Enter Guest1 Designation " name="g1_des" [(ngModel)]="model.g1_des"></textarea>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="control-label col-sm-2" for="article_img_url_g1">Guest1 Image URL:</label>
+            <div class="col-sm-10">
+              <input  type="text" class="form-control" id="article_img_url_g1" placeholder="Enter Public Image URL from Google Cloud Storage Bucket of the Guest1" name="guest1_image_url" [(ngModel)]="model.guest1_image_url">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="control-label col-sm-2" for="article_hospital_g1"> Guest1 Hospital</label>
+            <div class="col-sm-10">
+              <textarea  id="article_hospital_g1" class="form-control" placeholder="Enter Guest1 Hospital" name="guest1_hospital" [(ngModel)]="model.guest1_hospital"></textarea>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="control-label col-sm-2" for="article_guest2">Guest2 :</label>
+            <div class="col-sm-10">
+              <input  type="text" class="form-control" id="article_guest2" placeholder="Enter Guest name" name="guest2" [(ngModel)]="model.guest2">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="control-label col-sm-2" for="article_designation_guest2"> Guest2 Designation:</label>
+            <div class="col-sm-10">
+              <textarea  id="article_designation_guest2" class="form-control" placeholder="Enter Guest2 Designation " name="guest2_designation" [(ngModel)]="model.guest2_designation"></textarea>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="control-label col-sm-2" for="article_img_url_g2">Guest2 Image URL:</label>
+            <div class="col-sm-10">
+              <input  type="text" class="form-control" id="article_img_url_g2" name="guest1_image_url" [(ngModel)]="model.guest1_image_url" placeholder="Enter Public Image URL from Google Cloud Storage Bucket of the Guest2">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="control-label col-sm-2" for="article_hospital_g2"> Guest2 Hospital</label>
+            <div class="col-sm-10">
+              <textarea  id="article_hospital_g2" class="form-control" name="guest2_hospital" [(ngModel)]="model.guest2_hospital" placeholder="Enter Guest2 Hospital"></textarea>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="control-label col-sm-2" for="article_guest3">Guest3 :</label>
+            <div class="col-sm-10">
+              <input  type="text" class="form-control" id="article_guest3" name="guest3" [(ngModel)]="model.guest3" placeholder="Enter Guest name">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="control-label col-sm-2" for="article_designation_guest3"> Guest3 Designation:</label>
+            <div class="col-sm-10">
+              <textarea  id="article_designation_guest3" class="form-control" name="guest3_designation" [(ngModel)]="model.guest3_designation" placeholder="Enter Guest3 Designation "></textarea>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="control-label col-sm-2" for="article_img_url_g3">Guest3 Image URL:</label>
+            <div class="col-sm-10">
+              <input  type="text" class="form-control" id="article_img_url_g3" name="guest3_image_url" [(ngModel)]="model.guest3_image_url" placeholder="Enter Public Image URL from Google Cloud Storage Bucket of the Guest3">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="control-label col-sm-2" for="article_hospital_g3"> Guest3 Hospital</label>
+            <div class="col-sm-10">
+              <textarea  id="article_hospital_g3" class="form-control" name="guest3_hospital" [(ngModel)]="model.guest3_hospital" placeholder="Enter Guest3Hospital"></textarea>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="control-label col-sm-2" for="article_guest4">Guest4 :</label>
+            <div class="col-sm-10">
+              <input  type="text" class="form-control" id="article_guest4" name="guest4" [(ngModel)]="model.guest4" placeholder="Enter Guest name">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="control-label col-sm-2" for="article_designation_guest4"> Guest4 Designation:</label>
+            <div class="col-sm-10">
+              <textarea  id="article_designation_guest4" class="form-control" name="guest4_designation" [(ngModel)]="model.guest4_designation" placeholder="Enter Guest4 Designation "></textarea>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="control-label col-sm-2" for="article_img_url_g4">Guest4 Image URL:</label>
+            <div class="col-sm-10">
+              <input  type="text" class="form-control" id="article_img_url_g4" name="guest4_image_url" [(ngModel)]="model.guest4_image_url" placeholder="Enter Public Image URL from Google Cloud Storage Bucket of the Guest4">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="control-label col-sm-2" for="article_hospital_g4"> Guest4 Hospital</label>
+            <div class="col-sm-10">
+              <textarea  id="article_hospital_g4" class="form-control" name="guest4_hospital" [(ngModel)]="model.guest4_hospital" placeholder="Enter Guest4Hospital"></textarea>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="control-label col-sm-2" for="article_guest5">Guest5 :</label>
+            <div class="col-sm-10">
+              <input  type="text" class="form-control" id="article_guest5" name="guest5" [(ngModel)]="model.guest5" placeholder="Enter Guest name">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="control-label col-sm-2" for="article_designation_guest5"> Guest5 Designation:</label>
+            <div class="col-sm-10">
+              <textarea  id="article_designation_guest5" class="form-control" name="guest5_designation" [(ngModel)]="model.guest5_designation" placeholder="Enter Guest5 Designation "></textarea>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="control-label col-sm-2" for="article_img_url_g5">Guest5 Image URL:</label>
+            <div class="col-sm-10">
+              <input  type="text" class="form-control" id="article_img_url_g5" name="guest5_image_url" [(ngModel)]="model.guest5_image_url" placeholder="Enter Public Image URL from Google Cloud Storage Bucket of the Guest5">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="control-label col-sm-2" for="article_hospital_g5"> Guest5 Hospital</label>
+            <div class="col-sm-10">
+              <textarea  id="article_hospital_g5" class="form-control" name="guest5_hospital" [(ngModel)]="model.guest5_hospital" placeholder="Enter Guest5Hospital"></textarea>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="control-label col-sm-2" for="article_guest6">Guest6 :</label>
+            <div class="col-sm-10">
+              <input  type="text" class="form-control" id="article_guest6" name="guest6" [(ngModel)]="model.guest6" placeholder="Enter Guest name">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="control-label col-sm-2" for="article_designation_guest6"> Guest6 Designation:</label>
+            <div class="col-sm-10">
+              <textarea  id="article_designation_guest6" class="form-control" name="guest6_designation" [(ngModel)]="model.guest6_designation" placeholder="Enter Guest5 Designation "></textarea>
+            </div>
+          </div><div id="collapseCreate" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+          <div class="panel-body">
+            <form class="form-horizontal" role="form" (submit)="create()">
+              <div class="form-group">
+                <label class="control-label col-sm-2" for="article_title">Title:</label>
+                <div class="col-sm-10">
+                  <input required type="text" class="form-control" id="article_title" placeholder="Enter Article page title" name="title" [(ngModel)]="model.title">
+                  <p id="valid6" class="text-danger"></p>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="control-label col-sm-2" for="article_headline">Headline:</label>
+                <div class="col-sm-10">
+                  <input  type="text" class="form-control" id="article_headline" placeholder="Enter article headline" name="headline" [(ngModel)]="model.headline">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="control-label col-sm-2" for="article_doctor_name"> Sub HeadLine:</label>
+                <div class="col-sm-10">
+                  <input  type="text" class="form-control" id="article_doctor_name" placeholder="Enter subheadline" name="sub_headline" [(ngModel)]="model.sub_headline">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="control-label col-sm-2" for="article_sub_headline">Doctor Name:</label>
+                <div class="col-sm-10">
+                  <input  type="text" class="form-control" id="article_sub_headline" placeholder="Enter article doctor name" name="doc_name" [(ngModel)]="model.doc_name">
+                </div>
+              </div>
+
+
+
+              <div class="form-group">
+                <label class="control-label col-sm-2" for="article_doctor_speciality"> Doctor Speciality: </label>
+                <div class="col-sm-10">
+                  <textarea  id="article_doctor_speciality" class="form-control" placeholder="Enter speciality" name="speciality" [(ngModel)]="model.speciality"></textarea>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="control-label col-sm-2" for="article_doctor_designation"> Doctor Designation:</label>
+                <div class="col-sm-10">
+                  <textarea  id="article_doctor_designation" class="form-control" placeholder="Enter Designation " name="designation" [(ngModel)]="model.designation"></textarea>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="control-label col-sm-2" for="article_doctor_hospital">Doctor Hospital</label>
+                <div class="col-sm-10">
+                  <textarea  id="article_doctor_hospital" class="form-control" placeholder="Enter Hospital" name="hospital" [(ngModel)]="model.hospital"></textarea>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="control-label col-sm-2" for="article_bio">Bio</label>
+                <div class="col-sm-10">
+                  <textarea  id="article_bio" class="form-control" placeholder="Enter Bio" name="bio" [(ngModel)]="model.bio"></textarea>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="control-label col-sm-2" for="article_anchor">Total View :</label>
+                <div class="col-sm-10">
+                  <input  type="text" class="form-control" id="article_anchor" placeholder="Enter the total views" name="totalview" [(ngModel)]="model.totalview">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="control-label col-sm-2" for="article_guest1">Guest1 :</label>
+                <div class="col-sm-10">
+                  <input  type="text" class="form-control" id="article_guest1" placeholder="Enter Guest1 Name" name="guest1" [(ngModel)]="model.guest1">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="control-label col-sm-2" for="article_designation_guest1"> Guest1 Designation:</label>
+                <div class="col-sm-10">
+                  <textarea  id="article_designation_guest1" class="form-control" placeholder="Enter Guest1 Designation " name="g1_des" [(ngModel)]="model.g1_des"></textarea>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="control-label col-sm-2" for="article_img_url_g1">Guest1 Image URL:</label>
+                <div class="col-sm-10">
+                  <input  type="text" class="form-control" id="article_img_url_g1" placeholder="Enter Public Image URL from Google Cloud Storage Bucket of the Guest1" name="guest1_image_url" [(ngModel)]="model.guest1_image_url">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="control-label col-sm-2" for="article_hospital_g1"> Guest1 Hospital</label>
+                <div class="col-sm-10">
+                  <textarea  id="article_hospital_g1" class="form-control" placeholder="Enter Guest1 Hospital" name="guest1_hospital" [(ngModel)]="model.guest1_hospital"></textarea>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="control-label col-sm-2" for="article_guest2">Guest2 :</label>
+                <div class="col-sm-10">
+                  <input  type="text" class="form-control" id="article_guest2" placeholder="Enter Guest name" name="guest2" [(ngModel)]="model.guest2">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="control-label col-sm-2" for="article_designation_guest2"> Guest2 Designation:</label>
+                <div class="col-sm-10">
+                  <textarea  id="article_designation_guest2" class="form-control" placeholder="Enter Guest2 Designation " name="guest2_designation" [(ngModel)]="model.guest2_designation"></textarea>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="control-label col-sm-2" for="article_img_url_g2">Guest2 Image URL:</label>
+                <div class="col-sm-10">
+                  <input  type="text" class="form-control" id="article_img_url_g2" name="guest1_image_url" [(ngModel)]="model.guest1_image_url" placeholder="Enter Public Image URL from Google Cloud Storage Bucket of the Guest2">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="control-label col-sm-2" for="article_hospital_g2"> Guest2 Hospital</label>
+                <div class="col-sm-10">
+                  <textarea  id="article_hospital_g2" class="form-control" name="guest2_hospital" [(ngModel)]="model.guest2_hospital" placeholder="Enter Guest2 Hospital"></textarea>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="control-label col-sm-2" for="article_guest3">Guest3 :</label>
+                <div class="col-sm-10">
+                  <input  type="text" class="form-control" id="article_guest3" name="guest3" [(ngModel)]="model.guest3" placeholder="Enter Guest name">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="control-label col-sm-2" for="article_designation_guest3"> Guest3 Designation:</label>
+                <div class="col-sm-10">
+                  <textarea  id="article_designation_guest3" class="form-control" name="guest3_designation" [(ngModel)]="model.guest3_designation" placeholder="Enter Guest3 Designation "></textarea>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="control-label col-sm-2" for="article_img_url_g3">Guest3 Image URL:</label>
+                <div class="col-sm-10">
+                  <input  type="text" class="form-control" id="article_img_url_g3" name="guest3_image_url" [(ngModel)]="model.guest3_image_url" placeholder="Enter Public Image URL from Google Cloud Storage Bucket of the Guest3">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="control-label col-sm-2" for="article_hospital_g3"> Guest3 Hospital</label>
+                <div class="col-sm-10">
+                  <textarea  id="article_hospital_g3" class="form-control" name="guest3_hospital" [(ngModel)]="model.guest3_hospital" placeholder="Enter Guest3Hospital"></textarea>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="control-label col-sm-2" for="article_guest4">Guest4 :</label>
+                <div class="col-sm-10">
+                  <input  type="text" class="form-control" id="article_guest4" name="guest4" [(ngModel)]="model.guest4" placeholder="Enter Guest name">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="control-label col-sm-2" for="article_designation_guest4"> Guest4 Designation:</label>
+                <div class="col-sm-10">
+                  <textarea  id="article_designation_guest4" class="form-control" name="guest4_designation" [(ngModel)]="model.guest4_designation" placeholder="Enter Guest4 Designation "></textarea>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="control-label col-sm-2" for="article_img_url_g4">Guest4 Image URL:</label>
+                <div class="col-sm-10">
+                  <input  type="text" class="form-control" id="article_img_url_g4" name="guest4_image_url" [(ngModel)]="model.guest4_image_url" placeholder="Enter Public Image URL from Google Cloud Storage Bucket of the Guest4">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="control-label col-sm-2" for="article_hospital_g4"> Guest4 Hospital</label>
+                <div class="col-sm-10">
+                  <textarea  id="article_hospital_g4" class="form-control" name="guest4_hospital" [(ngModel)]="model.guest4_hospital" placeholder="Enter Guest4Hospital"></textarea>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="control-label col-sm-2" for="article_guest5">Guest5 :</label>
+                <div class="col-sm-10">
+                  <input  type="text" class="form-control" id="article_guest5" name="guest5" [(ngModel)]="model.guest5" placeholder="Enter Guest name">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="control-label col-sm-2" for="article_designation_guest5"> Guest5 Designation:</label>
+                <div class="col-sm-10">
+                  <textarea  id="article_designation_guest5" class="form-control" name="guest5_designation" [(ngModel)]="model.guest5_designation" placeholder="Enter Guest5 Designation "></textarea>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="control-label col-sm-2" for="article_img_url_g5">Guest5 Image URL:</label>
+                <div class="col-sm-10">
+                  <input  type="text" class="form-control" id="article_img_url_g5" name="guest5_image_url" [(ngModel)]="model.guest5_image_url" placeholder="Enter Public Image URL from Google Cloud Storage Bucket of the Guest5">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="control-label col-sm-2" for="article_hospital_g5"> Guest5 Hospital</label>
+                <div class="col-sm-10">
+                  <textarea  id="article_hospital_g5" class="form-control" name="guest5_hospital" [(ngModel)]="model.guest5_hospital" placeholder="Enter Guest5Hospital"></textarea>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="control-label col-sm-2" for="article_guest6">Guest6 :</label>
+                <div class="col-sm-10">
+                  <input  type="text" class="form-control" id="article_guest6" name="guest6" [(ngModel)]="model.guest6" placeholder="Enter Guest name">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="control-label col-sm-2" for="article_designation_guest6"> Guest6 Designation:</label>
+                <div class="col-sm-10">
+                  <textarea  id="article_designation_guest6" class="form-control" name="guest6_designation" [(ngModel)]="model.guest6_designation" placeholder="Enter Guest5 Designation "></textarea>
+                </div>
+
+
+                <div class="form-group">
+            <label class="control-label col-sm-2" for="article_img_url_g6">Guest6 Image URL:</label>
+            <div class="col-sm-10">
+              <input  type="text" class="form-control" id="article_img_url_g6" name="guest6_image_url" [(ngModel)]="model.guest6_image_url" placeholder="Enter Public Image URL from Google Cloud Storage Bucket of the Guest6">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="control-label col-sm-2" for="article_hospital_g6"> Guest6 Hospital</label>
+            <div class="col-sm-10">
+              <textarea  id="article_hospital_g6" class="form-control" name="guest6_hospital" [(ngModel)]="model.guest6_hospital" placeholder="Enter Guest5Hospital"></textarea>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="control-label col-sm-2" for="article_slug">Slug:</label>
+            <div class="col-sm-10">
+              <input data-validation="required" type="text" class="form-control" name="slug" [(ngModel)]="model.slug" id="article_slug" placeholder="Enter article headline">
+              <p id="valid5" class="text-danger"></p>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="control-label col-sm-2" for="article_category">Category:</label>
+            <div class="col-sm-10">
+              <select data-validation="required" class="form-control" id="article_category" name="category" [(ngModel)]="model.category">
+                <option value="">Choose one</option>
+                <option value="highlights">Highlights</option>
+                <option value="in-conversation">In Conversation</option>
+                <option value="the-interview">The Interview</option>
+                <option value="the-speakers">The Speakers</option>
+                <option value="one-more-thing">One More Thing</option>
+                <option value="revolution-talk">Revolution Talk</option>
+                <option value="live-case">Live Cases</option>
+                <option value="cme">CME</option>
+                <option value="testimonial">testimonial</option>
+                <option value="highlights-podcast">Highlights Podcast</option>
+                <option value="in-conversation-podcast">In Conversation Podcast</option>
+                <option value="the-interview-podcast">The Interview Podcast</option>
+                <option value="the-speakers-podcast">The Speakers Podcast</option>
+                <option value="one-more-thing-podcast">One More Thing Podcast</option>
+                <option value="revolution-talk-podcast">Revolution Talk Podcast</option>
+                <option value="live-case-podcast">Live Cases Podcast</option>
+                <option value="journal">Journals</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="control-label col-sm-2" for="article_event">Event:</label>
+            <div class="col-sm-10">
+              <select data-validation="required" class="form-control" id="article_event" name="event" [(ngModel)]="model.event">
+                <option value="">Choose one</option>
+                <option value="aicog-2018">AICOG 2018</option>
+                <option value="csi-2017">Emcure CSI 2017</option>
+                <option value="csikochi-2016">CSI Kochi 2016</option>
+                <option value="csicon-2014">CSICON 2014</option>
+                <option value="csicon-2015">CSICON 2015</option>
+                <option value="wccpci-2015">WCCPCI 2015</option>
+                <option value="jacc">JACC</option>
+                <option value="cardiac-prevent-2015">Cardiac Prevent 2015</option>
+                <option value="ias-2014">IAS</option>
+                <option value="wcchd-2015">WCCHD</option>
+                <option value="ihj-2015">IHJ</option>
+                <option value="revolution-talk">revolution talk</option>
+                <option value="csinic-2016">csinic-2016</option>
+                <option value="cme">CME</option>
+                <option value="apvic">APVIC</option>
+                <option value="wccpci-2016">WCCPCI 2016</option>
+                <option value="c3">C3</option>
+                <option value="tct">TCT</option>
+                <option value="wccicc-2017">WCCICC 2017</option>
+                <option value="journal">Journals</option>
+                <option value="wcce-2017">WCCE 2017</option>
+                <option value="csitv">CSI tv</option>
+                <option value="podcast">podcast</option>
+                <option value="testimonial">testimonial</option>
+                <option value="live-case">Live Cases</option>
+
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="control-label col-sm-2" for="article_description">Description</label>
+            <div class="col-sm-10">
+              <textarea  id="article_description" class="form-control" name="description" [(ngModel)]="model.description" placeholder="Enter Description"></textarea>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="control-label col-sm-2" for="article_img_url">Image URL1:</label>
+            <div class="col-sm-10">
+              <input  type="text" class="form-control" id="article_img_url" name="image_url1" [(ngModel)]="model.image_url1" placeholder="Enter Public Image URL from Google Cloud Storage Bucket">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="control-label col-sm-2" for="article_img_alt">Image Alt Text1:</label>
+            <div class="col-sm-10">
+              <input  type="text" class="form-control" id="article_img_alt" name="image_alt1" [(ngModel)]="model.image_alt1" placeholder="Enter Image Alternative text">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="control-label col-sm-2" for="article_thumb_url">Thumbnail URL1:</label>
+            <div class="col-sm-10">
+              <input  type="text" class="form-control" id="article_thumb_url" name="thumbnail_url1" [(ngModel)]="model.thumbnail_url1" placeholder="Enter Public Thumbnail URL from Google Cloud Storage Bucket">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="control-label col-sm-2" for="article_medium_url">Medium URL1:</label>
+            <div class="col-sm-10">
+              <input  type="text" class="form-control" id="article_medium_url" name="medium_url1" [(ngModel)]="model.medium_url1" placeholder="Enter Public Medium URL from Google Cloud Storage Bucket">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="control-label col-sm-2" for="article_small_url">small URL1:</label>
+            <div class="col-sm-10">
+              <input  type="text" class="form-control" id="article_small_url" name="small_url1" [(ngModel)]="model.small_url1" placeholder="Enter Public Small URL from Google Cloud Storage Bucket">
+            </div>
+          </div>
+
+
+
+          <div class="form-group">
+            <label class="control-label col-sm-2" for="article_img_url">Image URL:</label>
+            <div class="col-sm-10">
+              <input  type="text" class="form-control" id="article_img_url" name="image_url" [(ngModel)]="model.image_url" placeholder="Enter Public Image URL from Google Cloud Storage Bucket">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="control-label col-sm-2" for="article_img_alt">Image Alt Text:</label>
+            <div class="col-sm-10">
+              <input  type="text" class="form-control" id="article_img_alt" name="image_alt" [(ngModel)]="model.image_alt" placeholder="Enter Image Alternative text">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="control-label col-sm-2" for="article_thumb_url">Thumbnail URL:</label>
+            <div class="col-sm-10">
+              <input  type="text" class="form-control" id="article_thumb_url" name="thumbnail_url" [(ngModel)]="model.thumbnail_url" placeholder="Enter Public Thumbnail URL from Google Cloud Storage Bucket">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="control-label col-sm-2" for="article_medium_url">Medium URL:</label>
+            <div class="col-sm-10">
+              <input  type="text" class="form-control" id="article_medium_url" name="medium_url" [(ngModel)]="model.medium_url" placeholder="Enter Public Medium URL from Google Cloud Storage Bucket">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="control-label col-sm-2" for="article_small_url">small URL:</label>
+            <div class="col-sm-10">
+              <input  type="text" class="form-control" id="article_small_url" name="small_url" [(ngModel)]="model.small_url" placeholder="Enter Public Small URL from Google Cloud Storage Bucket">
+            </div>
+          </div>
+
+
+
+
+          <div class="form-group">
+          <label class="control-label col-sm-2" for="article_video_url">Video URL:</label>
+          <div class="col-sm-10">
+            <input  type="text" class="form-control" id="article_video_url" name="video_url" [(ngModel)]="model.video_url" placeholder="Enter Public Video URL from Google Cloud Storage Bucket">
+          </div>
+        </div>
+
+          <div class="form-group">
+            <label class="control-label col-sm-2" for="article_video_url">Subtitle URL:</label>
+            <div class="col-sm-10">
+              <input  type="text" class="form-control" id="article_subtitle_file" name="subtitle_file" [(ngModel)]="model.subtitle_file" placeholder="Enter Public Subtitle URL from Google Cloud Storage Bucket">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="control-label col-sm-2" for="article_seo_description">SEO Description</label>
+            <div class="col-sm-10">
+              <textarea  id="article_seo_description" class="form-control" name="seo_description" [(ngModel)]="model.seo_description" placeholder="Enter Description"></textarea>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="control-label col-sm-2" for="article_seo_keywords">SEO Keywords</label>
+            <div class="col-sm-10">
+              <textarea  id="article_seo_keywords" class="form-control" name="seo_keywords" [(ngModel)]="model.seo_keywords" placeholder="Enter Description"></textarea>
+            </div>
+          </div>
+
+          <!--M.Harika-->
+          <div class="form-group">
+            <label class="control-label col-sm-2" for="article_transcript">Transcript:</label>
+            <div class="col-sm-10">
+              <textarea  id="article_transcript" class="form-control" name="transcript" [(ngModel)]="model.transcript" placeholder="Enter Transcript"></textarea>
+            </div>
+          </div>
+
+          <script type="text/javascript">
+            function replicate()
+            {
+              //alert('repla');
+              var presc = document.getElementById("con");
+              var itm = presc.lastElementChild;
+              //console.log(itm)
+              // Copy the <li> element and its child nodes
+              var cln = itm.cloneNode(true);
+              var newid = parseInt((itm.id).split("-")[1]) + 1 ;
+              cln.id = "item-" + newid;
+
+              $(cln).find('input[type="text"]').val('');
+              $(cln).find('input[type="textarea"]').val('');
+
+              $(cln).find('input[type="file"]').val('');
+              $(cln).find("#imgurl").val('');
+
+
+              presc.appendChild(cln);
+            }
+            2
+            function removePresc(node)
+            {
+
+              if(node.parentNode.childNodes.length>3){
+
+                node.parentNode.removeChild(node);
+              }
+            }
+
+          </script>
+
+          <div id="con">
+            <div id="item-1">
+
+              <div class="form-group">
+                <label class="control-label col-sm-2" for="article_edit_transcript">Question:</label>
+                <div class="col-sm-10">
+                  <textarea id="t_question" class="form-control" placeholder="Enter Transcript question" name="question" [(ngModel)]="model.question"></textarea>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="control-label col-sm-2" for="article_edit_transcript">Answer :</label>
+                <div class="col-sm-10">
+                  <textarea id="t_answer" class="form-control" placeholder="Enter Transcript answer" name="answer" [(ngModel)]="model.answer"></textarea>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="control-label col-sm-2" for="article_edit_transcript">Graphic Image :</label>
+                <div class="col-sm-10">
+                  <input id="t_image" class="form-control" placeholder="Enter Transcript answer" name="graphic_image" [(ngModel)]="model.graphic_image" >
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="control-label col-sm-2" for="article_edit_transcript">quote :</label>
+                <div class="col-sm-10">
+                  <textarea id="t_quote" class="form-control" placeholder="Enter Transcript answer" name="quote" [(ngModel)]="model.quote" ></textarea>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <div class="col-lg-offset-2 col-sm-10">
+                  <div class="pull-right">
+                    <button onclick="replicate()" class="btn btn-info"><i class="fa fa-plus"></i> add</button>
+                    <button onclick="removePresc(this.parentNode.parentNode.parentNode.parentNode)" class="btn btn-danger"><i class="fa fa-remove"></i> remove</button>
+                  </div></div></div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="control-label col-sm-2" for="article_similar_topic">Similar Topic :</label>
+            <div class="col-sm-10">
+              <textarea  id="article_similar_topic" class="form-control" placeholder="Enter Similar Topic" name="similar_topic" [(ngModel)]="model.similar_topic"></textarea>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="control-label col-sm-2" for="article_highlights1">HighLights 1 :</label>
+            <div class="col-sm-10">
+              <textarea  id="article_highlights1" class="form-control" placeholder="Enter Highlight 1 of Article" name="highlights1" [(ngModel)]="model.highlights1"></textarea>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="control-label col-sm-2" for="article_highlights2">HighLights 2 :</label>
+            <div class="col-sm-10">
+              <textarea  id="article_highlights2" class="form-control" placeholder="Enter Highlight 2 of Article" name="highlights2" [(ngModel)]="model.highlights2"></textarea>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="control-label col-sm-2" for="article_highlights3">HighLights 3 :</label>
+            <div class="col-sm-10">
+              <textarea  id="article_highlights3" class="form-control" placeholder="Enter Highlight 3 of Article" name="highlights3" [(ngModel)]="model.highlights3"></textarea>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="control-label col-sm-2" for="article_highlights4">HighLights 4 :</label>
+            <div class="col-sm-10">
+              <textarea  id="article_highlights4" class="form-control" placeholder="Enter Highlight 4 of Article" name="highlights4" [(ngModel)]="model.highlights4"></textarea>
+            </div>
+          </div>
+
+
+          <div class="form-group">
+            <label class="control-label col-sm-2" for="article_updated_at">Updated time</label>
+            <div class="col-sm-10">
+              <textarea  id="article_updated_at" class="form-control" placeholder="Enter Last Updated time" name="update_time" [(ngModel)]="model.update_time"></textarea>
+            </div>
+          </div>
+
+
+          <div class="form-group">
+            <label class="control-label col-sm-2" for="article_vidio_state">Action:</label>
+            <div class="col-sm-10">
+              <select  class="form-control" id="article_vidio_state">
+
+                <option value="not_reviewed">send for review</option>
+
+
+              </select>
+            </div>
+          </div>
+
+
+          <div class="form-group">
+            <label class="control-label col-sm-2" for="article_is_top_story">Is Top Story:</label>
+            <div class="col-sm-10">
+              <input type="checkbox" id="article_is_top_story">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="control-label col-sm-2" for="article_is_home_vidio">Is Home Video:</label>
+            <div class="col-sm-10">
+              <input  type="checkbox" id="article_is_home_vidio">
+            </div>
+          </div>
+
+
+          <div class="form-group">
+            <label class="control-label col-sm-2" for="article_edit_is_popular_story">Is popular Story:</label>
+            <div class="col-sm-10">
+              <input  type="checkbox" id="article_is_popular_story">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+              <button type="submit" class="btn btn-md btn-primary" >Create</button>
+            </div>
+          </div>
+              </div>
+        </form>
+      </div>
+    </div>

@@ -1,0 +1,297 @@
+<!--<app-nav></app-nav>-->
+
+<section class="my-container">
+    <div fxLayout="row" fxLayout.lt-md="column">
+      <div fxFlex="80">
+       <div id="demo" class="showcase scrollTo-demo">
+         <div fxLayout="row" fxLayout.xs="column" fxLayout.lt-md="column">
+           <div fxFlex="25" fxFlexOrder.xs="2" fxFlexOrder.lt-md="2">
+             <div class="content demo-y">
+               <!--<h1>{{articles.length-1}}</h1>-->
+               <ng-template ngFor let-item [ngForOf]="createRange(articles.length-1)" let-currentIndex="index">
+   
+                 <a [routerLink]="['/live/videos/',articles[currentIndex]['slug']]">
+                   <div class="live_left_box">
+                     <div class="live_left_hdg">{{articles[currentIndex]['headline']}}</div>
+                     <div class="live_left_hdg2">{{articles[currentIndex]['sub_headline']}}</div>
+                     <div class="clearfix"></div>
+                   </div>
+                 </a>
+   
+               </ng-template>
+             </div>
+           </div>
+   
+           <div fxFlex="75" fxFlexOrder.xs="1" fxFlexOrder.lt-md="1">
+             <div class="video_col_pan">
+               <div class="row">
+   
+                 <div class="mrg_btm ">
+                   <div class="video_col col-md-40 mrg_btm" style="left:60px;right:100px ;">
+                    <!-- <vg-player class="vid_img ratio-4-3" style="width:100%"
+                                (onPlayerReady)="onPlayerReady($event)" *ngIf="sources.length>0" con>-->
+                       <!--<vg-overlay-play></vg-overlay-play>
+                       <vg-buffering></vg-buffering>
+                       <vg-controls>
+                         <vg-play-pause></vg-play-pause>
+                         <vg-playback-button></vg-playback-button>
+   
+                         <vg-time-display vgProperty="current" vgFormat="mm:ss"></vg-time-display>
+   
+                         <vg-scrub-bar>
+                           <vg-scrub-bar-current-time></vg-scrub-bar-current-time>
+                           <vg-scrub-bar-buffering-time></vg-scrub-bar-buffering-time>
+                         </vg-scrub-bar>
+   
+                         &lt;!&ndash;<vg-time-display vgProperty="left" vgFormat="mm:ss"></vg-time-display>&ndash;&gt;
+                         <vg-time-display vgProperty="total" vgFormat="mm:ss"></vg-time-display>
+   
+                         <vg-track-selector></vg-track-selector>
+                         <vg-mute></vg-mute>
+                         <vg-volume></vg-volume>
+   
+                         <vg-fullscreen></vg-fullscreen>
+                       </vg-controls>-->
+                       <!--<video [vgMedia]="media" #media id="singleVideo"  preload="auto" *ngFor=" let video of sources" autoplay controls>
+   
+                       </video>-->
+                       <video id="myvideo" (ended)="nextVideo()" preload="auto" *ngFor="let video of sources"
+                             style="width:100%"  autoplay controls  >
+                         <source [src]="video.src" type="video/mp4">
+                       </video>
+   
+                       <!--<video #videoRef [vgMedia]="videoRef" id="myvideo" preload="auto"  *ngFor="let video of sources"
+                              autoplay poster="{{ single_article['image_url']}}">
+                         <source [src]="video.src" type="video/mp4">
+                       </video>-->
+                       <!-- <video [vgMedia]="media" #media #video id="singleVideo" preload="auto" controls poster="{{single_article['image_url']}}"
+                               (play)="loveit(single_article['anchor'])">
+                          <source src="{{single_article['video_url']}}" type="video/mp4">
+                        </video>-->
+                     <!--</vg-player>-->
+                     <!--<vg-player *ngIf="this.video_one">
+                       <video [vgMedia]="media" #media id="singleVideo"  preload="auto" controls>
+                         <source src="{{this.video_one}}" type="video/mp4">
+                       </video>
+                     </vg-player>-->
+                   </div>
+   
+                   <div class="col-md-20 mrg_btm">
+                     <div class="live_now">Live Now</div>
+                     <h1 class="share_vid color_black" style="margin: 20px 17px;">Share this video</h1>
+                     <!--<div class="col-md-5 col-sm-12 col-xs-12">-->
+                     <!--<ul class="share-buttons mrg_top_m pull-right pull_left_m">-->
+                     <!--<li>-->
+                     <!-- <a style="margin-left:15px;" class="share-btn fb-icon" href="https://www.facebook.com/dialog/feed?app_id=1066226316760891
+   &redirect_uri=https://therightdoctors.com/live
+   &link=https://therightdoctors.com/live/{{this.slug_one}}
+   &picture={{this.url_one}}
+   &caption=TheRightDoctors.com%20|%20BY%20%20{{this.headline_one}},%20%20{{this.headline_two}}
+   &description={{ this.headline_two}}
+   &name={{ this.headline_one}}" title="Share on Facebook" data-service="facebook" target="_blank">
+                     </a> -->
+                     <!--</li>-->
+                     <!--<li>-->
+                     <!-- <a class="share-btn tw-icon"
+                        href="https://twitter.com/intent/tweet?url=https://therightdoctors.com/live/{{this.slug_one}} &text={{this.doctor_name_one}}%20-{{ this.headline_one}}&via=TheRightDoctors"
+                        title="Share on Twitter" data-service="twitter" target="_blank">
+                     </a> -->
+                     <!--</li>-->
+                     <!--<li>-->
+                     <!-- <a class="share-btn ln-icon" href="https://www.linkedin.com/shareArticle?mini=true&url=https://therightdoctors.com/live/{{this.slug_one}} &title={{  this.headline_one}}
+   &summary={{ this.headline_two}}&source=therightdoctors.com" title="Share on Linkedin" data-service="linkedin"
+                        target="_blank">
+                     </a> -->
+                     <!--</li>-->
+                     <!--<li>-->
+                     <!-- <a class="share-btn gp-icon"
+                        href="https://plus.google.com/share?url=https://therightdoctors.com/live/{{this.slug_one}}"
+                        title="Share on Google Plus" data-service="gplus" target="_blank">
+                     </a> -->
+                     <!--</li>-->
+                     <!-- <li>
+                       <a class="share-btn yt-icon" href="https://www.youtube.com/channel/UCUZIhLsNbgkCqymAZshSVHQ" title="Share on Youtube" data-service="youtube" target="_blank">
+                       </a>
+                     </li> -->
+                     <!-- href="http://whatsapp://send?text=https://therightdoctors.com/{{ single_article['category']}}/{{ single_article['slug']}}" -->
+                     <!--<li>-->
+                     <!-- <a class="share-btn wa-icon"
+                        href="https://api.whatsapp.com/send?text=https://therightdoctors.com/live/{{this.slug_one}}"
+                        data-action="share/whatsapp/share" title="Share on Whatsapp" data-service="whatsapp"
+                        target="_blank">
+                     </a> -->
+                     <!--<a href="https://api.whatsapp.com/send?text=WhatsApp%20Share%20Button%20For%20Website http%3A%2F%2Fniralar.com%2Fwhatsapp-share-button-website%2F" data-action="share/whatsapp/share">Share via Whatsapp</a>
+                   -->
+                     <!--</li>-->
+   
+                     <!--<li>-->
+                     <!-- <a class="share-btn email-icon"
+                        href="mailto:?subject={{ this.doctor_name_one}} : {{ this.headline_one}}&amp;body={{this.headline_two}}. Check out this site https://therightdoctors.com/live/{{this.slug_one}} ."
+                        title="Share by Email" data-service="email" target="_blank">
+                     </a> -->
+   
+                     <!--<a routerLink="[/mail]">mail to child componenet</a>-->
+                     <!--</li>-->
+   
+                     <!--<li>-->
+                     <!-- <a class="share-btn sms-icon"
+                        href="sms:?body={{ this.doctor_name_one}} : {{ this.headline_one}} Check out this site https://therightdoctors.com/live/{{this.slug_one}}"
+                        title="Share on SMS" data-service="sms" target="_blank">
+                     </a> -->
+                     <!--</li>-->
+   
+                     <!--<li>-->
+                     <!-- <a lazy-load-images data-flip-widget="shareflip" target="_blank"
+                        href="https://share.flipboard.com/bookmarklet/popout?ext=sharethis&
+   title={{single_article['headline']}}&url=https://therightdoctors.com/{{single_article['event']}}/{{ single_article['category']}}/{{ single_article['slug']}}&utm_campaign=widgets&utm_content={{single_article['sub_headline']}}&utm_source=sharethis&v=2">
+                       <img style="width: 26px;height: 26px;" src="https://cdn.flipboard.com/badges/flipboard_srsw.png"/></a> -->
+                     <!--</li>-->
+                     <!-- <li>
+                       <a class="share-btn yt-icon" href="" title="Share on Youtube" data-service="youtube" target="_blank">
+                       </a>
+                     </li> -->
+                     <!--<li>
+                       <a class="share-btn email-icon" href="" title="Share on Email" data-service="email" target="_blank">
+                       </a>
+                     </li>
+                     <li>
+                       <a class="share-btn wa-icon" href="" title="Share on Whatsapp" data-service="whatsapp" target="_blank">
+                       </a>
+                     </li>
+                     <li>
+                       <a class="share-btn sms-icon" href="" title="Share on SMS" data-service="sms" target="_blank">
+                       </a>
+                     </li>-->
+                     <!--</ul>-->
+                     <!--</div>-->
+   
+                     <ul class="list-inline list-icons-top">
+                       <li class="views">{{single_article['anchor']}}<br>Views</li>
+                       <li><a href="https://www.facebook.com/dialog/feed?app_id=1066226316760891
+                         &redirect_uri=https://therightdoctors.com/live
+                         &link=https://therightdoctors.com/live/{{this.slug_one}}
+                         &picture={{this.url_one}}
+                         &caption=TheRightDoctors.com%20|%20BY%20%20{{this.headline_one}},%20%20{{this.headline_two}}
+                         &description={{ this.headline_two}}
+                         &name={{ this.headline_one}}" title="Share on Facebook" data-service="facebook" target="_blank" title="Share on Facebook" data-service="facebook" target="_blank"><i
+                               class="fa fa-facebook fb" aria-hidden="true"></i> </a></li>
+                       <li><a
+                         href="https://twitter.com/intent/tweet?url=https://therightdoctors.com/live/{{this.slug_one}} &text={{this.doctor_name_one}}%20-{{ this.headline_one}}&via=TheRightDoctors"
+                               title="Share on Twitter" data-service="twitter" target="_blank"> <i
+                               class="fa fa-twitter twit-clr" aria-hidden="true"></i></a></li>
+                       <!-- <li><a
+                               href="https://plus.google.com/share?url=https://therightdoctors.com/live/{{this.slug_one}}"
+                               title="Share on Google Plus" data-service="gplus" target="_blank"><i
+                               class="fa fa-google-plus google-plus" aria-hidden="true"></i></a></li> -->
+                       <li><a  href="https://www.linkedin.com/shareArticle?mini=true&url=https://therightdoctors.com/live/{{this.slug_one}} &title={{  this.headline_one}}
+                         &summary={{ this.headline_two}}&source=therightdoctors.com" data-service="linkedin"
+                              target="_blank"><i class="fa fa-linkedin linkd" aria-hidden="true"></i></a></li>
+                       <li><a
+                               href="https://api.whatsapp.com/send?text=https://therightdoctors.com/live/{{this.slug_one}}"
+                               data-action="share/whatsapp/share" title="Share on Whatsapp" data-service="whatsapp"
+                               target="_blank"><i class="fa fa-whatsapp whats-app" aria-hidden="true"
+                                                  style="font-size:18px;"></i></a></li>
+                       <li><a
+                               href="mailto:?subject={{ single_article['sub_headline']}} : {{ single_article['headline']}}&amp;body={{ single_article['headline2']}}. Check out this site https://therightdoctors.com//live/{{this.slug_one}}."
+                               title="Share by Email" data-service="email" target="_blank"><i class="fa  fa-envelope envo"
+                                                                                              aria-hidden="true"></i></a>
+                       </li>
+                       <li><a data-flip-widget="shareflip" title="Share on Flipit" target="_blank"
+                              href="https://share.flipboard.com/bookmarklet/popout?ext=sharethis&
+   title={{single_article['headline']}}&url=https://therightdoctors.com//live/{{this.slug_one}}">
+                           <img style="width: 30px;height: 30px;margin-top: -2px;
+       border-radius: 100%;" src="../../assets/flipboard_srsw.png" alt="flipboard icon"/></a></li>
+                       <!-- <li><a (click)="get_embed_code(single_article['video_url'])"
+                               title="Share by Email" data-service="email" target="_blank"><i class="fa fa-code backcode" aria-hidden="true"></i></a>
+                       </li> -->
+                   </ul>
+   
+   
+   
+   
+   
+   
+                   </div>
+   
+                   <div class="col-md-12">
+                     <img src="assets/live_logo.png" class="img-logo"/>
+                   </div>
+   
+                 </div>
+               </div>
+             </div>
+   
+           </div>
+   
+         </div>
+       </div>
+      </div>
+      <div fxFlex="20" fxShow.lt-md="false"></div>
+     </div>
+    <div fxLayout="row"  class="pad-part"  fxLayout.lt-sm="column">
+   
+            <div fxFlex="50" class=" text-left">
+              <ul class="ul-list">
+                <li>
+                  <a href="">Terms of Service</a>
+                </li>
+                <li><a href="">Privacy Policy</a></li>
+                <li><a href="">Disclaimer</a></li>
+              </ul>
+   
+            </div>
+            <div  fxFlex="50"  class="text-right-align" >
+              Copyright © TheRightDoctors Network. All Rights Reserved
+   
+            </div>
+   
+   
+   
+   
+      </div>
+   
+     <!--<section class="back3 post_footer_pdg">-->
+       <!--<section class="">-->
+         <!--<div class="row">-->
+           <!--<div class="post_footer">-->
+             <!--<div class="col-md-6 text-left">-->
+               <!--<ul>-->
+                 <!--<li><a [routerLink]="['/terms-of-service']">Terms of Service</a></li>-->
+                 <!--<li><a [routerLink]="['/privacy-policy']">Privacy Policy</a></li>-->
+                 <!--<li><a [routerLink]="['/disclaimer']">Disclaimer</a></li>-->
+               <!--</ul>-->
+               <!--<div class="clearfix"></div>-->
+             <!--</div>-->
+             <!--<div class="col-md-6 text-right text_left_m">-->
+               <!--Copyright © TheRightDoctors Network. All Rights Reserved-->
+               <!--<div class="clearfix"></div>-->
+             <!--</div>-->
+           <!--</div>-->
+         <!--</div>-->
+   
+       <!--</section>-->
+     <!--</section>-->
+   
+   </section>
+   
+   
+   <div class=""></div>
+   <div class="clearfix"></div>
+   
+   <!--<app-footer></app-footer>-->
+   <!--<section class=" post_footer_pdg">
+     <div class="post_footer" style="top: 10px;">
+       <div class="col-md-6 text-left">
+         <ul><li><a href="">Terms of Service</a></li><li><a href="">Privacy Policy</a></li><li><a href="">Disclaimer</a></li></ul>
+         <div class="clearfix"></div>
+       </div>
+       <div class="col-md-6 text-right text_left_m">
+         &copy; 2016 TheRightDoctors. All Rights Reserved
+         <div class="clearfix"></div>
+       </div>
+     </div>
+     <div class="clearfix"></div>
+   </section>-->
+   
+   <!--</div>-->
+   

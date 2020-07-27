@@ -1,0 +1,30 @@
+.story-views {
+  padding-right: 8px;
+  float: left;
+  border-right: 2px solid #585857;
+  text-align: center;
+  margin-right: 10px;
+}
+
+@media (max-width: 599px) {
+  .tags li {
+    display: block;
+  }
+
+  .ul-div li {
+    display: block !important;
+  }
+
+  .video_hd1 {
+    margin-top: 22px !important;
+  }
+
+  .vid_img {
+    margin: 0px 0 0 0 !important;
+  }
+
+  .mar-top {
+    margin-top: 15px;
+  }
+}
+

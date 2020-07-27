@@ -1,0 +1,78 @@
+<app-nav></app-nav>
+<section class="back2">
+   <h1 style="text-align: center;">Select any 3 presentations you would like to receive.</h1>
+ <div fxLayout="row">
+    <div fxFlex="10%"></div>
+
+   <div style="padding: 10px;" fxLayoutAlign="center center" fxFlex="80%;">
+    <div>
+      <table border="1px">
+         <tr>						
+
+            <!-- <th width="20%" style="text-align:center;border:none;">  <p style="text-align:center;">Select All</p> -->
+              <div style="display: -webkit-inline-box;">
+              <!-- <label class="checkbox-bg" style="text-align: center;">
+                  <input type="checkbox" name="allNonTrades" [value]="model" (change)="SelectAll($event)">
+                  <span class="checkmark"></span></label> -->
+               </div>
+            <!-- </th> -->
+            <!-- <th width="20%" style="text-align:center;border:none;">Id</th> -->
+            <th width="20%" style="border:none;">Doctor Name</th>
+            <th width="20%" style="border:none;">Topic Name</th>
+            <!-- <th style="width: 200px">Date</th>
+            <th style="width: 200px">Time</th>
+            <th style="width: 200px">Hall Name</th>
+            <th style="width: 200px">Day</th> -->
+         </tr>
+         <tr *ngFor="let event of model" class="center">
+
+            <td width="20%" style="border:none;text-align: center;">
+              <div style="display: -webkit-inline-box;">
+              <label class="checkbox-bg" style="text-align: center;"><input type="checkbox" name="nontrades" [checked]="event.selected"
+                  [(ngModel)]="event.selected" (change)="changeTradesByCategory($event)"><span class="checkmark"></span></label>  </div></td>
+            <!-- <td width="20%" style="border:none;text-align: center;">{{event['id']}}  -->
+          
+            <!-- </td> -->
+            <td width="20%" style="border:none;padding: 10px 5px;"> Dr. {{event['doctor_name']}}</td>
+            <td width="20%" style="border:none;padding: 10px 5px;"> {{event['topic_name']}} </td>
+            <!-- <td style="width: 200px"> {{event['date']}} </td>
+            <td style="width: 200px"> {{event['time']}} </td>
+            <td style="width: 200px"> {{event['hall_name']}} </td>
+            <td style="width: 200px"> {{event['day']}} </td> -->
+         </tr>
+
+      </table>
+    </div>
+   </div>
+   <div fxFlex="10%"></div>
+</div>
+   <div fxLayoutAlign="center center">
+      <button (click)="send()" mat-flat-button style="background-color: #3f51b5;color:#fff;">Send</button>
+   </div>
+</section>
+<section class="back3 post_footer_pdg">
+   <section class="container">
+      <div class="row">
+         <div class="post_footer">
+            <div class="col-md-6 col-sm-6  col-xs-12 text-left">
+               <ul>
+                  <li><a [routerLink]="['/terms-of-service']">Terms of Service</a></li>
+                  <li><a [routerLink]="['/privacy-policy']">Privacy Policy</a></li>
+                  <li><a [routerLink]="['/disclaimer']">Disclaimer</a></li>
+               </ul>
+               <div class="clearfix"></div>
+            </div>
+            <div class="col-md-6 col-sm-6  col-xs-12 text-right text_left_m pad-text">
+               © TheRightDoctors Network. All Rights Reserved
+               <div class="clearfix"></div>
+            </div>
+         </div>
+      </div>
+
+   </section>
+</section>
+
+<!-- <label class="container">Two
+  <input type="checkbox">
+  <span class="checkmark"></span>
+</label> -->

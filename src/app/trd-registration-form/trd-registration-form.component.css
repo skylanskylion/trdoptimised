@@ -1,0 +1,109 @@
+.example-form {
+    min-width: 150px;
+    /* max-width: 500px; */
+    width: 100%;
+  }
+  
+  .example-full-width {
+    width: 100%;
+  }
+  example-container {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .example-container > * {
+    width: 100%;
+  }
+  
+  .example-right-align {
+    text-align: right;
+  }
+  input.example-right-align::-webkit-outer-spin-button,
+input.example-right-align::-webkit-inner-spin-button {
+  display: none;
+}
+
+input.example-right-align {
+  -moz-appearance: textfield;
+}
+.bg1{
+    padding:30px 50px;
+    margin:0 0 30px 0;
+    background: #FFDDDD;
+}
+mat-form-field{
+    background-color: #ffffff;
+    margin-bottom: 18px;
+    padding:0px 1.25em 0px 1.25em;
+    font-size: 1.2em;
+}
+.bg2{
+    font-size:52px;
+}
+mat-card{
+    box-shadow:none !important;
+}
+.bg3{
+    padding-left:50px;
+}
+p{
+    font-size: 1.2em;
+}
+h2{
+    font-size:1.4em;
+    font-weight: bold;
+}
+h1{
+    font-weight:normal;
+    font-size:2.3em;
+    padding:0 0 20px 0;
+}
+h3{
+  font-size: 1.65em;
+  padding-bottom: 10px;
+}
+.submit-btn{
+    width:150px;
+    display:block;
+    margin:auto;
+    background-color: #369;
+    padding:10px 0 10px 0;
+    color:#fff;
+    margin-top:30px;
+    border-radius:5px;
+}
+.submit-btn:hover{
+  background-color: #c2c2c2;
+  color:#369;
+}
+@media(max-width:440px){
+  .bg1{
+     padding:20px 30px;
+}
+}
+
+::ng-deep .mat-checkbox-checked.mat-accent .mat-checkbox-ripple .mat-ripple-element {
+  opacity: 0.03 !important;
+  background-color: #369;
+}
+
+::ng-deep .mat-checkbox-checked.mat-accent .mat-checkbox-background,.mat-checkbox-indeterminate.mat-accent .mat-checkbox-background {
+  background-color: #369;
+}
+@media(max-width:768px)
+{
+  .example-form,.main-class-registration{
+    width: 100%;
+  }
+}
+
+@media(min-width:769px)
+{
+  .example-form{
+    width: 50%;
+  }
+  .main-class-registration{
+    width: 100%;
+  }
+}

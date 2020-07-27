@@ -1,0 +1,104 @@
+
+<div class="bg1">
+  <!-- <div class="container"> -->
+      <div fxLayout="row" fxLayoutAlign="center center">
+          <div fxFlex.lt-md="100%" fxFlex.gt-sm="60%">
+              <img src="https://cdn.cnn.com/cnnnext/dam/assets/200228111204-01-coronavirus-treatment-testing-0205-super-169.jpg" style="width:100%;">
+          </div>
+      </div>
+  <!-- </div> -->
+</div>
+
+<!-- <div class="bg2">
+  <div class="container">
+      <div fxLayout="row" fxLayoutAlign="center center">
+          <div fxLayout="column" fxFlex.lt-md="100%" fxFlex.gt-sm="80%">
+              <h1 class="headline1">Send us your stories about Coronavirus </h1>
+          </div>
+      </div>
+      <div fxLayout="row" fxLayoutAlign="center center">
+          <div fxFlex.lt-sm="100%" fxFlex.gt-xs="60%" fxLayoutAlign="center center">
+              <h5>TheRightDoctors is collecting your stories about coronavirus testing. We may follow up on some responses for upcoming stories. Share your story below.
+              </h5>
+          </div>
+      </div>
+  </div>
+</div> -->
+
+<!-- <div class="bg3">
+  <div class="container">
+      <div fxLayout="row" fxLayoutAlign="center center">
+          <div fxFlex.lt-md="100%" fxFlex.gt-sm="90%">
+              <hr>
+              <img src="/assets/200228111204-01-coronavirus-treatment-testing-0205-super-169.jpg" style="width:100%;height:90px;">
+              <hr>
+          </div>
+      </div>
+  </div>
+</div> -->
+
+<div class="bg4">
+  <div class="container">
+      <div fxLayout="row" fxLayoutAlign="center center" class="corona-stories">
+          <mat-card fxFlex.lt-sm="100%" fxFlex.gt-xs="60%">
+              <div class="" fxLayout="column" fxLayoutAlign="start">
+                  <h1 class="headline2">Send us your stories about coronavirus testing</h1>
+                  <p class="bg2para">Are you having trouble getting a test for COVID-19 for yourself, a family member or a patient? Or were you able to get a test easily? Share your story below.</p>
+                  <form class="example-form form1" fxLayout="column">
+                    <mat-label>Share Here !</mat-label>
+                  <mat-form-field appearance="fill">
+                          
+                          <textarea matInput id = "story" name = "story" placeholder=" Share your Story" rows="8" cols="50"  [(ngModel)]="model.story"></textarea>
+                        </mat-form-field>
+                  <mat-form-field class="example-full-width">
+                              <!-- What is your name and location?<br><br> -->
+                              <input matInput id = "name_location" name="name_location" placeholder="Your name and location" [(ngModel)]="model.name_location">
+                            </mat-form-field>
+                            <mat-form-field class="example-full-width">
+                              <!-- E-mail : <br><br> -->
+                              <input matInput id = "email" name="email" placeholder="Get in touch" [(ngModel)]="model.email">
+                            </mat-form-field>
+                  </form>
+                  <!-- <p class="bottompara">By submitting your story, including your name, and any other personal information (“Story”) you agree that your Story may be used, published and distributed by CNN, its affiliates and licensees worldwide on all media and platforms for editorial purposes without any limitation in time in accordance with CNN’s terms of service. You also agree that we may use any personal contact information you provide to contact you about your Story and that we will use such personal contact information in accordance with our privacy policy located at cnn.com/privacy.</p> -->
+                  <button (click) = "onSubmit()" mat-flat-button>Submit</button>
+              </div>
+          </mat-card>
+      </div>
+      <div fxLayout="row" fxLayoutAlign="center center">
+          <div fxFlex.lt-md="100%" fxFlex.gt-sm="50%">
+              <hr>
+          </div>
+      </div>
+      
+  </div>
+</div>
+
+<!-- <div class="bg5">
+  <div class="container">
+      <div fxLayout="row" class="borderbtm">
+          <h1 class="finalrow">Top Stories</h1>
+      </div>
+      <div fxLayout.lt-sm="column" fxLayout.gt-xs="row wrap">
+          <ng-template ngFor let-item [ngForOf]="createRange(5)" let-currentIndex="index">
+              <div fxFlex.lt-sm="100%" fxLayout.lt-md="50%" fxFlex.lt-lg="33.33%" fxFlex.gt-md="20%">
+                  <mat-card>
+                      <div fxLayout="column" class="borderline"> 
+                          <div>
+                              <img src="/assets/200228111204-01-coronavirus-treatment-testing-0205-super-169.jpg" style="width:100%;">
+                          </div>
+                          <div class="above" fxFlex.lg="50%" fxFlex.md="55%" fxFlex.sm="58%" fxFlex.xs="65%" fxLayout="column">
+                              <div fxFlex.lt-sm="42%" fxFlex.gt-md="40%" fxFlex.lt-lg="60%" style="overflow: hidden; flex: 1 1 100%; box-sizing: border-box; max-height: 40%;">
+                                  <h5 class="bg5para" style="white-space: normal;height:100%;">Great Pleasure To Welcome All The Delegates To The Conference Of Rssdi</h5>
+                              </div>
+                              <div fxFlex.lt-sm="58%" fxFlex.gt-md="60%" fxFlex.lt-lg="40%" fxLayoutalign="start end">
+                                  <p>Dr. KK Pareek</p>
+                              </div>
+                          </div>
+                      </div>
+                  </mat-card>
+              </div>
+          </ng-template>
+      </div>
+  </div>
+</div> -->
+

@@ -1,0 +1,74 @@
+<div class="container">
+  <div [hidden]="submitted">
+    <h1>Upload new Stories</h1>
+    <h1>please dont click on "submit" button without Entering All Fields With Correct data</h1>
+    <br><br>
+  </div>
+
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="f_head">Heading (60-80characters Only)</label>
+      <div class="col-sm-10">
+        <input type="email" class="form-control" id="f_head" [(ngModel)]="live_top_details.f_head" name="f_head"
+          placeholder="Enter title" maxlength="80" required>
+      </div>
+    </div>
+    <br><br><br><br>
+    <div class="form-group">
+      <!-- <label for="alterEgo">Story1</label> -->
+      <label class="control-label col-sm-2" for="story_one">Story1 Description (Atmost 200 words)</label>
+      <div class="col-sm-10">
+        <angular-editor id="story_one" [(ngModel)]="live_top_details.story_one" name="story_one" #story_one="ngModel" placeholder="Enter your story"
+          style="color: black;">
+
+        </angular-editor>
+      </div>
+      <br><br><br><br><br><br><br>
+      <div class="form-group">
+        <!-- <label for="alterEgo">Story1</label> -->
+        <label class="control-label col-sm-2" for="story_two">Story2 Description (Atmost 200 words)</label>
+        <div class="col-sm-10">
+          <angular-editor id="story_two" [(ngModel)]="live_top_details.story_two" name="story_two" #story_two="ngModel" placeholder="Enter your story"
+            style="color: black;">
+
+          </angular-editor>
+        </div>
+        <br><br><br><br><br><br><br>
+        <div class="form-group">
+          <!-- <label for="alterEgo">Story1</label> -->
+          <label class="control-label col-sm-2" for="story_three">Story3 Description (Atmost 200 words)</label>
+          <div class="col-sm-10">
+            <angular-editor id="story_three" [(ngModel)]="live_top_details.story_three" name="story_three" placeholder="Enter your story"
+              #story_three="ngModel" style="color: black;">
+
+            </angular-editor>
+          </div>
+          <br><br><br><br><br><br><br>
+          <div class="form-group">
+            <!-- <label for="alterEgo">Story1</label> -->
+            <label class="control-label col-sm-2" for="story_four">Story4 Description (Atmost 200 words)</label>
+            <div class="col-sm-10">
+              <angular-editor id="story_four" [(ngModel)]="live_top_details.story_four" name="story_four" placeholder="Enter your story"
+                #story_four="ngModel" style="color: black;">
+
+              </angular-editor>
+            </div>
+            <br><br><br><br><br><br><br>
+            <div class="form-group">
+              <!-- <label for="alterEgo">Story1</label> -->
+              <label class="control-label col-sm-2" for="story_five">Story5 Description (Atmost 200 words)</label>
+              <div class="col-sm-10">
+                <angular-editor id="story_five" [(ngModel)]="live_top_details.story_five" name="story_five" placeholder="Enter your story"
+                  #story_five="ngModel" style="color: black;">
+
+                </angular-editor>
+              </div>
+              <br><br><br><br><br>
+               <!-- <button type="submit" class="btn btn-success">Submit</button>  -->
+              <div  class="btn btn-success">
+                <button type="submit" class="btn btn-success">Submit</button>
+              </div>
+
+
+
+
+             

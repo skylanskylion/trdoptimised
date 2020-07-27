@@ -1,0 +1,42 @@
+<div [formGroup]="leForm">
+  <div class="form-group">
+    <label>Title</label>
+    <input type="text" class="form-control" formControlName="chapter_title">
+  </div>
+<div formArrayName="lecture">
+  <div class="" *ngFor="let lectures of lecture.controls; let i=index">
+
+    <div class="col-md-12 col-sm-12 col-xs-12">
+      <div class="panel panel-default no_margin">
+        <div class="panel-body pdg4">
+          <div class="">
+            <div class="col-md-6 col-sm-6 col-xs-12">
+              <div style="margin: 5px 0;">
+                <span class="mrg_rt">Lecture {{i+1}}:</span>
+                <span class="mrg_rt"><i class="fa fa-file-text-o"
+                                        aria-hidden="true"></i></span>
+                <!--<span class="mrg_rt">Introduction</span>-->
+                <span class="mrg_rt"><i class="fa fa-pencil" aria-hidden="true"></i>
+                 </span><i class="fa fa-trash-o" aria-hidden="true"
+               *ngIf="lecture.controls.length > 1" (click)="ledeleteRow(i)"></i>
+                <div [formGroupName]="i">
+                  <lectures [group]="lecture.controls[i]"></lectures>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+  <div class="col-md-6 col-sm-6 col-xs-6">
+    <div class="panel panel-default">
+      <div class="panel-body text-center pdg4">
+        <i class="fa fa-plus" aria-hidden="true"></i>
+        <button type="button" class="btn btn-danger" (click)="leaddNewRow()"> Add Lecture</button>
+      </div>
+    </div>
+  </div>
+
+</div>

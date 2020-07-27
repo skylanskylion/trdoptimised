@@ -1,0 +1,48 @@
+<app-nav></app-nav>
+
+<div class="layer1">
+  <div class="container" fxLayout="column">
+  <div fxLayout="row" fxFlex="100%" class="blogs">
+    <div class="blogs-head">
+      <h3 id='published'class="main_heading mrg_btm">Trending<span class="hdg_line"></span></h3>
+    </div>
+  </div>
+<div fxLayout="row" >
+  <!-- *ngIf="audio_list.length>0" -->
+  <div fxLayout.lt-sm="column" fxLayout.gt-xs="row wrap" fxFlex="100%"  >
+      <ng-template ngFor let-item [ngForOf]="createRange(audio_list1.length)" let-currentIndex="index">
+        <div fxFlex.lt-sm="100%" fxFlex.lt-md="50%" fxFlex.lt-lg="33.33%" fxFlex.gt-md="25%" fxLayout.lt-sm="column" fxLayout.gt-xs="row wrap" >
+          <a id='event'[routerLink]="['/'+'trending'+'/'+audio_list1[currentIndex]['slug']]">
+            <mat-card style="height:120%;" *ngIf="audio_list1[currentIndex]['image_url']!=['']">
+                <div fxLayout="column" class="layer1one" >
+                <div>
+                  <img class="image2" src="{{audio_list1[currentIndex]['image_url']}}" style="width:100%;">
+                </div>
+                <div fxLayout="row" style="height:100px;">
+                    <div fxFlex="100%" style="padding-left:10px;" fxLayoutGap="20px !important" fxLayout="column" style="height:100%;padding-top:10px;" class="layer1two">
+                      <div fxFlex="60%" style="overflow:hidden; ">
+                        <h5 style="white-space: normal;height:100%;"> <i style="font-size:20px; color:rgb(197, 4, 4);" class="fa">&#xf144;</i>&nbsp;{{audio_list1[currentIndex]['headline'] }}</h5>
+                      </div>
+                      <div fxFlex="10%"  style="height:100%; ">
+                          <p style="margin-top: 15px ;">{{audio_list1[currentIndex]['sub_headline']}}</p>
+                      </div>
+                      <div fxFlex="30%"  style="height:100%; margin-top:10px !important; ">
+                          <p style="margin-top: 35px;">{{audio_list1[currentIndex]['designation']}}</p>
+                      </div>
+                      
+                    </div>
+                </div>
+              </div>
+            </mat-card>
+          </a>
+        </div>
+      </ng-template>
+  </div>
+</div>
+
+</div>
+</div>
+<app-footer></app-footer>
+
+
+

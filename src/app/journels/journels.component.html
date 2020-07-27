@@ -1,0 +1,83 @@
+<section class="container back2" style="padding:0px;">
+<div class="col-md-12 col-xs-12 col-sm-12">
+  <div class="hd2 mrg_btm no_mrg_m journ-head-m">Journal Scan</div></div>
+  <div class="row mar-m">
+    <div class="col-md-12 col-xs-12 col-sm-12">
+      <div class="col-md-4 col-sm-12 col-xs-12 ">
+        <div class="hd2 heading-journel">New England Journal Of Medicine</div>
+        <ul class="journal-list">
+          <ng-template ngFor let-item [ngForOf]="createRange(feed.length-7)" let-currentIndex="index+1">
+            <a target="_blank" href="{{feed[currentIndex]['link']}}">
+              <li class="hd5"><span class="bor-left-blue2">{{feed[currentIndex]['title'] | slice:0:40}}... </span><br>
+                <p class="bor-left-red2">{{feed[currentIndex]['author']| slice:0:40}}</p></li>
+            </a>
+          </ng-template>
+        </ul>
+      </div>
+      <div class="col-md-4 col-sm-12 col-xs-12 ">
+        <div class="hd2 heading-journel ">The Journal Of The American Medical Association</div>
+        <ul class=" journal-list">
+          <ng-template ngFor let-item [ngForOf]="createRange(feeds.length-7)" let-currentIndex="index">
+            <a target="_blank" href="{{feeds[currentIndex]['link']}}">
+              <li class="hd5"><span class="bor-left-blue2">{{feeds[currentIndex]['title'] | slice:0:40}}... </span><br>
+                <p class="bor-left-red2">{{feeds[currentIndex]['author']| slice:0:40}}...</p></li></a>
+
+          </ng-template>
+        </ul>
+      </div>
+
+      <div class="col-md-4 col-sm-12 col-xs-12 ">
+        <div class="hd2 heading-journel ">The Lancet</div>
+        <ul class=" journal-list">
+          <ng-template ngFor let-item [ngForOf]="createRange(feed3.length-7)" let-currentIndex="index">
+            <a target="_blank" href="{{feed3[currentIndex]['link']}}">
+              <li class="hd5"><span class="bor-left-blue2">{{feed3[currentIndex]['title'] | slice:0:40}}... </span><br>
+                <p class="bor-left-red2">{{feed3[currentIndex]['author']| slice:0:40}}</p></li></a>
+          </ng-template>
+        </ul>
+      </div>
+    </div>
+    <div class="col-md-12 col-xs-12 col-sm-12 ">
+
+      <div class="col-md-4 col-sm-12 col-xs-12  ">
+        <div class="hd2 heading-journel ">Heart Failure Clinics</div>
+        <ul class="journal-list">
+
+          <ng-template ngFor let-item [ngForOf]="createRange(feed4.length-7)" let-currentIndex="index+4">
+            <a target="_blank" href="{{feed4[currentIndex]['link']}}">
+              <li class="hd5"><span class="bor-left-blue2">{{feed4[currentIndex]['title'] | slice:0:40}}... </span><br>
+                <p class="bor-left-red2">{{feed4[currentIndex]['author']| slice:0:40}}</p></li></a>
+          </ng-template>
+        </ul>
+      </div>
+      <div class="col-md-4 col-sm-12 col-xs-12 ">
+        <div class="hd2 heading-journel ">Mayo Clinic Proceedings</div>
+        <ul class=" journal-list">
+          <ng-template ngFor let-item [ngForOf]="createRange(feed5.length-7)" let-currentIndex="index">
+            <a target="_blank" href="{{feed5[currentIndex]['link']}}">
+              <li class="hd5"><span class="bor-left-blue2">{{feed5[currentIndex]['title'] | slice:0:40}}... </span><br>
+                <p class="bor-left-red2">{{feed5[currentIndex]['author']  | slice:0:40}}...</p></li></a>
+          </ng-template>
+        </ul>
+
+      </div>
+
+      <div class="col-md-4 col-sm-12 col-xs-12 mrg_top">
+        <div class="hd2 heading-journel ">Annals Of Internal Medicine</div>
+        <ul class=" journal-list">
+          <ng-template ngFor let-item [ngForOf]="createRange(feed6.length-7)" let-currentIndex="index">
+            <a target="_blank" href="{{feed6[currentIndex]['link']}}">
+              <li class="hd5"><span class="bor-left-blue2">{{feed6[currentIndex]['title'] | slice:0:40}}... </span><br>
+                <p class="bor-left-red2">{{feed6[currentIndex]['author']| slice:0:40}}</p></li></a>
+          </ng-template>
+        </ul>
+
+      </div>
+
+    </div>
+  </div>
+  <div class="col-md-12">
+    <a [routerLink]="['journels-all']"><button class="btn btn-primary" style="margin-top:10px">View All</button></a>
+  </div>
+</section>
+

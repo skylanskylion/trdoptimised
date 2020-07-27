@@ -1,0 +1,67 @@
+<app-nav></app-nav>
+<div class="pad-full-page">
+  <div class="container">
+    <div fxLayout="row" fxLayout.lt-md="column">
+      <div fxFlex="20"></div>
+      <div fxFlex="60">
+        <h3>Results related to  "{{tag}}" </h3>
+        <p class="example-form" style="margin-bottom:20px;">
+          <mat-form-field class="example-full-width">
+            <mat-label>Search </mat-label>
+            <!--    <input matInput placeholder="Search">-->
+            <input matInput placeholder="New tag?" required id="description" [(ngModel)]="new_tag" #description="ngModel" name="description">
+            <!--        <mat-icon matSuffix>search</mat-icon>-->
+
+          </mat-form-field>
+          <button mat-raised-button color="primary" [disabled]="description.invalid" (click)="get_all_articles(new_tag)">Search</button>
+        </p>
+
+      </div>
+      <div fxFlex="20"></div>
+    </div>
+
+    <div class="row">
+      <ng-container *ngFor="let data of articles">
+        <!-- <div fxFlex="23" class="mar-article"> -->
+        <!-- <a [routerLink]="['/new-post', data['slug'],data['doctor_articles_id']]">-->
+        <!--          <a [routerLink]="['/articles'+'/'+data['slug']+'/'+data['doctor_articles_id']]">-->
+        <!-- <mat-card class="example-card pad-10">
+          <mat-card-header>
+            <div mat-card-avatar class="example-header-image">
+            </div> -->
+        <!--                <mat-card-title>{{data['doc_fname']}} {{data['doc_lname']}}</mat-card-title>-->
+
+        <!-- </mat-card-header>
+        <img src="{{data.article_image}}" style="width: 100%; margin-top: 10px;height: 150px;"/>
+        <mat-card-content>
+          <h4 class="post-head">{{data['headline'] | titlecase}}</h4>
+        </mat-card-content>
+        <mat-card-subtitle><span style="color: #3f51b5"> <i class="fas fa-thumbs-up"></i> {{data.votes}} </span>
+          <span style="color: #3f51b5;"> <i class="fa fa-comments"></i> {{data.comment_count}} </span>
+        </mat-card-subtitle>
+      </mat-card> -->
+        <!--          </a>-->
+        <!-- </div> -->
+
+
+        <div class="col-md-3" style="margin-bottom:10px;" ngStyle.lt-sm="margin-bottom:0px;">
+          <div class="video-part">
+            <a [routerLink]="['/'+data['event']+'/'+data['category']+'/'+data['slug']]">
+              <div fxLayout="column" fxLayout.lt-sm="row" fxLayoutGap.lt-sm="10px">
+                <div fxFlex.lt-sm="40">
+
+                  <img src="{{data.image_url}}" style="width: 100%; margin-top: 10px;"/>
+                </div>
+                <div fxFlex.lt-sm="60">
+                  <h5 class="post-head">{{data['headline'] | titlecase}}</h5>
+                  <p>{{data['doc_fname']}} {{data['doc_lname']}}</p>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>

@@ -1,0 +1,61 @@
+.hdg_line {
+  border-bottom: 3px solid #d9534f;
+  border-top: 3px solid #d9534f;
+  height: 1px;
+  position: absolute;
+  width: 100%;
+@include margin(20 px);
+}
+
+@media (max-width: 599px) {
+  .video_hd1 {
+
+    margin-top: 20px !important;
+  }
+}
+
+.video_hd1 {
+  margin-top: 20px;
+}
+.dis{
+  display: none;
+}
+@media (max-width: 599px) {
+  .dis{
+    display: block;
+  }
+}
+
+@media (max-width: 978px) {
+  .dis1{
+    display: block;
+  }
+}
+@media (max-width: 599px) {
+  .dis1{
+    display: none;
+  }
+}
+
+@media (max-width: 768px){
+  .hd4_mobile{
+    font-size: 12.5px !important;
+    font-weight: 500;
+    line-height: 18px;
+    padding: 0px;
+  }
+  .color_orange1 {
+    color: #e27520;
+  }
+}
+.views {
+  border-right: 1px solid #ccc;
+  padding-right: 10px;
+  position: relative;
+  top: 10px;
+  text-align: center;
+}
+.list-inline{
+  margin-left:auto !important;
+  float:right;
+}

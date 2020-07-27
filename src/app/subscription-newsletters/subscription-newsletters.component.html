@@ -1,0 +1,115 @@
+<app-nav></app-nav>
+<div class="newsletters">
+    <div class="container">
+        <div fxLayout="column">
+            <h4>Email Newsletters</h4>
+            <p class="para-t">Choose the newsletters that interest you most, and you’ll always find stories you want to read in your inbox.</p>
+            <div fxLayout="row" fxLayoutAlign.gt-sm="end">
+                <!-- <p style="margin-top: 20px;font-size: 15px;line-height: 20px;">Not you?<a href="#">&nbsp;Use a different account.</a></p> -->
+            </div>
+        </div>
+    </div>
+</div>
+<div class="newsletters2">
+    <div class="container">
+        <h5>NewsLetters</h5>
+        <div fxLayout.lt-sm="column" fxLayout.gt-xs="row wrap">
+            <ng-template ngFor let-item [ngForOf]="createRange(5)" let-currentIndex="index">
+                
+            <div class="none" fxFlex.lt-sm="100%" fxFlex.lt-md="50%" fxFlex.gt-xs="25%">
+            
+                <div class="ntwo" fxLayout.lt-sm="row" fxLayout.gt-xs="column" fxLayoutGap.lt-sm="10px">
+                    <div fxFlex.lt-sm="30%">
+                        <div fxFlex.lt-sm="100%" fxFlex.gt-xs="50%">
+                            <button style="background-color: white;" (click)="change(currentIndex)">
+                                <div *ngIf = "this.newsletters[currentIndex]['subscribe'] == false">
+                                <span class="material-icons">add_circle_outline</span>
+                                <!-- <img src="../../assets/icons/baseline_check_black_18dp.png"> -->
+                                </div>
+                                 <div *ngIf = "this.newsletters[currentIndex]['subscribe'] == true">
+                                    <span class="material-icons">check</span>
+                                </div>
+                            </button>
+
+                        </div>
+                        <div class="desk-view" fxFlex.lt-sm="0%" fxFlex.gt-xs="50%" fxLayout="column" fxLayoutAlign="start end">
+                            <div>
+                                
+                                <!-- <span class="material-icons">check</span> -->
+                            </div>
+                        </div>
+                    </div>
+                <div class="nthree" fxFlex.lt-sm="70%">
+                    <div fxLayout="row">
+                        <div fxFlex.lt-sm="80%" fxFlex.gt-xs="0%" fxLayout="column">
+                            <p class="head1">Daily</p>
+                            <h6 class="head2">{{this.newsletters[currentIndex]['headline']}}</h6>
+                        </div>
+                        <div fxLayout.lt-sm="20%" fxFlex.gt-sm="0%" fxLayout="column" class="mob-view">
+                            <div>
+                                
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div fxLayout="column">
+                        <p class="head3">{{this.newsletters[currentIndex]['description']}}
+                        </p>
+                        <!-- <a href="#">See the latest</a> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+  
+    </ng-template>
+    
+    </div>
+    <div  style="text-align:center">
+        <button  mat-flat-button  (click) = "save()"> Save </button>
+    </div>
+    
+    <!-- <h5>OPINION</h5>
+        <div fxLayout.lt-sm="column" fxLayout.gt-xs="row wrap">
+            <ng-template ngFor let-item [ngForOf]="createRange(5)" let-currentIndex="index">
+                
+            <div class="none" fxFlex.lt-sm="100%" fxFlex.lt-md="50%" fxFlex.gt-xs="25%">
+                <a href="#">
+                <div class="ntwo" fxLayout.lt-sm="row" fxLayout.gt-xs="column" fxLayoutGap.lt-sm="10px">
+                    <div fxFlex.lt-sm="30%">
+                        <div fxFlex.lt-sm="100%" fxFlex.gt-xs="50%">
+                            <img src="assets/awards.jpg" class="img-res">
+                        </div>
+                        <div class="desk-view" fxFlex.lt-sm="0%" fxFlex.gt-xs="50%" fxLayout="column" fxLayoutAlign="start end">
+                            <div>
+                                <span class="material-icons">add_circle_outline</span> -->
+                                <!-- <span class="material-icons">check</span> -->
+                            <!-- </div>
+                        </div>
+                    </div>
+                <div class="nthree" fxFlex.lt-sm="70%">
+                    <div fxLayout="row">
+                        <div fxFlex.lt-sm="80%" fxFlex.gt-xs="0%" fxLayout="column">
+                            <p class="head1">daily</p>
+                            <h6 class="head2">The Moorning</h6>
+                        </div>
+                        <div fxLayout.lt-sm="20%" fxFlex.gt-sm="0%" fxLayout="column" class="mob-view">
+                            <div>
+                                <span class="material-icons">add_circle_outline</span> -->
+                                <!-- <span class="material-icons">check</span> -->
+                            <!-- </div>
+                        </div>
+                    </div>
+                    <div fxLayout="column">
+                        <p class="head3">An informed guide to the global outbreak, with the latest developments and expert advice about prevention and treatment.
+                        </p>
+                        <a href="#">See the latest</a>
+                    </div>
+                </div>
+            </div>
+        </a>
+        </div>
+  
+    </ng-template> -->
+    </div>
+</div>
+<!-- </div> -->

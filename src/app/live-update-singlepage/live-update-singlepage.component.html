@@ -1,0 +1,103 @@
+<div class="singlestory1">
+  <div class="container">
+    <div fxLayout.lt-md="column" fxLayout.gt-sm="row" fxLayoutGap.gt-sm="64px">
+      <div fxFlex.lt-md="100%" fxFlex.gt-sm="70%">
+          <div>
+            <mat-card>
+              <div fxLayout="column">
+                  <div fxLayout="row" class="time">
+                    <p class="date">{{data_need['f_date']}}</p>
+                  </div>
+                  <div fxLayout="column">
+                      <h5 class="title">{{data_need['f_title']}}</h5>
+                      <p class="subtitle">{{data_need['f_subheadline']}}</p>
+                      <hr style="width:100%">
+                      <img src="{{data_need['f_image_url']}}" style="width:100%">
+                      <p class="subtitle">{{data_need['f_image_source']}}</p>
+                      <hr style="width:100%;margin-top:0px;">
+                      <div class="paras" style="" [innerHtml]="data_need['f_description']" id = "descrip"></div>
+                      <div *ngIf = "data_need['f_twitter_url']" >
+                        <div [innerHTML]="data_need['f_twitter_url']"></div></div>
+                      <br>
+                      <div class="social-media" fxLayout="row wrap" fxLayoutAlign="start center" fxLayoutGap="10px">
+                          <p style="border-right:1px solid gray;padding-right: 10px;">Share</p>
+                          <a href="https://www.facebook.com/dialog/feed?app_id=1066226316760891
+                          &redirect_uri=https://therightdoctors.com/live-updates/{{res}}
+                          &link=https://therightdoctors.com/live-updates/{{res}}
+                          &picture={{data_need['f_image_url']}}
+                          &caption={{data_need['f_title']}}
+                          &description={{data_need['f_description']}}
+                          &name={{data_need['f_title']}}"><img src="https://storage.googleapis.com/web-assets/social-media-icons/new/fb-icon.png" style="width:32px;"></a>
+                          <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://therightdoctors.com/live-updates/{{res}}/&title={{data_need['f_title']}}
+                          &summary={{data_need['f_description']}}&source=therightdoctors.com"><img src="https://storage.googleapis.com/web-assets/social-media-icons/new/linked-in.png" style="width:32px;"></a>
+                          <a href="https://twitter.com/intent/tweet?url=https://therightdoctors.com/live-updates/{{res}}&text={{data_need['f_description']}}%20-{{data_need['f_title']}}&via=TheRightDoctors"><img src="https://storage.googleapis.com/web-assets/social-media-icons/new/twitter.png" style="width:32px;"></a>
+                      </div>
+                  </div>
+              </div>
+            </mat-card>
+          </div>
+      </div>
+      <!-- <div fxFlex.lt-md="100%" fxFlex.gt-sm="30%">
+          <div class="side-pres">
+              <div class="live2-title">
+                  <h2>Top Stories</h2>
+              </div>
+              
+              <div *ngIf="finaldata1">
+                <div  *ngFor="let d of finaldata1"> 
+                  <div class="live2list">
+                  
+                  <ul fxLayout="column" style="list-style-type: disc;">
+                    <li>
+                        <div class="live2-title">
+                      <h6>{{d['f_title']}}</h6>
+                    </div>
+                    </li>
+                    
+                  </ul>
+                </div>
+          
+                  </div>
+                
+                </div>
+              
+           </div>
+      </div> -->
+     <!-- <div class="live2"> -->
+      <div fxFlex.lt-md="100%" fxFlex.gt-sm="30%">
+        <div class="side-pres">
+        <div class="live2-title">
+          <h2>Top Stories</h2>
+        </div>
+         <div class="live2"></div>
+          <div *ngIf="finaldata1">
+            <div  *ngFor="let d of finaldata1"> 
+              <div class="live2list">
+              
+              <!-- <div fxFlex="10">
+              </div> -->
+              <ul fxLayout="column" style="list-style-type: disc;">
+                <!-- <li> -->
+                    <div class="live2-title">
+                  <a href="https://therightdoctors.com/coronavirus/live-updates"><h6 ><b>{{d['f_title']}}</b></h6></a>
+                </div>
+                <!-- </li> -->
+                
+              </ul>
+            </div>
+      
+              </div>
+            
+            </div>
+        </div>
+           <div class="side-tweet" fxHide.lt-md="true" fxShow.gt-sm="true">  
+        <!-- <ngx-twitter-timeline 
+    [data]="{sourceType: 'url', url: 'https://twitter.com/therightdoctors'}"
+    [opts]="{tweetLimit: , height:'30%' , width:'100%'}"
+></ngx-twitter-timeline> -->
+      </div>
+      </div>
+    <!-- </div> -->
+  </div>
+  </div>
+</div>

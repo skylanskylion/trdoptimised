@@ -1,0 +1,31 @@
+<h1 mat-dialog-title>Amount</h1>
+<h2>{{ data.currency }}{{data.amount}}</h2>
+<div mat-dialog-content>
+  <p>Your Credit Card Details</p>
+  <form [formGroup]='payForm' (ngSubmit)="onSubmit()" action="">
+    <mat-form-field>
+      <mat-label>Card Number</mat-label>
+      <input formControlName='cardNumber' value="" required matInput [(ngModel)]="data.cardNumber">
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Expiry</mat-label>
+      <input formControlName='expiry' value="" required matInput [(ngModel)]="data.expiry" placeholder="MM/YY">
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Card Holder's Name</mat-label>
+      <input formControlName='holderName' value="" required matInput [(ngModel)]="data.name">
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>CVV</mat-label>
+      <input formControlName='cvv' value="" required matInput [(ngModel)]="data.cvv">
+    </mat-form-field>
+
+    <!-- <button [disabled]="payForm.invalid" type="submit" class="btn btn-primary">Okay</button>
+    <button mat-button (click)="onNoClick()">Cancel</button> -->
+  </form>
+  
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">Cancel</button>
+  <button mat-button [disabled]="payForm.invalid" [mat-dialog-close]="data" cdkFocusInitial>Ok</button>
+</div>

@@ -1,0 +1,701 @@
+<style>
+    @media (max-width: 767px){
+        .pdg_left, .pdg1, .no_pdg_m {
+            padding: 8px 8px 3px 0px !important;
+        }}
+</style>
+
+
+<div class="nav-dis">
+<!--<app-nav></app-nav>-->
+    <div class="destop-d">
+        <section class="presentation-header ">
+            <div class=" container hearder2">
+                <div class="row">
+                    <div class="col-md-2" style="margin-top:-4px;">
+                       <a [routerLink]="['']"><h3><span><img src="assets/favicon.ico" style="width:30px;"/></span>&nbsp;<span class="slide">
+                           <!--SlideShare -->
+                       </span></h3></a>
+                    </div>
+                    <div class="col-md-6">
+                        <form role="form" class="example" style="width:100%" (ngSubmit)="searchResults()" novalidate #f="ngForm">
+                            <input type="text" placeholder="Search.." name="search" [(ngModel)]="model.searchinput" class="input-box1"  style="width:50%" required>
+                            <button type="submit" class="submit-search" [disabled]="!f.form.valid"><i class="fa fa-search" style="padding:2px;"></i></button>
+                        </form></div>
+                    <div class="col-md-4" style="text-align: right">
+                        <ul class="list-inline clr-list" style="padding-top: 4px;">
+                            <!--<li *ngIf="logged"><button type="button" class="upload-btn" disabled>Upload</button> </li>-->
+                            <li *ngIf="logged"><i class="fa fa-user"></i> {{username}}</li>
+                            <li *ngIf="!logged" (click)="changestoPage('login')">Login </li>
+                            <li *ngIf="!logged" style="margin-right:0px;" (click)="changestoPage('register')">Sign Up </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="menu-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-1">
+                        <ul class="list-inline menu-2">
+                            <li><a [routerLink]="['']" style="color:white; border-right:1px solid #ccc;padding-right:15px">Home</a></li>
+                            <!--<li>Explore</li>-->
+
+                        </ul>
+                    </div>
+                    <div class="col-md-11" style="">
+                        <ul class="list-inline menu-2-right" style="font-size:13px;">
+                            <li style="border-right:1px solid #ccc;">{{eventname}}</li>
+                            <!--<li style="border-right:1px solid #ccc;">PowerPoint Courses</li>-->
+                            <li style="padding-left:15px; border-right:1px solid #ccc">Organised by {{organizer}}</li>
+                            <li style="padding-right:0; padding-left:15px;">Digital Knowledge Partner : TheRightDoctors</li>
+                        </ul>
+                    </div>
+                </div>
+
+
+            </div>
+
+
+
+        </div>
+
+    </div>
+
+    <div class="mobile-m center-block">
+        <section>
+
+            <ul class="mobile-icon">
+                <li><img src="assets/favicon.ico"/>
+                    <br>Share</li>
+                <li><i class="fa fa-compass"></i><br>Explore</li>
+                <li (click)="allow_m_search()"><i class="fa fa-search"></i><br>Search</li>
+                <li style="border-right:0!important" *ngIf="logged"><i class="fa fa-user"></i><br>{{username[0]}}</li>
+                <li style="border-right:0!important" *ngIf="!logged" (click)="changestoPage('login')"><i class="fa fa-user"></i><br>Login</li>
+            </ul>
+            <span *ngIf="show_m_search">
+            <form role="form" class="mobile_search example" style="width:100%" (ngSubmit)="searchResults()" novalidate #f="ngForm">
+                <input type="text" placeholder="Search.." name="search" [(ngModel)]="model.searchinput" class="input-box1"  style="width:89%" required>
+                <button type="submit" style="border-top: 3.1px solid #4d4d4d;" class="submit-search" [disabled]="!f.form.valid"><i class="fa fa-search" style="padding:2px;"></i></button>
+            </form>
+                </span>
+
+        </section>
+
+
+
+    </div>
+</div>
+<!--<div style="position:fixed;top:40%;left:45%;width:100px;height:100px;background-color:#323232;color:white;z-index: 99999;-->
+<!--text-align: center;-->
+<!--line-height: 10;-->
+<!--border-radius: 100px;-->
+<!--box-shadow: 1px 2px 3px lightgray;" *ngIf="downloads">-->
+<!--<i class="fa fa-download" style="font-size:70px"></i>-->
+<!--Downloading....-->
+<!--</div>--><style>
+    .vid_side_box {
+        padding: 0 0;
+    }
+</style>
+<div style="width:100%;" *ngIf="!logged">
+    <h1 class="text-danger text-center" (click)="changestoPage('login')">Please Login/Sign up to continue</h1>
+</div>
+<!--Searching result display-->
+<h3 *ngIf="searching" class="text-center"><i class="fa fa-spinner fa-spin"></i> Searching....</h3>
+<div class="container" style="margin-top:1%" *ngIf="searched" [ngClass]="{'margin-no':p==0}">
+    <div class="col-md-12">
+        <pre style="margin:10px;text-align:center" class="text-success" [ngClass]="{'text-danger':p==0}">{{message}}<b>{{model.searchinput}}</b></pre>
+    </div>
+    <div class="container" style="border:1px solid lightgray;border-radius:5px">
+        <div class="col-md-3 searchresult" style="margin:40px;" *ngFor="let found of foundresult | paginate: { itemsPerPage: 12, currentPage: p }">
+            <a href="/specials/{{found['event']}}/presentation/{{found['slug']}}/{{found['_id']}}">
+                <div class="thumbnail-content">
+                    <img src="{{found['url']}}" style="width:100%;height:185px;border-top-left-radius:2px;border-top-right-radius:2px;"/>
+                    <h4 *ngIf="!found['url']">{{found['headline']}}</h4>
+                </div>
+            </a>
+            <div class="author">
+                <small>{{found['doctor_name'] | slice:0:30}}</small>
+            </div>
+            <a href="/specials/{{found['event']}}/presentation/{{found['slug']}}/{{found['_id']}}" *ngIf="found['headline'].length>1">
+                {{found['headline']|slice:0:30}}...
+            </a>
+            <small class="text-danger" style="text-align:center" *ngIf="found['headline'].length<=1">No Headline</small>
+            <!--<hr>-->
+            <!--<small>No.Of slides</small>-->
+        </div>
+        <div class="col-md-offset-4 col-md-8" *ngIf="p>0">
+            <pagination-controls (pageChange)="p = $event"></pagination-controls>
+        </div>
+    </div>
+</div>
+<!--end of searching results display-->
+
+<section class="back2" *ngIf="load && logged">
+    <!--<div class="container" *ngIf="isBrowser || isBrowsers">-->
+    <!--<div class="row">-->
+    <!--<div class="col-md-4" *ngFor="let img of imageSources;let i=index">-->
+    <!--<img id="img{{i}}" class="img-fluid" crossOrigin="Anonymous" [src]="img" style="display:none">-->
+    <!--</div>-->
+    <!--<div class="col-md-12 mt-3">-->
+    <!--&lt;!&ndash;<button (click)="download()" class="btn btn-primary">Download PDF</button>&ndash;&gt;-->
+    <!--</div>-->
+    <!--</div>-->
+    <!--</div>-->
+
+    <!--<div>-->
+        <!--<label>PDF src</label>-->
+        <!--<input type="text" placeholder="PDF src" [(ngModel)]="pdfSrc">-->
+    <!--</div>-->
+
+
+    <section class="container" *ngIf="!searched">
+        <div class="row mar-t">
+            <div class="col-md-8 col-sm-12 mar-tt">
+                <div class="row" style="background-color: #323232;">
+
+                    <!--desktop presentation-->
+                    <div class="desktop-view" ngStyle.xs="display:none" [ngClass]="{'desktop-view fullscreen': fullscreen }">
+                        <h4 class="hd4 mrg_btm" style="text-transform: capitalize;overflow:inherit;color:white;text-align:center;padding:10px;background-color: #323232;"> <span class="head">{{article['headline']}}</span> </h4>
+                        <span *ngIf="loading">
+                            <h3 style="color:white;text-align:center"><i class="fa fa-spinner fa-spin"></i></h3>
+                        </span>
+                        <span *ngIf="!loading">
+                        <span *ngIf="pdfSrc">
+                        <pdf-viewer [src]="pdfSrc"
+                                    [show-all]="false"
+                                    [page]="page"
+                                    (after-load-complete)="afterLoadComplete($event)"
+                        ></pdf-viewer>
+                            </span>
+                        <span *ngIf="!pdfSrc">
+                        <slideshow #slideshow
+                                   [backgroundSize]="'100% 100%'"
+                                   [height]="'90%'"
+                                   [minHeight]="'400px'"
+                                   [backgroundPosition]="'0px 0px'"
+                                   [showArrows]="false"
+                                   [imageUrls]="imageSources"
+                                   [lazyLoad]="imageSources?.length > 1"
+                                   [autoPlayWaitForLazyLoad]="true">
+                        </slideshow>
+                        </span>
+                        </span>
+                        <!--<button [disabled]="page === 1" style="border:0;background:transparent;">-->
+                            <i [ngClass]="{'m_previouslidem': fullscreen}" *ngIf="isLoaded&&page!=1" class="fa fa-chevron-left m_previouslide" title="Previous Slides" (click)="prevPage()"></i>
+                        <i [ngClass]="{'m_nextslidem': fullscreen}" *ngIf="isLoaded&&page!=totalPages" class="fa fa-chevron-right m_nextslide" title="Next Slides" (click)="nextPage()"></i>
+                        <!--</button>-->
+                        <i [ngClass]="{'m_previouslidem': fullscreen}" *ngIf="!isLoaded" class="fa fa-chevron-left m_previouslide" title="Previous Slide" (click)="onPrevious()"></i>
+                        <i [ngClass]="{'m_nextslidem': fullscreen}" class="fa fa-chevron-right m_nextslide" title="Next Slide" *ngIf="!lastSlided&&!isLoaded" (click)="onNext()"></i>
+                        <!--<button [disabled]="page === totalPages">-->
+                        <!--</button>-->
+                        <i [ngClass]="{'m_nextslidem': fullscreen}" class="fa fa-chevron-right m_nextslide" title="Next Presentation" *ngIf="lastSlided&&!isLoaded" (click)="nextSlide()"></i>
+                        <div *ngIf="fullscreen" class="fs_fixed">
+                            <i title="Previous Slide" class="fa fa-chevron-left" *ngIf="!isLoaded" (click)="onPrevious()" style="cursor:pointer;font-size:20px"></i>
+                            <i title="Previous Slide" class="fa fa-chevron-left" *ngIf="isLoaded" (click)="prevPage()" style="cursor:pointer;font-size:20px"></i>
+                            <span *ngIf="!isLoaded">{{current}} / {{imageSources.length}}</span>
+                            <span *ngIf="isLoaded">{{ page }} / {{ totalPages }}</span>
+                            <i title="Next Slide" class="fa fa-chevron-right" *ngIf="!isLoaded" (click)="onNext()" style="cursor:pointer;font-size:20px"></i>
+                            <i title="Next Slide" class="fa fa-chevron-right" *ngIf="isLoaded" (click)="nextPage()" style="cursor:pointer;font-size:20px"></i>
+                            <i title="Exit Fullscreen" class="fa fa-compress fs_toggle" (click)="toggleoff()"></i>
+                            <!--<i title="Download Presentation" class="fa fa-download fs_toggle" (click)="download()"></i>-->
+                        </div>
+                        <div *ngIf="!fullscreen" [ngClass]="{'desktop-view p_bottom': !fullscreen }">
+                            <i title="Previous Slide" class="fa fa-chevron-left" *ngIf="!isLoaded" (click)="onPrevious()" style="cursor:pointer;font-size:20px"></i>
+                            <i title="Previous Slide" class="fa fa-chevron-left" *ngIf="isLoaded" (click)="prevPage()" style="cursor:pointer;font-size:20px"></i>
+                            <span *ngIf="!isLoaded">{{current}} / {{imageSources.length}}</span>
+                            <span *ngIf="isLoaded">{{ page }} / {{ totalPages }}</span>
+                            <i title="Next Slide" class="fa fa-chevron-right" *ngIf="!isLoaded" (click)="onNext()" style="cursor:pointer;font-size:20px"></i>
+                            <i title="Next Slide" class="fa fa-chevron-right" *ngIf="isLoaded" (click)="nextPage()" style="cursor:pointer;font-size:20px"></i>
+                            <a *ngIf="pdfSrc" href="{{pdfSrc}}" download="{{article['doctor_name']+article['headline']}}" target="_blank" style="color:white"><i title="Download Presentation" class="fa fa-download fs_toggle"></i></a>
+                            <i title="View Fullscreen" class="fa fa-expand fs_toggle" (click)="toggleon()"></i>
+                            <!--<button (click)="shareSingleSlide()" style="margin-left:10%;">Share slide</button>-->
+                            <!--<span style="font-size:16px;float:right;margin-right:10px"><i title="Total Views" class="fa fa-eye"></i>-->
+                            <!--{{article['total_views']}}</span>-->
+                            <!--<i title="Download Presentation" class="fa fa-download fs_toggle" (click)="download()" *ngIf="isBrowser || isBrowsers"></i>-->
+                        </div>
+
+                    </div>
+
+                    <!--mobile presentation-->
+                    <div class="mobile-view" ngStyle.xs="display:block" [ngClass]="{'mobile-view fullscreen': fullscreen }" style="display:none;">
+
+                        <div class="land-share" *ngIf="lshare">
+                            <h4 style="text-align:center;color:white;margin-top:30px!important">Share this presentation
+                                <i class="fa fa-times-circle-o" (click)="showShares()" style="float:right;margin-right: 15%;padding: 5px;font-size: 20px;"></i>
+                            </h4>
+                            <ul class="list-inline list-icons-top share-buttons mrg_top_m">
+                                <li class="story-views lazy slab"><span class="tviews">{{ article['total_views']}}</span><br>Total Views</li>
+                                <li><a  href="https://www.facebook.com/dialog/feed?app_id=1066226316760891&redirect_uri=https://therightdoctors.com
+&link=https://therightdoctors.com/specials/{{ article['event']}}/presentation/{{ article['slug']}}/{{ article['_id']}}&picture={{article['url']}}&caption=TheRightDoctors.com%20|%20BY%20%20{{article['headline']}},%20%20{{article['designation']}}
+&description={{ article['description']}}
+&name={{ article['headline']}}" title="Share on Facebook" data-service="facebook" target="_blank" ><i
+                                        class="fa fa-facebook fb" aria-hidden="true"></i></a></li>
+                                <li> <a
+                                        href="https://twitter.com/intent/tweet?url=https://therightdoctors.com/specials/{{ article['event']}}/presentation/{{ article['slug']}}/{{ article['_id']}} &text={{ article['sub_headline']}}%20-{{ article['headline']}}&via=TheRightDoctors"
+                                        title="Share on Twitter" data-service="twitter" target="_blank" >
+                                    <i class="fa fa-twitter twit-clr" aria-hidden="true"></i></a></li>
+                                <li><i
+                                        class="fa fa-google-plus google-plus" aria-hidden="true"></i></li>
+
+
+                                <li><a  href="https://www.linkedin.com/shareArticle?mini=true&url=https://therightdoctors.com/specials/{{ article['event']}}/presentation/{{ article['slug']}}/{{ article['_id']}} &title={{  article['headline']}}
+&summary={{ article['headline2']}}&source=therightdoctors.com" title="Share on Linkedin" data-service="linkedin"
+                                        target="_blank" >
+                                    <i class="fa fa-linkedin linkd" aria-hidden="true"></i></a></li>
+
+                                <li><a
+                                        href="https://api.whatsapp.com/send?text=https://therightdoctors.com/specials/{{ article['event']}}/presentation/{{ article['slug']}}/{{ article['_id']}}"
+                                        data-action="share/whatsapp/share" title="Share on Whatsapp" data-service="whatsapp"
+                                        target="_blank" >
+                                    <i class="fa fa-whatsapp whats-app" aria-hidden="true"
+                                       style="font-size:18px;"></i></a></li>
+                                <li> <a
+                                        href="mailto:?subject={{ article['doctor_name']}} : {{ article['headline']}}&amp;body={{ article['headline2']}}. https://therightdoctors.com/specials/{{ article['event']}}/presentation/{{ article['slug']}}/{{ article['_id']}} ."
+                                        title="Share by Email" data-service="email" target="_blank" >
+                                    <i class="fa  fa-envelope envo"aria-hidden="true"></i></a>
+                                </li>
+                                <li>
+                                    <a data-flip-widget="shareflip" target="_blank"
+                                       href="https://share.flipboard.com/bookmarklet/popout?ext=sharethis&
+title={{article['headline']}}&url=https://therightdoctors.com/{{article['event']}}/{{ article['category']}}/{{ article['slug']}}&utm_campaign=widgets&utm_content={{article['sub_headline']}}&utm_source=sharethis&v=2">
+                                        <img style="margin: 80px 10px 10px 0!important;width: 26px; height: 26px;" src="https://cdn.flipboard.com/badges/flipboard_srsw.png"/></a>
+                                </li>
+                            </ul>
+                        </div>
+                        <h4 class="hd4 mrg_btm testPresentations nav-dis" style="color:white;font-size:12px!important;text-align:center;padding:5px;">
+                            {{article['headline']}}
+                        </h4>
+                        <div class="hd4 mrg_btm testPresentations rightdiv" *ngIf="active">
+                            <span class="like-section">
+                            <button mat-stroked-button color="primary" (click)="showShares()"> <i class="fa fa fa-share-square-o fa-lg" aria-hidden="true" style="font-size:1.3em"></i><br/><span class="likes">&nbsp;Share</span></button>
+                        </span>
+                            <span class="like-section">
+                            <button mat-stroked-button color="primary" (click)="upvote()"> <i class="fa fa-heart" aria-hidden="true" style="font-size:1.3em"></i><br/><span class="likes">{{likes}}&nbsp;likes</span></button>
+                        </span>
+                            <small *ngIf="!isLoaded" style="font-size:0.9em;text-align:center;">
+                                <i class="fa fa-th-large fa-lg" style="margin-top: 250%;" *ngIf="!activated" (click)="activeThumbnails()"></i>
+                                <i class="fa fa-th-large fa-lg" style="margin-top: 250%;color:dodgerblue" *ngIf="activated" (click)="activeThumbnails()"></i>
+                                <br/>
+                                <span style="text-align:center;font-size:0.9em;" *ngIf="!activated">{{current1}} / {{imageSources.length}}</span>
+                                <span style="text-align:center;color:dodgerblue;font-size:0.9em;" *ngIf="activated">{{current1}} / {{imageSources.length}}</span>
+                            </small>
+                        </div>
+                        <div class="side_thumbs" *ngIf="activated">
+                            <li *ngFor="let img of imageSources; let i=index" style="list-style:none;">
+                                <img src="{{img}}" style="width:100%;padding:5px;" (click)="thumbSelect(i)">
+                                <span class="thumbnail_number">{{i+1}}</span>
+                            </li>
+                        </div>
+
+                        <div *ngIf="pdfSrc">
+                            <pdf-viewer [src]="pdfSrc"
+                                        [show-all]="false"
+                                        [page]="page"
+                                        (after-load-complete)="afterLoadComplete($event)"
+                            ></pdf-viewer>
+                        </div>
+                        <div *ngIf="!pdfSrc">
+                            <slideshow #slideshows
+                                       (click)="showRightdiv()"
+                                       (onSwipeRight)="onNextmm()"
+                                       (onSwipeLeft)="onPreviousmm()"
+                                       [backgroundSize]="'100% 100%'"
+                                       [height]="'90%'"
+                                       [minHeight]="'320px'"
+                                       [backgroundPosition]="'0px 0px'"
+                                       [autoPlay]="false"
+                                       [showArrows]="false"
+                                       [disableSwiping]="false"
+                                       [imageUrls]="imageSources"
+                                       [lazyLoad]="imageSources?.length > 1"
+                                       [autoPlayWaitForLazyLoad]="true">
+                            </slideshow>
+                        </div>
+                        <!--<i class="fa fa-chevron-left m_previouslide" title="Previous Slide" (click)="onPreviousm()"></i>-->
+                        <!--<i class="fa fa-chevron-right m_nextslide" title="Next Slide" (click)="onNextm()"></i>-->
+                        <!--<div *ngIf="fullscreen" class="fs_fixed" style="font-size:20px;">-->
+                        <!--<i title="Previous Slide" class="fa fa-angle-double-left" *ngIf="isLoaded" (click)="prevPage()" style="margin-left:35%;cursor:pointer;"></i>-->
+                        <!--<i title="Previous Slide" class="fa fa-angle-double-left" *ngIf="!isLoaded" (click)="onPreviousm()" style="margin-left:35%;cursor:pointer;"></i>-->
+                        <!--<small *ngIf="!isLoaded" style="margin:5px;padding:5px;font-size:14px;">{{current1}} / {{imageSources.length}}</small>-->
+                        <!--<small *ngIf="isLoaded">{{ page }} / {{ totalPages }}</small>-->
+                        <!--<i title="Next Slide" class="fa fa-angle-double-right" (click)="onNextm()" style="cursor:pointer;"></i>-->
+                        <!--<i title="Next Slide" class="fa fa-angle-double-right" (click)="onNextm()" style="cursor:pointer;"></i>-->
+                        <!--&lt;!&ndash;<i title="View Fullscreen" class="fa fa-compress fs_toggle" (click)="toggleoff()"></i>&ndash;&gt;-->
+                        <!--&lt;!&ndash;<i title="Download Presentation" class="fa fa-download fs_toggle" (click)="download()"></i>&ndash;&gt;-->
+                        <!--</div>-->
+                        <div [ngClass]="{'mobile-view p_bottom': !fullscreen }" style="text-align:center;font-size:15px;">
+                            <div class="no-landscape">
+                                <i title="Previous Slide" class="fa fa-play fa-rotate-180" *ngIf="isLoaded" (click)="prevPage()" style="cursor:pointer;"></i>
+                                <i title="Previous Slide" class="fa fa-play fa-rotate-180" *ngIf="!isLoaded" (click)="onPreviousm()" style="cursor:pointer;"></i>
+                                <small *ngIf="!isLoaded" style="margin:5px;padding:5px;font-size:14px;">{{current1}} / {{imageSources.length}}</small>
+                                <small *ngIf="isLoaded" style="margin:5px;padding:5px;font-size:14px;">{{ page }} / {{ totalPages }}</small>
+                                <i title="Next Slide" class="fa fa-play" *ngIf="!lastSlide&&!isLoaded" (click)="onNextm()" style="cursor:pointer;"></i>
+                                <i title="Next Slide" class="fa fa-play" *ngIf="!lastSlide&&isLoaded" (click)="nextPage()" style="cursor:pointer;"></i>
+                                <i title="Next Presentation" class="fa fa-play" *ngIf="lastSlide&&!isLoaded" (click)="nextSlide()"></i>
+                            </div>
+                            <!--<i title="View Fullscreen" class="fa fa-expand fs_toggle" (click)="toggleon()"></i>-->
+                            <!--<i title="Download Presentation" class="fa fa-download fs_toggle" (click)="download()"></i>-->
+                        </div>
+                    </div>
+                </div>
+
+                <!--presentation ends here-->
+
+                <div class="row">
+                    <div class="col-md-12 pd-cls">
+
+                        <div>
+                            <div>
+                                <h1 class="share_vid">Share this presentation </h1>
+                                <ul class="list-inline list-icons-top share-buttons mrg_top_m">
+                                    <li class="story-views lazy slab"><span class="tviews">{{ article['total_views']}}</span><br>Total Views</li>
+                                    <li><a  href="https://www.facebook.com/dialog/feed?app_id=1066226316760891&redirect_uri=https://therightdoctors.com
+&link=https://therightdoctors.com/specials/{{ article['event']}}/presentation/{{ article['slug']}}/{{ article['_id']}}&picture={{article['url']}}&caption=TheRightDoctors.com%20|%20BY%20%20{{article['headline']}},%20%20{{article['designation']}}
+&description={{ article['description']}}
+&name={{ article['headline']}}" title="Share on Facebook" data-service="facebook" target="_blank" ><i
+                                            class="fa fa-facebook fb" aria-hidden="true"></i></a></li>
+                                    <li> <a
+                                            href="https://twitter.com/intent/tweet?url=https://therightdoctors.com/specials/{{ article['event']}}/presentation/{{ article['slug']}}/{{ article['_id']}} &text={{ article['sub_headline']}}%20-{{ article['headline']}}&via=TheRightDoctors"
+                                            title="Share on Twitter" data-service="twitter" target="_blank" >
+                                        <i class="fa fa-twitter twit-clr" aria-hidden="true"></i></a></li>
+                                    <li><i
+                                            class="fa fa-google-plus google-plus" aria-hidden="true"></i></li>
+
+
+                                    <li><a  href="https://www.linkedin.com/shareArticle?mini=true&url=https://therightdoctors.com/specials/{{ article['event']}}/presentation/{{ article['slug']}}/{{ article['_id']}} &title={{  article['headline']}}
+&summary={{ article['headline2']}}&source=therightdoctors.com" title="Share on Linkedin" data-service="linkedin"
+                                            target="_blank" >
+                                        <i class="fa fa-linkedin linkd" aria-hidden="true"></i></a></li>
+
+                                    <li><a
+                                            href="https://api.whatsapp.com/send?text=https://therightdoctors.com/specials/{{ article['event']}}/presentation/{{ article['slug']}}/{{ article['_id']}}"
+                                            data-action="share/whatsapp/share" title="Share on Whatsapp" data-service="whatsapp"
+                                            target="_blank" >
+                                        <i class="fa fa-whatsapp whats-app" aria-hidden="true"
+                                           style="font-size:18px;"></i></a></li>
+                                    <li> <a
+                                            href="mailto:?subject={{ article['doctor_name']}} : {{ article['headline']}}&amp;body={{ article['headline2']}}. https://therightdoctors.com/specials/{{ article['event']}}/presentation/{{ article['slug']}}/{{ article['_id']}} ."
+                                            title="Share by Email" data-service="email" target="_blank" >
+                                        <i class="fa fa-envelope-o envo"aria-hidden="true"></i></a>
+                                    </li>
+                                    <li>
+                                        <a data-flip-widget="shareflip" target="_blank"
+                                           href="https://share.flipboard.com/bookmarklet/popout?ext=sharethis&
+title={{article['headline']}}&url=https://therightdoctors.com/{{article['event']}}/{{ article['category']}}/{{ article['slug']}}&utm_campaign=widgets&utm_content={{article['sub_headline']}}&utm_source=sharethis&v=2">
+                                            <img  src="https://cdn.flipboard.com/badges/flipboard_srsw.png"/></a>
+                                    </li>
+                                </ul>
+
+                            </div>
+
+                            <!--<div class="add_txt"><p>Supported by an Unrestricted <br> Educational Grant from</p>
+                                <img style="float: right!important;" src="assets/new-assets/single/images/add2.jpg">
+                            </div>-->
+
+                            <div class="clearfix" style="margin-bottom:5px;"></div>
+                            <div class="comment-section">
+                                <button mat-stroked-button color="primary" (click)="upvote()" class="like"> <i class="fa fa-thumbs-o-up" aria-hidden="true"></i> &nbsp;{{likes}}&nbsp;<span class="likes">likes</span></button>
+                                <!--<button mat-stroked-button color="primary"> <i class="fa fa-download" aria-hidden="true"></i> &nbsp; Download</button>
+                                -->
+                                <hr>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="row">
+                                        <div class="col-md-5 col-sm-4 col-xs-4">
+                                            <img width="" height="" src="{{article['url']}}"></div>
+                                        <div class="col-md-7 col-sm-8 col-xs-8">
+                                            <h1 class="doc_nm" style="font-size: 15px!important;">{{article['doctor_name']}}</h1>
+                                            <p>{{article['specialisation'] }}</p>
+                                            <p>{{article['hospital']}}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--<div class="col-md-6">
+
+                                    <p>Published on: {{published}}</p>
+                                        <p>Tags: {{article['tags']}}</p>
+                                    <button mat-raised-button (click)="upvote()"><i class="fa fa-thumbs-up"></i> Like</button> {{likes}}
+                                </div>-->
+                            </div>
+                            <hr>
+                        </div>
+                        <div class="container row">
+                            <div class="col-md-8 col-xs-12">
+                                <div class="row">
+                                    <div class="fb-comments" data-numposts="5" data-width="100%"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <h2 class="main_heading mrg_btm" *ngIf="latest.length > 3">{{eventname}}<span class="hdg_line"></span></h2>
+
+                        <div class="row" *ngIf="latest.length > 3">
+                            <ng-template ngFor let-item [ngForOf]="createRange(3)" let-currentIndex="index">
+                                <div class="col-md-4 col-sm-12 col-xs-12 mrg_btm">
+                                    <div class="panel_one panel_light_grey brder_top">
+                                        <div class="row">
+                                            <a [routerLink]="['/'+latest[currentIndex]['event']+'/'+latest[currentIndex]['slug']]">
+                                                <div class="col-md-12 col-sm-4 col-xs-4"><img src="{{latest[currentIndex]['image_url']}}"></div>
+                                                <div class="col-md-12 col-sm-8 col-xs-8"  ngStyle.lt-md="padding-left: 0px;"><div class="pdg1 pdgrt">
+                                                    <h1 class="hd4 hd4_m color_blue">
+                                                        <p>{{latest[currentIndex]['sub_headline']}}</p>
+                                                        <span style="text-transform: capitalize" class="color_orange">{{latest[currentIndex]['headline']}}</span></h1>
+                                                </div></div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </ng-template>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-md-4 col-sm-12">
+                <div class="border_left mrg_btm"><div class="vid_hd2">List of Presentations</div>
+                    <div class="vid_side_box mrg2">
+                        <div class="content content_presentation mCustomScrollbar" style="overflow: scroll;">
+                            <ng-template ngFor let-item [ngForOf]="createRange(conv.length)" let-currentIndex="index">
+                                <div class="row"><div class="col-md-12"><div class="vid_side_box_inner"><div class="row">
+                                    <a href="/specials/{{conv[currentIndex]['event']}}/presentation/{{conv[currentIndex]['slug']}}/{{conv[currentIndex]['_id']}}">
+                                        <div class="col-md-4 col-xs-4">
+                                            <img src="{{conv[currentIndex]['url']}}">
+                                        </div>
+                                        <div class="col-md-8 col-xs-8" style="padding-left: 0px;">
+                                            <p><span style="color:#337392">{{conv[currentIndex]['doctor_name']}}</span></p>
+                                            <p class="mrg_top_m"><span style="text-transform: capitalize;">{{ conv[currentIndex]['headline'] }}</span></p>
+                                        </div>
+                                    </a>
+                                    <div class="clearfix"></div>
+                                </div></div></div></div>
+                            </ng-template>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="vid_box_panel">
+                    <div class="vid_box_panel_hd">Get TheRightDoctors email updates</div>
+                    <div class="vid_box_panel_body">
+                        <form role="form">
+                            <input type="email" class="form-control mrg_btm" id="sub_mail" placeholder="Enter Your Email Address">
+                            <button class="btn btn-primary">Submit</button>
+                        </form>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+
+                <div class="border_left mrg_btm" *ngIf="latest.length >6"><div class="vid_hd2">More Videos</div>
+                    <div class="vid_side_box">
+                        <div class="row">
+                            <ng-template ngFor let-item [ngForOf]="createRange(3)" let-currentIndex="index+3">
+                                <div class="col-md-12"><div class="vid_side_box_inner">
+                                    <div class="row">
+                                        <a [routerLink]="['/'+latest[currentIndex]['category']+'/'+latest[currentIndex]['slug']]">
+                                            <div class="col-md-4 col-xs-4"><img src="{{latest[currentIndex]['image_url']}}"></div>
+                                            <div class="col-md-8 col-xs-8">
+                                                <h1 class="hd4 hd4_m color_blue">
+                                                    <p>{{latest[currentIndex]['sub_headline']}}</p>
+                                                   <span style="text-transform: capitalize;" class="color_orange"> {{latest[currentIndex]['headline'] | slice:0:30}}</span>
+                                                    </h1>
+                                            </div>
+                                        </a>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                </div></div>
+                            </ng-template></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+</section>
+<app-footer *ngIf="logged"></app-footer>
+
+<!--//@stop-->
+<!--<div class="container mar_top">
+  <div fxLayout="row" fxLayoutGap="30px" fxLayout.lt-sm="column" fxLayout.lt-md="column">
+    <div fxFlex="70">
+      <h1 class="main_heading mrg_btm" style="overflow:inherit"> {{article['headline']}}</h1>
+      &lt;!&ndash;<angular-image-slider [images]="imageUrls"></angular-image-slider>&ndash;&gt;
+      <slideshow [height]="'450px'"
+                 [minHeight]="'400px'"
+                 [autoPlay]="true"
+                 [showArrows]="true"
+                 [imageUrls]="imageSources"
+                 [lazyLoad]="imageSources?.length > 1"
+                 [autoPlayWaitForLazyLoad]="true">
+      </slideshow>
+
+      <div fxLayout="row" class="bor-btm" fxLayout.lt-sm="column" fxLayout.lt-md="column">
+        <div fxFlex="60">
+          <h1 class="share_vid">Share this presentation </h1>
+          <ul class="share-buttons mrg_top_m">
+
+            <li>
+              <a class="share-btn fb-icon" data-service="facebook" target="_blank" title="Share on Facebook"
+                 href="https://www.facebook.com/dialog/feed?app_id=1066226316760891&#10;&amp;redirect_uri=https://therightdoctors.com/specials/wccpci-2016/presentation/Dr. O.P. Yadava/57e66a0e5ea33af71b2294f1&#10;&amp;link=https://therightdoctors.com/specials/wccpci-2016/presentation/Dr. O.P. Yadava/57e66a0e5ea33af71b2294f1&#10;&amp;picture=https://storage.googleapis.com/web-assets/images/presentations/thumbs/Dr.OPYadava.jpg&#10;&amp;caption=TheRightDoctors.com%20|%20BY%20%20Cardiac Surgery- A Dying Star or A Supernova?,%20%20&#10;&amp;description=&#10;&amp;name=Cardiac Surgery- A Dying Star or A Supernova?">
+              </a>
+            </li>
+            <li>
+              <a class="share-btn tw-icon" data-service="twitter" target="_blank" title="Share on Twitter"
+                 href="https://twitter.com/intent/tweet?url=https://therightdoctors.com/specials/wccpci-2016/presentation/Dr. O.P. Yadava/57e66a0e5ea33af71b2294f1 &amp;text=%20-Cardiac Surgery- A Dying Star or A Supernova?&amp;via=TheRightDoctors">
+              </a>
+            </li>
+            <li>
+              <a class="share-btn ln-icon" data-service="linkedin" target="_blank" title="Share on Linkedin"
+                 href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://therightdoctors.com/specials/wccpci-2016/presentation/Dr. O.P. Yadava/57e66a0e5ea33af71b2294f1 &amp;title=Cardiac Surgery- A Dying Star or A Supernova?&#10;&amp;summary=&amp;source=therightdoctors.com">
+              </a>
+            </li>
+            <li>
+              <a class="share-btn gp-icon" data-service="gplus" target="_blank" title="Share on Google Plus"
+                 href="https://plus.google.com/share?url=https://therightdoctors.com/specials/wccpci-2016/presentation/Dr. O.P. Yadava/57e66a0e5ea33af71b2294f1">
+              </a>
+            </li>
+
+
+            <li><a class="share-btn wa-icon" data-action="share/whatsapp/share" data-service="whatsapp" target="_blank"
+                   title="Share on Whatsapp"
+                   href="https://api.whatsapp.com/send?text=https://therightdoctors.com/specials/wccpci-2016/presentation/Dr. O.P. Yadava/57e66a0e5ea33af71b2294f1">
+            </a>
+
+            </li>
+
+            <li>
+              <a class="share-btn email-icon" data-service="email" target="_blank" title="Share by Email"
+                 href="mailto:?subject= : Cardiac Surgery- A Dying Star or A Supernova?&amp;body=. Check out this site https://therightdoctors.com/specials/wccpci-2016/presentation/Dr. O.P. Yadava/57e66a0e5ea33af71b2294f1 .">
+              </a>
+
+
+            </li>
+
+            <li>
+              <a class="share-btn sms-icon" data-service="sms" target="_blank" title="Share on SMS"
+                 href="unsafe:sms:?body= : Cardiac Surgery- A Dying Star or A Supernova? Check out this site https://therightdoctors.com/specials/wccpci-2016/presentation/Dr. O.P. Yadava/57e66a0e5ea33af71b2294f1">
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div fxFlex="40">
+          <div class="add_txt"><p>Supported by an Unrestricted <br _ngcontent-c3=""> Educational Grant from</p>
+            <img src="assets/new-assets/single/images/add2.jpg">
+          </div>
+        </div>
+        <div class="clearfix"></div>
+
+      </div>
+      <div fxLayout="row" fxLayoutGap="10px" class="bor-btm mrg_btm">
+        <div fxFlex="15">
+          <img height="" width="100%"
+               src="https://storage.googleapis.com/web-assets/images/presentations/thumbs/Dr.OPYadava.jpg"></div>
+        <div fxFlex="85">
+          <h1 class="doc_nm">Dr. O.P. Yadava</h1>
+          <p>CEO and Chief Cardiac Surgeon</p>
+          <p>National Heart Institute, New Delhi</p>
+        </div>
+      </div>
+      <h2 _ngcontent-c3="" class="main_heading mrg_btm">Other Stories<span _ngcontent-c3="" class="hdg_line"></span>
+      </h2>
+      <div fxLayout="row" fxLayoutGap="25px" fxLayout.lt-sm="column" fxLayout.lt-md="column">
+        <ng-template ngFor let-item [ngForOf]="createRange(3)" let-currentIndex="index">
+          <div fxFlex="33.3%">
+            <div _ngcontent-c3="" class="panel_one panel_light_grey brder_top">
+              <div _ngcontent-c3="" class="">
+                <a _ngcontent-c3="" href="/wccpci-2016/dr-satish-gupta-meditation-as-medication">
+                  <div _ngcontent-c3="" class=""><img _ngcontent-c3=""
+                                                      src="https://storage.googleapis.com/web-assets/videos/WCCPCI_2016/Dr.SatishGupta.jpg">
+                  </div>
+                  <div _ngcontent-c3="" class="">
+                    <div _ngcontent-c3="" class="pdg1 pdgrt">
+                      <h1 _ngcontent-c3="" class="hd4 hd4_m color_blue">Meditation as Medication
+                        <p _ngcontent-c3="" class="color_orange">Dr.Satish Gupta</p></h1>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </ng-template>
+      </div>
+
+    </div>
+    <div fxFlex="30">
+      <div class="border_left mrg_btm">
+        <div class="vid_hd2">List of Presentations</div>
+        <div class="vid_side_box mrg2">
+          <div class="content content_presentation mCustomScrollbar" style="overflow: scroll;">
+            <ng-template ngFor let-item [ngForOf]="createRange(conv.length)" let-currentIndex="index">
+
+              <div class="vid_side_box_inner">
+                <a
+                  [routerLink]="['/specials/wccpci-2016/presentation/'+conv[currentIndex]['doctor_name']+'/'+conv[currentIndex]['_id']]">
+                  <div fxLayout="row" fxLayoutGap="15px" class="mrg_btm">
+
+                    <div fxFlex="50">
+                      <img src="{{conv[currentIndex]['url']}}" width="100%">
+                    </div>
+                    <div fxFlex="50"><p class="mrg_top_m">
+                      <span>{{ conv[currentIndex]['headline']  }}</span><br>
+                      {{conv[currentIndex]['doctor_name']}}
+                    </p>
+                    </div>
+
+                    <div class="clearfix"></div>
+                  </div>
+                </a>
+
+              </div>
+            </ng-template>
+          </div>
+        </div>
+
+
+      </div>
+
+
+      <div class="vid_box_panel mrg_btm">
+        <div class="vid_box_panel_hd">Get TheRightDoctors email updates</div>
+        <div class="vid_box_panel_body">
+          <form class="example-form">
+            <mat-form-field class="example-full-width">
+              <input matInput placeholder="Mail">
+            </mat-form-field>
+          </form>
+
+          <button mat-raised-button id="sub_mail" color="primary">submit</button>
+        </div>
+
+      </div>
+
+      <div class="border_left mrg_btm">
+        <div class="vid_hd2">More Videos</div>
+        <div class="vid_side_box">
+
+          <ng-template ngFor let-item [ngForOf]="createRange(3)" let-currentIndex="index">
+            <div class="vid_side_box_inner">
+              <a [routerLink]="['/'+latest[currentIndex]['category']+'/'+latest[currentIndex]['slug']]">
+                <div fxLayout="row" fxLayoutGap="15px">
+                  <div fxFlex="50"><img src="{{latest[currentIndex]['image_url']}}" width="100%"></div>
+                  <div fxFlex="50">
+                  </div>
+                  <div class="clearfix"></div>
+                </div>
+              </a>
+            </div>
+          </ng-template>
+        </div>
+      </div>
+
+    </div>
+
+
+  </div>
+</div>
+<app-footer></app-footer>-->

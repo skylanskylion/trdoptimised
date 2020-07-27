@@ -1,0 +1,70 @@
+
+<form id="form2" (ngSubmit)="onSubmit()">
+    <div class="col-sm-12">
+      <h4>Upload new Story item</h4>
+      <h4>please dont click on "submit" button without Entering All Fields With Correct data</h4>
+  
+      <div class="form-horizontal" role="form">
+  
+        <div class="form-group">
+          <label class="control-label col-sm-2" for="f_title">Story Heading/Title</label>
+          <div class="col-sm-10">
+            <input type="email" class="form-control" id="f_title" [(ngModel)]="live_details.f_title" name="f_title" placeholder="Enter title">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="control-label col-sm-2" for="f_subheadline">Story Sub headline:</label>
+          <div class="col-sm-10">
+            <input type="email" class="form-control" id="f_subheadline" [(ngModel)]="live_details.f_subheadline" name="f_subheadline" placeholder="Enter Doctor Name Designation text">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="control-label col-sm-2" for="f_description">Story Description</label>
+          <div class="col-sm-10">
+              <angular-editor id="f_description" [(ngModel)]="live_details.f_description" name="f_description" 
+              #f_description="ngModel" style="color: black;" >
+                        
+                </angular-editor>
+            <!-- <textarea class="form-control" id="f_description" [(ngModel)]="live_details.f_description" name="f_description" 
+            placeholder="Enter Description"></textarea> -->
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="control-label col-sm-2" for="f_image_url">Story Image URL:</label>
+          <div class="col-sm-10">
+            <!--<input type="email" class="form-control" id="f_img_url" placeholder="Enter Public Image URL from Google Cloud Storage Bucket">-->
+            <input type="file" class="inputFile" (change)="selectFile($event)" style="float:left;">
+  
+            <input type="hidden" value="{{uploadedfile}}" name="f_image_url" id="f_image_url" [(ngModel)]="live_details.f_image_url" >
+          </div>
+        </div>
+        <!-- <div class="form-group">
+          <label class="control-label col-sm-2" for="f_image_url">Website URL:</label>
+          <div class="col-sm-10">
+           
+            <input type="text" class="form-control" id="f_url" [(ngModel)]="live_details.f_url" name="f_url" 
+            placeholder="Enter the Website URL i.e https://therightdoctors.com/-url-">
+       
+          </div>
+        </div> -->
+         <div class="form-group">
+            <label class="control-label col-sm-2" for="f_video_url">Story Video Url </label>
+            <div class="col-sm-10">
+              <input type="email" class="form-control" id="f_video_url" [(ngModel)]="video.f_video_url" name="f_video_url" placeholder="Enter Doctor Name Designation text">
+            </div>
+          </div>
+          <div class="form-group">
+              <label class="control-label col-sm-2" for="f_video_subheadline">Story Video Headline </label>
+              <div class="col-sm-10">
+                <input type="email" class="form-control" id="f_video_subheadline" [(ngModel)]="video.f_video_subheadline" name="f_video_subheadline" placeholder="Enter Doctor Name Designation text">
+              </div>
+          </div>
+        <div class="form-group">
+          <div class="col-sm-offset-2 col-sm-10">
+            <button type="submit" class="btn btn-default">Submit</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+  

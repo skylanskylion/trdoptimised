@@ -1,0 +1,314 @@
+<!--book appointment-->
+<app-nav></app-nav>
+<section class="back2">
+  <section class="container">
+    <div class="book-slot-page">
+      <!-- <div class="row"> -->
+        <!-- <div class="col-md-12"> -->
+          <!-- <div class="vid_p mrg_btm paragrph"> -->
+            <div fxLayout="row" fxShow fxHide.lt-md="true">
+              <!-- <div class="col-md-3"></div> -->
+              <div fxFlex="10%"></div>
+              <div fxFlex="80%" fxLayout="row">
+                <div fxFlex="20%"></div>
+                <!-- <img src="https://storage.googleapis.com/web-assets/RSSDI_2019/Dr-Prakash-Kesawani.png"/> -->
+                <!-- <img src="https://storage.googleapis.com/web-assets/RSSDI_2019/rssdi_2019.jpg">
+                <p><b>Dr. Prakash Kesawani</b><br><i>Organising Secretary, RSSDI 2019, Jaipur</i></p>
+
+              </div>
+              <!-- <div class="col-md-3"></div> -->
+          <!--  </div>
+            <br>-->
+           <div fxFlex="60%">
+           <p class="parag" style="font-size:14px;padding:10px 0px;text-align:center;"><b>Greetings !!!</b></p>
+            <p class="parag" style="font-size:14px;color:#555;line-height:20px;padding:0px 0px 10px 0px; text-align: justify;">Thank you for coming to our studio at Torrent RSSDI tv. Kindly review the transcript and fill the gaps if any. Please suggest/amend Headline & Key Take Aways.
+              
+              </p>
+
+          </div>
+          <div fxFlex="20%"></div>
+              </div>
+          <div fxFlex="10%"></div>
+
+        <!-- </div> -->
+      <!-- </div> -->
+        <!-- </div> -->
+      </div>
+      <div fxLayout="column" fxHide fxShow.lt-md="true">
+          <p class="parag" style="font-size:14px;padding:10px 0px;text-align:center;"><b>Greetings !!!</b></p>
+          <p class="parag" style="font-size:14px;color:#555;line-height:20px;padding:0px 0px 10px 0px; text-align: justify;">Thank you for coming to our studio at Torrent RSSDI tv. Kindly review the transcript and fill the gaps if any. Please suggest/amend Headline & Key Take Aways.
+            
+            </p>
+
+      </div>
+      <div fxLayout="row" fxLayout.lt-md="column">
+        <div fxFlex="10" fxShow.lt-md="false"></div>
+        <div fxFlex="80">
+          <form name="form" (ngSubmit)="f.form.valid && register()" #f="ngForm" novalidate>
+            <div fxLayout="row" fxLayout.lt-md="column">
+              <div fxFlex="20"></div>
+              <div fxFlex="60">
+                <!-- <h2 class="book-heading"> Your details are as below.</h2> -->
+
+                <mat-card>
+                  <form class="example-form">
+                    <mat-form-field class="example-full-width">
+                      <input matInput placeholder="Your Full Name" name="doctor_name"
+                             [(ngModel)]="doctor_model.doctor_name" #first_name_c="ngModel" required>
+                    </mat-form-field>
+                    <!-- <mat-form-field class="example-full-width">
+                      <input matInput placeholder="Enter last Name" name="last_name_c"
+                             [(ngModel)]="model.last_name_c" #last_name_c="ngModel" required>
+                    </mat-form-field> -->
+                    <mat-form-field class="example-full-width">
+                      <input matInput placeholder="Designation"
+                             name="designation"
+                             [(ngModel)]="doctor_model.designation" #qualifications_c="ngModel" required>
+                    </mat-form-field>
+                    <mat-form-field class="example-full-width">
+                      <input matInput placeholder="Hospital Name" name="hospital"
+                             [(ngModel)]="doctor_model.hospital" #event_name="ngModel" required>
+                    </mat-form-field>
+                    <mat-form-field class="example-full-width">
+                      <textarea matInput placeholder="Enter Your Title Name(60 characters limit)" name="title"
+                             [(ngModel)]="cmeModel.title" #topic_name="ngModel"></textarea>
+                    </mat-form-field>
+                    <p class="key-t-away">Headline of your talk</p>
+                    <mat-form-field class="example-full-width">
+                      
+                      <textarea matInput name="headline" [(ngModel)]="cmeModel.headline"
+                             #headline="ngModel" maxlength="70"
+                             placeholder="Enter upto 70 characters"></textarea>
+                    </mat-form-field>
+                    <!-- <mat-form-field class="example-full-width">
+                        <input matInput name="headline" [(ngModel)]="model.headline"
+                               #headline="ngModel" maxlength="70"
+                               placeholder="Enter headline2 of your talk(70 characters limit)">
+                      </mat-form-field> -->
+
+<!-- 
+                    <select style="
+    width: 100%;
+    height: 31px;
+    color: #858383;
+    border: none;
+    border-bottom: 1px solid #ccc;"   name="s_time"
+                            [(ngModel)]="model.s_time" #s_time="ngModel" placeholder="Select Your Time slot" value="select your time slot">
+                      <option value="8:00-8:15">8:00-8:15</option>
+                      <option value="8:15-8:30">8:15-8:30</option>
+                      <option value="8:30-8:45">8:30-8:45</option>
+                      <option value="8:45-9:00">8:45-9:00</option>
+                      <option value="9:00-9:15">9:00-9:15</option>
+                      <option value="9:15-9:30">9:15-9:30</option>
+                      <option value="9:30-9:45">9:30-9:45</option>
+                      <option value="9:45-10:00">9:45-10:00</option>
+                      <option value="10:45-11:00">10:45-11:00</option>
+                      <option value="11:00-11:15" >11:00-11:15</option>
+                      <option value="11:15-11:30">11:15-11:30</option>
+                      <option value="11:30-11:45">11:30-11:45</option>
+                      <option value="11:45-12:00">11:45-12:00</option>
+                      <option value="12:00-12:15">12:00-12:15</option>
+                      <option value="12:15-12:30">12:15-12:30</option>
+                      <option value="12:30-12:45">12:30-12:45</option>
+                      <option value="12:45-13:00">12:45-13:00</option>
+                      <option value="13:00-14:15">13:00-14:15</option>
+                      <option value="13:15-14:30">13:15-14:30</option>
+                      <option value="13:30-14:45">13:30-14:45</option>
+                      <option value="13:45-14:00">13:45-14:00</option>
+                      <option value="14:00-14:15">14:00-14:15</option>
+                      <option value="14:15-14:30">14:15-14:30</option>
+                      <option value="14:30-14:45">14:30-14:45</option>
+                      <option value="14:45-15:00">14:45-15:00</option>
+                      <option value="15:00-15:15">15:00-15:15</option>
+                      <option value="15:15-15:30">15:15-15:30</option>
+                      <option value="15:30-15:45">15:30-15:45</option>
+                      <option value="15:45-16:00">15:45-16:00</option>
+                      <option value="16:00-16:15">16:00-16:15</option>
+                      <option value="16:15-16:30">16:15-16:30</option>
+                      <option value="16:30-16:45">16:30-16:45</option>
+                      <option value="16:45-17:00">16:45-17:00</option>
+                      <option value="17:00-17:15">17:00-17:15</option>
+                      <option value="17:15-17:30">17:15-17:30</option>
+                      <option value="17:30-17:45">17:30-17:45</option>
+                      <option value="17:45-18:00">17:45-18:00</option>
+                      <option value="18:00-18:15">18:00-18:15</option>
+                      <option value="18:15-18:30">18:15-18:30</option>
+                      <option value="18:30-18:45">18:30-18:45</option>
+                      <option value="18:45-19:00">18:45-19:00</option>
+                      <option value="19:00-19:15">19:00-19:15</option>
+                      <option value="19:15-19:30">19:15-19:30</option>
+                      <option value="19:30-19:45">19:30-19:45</option>
+                      <option value="19:45-20:00">19:45-20:00</option>
+
+                    </select> -->
+                    <p class="key-t-away">Key take Aways from your talk(1)</p>
+                    <mat-form-field class="example-full-width">
+                    <textarea matInput name="a_highlights1"
+                              [(ngModel)]="cmeModel.a_highlights1" #key_values="ngModel"
+                              placeholder="Enter upto 250 characters" ></textarea>
+                    </mat-form-field>
+                    <p class="key-t-away">Key take Aways from your talk(2)</p>
+                    <mat-form-field class="example-full-width">
+                    <textarea matInput name="a_highlights2"
+                              [(ngModel)]="cmeModel.a_highlights2" #key_values="ngModel"
+                              placeholder="Enter upto 250 characters"></textarea>
+                    </mat-form-field>
+                    <p class="key-t-away">Key take Aways from your talk(3)</p>
+                    <mat-form-field class="example-full-width">
+                    <textarea matInput name="a_highlights3"
+                              [(ngModel)]="cmeModel.a_highlights3" #key_values="ngModel"
+                              placeholder="Enter upto 250 characters"></textarea>
+                    </mat-form-field>
+                    <p class="key-t-away">Key take Aways from your talk(4)</p>
+                    <mat-form-field class="example-full-width">
+                    <textarea matInput name="a_highlights4"
+                              [(ngModel)]="cmeModel.a_highlights4" #key_values="ngModel"
+                              placeholder="Enter upto 250 characters" ></textarea>
+      
+                    </mat-form-field>
+
+                    <p class="key-t-away">The audio track of your talk:</p>
+                    <audio _ngcontent-c5="" controls controlsList="nodownload" style="width:100%; margin-top: 5px;" src="{{podcastModel.video_url}}"> Your browser does not support the audio element. </audio>
+                    <!-- <p class="key-t-away">Key take Aways from your talk(2)(optional)</p>
+                    <mat-form-field class="example-full-width">
+                    <textarea matInput name="headline1" [(ngModel)]="model.headline1"
+                              #headline1="ngModel" maxlength="300"
+                              placeholder="Enter headline of your talk(250 characters limit)"></textarea>
+                    </mat-form-field>salk(3)(optional)</p>
+                    <mat-form-field class="example-full-width">
+                    <textarea matInput maxlength="300" name="key_values2"
+                              [(ngModel)]=
+                              "model.key_values2" #key_values2="ngModel"
+                              placeholder="Enter text for your quotation (250 characters limit)"></textarea>
+                    </mat-form-field> -->
+                    <p class="key-t-away">Transcript</p>
+                    <angular-editor name="transcript" [(ngModel)]="model_transcript" #transcript="ngModel" style="color: black;" >
+                      
+                    </angular-editor>
+                    
+                    <!-- <mat-form-field class="example-full-width">
+                        <textarea name="key_values2" style="width:100%;"
+                                  [(ngModel)]="model.key_values2" #key_values2="ngModel"
+                                  placeholder="Transcript"></textarea>
+                        </mat-form-field> -->
+                        <!-- <p class="key-t-away" style="padding-bottom: 10px;">Transcript</p>
+                        <div class="example-full-width">
+                        <textarea name="transcript" [(ngModel)]="cmeModel.transcript" #transcript="ngModel"style="width:100%;height:350px;"></textarea>
+                    </div> -->
+                    <!-- <div class="example-full-width">
+                      <label class="key-t-away" for="pptFileUpload">Presentation Upload</label>
+                      <input  type="file" #fileImportInput name="File_Upload" id="pptFileUpload" 
+                      (change)="selectFile($event)" accept=".pptx" />
+                    </div>
+                    <div class="example-full-width">
+                      <label class="key-t-away" for="imgFileUpload">Image Upload</label>
+                      <input  type="file" #fileImportInput name="Image_Upload" id="imgFileUpload" 
+                      (change)="selectFileforImage($event)" accept=".jpg" />
+                    </div> -->
+                  </form>
+                  <button mat-raised-button color="primary"  class="btn-class" type="submit" [disabled]="loading" style="padding:0px;margin-top:40px;">Update</button>
+                </mat-card>
+              </div>
+              <div fxFlex="20"></div>
+            </div>
+          </form>
+        </div>
+        <div fxFlex="10" fxShow.lt-md="false"></div>
+      </div>
+      <!--<div fxLayout="column" fxLayoutAlign="center center">-->
+      <!--<img style="border:none;outline:none;text-decoration:none;-->
+      <!--margin-bottom:5px;"-->
+      <!--class="img-responsive center-block"-->
+      <!--src="https://storage.googleapis.com/web-assets/images/RSSIDI/Logo-f-c.png">-->
+      <!--<p >-->
+      <!--Wockhardt</p>-->
+      <!--</div>-->
+      <br/>
+      <!--<div class="vid_p mrg_btm ">-->
+      <!--<p  class="small-text-p">-->
+      <!--Wockhardt Ltd. is a Global pharmaceutical and biotechnology company headquartered in Mumbai, India. The company has manufacturing plants in India, UK, Ireland,-->
+      <!--France and US, and subsidiaries in US, UK, Ireland and France. It is a global company with more than half of its revenue coming from Europe.</p><br>-->
+      <!--</div>-->
+
+      <div fxLayout="column" fxLayoutAlign="center center">
+        <!-- <img style="border:none;outline:none;text-decoration:none; margin-bottom:5px;"
+             class="img-responsive center-block"
+             src="https://storage.googleapis.com/web-assets/images/salesforce/trd-knowledge-partner-logo.png"> -->
+             <img style="border:none;outline:none;text-decoration:none; margin-bottom:5px;width:150px;height:60px;"
+             class="img-responsive center-block"
+             src="https://storage.googleapis.com/web-assets/footer/Trd%20Logo.png">
+        <p class="insights" style="text-align: center;">
+          Insights from the World's Best Medical Minds</p>
+      </div>
+      <br/>
+      <div class="vid_p mrg_btm">
+        <p   class="small-text-p" style="font-size: 12px; line-height: 20px; color: #333; text-align: justify; ">
+          TheRightDoctors, a Google Launchpad Digital Health StartUp, is one of the leaders in production and dissemination of 
+          Medical Information. They bring Insights 
+          from the World's Best Medical Minds to digital audiences worldwide across leading digital and social media platforms.
+          TheRightDoctors.com works closely with RSSDI as Digital Knowledge Partner for its scientific events. Contact us at cs@therightdoctors.com for your upcoming conference / CME / Workshop / Live Surgeries.
+  </p><br>
+      </div>
+    
+  </div>
+  </section>
+</section>
+<!--book appointment//-->
+<!--<app-footer></app-footer>-->
+<br>
+<section class="container">
+  <section >
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 " style="padding:0px">
+          <h5 class="head-power">Powered by:</h5>
+          <img src="../../assets/img/new-poweredby-google.png" class="mar-top-d" alt="new-poweredby-google"/>
+
+        </div>
+
+        <div class="col-md-8 marg-btm-m" style="padding:0px">
+          <h5 class="head-power">Awards & Recognitions:</h5>
+          <div class="row img-wid">
+            <div class="col-md-3 col-xs-3 col-sm-3">
+              <img src="assets/img/awars01.png" alt="award"/>
+            </div>
+            <div class="col-md-3 col-xs-3 col-sm-3">
+              <img src="assets/img/1000awards.png" alt="1000 awards"/>
+
+            </div>
+            <div class="col-md-3 col-xs-3 col-sm-3">
+
+              <img src="assets/img/SBC_global_logo-L-2.png" style="margin-top:13px" alt="SBC Global Logo"/>
+            </div>
+            <div class="col-md-3 col-xs-3 col-sm-3">
+              <img src="assets/img/startup.png" style="margin-top: 13px;" alt="Start Up"/>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</section>
+
+
+<section class="back3 post_footer_pdg">
+  <section class="container">
+    <div class="row">
+      <div class="post_footer">
+        <div class="col-md-6 col-sm-6  col-xs-12 text-left">
+          <ul>
+            <li><a [routerLink]="['/terms-of-service']">Terms of Service</a></li>
+            <li><a [routerLink]="['/privacy-policy']">Privacy Policy</a></li>
+            <li><a [routerLink]="['/disclaimer']">Disclaimer</a></li>
+          </ul>
+          <div class="clearfix"></div>
+        </div>
+        <div class="col-md-6 col-sm-6  col-xs-12 text-right text_left_m pad-text">
+          © TheRightDoctors Network. All Rights Reserved
+          <div class="clearfix"></div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+</section>

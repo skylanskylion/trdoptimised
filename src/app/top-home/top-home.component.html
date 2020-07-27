@@ -1,0 +1,1387 @@
+<!-- <style>
+  .vid_side_box_inner {
+  padding: 0 0 5px 0 !important;
+  margin: 5px 0 0 !important;
+  border-bottom: 1px solid #eee;
+  }
+ 
+  .hd5 {
+  line-height: 25px;
+  }
+ 
+  @media (max-width: 767px) {
+  .hd5 {
+  line-height: 20px;
+  font-size: 12.5px !important;
+  }
+  }
+ </style>
+ 
+ <section class="back2" style="padding-bottom: 20px;padding-top: 20px;">
+  <section class="container">
+  <div class="bigheading"><a style='color: black !important;
+  font-family: serif;
+  font-weight: bolder;
+  ' href="{{exclusive_story['guest6_image_url']}}">{{exclusive_story['guest6']}}</a></div> 
+  <a style = 'color : rgb(84, 84, 84)'href="{{exclusive_story['guest6_image_url']}}"> <p fxLayoutAlign="center center" class = "big-sub"><b>{{exclusive_story['guest6_designation']}}</b></p></a>
+
+  <div class="banner1">
+  <div class="row" style="margin:0px;">
+  <div class="col-xs-12 col-sm-12 col-md-6 pad-bot">
+  <a href="{{exclusive_story['guest6_image_url']}}" ><img style = "padding-right: 10px; padding-bottom: 10px;" src="{{exclusive_story['image_url']}}"></a> 
+  </div>
+  <div class="col-xs-12 col-sm-12 col-md-6 pad-bot" fxLayoutAlign="center center">
+  
+  <h6 class="lineheight hd4" style="color:#607D8B;">{{this.exclusive_paras[0] | slice : 0 : 537}}<br>{{this.exclusive_paras[1] | slice : 0 : 537}}
+    <a [ngSwitch]="exclusive_story['main_category']"  style = "color:red;" href="{{exclusive_story['guest6_image_url']}}">
+    <p *ngSwitchCase ="'insights'"> Read More</p>
+    <p *ngSwitchCase ="'tv'">Watch the Video</p>
+    <p *ngSwitchCase ="'podcast'">Listen to Podcast</p>
+    </a>
+    </h6>
+
+ 
+  </div>
+  </div>
+  </div>
+ 
+  <div class="banner2" style="">
+  
+ 
+  <div class="row" style="margin:0px;">
+  <div class="col-xs-12 col-sm-12 col-md-4 pad-bot">
+  <div class="hd2" style="width:100%;margin-bottom: 10px;">{{block1_category}}</div>
+  <ul class="live-list">
+  <div *ngFor="let single_top_story of block1_data; let i = index ">
+  <div *ngIf="i < 4">
+  <li><a
+  href ="{{single_top_story['href_link']}}">
+  
+ 
+  <div class="tab-pgd1">
+  <h4 class="hd4 color_base_m bor-left-blue">
+  {{single_top_story['headline']}}</h4>
+  <p class="color_orange color_base_m bor-left-red">
+  <b>{{single_top_story['sub_headline']}}</b></p>
+  <div class="clearfix"></div>
+  </div>
+ 
+  </a></li>
+  </div>
+  </div>
+  
+ 
+  </ul>
+  
+
+  
+  <div class="hd2" style="width:100%;margin-bottom: 10px; margin-top: 10px;">Streaming Now</div>
+                    <video  (ended)="nextVideo()" *ngFor="let video of sources" style="width:100%" poster="https://storage.googleapis.com/web-assets/Coronavirus-2020/Shashank-Joshi/Shashank-03.jpg"
+                      autoplay
+                      controls>
+                      <source [src]="video.src" type="video/mp4">
+                    </video>
+                    
+  
+  <h5 style="padding-top: 10px; font-size: 16px;"><b>COVID-19: An in-depth Analysis with India's leading
+  Diabetologist and Thought Leader</b></h5>
+  <h6 style="color: #e27520;font-size: 14px; font-weight: 700;"><b>Dr. Shashank Joshi</b></h6>
+ 
+ 
+ 
+  </div>
+  <div class="col-xs-12 col-sm-12 col-md-4 pad-bot">
+  <div fxLayout="column">
+  <div fxLayout="row" style="margin-top: 0px;" fxLayoutAlign="start center">
+ 
+  <div class="hd2" style="width:100%;margin-bottom: 0px;">COVID-19: Top Stories</div>
+  </div>
+  <div class="item item-2">
+  <div class="vid_side_box_inner no_mrg_m " style="margin-top: 0px !important;">
+
+  <ul class="live-list">
+  
+  <div *ngFor="let single_top_story of top_stories; let i = index ">
+  <div *ngIf="i < 8">
+  <li><a
+  href ="{{single_top_story['href_link']}}">
+  <div *ngIf="single_top_story['impact_feature']" style="font-size: 10px; font-weight: bold">
+  Impact feature</div>
+ 
+  <div class="tab-pgd1">
+  <h4 class="hd4 color_base_m bor-left-blue">
+  {{single_top_story['headline']}}</h4>
+  <p class="color_orange color_base_m bor-left-red">
+  <b>{{single_top_story['sub_headline']}}</b></p>
+  <div class="clearfix"></div>
+  </div>
+ 
+  </a></li>
+  </div>
+  </div>
+  </ul>
+ 
+  </div>
+  </div>
+ 
+  </div>
+  </div>
+  <div class="col-xs-12 col-sm-12 col-md-4 pad-bot" fxLayout="column">
+  <div class="hd2" style="margin-bottom: 10px;">{{this.block2_category}}</div>
+  <ng-template ngFor let-item [ngForOf]="block2_data" let-currentIndex="index">
+  <div *ngIf="currentIndex < 2">
+  <a href="{{this.block2_link}}{{this.block2_data[currentIndex]['slug']}}" style="padding-bottom: 15px;">
+  <div fxLayout="column">
+  <img src="{{block2_data[currentIndex]['image_url']}}" style="width:100%">
+  <div fxLayout="column">
+  
+  <h5 style="padding-top: 10px; font-size: 16px;"><b>{{block2_data[currentIndex]['headline']}}</b>
+  </h5>
+  <h6 style="color: #e27520;font-size: 14px; font-weight: 700;">
+  <b>{{block2_data[currentIndex]['sub_headline']}}</b></h6>
+  <h6 class="hd4 color_base_m bor-left-blue" style="font-weight: normal; margin-bottom : 10px !important">
+  {{block2_data[currentIndex]['transcript_list'][0]['question'] | slice: 0 : 100}}...<a
+  href="{{this.block2_link}}{{this.block2_data[currentIndex]['slug']}}" style="color:red;">Read
+  More</a></h6>
+  </div>
+  </div>
+  </a>
+  </div>
+  </ng-template>
+  
+  </div>
+ 
+  </div>
+  </div>
+  
+ 
+ 
+  <div class="banner5" style="padding-top: 20px;padding-bottom: 20px;">
+  <div class="container">
+  <div class="row">
+  
+  <div class="col-xs-12 col-sm-12 col-md-4 pad-bot">
+  <div fxLayout="column">
+  <div class="item item-2">
+  <div class="mrg_btm">
+  <div fxLayout="row" style="background: #f1f1f1;" fxLayoutAlign="start center">
+ 
+  
+  <div class="circle red"></div>
+  <div class="hd2" style="width:100%;margin-top:0px;margin-bottom:0px;">LIVE UPDATES</div>
+  </div>
+ 
+ 
+  <div style="">
+ 
+  <div class=" mrg_btm no_mrg_m back_white_m border_m" style="padding: 0px 0px 8px 0px !important;">
+  <div class="row">
+  <div class="col-md-12">
+  <a style="" class="testvideo clr-a"
+  [routerLink]="['/'+d['f_category'].toLowerCase()+'/live-updates']">
+  <div class="wi-30 pull_right_m"><img src="{{d['f_image_url']}}"></div>
+  <div class="wi-70 last1 pull_left_m pdg_no_rt_m">
+  <h6 class='liveupdates hd4 color_base_m bor-left-blue'><b style="color: #e27520;font-size: 14px; font-weight: 700;">Coronavirus LIVE</b>:
+  {{d['f_title']}}</h6>
+ 
+  </div>
+  </a></div>
+  </div>
+  </div>
+ 
+ 
+  <div class="hd2" style="margin-top: 0px;margin-bottom: 10px;">Other LIVE Stories</div>
+  
+  <div class="row" style="padding-top: 0px;margin:0px;">
+  <div *ngFor="let d of data_we_need; let i = index">
+  <div fxLayout="row">
+  <div *ngIf="i < 2">
+ 
+  <ul class="live-list">
+  <li
+  style="margin-top: 0px !important;border-top: 0px !important;padding-top: 0px !important;">
+  <a [routerLink]="['/'+d['f_category'].toLowerCase()+'/live-updates']">
+ 
+  <div class="tab-pgd1">
+  <h6 class="hd4 color_base_m bor-left-blue"
+  style="padding-left: 15px ; padding-right: 15px">
+  <b style="color: #e27520;font-size: 14px; font-weight: 700;">{{d['f_category']}} LIVE: </b> {{d['f_title'] }}</h6>
+ 
+  <div class="clearfix"></div>
+  </div>
+ 
+  </a></li>
+  </ul>
+  </div>
+  </div>
+  </div>
+ 
+ 
+  </div>
+ 
+  </div>
+ 
+ 
+ 
+  </div>
+ 
+  </div>
+  </div>
+  </div>
+  <div class="col-xs-12 col-sm-12 col-md-4">
+  <div fxLayout="column">
+  <div class="hd2" style="width:100%">{{block3_category}}</div>
+  <div class="item item-3" style="margin-top: 10px;">
+  <ul class="live-list">
+  <li style="border-top: none !important;margin-top:0px !important;padding-top: 0px !important;"><a
+  href="{{block3_link}}{{block3_data[0]['slug']}}">
+  <div class="tab-pgd1">
+  <h4 class="hd4 color_base_m bor-left-blue">
+  {{block3_data[0]['headline']}}</h4>
+  <p class="color_orange color_base_m bor-left-red"><b>{{block3_data[0]['sub_headline']}}</b></p>
+  <div class="clearfix"></div>
+  </div>
+ 
+  </a></li>
+  <li><a href="{{block3_link}}{{block3_data[1]['slug']}}">
+  <div class="tab-pgd1">
+  <h4 class="hd4 color_base_m bor-left-blue ">
+  {{block3_data[1]['headline']}}</h4>
+  <p class="color_orange color_base_m bor-left-red"><b>{{block3_data[1]['sub_headline']}}</b></p>
+  <div class="clearfix"></div>
+  </div>
+ 
+  </a></li>
+  <li><a href="{{block3_link}}{{block3_data[2]['slug']}}">
+  <div class="tab-pgd1">
+  <h4 class="hd4 color_base_m bor-left-blue ">
+  {{block3_data[2]['headline']}}</h4>
+  <p class="color_orange color_base_m bor-left-red"><b>{{block3_data[2]['sub_headline']}}</b></p>
+  <div class="clearfix"></div>
+  </div>
+ 
+  </a></li>
+  </ul>
+  </div>
+  </div>
+  </div>
+  <div class="col-xs-12 col-sm-12 col-md-4">
+  <div fxLayout="column">
+  <div class="hd2" style="width:100%">{{block4_category}}</div>
+  <div class="item item-3" style="margin-top: 10px;">
+  <ul class="live-list">
+  <li style="border-top: none !important;margin-top:0px !important;padding-top: 0px !important;"><a
+  href="{{block4_link}}{{block4_data[0]['slug']}}">
+  <div class="tab-pgd1">
+  <h4 class="hd4 color_base_m bor-left-blue">
+  {{block4_data[0]['headline']}}</h4>
+  <p class="color_orange color_base_m bor-left-red"><b>{{block4_data[0]['sub_headline']}}</b></p>
+  <div class="clearfix"></div>
+  </div>
+ 
+  </a></li>
+  <li><a href="{{block4_link}}{{block4_data[1]['slug']}}">
+  <div class="tab-pgd1">
+  <h4 class="hd4 color_base_m bor-left-blue ">
+  {{audio_list1[1]['headline']}}</h4>
+  <p class="color_orange color_base_m bor-left-red"><b>{{block4_data[1]['sub_headline']}}</b></p>
+  <div class="clearfix"></div>
+  </div>
+ 
+  </a></li>
+  <li><a href="{{block4_link}}{{block4_data[2]['slug']}}">
+  <div class="tab-pgd1">
+  <h4 class="hd4 color_base_m bor-left-blue ">
+  {{block4_data[2]['headline']}}</h4>
+  <p class="color_orange color_base_m bor-left-red"><b>{{block4_data[2]['sub_headline']}}</b></p>
+  <div class="clearfix"></div>
+  </div>
+ 
+  </a></li>
+ 
+  </ul>
+ 
+  </div>
+ 
+ 
+ 
+  </div>
+  </div>
+  </div>
+  </div>
+  </div>
+ 
+  </section>
+ </section>
+ <section class="back2">
+  <section class="container">
+  <div class="row">
+  <div class="col-md-12">
+  <div class="hd2 mrg_btm no_mrg_m">COVID-19: Trending Stories</div>
+  </div>
+  </div>
+  <div class="row">
+  <div class="col-md-5 col-sm-6 col-xs-12">
+  <div class="card-style">
+  <a class="testvideo"
+  [routerLink]="['/'+corona_v[0]['event']+'/'+corona_v[1]['category']+'/'+corona_v[1]['slug']]">
+  <img src="{{corona_v[1]['image_url']}}" alt="{{corona_v[1]['image_alt']}}" style="width:100%" />
+  </a>
+ 
+  <h5 class=" new-head-interview line-height-1"> {{corona_v[1]['headline']}}</h5>
+  <ul class="list-items">
+  <ng-template ngFor let-item [ngForOf]="createRange(3)" let-currentIndex="index+1">
+  <a class="testvideo"
+  href="https://insights.therightdoctors.com/{{blogdata[currentIndex]['category']}}/the-interview/{{blogdata[currentIndex]['slug']}}">
+  <li><span class="bor-left-blue">{{blogdata[currentIndex]['headline']}}</span>
+  <p class="color_orange color_base_m bor-left-red"><b>{{blogdata[currentIndex]['sub_headline']}}</b>
+  </p>
+  </li>
+  </a>
+  </ng-template>
+ 
+ 
+  </ul>
+ 
+  </div>
+  </div>
+  <div class="col-md-3 col-sm-6 col-xs-12">
+ 
+ 
+  <div class="card-style marg-btm">
+  <a class="testvideo"
+  [routerLink]="['/'+audio_list1[1]['event']+'/'+audio_list1[1]['category']+'/'+audio_list1[1]['slug']]">
+  <img src="{{audio_list1[1]['image_url']}}" alt="{{audio_list1[1]['image_alt']}}" style="width:100%">
+  </a>
+ 
+  <a class="testvideo"
+  [routerLink]="['/'+audio_list1[1]['event']+'/'+audio_list1[1]['category']+'/'+audio_list1[1]['slug']]">
+ 
+  <ul class="list-items">
+  <li class="bor-no"><span class="bor-left-blue">{{audio_list1[1]['headline']}}</span>
+  <p class="color_orange color_base_m bor-left-red"><b>{{audio_list1[1]['sub_headline']}}</b></p>
+  </li>
+  </ul>
+  </a>
+  </div>
+ 
+ 
+ 
+  <div class="card-style marg-btm">
+  <a class="testvideo"
+  [routerLink]="['/'+audio_list1[5]['event']+'/'+audio_list1[5]['category']+'/'+audio_list1[5]['slug']]">
+
+  </a>
+
+  <a class="testvideo"
+  [routerLink]="['/'+audio_list1[5]['event']+'/'+audio_list1[5]['category']+'/'+audio_list1[5]['slug']]">
+ 
+  <ul class="list-items">
+  <li class="bor-no"><span class="bor-left-blue">{{audio_list1[5]['headline']}}</span>
+  <p class="color_orange color_base_m bor-left-red"><b>{{audio_list1[5]['sub_headline']}}</b></p>
+  </li>
+  </ul>
+  </a>
+
+  </div>
+ 
+  </div>
+ 
+  <div class="col-md-4 col-sm-12 col-xs-12">
+  <div class="card-style">
+ 
+  <a class="testvideo"
+  [routerLink]="['/'+corona_v[0]['event']+'/'+corona_v[0]['category']+'/'+corona_v[0]['slug']]">
+  <img src="{{corona_v[0]['image_url']}}" alt="{{corona_v[0]['image_alt']}}" style="width:100%" />
+  </a>
+
+  <h5 class="new-head-interview line-height-1"> <b>{{corona_v[0]['headline']}}</b></h5>
+  <ul class="list-items">
+  <ng-template ngFor let-item [ngForOf]="createRange(3)" let-currentIndex="index+7">
+  <a class="testvideo" href="https://podcast.therightdoctors.com/{{audio_list1[currentIndex]['slug']}}">
+  <li><span class="bor-left-blue">{{audio_list1[currentIndex]['headline']}}</span>
+  <p class="color_orange color_base_m bor-left-red"><b>{{audio_list1[currentIndex]['sub_headline']}}</b>
+  </p>
+  </li>
+  </a>
+  </ng-template>
+ 
+  </ul>
+
+  </div>
+  </div>
+  </div>
+  <div class="row mar-top-view">
+  <div class="col-md-12">
+  <a href="https://covid19.therightdoctors.com/">
+  <button class="btn btn-primary btn_sm_m">View All</button>
+  </a>
+  </div>
+  </div>
+  </section>
+ </section>
+  -->
+
+<!-- ------------------------------------------------------------------------------------------------------------------------------------------------------- -->
+<style>
+  .vid_side_box_inner {
+  padding: 0 0 5px 0 !important;
+  margin: 5px 0 0 !important;
+  border-bottom: 1px solid #eee;
+  }
+ 
+</style>
+
+
+  <div class="new-screen1">
+    <div class="container">
+      <div fxLayout.lt-md="column" fxLayout.gt-sm="row" fxLayoutGap.gt-sm="30px">
+          <div class="internal1" fxFlex.lt-md="100%" fxFlex.gt-sm="70%" class="left-screen">
+              <div class="img-bx-shd one-section">
+                <a href="{{exclusive_story['guest6_image_url']}}" ><img src="{{exclusive_story['image_url']}}" class="img-resp"></a> 
+                <div class="internal-head">
+                  <h4 class="internal-main-head"><a href="{{exclusive_story['guest6_image_url']}}">{{exclusive_story['guest6']}}</a></h4>
+                  <p  class = "internal-sub-head"><a href="{{exclusive_story['guest6_image_url']}}"> {{exclusive_story['guest6_designation']}}</a></p>
+                  <p class = "internal-sub-head">{{this.exclusive_paras[0] | slice : 0 : 500}}</p>
+                </div>
+              </div>
+          </div>
+          <div class="internal2" fxFlex.lt-md="100%" fxFlex.gt-sm="30%" class="right-screen">
+            <div fxLayout="column" class="right-side-updates one-section">
+              <h5 class="all-head">covid-19 top stories</h5>
+              <ul fxLayout="column">
+                <div *ngFor="let single_top_story of top_stories; let i = index ">
+                  <div *ngIf="i < 6">
+                    <li>
+                      <a href ="{{single_top_story['href_link']}}">
+                        <div *ngIf="single_top_story['impact_feature']" style="font-size: 10px; font-weight: bold">Impact feature</div>
+                            <!-- <p class="time-firstscreen">5 hours ago</p> -->
+                            <p class="time-firstscreen">{{single_top_story['created_at'] |  date:'medium'}}</p>
+
+                            <!-- <p class="internal-dr-name">{{single_top_story['sub_headline']}}</p> -->
+                            <p class="internal-updates-head"> {{single_top_story['headline']}}</p>
+                      </a>
+                    </li>
+                  </div>
+                </div>
+              </ul>
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="new-screen2">
+    <div class="container">
+      <div fxLayout.lt-md="column" fxLayout.gt-sm="row" fxLayoutGap.gt-sm="20px">
+        <div fxFlex.lt-md="100%" fxFlex.gt-sm="33.33%" fxLayout="column">
+          <div fxLayout="column" class="internal3 one-section">
+            <h5 class="all-head">{{this.block1_category}}</h5>
+            <ng-template ngFor let-item [ngForOf]="block1_data" let-currentIndex="index">
+              <div *ngIf="currentIndex < 1">
+                <a href="{{this.block1_link}}{{this.block1_data[currentIndex]['slug']}}" style="padding-bottom: 15px;">
+                  <div fxLayout="column" class="brdr-btm">
+                    <div class="mrg-after-imgvid">                  
+                        <img src="{{block1_data[currentIndex]['image_url']}}" style="width:100%">
+                    </div>
+                    <div fxLayout="column">
+                      <p class="internal-dr-name">{{block1_data[currentIndex]['sub_headline']}}</p>
+                      <p class="internal-updates-head">{{block1_data[currentIndex]['headline']}}</p>
+                      <!-- <p class="internal-para">
+                    {{block1_data[currentIndex]['transcript_list'][0]['question'] | slice: 0 : 100}}...<a
+                    href="{{this.block1_link}}{{this.block2_data[currentIndex]['slug']}}" style="color:red;">Read
+                    More</a></p> -->
+                  </div>
+                  </div>
+                  </a>
+              </div>
+            </ng-template>            
+              <!-- <div fxLayout="column" class="brdr-btm"> -->
+                <!-- <div fxLayout.lt-sm="column" fxLayout.gt-xs="row" fxLayoutGap="16px"> -->
+                  <!-- <ng-template ngFor let-item [ngForOf]="block1_data" let-currentIndex="index+1">
+                    <div *ngIf="currentIndex < 2">
+                      <a href="{{this.block1_link}}{{this.block1_data[currentIndex]['slug']}}" style="padding-bottom: 15px;">
+                        <div fxLayout.lt-sm="column" fxLayout.gt-xs="row" fxlayoutGap.lt-sm="8px" fxLayoutGap.gt-xs="8px">
+                          <div fxFlex.lt-sm="100%" fxFlex.gt-xs="30%">
+                            <img src="{{block1_data[currentIndex]['image_url']}}" style="width:100%">
+                          </div>
+                          <div fxFlex.lt-sm="100%" fxFlex.gt-xs="70%">
+                            <p class="internal-dr-name">{{block1_data[currentIndex]['sub_headline']}}</p>
+                            <p class="internal-updates-head">{{block1_data[currentIndex]['headline']}}</p>
+                          </div>
+                        </div>
+                      </a>
+                  </div>
+                  </ng-template> -->
+                <!-- </div> -->
+            <!-- </div> -->
+            <!-- <ul fxLayout="column"> -->
+              <!-- <div ngFor let-item [ngForOf]="block1_data" let-i="index"> -->
+                <!-- <ng-template ngFor let-item [ngForOf]="block1_data" let-i="index+2">
+
+                <div *ngIf="i < 5">
+                  <li class="brdr-btm">
+                      <a href ="{{block1_data[i]['href_link']}}">
+                          <p class="internal-dr-name">{{block1_data[i]['sub_headline']}}
+                          </p>
+                          <p class="internal-updates-head">{{block1_data[i]['headline']}}</p>
+                      </a>
+                  </li>
+                </div>
+              </ng-template> -->
+            <!-- </ul> -->
+        </div>
+        </div>
+        <!-- 2nd column -->
+        <!-- <div fxFlex.lt-md="100%" fxFlex.gt-sm="33.33%" fxLayout="column">
+          <div fxLayout="column" class="internal3 one-section">
+            <h5 class="all-head">{{block2_category}}</h5>
+            <ul fxLayout="column">
+              <div *ngFor="let single_top_story of block2_data; let i = index ">
+                <div *ngIf="i < 1">
+                  <li>
+                      <a href ="{{single_top_story['href_link']}}">
+                        <div class="mrg-after-imgvid">
+                          <img src="{{single_top_story['image_url']}}" style="width:100%">
+                        </div>
+                          <p class="internal-dr-name">{{single_top_story['sub_headline']}}
+                          </p>
+                          <p class="internal-updates-head">{{single_top_story['headline']}}</p>
+                      </a>
+                  </li>
+                </div>
+              </div>
+            </ul>
+
+            <ul fxLayout="column">
+                <ng-template ngFor let-item [ngForOf]="block2_data" let-i="index+1">
+
+                <div *ngIf="i < 2">
+                  <li>
+                      <a href ="{{block2_data[i]['href_link']}}">
+                        <div fxLayout="row" fxLayoutGap="8px">
+                          <div fxFlex="30%">
+                            <img src="{{block2_data[i]['image_url']}}" style="width:100%">
+                          </div>
+                          <div fxFlex="70%">
+                            <p class="internal-dr-name">{{block2_data[i]['sub_headline']}}
+                            </p>
+                            <p class="internal-updates-head">{{block2_data[i]['headline']}}</p>
+                          </div>
+                        </div>
+                      </a>
+                  </li>
+                </div>
+                </ng-template>
+            </ul>
+            <ul fxLayout="column">
+                <ng-template ngFor let-item [ngForOf]="block2_data" let-i="index+2">
+
+                <div *ngIf="i < 5">
+                  <li>
+                      <a href ="{{block2_data[i]['href_link']}}">
+                          <p class="internal-dr-name">{{block2_data[i]['sub_headline']}}
+                          </p>
+                          <p class="internal-updates-head">{{block2_data[i]['headline']}}</p>
+                      </a>
+                  </li>
+                </div>
+                </ng-template>
+            </ul>
+        </div>
+        </div> -->
+        <!-- screen 2 ends -->
+        <div fxFlex.lt-md="100%" fxFlex.gt-sm="40%" fxLayout="column">
+          <div fxLayout="column">
+           
+            <div fxLayout="column" class="one-section one-section-des">
+              <h5 class="all-head"><span class="circle red"></span>LIVE UPDATES</h5>
+              <a [routerLink]="['/'+d['f_category'].toLowerCase()+'/live-updates']">
+                <div fxLayout="row" fxLayoutGap="8px">
+                  <div fxFlex="30%">
+                    <img src="{{d['f_image_url']}}">
+                  </div>
+                  <div fxFlex="70%">
+                    <p class="internal-updates-head"><span style="color: #e27520;">Coronavirus LIVE</span>:
+                      {{d['f_title']}}</p>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div fxLayout="column" class="one-section">
+              <h5 class="all-head">other live stories</h5>
+              <div class="row" style="padding-top: 0px;margin:0px;">
+                <div *ngFor="let d of data_we_need; let i = index">
+                <div fxLayout="row">
+                <div *ngIf="i < 2">
+                <ul fxLayout="column">
+                <li
+                style="margin-top: 0px !important;border-top: 0px !important;padding-top: 0px !important;">
+                <a [routerLink]="['/'+d['f_category'].toLowerCase()+'/live-updates']">
+                <div class="mrg-after-imgvid">
+                  <p class="internal-updates-head"><span style="color: #e27520;">{{d['f_category']}} LIVE: </span> {{d['f_title'] }}</p>
+                <div class="clearfix"></div>
+                </div>
+               
+                </a></li>
+                </ul>
+                </div>
+                </div>
+                </div>
+               
+               
+                </div>
+            </div>
+          </div>
+        </div>
+
+        <div fxFlex.lt-md="100%" fxFlex.gt-sm="33.33%" fxLayout="column">
+          <div fxLayout="column">
+            <h5 class="all-head">streaming now</h5>
+            <div fxLayout="column" class="brdr-btm">
+              <div class="mrg-after-imgvid">
+                <video class="img-resp"  (ended)="nextVideo()" *ngFor="let video of sources" style="width:100%" poster="https://storage.googleapis.com/web-assets/Coronavirus-2020/Shashank-Joshi/Shashank-03.jpg" controls>
+                <source [src]="video.src" type="video/mp4">
+                </video>
+              </div>
+              <p class="internal-dr-name">Dr. Shashank Joshi</p>
+              <p class="internal-updates-head">COVID-19: An in-depth Analysis with India's leading Diabetologist and Thought Leader</p>
+            </div>
+            <!-- <div fxLayout="column" class="brdr-btm"> -->
+                <!-- <div fxLayout.lt-sm="column" fxLayout.gt-xs="row" fxLayoutGap.lt-sm="8px" fxLayoutGap.gt-xs="8px">
+                  <ng-template ngFor let-item [ngForOf]="block3_data" let-i="index+1">
+
+                  <div fxFlex.lt-sm="100%" fxFlex.gt-xs="30%">
+                   <img src="{{block3_data[i]['image_url']}}">
+
+                      
+                  </div>
+                  <div fxFlex.lt-sm="100%" fxFlex.gt-xs="70%">
+
+                    <p class="internal-dr-name">{{block3_data[i]['sub_headline']}}</p>
+                    <p class="internal-updates-head">{{block3_data[i]['headline']}}</p>
+                 
+
+                  </div>
+            </ng-template>
+                </div> -->
+            <!-- </div> -->
+            <!-- <div fxLayout="column">
+              <ul fxLayout="column">
+                
+                  <ng-template ngFor let-item [ngForOf]="block3_data" let-i="index">
+
+                  <div *ngIf="i < 4">
+                    <li class="brdr-btm">
+                        <a href ="{{block3_data[i]['href_link']}}">
+                            <p class="internal-dr-name">{{block3_data[i]['sub_headline']}}
+                            </p>
+                            <p class="internal-updates-head">{{block3_data[i]['headline']}}</p>
+                        </a>
+                    </li>
+                  </div>
+                </ng-template>
+              </ul>
+            </div> -->
+        </div>
+         
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- <div class="new-screen2">
+    <div class="container">
+      <div fxLayout.lt-md="column" fxLayout.gt-sm="row" fxLayoutGap.gt-sm="20px">
+        <div fxFlex.lt-md="100%" fxFlex.gt-sm="30%">
+          <div fxLayout="column" class="internal3 one-section">
+            <h5 class="all-head">{{block4_category}}</h5>
+            <ng-template ngFor let-item [ngForOf]="block4_data" let-currentIndex="index">
+              <div *ngIf="currentIndex < 1">
+                <a href="{{this.block4_link}}{{this.block4_data[currentIndex]['slug']}}" style="padding-bottom: 15px;">
+                  <div fxLayout="column" class="brdr-btm">
+                    <div fxLayout="column" class="mrg-after-imgvid">
+                      <p class="internal-dr-name">{{block4_data[currentIndex]['sub_headline']}}</p>
+                      <p class="internal-updates-head">{{block4_data[currentIndex]['headline']}}</p>
+                      <p class="internal-para">
+                    {{block4_data[currentIndex]['transcript_list'][0]['question'] | slice: 0 : 100}}...<a
+                    href="{{this.block4_link}}{{this.block4_data[currentIndex]['slug']}}" style="color:red;">Read
+                    More</a></p>
+                  </div>
+                    <div>                  
+                        <img src="{{block4_data[currentIndex]['image_url']}}" style="width:100%">
+                    </div>
+                    
+                  </div>
+                  </a>
+              </div>
+            </ng-template>
+            </div>
+        </div>
+        <div fxFlex.lt-md="100%" fxFlex.gt-sm="40%" fxLayout="column">
+          <div fxLayout="column">
+           
+            <div fxLayout="column" class="one-section one-section-des">
+              <h5 class="all-head"><span class="circle red"></span>LIVE UPDATES</h5>
+              <a [routerLink]="['/'+d['f_category'].toLowerCase()+'/live-updates']">
+                <div fxLayout="row" fxLayoutGap="8px">
+                  <div fxFlex="30%">
+                    <img src="{{d['f_image_url']}}">
+                  </div>
+                  <div fxFlex="70%">
+                    <p class="internal-updates-head"><span style="color: #e27520;">Coronavirus LIVE</span>:
+                      {{d['f_title']}}</p>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div fxLayout="column" class="one-section">
+              <h5 class="all-head">other live stories</h5>
+              <div class="row" style="padding-top: 0px;margin:0px;">
+                <div *ngFor="let d of data_we_need; let i = index">
+                <div fxLayout="row">
+                <div *ngIf="i < 2">
+                <ul fxLayout="column">
+                <li
+                style="margin-top: 0px !important;border-top: 0px !important;padding-top: 0px !important;">
+                <a [routerLink]="['/'+d['f_category'].toLowerCase()+'/live-updates']">
+                <div class="mrg-after-imgvid">
+                  <p class="internal-updates-head"><span style="color: #e27520;">{{d['f_category']}} LIVE: </span> {{d['f_title'] }}</p>
+                <div class="clearfix"></div>
+                </div>
+               
+                </a></li>
+                </ul>
+                </div>
+                </div>
+                </div>
+               
+               
+                </div>
+            </div>
+          </div>
+        </div>
+        <div fxFlex.lt-md="100%" fxFlex.gt-sm="30%">
+          <div fxLayout="column">
+            <h5 class="all-head">Podcast</h5>
+
+            <ng-template ngFor let-item [ngForOf]="createRange(3)" let-currentIndex="index+1">
+
+            <div class="item item-3" style="margin-top: 10px;">
+            <ul class="live-list">
+            <li style="border-top: none !important;margin-top:0px !important;padding-top: 0px !important;">
+                <div fxLayout="row" fxLayoutGap="8px">
+                  <div fxFlex="30%">
+                    <img src="{{audio_list5[currentIndex]['image_url']}}" style="width:100%">
+                  </div>
+                  <div fxFlex="70%">
+                    <p class="internal-dr-name">{{audio_list5[currentIndex]['sub_headline']}}</p>
+                    <p class="internal-updates-head">{{audio_list5[currentIndex]['headline']}}</p>
+                  </div>
+                </div>        
+            </li>
+            </ul>
+            </div>
+            </ng-template>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div> -->
+  <!-- insights starting here -->
+  <div class="new-screen2">
+    <div class="container">
+      <div fxLayout.lt-md="column" fxLayout.gt-sm="row" fxLayoutGap.gt-sm="20px">
+        <div fxFlex.lt-md="100%" fxFlex.gt-sm="33.33%" fxLayout="column">
+          <div fxLayout="column" class="internal3 one-section">
+            <h5 class="all-head">{{this.block2_category}}</h5>
+            <ng-template ngFor let-item [ngForOf]="block2_data" let-currentIndex="index">
+              <div *ngIf="currentIndex < 1">
+                <a href="{{this.block2_link}}{{this.block2_data[currentIndex]['slug']}}" style="padding-bottom: 15px;">
+                  <div fxLayout="column" class="brdr-btm">
+                    <div class="mrg-after-imgvid">                  
+                        <img src="{{block2_data[currentIndex]['image_url']}}" style="width:100%">
+                    </div>
+                    <div fxLayout="column">
+                      <p class="internal-dr-name">{{block2_data[currentIndex]['sub_headline']}}</p>
+                      <p class="internal-updates-head">{{block2_data[currentIndex]['headline']}}</p>
+                      <p class="internal-para">
+                    {{block2_data[currentIndex]['transcript_list'][currentIndex]['question'] | slice: 0 : 100}}...<a
+                    href="{{this.block2_link}}{{this.block2_data[currentIndex]['slug']}}" style="color:red;">Read
+                    More</a></p>
+                  </div>
+                  </div>
+                  </a>
+              </div>
+            </ng-template>            
+              <div fxLayout="column" class="brdr-btm">
+                <div fxLayout.lt-sm="column" fxLayout.gt-xs="row" fxLayoutGap="16px">
+                  <ng-template ngFor let-item [ngForOf]="block2_data" let-currentIndex="index+1">
+                    <div *ngIf="currentIndex < 2">
+
+                      <a href="{{this.block2_link}}{{this.block2_data[currentIndex]['slug']}}" style="padding-bottom: 15px;">
+                        <div fxLayout.lt-sm="column" fxLayout.gt-xs="row" fxlayoutGap.lt-sm="8px" fxLayoutGap.gt-xs="8px">
+                          <div fxFlex.lt-sm="100%" fxFlex.gt-xs="30%">
+                            <img src="{{block2_data[currentIndex]['image_url']}}" style="width:100%">
+                          </div>
+                          <div fxFlex.lt-sm="100%" fxFlex.gt-xs="70%">
+                            <p class="internal-dr-name">{{block2_data[currentIndex]['sub_headline']}}</p>
+                            <p class="internal-updates-head">{{block2_data[currentIndex]['headline']}}</p>
+                          </div>
+                        </div>
+                      </a>
+                  </div>
+                  </ng-template>
+                </div>
+            </div>
+            <!-- ------------------- -->
+
+            <ul fxLayout="column">
+              <ng-template ngFor let-item [ngForOf]="block2_data" let-currentIndex="index+2">
+                <div *ngIf="currentIndex < 3">
+                  <!-- <h1>am i  </h1> -->
+                  <li class="brdr-btm">
+                    <a href="{{this.block2_link}}{{this.block2_data[currentIndex]['slug']}}" style="padding-bottom: 15px;">
+
+                      <p class="internal-dr-name">{{block2_data[currentIndex]['sub_headline']}}</p>
+                      <p class="internal-updates-head">{{block2_data[currentIndex]['headline']}}</p>
+                      </a>
+                  </li>
+                </div>
+
+</ng-template>
+            </ul>
+        </div>
+        </div>
+                <!-- col2 start-->
+                <div fxFlex.lt-md="100%" fxFlex.gt-sm="33.33%" fxLayout="column">
+                  <div fxLayout="column" class="internal3 one-section">
+                    <h5 class="all-head">{{this.block3_category}}</h5>
+                    <ng-template ngFor let-item [ngForOf]="block3_data" let-currentIndex="index">
+                      <div *ngIf="currentIndex < 1">
+                        <a href="{{this.block3_link}}{{this.block3_data[currentIndex]['slug']}}" style="padding-bottom: 15px;">
+                          <div fxLayout="column" class="brdr-btm">
+                            <div class="mrg-after-imgvid">                  
+                                <img src="{{block3_data[currentIndex]['image_url']}}" style="width:100%">
+                            </div>
+                            <div fxLayout="column">
+                              <p class="internal-dr-name">{{block3_data[currentIndex]['sub_headline']}}</p>
+                              <p class="internal-updates-head">{{block3_data[currentIndex]['headline']}}</p>
+                              <p class="internal-para">
+                            {{block3_data[currentIndex]['transcript_list'][currentIndex]['question'] | slice: 0 : 100}}...<a
+                            href="{{this.block3_link}}{{this.block3_data[currentIndex]['slug']}}" style="color:red;">Read
+                            More</a></p>
+                          </div>
+                          </div>
+                          </a>
+                      </div>
+                    </ng-template>            
+                      <div fxLayout="column" class="brdr-btm">
+                        <div fxLayout.lt-sm="column" fxLayout.gt-xs="row" fxLayoutGap="16px">
+                          <ng-template ngFor let-item [ngForOf]="block3_data" let-currentIndex="index+1">
+                            <div *ngIf="currentIndex < 2">
+      
+                              <a href="{{this.block3_link}}{{this.block3_data[currentIndex]['slug']}}" style="padding-bottom: 15px;">
+                                <div fxLayout.lt-sm="column" fxLayout.gt-xs="row" fxlayoutGap.lt-sm="8px" fxLayoutGap.gt-xs="8px">
+                                  <div fxFlex.lt-sm="100%" fxFlex.gt-xs="30%">
+                                    <img src="{{block3_data[currentIndex]['image_url']}}" style="width:100%">
+                                  </div>
+                                  <div fxFlex.lt-sm="100%" fxFlex.gt-xs="70%">
+                                    <p class="internal-dr-name">{{block3_data[currentIndex]['sub_headline']}}</p>
+                                    <p class="internal-updates-head">{{block3_data[currentIndex]['headline']}}</p>
+                                  </div>
+                                </div>
+                              </a>
+                          </div>
+                          </ng-template>
+                        </div>
+                    </div>
+                    <!-- ------------------- -->
+      
+                    <ul fxLayout="column">
+                      <ng-template ngFor let-item [ngForOf]="block2_data" let-currentIndex="index+2">
+                        <div *ngIf="currentIndex < 3">
+                          <div *ngIf="block2_data[currentIndex]['headline']!=['']"> 
+
+                          <!-- <h1>am i  </h1> -->
+                          <li class="brdr-btm">
+                            <a href="{{this.block2_link}}{{this.block2_data[currentIndex]['slug']}}" style="padding-bottom: 15px;">
+      
+                              <p class="internal-dr-name">{{block2_data[currentIndex]['sub_headline']}}</p>
+                              <p class="internal-updates-head">{{block2_data[currentIndex]['headline']}}</p>
+                              </a>
+                          </li>
+                          </div>
+                        </div>
+      
+      </ng-template>
+                    </ul>
+                </div>
+                </div>
+                <!-- col2 end -->
+<!-- col3 starts -->
+<div fxFlex.lt-md="100%" fxFlex.gt-sm="33.33%" fxLayout="column">
+<div fxLayout="column" class="internal3 one-section">
+  <h5 class="all-head">{{this.block4_category}}</h5>
+  <ng-template ngFor let-item [ngForOf]="block4_data" let-currentIndex="index">
+    <div *ngIf="currentIndex < 1">
+      <a href="{{this.block4_link}}{{this.block4_data[currentIndex]['slug']}}" style="padding-bottom: 15px;">
+        <div fxLayout="column" class="brdr-btm">
+          <div class="mrg-after-imgvid" *ngIf="block4_data[currentIndex]['image_url']!=['']">                  
+              <img src="{{block4_data[currentIndex]['image_url']}}" style="width:100%">
+          </div>
+          <div fxLayout="column">
+            <p class="internal-dr-name">{{block4_data[currentIndex]['sub_headline']}}</p>
+            <p class="internal-updates-head">{{block4_data[currentIndex]['headline']}}</p>
+            <p class="internal-para">
+          {{block4_data[currentIndex]['transcript_list'][currentIndex]['question'] | slice: 0 : 100}}...<a
+          href="{{this.block4_link}}{{this.block4_data[currentIndex]['slug']}}" style="color:red;">Read
+          More</a></p>
+        </div>
+        </div>
+        </a>
+    </div>
+  </ng-template>            
+    <div fxLayout="column" class="brdr-btm">
+      <div fxLayout.lt-sm="column" fxLayout.gt-xs="row" fxLayoutGap="16px">
+        <ng-template ngFor let-item [ngForOf]="block4_data" let-currentIndex="index+1">
+          <div *ngIf="currentIndex < 2 && block4_data[currentIndex]['headline']!=['']" >
+
+            <a href="{{this.block3_link}}{{this.block4_data[currentIndex]['slug']}}" style="padding-bottom: 15px;">
+              <div fxLayout.lt-sm="column" fxLayout.gt-xs="row" fxlayoutGap.lt-sm="8px" fxLayoutGap.gt-xs="8px">
+                <div fxFlex.lt-sm="100%" fxFlex.gt-xs="30%">
+                  <img src="{{block4_data[currentIndex]['image_url']}}" style="width:100%">
+                </div>
+                <div fxFlex.lt-sm="100%" fxFlex.gt-xs="70%">
+                  <p class="internal-dr-name">{{block4_data[currentIndex]['sub_headline']}}</p>
+                  <p class="internal-updates-head">{{block4_data[currentIndex]['headline']}}</p>
+                </div>
+              </div>
+            </a>
+        </div>
+        </ng-template>
+      </div>
+  </div>
+  <!-- ------------------- -->
+
+  <ul fxLayout="column">
+    <ng-template ngFor let-item [ngForOf]="block4_data" let-currentIndex="index+2">
+      <div *ngIf="currentIndex < 3" >
+        <!-- <h1>am i  </h1> -->
+        <div *ngIf="block4_data[currentIndex]['headline']!=['']"> 
+        <li class="brdr-btm">
+          <a href="{{this.block4_link}}{{this.block4_data[currentIndex]['slug']}}" style="padding-bottom: 15px;">
+
+            <p class="internal-dr-name">{{block4_data[currentIndex]['sub_headline']}}</p>
+            <p class="internal-updates-head">{{block4_data[currentIndex]['headline']}}</p>
+            </a>
+        </li>
+      </div>
+      </div>
+
+</ng-template>
+  </ul>
+</div>
+</div>
+
+<!-- col4 3ends -->
+
+
+
+        <!-- col3 start-->
+      </div>
+    </div>
+  </div>
+  
+  <div class="new-screen4">
+    <div class="container" fxLayout="column">
+      <h5 class="all-head">Insights</h5>
+      <div fxLayout.lt-md="column" fxLayout.gt-sm="row" fxLayoutGap.lt-sm="0px" fxLayoutGap.lt-md="20px" fxLayoutGap.gt-sm="20px">
+        <div fxFlex.lt-md="100%" fxFlex.gt-sm="50%" fxLayout="column" fxLayoutGap.lt-sm="0px" fxLayoutGap.lt-md="20px" fxLayoutGap.gt-sm="20px">
+          <div fxLayout.lt-sm="column" fxLayout.gt-xs="row" fxLayoutGap.gt-xs="20px">
+            <ng-template ngFor let-item [ngForOf]="createRange(1)" let-currentIndex="index">
+  
+            <div fxFlex.lt-sm="100%" fxFlex.gt-xs="60%" class="mob-brdr-btm">
+              <!-- <a class="testvideo" [routerLink]="['/'+the_interview['data']['the-interview'][currentIndex]['event']+'/'+the_interview['data']['the-interview'][currentIndex]['category']+'/'+the_interview['data']['the-interview'][currentIndex]['slug']]"> -->
+                <a class="testvideo" href="https://insights.therightdoctors.com/{{blogdata[currentIndex]['category']}}/the-interview/{{blogdata[currentIndex]['slug']}}">
+
+                <div class="mrg-after-imgvid">
+                  <img src="{{blogdata[currentIndex]['image_url'] }}"  style="width:100%"/>
+                </div>
+                </a>
+                <p class="internal-updates-head">{{blogdata[currentIndex]['headline'] }}</p>
+            </div>
+  </ng-template>
+            <div fxFlex.lt-sm="100%" fxFlex.gt-xs="40%" class="deskbg-pad">
+              <ul>
+                <ng-template ngFor let-item [ngForOf]="createRange(1)" let-currentIndex="index+1">
+                  <!-- <a class="testvideo" [routerLink]="['/'+the_interview['data']['the-interview'][currentIndex]['event']+'/'+the_interview['data']['the-interview'][currentIndex]['category']+'/'+the_interview['data']['the-interview'][currentIndex]['slug']]"> -->
+                    <a class="testvideo" href="https://insights.therightdoctors.com/{{blogdata[currentIndex]['category']}}/the-interview/{{blogdata[currentIndex]['slug']}}">
+
+                    <li>
+
+                    <p class="internal-dr-name">{{blogdata[currentIndex]['sub_headline'] }}</p>
+                    <p class="internal-updates-head">{{blogdata[currentIndex]['headline'] }}</p>
+                <!-- <div *ngIf="blogdata[currentIndex]['transcript']==['']">   <p class="descrip">TheRightDoctors.com spoke to the {{blogdata[currentIndex]['sub_headline'] }}</p></div> -->
+                  <div *ngIf="blogdata[currentIndex]['transcript']!=['']"> <p class="descrip">{{blogdata[currentIndex]['transcript']  | slice: 0:100 }}</p></div>
+                  </li>
+                  </a>
+                </ng-template>
+              </ul>
+            </div>
+          </div>
+          <div fxLayout.lt-sm="column" fxLayout.gt-xs="row" fxLayoutGap.gt-xs="20px">
+            <div fxFlex.lt-sm="100%" fxFlex.gt-xs="40%" class="deskbg-pad">
+              <ul>
+                <ng-template ngFor let-item [ngForOf]="createRange(1)" let-currentIndex="index+2">
+                  <!-- <a class="testvideo" [routerLink]="['/'+the_interview['data']['the-interview'][currentIndex]['event']+'/'+the_interview['data']['the-interview'][currentIndex]['category']+'/'+the_interview['data']['the-interview'][currentIndex]['slug']]"> -->
+                    <a class="testvideo" href="https://insights.therightdoctors.com/{{blogdata[currentIndex]['category']}}/the-interview/{{blogdata[currentIndex]['slug']}}">
+
+                    <li>
+
+                    <p class="internal-dr-name">{{blogdata[currentIndex]['sub_headline'] }}</p>
+                    <div *ngIf="blogdata[currentIndex]['transcript']!=['']"> <p class="descrip">{{blogdata[currentIndex]['transcript']  | slice: 0:100 }}</p></div>
+                  </li>
+                  </a>
+                </ng-template>
+              </ul>
+            </div>
+            <ng-template ngFor let-item [ngForOf]="createRange(1)" let-currentIndex="index+3">
+
+            <div fxFlex.lt-sm="100%" fxFlex.gt-xs="60%" class="mob-brdr-btm">
+              <a class="testvideo" href="https://insights.therightdoctors.com/{{blogdata[currentIndex]['category']}}/the-interview/{{blogdata[currentIndex]['slug']}}">
+                <div class="mrg-after-imgvid">
+                  <img src="{{blogdata[currentIndex]['image_url'] }}"  style="width:100%"/>
+                </div>
+              </a>
+              <p class="internal-updates-head">{{blogdata[currentIndex]['headline']}}</p>
+            </div>
+            </ng-template>
+          </div>
+        </div>
+  
+        <div fxFlex.lt-md="100%" fxFlex.gt-sm="50%">
+            <div fxLayout.lt-sm="column" fxLayout.gt-xs="row" fxLayoutGap.gt-xs="20px">
+              <div fxFlex.lt-sm="100%" fxFlex.gt-sm="50%">
+                <ul>
+                  <ng-template ngFor let-item [ngForOf]="createRange(6)" let-currentIndex="index+4">
+                    <a class="testvideo" href="https://insights.therightdoctors.com/{{blogdata[currentIndex]['category']}}/the-interview/{{blogdata[currentIndex]['slug']}}">
+
+                    <li>
+  
+                      <div class="brdr-btm" fxLayout="column">
+                        <p class="internal-dr-name">{{blogdata[currentIndex]['sub_headline'] }}</p>
+                        <p class="internal-updates-head">{{blogdata[currentIndex]['headline'] }}</p>
+                      </div>
+                    </li>
+                    </a>
+                  </ng-template>
+                </ul>
+              </div>
+              <div fxFlex.lt-sm="100%" fxFlex.gt-sm="50%" fxLayout="column">
+                <ng-template ngFor let-item [ngForOf]="createRange(1)" let-currentIndex="index+5">
+  
+                <div class="brdr-btm">
+                  <a class="testvideo" href="https://insights.therightdoctors.com/{{blogdata[currentIndex]['category']}}/the-interview/{{blogdata[currentIndex]['slug']}}">
+                    <div class="mrg-after-imgvid">
+                      <img src="{{blogdata[currentIndex]['image_url'] }}"  style="width:100%"/>
+                    </div>
+                  </a>
+                  <p class="internal-updates-head">{{blogdata[currentIndex]['headline'] }}</p>
+                </div>
+                </ng-template>
+                <ng-template ngFor let-item [ngForOf]="createRange(1)" let-currentIndex="index+6">
+  
+                <div class="brdr-btm">
+                  <a class="testvideo" href="https://insights.therightdoctors.com/{{blogdata[currentIndex]['category']}}/the-interview/{{blogdata[currentIndex]['slug']}}">
+                    <div class="mrg-after-imgvid">
+                      <img src="{{blogdata[currentIndex]['image_url'] }}" alt="{{blogdata[currentIndex]['image_alt'] }}" style="width:100%"/>
+                    </div>
+                  </a>
+                  <p class="internal-updates-head">{{blogdata[currentIndex]['headline'] }}</p>
+                </div>
+                </ng-template>
+              </div>
+            </div>
+        </div> 
+      </div>
+      <a class="testvideo" href="https://insights.therightdoctors.com/">    <button mat-flat-button class="view-all-btn">View all</button></a>
+    </div>
+  </div>
+  
+
+  <!-- insights ending here -->
+
+
+  <!-- podcast starts here -->
+  
+
+
+  <!-- podcast ends here -->
+
+  <!-- new podcast starts here -->
+
+
+
+  <div class="new-screen8">
+    <div class="container" fxLayout="column">
+      <h5 class="all-head">Trending Podcasts</h5>
+      <div fxLayout.lt-md="column" fxLayout.gt-sm="row" fxLayoutGap.gt-sm="20px">
+        <div fxFlex.lt-md="100%" fxFlex.gt-sm="50%">
+            <div fxLayout.lt-sm="column" fxLayout.gt-xs="row" fxLayoutGap.gt-xs="20px">
+              <ng-template ngFor let-item [ngForOf]="createRange(2)" let-currentIndex="index">
+                <div fxFlex.lt-sm="100%" fxFlex.gt-xs="50%">
+                  <a class="testvideo" href="https://podcast.therightdoctors.com/{{audio_list5[currentIndex]['slug']}}" >
+                    <div fxLayout="column" class="mob-brdr-btm">
+                      <div class="mrg-after-imgvid">
+                        <img src="{{audio_list5[currentIndex]['image_url'] }}"  style="width:100%"/>
+                      </div>
+                      <ul>
+                        <li>
+                          <p class="internal-dr-name">{{audio_list5[currentIndex]['sub_headline']}}</p>
+                          <p class="internal-updates-head"> {{audio_list5[currentIndex]['headline'] }}</p>
+                        </li>
+                      </ul>
+                    </div>
+                  </a>
+                </div>
+              </ng-template>
+            </div>
+        </div>
+        <div fxFlex.lt-md="100%" fxFlex.gt-sm="50%">
+          <div fxLayout.lt-sm="column" fxLayout.gt-xs="row" fxLayoutGap.gt-xs="20px">
+            <div fxFlex.lt-sm="100%" fxFlex.gt-xs="50%">
+              <ul>
+                <ng-template ngFor let-item [ngForOf]="createRange(4)" let-currentIndex="index+3">
+                  <a class="testvideo" href="https://podcast.therightdoctors.com/{{audio_list5[currentIndex]['slug']}}" >
+                    <li class="brdr-btm-red">
+                        <p class="internal-dr-name">{{audio_list5[currentIndex]['sub_headline'] }}</p>
+                        <p class="internal-updates-head"> {{audio_list5[currentIndex]['headline'] }}</p>
+                      </li>
+                    </a>
+                </ng-template>
+              </ul>
+            </div>
+            <div fxFlex.lt-sm="100%" fxFlex.gt-xs="50%">
+              <ul>
+                <ng-template ngFor let-item [ngForOf]="createRange(4)" let-currentIndex="index+8">
+                  <a class="testvideo" href="https://podcast.therightdoctors.com/{{audio_list5[currentIndex]['slug']}}" >
+                    <li class="brdr-btm-red">
+                        <p class="internal-dr-name">{{audio_list5[currentIndex]['sub_headline'] }}</p>
+                        <p class="internal-updates-head"> {{audio_list5[currentIndex]['headline']  }}</p>
+                      </li>
+                    </a>
+                </ng-template>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a class="testvideo" [routerLink]="['/one-more-thing']">
+        <button mat-flat-button class="view-all-btn">View all</button></a>
+    </div>
+  </div>
+
+  <!-- new podcast ends here -->
+  <div class="new-screen3">
+    <div class="container" fxLayout="column">
+      <h5 class="all-head">TV: Features</h5>
+      <div fxLayout="column" fxLayoutGap="16px">
+        <div fxLayout.lt-md="column" fxLayout.gt-sm="row" class="desk-brdr-btm" fxLayoutGap.gt-sm="20px" fxLayoutGap.lt-md="16px">
+          <div fxFlex="100%">
+            <div fxLayout="column">
+              
+              <div fxLayout="column">
+                <ul>
+                  <div fxLayout.lt-md="column" fxLayout.gt-sm="row" fxLayoutGap.gt-sm="20px" fxLayoutGap.lt-md="8px">
+                    <ng-template ngFor let-item [ngForOf]="createRange(4)" let-currentIndex="index">
+                      
+                      <div fxFlex.lt-md="100%" fxFlex.gt-sm="25%"  class="mob-brdr-btm">
+    
+                      <a href="https://tv.therightdoctors.com/covid-19/features/{{intr[currentIndex]['slug']}}">
+
+<!-- <div> {{ intr[currentIndex]['slug'] }}   </div> -->
+
+                      <li fxLayout="column">
+                        <div class="mrg-after-imgvid">
+                          <img src="{{intr[currentIndex]['image_url']}}" alt="{{intr[currentIndex]['image_alt']}}" style="width:100%" />
+                        </div>
+                        <div>
+                          <p class="internal-dr-name">{{intr[currentIndex]['sub_headline']}}</p>
+                          <p class="internal-updates-head">{{intr[currentIndex]['headline']}}</p>
+                         
+                        </div>
+                       
+                      </li>
+                    </a>
+                  </div>
+                  </ng-template>
+                </div>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <!-- <div fxFlex.lt-md="100%" fxFlex.gt-sm="23.5%">
+            <div fxLayout="column" class="mob-brdr-btm">
+              <a class="testvideo"
+              [routerLink]="['/'+audio_list1[1]['event']+'/'+audio_list1[1]['category']+'/'+audio_list1[1]['slug']]">
+              <div class="mrg-after-imgvid">
+                <img src="{{audio_list1[1]['image_url']}}" alt="{{audio_list1[1]['image_alt']}}" style="width:100%">
+              </div>
+              </a>
+              <a class="testvideo"
+              [routerLink]="['/'+audio_list1[1]['event']+'/'+audio_list1[1]['category']+'/'+audio_list1[1]['slug']]">
+             
+              <ul fxLayout="column">
+              <li fxLayout="column">                
+                <p class="internal-dr-name">{{audio_list1[1]['sub_headline']}}</p>
+                <p class="internal-updates-head">{{audio_list1[1]['headline']}}</p>
+              </li>
+              </ul>
+              </a>
+            </div>
+          </div> -->
+        </div>
+        <div fxLayout.lt-md="column" fxLayout.gt-sm="row" fxLayoutGap.gt-sm="20px" fxLayoutGap.lt-sm="0px" fxLayoutGap.lt-md="8px">
+                <div fxFlex.lt-md="100%" fxFlex.gt-sm="50%" fxLayout.lt-sm="column" fxLayout.gt-xs="row" fxLayoutGap.lt-sm="16px"  fxLayoutGap.gt-xs="20px">
+                  <!-- <div fxFlex.lt-sm="100%" fxFlex.gt-xs="50%">
+                    <div fxLayout="column"  class="mob-brdr-btm">
+                      <a class="testvideo" [routerLink]="['/'+corona_v[0]['event']+'/'+corona_v[1]['category']+'/'+corona_v[1]['slug']]">
+                        
+                        <div class="mrg-after-imgvid">
+                          <img src="{{corona_v[1]['image_url']}}" alt="{{corona_v[1]['image_alt']}}" style="width:100%" />
+                        </div>
+                      </a>
+                      <p class="internal-updates-head"> {{corona_v[1]['headline']}}</p>
+                    </div>
+                  </div> -->
+                  <ng-template ngFor let-item [ngForOf]="createRange(2)" let-currentIndex="index+5">
+
+                  <div fxFlex.lt-sm="100%" fxFlex.gt-xs="50%">
+                    <div fxLayout="column"  class="mob-brdr-btm">
+                      <!-- <a class="testvideo" [routerLink]="['/'+corona_v[0]['event']+'/'+corona_v[0]['category']+'/'+corona_v[0]['slug']]"> -->
+                        <a href="https://tv.therightdoctors.com/covid-19/features/{{intr[currentIndex]['slug']}}">
+                      <div class="mrg-after-imgvid">
+                        <img src="{{intr[currentIndex]['image_url']}}" alt="{{intr[currentIndex]['image_alt']}}" style="width:100%" />
+                      </div>
+                      </a>
+                      <a href="https://tv.therightdoctors.com/covid-19/features/{{intr[currentIndex]['slug']}}">
+                     
+                      <ul fxLayout="column">
+                      <li fxLayout="column">
+                        <p class="internal-dr-name">{{intr[currentIndex]['sub_headline']}}</p>
+                        <p class="internal-updates-head">{{intr[currentIndex]['headline']}}</p>
+                      </li>
+                      </ul>
+                      </a>
+                    </div>
+                  </div>
+                  </ng-template>
+                </div>
+                <div fxLayout.lt-sm="column" fxLayout.gt-xs="row" fxFlex.lt-md="100%" fxFlex.gt-sm="50%" fxLayoutGap.lt-sm="0px" fxLayoutGap.gt-xs="20px">
+                  <div fxFlex.lt-sm="100%" fxFlex.gt-xs="50%">
+                    <div fxLayout="column" class="mrg-pad3">
+                      <ul fxLayout="column">
+                        <ng-template ngFor let-item [ngForOf]="createRange(3)" let-currentIndex="index+7">
+                          <a href="https://tv.therightdoctors.com/covid-19/features/{{intr[currentIndex]['slug']}}">
+
+                            <li fxLayout="column" class="brdr-btm">
+                          <p class="internal-dr-name">{{intr[currentIndex]['sub_headline']}}</p>
+                          <p class="internal-updates-head">{{intr[currentIndex]['headline']}}</p>
+                        </li>
+                        </a>
+                        </ng-template>
+                      </ul>
+                    </div>
+                  </div>
+                  <div fxFlex.lt-md="100%" fxFlex.gt-xs="50%">
+                    <div fxLayout="column">                      
+                      <ul fxLayout="column">
+                        <ng-template ngFor let-item [ngForOf]="createRange(3)" let-currentIndex="index+11">
+                          <a href="https://tv.therightdoctors.com/covid-19/features/{{intr[currentIndex]['slug']}}">
+                            <li fxLayout="column" class="brdr-btm">
+                        <p class="internal-dr-name">{{intr[currentIndex]['sub_headline']}}</p>
+                        <p class="internal-updates-head">{{intr[currentIndex]['headline']}}</p>
+                      </li>
+                      </a>
+                      </ng-template>
+                     
+                      </ul>
+                    </div>
+                  </div>
+           
+        </div>
+      </div>
+      </div>
+      <a href="https://tv.therightdoctors.com/">
+        <button mat-flat-button class="view-all-btn">View all</button></a>
+    </div>
+  </div>
+
+  <!-- images starts here -->
+
+
+  
+  <div class="new-screen6">
+    <div class="container" fxLayout="column">
+      <h5 class="all-head">Trending Images</h5>
+      <div fxLayout.lt-md="column" fxLayout.gt-sm="row" fxLayoutGap.gt-sm="20px">
+       
+        <ng-template ngFor let-item [ngForOf]="createRange(1)" let-currentIndex="index+10">
+  
+        
+        <div fxFlex.lt-md="100%" fxFlex.gt-sm="33.33%" class="md-brdr-btm inconv1">
+  
+          <a class="testvideo" href="https://images.therightdoctors.com/{{conv_image[currentIndex]['slug']}}">
+
+            <div class="mrg-after-imgvid">
+              <img src="{{conv_image[currentIndex]['image_url']}}" style="width:100%" alt="Dr. HK Chopra Dr. Mona Bhatia Dr. Ramakrishna"/>
+            </div>
+          </a>
+          <a class="testvideo" href="https://images.therightdoctors.com/{{conv_image[currentIndex]['slug']}}">
+            <p class="internal-updates-head">{{conv_image[currentIndex]['headline']}}</p>
+            <p class="internal-dr-name">{{conv_image[currentIndex]['sub_headline'] }}</p>
+
+          </a>
+        </div>
+       </ng-template>
+       
+       <ng-template ngFor let-item [ngForOf]="createRange(1)" let-currentIndex="index+11">
+        <div fxFlex.lt-md="100%" fxFlex.gt-sm="33.33%" class="md-brdr-btm inconv1">
+          <a class="testvideo" href="https://images.therightdoctors.com/{{conv_image[currentIndex]['slug']}}">
+            <div class="mrg-after-imgvid">
+              <img src="{{conv_image[currentIndex]['image_url']}}" style="width:100%" alt="Dr. HK Chopra Dr. Mona Bhatia Dr. Ramakrishna"/>
+            </div>
+          </a>
+          <a class="testvideo" href="https://images.therightdoctors.com/{{conv_image[currentIndex]['slug']}}">
+            <p class="internal-updates-head">{{conv_image[currentIndex]['headline']}}</p>
+            <p class="internal-dr-name">{{conv_image[currentIndex]['sub_headline'] }}</p>
+
+          </a>
+        </div>
+        </ng-template>
+  
+  
+  
+        <div fxFlex.lt-md="100%" fxFlex.gt-sm="33.33%" class="inconv1">
+          <ul fxLayout="column">
+            <ng-template ngFor let-item [ngForOf]="createRange(4)" let-currentIndex="index+12">
+              <a class="testvideo" href="https://images.therightdoctors.com/{{conv_image[currentIndex]['slug']}}">
+                <li class="brdr-btm">
+                <p  class="internal-dr-name">{{conv_image[currentIndex]['sub_headline'] }}</p>
+                <p class="internal-updates-head">{{conv_image[currentIndex]['headline'] }}</p>
+              </li>
+              </a>
+            </ng-template>
+          </ul>
+        </div>
+      </div>
+      <a class="testvideo" href="https://images.therightdoctors.com/}}">
+        <button mat-flat-button class="view-all-btn">View all</button></a>
+    </div>
+  </div>
+
+
+
+
+  <!-- images starts here -->

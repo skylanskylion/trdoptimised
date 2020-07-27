@@ -1,0 +1,26 @@
+.background-know{
+    background:#f8f8f8;
+    padding:20px;
+}
+.content-knowledge{
+    padding:20px;
+    background: #fff;
+}
+.content-knowledge a{
+    color: #3f51b5 !important;
+    text-decoration: underline !important;
+}
+
+img {
+    margin-bottom: 10px;width:100%;
+}
+.content-knowledge h4 {
+    margin-top: 40px!important;
+    margin-bottom: 15px!important;
+    color: #aa0000;
+    font-size: 20px;
+    font-weight: 600;
+    background: #f8f8f8;
+    padding: 5px;
+}
+

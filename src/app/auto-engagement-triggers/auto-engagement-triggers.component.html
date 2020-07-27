@@ -1,0 +1,113 @@
+<div class="container marg-top-sender" style="clear: both">
+  <div fxLayout="row" fxLayout.lt-md="column">
+     <div fxFlex="10"></div>
+     <div fxFlex="80">
+        <h2 class="mail-sender">Mail Sender</h2>
+        <mat-card style="padding:10px;">
+           <form class="example-form">
+              Start Date: <input [(ngModel)]="start_date" type="date" name="sday" required> End Date: <input [(ngModel)]="end_date" type="date" name="eday" required>
+              <!-- <div> <mat-form-field class="example-full-width"> <mat-label>Select Condition </mat-label> <mat-select [(ngModel)]="condition" id="condition" name="condition" required > <mat-option *ngFor="let q of conditions" value={{q}}> {{q}} </mat-option> </mat-select> </mat-form-field>
+                 <mat-form-field class="example-full-width"> <mat-label>Select Period </mat-label> <mat-select [(ngModel)]="period" id="period" name="period" required > <mat-option *ngFor="let q of period_options" value={{q}}> {{q}} </mat-option> </mat-select> </mat-form-field>
+                 Select a time: <input [(ngModel)]="time" type="time" name="usr_time" required> </div> -->
+              <div>
+                 <mat-form-field class="example-full-width">
+                    <mat-label>Select Condition </mat-label>
+                    <mat-select [(ngModel)]="condition" id="condition" name="condition" required> 
+                    <mat-option *ngFor="let q of conditions" value={{q}}> {{q}} </mat-option>
+                    </mat-select> 
+                 </mat-form-field>
+                 <mat-form-field class="example-full-width">
+                    <mat-label>Select Period </mat-label>
+                    <mat-select [(ngModel)]="period" id="period" name="period" required> 
+                    <mat-option *ngFor="let q of period_options" value={{q}}> {{q}} </mat-option>
+                    </mat-select> 
+                 </mat-form-field>
+                 <mat-form-field class="example-full-width">
+                    <mat-label>Select Day </mat-label>
+                    <mat-select [(ngModel)]="c_day" id="c_day" name="c_day" required> 
+                    <mat-option *ngFor="let q of days" value={{q}}> {{q}} </mat-option>
+                    </mat-select> 
+                 </mat-form-field>
+                 Select a time: <input [(ngModel)]="time" type="time" name="usr_time" required>
+                 <!-- <form [formGroup]="invoiceForm" (ngSubmit)="onSubmit(invoiceForm.value)" novalidate> <div formArrayName="chapter"> <div *ngFor="let chapters of chapter.controls; let j=index"> <hr> <div class="col-md-12 col-sm-12 col-xs-12"> <div class="panel panel-default"> <div class="panel-body pdg4 back2"> <div class="mrg_btm"> <span class="mrg_rt">Section {{ j + 1 }}:</span><span class="mrg_rt"><i class="fa fa-pencil" aria-hidden="true"> </i> </span><i class="fa fa-trash-o" aria-hidden="true" *ngIf="chapter.controls.length > 1" (click)="deleteRow(j)"></i> <div class="clearfix"></div> </div> <div [ ]="j" class=""> <chapters [group]="chapter.controls[j]"></chapters> </div> </div> </div> </div> </div> </div>
+                    <div class="col-md-12 col-sm-12 col-xs-12"> <div class="panel panel-default no_margin"> <div class="panel-body text-center pdg4 back2"> <i class="fa fa-plus" aria-hidden="true"></i> <button type="button" (click)="addNewRow()" class="btn btn-danger">Add Section</button> </div> </div> </div> <button type="submit" style="margin-top:20px;" class="btn btn-primary">Save</button> </form> -->
+                 <div [formGroup]="addForm">
+                    <div class="form-group">
+                       <table>
+                          <thead> <button (click)="onAddRow()" *ngIf="addForm.get('rows')">add row</button> </thead>
+                          <tbody>
+                             <tr *ngFor="let row of addForm.get('rows')?.controls;let index = index;">
+                                <td width="20%">
+                                   <mat-form-field class="example-full-width">
+                                      <mat-label>Select Condition </mat-label>
+                                      <mat-select required [formControl]="row.get('selectedCondition')" (selectionChange)="function(row.get('selectedCondition').value)"> 
+                                      <mat-option *ngFor="let q of conditions" value={{q}}> {{q}} </mat-option>
+                                      </mat-select> 
+                                   </mat-form-field>
+                                </td>
+                                <div *ngIf="row.get('selectedCondition').value">
+                                   <td>
+                                      <mat-radio-group fxLayout="row" class=" mar-topup-10">
+                                         <div fxFlex="">
+                                            <mat-checkbox value="YES" name="YES" [formControl]="row.get('YES')" style="padding-right: 16px;">Add Yes Action</mat-checkbox>
+                                         </div>
+                                         <div fxFlex="">
+                                            <mat-checkbox value="NO" name="NO" [formControl]="row.get('NO')">Add No Action</mat-checkbox>
+                                         </div>
+                                      </mat-radio-group>
+                                      <!-- <div> <button mat-flat-button color="primary" (click)="AddYesAction()" [formControl]="row.get('YES')">Add Yes Action</button> <button mat-flat-button color="primary" (click)="AddNoAction()" [formControl]="row.get('NO')">Add No Action</button> </div> --> 
+                                   </td>
+                                </div>
+                                <div *ngIf="row.get('YES').value">
+                                   <td width="20%">
+                                      <mat-form-field class="example-full-width">
+                                         <mat-label>Select Period </mat-label>
+                                         <mat-select required [formControl]="row.get('period')">
+                                            <mat-option *ngFor="let q of period_options" value={{q}}> {{q}} </mat-option>
+                                         </mat-select>
+                                      </mat-form-field>
+                                   </td>
+                                   <td width="20%">
+                                      <mat-form-field class="example-full-width">
+                                         <mat-label>Select Day </mat-label>
+                                         <mat-select required [formControl]="row.get('c_day')">
+                                            <mat-option *ngFor="let q of days" value={{q}}> {{q}} </mat-option>
+                                         </mat-select>
+                                      </mat-form-field>
+                                   </td>
+                                   <td width="15%">
+                                      <mat-form-field *ngIf="show" class="example-full-width">
+                                         <mat-label>Select Action </mat-label>
+                                         <mat-select required [formControl]="row.get('action')">
+                                            <mat-option *ngFor="let q of action" value={{q}}> {{q}} </mat-option>
+                                         </mat-select>
+                                      </mat-form-field>
+                                   </td>
+                                   <!-- <td width="15%"> <mat-form-field class="example-full-width"> <mat-label>Select No Action 
+                                      </mat-label> <mat-select required [formControl]="row.get('action')"> <mat-option *ngFor="let q of action" value={{q}}> {{q}} </mat-option> </mat-select> </mat-form-field> </td> --> 
+                                   <td width="10%">
+                                      <mat-form-field class="example-full-width"> <input matInput placeholder="Select Time" [formControl]="row.get('c_time')" type="time" required> </mat-form-field>
+                                   </td>
+                                </div>
+                                <!-- <div formArrayName="subconditions_list"> <div *ngFor="let medicine of subconditions_list.controls; let j=index"> <td width="20%"><mat-form-field class="example-full-width"> <mat-label>Select Conditionsss </mat-label> <mat-select required [formControl]="medicine.get('selectedCondition')"> <mat-option *ngFor="let q of conditions" value={{q}}> {{q}} </mat-option> </mat-select> </mat-form-field> </td></div> </div> -->
+                                <td width="5%"> <button (click)="onRemoveRow(index)"><i class="fa fa-close"></i></button> </td>
+                                <td>
+                                   <div>
+                                      <!-- <button mat-flat-button color="primary" (click)="AddYesAction()">Add Yes Action</button> <button mat-flat-button color="primary" (click)="AddNoAction()">Add No Action</button> --> <button mat-flat-button color="primary" *ngIf="addForm.get('subconditions_list')" (click)="AddYesSubCondition()">Add Yes Subcondition</button>
+                                      <button mat-flat-button color="primary" (click)="AddNoSubCondition()">Add No Subcondition</button> 
+                                   </div>
+                                </td>
+                             </tr>
+                          </tbody>
+                       </table>
+                       <pre>{{rows.value | json}}</pre>
+                    </div>
+                 </div>
+              </div>
+              <div> <button mat-flat-button color="primary" (click)="Onsubmit()"> Go</button> </div>
+           </form>
+        </mat-card>
+        <pre> {{invoiceForm.value | json}} </pre>
+     </div>
+  </div>
+</div>

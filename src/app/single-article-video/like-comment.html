@@ -1,0 +1,65 @@
+<!--<form class="example-form">
+    <mat-form-field class="example-full-width">
+        <input matInput placeholder="Name" >
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+        <input matInput placeholder="Email" >
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+        <input matInput placeholder="Mobile" >
+    </mat-form-field>
+    <button mat-flat-button color="primary">Submit</button>
+</form>
+ -->
+
+        <div class="content">
+                <!--registration-->
+                <!-- <div *ngIf="isRegister" style="margin:15px;background-color:aliceblue" class="text-center">
+                    <form role="form" (ngSubmit)="mail_check()" #f="ngForm" novalidate>
+                        <div>
+                            <mat-form-field style="width:80%;margin:10px" ngStyle.xs="width:100%">
+                                <input matInput placeholder="Full Name" name="username" [(ngModel)]="model2.username" style="box-shadow:none;border:0;background:transparent" required>
+                            </mat-form-field>
+                            <mat-form-field style="width:80%;margin:10px" ngStyle.xs="width:100%">
+                                <input matInput placeholder="Email" type="email" name="email" [(ngModel)]="model2.email" style="box-shadow:none;border:0;background:transparent" required>
+                            </mat-form-field>
+                            <mat-form-field style="width:80%;margin:10px" ngStyle.xs="width:100%">
+                                <input matInput placeholder="Password" type="password" name="password" [(ngModel)]="model2.password" style="box-shadow:none;border:0;background:transparent" required>
+                            </mat-form-field>
+                            <mat-form-field style="width:80%;margin:10px" ngStyle.xs="width:100%">
+                                <input matInput placeholder="Enter your mobile number" name="user_id" [(ngModel)]="model2.user_id" style="box-shadow:none;border:0;background:transparent" required>
+                            </mat-form-field>
+                        </div>
+                        <div>
+                            <div *ngIf="verification_code">
+                                <mat-form-field style="width:50%;margin:10px" ngStyle.xs="width:100%">
+                                    <input matInput placeholder="Enter your code" name="token" [(ngModel)]="model2.token" style="box-shadow:none;border:0;background:transparent" required>
+                                </mat-form-field>
+
+                                <button mat-raised-button color="primary" type="button" (click)="verify_code()">Verify Code</button>
+                            </div>
+                            <button mat-raised-button color="primary" type="button" *ngIf="!m_verify" (click)="phone_btn_onclick()">Verify Mobile Number</button>
+                        </div><br>
+                        <div style="width:100%">
+                            <button type="submit" mat-raised-button color="primary" [disabled]="!(f.form.valid && m_verify && !verification_code)">Register</button><br/><br/>
+                            Already Registered? <button type="submit" mat-raised-button color="primary" (click)="change_number()">Login</button>
+                        </div>
+
+                    </form>
+                </div> -->
+                <!--login-->
+                    <form role="form" (ngSubmit)="login_validation()" #ff="ngForm" novalidate>
+                        <div class="example-form">
+                            <mat-form-field  class="example-full-width">
+                                <input matInput placeholder="Email" type="email" name="user_id" [(ngModel)]="model.user_id" style="box-shadow:none;border:0;background:transparent" required>
+                            </mat-form-field>
+                            <mat-form-field  class="example-full-width">
+                                <input matInput placeholder="Password" type="password" name="password" [(ngModel)]="model.password" style="box-shadow:none;border:0;background:transparent" required>
+                                <!-- <mat-error *ngIf="password.invalid">Please Enter Password</mat-error> -->
+                            </mat-form-field><br/>
+                            <button mat-raised-button color="primary" [disabled]="!ff.form.valid">Login</button><br/>
+                            <!--<button (click)="logintwitter()" class="fa fa-twitter" style="border-radius:100px;margin:5px;"></button><br/>-->
+                            Create an account? <span style="color:#334c83;text-decoration:underline;cursor:pointer;" (click)="register_popup()">Register</span>
+                        </div>
+                    </form>
+            </div>

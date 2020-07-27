@@ -1,0 +1,592 @@
+<app-nav></app-nav>
+
+<section class="back2">
+  <section class="container mobile-m-top" >
+
+    <div class="row">
+      <div class="col-md-12">
+        <h1 class="main_heading mrg_btm">{{category_heading}}<span class="hdg_line"></span></h1>
+      </div>
+    </div>
+
+    <div class="row" *ngIf="stemi['data'].length>0">
+      <div class="col-md-12">
+        <h1 class="main_heading mrg_btm">Stemi India tv</h1>
+      </div>
+    </div>
+
+    <div class="row" *ngIf="emcure['data'].length>0">
+      <div class="col-md-3 col-sm-12 col-xs-12 mrg_btm"  *ngFor=" let article of stemi['data']">
+        <div class="mrg_btm">
+          <div class="panel_one panel_light_grey brder_top">
+            <div class="row">
+              <a [routerLink]="['/'+article['event']+'/'+article['category']+'/'+article['slug']]">
+                <div class="col-md-12 col-sm-4 col-xs-5">
+                  <img src="{{article['image_url']}}" alt="{{ article['image_alt']}}"/>
+                </div>
+                
+                <div class="col-md-12 col-sm-8 col-xs-7"><div class="pdg1 pdgrt">
+                  <span class="hd4 hd4_m color_blue dis1">{{article['headline']}}
+                    <h5 class="color_orange"><b>{{ article['sub_headline'] }}</b>
+                    </h5>
+                  </span>
+                  <span class="hd4_mobile hd4_m color_blue dis">{{article['headline'] | slice:0:89}}...
+                    <h5 class="hd4_mobile color_orange"><b>{{ article['sub_headline'] | slice:0:45}}...</b>
+                    </h5>
+                  </span>
+                </div></div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="clearfix"></div>
+    </div>
+
+    <div class="row" *ngIf="stemi['data'].length>0">
+      <div class="col-md-12">
+        <a [routerLink]="['/specials/stemi-india-lucknow-2018/'+cat]">
+          <button class="btn btn-primary">more in {{category_heading}}</button>
+        </a>
+      </div>
+    </div>
+
+
+    <div class="row" *ngIf="aicog['data'].length>0">
+      <div class="col-md-12">
+        <h1 class="main_heading mrg_btm">Emcure aicog tv</h1>
+      </div>
+    </div>
+
+    <div class="row" *ngIf="aicog['data'].length>0">
+      <div class="col-md-3 col-sm-12 col-xs-12 mrg_btm"  *ngFor=" let article of aicog['data']">
+        <div class="mrg_btm">
+          <div class="panel_one panel_light_grey brder_top">
+            <div class="row">
+              <a [routerLink]="['/'+article['event']+'/'+article['category']+'/'+article['slug']]">
+                <div class="col-md-12 col-sm-4 col-xs-5"><img src="{{article['image_url']}}" alt="{{ article['image_alt']}}"/>
+                </div>
+                <div class="col-md-12 col-sm-8 col-xs-7"><div class="pdg1 pdgrt">
+                  <span class="hd4 hd4_m color_blue dis1">{{article['headline']}}
+                    <h5 class="color_orange"><b>{{ article['sub_headline'] }}</b>
+                    </h5>
+                  </span>
+                  <span class="hd4_mobile hd4_m color_blue dis">{{article['headline'] | slice:0:89}}...
+                    <h5 class="hd4_mobile color_orange"><b>{{ article['sub_headline'] | slice:0:45}}...</b>
+                    </h5>
+                  </span>
+                </div></div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="clearfix"></div>
+    </div>
+
+    <div class="row" *ngIf="aicog['data'].length>0">
+      <div class="col-md-12">
+        <a href="https://aicogtv.therightdoctors.com/" >
+          <button class="btn btn-primary">more in {{category_heading}}</button>
+        </a>
+      </div>
+    </div>
+
+    <div class="row" *ngIf="wccicc['data'].length>0">
+      <div class="col-md-12">
+        <h1 class="main_heading mrg_btm">WCCICC-2017</h1>
+      </div>
+    </div>
+
+    <div class="row" *ngIf="wccicc['data'].length>0">
+      <div class="col-md-3 col-sm-12 col-xs-12 mrg_btm"  *ngFor=" let article of wccicc['data']">
+        <div class="mrg_btm">
+          <div class="panel_one panel_light_grey brder_top">
+            <div class="row">
+              <a [routerLink]="['/'+article['event']+'/'+article['category']+'/'+article['slug']]">
+                <div class="col-md-12 col-sm-4 col-xs-5"><img src="{{article['image_url']}}" alt="{{ article['image_alt']}}"/>
+                </div>
+                <div class="col-md-12 col-sm-8 col-xs-7"><div class="pdg1 pdgrt">
+                 <span class="hd4 hd4_m color_blue dis1">{{article['headline']}}
+                    <h5 class="color_orange"><b>{{ article['sub_headline'] }}</b>
+                    </h5>
+                  </span>
+                  <span class="hd4_mobile hd4_m color_blue dis">{{article['headline'] | slice:0:89}}...
+                    <h5 class="hd4_mobile color_orange"><b>{{ article['sub_headline'] | slice:0:27}}...</b>
+                    </h5>
+                  </span>
+                </div></div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="clearfix"></div>
+    </div>
+
+    <div class="row" *ngIf="wccicc['data'].length>0">
+      <div class="col-md-12">
+        <a [routerLink]="['/specials/wccicc-2017/'+cat]">
+          <button class="btn btn-primary">more in {{category_heading}}</button>
+        </a>
+      </div>
+    </div>
+
+    <div class="row" *ngIf="c_three['data'].length>0">
+      <div class="col-md-12">
+        <h1 class="main_heading mrg_btm">C3</h1>
+      </div>
+    </div>
+
+    <div class="row" *ngIf="c_three['data'].length>0">
+      <div class="col-md-3 col-sm-12 col-xs-12 mrg_btm"  *ngFor=" let article of c_three['data']">
+        <div class="mrg_btm">
+          <div class="panel_one panel_light_grey brder_top">
+            <div class="row">
+              <a [routerLink]="['/'+article['event']+'/'+article['category']+'/'+article['slug']]">
+                <div class="col-md-12 col-sm-4 col-xs-5"><img src="{{article['image_url']}}" alt="{{ article['image_alt']}}"/>
+                </div>
+                <div class="col-md-12 col-sm-8 col-xs-7"><div class="pdg1 pdgrt">
+                  <span class="hd4 hd4_m color_blue dis1">{{article['headline']}}
+                    <h5 class="color_orange"><b>{{ article['sub_headline'] }}</b>
+                    </h5>
+                  </span>
+                  <span class="hd4_mobile hd4_m color_blue dis">{{article['headline'] | slice:0:89}}...
+                    <h5 class="hd4_mobile color_orange"><b>{{ article['sub_headline'] | slice:0:45}}...</b>
+                    </h5>
+                  </span>
+                </div></div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="clearfix"></div>
+    </div>
+
+    <div class="row" *ngIf="c_three['data'].length>0">
+      <div class="col-md-12">
+        <a [routerLink]="['/specials/c3/'+cat]">
+          <button class="btn btn-primary">more in {{category_heading}}</button>
+        </a>
+      </div>
+    </div>
+
+    <div class="row" *ngIf="csitv['data'].length>0">
+      <div class="col-md-12">
+        <h1 class="main_heading mrg_btm">CSI tv</h1>
+      </div>
+    </div>
+
+    <div class="row" *ngIf="csitv['data'].length>0">
+      <div class="col-md-3 col-sm-12 col-xs-12 mrg_btm"  *ngFor=" let article of csitv['data']">
+        <div class="mrg_btm">
+          <div class="panel_one panel_light_grey brder_top">
+            <div class="row">
+              <a [routerLink]="['/'+article['event']+'/'+article['category']+'/'+article['slug']]">
+                <div class="col-md-12 col-sm-4 col-xs-5"><img src="{{article['image_url']}}" alt="{{ article['image_alt']}}"/>
+                </div>
+                <div class="col-md-12 col-sm-8 col-xs-7"><div class="pdg1 pdgrt">
+                  <span class="hd4 hd4_m color_blue dis1">{{article['headline']}}
+                    <h5 class="color_orange"><b>{{ article['sub_headline'] }}</b>
+                    </h5>
+                  </span>
+                  <span class="hd4 hd4_m color_blue dis">{{article['headline'] |slice:0:35}}...
+                    <h5 class="color_orange"><b>{{ article['sub_headline'] | slice:0:15}}...</b>
+                    </h5>
+                  </span>
+                </div></div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="clearfix"></div>
+    </div>
+
+
+    <div class="row" *ngIf="csitv['data'].length>0">
+      <div class="col-md-12">
+        <a href="https://csitv.therightdoctors.com/the-interview">
+          <button class="btn btn-primary">more in {{category_heading}}</button>
+        </a>
+      </div>
+    </div>
+
+    <div class="row" *ngIf="emcure['data'].length>0">
+      <div class="col-md-12">
+        <h1 class="main_heading mrg_btm">Emcure CSI kochi tv</h1>
+      </div>
+    </div>
+
+    <div class="row" *ngIf="emcure['data'].length>0">
+
+      <div class="col-md-3 col-sm-12 col-xs-12 mrg_btm"  *ngFor=" let article of emcure['data']">
+        <div class="mrg_btm">
+          <div class="panel_one panel_light_grey brder_top">
+            <div class="row">
+              <a [routerLink]="['/'+article['event']+'/'+article['category']+'/'+article['slug']]">
+                <div class="col-md-12 col-sm-4 col-xs-5"><img src="{{article['image_url']}}" alt="{{ article['image_alt']}}"/>
+                </div>
+                <div class="col-md-12 col-sm-8 col-xs-7"><div class="pdg1 pdgrt">
+                  <span class="hd4 hd4_m color_blue dis1">{{article['headline']}}
+                    <h5 class="color_orange"><b>{{ article['sub_headline'] }}</b>
+                    </h5>
+                  </span>
+                  <span class="hd4_mobile hd4_m color_blue dis">{{article['headline'] | slice:0:69 }}...
+                    <h5 class="hd4_mobile color_orange"><b>{{ article['sub_headline'] }}</b>
+                    </h5>
+                  </span>
+                </div></div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="clearfix"></div>
+    </div>
+
+
+    <div class="row" *ngIf="emcure['data'].length>0">
+      <div class="col-md-12">
+        <a [routerLink]="['/specials/csikochi-2016/'+cat]">
+          <button class="btn btn-primary">more in {{category_heading}}</button>
+        </a>
+      </div>
+    </div>
+
+
+    <div class="row" *ngIf="csinic['data'].length>0">
+      <div class="col-md-12">
+        <h1 class="main_heading mrg_btm">CSI-NIC 2016</h1>
+      </div>
+    </div>
+
+    <div class="row" *ngIf="csinic['data'].length>0">
+
+
+      <div class="col-md-3 col-sm-12 col-xs-12 mrg_btm" *ngFor=" let article of csinic['data']">
+        <div class="mrg_btm">
+          <div class="panel_one panel_light_grey brder_top">
+            <div class="row">
+              <a [routerLink]="['/'+article['event']+'/'+article['category']+'/'+article['slug']]">
+                <div class="col-md-12 col-sm-4 col-xs-5"><img src="{{article['image_url']}}" alt="{{ article['image_alt']}}"/></div>
+                <div class="col-md-12 col-sm-8 col-xs-7"><div class="pdg1 pdgrt">
+                 <span class="hd4 hd4_m color_blue dis1">{{article['headline']}}
+                    <h5 class="color_orange"><b>{{ article['sub_headline'] }}</b>
+                    </h5>
+                  </span>
+                  <span class="hd4_mobile hd4_m color_blue dis">{{article['headline'] | slice:0:70 }}...
+                    <h5 class="hd4_mobile color_orange"><b>{{ article['sub_headline'] }}</b>
+                    </h5>
+                  </span>
+                </div></div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="clearfix"></div>
+    </div>
+
+    <div class="row" *ngIf="csinic['data'].length>0">
+      <div class="col-md-12">
+        <a [routerLink]="['/specials/csinic-2016/'+cat]">
+          <button class="btn btn-primary">more in {{category_heading}}</button>
+        </a>
+      </div>
+    </div>
+
+    <div class="row" *ngIf="wccpci['data'].length>0">
+      <div class="col-md-12">
+        <h1 class="main_heading mrg_btm">WCCPCI 2015</h1>
+      </div>
+    </div>
+
+    <div class="row" *ngIf="wccpci['data'].length>0">
+      <div class="col-md-3 col-sm-12 col-xs-12 mrg_btm" *ngFor=" let article of wccpci['data']">
+        <div class="mrg_btm">
+          <div class="panel_one panel_light_grey brder_top">
+            <div class="row">
+              <a [routerLink]="['/'+article['event']+'/'+article['category']+'/'+article['slug']]">
+                <div class="col-md-12 col-sm-4 col-xs-5"><img src="{{article['image_url']}}" alt="{{ article['image_alt']}}"/></div>
+                <div class="col-md-12 col-sm-8 col-xs-7"><div class="pdg1 pdgrt">
+                  <span class="hd4 hd4_m color_blue dis1">{{article['headline']}}
+                    <h5 class="color_orange"><b>{{ article['sub_headline'] }}</b>
+                    </h5>
+                  </span>
+                  <span class="hd4_mobile hd4_m color_blue dis">{{article['headline'] }}
+                    <h5 class="hd4_mobile color_orange"><b>{{ article['sub_headline'] }}</b>
+                    </h5>
+                  </span>
+                </div></div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="clearfix"></div>
+    </div>
+
+    <div class="row" *ngIf="wccpci['data'].length>0">
+      <div class="col-md-12">
+        <a [routerLink]="['/specials/wccpci-2015/'+cat]">
+          <button class="btn btn-primary">more in {{category_heading}}</button>
+        </a>
+      </div>
+    </div>
+
+    <div class="row" *ngIf="cardic['data'].length>0">
+      <div class="col-md-12">
+        <h1 class="main_heading mrg_btm">Cardiac Prevent 2015</h1>
+      </div>
+    </div>
+
+    <div class="row" *ngIf="cardic['data'].length>0">
+      <div class="col-md-3 col-sm-12 col-xs-12 mrg_btm" *ngFor=" let article of cardic['data']">
+        <div class="mrg_btm">
+          <div class="panel_one panel_light_grey brder_top">
+            <div class="row">
+              <a [routerLink]="['/'+article['event']+'/'+article['category']+'/'+article['slug']]">
+                <div class="col-md-12 col-sm-4 col-xs-5"><img src="{{article['image_url']}}" alt="{{ article['image_alt']}}"/></div>
+                <div class="col-md-12 col-sm-8 col-xs-7"><div class="pdg1 pdgrt">
+                  <span class="hd4 hd4_m color_blue dis1">{{article['headline']}}
+                    <h5 class="color_orange"><b>{{ article['sub_headline'] }}</b>
+                    </h5>
+                  </span>
+                  <span class="hd4_mobile hd4_m color_blue dis">{{article['headline'] | slice:0:80}}...
+                    <h5 class="hd4_mobile color_orange"><b>{{ article['sub_headline'] | slice:0:22 }}...</b>
+                    </h5>
+                  </span>
+                </div></div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="clearfix"></div>
+    </div>
+
+
+    <div class="row" *ngIf="cardic['data'].length>0">
+      <div class="col-md-12">
+        <a [routerLink]="['/specials/cardiac-prevent-2015/'+cat]">
+          <button class="btn btn-primary">more in {{category_heading}}</button>
+        </a>
+      </div>
+    </div>
+
+    <div class="row" *ngIf="apvic['data'].length>0">
+      <div class="col-md-12">
+        <h1 class="main_heading mrg_btm">APVIC-VIII 2016</h1>
+      </div>
+    </div>
+
+    <div class="row" *ngIf="apvic['data'].length>0">
+
+      <div class="col-md-3 col-sm-12 col-xs-12 mrg_btm" *ngFor=" let article of apvic['data']">
+        <div class="mrg_btm">
+          <div class="panel_one panel_light_grey brder_top">
+            <div class="row">
+              <a [routerLink]="['/'+article['event']+'/'+article['category']+'/'+article['slug']]">
+                <div class="col-md-12 col-sm-4 col-xs-5"><img src="{{article['image_url']}}" alt="{{ article['image_alt']}}"/></div>
+                <div class="col-md-12 col-sm-8 col-xs-7"><div class="pdg1 pdgrt">
+                <span class="hd4 hd4_m color_blue dis1">{{article['headline']}}
+                    <h5 class="color_orange"><b>{{ article['sub_headline'] }}</b>
+                    </h5>
+                  </span>
+                  <span class="hd4_mobile hd4_m color_blue dis">{{article['headline']}}
+                    <h5 class="hd4_mobile color_orange"><b>{{ article['sub_headline']}}</b>
+                    </h5>
+                  </span>
+                </div></div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="clearfix"></div>
+    </div>
+
+    <!--<div class="row" *ngIf="apvic['data'].length>0">
+      <div class="col-md-12">
+        <a href="/specials/APVIC-VIII-2016/the-interview">
+          <button class="btn btn-primary">more in {{category_heading}}</button>
+        </a>
+      </div>
+    </div>-->
+
+    <div class="row" *ngIf="ihj['data'].length>0">
+      <div class="col-md-12">
+        <h1 class="main_heading mrg_btm">IHJ 2015</h1>
+      </div>
+    </div>
+
+    <div class="row" *ngIf="ihj['data'].length>0">
+
+      <div class="col-md-3 col-sm-12 col-xs-12 mrg_btm" *ngFor=" let article of ihj['data']">
+        <div class="mrg_btm">
+          <div class="panel_one panel_light_grey brder_top">
+            <div class="row">
+              <a [routerLink]="['/'+article['event']+'/'+article['category']+'/'+article['slug']]">
+                <div class="col-md-12 col-sm-4 col-xs-5"><img src="{{article['image_url']}}" alt="{{ article['image_alt']}}"/></div>
+                <div class="col-md-12 col-sm-8 col-xs-7"><div class="pdg1 pdgrt">
+                  <span class="hd4 hd4_m color_blue dis1">{{article['headline']}}
+                    <h5 class="color_orange"><b>{{ article['sub_headline'] }}</b>
+                    </h5>
+                  </span>
+                  <span class="hd4_mobile hd4_m color_blue dis">{{article['headline'] }}
+                    <h5 class="hd4_mobile color_orange"><b>{{ article['sub_headline'] }}</b>
+                    </h5>
+                  </span>
+                </div></div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="clearfix"></div>
+    </div>
+
+    <div class="row" *ngIf="ihj['data'].length>0">
+      <div class="col-md-12">
+        <a [routerLink]="['/specials/ihj-2015/'+cat]">
+          <button class="btn btn-primary">more in {{category_heading}}</button>
+        </a>
+      </div>
+    </div>
+
+    <div class="row" *ngIf="ias['data'].length>0">
+      <div class="col-md-12">
+        <h1 class="main_heading mrg_btm">IAS 2014</h1>
+      </div>
+    </div>
+
+    <div class="row" *ngIf="ias['data'].length>0">
+
+      <div class="col-md-3 col-sm-12 col-xs-12 mrg_btm" *ngFor=" let article of ias['data']">
+        <div class="mrg_btm">
+          <div class="panel_one panel_light_grey brder_top">
+            <div class="row">
+              <a [routerLink]="['/'+article['event']+'/'+article['category']+'/'+article['slug']]">
+                <div class="col-md-12 col-sm-4 col-xs-5"><img src="{{article['image_url']}}" alt="{{ article['image_alt']}}"/></div>
+                <div class="col-md-12 col-sm-8 col-xs-7"><div class="pdg1 pdgrt">
+                 <span class="hd4 hd4_m color_blue dis1">{{article['headline']}}
+                    <h5 class="color_orange"><b>{{ article['sub_headline'] }}</b>
+                    </h5>
+                  </span>
+                  <span class="hd4_mobile hd4_m color_blue dis">{{article['headline'] | slice:0:70}}...
+                    <h5 class="hd4_mobile color_orange"><b>{{ article['sub_headline'] }}</b>
+                    </h5>
+                  </span>
+                </div></div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="clearfix"></div>
+    </div>
+
+    <div class="row" *ngIf="ias['data'].length>0">
+      <div class="col-md-12">
+        <a [routerLink]="['specials/ias-2014/'+cat]">
+          <button class="btn btn-primary">more in {{category_heading}}</button>
+        </a>
+      </div>
+    </div>
+
+    <div class="row" *ngIf="csicon['data'].length>0">
+      <div class="col-md-12">
+        <h1 class="main_heading mrg_btm">CSICON 2014</h1>
+      </div>
+    </div>
+
+    <div class="row" *ngIf="csicon['data'].length>0">
+
+      <div class="col-md-3 col-sm-12 col-xs-12 mrg_btm" *ngFor=" let article of csicon['data']">
+        <div class="mrg_btm">
+          <div class="panel_one panel_light_grey brder_top">
+            <div class="row">
+              <a [routerLink]="['/'+article['event']+'/'+article['category']+'/'+article['slug']]">
+                <div class="col-md-12 col-sm-4 col-xs-5"><img src="{{article['image_url']}}" alt="{{ article['image_alt']}}"/></div>
+                <div class="col-md-12 col-sm-8 col-xs-7"><div class="pdg1 pdgrt">
+                 <span class="hd4 hd4_m color_blue dis1">{{article['headline']}}
+                    <h5 class="color_orange"><b>{{ article['sub_headline'] }}</b>
+                    </h5>
+                  </span>
+                  <span class="hd4_mobile hd4_m color_blue dis">{{article['headline'] | slice:0:75 }}
+                    <h5 class="hd4_mobile color_orange"><b>{{ article['sub_headline'] }}</b>
+                    </h5>
+                  </span>
+                </div></div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="clearfix"></div>
+    </div>
+
+
+    <div class="row" *ngIf="csicon['data'].length>0">
+      <div class="col-md-12">
+        <a [routerLink]="['/specials/csicon-2014/'+cat]">
+          <button class="btn btn-primary">more in {{category_heading}}</button>
+        </a>
+      </div>
+    </div>
+
+    <div class="row" *ngIf="wcchd['data'].length>0">
+      <div class="col-md-12">
+        <h1 class="main_heading mrg_btm">WCCHD 2014</h1>
+      </div>
+    </div>
+
+    <div class="row" *ngIf="wcchd['data'].length>0">
+
+      <div class="col-md-3 col-sm-12 col-xs-12 mrg_btm" *ngFor=" let article of wcchd['data']">
+        <div class="mrg_btm">
+          <div class="panel_one panel_light_grey brder_top">
+            <div class="row">
+              <a [routerLink]="['/'+article['event']+'/'+article['category']+'/'+article['slug']]">
+                <div class="col-md-12 col-sm-4 col-xs-5"><img src="{{article['image_url']}}" alt="{{ article['image_alt']}}"/></div>
+                <div class="col-md-12 col-sm-8 col-xs-7"><div class="pdg1 pdgrt">
+                  <span class="hd4 hd4_m color_blue dis1">{{article['headline']}}
+                    <h5 class="color_orange"><b>{{ article['sub_headline'] }}</b>
+                    </h5>
+                  </span>
+                  <span class="hd4_mobile hd4_m color_blue dis">{{article['headline'] }}
+                    <h5 class="hd4_mobile color_orange"><b>{{ article['sub_headline'] }}</b>
+                    </h5>
+                  </span>
+                </div></div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="clearfix"></div>
+    </div>
+
+    <div class="row" *ngIf="wcchd['data'].length>0">
+      <div class="col-md-12">
+        <a [routerLink]="['/specials/wcchd-2015/'+cat]">
+          <button class="btn btn-primary">more in {{category_heading}}</button>
+        </a>
+      </div>
+    </div>
+
+  </section>
+</section>
+
+<app-footer></app-footer>

@@ -1,0 +1,104 @@
+<div class="login-wrapper" fxLayout="row" fxLayoutAlign="center center" style="padding-top: 200px;">
+  <!-- <mat-card class="box"> -->
+    <!-- <mat-card-header> -->
+      <!-- <mat-card-title>Sign Up</mat-card-title> -->
+      
+    <!-- </mat-card-header> -->
+
+
+    <router-outlet></router-outlet>
+
+    <div class="login" style="background-color: white;">
+      <div >
+        <h1 style="text-align: center;font-family: 'Times New Roman', Times, serif;"><b>Hello {{ user.name }}</b></h1>
+        <h3 style="text-align: center;"><b>Edit Your Details</b></h3>
+      </div>
+
+    <form [formGroup]="profileForm" (ngSubmit)="onSubmit()" class="form-horizontal">
+
+      <!-- <mat-card-content> -->
+        <!-- <mat-form-field class="example-full-width"> -->
+          <div class="form-group">
+            <label class="control-label col-sm-2" for="name">FullName</label>
+            <input id="name" class="form-control" formControlName="name" matInput placeholder="Full Name">
+            </div>
+        <!-- </mat-form-field> -->
+
+        <!-- <mat-form-field class="example-full-width"> -->
+          <!-- <div class="form-group">
+            <label class="control-label col-sm-2" for="email">Email</label>
+          <input ngModel email id="email" class="form-control" type="email" formControlName="email" matInput placeholder="Email">
+          </div> -->
+        <!-- </mat-form-field> -->
+
+        <!-- <mat-form-field class="example-full-width"> -->
+          <div class="form-group">
+            <label class="control-label col-sm-2" for="password">Current Password</label>
+          <input required type="password" id="password" class="form-control" formControlName="password" matInput placeholder="Password">
+          </div>
+        <!-- </mat-form-field> -->
+
+        
+
+        <div *ngIf="changePassword" class="form-group">
+          <label class="control-label col-sm-2" for="newpassword">New Password</label>
+        <input type="password" id="newpassword" class="form-control" formControlName="newPassword" matInput placeholder="New Password">
+        </div>
+
+        <!-- <mat-form-field class="example-full-width"> -->
+          <div class="form-group">
+            <label class="control-label col-sm-2" for="mobile">Mobile</label>
+          <input type="number" class="form-control" id="mobile" formControlName="mobile" matInput placeholder="Mobile No.">
+          </div>
+        <!-- </mat-form-field> -->
+
+      <!-- </mat-card-content> -->
+      <div class="row">
+          <div style="text-align: center;padding: 5px;">
+              <button (click)="toggle()" type="button" color="accent" class="btn btn-success">Change password</button>
+  
+            </div>
+  
+              <div style="text-align: center;padding: 5px;">
+                <button color="accent" class="btn btn-primary" type="submit" [disabled]="!profileForm.valid">Confirm</button>
+  
+              </div>
+      </div>
+      
+      <!-- (click)="addUser(name.value,email.value,password.value,mobile.value)" -->
+    </form>
+    <div style="margin-top: 10px;">
+
+    <div *ngIf="profileForm.invalid">
+      <div *ngIf="name.invalid && (name.dirty || name.touched)" class="alert alert-danger">
+
+        <div *ngIf="name.errors.required">
+          Name is required.
+        </div>
+        <div *ngIf="name.errors.minlength">
+          Name must be at least 4 characters long.
+        </div>
+        
+      </div>
+
+      <div *ngIf="name.valid && password.invalid && (password.dirty || password.touched)" class="alert alert-danger">
+        <div *ngIf="password.errors.required">
+          Password is required.
+        </div>
+        <!-- <div *ngIf="password.length<=5">
+          Password should be of minimum length 5.
+        </div> -->
+      </div>
+
+      <div *ngIf="name.valid && password.valid && mobile.invalid && (mobile.dirty || mobile.touched)" class="alert alert-danger">
+        <div *ngIf="mobile.errors.required">
+          Mobile Number is required.
+        </div>
+      </div>
+
+    </div>
+    </div>
+    
+    </div>
+  <!-- </mat-card> -->
+</div>

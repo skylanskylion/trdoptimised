@@ -1,0 +1,781 @@
+<div class="container">
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.9/css/jquery.dataTables.min.css">
+
+  <h2>Images</h2>
+  <!--<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">-->
+  <div class="panel panel-default">
+    <!-- <div class="panel-heading" role="tab" id="headingOne">
+       <h4 class="panel-title">
+         <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTable" aria-expanded="true" aria-controls="collapseOne">
+           Table
+         </a>
+       </h4>
+     </div>-->
+    <mat-accordion class="example-headers-align">
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Table
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+
+        <!--<div id="collapseTable" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">-->
+
+        <button mat-raised-button color="primary">Refresh Table</button>
+
+
+        <div class="example-container mat-elevation-z8">
+          <mat-table #table [dataSource]="dataSource" matSort>
+            <ng-container matColumnDef="Id">
+              <mat-header-cell *matHeaderCellDef> ID</mat-header-cell>
+              <mat-cell *matCellDef="let Element"> {{Element._id}}</mat-cell>
+              <mat-footer-cell *matFooterCellDef> Id</mat-footer-cell>
+            </ng-container>
+            <ng-container matColumnDef="Title">
+              <mat-header-cell *matHeaderCellDef> Title</mat-header-cell>
+              <mat-cell *matCellDef="let Element"> {{Element.title}}</mat-cell>
+              <mat-footer-cell *matFooterCellDef>Title</mat-footer-cell>
+            </ng-container>
+            <ng-container matColumnDef="Headline">
+              <mat-header-cell *matHeaderCellDef> Headline</mat-header-cell>
+              <mat-cell *matCellDef="let Element"> {{Element.headline}}</mat-cell>
+              <mat-footer-cell *matFooterCellDef>Headline</mat-footer-cell>
+            </ng-container>
+            <ng-container matColumnDef="Slug">
+              <mat-header-cell *matHeaderCellDef>Slug</mat-header-cell>
+              <mat-cell *matCellDef="let Element"> {{Element.slug}}</mat-cell>
+              <mat-footer-cell *matFooterCellDef>Slug</mat-footer-cell>
+            </ng-container>
+            <ng-container matColumnDef="description">
+              <mat-header-cell *matHeaderCellDef>description</mat-header-cell>
+              <mat-cell *matCellDef="let Element"> {{Element.description}}</mat-cell>
+              <mat-footer-cell *matFooterCellDef>description</mat-footer-cell>
+            </ng-container>
+            <ng-container matColumnDef="doctor_name">
+              <mat-header-cell *matHeaderCellDef>doctor_name</mat-header-cell>
+              <mat-cell *matCellDef="let Element"> {{Element.doctor_name}}</mat-cell>
+              <mat-footer-cell *matFooterCellDef>doctor_name</mat-footer-cell>
+            </ng-container>
+            <ng-container matColumnDef="specialisation">
+              <mat-header-cell *matHeaderCellDef>specialisation</mat-header-cell>
+              <mat-cell *matCellDef="let Element"> {{Element.specialisation}}</mat-cell>
+              <mat-footer-cell *matFooterCellDef>specialisation</mat-footer-cell>
+            </ng-container>
+            <ng-container matColumnDef="hospital">
+              <mat-header-cell *matHeaderCellDef>hospital</mat-header-cell>
+              <mat-cell *matCellDef="let Element"> {{Element.hospital}}</mat-cell>
+              <mat-footer-cell *matFooterCellDef>hospital</mat-footer-cell>
+            </ng-container>
+            <ng-container matColumnDef="type">
+              <mat-header-cell *matHeaderCellDef>type</mat-header-cell>
+              <mat-cell *matCellDef="let Element"> {{Element.type}}</mat-cell>
+              <mat-footer-cell *matFooterCellDef>type</mat-footer-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="identifier">
+              <mat-header-cell *matHeaderCellDef>identifier</mat-header-cell>
+              <mat-cell *matCellDef="let Element"> {{Element.identifier}}</mat-cell>
+              <mat-footer-cell *matFooterCellDef>identifier</mat-footer-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="event">
+              <mat-header-cell *matHeaderCellDef>event</mat-header-cell>
+              <mat-cell *matCellDef="let Element"> {{Element.event}}</mat-cell>
+              <mat-footer-cell *matFooterCellDef>event</mat-footer-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="seo_description">
+              <mat-header-cell *matHeaderCellDef>seo_description</mat-header-cell>
+              <mat-cell *matCellDef="let Element"> {{Element.seo_description}}</mat-cell>
+              <mat-footer-cell *matFooterCellDef>seo_description</mat-footer-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="seo_keywords">
+              <mat-header-cell *matHeaderCellDef>seo_keywords</mat-header-cell>
+              <mat-cell *matCellDef="let Element"> {{Element.seo_keywords}}</mat-cell>
+              <mat-footer-cell *matFooterCellDef>seo_keywords</mat-footer-cell>
+            </ng-container>
+            <ng-container matColumnDef="URL">
+              <mat-header-cell *matHeaderCellDef>URL</mat-header-cell>
+              <mat-cell *matCellDef="let Element"> {{Element.url}}</mat-cell>
+              <mat-footer-cell *matFooterCellDef>URL</mat-footer-cell>
+            </ng-container>
+            <ng-container matColumnDef="Alt">
+              <mat-header-cell *matHeaderCellDef>Alt</mat-header-cell>
+              <mat-cell *matCellDef="let Element"> {{Element.alt}}</mat-cell>
+              <mat-footer-cell *matFooterCellDef>Alt</mat-footer-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="Similar_Topics">
+              <mat-header-cell *matHeaderCellDef>Similar_Topics</mat-header-cell>
+              <mat-cell *matCellDef="let Element"> {{Element.title}}</mat-cell>
+              <mat-footer-cell *matFooterCellDef>Similar_Topics</mat-footer-cell>
+            </ng-container>
+            <ng-container matColumnDef="Total_Views">
+              <mat-header-cell *matHeaderCellDef>Total_Views</mat-header-cell>
+              <mat-cell *matCellDef="let Element"> {{Element.total_views}}</mat-cell>
+              <mat-footer-cell *matFooterCellDef>Total_Views</mat-footer-cell>
+            </ng-container>
+            <ng-container matColumnDef="Designation">
+              <mat-header-cell *matHeaderCellDef>Designation</mat-header-cell>
+              <mat-cell *matCellDef="let Element"> {{Element.designation}}</mat-cell>
+              <mat-footer-cell *matFooterCellDef>Designation</mat-footer-cell>
+            </ng-container>
+            <ng-container matColumnDef="Thumbnail_url">
+              <mat-header-cell *matHeaderCellDef>Thumbnail_url</mat-header-cell>
+              <mat-cell *matCellDef="let Element"> {{Element.thumbnail_url}}</mat-cell>
+              <mat-footer-cell *matFooterCellDef>Thumbnail_url</mat-footer-cell>
+            </ng-container>
+            <ng-container matColumnDef="Bio">
+              <mat-header-cell *matHeaderCellDef>Bio</mat-header-cell>
+              <mat-cell *matCellDef="let Element"> {{Element.bio}}</mat-cell>
+              <mat-footer-cell *matFooterCellDef>Bio</mat-footer-cell>
+            </ng-container>
+            <ng-container matColumnDef="Tags">
+              <mat-header-cell *matHeaderCellDef>Tags</mat-header-cell>
+              <mat-cell *matCellDef="let Element"> {{Element.tags}}</mat-cell>
+              <mat-footer-cell *matFooterCellDef>Tags</mat-footer-cell>
+            </ng-container>
+            <ng-container matColumnDef="People">
+              <mat-header-cell *matHeaderCellDef>People</mat-header-cell>
+              <mat-cell *matCellDef="let Element">{{Element.people}}</mat-cell>
+              <mat-footer-cell *matFooterCellDef>People</mat-footer-cell>
+            </ng-container>
+            <ng-container matColumnDef="Slides">
+              <mat-header-cell *matHeaderCellDef>Slides</mat-header-cell>
+              <mat-cell *matCellDef="let Element"> {{Element.slides}}</mat-cell>
+              <mat-footer-cell *matFooterCellDef>Slides</mat-footer-cell>
+            </ng-container>
+            <ng-container matColumnDef="Created_at">
+              <mat-header-cell *matHeaderCellDef>Created_at</mat-header-cell>
+              <mat-cell *matCellDef="let Element"> {{Element.created_at}}</mat-cell>
+              <mat-footer-cell *matFooterCellDef>Created_at</mat-footer-cell>
+            </ng-container>
+            <ng-container matColumnDef="Updated_at">
+              <mat-header-cell *matHeaderCellDef>Updated_at</mat-header-cell>
+              <mat-cell *matCellDef="let Element"> {{Element.updated_at}}</mat-cell>
+              <mat-footer-cell *matFooterCellDef>Updated_at</mat-footer-cell>
+            </ng-container>
+            <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+            <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+          </mat-table>
+          <mat-paginator [length]=""
+                         [pageSize]="10"
+                         [pageSizeOptions]="[5, 10, 25, 100]">
+          </mat-paginator>
+        </div>
+      </mat-expansion-panel>
+    </mat-accordion>
+  </div>
+
+
+  <div class="panel panel-default">
+    <!--<div class="panel-heading" role="tab" id="headingTwo">
+      <h4 class="panel-title">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseCreate" aria-expanded="false" aria-controls="collapseTwo">
+          Create item
+        </a>
+      </h4>
+    </div>-->
+    <mat-accordion>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Create Item
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <div id="collapseCreate" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+          <div class="panel-body">
+            <form (ngSubmit)="create()" #Form="ngForm">
+              <div class="form-group">
+                <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap="20px">
+                  <label class="control-label col-sm-2" fxFlex="25%" for="title">Title:</label>
+                  <mat-form-field class="example-full-width" fxFlex="75%">
+                    <input matInput placeholder="enter image title" name="title" [(ngModel)]="model.title"
+                           #title="ngModel" id="title">
+                  </mat-form-field>
+                  <!--<input type="text" class="form-control" id="title" placeholder="Enter Image title" name="title" [(ngModel)]="model.title">-->
+                </div>
+              </div>
+              <div class="form-group">
+                <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap="10px">
+                  <label class="control-label col-sm-2" fxFlex="25%" for="headline">HeadLine:</label>
+
+                  <mat-form-field class="example-full-width">
+                    <input matInput placeholder="enter headline" name="headline" [(ngModel)]="model.headline"
+                           #headline="ngModel" id="headline">
+                  </mat-form-field>
+                </div>
+              </div>
+
+              <!--M.Harika-->
+
+              <div class="form-group">
+                <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap="10px">
+                  <label class="control-label col-sm-2" fxFlex="25%" for="doctor_name">Doctor Name:</label>
+                  <mat-form-field class="example-full-width">
+                    <input matInput placeholder="Enter Doctor Name" name="doctor_name" [(ngModel)]="model.doctor_name"
+                           #doctor_name="ngModel" id="doctor_name">
+                  </mat-form-field>
+                </div>
+              </div>
+
+
+              <div class="form-group">
+                <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap="10px">
+                  <label class="control-label col-sm-2" fxFlex="25%" for="specialisation">Specialisation:</label>
+                  <mat-form-field class="example-full-width">
+                    <input matInput placeholder="Enter Doctor Specialisation" name="specialisation"
+                           [(ngModel)]="model.specialisation" #specialisation="ngModel" id="specialisation">
+                  </mat-form-field>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap="10px">
+                  <label class="control-label col-sm-2" fxFlex="25%" for="hospital">Hospital:</label>
+                  <mat-form-field class="example-full-width">
+                    <input matInput placeholder="Enter Hospital Name" name="hospital" [(ngModel)]="model.hospital"
+                           #hospital="ngModel" id="hospital">
+                  </mat-form-field>
+                  >
+                </div>
+              </div>
+
+              <div class="form-group">
+                <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap="10px">
+                  <label class="control-label col-sm-2" fxFlex="25%" for="designation">Designation:</label>
+                  <mat-form-field class="example-full-width">
+                    <input matInput placeholder="Enter Designation" name="designation" [(ngModel)]="model.designation"
+                           #designation="ngModel" id="designation">
+                  </mat-form-field>
+                </div>
+              </div>
+              <!--M.Harika--><!--M.Harika-->
+
+              <div class="form-group">
+                <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap="10px">
+                  <label class="control-label col-sm-2" fxFlex="25%" for="slug">Slug:</label>
+                  <mat-form-field class="example-full-width">
+                    <input matInput placeholder="Enter slug" name="slug" required [(ngModel)]="model.slug"
+                           #slug="ngModel" id="slug">
+                  </mat-form-field>
+                </div>
+              </div>
+
+
+              <div class="form-group">
+                <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap="10px">
+                  <label class="control-label col-sm-2" fxFlex="25%" for="url">Image_URL:</label>
+                  <mat-form-field class="example-full-width">
+                    <input matInput placeholder="Enter Image URL" name="url" required [(ngModel)]="model.url"
+                           #url="ngModel" id="url">
+
+                  </mat-form-field>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap="10px">
+                  <label class="control-label col-sm-2" fxFlex="25%" for="thumbnail_url">Thumbnail_URL:</label>
+                  <mat-form-field class="example-full-width">
+                    <input matInput placeholder="Enter Thumnail URL" name="thumbnail_url"
+                           [(ngModel)]="model.thumbnail_url" #thumbnail_url="ngModel" id="thumbnail_url">
+
+                  </mat-form-field>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap="10px">
+                  <label class="control-label col-sm-2" fxFlex="25%" for="description">Description:</label>
+                  <mat-form-field class="example-full-width">
+                    <input matInput placeholder="Enter Description" name="description" [(ngModel)]="model.description"
+                           #description="ngModel" id="description">
+                  </mat-form-field>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap="10px">
+                  <label class="control-label col-sm-2" fxFlex="25%" for="alt">Image Alt text:</label>
+                  <mat-form-field class="example-full-width">
+                    <input matInput placeholder="Enter Image Alt text" name="alt" required [(ngModel)]="model.alt"
+                           #alt="ngModel" id="alt">
+                  </mat-form-field>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap="10px">
+                  <label class="control-label col-sm-2" fxFlex="25%" for="type">Type:</label>
+                  <mat-form-field class="example-full-width">
+                    <mat-select placeholder="" name="type" required [(ngModel)]="model.type" #type="ngModel" id="type">
+                      <mat-option value="">Choose one</mat-option>
+                      <mat-option value="presentation">Presentation item</mat-option>
+                      <mat-option value="slideshow">Slideshow item</mat-option>
+                      <mat-option value="gallery">Gallery item</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap="10px">
+                  <label class="control-label col-sm-2" fxFlex="25%" for="identifier">Identifier:</label>
+                  <mat-form-field class="example-full-width">
+                    <input matInput
+                           placeholder="Enter Image identifier (e.g. Presententation name, slideshow name, Gallery name, etc)"
+                           name="identifier" [(ngModel)]="model.identifier" #identifier="ngModel" id="identifier">
+                  </mat-form-field>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap="10px">
+                  <label class="control-label col-sm-2" fxFlex="25%" for="event">Event:</label>
+                  <mat-form-field class="example-full-width">
+                    <mat-select placeholder="" name="evnt" required [(ngModel)]="model.evnt" #evnt="ngModel" id="event">
+                      <mat-option value="">Choose one</mat-option>
+                      <mat-option value="aicog-2018">AICOG 2018</mat-option>
+                      <mat-option value="csi-2017">Emcure CSI 2017</mat-option>
+                      <mat-option value="csikochi-2016">CSI Kochi 2016</mat-option>
+                      <mat-option value="wccpci2015">WCCPCI 2015</mat-option>
+                      <mat-option value="csicon2014">CSICON 2014</mat-option>
+                      <mat-option value="csicon-2015">CSICON 2015</mat-option>
+                      <mat-option value="jacc">JACC</mat-option>
+                      <mat-option value="cardiac-prevent-2015">Cardiac Prevent 2015</mat-option>
+                      <mat-option value="ias-2014">IAS</mat-option>
+                      <mat-option value="wcchd-2015">WCCHD</mat-option>
+                      <mat-option value="ihj-2015">IHJ</mat-option>
+                      <mat-option value="revolution-talk">Revolution talk</mat-option>
+                      <mat-option value="csinic-2016">CSINIC 2016</mat-option>
+                      <mat-option value="wccicc-2017">WCCICC 2017</mat-option>
+                      <mat-option value="apvic">APVIC</mat-option>
+                      <mat-option value="c3">C3</mat-option>
+                      <mat-option value="wccpci-2016">WCCPCI 2016</mat-option>
+                      <mat-option value="wcce-2017">WCCE 2017</mat-option>
+                      <mat-option value="images">Images</mat-option>
+                      <!-- Add event here by editing and uncommenting the line below-->
+                      <!-- <option value="event-name">EVENT NAME HERE</option> -->
+                    </mat-select>
+                  </mat-form-field>
+                </div>
+
+
+              </div>
+
+
+              <!--M.Harika-->
+              <div class="form-group">
+                <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap="10px">
+                  <label class="control-label col-sm-2" fxFlex="25%" for="seo_description">SEO Description</label>
+                  <mat-form-field class="example-full-width">
+                    <textarea matInput placeholder="enter description" name="seo_description"
+                              [(ngModel)]="model.seo_description" #seo_description="ngModel" id="seo_description"></textarea>
+                  </mat-form-field>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap="10px">
+                  <label class="control-label col-sm-2" fxFlex="25%" for="seo_keywords">SEO Keywords</label>
+                  <mat-form-field class="example-full-width">
+                    <textarea matInput placeholder="Enter Description Keywords" name="seo_description"
+                              [(ngModel)]="model.seo_keywords" #seo_keywords="ngModel" id="seo_keywords"></textarea>
+                  </mat-form-field>
+                </div>
+              </div>
+              <!--M.Harika-->
+              <div class="form-group">
+                <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap="10px">
+                  <label class="control-label col-sm-2" fxFlex="25%" for="bio">Bio:</label>
+                  <mat-form-field class="example-full-width" name="bio" [(ngModel)]="model.bio" #bio="ngModel" id="bio">
+                    <textarea matInput placeholder="Enter Bio"></textarea>
+                  </mat-form-field>
+                </div>
+              </div>
+
+
+              <div class="form-group">
+                <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap="10px">
+                  <label class="control-label col-sm-2" fxFlex="25%" for="tags">Tags:</label>
+                  <mat-form-field class="example-full-width">
+                    <textarea matInput placeholder="Enter Image tags" name="tags" [(ngModel)]="model.tags"
+                              #tags="ngModel" id="tags"> </textarea>
+                  </mat-form-field>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap="10px">
+                  <label class="control-label col-sm-2" fxFlex="25%" for="people">People:</label>
+                  <mat-form-field class="example-full-width">
+                    <textarea matInput placeholder="Enter People present in the picture" name="people"
+                              [(ngModel)]="model.people" #people="ngModel" id="people"></textarea>
+                  </mat-form-field>
+                </div>
+              </div>
+              <!--M.Harika-->
+              <div class="form-group">
+                <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap="10px">
+                  <label class="control-label col-sm-2" fxFlex="25%" for="slides">Slides</label>
+                  <mat-form-field class="example-full-width">
+                    <textarea matInput placeholder="Enter slides URL" name="slides" [(ngModel)]="model.slides"
+                              #slides="ngModel" id="slides"> </textarea>
+                  </mat-form-field>
+                </div>
+              </div>
+              <div class="form-group">
+                <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap="10px">
+                  <label class="control-label col-sm-2" fxFlex="25%" for="similar_topic">Similar_Topics</label>
+                  <mat-form-field class="example-full-width">
+                    <textarea matInput placeholder="Enter Similar Topics" name="similar_topic"
+                              [(ngModel)]="model.similar_topic" #similar_topic="ngModel" id="similar_topic"> </textarea>
+                  </mat-form-field>
+                </div>
+              </div>
+              <div class="form-group">
+                <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap="10px">
+                  <label class="control-label col-sm-2" fxFlex="25%" for="total_views">Total Views</label>
+                  <mat-form-field class="example-full-width">
+                    <textarea matInput placeholder="Enter Total Views" name="total_views"
+                              [(ngModel)]="model.total_views" #total_views="ngModel" id="total_views"></textarea>
+                  </mat-form-field>
+                </div>
+              </div>
+              <!--M.Harika-->
+
+              <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                  <button mat-raised-button color="primary">Create</button>
+                </div>
+              </div>
+
+            </form>
+          </div>
+        </div>
+      </mat-expansion-panel>
+    </mat-accordion>
+  </div>
+
+
+  <div class="panel panel-default">
+    <!--<div class="panel-heading" role="tab" id="headingThree">
+      <h4 class="panel-title">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseEdit" aria-expanded="false" aria-controls="collapseThree">
+          Edit item
+        </a>
+      </h4>
+    </div>-->
+    <mat-accordion>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Edit Item
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <!--<div id="collapseEdit" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">-->
+        <div class="panel-body">
+          <form (ngSubmit)="displayform()" #form="ngForm">Enter ID:
+            <textarea matInput placeholder="jhgjk" name="_id" required [(ngModel)]="model1._id"
+                      #_id="ngModel"></textarea>
+            <button mat-raised-button color="primary" type="submit">Search</button>
+          </form>
+
+          <br><br>
+          <form (ngSubmit)="update_edit()">
+
+            <div class="form-group">
+              <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap="10px">
+                <label class="control-label col-sm-2" fxFlex="25%" for="Title">Title:</label>
+                <mat-form-field class="example-full-width">
+                  <textarea matInput placeholder="enter image title" name="title" [(ngModel)]="model2.title"
+                            #title="ngModel" [value]="model2.title" id="Title"> </textarea>
+                </mat-form-field>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap="10px">
+                <label class="control-label col-sm-2" fxFlex="25%" for="Headline">HeadLine:</label>
+                <mat-form-field class="example-full-width">
+                  <textarea matInput placeholder="enter headline" name="headline" [(ngModel)]="model2.headline"
+                            #headline="ngModel" [value]="model2.headline" id="Headline">
+                  </textarea></mat-form-field>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap="10px">
+                <label class="control-label col-sm-2" fxFlex="25%" for="DName">Doctor Name:</label>
+                <mat-form-field class="example-full-width">
+                  <textarea matInput placeholder="enter doctor name" name="doctor_name" [(ngModel)]="model2.doctor_name"
+                            #doctor_name="ngModel" [value]="model2.doctor_name" id="DName">
+                  </textarea></mat-form-field>
+              </div>
+            </div>
+
+
+            <div class="form-group">
+              <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap="10px">
+                <label class="control-label col-sm-2" fxFlex="25%" for="edit_specialisation">Specialisation:</label>
+                <mat-form-field class="example-full-width">
+                <textarea matInput placeholder="enter specialisation" name="specialisation"
+                          [(ngModel)]="model2.specialisation" #specialisation="ngModel" [value]="model2.specialisation" id="edit_specialisation">
+                </textarea></mat-form-field>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap="10px">
+                <label class="control-label col-sm-2" fxFlex="25%" for="edit_hospital">Hospital:</label>
+                <mat-form-field class="example-full-width">
+                  <textarea matInput placeholder="enter hospital name" name="hospital" [(ngModel)]="model2.hospital"
+                            #hospital="ngModel" [value]="model2.hospital" id="edit_hospital">
+                  </textarea></mat-form-field>
+              </div>
+            </div>
+            <div class="form-group">
+              <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap="10px">
+                <label class="control-label col-sm-2" fxFlex="25%" for="edit_designation">Designation:</label>
+                <mat-form-field class="example-full-width">
+                  <textarea matInput placeholder="enter hospital name" name="designation"
+                            [(ngModel)]="model2.designation" #designation="ngModel" [value]="model2.designation" id="edit_designation">
+                  </textarea></mat-form-field>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap="10px">
+                <label class="control-label col-sm-2" fxFlex="25%" for="edit_slug">Slug:</label>
+                <mat-form-field class="example-full-width">
+                  <textarea matInput placeholder="Enter slug" name="slug" required [(ngModel)]="model2.slug"
+                            #slug="ngModel" [value]="model2.slug" id="edit_slug"></textarea></mat-form-field>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap="10px">
+                <label class="control-label col-sm-2" fxFlex="25%" for="edit_url">Image URL:</label>
+                <mat-form-field class="example-full-width">
+                  <textarea matInput placeholder="Enter image url" name="url" required [(ngModel)]="model2.url"
+                            #url="ngModel" [value]="model2.url" id="edit_url"></textarea>
+                </mat-form-field>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap="10px">
+                <label class="control-label col-sm-2" fxFlex="25%" for="edit_alt">Image Alt text:</label>
+                <mat-form-field class="example-full-width">
+                  <textarea matInput placeholder="Enter image alt text" name="alt" required [(ngModel)]="model2.alt"
+                            #alt="ngModel" [value]="model2.alt" id="edit_alt"></textarea></mat-form-field>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap="10px">
+                <label class="control-label col-sm-2" fxFlex="25%" for="edit_type">Type:</label>
+                <mat-form-field class="example-full-width">
+                  <mat-select placeholder="" name="type" required [(ngModel)]="model2.type" #type="ngModel"
+                              [value]="model2.type" id="edit_type">
+                    <mat-option value="">Choose one</mat-option>
+                    <mat-option value="presentation">Presentation item</mat-option>
+                    <mat-option value="slideshow">Slideshow item</mat-option>
+                    <mat-option value="gallery">Gallery item</mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap="10px">
+                <label class="control-label col-sm-2" fxFlex="25%" for="edit_identifier">Identifier:</label>
+                <mat-form-field class="example-full-width">
+                <textarea matInput
+                          placeholder="Enter Image identifier (e.g. Presententation name, slideshow name, Gallery name, etc)"
+                          name="identifier" [(ngModel)]="model2.identifier" #identifier="ngModel"
+                          [value]="model2.identifier" id="edit_identifier">
+                </textarea>
+                </mat-form-field>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap="10px">
+                <label class="control-label col-sm-2" fxFlex="25%" for="edit_event">Event:</label>
+                <mat-form-field class="example-full-width">
+                  <mat-select placeholder="" name="evnt" required [(ngModel)]="model2.evnt" #evnt="ngModel"
+                              [value]="model2.evnt" id="edit_event">
+                    <mat-option value="">Choose one</mat-option>
+                    <mat-option value="aicog-2018">AICOG 2018</mat-option>
+                    <mat-option value="csi-2017">Emcure CSI 2017</mat-option>
+                    <mat-option value="csikochi-2016">CSI Kochi 2016</mat-option>
+                    <mat-option value="wccpci2015">WCCPCI 2015</mat-option>
+                    <mat-option value="csicon2014">CSICON 2014</mat-option>
+                    <mat-option value="jacc">JACC</mat-option>
+                    <mat-option value="cardiac-prevent-2015">Cardiac Prevent 2015</mat-option>
+                    <mat-option value="ias-2014">IAS</mat-option>
+                    <mat-option value="wcchd-2015">WCCHD</mat-option>
+                    <mat-option value="ihj-2015">IHJ</mat-option>
+                    <mat-option value="revolution-talk">revolution talk</mat-option>
+                    <mat-option value="csinic-2016">csinic-2016</mat-option>
+                    <mat-option value="wccicc-2017">WCCICC 2017</mat-option>
+                    <mat-option value="apvic">APVIC</mat-option>
+                    <mat-option value="c3">C3</mat-option>
+                    <mat-option value="wccpci-2016">wccpci-2016</mat-option>
+                    <mat-option value="images">Images</mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap="10px">
+                <label class="control-label col-sm-2" fxFlex="25%" for="edit_seo_description">SEO Description</label>
+                <mat-form-field class="example-full-width">
+                  <textarea matInput placeholder="Enter Description" name="seo_description"
+                            [(ngModel)]="model2.seo_description" #seo_description="ngModel"
+                            [value]="model2.seo_description" id="edit_seo_description"></textarea></mat-form-field>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap="10px">
+                <label class="control-label col-sm-2" fxFlex="25%" for="edit_seo_keywords">SEO Keywords</label>
+                <mat-form-field class="example-full-width">
+                  <textarea matInput placeholder="Enter Description Keywords" name="seo_description"
+                            [(ngModel)]="model2.seo_keywords" #seo_keywords="ngModel" [value]="model2.seo_keywords" id="edit_seo_keywords">
+                  </textarea></mat-form-field>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap="10px">
+                <label class="control-label col-sm-2" fxFlex="25%" for="edit_thumbnail_url">Thumbnail_URL:</label>
+                <mat-form-field class="example-full-width">
+                  <input matInput placeholder="Enter Thumnail URL" name="thumbnail_url"
+                         [(ngModel)]="model2.thumbnail_url" #thumbnail_url="ngModel" [value]="model2.thumbnail_url" id="edit_thumbnail_url">
+                </mat-form-field>
+              </div>
+            </div>
+
+            <!--<div class="form-group">
+              <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap="10px">
+                <label class="control-label col-sm-2" fxFlex="25%" for="edit_presentation_desc">Description:</label>
+                <mat-form-field class="example-full-width">
+                  <textarea matInput placeholder="Enter Description" name="presentation_desc" [(ngModel)]="presentation_desc" #presentation_desc="ngModel" [value]="model2.presentation_desc"></textarea> </mat-form-field>
+              </div>
+            </div>-->
+
+            <div class="form-group">
+              <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap="10px">
+                <label class="control-label col-sm-2" fxFlex="25%" for="edit_bio">Bio:</label>
+                <mat-form-field class="example-full-width">
+                  <textarea matInput placeholder="Enter Bio" name="bio" [(ngModel)]="model2.bio" #bio="ngModel"
+                            [value]="model2.bio" id="edit_bio"></textarea>
+                </mat-form-field>
+              </div>
+            </div>
+
+
+            <div class="form-group">
+              <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap="10px">
+                <label class="control-label col-sm-2" fxFlex="25%" for="edit_tags">Tags:</label>
+                <mat-form-field class="example-full-width">
+                  <textarea matInput placeholder="Enter Image tags" name="tags" [(ngModel)]="model2.tags"
+                            #tags="ngModel" [value]="model2.tags" id="edit_tags"> </textarea></mat-form-field>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap="10px">
+                <label class="control-label col-sm-2" fxFlex="25%" for="edit_people">People:</label>
+                <mat-form-field class="example-full-width">
+                  <input matInput placeholder="Enter People present in the picture" name="people"
+                         [(ngModel)]="model2.people" #people="ngModel" [value]="model2.people" id="edit_people"></mat-form-field>
+              </div>
+            </div>
+            <div class="form-group">
+              <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap="10px">
+                <label class="control-label col-sm-2" fxFlex="25%" for="edit_slides">Slides:</label>
+                <mat-form-field class="example-full-width">
+                  <textarea matInput placeholder="Enter Slides URL" name="slides" [(ngModel)]="model2.slides"
+                            #slides="ngModel" [value]="model2.slides" id="edit_slides"></textarea>
+                </mat-form-field>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap="10px">
+                <label class="control-label col-sm-2" fxFlex="25%" for="edit_similar_topic">Similar_Topics</label>
+                <mat-form-field class="example-full-width">
+                            <textarea matInput placeholder="Enter Similar Topics" name="similar_topic"
+                                      [(ngModel)]="model2.similar_topic" #similar_topic="ngModel"
+                                      [value]="model2.similar_topic" id="edit_similar_topic">
+                            </textarea></mat-form-field>
+              </div>
+            </div>
+            <div class="form-group">
+              <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap="10px">
+                <label class="control-label col-sm-2" fxFlex="25%" for="edit_total_views">Total Views</label>
+                <mat-form-field class="example-full-width">
+                              <textarea matInput placeholder="Enter Total Views" name="total_views"
+                                        [(ngModel)]="model2.total_views" #total_views="ngModel"
+                                        [value]="model2.total_views" id="edit_total_views">
+                              </textarea></mat-form-field>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="col-sm-offset-2 col-sm-10">
+                <button mat-raised-button color="primary">Update</button>
+              </div>
+            </div>
+
+            <!--<div style="display:none">
+            <input type="text" id="edit_id">
+            <input type="text" id="edit_created_at">
+          </div>-->
+          </form>
+        </div>
+        <!--</div>-->
+      </mat-expansion-panel>
+    </mat-accordion>
+  </div>
+
+  <div class="panel panel-default">
+    <!--<div class="panel-heading" role="tab" id="headingThree">
+      <h4 class="panel-title">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseDelete" aria-expanded="false" aria-controls="collapseThree">
+          Delete item
+        </a>
+      </h4>
+    </div>-->
+    <mat-accordion>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Delete Item
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <!--<div id="collapseDelete" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">-->
+        <div class="panel-body">
+          <form (ngSubmit)="deleteform()">
+            Enter ID:
+            <mat-form-field>
+              <textarea matInput placeholder="enter ID" name="_id" [(ngModel)]="model._id" [value]="_id"
+                        #_id="ngModel"></textarea>
+            </mat-form-field>
+            <button mat-raised-button color="primary">Delete</button>
+          </form>
+        </div>
+        <!--</div>-->
+      </mat-expansion-panel>
+    </mat-accordion>
+  </div>
+  <!--</div>-->
+  <!--</div>-->
+  <!--</div>-->
+</div>

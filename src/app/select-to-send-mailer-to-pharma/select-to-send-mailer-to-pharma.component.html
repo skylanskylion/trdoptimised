@@ -1,0 +1,53 @@
+<app-nav></app-nav>
+<section class="back2">
+   <h1 style="text-align: center;">Select Event For Pharma Mailer</h1>
+ 
+   <div >
+      <table border="1px">
+         <tr>
+<th></th>
+            <th style="width: 200px">Id</th>
+            <th style="width: 200px">Account Name</th>
+            <th style="width: 200px">Event Name</th>
+            <th style="width: 200px">Opportunity Name</th>
+            <th style="width: 200px">Event City</th>
+         </tr>
+         <tr *ngFor="let event of model" class="center">
+             <td style="width: 200px"><input type="checkbox" name="nontrades" [checked]="event.selected"
+                  [(ngModel)]="event.selected" (change)="changeTradesByCategory($event)"></td>
+            <td style="width: 200px">{{event['Id']}} </td>
+            <td style="width: 200px"> {{event['Account_Name']}}</td>
+            <td style="width: 200px"> {{event['Event_Name']}} </td>
+            <td style="width: 200px"> {{event['Opportunity_Name']}} </td>
+            <td style="width: 200px"> {{event['Event_City']}} </td>
+         </tr>
+
+      </table>
+
+   </div>
+   <div>                     
+         <a [routerLink]="['/send-mailer-kp-pharma/'+id]">
+      <button>Send</button></a>
+   </div>
+</section>
+<section class="back3 post_footer_pdg">
+   <section class="container">
+      <div class="row">
+         <div class="post_footer">
+            <div class="col-md-6 col-sm-6  col-xs-12 text-left">
+               <ul>
+                  <li><a [routerLink]="['/terms-of-service']">Terms of Service</a></li>
+                  <li><a [routerLink]="['/privacy-policy']">Privacy Policy</a></li>
+                  <li><a [routerLink]="['/disclaimer']">Disclaimer</a></li>
+               </ul>
+               <div class="clearfix"></div>
+            </div>
+            <div class="col-md-6 col-sm-6  col-xs-12 text-right text_left_m pad-text">
+               © TheRightDoctors Network. All Rights Reserved
+               <div class="clearfix"></div>
+            </div>
+         </div>
+      </div>
+
+   </section>
+</section>

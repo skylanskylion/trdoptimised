@@ -1,0 +1,85 @@
+<div class="layer-top">
+    <div class="container">
+        <div fxLayout="row" fxLayoutAlign="end">
+            <button mat-button [matMenuTriggerFor]="menu">
+                <span class="material-icons">person</span><span class="material-icons">expand_more</span></button>
+                <mat-menu #menu="matMenu">
+                <h6 style="margin:0px;padding:10px 10px 5px 10px;">Web Developer</h6>
+                <h6 style="margin-bottom: 16px;padding:0px 10px;color:orange;">Digital Subscriber</h6>
+                <h6 class="bor-top">Account</h6>
+                <ul fxLayout="column" style="list-style-type: none !important;margin-bottom:20px;padding:10px 10px !important">
+                    <li><a href="#">Profile</a></li>
+                    <li><a href="#">Subscription</a></li>
+                    <li><a href="#">What's included</a></li>
+                    <li><a href="#">Billing</a></li>
+                    <li><a href="#">Settings</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+                <hr style="color:#000;background-color: #000;width:100%;">
+                <h6 style="text-align: center;margin:10px;"><a href="#">LOG OUT</a></h6>
+                </mat-menu>
+        </div>
+    </div>
+</div>
+
+<div class="sub-layer1">
+    <div class="container">
+        <div fxLayout.lt-md="column" fxLayout.gt-sm="row" fxLayoutGap.gt-sm="60px">
+            <div fxFlex.lt-md="0%" fxFlex.gt-sm="20%" class="desk-view">
+                <div fxLayout="column" class="topone">
+                    <h6>Account</h6>
+                    <ul fxLayout="column">
+                        <li><a href="#">Profile</a></li>
+                        <li>Subscription</li>
+                        <li style="padding-left: 15px;"><a href="#">What's included</a></li>
+                        <li style="padding-left: 15px;"><a href="#">Billing</a></li>
+                        <li><a href="#">Settings</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <div fxLayout="column" class="toptwo">
+                    <h4>Need help?</h4>
+                    <p>Review <a href="#">our help <br>yopics</a>or chat with <br>one of our <br>customer care advocates</p>
+                </div>
+            </div>
+            <Div fxFlex.lt-md="100%" fxFlex.gt-sm="80%">
+                <div fxLayout="column">
+                    <div fxLayout="column">
+                        <h3>Billing</h3>
+                    </div>
+                    <div fxLayout.lt-md="column" fxLayout.gt-sm="row" class="br-btm">
+                        <div fxFlex.lt-md="100%" fxFlex.gt-sm="50%">
+                            <h6 class="headinga">Billing Information</h6>
+                        </div>
+                        <div fxFlex.lt-md="100%" fxFlex.gt-sm="50%" fxLayoutalign.gt-sm="end">
+                            <p>Payment method <span style="color:gray;">Mastercard, ending in 2285</span>&nbsp;<span class="material-icons" style="color:#3f51b5;font-size: 18px;">create</span></p>
+                        </div>
+                    </div>
+                    <div fxLayout.lt-md="column" fxLayout.gt-sm="row" class="border-top2" fxLayoutGap.gt-sm="30px">
+                        <div fxFlex.lt-md="100%" fxFlex.gt-sm="33.33%" class="mrgbtm">
+                            
+                            <p class="heading-acc">Rate</p>
+                            <p class="head-des">60 every 4 weeks until May 26, 2021</p>
+                            <p class="heading-acc">Next Payment</p>
+                            <p class="head-des">June 24, 2021</p>
+                            <p class="heading-acc">Last Payment</p>
+                            <p class="head-des">May 27, 2020</p>
+
+                        </div>
+                        <div fxFlex.lt-md="100%" fxFlex.gt-sm="33.33%">
+                            <p class="heading-acc">Current Servidce Period</p>
+                            <p class="head-des">May 27, 2020</p>
+                            <p class="heading-acc">Bonus Subscriptions</p>
+                            <p class="head-des">You currently are not able to share you subscriptions to other TRD</p>
+                        </div>
+                        <div fxFlex.lt-md="100%" fxFlex.gt-sm="33.33%">
+                            <p class="heading-acc">Next Service Period</p>
+                            <p class="head-des">June 24</p>
+                        </div>
+                    </div>
+                    <p>Your bill is paid automatically 3days before the service period. It may take a Few days to appear in your account.</p>
+                </div>
+            </Div>
+        </div>
+    </div>
+</div>

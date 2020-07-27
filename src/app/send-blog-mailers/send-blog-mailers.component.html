@@ -1,0 +1,65 @@
+<app-nav></app-nav>
+<section class="back2">
+   <h1 style="text-align: center;">Send Mailer </h1>
+ 
+   <div >
+      <table border="1px">
+         <tr>
+            <th style="width: 200px">  <p>
+                  <input type="checkbox" name="allNonTrades" [value]="model" (change)="SelectAll($event)">Select All
+               </p></th>
+            <!-- <th style="width: 200px">Id</th> -->
+            <th style="width: 200px">Name</th>
+            <th style="width: 200px">Title</th>
+            <th style="width: 200px">Blog Category</th>
+            <th style="width: 200px">Slug</th>
+            <!-- <th style="width: 200px">Intitute</th> -->
+            <!-- <th style="width: 200px">city</th> -->
+            <!-- <th style="width: 200px">email</th> -->
+            <!-- <th style="width: 200px">phone</th> -->
+            <!-- <th style="width: 200px">mobile</th> -->
+
+         </tr>
+         <tr *ngFor="let event of model" class="center">
+            <td style="width: 200px"><input type="checkbox" name="nontrades" [checked]="event.selected"
+                  [(ngModel)]="event.selected" (change)="changeTradesByCategory($event)"></td>
+            <!-- <td style="width: 200px">{{event['id']}} </td> -->
+            <td style="width: 200px">{{event['sub_headline']}}</td>
+            <td style="width: 200px"> {{event['headline']}} </td>
+            <td style="width: 200px"> {{event['blog_category']}} </td>
+            <td style="width: 200px"> {{event['slug']}} </td>
+            <!-- <td style="width: 200px"> {{event['institute']}} </td>
+            <td style="width: 200px"> {{event['city']}} </td>
+            <td style="width: 200px"> {{event['email']}} </td>
+            <td style="width: 200px"> {{event['phone']}} </td>
+            <td style="width: 200px"> {{event['mobile']}} </td> -->
+         </tr>
+
+      </table>
+
+   </div>
+   <div>
+      <button (click)="send()" >Send</button>
+   </div>
+</section>
+<section class="back3 post_footer_pdg">
+   <section class="container">
+      <div class="row">
+         <div class="post_footer">
+            <div class="col-md-6 col-sm-6  col-xs-12 text-left">
+               <ul>
+                  <li><a [routerLink]="['/terms-of-service']">Terms of Service</a></li>
+                  <li><a [routerLink]="['/privacy-policy']">Privacy Policy</a></li>
+                  <li><a [routerLink]="['/disclaimer']">Disclaimer</a></li>
+               </ul>
+               <div class="clearfix"></div>
+            </div>
+            <div class="col-md-6 col-sm-6  col-xs-12 text-right text_left_m pad-text">
+               © TheRightDoctors Network. All Rights Reserved
+               <div class="clearfix"></div>
+            </div>
+         </div>
+      </div>
+
+   </section>
+</section>

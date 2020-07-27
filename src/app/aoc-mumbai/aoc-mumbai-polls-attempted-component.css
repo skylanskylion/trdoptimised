@@ -1,0 +1,21 @@
+/* ::ng-deep .mat-dialog-container{
+    height:200px !important;
+    width:200px !important;
+} */
+.tick i{
+    padding: 10px;
+    font-size: 30px;
+    border: 2px solid black;
+    border-radius: 100%;
+}
+/* ::ng-deep .mat-dialog-container {
+    position: relative;
+}
+.bbutton{
+    position:absolute;
+    bottom: 0px;
+} */
+::ng-deep .mat-dialog-container {
+    padding: 0px !important;
+}
+

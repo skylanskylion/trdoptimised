@@ -1,0 +1,21 @@
+<app-nav></app-nav>
+<section class="back2">
+  <section class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h2 class="main_heading">Homemade Remedies<span class="hdg_line"></span></h2>
+      </div>
+      <ng-template ngFor let-item [ngForOf]="createRange(conv.length)" let-currentIndex="index">
+        <div class="col-md-3">
+          <div class="tips_img mrg2">
+            <a [routerLink]="['/synapse/homemade-remedies/'+conv[currentIndex]['doctor_name']]" title="">
+              <img src="{{conv[currentIndex]['url']}}"/>
+            </a>
+          </div>
+        </div>
+      </ng-template>
+    </div>
+  </section>
+</section>
+<app-footer></app-footer>
+

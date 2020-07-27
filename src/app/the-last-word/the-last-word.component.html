@@ -1,0 +1,54 @@
+<app-nav></app-nav>
+<section class="back2">
+  <section class="container" style="clear:both">
+    <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap="20px" style="clear:both" fxLayoutWrap>
+      <div fxFlex="100%"><h2 class="main_heading">The Last Word<span class="hdg_line"></span></h2></div>
+    </div>
+    <mat-grid-list cols="4" rowHeight="180px" fxShow.xl="true" fxShow.lt-md="false" fxShow.s="false" class="gap-part">
+      <ng-template ngFor let-item [ngForOf]="createRange(conv.length)" let-currentIndex="index">
+        <mat-grid-tile style="width: calc(((25% - 24.75px) * 1) + 0px)!important;" fxLayoutGap="40px">
+          <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap="20px" style="clear:both">
+            <div class="tips_img mrg2">
+              <a [routerLink]="['/synapse/the-last-word/'+conv[currentIndex]['doctor_name']]" title="">
+                <img src="{{conv[currentIndex]['url']}}"/>
+              </a>
+            </div>
+          </div>
+        </mat-grid-tile>
+      </ng-template>
+    </mat-grid-list>
+
+    <!-- <mat-grid-list cols="1" rowHeight="180px" fxShow.lg="false" fxShow.xl="false" fxShow.md="false" fxShow.sm="false" fxShow.xs="true" class="gap-part1">
+       <ng-template ngFor let-item [ngForOf]="createRange(conv.length)" let-currentIndex="index">
+         <mat-grid-tile  style="width: calc(((25% - 24.75px) * 1) + 0px)!important;" fxLayoutGap="40px">
+           <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap="20px" style="clear:both">
+             <div class="tips_img mrg2">
+               <a [routerLink]="['/synapse/Quote-of-the-day/'+conv[currentIndex]['doctor_name']]" title="">
+                 <img src="{{conv[currentIndex]['url']}}"/>
+               </a>
+             </div>
+           </div>
+         </mat-grid-tile>
+       </ng-template>
+     </mat-grid-list>-->
+
+
+    <div fxShow="false" fxShow.xs="true" fxShow.lt-md="true">
+
+      <ng-template ngFor let-item [ngForOf]="createRange(conv.length)" let-currentIndex="index">
+
+        <div class="tips_img mrg2">
+          <a [routerLink]="['/synapse/the-last-word/'+conv[currentIndex]['doctor_name']]" title="">
+            <img src="{{conv[currentIndex]['url']}}" width="100%"/>
+          </a>
+        </div>
+
+      </ng-template>
+
+    </div>
+
+  </section>
+</section>
+<app-footer></app-footer>
+
+

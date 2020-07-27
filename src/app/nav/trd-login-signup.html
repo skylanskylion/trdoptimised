@@ -1,0 +1,105 @@
+<style>
+    .back-2{
+        background:#f8f8f8;
+    }
+    .btu-google{
+    	padding:10px 24px;
+    	margin-bottom:10px;
+    	background-color: #F44336;
+    }
+    .btu-facebook{
+        padding:10px 24px;
+        margin-bottom:10px;
+        background-color:#3F51B5;
+    }
+    .login-button{
+        padding: 10px 24px;
+    background-color: #3f51b5;
+    text-align: center;
+    margin-bottom: 10px;
+    }
+  .login{
+      text-align: center; background:#f3f3f3; color:#000;padding:6px;font-size:23px;margin-bottom:20px;
+  }
+  input{
+      border: none;
+      box-shadow:none;
+  }
+</style>
+
+<div fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="10px">
+       <div fxFlex="50%" fxShow.lt-md="false" class="back-2" align="center">
+        <img src="/assets/new-home-page/single/images/logo.jpg"/>
+
+           <!-- <div style="margin-top:80px;">
+               <button type="button" class="btu btu-google"><i class="fa fa-google" aria-hidden="true"></i>&nbsp;Login with Google</button><br/>
+               <button type="button" class="btu btu-facebook"><i class="fa fa-facebook" aria-hidden="true"></i>&nbsp;Loign with Fb</button>
+           </div> -->
+       </div>
+      <div fxFlex="50%" >
+      	<div *ngIf="personRe">
+          <h2 class="login">Login</h2>
+          <form role="form" (ngSubmit)="login()" #ff="ngForm" novalidate class="example-form">
+                
+              <mat-form-field class="example-full-width">
+                  <input matInput placeholder="Email/Username" type="email" name="user_id" [(ngModel)]="model.user_id" #user_id="ngModel"  required>
+              </mat-form-field>
+              <mat-form-field class="example-full-width">
+                  <input matInput placeholder="Password" type="password" name="password" [(ngModel)]="model.password" #password="ngModel"  required>
+              </mat-form-field>
+<br/>
+              <p style="margin-bottom:20px;"><a href="#" style="cursor: pointer;text-decoration: underline!important;">forgot Password</a></p>
+          <button type="submit" color="primary" class="login-button">Login</button>
+                
+          </form>
+          <p style="margin-bottom:20px;text-align:center"><span style="cursor: pointer;text-decoration: underline!important;" (click)="register()" > New User ? Sign up</span></p>
+      </div>
+          <div *ngIf="loginpe">
+              <h2 class="login">Register</h2>
+              <form role="form" (ngSubmit)="register()" #ff="ngForm" novalidate class="example-form">
+                    <mat-form-field class="example-full-width">
+                            <input matInput placeholder="Full Name" type="username" name="username" [(ngModel)]="model2.username" #username="ngModel"  required >
+                        </mat-form-field>
+              <mat-form-field class="example-full-width">
+                  <input matInput placeholder="Email" type="email" name="email" [(ngModel)]="model2.email" #email="ngModel"  required >
+              </mat-form-field>
+              <mat-form-field class="example-full-width">
+                  <input matInput placeholder="Password" type="password" name="password" [(ngModel)]="model2.password" #password="ngModel"  required>
+              </mat-form-field>
+                  <mat-form-field class="example-full-width">
+                      <input matInput placeholder="Confirm Password" type="confirmpassword" name="confirmpassword" [(ngModel)]="model2.confirmpassword" #confirmpassword="ngModel"  required >
+                  </mat-form-field>
+                  <div>
+                        <mat-form-field class="example-full-width">
+                            <mat-select  name="country_code" placeholder="Select Country Code" [(value)]="selected" #country_code="ngModel"
+                                         [(ngModel)]="model2.country_code"  required>
+                                <mat-option> Select Country Code</mat-option>
+                                <mat-option value="+91">India +91</mat-option>
+                                <mat-option value="+1"> +1 United state +1</mat-option>
+                                <mat-option value="+44">+44 United Kingdom</mat-option>
+                                <mat-option value="+971"> +971 United Arab Emirates</mat-option>
+                                <mat-option value="+92">+92 pakistan</mat-option>
+                                <mat-option value="+977"> +977 Nepal</mat-option>
+                            </mat-select>
+                             <mat-error *ngIf="country_code.invalid">You must make a selection</mat-error>
+                        </mat-form-field>
+                    </div>
+                  <mat-form-field class="example-full-width">
+                    <input matInput type="number" name ="mobile" id="mobile" placeholder="Mobile No."  [(ngModel)]="model2.mobile" #mobile="ngModel" required>
+                    <mat-error *ngIf="mobile.invalid">
+                        Number is <b>required</b>
+                    </mat-error>
+                  </mat-form-field>
+              <br/>
+
+              <button type="submit" color="primary" class="login-button" (click)="login_popup()">Register </button>
+              </form>
+              <p style="margin-bottom:20px;text-align:center"><span style="cursor: pointer;text-decoration: underline!important;" (click)="login_popup()"> have an Account ? Login</span></p>
+          </div>
+
+
+
+
+
+</div>
+</div>

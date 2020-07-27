@@ -1,0 +1,67 @@
+<app-nav></app-nav>
+<div class="container mar-top-profile" >
+  <div fxLayout="row">
+    <div fxFlex="50">
+      <h3> Edit Profile </h3>
+<!--      <a [routerLink]="['/profile-edit']"><button mat-stroked-button color="primary" style="margin-top:10px;">Edit Profile</button></a>-->
+
+        <form class="example-form" (ngSubmit)="onSubmit()"  novalidate #f="ngForm" name = "form">
+            <mat-form-field class="example-full-width">
+                <input matInput placeholder="Name" name="proname" [(ngModel)]="model.username" #name="ngModel">
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+              <input matInput placeholder="Email" name="email" [(ngModel)]="model.email" #name="ngModel">
+          </mat-form-field>
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="password" name="password" [(ngModel)]="model.password" #name="ngModel">
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Mobile Number" name="mobile" [(ngModel)]="model.mobile" #name="ngModel">
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Country Code" name="country_code" [(ngModel)]="model.country_code" #name="ngModel">
+    </mat-form-field>
+        
+        <div class="example-button-row">
+          <button mat-raised-button color="primary" id ="submit" type = "submit">Submit</button>
+        </div>
+      </form>
+    </div>
+  
+    <div fxFlex="50" align="right">
+      <!-- <img src="https://storage.googleapis.com/web-assets/wccmm-2019/WCCMM-Interview/Pankaj-manoria/Pankaj-manoria-large.jpg" class="img-src"/><br/> -->
+
+      <div *ngIf="currentUpload" style="padding-top: 20px;">
+        <div class="progress">
+          <div class="progress-bar progress-bar-animated" [ngStyle]="{ 'width': currentUpload?.progress + '%' }"></div>
+        </div>
+        Progress: {{currentUpload?.name}} | {{currentUpload?.progress}}% Complete
+        <mat-progress-bar mode="determinate" [value]=currentUpload?.progress></mat-progress-bar>
+      </div>
+  
+      <label>
+        <input type="file" (change)="detectFiles($event)">
+      </label>
+  <div class="column">
+      <button mat-raised-button type="file" color="primary"
+        [disabled]="!selectedFiles"
+        (click)="uploadSingle()">
+        Upload Image
+      </button>
+  </div>
+      <div class="demo-tab-content">
+        <br>
+        <div fxLayout="row" fxLayout.lt-sm="column">
+              <div fxFlex="20" *ngIf="currentUpload">
+                <img [src]="currentUpload.downloadURL "/>
+              </div>
+          </div>
+  
+        </div>
+<!-- 
+        <button mat-raised-button type="file" color="primary">Upload Image</button>
+    </div> -->
+  </div>
+  
+</div>
+<app-footer></app-footer>

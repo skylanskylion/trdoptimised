@@ -1,0 +1,96 @@
+.container {
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 15px;
+  padding-left: 15px;
+
+}
+
+@media (max-width: 600px) {
+  .container {
+    max-width: 100%;
+  }
+
+  .text_left_m {
+    text-align: left !important;
+    padding: 8px 0px !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    max-width: 960px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
+}
+
+.example-form {
+  min-width: 150px;
+
+  width: 100%;
+}
+
+.example-full-width {
+  width: 100%;
+}
+
+.form-control {
+  height: 32px !important;
+  width: 90%;
+  border-radius: 2%;
+  margin-bottom: 10px;
+  padding: 2px 5px;
+}
+
+
+.twit-clr{
+  background:#1dcaff;
+}
+.google-plus{
+  background:#d34836;
+}
+.linkd{
+  background: #0d77b7;
+}
+.pin{
+  background: #cd2029;
+}
+.fb{
+  background:#3B5998;
+}
+.insta{
+  background: #f09433;
+}
+.youtube{
+  background:#cc181e;
+}
+.rss{
+  background:#ffaf00;
+}
+.content-sing{
+  margin-top:10px;
+}
+.list-icons-top i{
+  height: 30px;
+  width: 30px;
+  line-height: 30px;
+  color: #fff;
+  text-align: center;
+  border-radius: 100%;
+  font-size: 16px;
+  /* float: right; */
+}
+.whats-app{
+  background-color: #1fa67a;
+}

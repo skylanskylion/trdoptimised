@@ -1,0 +1,124 @@
+h4,h5,h6,p{
+    font-family: ff-quadraat-web-pro,"Times New Roman",serif !important;
+}
+
+.img-res{
+    width:100%;
+}
+.newsletters{
+    padding-top: 50px;
+}
+.newsletters2 .head1{
+    font-size: 0.6875rem;
+    line-height: 16px;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    color: rgb(51, 51, 51);
+    margin: 0px;
+}
+.newsletters2 .head2{
+    font-weight: 700;
+    font-size: 1.1875rem;
+    line-height: 22px;
+    letter-spacing: 0.6px;
+    color: rgb(18, 18, 18);
+    margin-bottom: 6px
+}
+.head3{
+    font-size: 0.9375rem;
+    line-height: 18px;
+    letter-spacing: 0.2px;
+    color: rgb(51, 51, 51);
+    margin-bottom: 10px;
+}
+.newsletters2 .material-icons{
+    font-size: 32px;
+    color:#3f51b5;
+    cursor: pointer;
+}
+.newsletters2 .material-icons:hover{
+    color:#3f51b5;
+    cursor: pointer;
+}
+.newsletters2{
+    background-color: #f1f1f1;
+    border-top: 2px solid #ccc;
+}
+.ntwo{
+    background-color: #fff;
+}
+.ntwo{
+    border:1px solid #ccc;
+    box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
+}
+.ntwo img{
+    margin-bottom: 11px;
+
+}
+.newsletters2 h5{
+    padding:30px 0px 0px 0px;
+}
+.para-t{
+    font-weight: normal !important;
+}
+@media(max-width:350px){
+    .para-t{
+        word-break: break-all;
+    }
+}
+@media(max-width:600px){
+
+    .newsletters2 .desk-view{
+        display: none !important;
+    }
+    .ntwo{
+        padding:10px 10px;
+        margin-bottom: 16px;
+    }
+    .newsletters h4{
+        font-size: 27px;
+    line-height: 30px;
+    color: rgb(18, 18, 18);
+    font-weight: 500;
+    padding-bottom: 2px;
+    margin: 0px;
+    }
+    .newsletters .para-t{
+        font-size: 27px;
+    line-height: 30px;
+    color: rgb(51, 51, 51);
+    font-weight: 300;
+    letter-spacing: 0.5px;
+    margin: 0px;
+    }
+   
+}
+
+
+@media(min-width:600px){
+    .newsletters2 .mob-view{
+        display: none !important;
+    }
+    .ntwo{
+        padding:10px 20px;
+        margin:8px;
+    }
+    .newsletters h4{
+        padding-bottom: 0px;
+        font-size: 32.5px;
+        line-height: 40px;
+        color: rgb(18, 18, 18);
+        font-weight: 500;
+
+    }
+    .newsletters .para-t{
+        font-size: 32.5px;
+    line-height: 35px;
+    font-weight: 200;
+    color: rgb(51, 51, 51);
+    margin: 0px;
+    }
+    .newsletters2 h5{
+        padding-left: 10px;
+    }
+}

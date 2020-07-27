@@ -1,0 +1,120 @@
+<app-nav></app-nav>
+<div class="section over-hide z-bigger" style="padding-top: 100px;">
+
+  <!-- <div  *ngIf="this.user.amount">
+      You're contributing {{ currency[user.country] }}{{ user.amount }} {{user.period}} to our community till {{ user.expiry }}.
+      Thank you for your support!
+  </div> -->
+
+  <label class="for-checkbox" for="general"></label>
+  <h1 style="font-family: 'Times New Roman', Times, serif;color: cornflowerblue; font-size:40px"><b>TheRightDoctors</b></h1>
+  <br>
+  <h4 style="margin-top: -15px; font-size:20px">Insights from the world's best Medical Minds.</h4>
+
+  <!-- <div class="background-color"></div> -->
+  <div class="section over-hide z-bigger" style="padding-top:20px">
+      <div class="container pb-5">
+          <div class="row justify-content-center pb-5">
+
+              
+
+              <div>
+                  <mat-form-field>
+                      <mat-label>Select Your Country {{ user.name }} </mat-label>
+                      <mat-select  [(value)]="countrySelected">
+                        <mat-option (click)="onSelect('International')" value="International">International</mat-option>
+                        <mat-option (click)="onSelect('India')" value="India">India</mat-option>
+                        <mat-option (click)="onSelect('USA')" value="USA">USA</mat-option>
+                        <mat-option (click)="onSelect('Canada')" value="Canada">Canada</mat-option>
+                        <mat-option (click)="onSelect('UK')" value="UK">UK</mat-option>
+                        <mat-option (click)="onSelect('Europe')" value="Europe">Europe</mat-option>
+                        <mat-option (click)="onSelect('Australia')" value="Australia">Australia</mat-option>
+                      </mat-select>
+                    </mat-form-field>
+              </div>
+              
+                
+                <!-- <p>You selected: {{countrySelected}}</p> -->
+
+              
+
+              <div class="col-12 pb-5" style="margin-bottom: 0px;padding-bottom: 0px;">
+                  <div *ngIf="show == false">
+                      <!-- <h3 style="font-family: 'Lucida Sans';font-size: larger;">Select Your Plan</h3> -->
+                      <h3 style="font-family: 'Lucida Sans';font-size: larger;font-size:25px"> <del style ="color: gray;">{{ currency[countrySelected] }}{{ plan[countrySelected][selectedPlan][2] }}</del> {{ currency[countrySelected] }}{{ plan[countrySelected][selectedPlan][1] }}/month</h3>
+
+                  </div>
+                  <div *ngIf="show == true" >
+                      <!-- <h3 style="font-family: 'Lucida Sans';font-size: larger;">Select Your Plan</h3> -->
+                      <h3 style="font-family: 'Lucida Sans';font-size: larger;font-size:25px">  {{ currency[countrySelected] }}{{ plan[countrySelected][selectedPlan][2] }}/month</h3>
+
+                  </div>
+                  <br>
+                 
+
+                  <div class="col-12 pt-1" style="margin-top: -20px;padding-top: -10px;">
+                      <!-- <p class="mb-4 pb-2" style="color: black;">Amount You Want To Contribute</p> -->
+                      <p class="mb-4 pb-2" style="color: black;">You can cancel your membership anytime</p>
+                  </div>
+                 
+                
+                  <input *ngIf="Authenticate()" class="checkbox-tools" type="radio" name="tools" id="tool-2" routerLink="../login" routerLinkActive="active">
+                  <label *ngIf="Authenticate()" class="for-checkbox-tools" for="tool-2" routerLink="../login" routerLinkActive="active">
+                      <button *ngIf="Authenticate()" class="button"routerLink="../login" routerLinkActive="active" >
+                          <i class='uil uil-vector-square'></i>
+                          <span style=" font-size:16px">SIGN IN</span>
+                      </button>
+                  </label>
+
+                  <input *ngIf="show == false && AuthenticateUser() && !canPay" (click)="monthly();notOther(1);initPay()" class="checkbox-tools" type="radio" name="tools" id="tool-2" >
+                  <label *ngIf="show == false && AuthenticateUser() && !canPay" class="for-checkbox-tools" for="tool-2">
+                      <button *ngIf="show == false && AuthenticateUser() && !canPay"  id='rzp-button1'(click)="monthly();notOther(1);initPay()" class="button" >
+                      <i class='uil uil-vector-square'></i>
+                      <span style=" font-size:16px">PAY</span>
+                  </button>
+                  </label>
+
+                  <input *ngIf="(show == true) && AuthenticateUser() && !canPay" (click)="monthly();notOther(2);initPay()" class="checkbox-tools" type="radio" name="tools" id="tool-2" >
+                  <label *ngIf="(show == true) && AuthenticateUser() && !canPay" class="for-checkbox-tools" for="tool-2">
+                      <button *ngIf="(show == true) && AuthenticateUser() && !canPay" id='rzp-button1' (click)="monthly();notOther(2);initPay()" class="button" >
+                      <i class='uil uil-vector-square'></i>
+                      <span style=" font-size:16px">PAY</span>
+                  </button>
+                  </label>
+  
+
+              </div>
+
+              
+              
+              <div class="col-xl-10 pb-5">
+                         
+          
+               
+                  <div style="padding-top: 10px;padding-bottom: 30px; text-align: center;">
+                      This is a seamless, recurring payment plan. You can cancel your membership anytime from the profile page.<br>
+                      <b>We deeply value the trust you have invested in us.</b>
+                  </div>
+                  <p class="mb-4 pb-2" style="color: black;">Want help <a href="mailto:trddevsi202@gmail.com">Email Us</a></p>
+
+
+                  <!-- <button id="rzp-button1" (click)="initPay();">Pay</button> -->
+
+                  <!-- <div *ngIf="AuthenticateUser() && !canPay" class="form-group">
+                      <button id='rzp-button1' (click)="initPay()" class="btn btn-primary">Subscribe Now</button>
+                  </div> -->
+
+                  <!-- <div *ngIf="AuthenticateUser() && canPay" class="form-group">
+                      <button (click)="openDialog()" class="btn btn-primary">Change Payment Details</button>
+                      <button (click)="saveCard()" class="btn btn-primary">Make Payment</button>
+                  </div> -->
+
+
+
+              </div>
+              
+          </div>
+      </div>	
+  </div>
+</div>
+ 

@@ -1,0 +1,118 @@
+    
+         
+         <div class="container" style="margin-top:0px;">
+            <div class="content-event-inner the-interview">
+               <div fxLayout="row" fxLayoutGap="25px" fxLayout.lt-md="column">
+         
+                  <div fxFlex="65" fxLayout="column">
+                     <img fxFlex.lt-sm="100%" src="{{single_podcast['image_url']}}"
+                        style="width:620px;height: 620px; margin-top: 15px; margin-left: 10px;" />
+                     <div class="content-podcast-doc">
+                        <h2>{{single_podcast['headline']}}</h2>
+                        <h5 style="color: #ff8c00;">By {{single_podcast['sub_headline']}}</h5>
+                        <p>{{single_podcast['designation']}}</p>
+                        <audio controls style="width:100%" src="{{single_podcast['video_url']}}">
+                           Your browser does not support the audio element.
+                        </audio>
+                        <div class="m-top-10" fxLayout="row" fxLayoutAlign="center center">
+                           <button type="button" class="btn share1" [matMenuTriggerFor]="menu"
+                              style="margin-right:10px;padding-top: 4px;"><i aria-hidden="true" class="fa fa-share-alt-square"
+                                 style="height:14px;width:14px;"></i></button>
+                           
+                          
+                           <br>
+                        </div>
+                     
+                     </div>
+                     
+        
+                     <div class="layer1">
+                        <div class="container" fxLayout="column">
+                           <div fxLayout="row" fxFlex="100%" class="blogs">
+                              <div class="blogs-head" fxFlex="65%">
+                                 <h3>Coming Up Next</h3>
+                              </div>
+                           </div>
+                           <div fxLayout="row">
+                              <div fxLayout.lt-sm="column" fxLayout.gt-xs="row wrap" fxFlex="100%" fxFlex="65%"
+                                 fxFlex.lt-sm="100%">
+                                 <ng-template ngFor let-item [ngForOf]="createRange(8)" let-currentIndex="index+1">
+                                    <div fxFlex.lt-sm="100%" fxFlex.lt-md="50%" fxFlex.lt-lg="33.33%" fxFlex.gt-md="25%"
+                                       fxLayout.lt-sm="column" fxLayout.gt-xs="row wrap">
+                                       <a href="podcast/{{audio_list[currentIndex]['slug']}}">
+                                          <mat-card style="height:100%;">
+                                             <div fxLayout="column" class="layer1one">
+                                                <div fxFlex="100%" class="image1">
+                                                   <img class="image2" src="{{audio_list[currentIndex]['image_url']}}"
+                                                      style="width:100%;">
+                                                </div>
+                                                <div fxLayout="row" class="btm-mat">
+                                                   <div fxFlex="100%" style="padding-left:10px;" fxLayout="column"
+                                                      style="height:100%;padding-top:10px;" class="layer1two">
+                                                      <div fxFlex="43%" style="overflow:hidden;">
+                                                         <h6 style="white-space: normal;height:100%;">
+                                                           <i style="font-size:20px;color: rgb(197, 4, 4);" class="fa">&#xf144;</i>&nbsp; <b>{{audio_list[currentIndex]['headline']  }}</b></h6>
+                                                      </div>
+                                                      <div fxFlex="57%" fxLayout="column" fxLayoutAlign="end start" style="height:100%;">
+                                                         <p style="color: #ff8c00;">{{ audio_list[currentIndex]['sub_headline']}}
+                                                         </p>
+                                                         <p style="color: #ff8c00;">{{audio_list[currentIndex]['designation']}}</p>
+                                                      </div>
+                                                   </div>
+                                                </div>
+                                             </div>
+                                          </mat-card>
+                                       </a>
+                                    </div>
+                                 </ng-template>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <div FxFlex.lt-sm="42%" fxFlex.lt-lg="60%" fxFlex.gt-md="40%" style="overflow:hidden;">
+                        <h5 style="white-space: normal;height:100%;">{{ intr[currentIndex]['headline'] }}</h5>
+                     </div>
+                     <div FxFlex.lt-sm="58%" fxFlex.lt-lg="40%" fxFlex.gt-md="60%" fxLayoutAlign="start end">
+                        <p style="color: #ff8c00;">{{ intr[currentIndex]['sub_headline']}}</p>
+                     </div>
+                  </div>
+                  <div fxFlex.lt-sm="100%" fxFlex="35" fxLayout="column">
+                     <h3 class="top-presentations" id='popular'> Most Popular</h3>
+         
+                     <div fxLayout="row" class="podcast2">
+                        <div fxLayout="column" fxLayoutGap="30px">
+                           <ng-template ngFor let-item [ngForOf]="createRange(6)" let-currentIndex="index+9">
+                              <div fxLayoutGap.lt-md="10px" fxLayout="column" fxLayoutGap.gt-sm="10px" class="podcast marg-bot"
+                                 style="">
+                                 <a id='most' href="podcast/{{audio_list[currentIndex]['slug']}}">
+         
+                                    <mat-card style="padding: 15px;">
+                                       <div fxLayout.lt-sm="column" fxLayout.gt-xs="row" fxLayoutGap="10px" style="height:100%;">
+                                          <div fxLayoutAlign="start center" fxFlex.lt-md="25%" fxFlex.gt-sm="35%">
+                                             <img src="{{audio_list[currentIndex]['image_url']}}" style="width:100%;">
+                                          </div>
+                                          <div class="above"  fxFlex.lt-md="75%" fxFlex.gt-sm="65%"
+                                             fxLayout="column" fxLayoutGap="15px">
+                                             <div fxFlex.lt-lg="60%" fxFlex.gt-md="35%">
+                                                <h5 style="white-space: normal;height:100%; font-family: Roboto,sans-serif;">
+                                                   {{ audio_list[currentIndex]['headline']   }}</h5>
+                                             </div>
+                                             <div fxFlex.lt-lg="40%" fxFlex.gt-md="65%"
+                                                fxLayoutAlign="end start" fxLayout="column">
+                                                <p style="color: #ff8c00;">{{ audio_list[currentIndex]['sub_headline']}}</p>
+                                                <p style="color: #ff8c00;">{{audio_list[currentIndex]['designation']}}</p>
+                                             </div>
+                                          </div>
+                                       </div>
+                                    </mat-card>
+                                 </a>
+         
+                              </div>
+                           </ng-template>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <app-footer></app-footer>
+         

@@ -1,0 +1,352 @@
+<app-nav></app-nav>
+<div class="content-blog-page">
+<div class="container">
+  <div class="row">
+  <div class="col-md-8">
+    <div class="box-live-update">
+      <h2 class="head-live-update">{{single_article['headline']}}</h2>
+      <div class="row" style="margin-bottom:10px;">
+        <div class="col-md-6">
+          <p class="p-small" style="padding-bottom:10px;">from Therightdoctors</p>
+        </div>
+        <div class="col-md-6">
+
+         <ul class="list-inline list-icons-top">
+            <li class="views">{{single_article['anchor']}}<br><b>views</b></li>
+            <li><a href="https://www.facebook.com/dialog/feed?app_id=1066226316760891&
+&rredirect_uri={{Shorturl}}
+&link={{Shorturl}}
+&picture={{ single_article['image_url'] }}
+&caption=TheRightDoctors.com%20|%20BY%20%20{{ single_article['sub_headline']}},%20%20{{ single_article['designation']}}
+&description={{ single_article['description']}}
+&name={{ single_article['headline']}}" title="Share on Facebook" data-service="facebook" target="_blank"><i
+                    class="fa fa-facebook fb" aria-hidden="true"></i> </a></li>
+            <li><a
+                    href="https://twitter.com/intent/tweet?url={{Shorturl}}&text={{ single_article['sub_headline']}}%20-{{ single_article['headline']}}&via=TheRightDoctors"
+                    title="Share on Twitter" data-service="twitter" target="_blank"> <i
+                    class="fa fa-twitter twit-clr" aria-hidden="true"></i></a></li>
+            <!-- <li><a
+                    href="https://plus.google.com/share?url=https://therightdoctors.com/{{single_article['event']}}/{{ single_article['category']}}/{{ single_article['slug']}}"
+                    title="Share on Google Plus" data-service="gplus" target="_blank"><i
+                    class="fa fa-google-plus google-plus" aria-hidden="true"></i></a></li> -->
+            <li><!--<a href="https://www.linkedin.com/shareArticle?mini=true&url={{Shorturl}}&title={{ single_article['headline']}}
+&summary={{ single_article['headline2']}}&source=therightdoctors.com" title="Share on Linkedin" data-service="linkedin"
+                   target="_blank"><i class="fa fa-linkedin linkd" aria-hidden="true"></i></a>-->
+              <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://therightdoctors.com/{{single_article['event']}}/{{ single_article['category']}}/{{ single_article['slug']}}&title={{ single_article['headline']}}
+&source=therightdoctors.com" title="Share on Linkedin" data-service="linkedin"
+                 target="_blank"><i class="fa fa-linkedin linkd" aria-hidden="true"></i></a></li>
+            <li><a
+                    href="https://api.whatsapp.com/send?text={{Shorturl}}"
+                    data-action="share/whatsapp/share" title="Share on Whatsapp" data-service="whatsapp"
+                    target="_blank"><i class="fa fa-whatsapp whats-app" aria-hidden="true"
+                                       style="font-size:18px;"></i></a></li>
+            <li><a
+                    href="mailto:?subject={{ single_article['sub_headline']}} : {{ single_article['headline']}}&amp;body={{ single_article['headline2']}}. Check out this site {{Shorturl}} ."
+                    title="Share by Email" data-service="email" target="_blank"><i class="fa fa-envelope envo"
+                                                                                   aria-hidden="true"></i></a>
+            </li>
+            <li><a data-flip-widget="shareflip" title="Share on Flipit" target="_blank"
+                   href="https://share.flipboard.com/bookmarklet/popout?ext=sharethis&
+title={{single_article['headline']}}&url={{Shorturl}}&utm_campaign=widgets&utm_content={{single_article['sub_headline']}}&utm_source=sharethis&v=2">
+              <img style="width: 30px;height: 30px;margin-top: -2px;
+    border-radius: 100%;" src="../../assets/flipboard_srsw.png" alt="flipboard icon"/></a></li>
+            <!--<li>-->
+              <!--<a href=""-->
+                    <!--title="Share by Email" data-service="email" target="_blank"><i class="fa fa-code backcode" aria-hidden="true"></i></a>-->
+            <!--</li>-->
+          </ul>
+        </div>
+      </div>
+
+<div fxLayout="row" style="background:#f8f8f8;padding:10px;" fxLayoutGap="20px" fxLayout.lt-md="column">
+  <div fxFlex="60">
+    <img src="{{single_article['image_url']}}" class="img-src"/>
+  </div>
+  <div  fxFlex="40">
+    <h3 class="high-let-head">Highlights</h3>
+    <div class="arrowList1">
+      <ul  class="list-cq5">
+        <li> {{single_article['highlights1']}}</li>
+        <li> {{single_article['highlights2']}}</li>
+        <li> {{single_article['highlights3']}}</li>
+        <!--<li> {{single_article['highlights4']}}</li>-->
+      </ul>
+    </div>
+  </div>
+</div>
+      <div class="conent-for-liveupdates">
+        <div *ngIf="((this.sing_art.length)>1)" class="bor-top-q-a">
+          <div *ngFor=" let tra of sing_art">
+            <p *ngIf="single_article['event'] === 'stemi-india-lucknow-2018'">
+              {{tra.split(':')[1]}} </p>
+            <p>{{tra.split(':')[0]}} </p>
+            <p>{{tra.split(':')[1]}} </p>
+
+            <p>{{tra.split('>')[1]}}</p>
+          </div>
+        </div>
+
+        <div *ngIf="single_article['transcript_list'].length>0">
+        <div *ngFor="let sing_data of single_article['transcript_list']">
+
+        <h3 class="sub-head">{{sing_data['question']}}</h3>
+          <div *ngFor="let ans of sing_data['answer'].split('<b>')">
+        <p>{{ans}}</p>
+          </div>
+
+        <div class="inline-highlight">
+          "
+          {{sing_data['quote']}}
+          "
+        </div>
+        <img src="{{sing_data['graphic_image']}}" *ngIf="sing_data['graphic_image'].length>0"/>
+        </div>
+        </div>
+
+        <!--<h3 class="sub-head">{{sing_art_sub[1]}}</h3>-->
+        <!--<p>{{sing_art_sub[5]}}</p>-->
+
+        <!--<div class="inline-highlight">-->
+          <!--"-->
+          <!--{{sing_art_sub_h[1]}}-->
+          <!--"-->
+        <!--</div>-->
+        <!--<p>{{sing_art_sub[9]}}</p>-->
+        <!--<h3 class="sub-head">{{sing_art_sub[2]}}</h3>-->
+        <!--<p>{{sing_art_sub[6]}}</p>-->
+
+        <!--<div class="inline-highlight">-->
+          <!--"-->
+          <!--{{sing_art_sub_h[2]}}-->
+          <!--"-->
+        <!--</div>-->
+
+        <!--<p>{{sing_art_sub[10]}}</p>-->
+        <!--<h3 class="sub-head">{{sing_art_sub[3]}}</h3>-->
+        <!--<p>{{sing_art_sub[7]}}</p>-->
+
+        <!--<div class="inline-highlight">-->
+          <!--"-->
+          <!--{{sing_art_sub_h[3]}}-->
+          <!--"-->
+        <!--</div>-->
+        <!--<p>{{sing_art_sub[11]}}</p>-->
+      </div>
+
+    </div>
+
+  </div>
+
+    <div class=" col-md-4">
+
+      <div class=" mar-top-right">
+        <div class="back-whats-app">
+          <div class="layer-whtsapp">
+            <h1>TheRightDoctors</h1>
+            <h5>Insights from the world's best medical minds <br>On<br><b style="color:#fff;">Whats
+              app</b></h5>
+            <a href="https://api.whatsapp.com/send?phone=919676401536&text=JOIN" target="_blank">
+              <button type="button" class="btn btn-whats"><i class="fa fa-whatsapp" aria-hidden="true"
+                                                             style="font-size:20px;"></i>&nbsp;Subscribe
+              </button>
+            </a>
+          </div>
+        </div>
+      </div>
+<div class="clearfix margin-top-2"></div>
+<h4 class="top-articles" style="margin-top: 25px!important;">Top Articles</h4>
+
+
+      <div class="artical-part" *ngFor="let blog of blog_list; index as i">
+      <div class="one-part"   *ngIf="i<9">
+
+        <a [routerLink]="['/'+blog['category']+'/'+blog['slug']]">
+          <div class="one_third_less">
+            <img src="{{blog['image_url']}}"/>
+          </div>
+          <div class="two_third_less last">
+            <p>{{blog['headline'] | slice: 0:30}}...</p>
+            <p class="color_orange"><b>{{blog['sub_headline']}}</b></p>
+          </div>
+        </a>
+      </div>
+    </div>
+
+
+
+        <!--<div class="one-part">-->
+          <!--<div class="one_third_less">-->
+            <!--<img src="https://storage.googleapis.com/web-assets/images/ECHO2017/Thumbnails/Ponde/Ponde-large.jpg"/>-->
+          <!--</div>-->
+          <!--<div class="two_third_less last">-->
+            <!--<p>Open Artery & Save Lives. Do It By Primary Angiopl...</p>-->
+            <!--<p class="color_orange"><b>Dr. Naveen Garg</b></p>-->
+          <!--</div>-->
+        <!--</div>-->
+        <!--<div class="one-part">-->
+          <!--<div class="one_third_less">-->
+            <!--<img src="https://storage.googleapis.com/web-assets/images/ECHO2017/Thumbnails/Ponde/Ponde-large.jpg"/>-->
+          <!--</div>-->
+          <!--<div class="two_third_less last">-->
+            <!--<p>Open Artery & Save Lives. Do It By Primary Angiopl...</p>-->
+            <!--<p class="color_orange"><b>Dr. Naveen Garg</b></p>-->
+          <!--</div>-->
+        <!--</div>-->
+        <!--<div class="one-part">-->
+          <!--<div class="one_third_less">-->
+            <!--<img src="https://storage.googleapis.com/web-assets/images/ECHO2017/Thumbnails/Ponde/Ponde-large.jpg"/>-->
+          <!--</div>-->
+          <!--<div class="two_third_less last">-->
+            <!--<p>Open Artery & Save Lives. Do It By Primary Angiopl...</p>-->
+            <!--<p class="color_orange"><b>Dr. Naveen Garg</b></p>-->
+          <!--</div>-->
+        <!--</div>-->
+        <!--<div class="one-part">-->
+          <!--<div class="one_third_less">-->
+            <!--<img src="https://storage.googleapis.com/web-assets/images/ECHO2017/Thumbnails/Ponde/Ponde-large.jpg"/>-->
+          <!--</div>-->
+          <!--<div class="two_third_less last">-->
+            <!--<p>Open Artery & Save Lives. Do It By Primary Angiopl...</p>-->
+            <!--<p class="color_orange"><b>Dr. Naveen Garg</b></p>-->
+          <!--</div>-->
+        <!--</div>-->
+
+
+      <div class=" clearfix margin-top-2"></div>
+      <h4 class="top-articles" style="margin-top:25px !important">More Articles</h4>
+
+      <ng-template ngFor let-item [ngForOf]="createRange1(4)" let-currentIndex="index">
+        <div class="artical-part" >
+        <div class="one-part" >
+          <div class="one_third_less">
+            <img src="{{blog_list[currentIndex + 10]['image_url']}}"/>
+          </div>
+          <div class="two_third_less last">
+            <p>{{blog_list[currentIndex + 10]['headline'] | slice: 0:30}}...</p>
+            <p class="color_orange"><b>{{blog_list[currentIndex + 10]['guest1']}}</b></p>
+          </div>
+        </div>
+        </div>
+      </ng-template>
+
+
+      <!--<div class="artical-part">
+        <div class="one-part">
+          <div class="one_third_less">
+            <img src="https://storage.googleapis.com/web-assets/images/ECHO2017/Thumbnails/Ponde/Ponde-large.jpg"/>
+          </div>
+          <div class="two_third_less last">
+            <p>Open Artery & Save Lives. Do It By Primary Angiopl...</p>
+            <p class="color_orange"><b>Dr. Naveen Garg</b></p>
+          </div>
+        </div>
+        <div class="one-part">
+          <div class="one_third_less">
+            <img src="https://storage.googleapis.com/web-assets/images/ECHO2017/Thumbnails/Ponde/Ponde-large.jpg"/>
+          </div>
+          <div class="two_third_less last">
+            <p>Open Artery & Save Lives. Do It By Primary Angiopl...</p>
+            <p class="color_orange"><b>Dr. Naveen Garg</b></p>
+          </div>
+        </div>
+        <div class="one-part">
+          <div class="one_third_less">
+            <img src="https://storage.googleapis.com/web-assets/images/ECHO2017/Thumbnails/Ponde/Ponde-large.jpg"/>
+          </div>
+          <div class="two_third_less last">
+            <p>Open Artery & Save Lives. Do It By Primary Angiopl...</p>
+            <p class="color_orange"><b>Dr. Naveen Garg</b></p>
+          </div>
+        </div>
+        <div class="one-part">
+          <div class="one_third_less">
+            <img src="https://storage.googleapis.com/web-assets/images/ECHO2017/Thumbnails/Ponde/Ponde-large.jpg"/>
+          </div>
+          <div class="two_third_less last">
+            <p>Open Artery & Save Lives. Do It By Primary Angiopl...</p>
+            <p class="color_orange"><b>Dr. Naveen Garg</b></p>
+          </div>
+        </div>
+        <div class="one-part">
+          <div class="one_third_less">
+            <img src="https://storage.googleapis.com/web-assets/images/ECHO2017/Thumbnails/Ponde/Ponde-large.jpg"/>
+          </div>
+          <div class="two_third_less last">
+            <p>Open Artery & Save Lives. Do It By Primary Angiopl...</p>
+            <p class="color_orange"><b>Dr. Naveen Garg</b></p>
+          </div>
+        </div>
+      </div>-->
+
+
+<div class="clearfix"></div>
+      <div class=" mar-top-right">
+        <h4 class="top-articles" style="margin-top: 25px!important;margin-bottom:9px!important">Connect with TheRightDoctors</h4>
+        <!--<h4 class="top"></h4>-->
+        <ul class="icons-fallow-new">
+          <li><i class="fa fa-facebook fb" aria-hidden="true"></i>
+            <a data-service="facebook" target="_blank" title="Share on Facebook"
+               href="https://www.facebook.com/therightdoctors">&nbsp;&nbsp;<b>Like</b> us on Facebook</a>
+          </li>
+
+          <li><i class="fa fa-twitter twit-clr" aria-hidden="true"></i>
+            <a data-service="twitter" target="_blank" title="Follow us on Twitter"
+               href="https://twitter.com/therightdoctors">&nbsp;&nbsp;<b>Follow</b> us on Twitter </a>
+          </li>
+
+          <!-- <li><i class="fa fa-google-plus google-plus" aria-hidden="true"></i>
+            <a data-service="gplus" target="_blank" title="Follow us on Google Plus"
+               href="https://plus.google.com/+TheRightDoctors">&nbsp;&nbsp;<b>Circle</b> us on Google+</a>
+          </li> -->
+
+          <li><i class="fa fa-linkedin linkd" aria-hidden="true"></i>
+            <a data-service="linkedin" target="_blank" title="Follow us on Linkedin"
+               href="https://www.linkedin.com/company/therightdoctors-com">&nbsp;&nbsp;<b>Add</b> us on
+              Linkedin</a>
+          </li>
+
+
+
+          <li><i class="fa fa-instagram insta" aria-hidden="true"></i>
+            <a data-service="youtube" target="_blank" title="Follow us by Instagram"
+               href="https://www.instagram.com/therightdoctors/">&nbsp;&nbsp;<b>Follow</b> us on
+              Instagram</a>
+          </li>
+
+          <li><i class="fa fa-youtube youtube" aria-hidden="true"></i>
+            <a data-service="youtube" target="_blank" title="Follow us by Youtube"
+               href="https://www.youtube.com/channel/UCUZIhLsNbgkCqymAZshSVHQ">&nbsp;&nbsp;<b>Follow</b>
+              us on
+              Youtube</a>
+          </li>
+
+          <li><i class="fa fa-pinterest-p pin" aria-hidden="true"></i>
+            <a data-service="youtube" target="_blank" title="Follow us by Pinterest"
+               href="https://in.pinterest.com/pin/388154061619065576/?lp=true">&nbsp;&nbsp;<b>Follow</b>
+              us on
+              Pinterest</a></li>
+          <li><img style="width: 29px;height: 29px;margin-top: -2px;margin-right: 9px;
+    border-radius: 100%;" src="https://cdn.flipboard.com/badges/flipboard_srsw.png" alt="flipboard"/>
+            <a data-flip-widget="shareflip" title="Follow us by flipit" target="_blank"
+               href="https://flipboard.com/@TheRightDoctors">&nbsp;&nbsp;<b>Follow</b> us on
+              Fliboard</a></li>
+          <!-- <li><i class="fa fa-rss rss" aria-hidden="true"></i> &nbsp;<b>Subscribe</b> us on RSS </li>-->
+        </ul>
+      </div>
+
+
+    </div>
+
+  </div>
+
+
+  <!--<div class="divider-next" align="center">-->
+    <!--Next Story-->
+  <!--</div>-->
+
+</div>
+
+</div>
+
+
+<app-footer></app-footer>

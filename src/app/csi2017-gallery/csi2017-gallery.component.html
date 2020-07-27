@@ -1,0 +1,30 @@
+<app-nav></app-nav>
+
+<section class="back2">
+  <section class="container">
+    <div>
+      <h2 class="main_heading">CSI 2017 Images<span class="hdg_line"></span></h2>
+    </div>
+    <mat-grid-list cols="4" fxShow="true" fxShow.sm="false" fxShow.xs="false" class="gap-part" style="padding-bottom: 0px;">
+      <ng-template ngFor let-item [ngForOf]="createRangeImages(38)" let-i="index">
+        <mat-grid-tile fxShow="true" fxShow.sm="false" fxShow.xs="false" style="padding-top:0px;" >
+          <div class="tips_img mrg2">
+            <a [routerLink]="['/specials/csi-2017/event-gallery/'+i]">
+              <img src="https://storage.googleapis.com/web-assets/images/EMCURE_CSICON2017/Kolkata/({{i}})/({{i}})-large.jpg"/>
+            </a>
+          </div>
+        </mat-grid-tile>
+      </ng-template>
+    </mat-grid-list>
+    <ng-template ngFor let-item [ngForOf]="createRangeImages(38)" let-i="index">
+      <div class="tips_img mrg2" fxShow="false" fxShow.xs="true"  fxShow.lt-md="true">
+        <a [routerLink]="['/specials/csi-2017/event-gallery/'+i]">
+          <img src="https://storage.googleapis.com/web-assets/images/EMCURE_CSICON2017/Kolkata/({{i}})/({{i}})-large.jpg"/>
+        </a>
+      </div>
+    </ng-template>
+
+  </section>
+</section>
+
+<app-footer></app-footer>

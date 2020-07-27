@@ -1,0 +1,86 @@
+<app-nav></app-nav>
+<div class="container marg-top-sender" style="clear: both">
+    <div fxLayout="row" fxLayout.lt-md="column">
+           <div fxFlex="20"></div>
+ <div fxFlex="60">
+  <h2 class="mail-sender">Mail Sender</h2>
+  <mat-card style="padding:10px;">
+  <form class="example-form">
+
+
+
+  <mat-form-field  class="example-full-width">
+      <mat-label>Select Event </mat-label>
+      <mat-select [(ngModel)]="event" id="as" name="as" #as='ngModel' required >
+        <mat-option *ngFor="let q of event_list" value={{q}}>
+          {{q}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  
+  <button mat-flat-button color="primary" (click)="get_cat(event)"> Go</button> 
+
+
+  <div  *ngIf="event">
+      <mat-form-field class="example-full-width">
+          <mat-label>Select Category</mat-label>
+          <mat-select [(ngModel)]="category" id="pass_out" name="pass_out" #pass_out='ngModel' required >
+            <mat-option *ngFor="let k of cat_list" value={{k}}>
+              {{k}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+         <button mat-flat-button color="primary"  (click)="get_doctors(category,event)"> Go</button>
+</div>
+
+<div *ngIf="pp">
+<p>
+    <input type="checkbox" name="allNonTrades" [value]="all_doc" (change)="SelectAll($event)">Select All
+</p><br>
+    <ng-container *ngFor="let ntrd of all_doc; let i=index">
+       <div>
+        {{i+1}} )  <input type="checkbox" name="nontrades" [checked]="ntrd.selected" [(ngModel)]="ntrd.selected"
+        (change)="changeTradesByCategory($event)">
+          <p>{{ ntrd.sub_headline }} : </p>
+          {{ ntrd.headline }}
+       </div>
+      </ng-container>
+</div>
+
+<!-- <mat-form-field class="example-full-width">
+  <input matInput type="email_list" placeholder="Enter Email" name="email" [(ngModel)]="email" >
+</mat-form-field> -->
+
+<mat-form-field class="example-full-width">
+    <input matInput placeholder="Enter From Address name - Without spaces 
+    (ex: Event Organising Secretary name - Dr_PC_Manoria)" 
+    name="from_name" [(ngModel)]="from_name" >
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <mat-label>Select SMS Template</mat-label>
+          <mat-select [(ngModel)]="sms_template" id="sms" name="sms" #sms='ngModel' required >
+            <mat-option value="1">
+              Video With viewer statistics with video link
+            </mat-option>
+            <mat-option value="2">
+              Video With viewer statistics number with video link
+            </mat-option>
+            <mat-option value="3">
+              Video With viewer statistics number with video link and share with yours
+            </mat-option>
+            <mat-option value="4">
+              Video link With viewer statistics and Diwali Message
+            </mat-option>
+          </mat-select>
+  </mat-form-field>
+
+<button mat-flat-button color="primary" (click) = "send_email()"> Send </button>
+
+</form>
+</mat-card>
+</div>
+<div fxFlex="20"></div>
+</div>
+</div>
+<app-footer></app-footer>

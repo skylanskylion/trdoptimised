@@ -1,0 +1,1639 @@
+<div class="backgroundd">
+  <div class="container">
+
+    <!-- <div class="header">
+          <div fxLayout="row">
+              <div fxLayout="column" fxFlex="40%" fxLayoutAlign="center start">
+                  <p style="font-size: 6px !important;color:#000;">18th - 19th january, 2020, The Lalit, Mumbai</p>
+                  <img src="/assets/vaicon.png" style="" class="logo">
+              </div>
+              <div fxFlex="10%"></div>
+              <div fxLayout="column" fxFlex="60%">
+                  <img src="/assets/unnamed (3).png" style="width:100%;">
+                  <div fxLayout="row">
+                      <div fxFlex="33.33%" fxLayoutAlign="center center">
+                          <p style="font-size: 10px;color:#3f51b5;">Dr. Harinder</p>
+                      </div>
+                      <div fxFlex="33.33%" fxLayoutAlign="center center">
+                          <p style="font-size: 10px;color:#3f51b5;">Dr. Harinder</p>
+                      </div>
+                      <div fxFlex="33.33%" fxLayoutAlign="center center">
+                          <p style="font-size: 10px;color:#3f51b5;">Dr. Harinder</p>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div> -->
+    <div class="question">
+      <!-- <div class="heading">
+              <mat-card>
+                  <h2>Requirement Form for Digital Knowledge Partner</h2>
+              </mat-card>
+          </div> -->
+      <!-- <form  (ngSubmit)="about_form()">
+              
+          <div class="questions">
+              <mat-card>
+                  <h6>Email Address</h6>
+                  <mat-form-field class="example-full-width">
+                      <input name=”email“
+                      matInput placeholder="Your Email" [(ngModel)]="kp_model.email">
+                  </mat-form-field>               
+              </mat-card>
+              <mat-card>
+                  <h6>Name of the Event</h6>
+                  <mat-form-field class="example-full-width">
+                      <input matInput name=”name_of_Event“ 
+                      placeholder="Your Event" [(ngModel)]="kp_model.name_of_event">
+                  </mat-form-field>               
+              </mat-card>
+              <mat-card>
+                  <h6>Q1) Number of speakers expected at the event? </h6>
+                  <mat-form-field class="example-full-width">
+                      <input name=”number_of_speakers“ 
+                      matInput placeholder="Your Answer"  [(ngModel)]="kp_model.number_of_speakers">
+                  </mat-form-field>               
+              </mat-card>
+              <mat-card>
+                  <h6>Q2) Number of International Speakers expected at the event?
+                  </h6>
+                  <mat-form-field class="example-full-width">
+                      <input name=”number_of_International_Speakers“ 
+                      matInput placeholder="Your Answer"  [(ngModel)]="kp_model.number_of_International_Speakers">
+                  </mat-form-field>               
+              </mat-card>
+              <mat-card>
+                  <h6>Q3) Number of delegates expected to attend the event? </h6>
+                  <mat-form-field class="example-full-width">
+                      <input name=”number_of_delegates“ 
+                      matInput placeholder="Your Answer" [(ngModel)]="kp_model.number_of_delegates">
+                  </mat-form-field>               
+              </mat-card>
+              <mat-card>
+                  <h6>Q4) Kindly indicate number of halls at the venue for speaker sessions?</h6>
+                  <mat-form-field class="example-full-width">
+                      <input name=”number_of_halls“ 
+                      matInput placeholder="Your Answer" [(ngModel)]="kp_model.number_of_halls">
+                  </mat-form-field>               
+              </mat-card>
+              <mat-card>
+                  <h6 style="padding-bottom: 10px">Q5) Does the main hall have a large LED screen?</h6>
+                          <mat-radio-group  style= "margin-bottom:15px;" name=”largeLEDscreen_at_mainhall“ 
+                          fxLayout="column" [(ngModel)]="kp_model.largeLEDscreen_at_mainhall">
+                                  <mat-radio-button value="Yes">Yes</mat-radio-button>
+                                  <mat-radio-button value="No">No</mat-radio-button>
+                                </mat-radio-group>  
+              </mat-card>
+              <mat-card>
+                  <h6>Q6) Have you appointed an AV person at the event? (If Yes, kindly share the details of AV person to enable us to co-ordinate) 
+                  </h6>
+                  <mat-form-field class="example-full-width">
+                      <input matInput name=”details_of_av_person“ 
+                      placeholder="Your Answer" [(ngModel)]="kp_model.details_of_av_person">
+                  </mat-form-field>               
+              </mat-card>
+              <mat-card>
+                  <h6>Q7) Do you have cameras in every hall?</h6>
+                  <mat-radio-group name=”camera_at_every_hall“ 
+                  style= "margin-bottom:15px;" fxLayout="column" [(ngModel)]="kp_model.camera_at_every_hall">
+                          <mat-radio-button value="Yes">Yes</mat-radio-button>
+                          <mat-radio-button value="No">No</mat-radio-button>
+                        </mat-radio-group>                
+              </mat-card>
+              <mat-card>
+                  <h6>Q8) We prepare key faculty videos for main speakers like foreign faculty speakers and top Indian faculty speakers highlighting their career for about 30-40 sec which will be played on LED screens in the hall as speakers approach the podium. Would you be interested in key faculty videos?</h6>
+                  <mat-radio-group  name=”interested_key_faculty_videos“ 
+                  style= "margin-bottom:15px;"  fxLayout="column" [(ngModel)]="kp_model.interested_key_faculty_videos">
+                          <mat-radio-button value="Yes">Yes</mat-radio-button>
+                          <mat-radio-button value="No">No</mat-radio-button>
+                        </mat-radio-group>              
+              </mat-card>
+              <mat-card>
+                  <h6>Q9) If Yes in the above question, kindly indicate number of faculty videos needed?</h6>
+                  <mat-form-field  name=”number_of_key_faculty_videos“ 
+                  class="example-full-width">
+                      <input matInput placeholder="Your Answer" [(ngModel)]="kp_model.number_of_key_faculty_videos">
+                  </mat-form-field>               
+              </mat-card>
+              <mat-card>
+                  <h6>Q10) For important/Keynote/foreign speakers we can do a special edit where the presentation content will have animation and rich graphics</h6>
+                  <mat-radio-group  style= "margin-bottom:15px;"  name=”important_speakers_special_edit“ 
+                  fxLayout="column" [(ngModel)]="kp_model.important_speakers_special_edit">
+                          <mat-radio-button value="Yes">Yes</mat-radio-button>
+                          <mat-radio-button value="No">No</mat-radio-button>
+                        </mat-radio-group>               
+              </mat-card>
+              <mat-card>
+                  <h6>Q11)Do you need graphic representation (with high definition photographs) of upcoming talks to be displayed at the venue and shared on the venue with delegates</h6>
+                  <mat-radio-group  style= "margin-bottom:15px;"  name=”need_of_hd_photos_of_upcoming_talks“ 
+                  fxLayout="column" [(ngModel)]="kp_model.need_of_hd_photos_of_upcoming_talks">
+                          <mat-radio-button value="Yes">Yes</mat-radio-button>
+                          <mat-radio-button value="No">No</mat-radio-button>
+                        </mat-radio-group>                
+              </mat-card>
+              <mat-card>
+                  <h6>Q12) Before the event, we create promo videos and promote them across social media and dedicated WhatsApp groups. Would this be of interest to you?</h6>
+                  <mat-radio-group  style= "margin-bottom:15px;"  name=”advertise_with_promos“ 
+                  fxLayout="column" [(ngModel)]="kp_model.advertise_with_promos">
+                          <mat-radio-button value="Yes">Yes</mat-radio-button>
+                          <mat-radio-button value="No">No</mat-radio-button>
+                        </mat-radio-group>              
+              </mat-card>
+              <mat-card>
+                  <h6>Q13) If Yes in the above question, kindly indicate the number of videos needed.</h6>
+                  <mat-form-field class="example-full-width">
+                      <input name=”number_of_promos“ 
+                      matInput placeholder="Your Answer" [(ngModel)]="kp_model.number_of_promos">
+                  </mat-form-field>               
+              </mat-card>
+              <mat-card>
+                  <h6>Q14) We set up a High Definition Studio at the venue to take interviews of faculty/speakers/delegates as selected by organizing committee. This is branded as a TV Channel of the conference. Ex: CSI Tv, WCCICC Tv. Organizing committee can leverage the conference Tv Channel as a branding opportunity from interested sponsors.Would this be of interest to you? </h6>
+                  <mat-radio-group  style= "margin-bottom:15px;" name=”interested_in_studio_for_interviewers“ 
+                  fxLayout="column" [(ngModel)]="kp_model.interested_in_studio_for_interviewers">
+                          <mat-radio-button value="Yes">Yes</mat-radio-button>
+                          <mat-radio-button value="No">No</mat-radio-button>
+                        </mat-radio-group>            
+              </mat-card>
+              <mat-card>
+                  <h6>Q15) During the event, we make daily highlight videos and play them on LED screens at the venue and also send them to delegates through WhatsApp. Would this be of interest to you?</h6>
+                  <mat-radio-group  style= "margin-bottom:15px;" name=”daily_highlights_videos_whatsapp“ 
+                  fxLayout="column" [(ngModel)]="kp_model.daily_highlights_videos_whatsapp">
+                          <mat-radio-button value="Yes">Yes</mat-radio-button>
+                          <mat-radio-button value="No">No</mat-radio-button>
+                        </mat-radio-group>              
+              </mat-card>
+              <mat-card fxLayoutGap="10px ">
+                  <h6  style="padding-bottom: 10px;">Q16)During the event, we post photos, key takeaways, and short videos of the conference across all social media channels. Would be this of interest to you? </h6>
+                  <mat-radio-group  style= "margin-bottom:15px;"  name=”live_posts_on_socialmedia“ 
+                  fxLayout="column" [(ngModel)]="kp_model.live_posts_on_socialmedia">
+                          <mat-radio-button value="Yes">Yes</mat-radio-button>
+                          <mat-radio-button value="No">No</mat-radio-button>
+                        </mat-radio-group>            
+              </mat-card>
+              <mat-card>
+                  <h6>Q17)Mailers will be sent to all delegates for 12-52 weeks after the event with links of key videos and thumbnails displaying a thank you from organizers. Would this be of interest to you? </h6>
+                  <mat-radio-group  style= "margin-bottom:15px;"  name=”mailers_to_delegates“ 
+                  fxLayout="column" [(ngModel)]="kp_model.mailers_to_delegates">
+                          <mat-radio-button value="Yes">Yes</mat-radio-button>
+                          <mat-radio-button value="No">No</mat-radio-button>
+                        </mat-radio-group>       
+              </mat-card>
+              <mat-card>
+                  <h6>Q18)Do you require live streaming of the event? </h6>
+                  <mat-radio-group  style= "margin-bottom:15px;"  name=”live_streaming“ 
+                  fxLayout="column" [(ngModel)]="kp_model.live_streaming">
+                          <mat-radio-button value="Yes">Yes</mat-radio-button>
+                          <mat-radio-button value="No">No</mat-radio-button>
+                        </mat-radio-group>                
+              </mat-card>
+              <mat-card>
+                  <h6>Q19) Will you, the organizers be budgeting the Knowledge Partner investment or would any of your sponsoring companies support this initiative?</h6>
+                  <mat-form-field class="example-full-width">
+                          <input matInput  name=”budget_sponsor“ 
+                          placeholder="Your Answer" [(ngModel)]="kp_model.budget_sponsor">
+                      </mat-form-field>               
+              </mat-card>
+              <mat-card>
+                  <h6>Q20)Will you be interested in getting an android app/tailor made website made for the conference. The app/website would have videos of all the speaker sessions, presentations, interviews from the studio, papers and posters presented at the conference and photographs from the event</h6>
+                  <mat-radio-group  style= "margin-bottom:15px;"  name=”app_for_event“ 
+                  fxLayout="column" [(ngModel)]="kp_model.app_for_event">
+                          <mat-radio-button value="Yes">Yes</mat-radio-button>
+                          <mat-radio-button value="No">No</mat-radio-button>
+                          <mat-radio-button value="Maybe">Maybe</mat-radio-button>
+                        </mat-radio-group>             
+              </mat-card>
+              <mat-card>
+                  <h6>Q21)Will you be interested in having a dedicated YouTube channel which would have recordings of all speaker videos and interviews recorded at the studio
+                  </h6>
+                  <mat-radio-group  style= "margin-bottom:15px;"  name=”dedicated_videos_on_youtube_channel“ 
+                  fxLayout="column" [(ngModel)]="kp_model.dedicated_videos_on_youtube_channel">
+                          <mat-radio-button value="Yes">Yes</mat-radio-button>
+                          <mat-radio-button value="No">No</mat-radio-button>
+                        </mat-radio-group>               
+              </mat-card>
+              <mat-card>
+                  <h6>Q22)Kindly use the box below to mention any other requirements you might have?</h6>
+                  <mat-form-field class="example-full-width">
+                          <input name=”any_other_requirements“ 
+                          matInput placeholder="Your Answer" [(ngModel)]="kp_model.any_other_requirements">
+                      </mat-form-field> 
+              </mat-card>
+          </div>
+          <div class="submit">
+              <button mat-flat-button style="color:#fff;background-color: #3f51b5;">SUBMIT</button>
+               <button mat-flat-button style="color:#000;background-color: #fff;">SUBMIT</button> 
+          </div>
+
+      </form> -->
+
+      <form role="form" #f="ngForm" (ngSubmit)="response_form()">
+
+        <div class="questions">
+          <br>
+
+          <mat-card>
+              <p style="font-size: 18px; font-weight: bold; color:#336699;">Congratulations on a successful conference.</p>
+              <p style="font-size: 14px; font-weight: bold; color:#993366	;"> Here's why it is not over yet.</p>
+              
+          </mat-card>
+          <mat-card>
+            <img src="/assets/smiley/Final.jpg">
+          </mat-card>
+
+          <!-- <mat-card>
+            <h6>Q1) What about the video recordings of the faculty, who shared their wisdom, insights, and
+              recommendations with delegates? ? <span style="color: red;"></span></h6> -->
+          <!-- <mat-form-field class="example-full-width">
+                      <input name="concept" matInput placeholder="Your Answer" [(ngModel)]="kp1_model.concept" required>
+                  
+                      <mat-error *ngIf="kpFormControl.hasError('required')">This field is required.</mat-error>
+                  </mat-form-field>                -->
+          <!-- <mat-radio-group style="margin-bottom:15px;" name=”concept“ fxLayout="column" required
+                          [(ngModel)]="kp1_model.concept">
+                          <mat-radio-button value="Yes">Yes</mat-radio-button>
+                          <mat-radio-button value="No">No</mat-radio-button> -->
+          <!-- <mat-error *ngIf="kpFormControl.hasError('required')">This field is required.</mat-error> -->
+          <!-- </mat-radio-group> -->
+          <!-- <div fxLayout="row" fxLayoutAlign="center center" class="smileys" fxLayoutGap="">
+                          <div class='sim1' style="padding-right: 10px;"> 
+                          <div style="border-radius: 100%; " (click)="enableDisableRule($event)" class='sim1'><p style="font-size: 9px; ">0%</p>
+                              <div [style.background-color]="toggle ? '' : '#EB7F84'" style=" border-radius:100%" > 
+                                  
+                                  <img class="smiley1" src="/assets/smiley/smilie5.png">
+                              </div>
+
+                          </div>
+                         <p style="font-size: 9px"> Not Interested</p>
+                      </div>
+                      <div class='sim1' style="padding-right: 10px;"> 
+                          <div style="border-radius: 100%" (click)="enableDisableRule1($event)" class='sim1'><p style="font-size: 9px">25%</p>
+                              <div [style.background-color]="toggle1 ? '' : '#FBDC25'" style="border-radius: 100%; " >
+
+                                  <img class="smiley2" src="/assets/smiley/smilie4.png"></div>
+                          </div>
+
+                         <p style="font-size: 9px"> Don't Know</p>
+                      </div>
+                      <div class='sim1' style="padding-right: 10px;"> 
+
+                          <div style="border-radius: 100%; " (click)="enableDisableRule2($event)" class='sim1'><p style="font-size: 9px">50%</p>
+                          
+                          <div [style.background-color]="toggle2 ? '' : '#FBDC25'" style="border-radius: 100%; "> <img class="smiley3"
+                                  src="/assets/smiley/smilie3.png"></div>
+                          </div>
+                         <p style="font-size: 9px"> May be Interested</p>
+                      </div>
+                      <div class='sim1' style="padding-right: 10px;"> 
+
+                          <div style="border-radius: 100%; " (click)="enableDisableRule3($event)" class='sim1'><p style="font-size: 9px">75%</p>
+
+                          <div [style.background-color]="toggle3 ? '' : '#FBDC25'" style="border-radius: 100%; " > <img class="smiley4"
+                                  src="/assets/smiley/smilie2.png"></div>
+                                  </div>
+                                 <p style="font-size: 9px"> Interested</p>
+                              </div>
+
+                              <div class='sim1' style="padding-right: 10px;"> 
+                          <div style="border-radius: 100%; " (click)="enableDisableRule4($event)" class='sim1'><p style="font-size: 9px">100%</p>
+
+                          <div [style.background-color]="toggle4 ? '' : '#FBDC25'" style="border-radius: 100%;  "
+                              > <img class="smiley5"
+                                  src="/assets/smiley/smilie1.png"></div>
+                                  </div>
+                                 <p style="font-size: 9px">Let's do it</p>
+                              </div>
+                      </div> -->
+          <!-- 
+            <div fxLayout="row" fxLayoutAlign="center center" class="smileys" fxLayoutGap="">
+              <div class='sim1' style="padding-right: 5px;">
+                <div style="border-radius: 100%; " (click)="enableDisableRule($event)" class='sim1'>
+                  <p style="font-size: 9px; ">0%</p>
+                  <div [style.background-color]="toggle ? '' : '#EB7F84'" style=" border-radius:100%">
+
+                    <img class="smiley1" src="/assets/smiley/smiley_angry_gray.22ea6062.svg">
+                  </div>
+
+                </div>
+                <p style="font-size: 9px"> Not Interested</p>
+              </div>
+              <div class='sim1' style="padding-right: 5px;">
+                <div style="border-radius: 100%" (click)="enableDisableRule1($event)" class='sim1'>
+                  <p style="font-size: 9px">25%</p>
+                  <div [style.background-color]="toggle1 ? '' : '#FBDC25'" style="border-radius: 100%; ">
+
+                    <img class="smiley2" src="/assets/smiley/smiley_annoyed_gray.5534ff50.svg"></div>
+                </div>
+
+                <p style="font-size: 9px"> Don't Know</p>
+              </div>
+              <div class='sim1' style="padding-right: 5px;">
+
+                <div style="border-radius: 100%; " (click)="enableDisableRule2($event)" class='sim1'>
+                  <p style="font-size: 9px">50%</p>
+
+                  <div [style.background-color]="toggle2 ? '' : '#FBDC25'" style="border-radius: 100%; "> <img
+                      class="smiley3" src="/assets/smiley/smiley_neutral_gray.abd60ee6.svg"></div>
+                </div>
+                <p style="font-size: 9px"> May be Interested</p>
+              </div>
+              <div class='sim1' style="padding-right: 5px;">
+
+                <div style="border-radius: 100%; " (click)="enableDisableRule3($event)" class='sim1'>
+                  <p style="font-size: 9px">75%</p>
+
+                  <div [style.background-color]="toggle3 ? '' : '#FBDC25'" style="border-radius: 100%; "> <img
+                      class="smiley4" src="/assets/smiley/smiley_happy_gray.9aa04fd8.svg"></div>
+                </div>
+                <p style="font-size: 9px"> Interested</p>
+              </div>
+
+              <div class='sim1' style="padding-right: 5px;">
+                <div style="border-radius: 100%; " (click)="enableDisableRule4($event)" class='sim1'>
+                  <p style="font-size: 9px">100%</p>
+
+                  <div [style.background-color]="toggle4 ? '' : '#FBDC25'" style="border-radius: 100%;  "> <img
+                      class="smiley5" src="/assets/smiley/smiley_very_happy_gray.c046d495.svg"></div>
+                </div>
+                <p style="font-size: 9px">Let's do it</p>
+              </div>
+            </div>
+          </mat-card> -->
+          <!-- <mat-card>
+                      <h6>Q2) What about the video recordings of the faculty, who shared their wisdom, insights, and recommendations with delegates? <span style="color: red;"></span></h6> -->
+          <!-- <mat-form-field class="example-full-width">
+                      <input name="budget" matInput placeholder="Your Answer" (keypress)="numberOnly($event)" [(ngModel)]="kp1_model.budget"  required>
+                      <mat-error *ngIf="kpFormControl.hasError('required')">This field is required.</mat-error>
+
+                  </mat-form-field>                -->
+          <!-- <mat-radio-group style="margin-bottom:15px;" name=”budget“ fxLayout="column"
+                          [(ngModel)]="kp1_model.budget" required>
+                          <mat-radio-button value="Yes">Yes</mat-radio-button>
+                          <mat-radio-button value="No">No</mat-radio-button> -->
+          <!-- <mat-error *ngIf="kpFormControl.hasError('required')">This field is required.</mat-error> -->
+          <!-- </mat-radio-group> -->
+
+          <!-- <mat-radio-group style="margin-bottom:15px;" name=budget fxLayout="column"
+                      [(ngModel)]="kp1_model.budget" required>
+                    <mat-radio-button value="Yes">Yes</mat-radio-button>
+                      <mat-radio-button value="No">No</mat-radio-button>
+                    </mat-radio-group>  
+
+                    <div *ngIf="kp1_model.budget=='Yes'">
+                              <mat-radio-group style="margin-bottom:15px;" name=sponsors fxLayout="column"
+                                  [(ngModel)]="kp1_model.sponsors" required>
+                                  Would you like our marketing team to reach out potential sponsors ?
+                                  <mat-radio-button value="Yes">Yes</mat-radio-button>
+                                  <mat-radio-button value="No">No</mat-radio-button>
+                                </mat-radio-group>  
+                          </div>
+                          <div *ngIf="kp1_model.sponsors=='Yes'">
+                             <a (click)="showAppointmentLetter()">  Click here to see the appointment letter.</a>
+                                <div *ngIf="appointLetter">
+                                      
+                                  <img 
+                                  src="/assets/smiley/iages_approval.png">
+                                      </div>
+                                  </div> -->
+
+          <!-- <div fxLayout="row" fxLayoutAlign="center center" class="smileys" fxLayoutGap="">
+                          <div style="border-radius: 100%; " (click)="enableDisableRuleEvent($event)">
+                              <div [style.background-color]="toggleevent ? '' : '#EB7F84'" style="margin-right: 10px; border-radius:100%">
+                                  <img class="smiley1" src="/assets/smiley/smiley_angry_gray.22ea6062.svg">
+                              </div>
+                          </div>
+
+                          <div style="border-radius: 100%" (click)="enableDisableRuleEvent1($event)">
+                              <div [style.background-color]="toggleevent1 ? '' : '#FBDC25'" style="border-radius: 100%; margin-right: 10px;" >
+
+                                  <img class="smiley2" src="/assets/smiley/smiley_annoyed_gray.5534ff50.svg"></div>
+                          </div>
+                          <div style="border-radius: 100%; " (click)="enableDisableRuleEvent2($event)">
+                          
+                          <div [style.background-color]="toggleevent2 ? '' : '#FBDC25'" style="border-radius: 100%; margin-right: 10px;"> <img class="smiley3"
+                                  src="/assets/smiley/smiley_neutral_gray.abd60ee6.svg"></div>
+                          </div>
+
+                          <div style="border-radius: 100%; " (click)="enableDisableRuleEvent3($event)">
+
+                          <div [style.background-color]="toggleevent3 ? '' : '#FBDC25'" style="border-radius: 100%; margin-right: 10px;" > <img class="smiley4"
+                                  src="/assets/smiley/smiley_happy_gray.9aa04fd8.svg"></div>
+                                  </div>
+
+                          <div style="border-radius: 100%; " (click)="enableDisableRuleEvent4($event)">
+
+                          <div [style.background-color]="toggleevent4 ? '' : '#FBDC25'" style="border-radius: 100%;  margin-right: 10px;"
+                              > <img class="smiley5"
+                                  src="/assets/smiley/smiley_very_happy_gray.c046d495.svg"></div>
+                                  </div>
+                      </div> -->
+          <!-- </mat-card> -->
+
+
+          <!-- <mat-card>
+                          <h6>Q3) Would you like to set up a television studio ? <span
+                                  style="color: red;"></span></h6> -->
+          <!-- <mat-form-field class="example-full-width">
+                          <input name="investment" 
+                          matInput placeholder="Your Answer" [(ngModel)]="kp1_model.investment" required >
+                          <mat-error *ngIf="kpFormControl.hasError('required')">This field is required.</mat-error> -->
+          <!-- <div fxLayout="row" fxLayoutAlign="center center" class="smileys" fxLayoutGap="">
+                                  <div style="border-radius: 100%; " name="1" (click)="enableDisableRules($event)">
+                                      <div [style.background-color]="toggles ? '' : '#EB7F84'" style="margin-right: 10px; border-radius:100%">
+                                          <img class="smiley1" src="/assets/smiley/smiley_angry_gray.22ea6062.svg">
+                                      </div>
+                                  </div>
+      
+                                  <div style="border-radius: 100%"  (click)="enableDisableRules1($event)">
+                                      <div [style.background-color]="toggles1 ? '' : '#FBDC25'" style="border-radius: 100%; margin-right: 10px;" >
+      
+                                          <img class="smiley2" src="/assets/smiley/smiley_annoyed_gray.5534ff50.svg"></div>
+                                  </div>
+                                  <div style="border-radius: 100%; " (click)="enableDisableRules2($event)">
+                                  
+                                  <div [style.background-color]="toggles2 ? '' : '#FBDC25'" style="border-radius: 100%; margin-right: 10px;"> <img class="smiley3"
+                                          src="/assets/smiley/smiley_neutral_gray.abd60ee6.svg"></div>
+                                  </div>
+      
+                                  <div style="border-radius: 100%; " (click)="enableDisableRules3($event)">
+      
+                                  <div [style.background-color]="toggles3 ? '' : '#FBDC25'" style="border-radius: 100%; margin-right: 10px;" > <img class="smiley4"
+                                          src="/assets/smiley/smiley_happy_gray.9aa04fd8.svg"></div>
+                                          </div>
+      
+                                  <div style="border-radius: 100%; " (click)="enableDisableRules4($event)">
+      
+                                  <div [style.background-color]="toggles4 ? '' : '#FBDC25'" style="border-radius: 100%;  margin-right: 10px;"
+                                      > <img class="smiley5"
+                                          src="/assets/smiley/smiley_very_happy_gray.c046d495.svg"></div>
+                                          </div>
+                              </div> -->
+          <!-- </mat-form-field>                -->
+          <!-- </mat-card>
+                      <div *ngIf="!toggles4">
+                          <mat-card>
+                              <mat-radio-group style="margin-bottom:15px;" name=backDrop fxLayout="column"
+                                  [(ngModel)]="kp1_model.backDrop" required>
+                                  Show me how it will look.
+                                  <mat-radio-button value="Yes">Yes</mat-radio-button>
+                                  <mat-radio-button value="No">No</mat-radio-button>
+                                </mat-radio-group>  
+                              </mat-card>
+                          </div>
+                      <div *ngIf="kp1_model.backDrop=='Yes'">
+                              <mat-card>
+
+                              <img 
+                              src="/assets/smiley/B_P_Center_Panel.jpg">
+
+                              </mat-card>
+                          </div> -->
+          <mat-card>
+            What if you had a professional team to convert your raw scientific session recordings into Blogs, Podcasts,
+            and High-Quality Speaker Talk videos.
+            <br>
+            <br>
+            We could help.
+            <br>
+            <br>
+            With USD2,00,000 in platform credit from Google, we have built TheRightDoctors.com from the ground up,
+            optimized to deliver content to medical professionals worldwide.
+            <br>
+            <br>
+            With Search Engine Optimisation and cutting edge ML/ AI tools, we deliver curated medical digital content to
+            relevant smartphone audiences across a spectrum of 3G/4G environments.
+            <br>
+            <br>
+
+            Adaptive Bit Rate technology delivers video seamlessly across more than 5000 devices with vernacular and
+            voice search capabilities coming up soon.
+            <br>
+            <br>
+
+            If you have the budget, we have the expertise.
+
+            <br>
+            <br>
+            Alternatively, our marketing team will reach out to your conference sponsors for additional support for this
+            initiative.
+
+            <!-- And in case you are out of budget we will reach out to your conference sponsors for additional support for
+            this initiative.<a (click)="showAppointmentLetter()">Click here to see an example of a mandate we have
+              received for IAGES 2020 .</a>
+            <div *ngIf="appointLetter">
+
+              <img src="/assets/smiley/iages_approval.png">
+            </div> -->
+            <br>
+            <br>
+            <mat-radio-group style="margin-bottom:15px;" name=budget fxLayout="column" [(ngModel)]="kp1_model.budget"
+              required>
+              <mat-radio-button value="Yes">I have a budget for this initiative.</mat-radio-button>
+              <mat-radio-button value="No">I would like your team to reach out to potential sponsors.</mat-radio-button>
+            </mat-radio-group>
+            <a (click)="showAppointmentLetter()"><span style = "color:#336699;">Click here to see an example of a mandate we have received for IAGES
+              2020 :</span></a>
+            <div *ngIf="appointLetter">
+
+              <img src="/assets/smiley/iages_approval.png">
+            </div>
+          </mat-card>
+          <mat-card>
+            <p style="font-size: 25px; font-weight: bold; color:#336699;">The Deliverables</p>
+          </mat-card>
+          <!-- <mat-card>
+            <a (click)="showKeyTakeAwayNew()"> Click to see how Key Take-Aways from your conference will look : </a>
+            <br>
+            <div *ngIf="ktNew">
+
+              <img src="/assets/smiley/keytakenew.jpg">
+
+              <p style="text-align: center;"> Please share your level of interest?</p>
+              <div fxLayout="row" fxLayoutAlign="center center" class="smileys" fxLayoutGap="">
+                <div style="border-radius: 100%; " name="1" (click)="enableDisableRuleKey($event)">
+                  <div [style.background-color]="toggleKey ? '' : '#EB7F84'"
+                    style="margin-right: 10px; border-radius:100%">
+                    <img class="smiley1" src="/assets/smiley/smiley_angry_gray.22ea6062.svg">
+                  </div>
+                </div>
+  
+                <div style="border-radius: 100%" (click)="enableDisableRuleKey1($event)">
+                  <div [style.background-color]="toggleKey1 ? '' : '#FBDC25'"
+                    style="border-radius: 100%; margin-right: 10px;">
+  
+                    <img class="smiley2" src="/assets/smiley/smiley_annoyed_gray.5534ff50.svg"></div>
+                </div>
+                <div style="border-radius: 100%; " (click)="enableDisableRuleKey2($event)">
+  
+                  <div [style.background-color]="toggleKey2 ? '' : '#FBDC25'"
+                    style="border-radius: 100%; margin-right: 10px;"> <img class="smiley3"
+                      src="/assets/smiley/smiley_neutral_gray.abd60ee6.svg"></div>
+                </div>
+  
+                <div style="border-radius: 100%; " (click)="enableDisableRuleKey3($event)">
+  
+                  <div [style.background-color]="toggleKey3 ? '' : '#FBDC25'"
+                    style="border-radius: 100%; margin-right: 10px;"> <img class="smiley4"
+                      src="/assets/smiley/smiley_happy_gray.9aa04fd8.svg"></div>
+                </div>
+  
+                <div style="border-radius: 100%; " (click)="enableDisableRuleKey4($event)">
+  
+                  <div [style.background-color]="toggleKey4 ? '' : '#FBDC25'"
+                    style="border-radius: 100%;  margin-right: 10px;"> <img class="smiley5"
+                      src="/assets/smiley/smiley_very_happy_gray.c046d495.svg"></div>
+                </div>
+              </div>
+            </div>
+            
+   
+
+
+          </mat-card> -->
+          <mat-card>
+
+            Curate Key Take Aways from every talk delivered at your conference.
+
+            <a (click)="showKeyTakeAway()"><br><span style = "color:#336699;"> Click here to see an Example.</span></a>
+            <!-- <mat-radio-group style="margin-bottom:15px;" name=keyTakeAway fxLayout="column" [(ngModel)]="keyTakeAway"
+                required>
+  
+                <mat-radio-button value="Yes">Yes</mat-radio-button>
+                <mat-radio-button value="No">No</mat-radio-button>
+              </mat-radio-group> -->
+
+            <!-- <mat-form-field class="example-full-width">
+                     <input name="investment" 
+                     matInput placeholder="Your Answer" [(ngModel)]="kp1_model.investment" required >
+                     <mat-error *ngIf="kpFormControl.hasError('required')">This field is required.</mat-error> -->
+
+            <!-- </mat-form-field>                -->
+
+            <div *ngIf="seTkeyTakeAway">
+              <img src="/assets/smiley/Naresh_Trahen-02.jpg" style="padding-bottom: 5px;">
+              <br>
+              <img src="/assets/smiley/keytakenew.jpg">
+              <br>
+              <br>
+              <p style="text-align: center;"> Please share your level of interest?</p>
+              <br>
+
+              <table>
+                <tr>
+                  <td>
+                    <p style="font-size: 9px">0%</p>
+                  </td>
+                  <td>
+                    <p style="font-size: 9px">25%</p>
+                  </td>
+                  <td>
+                    <p style="font-size: 9px">50%</p>
+                  </td>
+                  <td>
+                    <p style="font-size: 9px">75%</p>
+                  </td>
+                  <td>
+                    <p style="font-size: 9px">100%</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class='sim1'>
+                      <div style="border-radius: 100%; " (click)="enableDisableRuleKey($event)" class='sim1'>
+                        <div [style.background-color]="toggleKey ? '' : '#EB7F84'" style=" border-radius:100%">
+
+                          <img class="smiley1" src="/assets/smiley/smiley_angry_gray.22ea6062.svg">
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    <div class='sim1'>
+                      <div style="border-radius: 100%" (click)="enableDisableRuleKey1($event)" class='sim1'>
+                        <div [style.background-color]="toggleKey1 ? '' : '#FBDC25'" style="border-radius: 100%; ">
+
+                          <img class="smiley2" src="/assets/smiley/smiley_annoyed_gray.5534ff50.svg"></div>
+                      </div>
+
+                    </div>
+                  </td>
+                  <td>
+                    <div class='sim1'>
+
+                      <div style="border-radius: 100%; " (click)="enableDisableRuleKey2($event)" class='sim1'>
+
+                        <div [style.background-color]="toggleKey2 ? '' : '#FBDC25'" style="border-radius: 100%; "> <img
+                            class="smiley3" src="/assets/smiley/smiley_neutral_gray.abd60ee6.svg"></div>
+                      </div>
+
+                    </div>
+                  </td>
+                  <td>
+                    <div class='sim1'>
+
+                      <div style="border-radius: 100%; " (click)="enableDisableRuleKey3($event)" class='sim1'>
+
+                        <div [style.background-color]="toggleKey3 ? '' : '#FBDC25'" style="border-radius: 100%; "> <img
+                            class="smiley4" src="/assets/smiley/smiley_happy_gray.9aa04fd8.svg"></div>
+                      </div>
+
+
+                    </div>
+                  </td>
+                  <td>
+                    <div class='sim1'>
+                      <div style="border-radius: 100%; " (click)="enableDisableRuleKey4($event)" class='sim1'>
+
+                        <div [style.background-color]="toggleKey4 ? '' : '#FBDC25'" style="border-radius: 100%;  "> <img
+                            class="smiley5" src="/assets/smiley/smiley_very_happy_gray.c046d495.svg"></div>
+                      </div>
+
+                    </div>
+
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <p style="font-size: 9px">Not Interested</p>
+                  </td>
+                  <td>
+                    <p style="font-size: 9px">Don't &nbsp;Know</p>
+                  </td>
+                  <td>
+                    <p style="font-size: 9px">Maybe</p>
+                  </td>
+                  <td>
+                    <p style="font-size: 9px">Interested</p>
+                  </td>
+                  <td>
+                    <p style="font-size: 9px">Let's do it</p>
+                  </td>
+
+                </tr>
+              </table>
+            </div>
+          </mat-card>
+
+
+          <mat-card>
+            Edit your Speaker Talks with tailor-made graphics & enable organic discovery through Search Engine
+            Optimization.
+            <a (click)="showSpeakerTalk()"><br> <span style = "color:#336699;">Click to see options: </span></a>
+            <br>
+            <div *ngIf="speakerTalk">
+
+              <img src="/assets/smiley/Digital-02.jpg">
+              <br>
+              <br>
+              <img src="/assets/smiley/image_(7).png">
+              <br>
+              <br>
+              <img src="/assets/smiley/image_(8).png">
+              <br>
+              <br>
+              <p style="text-align: center;"> Please share your level of interest?</p>
+
+              <br>
+              <table>
+                <tr>
+                  <td>
+                    <p style="font-size: 9px">0%</p>
+                  </td>
+                  <td>
+                    <p style="font-size: 9px">25%</p>
+                  </td>
+                  <td>
+                    <p style="font-size: 9px">50%</p>
+                  </td>
+                  <td>
+                    <p style="font-size: 9px">75%</p>
+                  </td>
+                  <td>
+                    <p style="font-size: 9px">100%</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class='sim1'>
+                      <div style="border-radius: 100%; " (click)="enableDisableRuleSpeakerTalk($event)" class='sim1'>
+                        <div [style.background-color]="toggleSpeakerTalk ? '' : '#EB7F84'" style=" border-radius:100%">
+
+                          <img class="smiley1" src="/assets/smiley/smiley_angry_gray.22ea6062.svg">
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    <div class='sim1'>
+                      <div style="border-radius: 100%" (click)="enableDisableRuleSpeakerTalk1($event)" class='sim1'>
+                        <div [style.background-color]="toggleSpeakerTalk1 ? '' : '#FBDC25'"
+                          style="border-radius: 100%; ">
+
+                          <img class="smiley2" src="/assets/smiley/smiley_annoyed_gray.5534ff50.svg"></div>
+                      </div>
+
+                    </div>
+                  </td>
+                  <td>
+                    <div class='sim1'>
+
+                      <div style="border-radius: 100%; " (click)="enableDisableRuleSpeakerTalk2($event)" class='sim1'>
+
+                        <div [style.background-color]="toggleSpeakerTalk2 ? '' : '#FBDC25'"
+                          style="border-radius: 100%; "> <img class="smiley3"
+                            src="/assets/smiley/smiley_neutral_gray.abd60ee6.svg"></div>
+                      </div>
+
+                    </div>
+                  </td>
+                  <td>
+                    <div class='sim1'>
+
+                      <div style="border-radius: 100%; " (click)="enableDisableRuleSpeakerTalk3($event)" class='sim1'>
+
+                        <div [style.background-color]="toggleSpeakerTalk3 ? '' : '#FBDC25'"
+                          style="border-radius: 100%; "> <img class="smiley4"
+                            src="/assets/smiley/smiley_happy_gray.9aa04fd8.svg"></div>
+                      </div>
+
+
+                    </div>
+                  </td>
+                  <td>
+                    <div class='sim1'>
+                      <div style="border-radius: 100%; " (click)="enableDisableRuleSpeakerTalk4($event)" class='sim1'>
+
+                        <div [style.background-color]="toggleSpeakerTalk4 ? '' : '#FBDC25'"
+                          style="border-radius: 100%;  "> <img class="smiley5"
+                            src="/assets/smiley/smiley_very_happy_gray.c046d495.svg"></div>
+                      </div>
+
+                    </div>
+
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <p style="font-size: 9px">Not Interested</p>
+                  </td>
+                  <td>
+                    <p style="font-size: 9px">Don't &nbsp;Know</p>
+                  </td>
+                  <td>
+                    <p style="font-size: 9px">Maybe</p>
+                  </td>
+                  <td>
+                    <p style="font-size: 9px">Interested</p>
+                  </td>
+                  <td>
+                    <p style="font-size: 9px">Let's do it</p>
+                  </td>
+
+                </tr>
+              </table>
+            </div>
+          </mat-card>
+
+          <mat-card>
+            Question of the Talk ensures the learning from the conference continues. <br>
+            <a (click)="showQOT()"><span style = "color:#336699;"> Click here to see an Example.</span></a>
+            <br>
+            <div *ngIf="qot">
+
+              <img src="/assets/smiley/qot.png">
+              <br>
+
+              <p style="text-align: center;"> Please share your level of interest?</p>
+              <br>
+              <table>
+                <tr>
+                  <td>
+                    <p style="font-size: 9px">0%</p>
+                  </td>
+                  <td>
+                    <p style="font-size: 9px">25%</p>
+                  </td>
+                  <td>
+                    <p style="font-size: 9px">50%</p>
+                  </td>
+                  <td>
+                    <p style="font-size: 9px">75%</p>
+                  </td>
+                  <td>
+                    <p style="font-size: 9px">100%</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class='sim1'>
+                      <div style="border-radius: 100%; " (click)="enableDisableRuleQot($event)" class='sim1'>
+                        <div [style.background-color]="toggleQot ? '' : '#EB7F84'" style=" border-radius:100%">
+
+                          <img class="smiley1" src="/assets/smiley/smiley_angry_gray.22ea6062.svg">
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    <div class='sim1'>
+                      <div style="border-radius: 100%" (click)="enableDisableRuleQot1($event)" class='sim1'>
+                        <div [style.background-color]="toggleQot1 ? '' : '#FBDC25'" style="border-radius: 100%; ">
+
+                          <img class="smiley2" src="/assets/smiley/smiley_annoyed_gray.5534ff50.svg"></div>
+                      </div>
+
+                    </div>
+                  </td>
+                  <td>
+                    <div class='sim1'>
+
+                      <div style="border-radius: 100%; " (click)="enableDisableRuleQot2($event)" class='sim1'>
+
+                        <div [style.background-color]="toggleQot2 ? '' : '#FBDC25'" style="border-radius: 100%; "> <img
+                            class="smiley3" src="/assets/smiley/smiley_neutral_gray.abd60ee6.svg"></div>
+                      </div>
+
+                    </div>
+                  </td>
+                  <td>
+                    <div class='sim1'>
+
+                      <div style="border-radius: 100%; " (click)="enableDisableRuleQot3($event)" class='sim1'>
+
+                        <div [style.background-color]="toggleQot3 ? '' : '#FBDC25'" style="border-radius: 100%; "> <img
+                            class="smiley4" src="/assets/smiley/smiley_happy_gray.9aa04fd8.svg"></div>
+                      </div>
+
+
+                    </div>
+                  </td>
+                  <td>
+                    <div class='sim1'>
+                      <div style="border-radius: 100%; " (click)="enableDisableRuleQot4($event)" class='sim1'>
+
+                        <div [style.background-color]="toggleQot4 ? '' : '#FBDC25'" style="border-radius: 100%;  "> <img
+                            class="smiley5" src="/assets/smiley/smiley_very_happy_gray.c046d495.svg"></div>
+                      </div>
+
+                    </div>
+
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <p style="font-size: 9px">Not Interested</p>
+                  </td>
+                  <td>
+                    <p style="font-size: 9px">Don't &nbsp;Know</p>
+                  </td>
+                  <td>
+                    <p style="font-size: 9px">Maybe</p>
+                  </td>
+                  <td>
+                    <p style="font-size: 9px">Interested</p>
+                  </td>
+                  <td>
+                    <p style="font-size: 9px">Let's do it</p>
+                  </td>
+
+                </tr>
+              </table>
+            </div>
+
+          </mat-card>
+          <mat-card>
+            A dedicated Android app for all the scientific content generated at your conference ( Speaker Talks,
+            Podcasts, Blogs, Key Take Aways, Question of the Talk ).
+            <a (click)="getDedicatedApp()"><br><span style = "color:#336699;"> Click here to see an Example.</span></a>
+            <!-- <a href="http://bit.ly/36vAjxm">http://bit.ly/36vAjxm</a> -->
+            <div *ngIf="dApp">
+                <p style="text-align:center;"><img src="/assets/smiley/Final_Mobile_Screen.jpg" ></p>
+              <!-- <img style="text-align: center; display: block;" src="/assets/smiley/Final_Mobile_Screen.jpg"> -->
+              <br>
+              <br>
+              <p style="text-align:center;"><img src="/assets/smiley/app1.png"></p>
+
+              <br><br>
+              Link for the wccmm app created by us : <a href="http://bit.ly/36vAjxm">http://bit.ly/36vAjxm</a>
+              <br><br>
+              <p style="text-align: center;">Please share your level of interest?</p>
+              <br>
+              <table>
+                  <tr>
+                    <td>
+                      <p style="font-size: 9px">0%</p>
+                    </td>
+                    <td>
+                      <p style="font-size: 9px">25%</p>
+                    </td>
+                    <td>
+                      <p style="font-size: 9px">50%</p>
+                    </td>
+                    <td>
+                      <p style="font-size: 9px">75%</p>
+                    </td>
+                    <td>
+                      <p style="font-size: 9px">100%</p>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class='sim1'>
+                        <div style="border-radius: 100%; " (click)="enableDisableRuleApp($event)" class='sim1'>
+                          <div [style.background-color]="toggleApp ? '' : '#EB7F84'" style=" border-radius:100%">
+  
+                            <img class="smiley1" src="/assets/smiley/smiley_angry_gray.22ea6062.svg">
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                    <td>
+                      <div class='sim1'>
+                        <div style="border-radius: 100%" (click)="enableDisableRuleApp1($event)" class='sim1'>
+                          <div [style.background-color]="toggleApp1 ? '' : '#FBDC25'" style="border-radius: 100%; ">
+  
+                            <img class="smiley2" src="/assets/smiley/smiley_annoyed_gray.5534ff50.svg"></div>
+                        </div>
+  
+                      </div>
+                    </td>
+                    <td>
+                      <div class='sim1'>
+  
+                        <div style="border-radius: 100%; " (click)="enableDisableRuleApp2($event)" class='sim1'>
+  
+                          <div [style.background-color]="toggleApp2 ? '' : '#FBDC25'" style="border-radius: 100%; "> <img
+                              class="smiley3" src="/assets/smiley/smiley_neutral_gray.abd60ee6.svg"></div>
+                        </div>
+  
+                      </div>
+                    </td>
+                    <td>
+                      <div class='sim1'>
+  
+                        <div style="border-radius: 100%; " (click)="enableDisableRuleApp3($event)" class='sim1'>
+  
+                          <div [style.background-color]="toggleApp3 ? '' : '#FBDC25'" style="border-radius: 100%; "> <img
+                              class="smiley4" src="/assets/smiley/smiley_happy_gray.9aa04fd8.svg"></div>
+                        </div>
+  
+  
+                      </div>
+                    </td>
+                    <td>
+                      <div class='sim1'>
+                        <div style="border-radius: 100%; " (click)="enableDisableRuleApp4($event)" class='sim1'>
+  
+                          <div [style.background-color]="toggleApp4 ? '' : '#FBDC25'" style="border-radius: 100%;  "> <img
+                              class="smiley5" src="/assets/smiley/smiley_very_happy_gray.c046d495.svg"></div>
+                        </div>
+  
+                      </div>
+  
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <p style="font-size: 9px">Not Interested</p>
+                    </td>
+                    <td>
+                      <p style="font-size: 9px">Don't &nbsp;Know</p>
+                    </td>
+                    <td>
+                      <p style="font-size: 9px">Maybe</p>
+                    </td>
+                    <td>
+                      <p style="font-size: 9px">Interested</p>
+                    </td>
+                    <td>
+                      <p style="font-size: 9px">Let's do it</p>
+                    </td>
+  
+                  </tr>
+                </table>
+            </div>
+
+
+
+          </mat-card>
+
+          <mat-card>
+            Podcast of every talk delivered at your conference with one click sharing.
+            <a (click)="showAudioRecord()"><span style = "color:#336699;"> Click here to see an Example.</span></a>
+            <!-- <mat-form-field class="example-full-width">
+                              <input name="investment" 
+                              matInput placeholder="Your Answer" [(ngModel)]="kp1_model.investment" required >
+                              <mat-error *ngIf="kpFormControl.hasError('required')">This field is required.</mat-error> -->
+
+            <div *ngIf="audioRecord">
+
+              <img src="/assets/smiley/POd.png">
+              <br><br>
+              <p style="text-align: center;">Please share your level of interest?</p>
+              <br>
+              <table>
+                  <tr>
+                    <td>
+                      <p style="font-size: 9px">0%</p>
+                    </td>
+                    <td>
+                      <p style="font-size: 9px">25%</p>
+                    </td>
+                    <td>
+                      <p style="font-size: 9px">50%</p>
+                    </td>
+                    <td>
+                      <p style="font-size: 9px">75%</p>
+                    </td>
+                    <td>
+                      <p style="font-size: 9px">100%</p>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class='sim1'>
+                        <div style="border-radius: 100%; " (click)="enableDisableRulep($event)" class='sim1'>
+                          <div [style.background-color]="togglep ? '' : '#EB7F84'" style=" border-radius:100%">
+  
+                            <img class="smiley1" src="/assets/smiley/smiley_angry_gray.22ea6062.svg">
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                    <td>
+                      <div class='sim1'>
+                        <div style="border-radius: 100%" (click)="enableDisableRulep1($event)" class='sim1'>
+                          <div [style.background-color]="togglep1 ? '' : '#FBDC25'" style="border-radius: 100%; ">
+  
+                            <img class="smiley2" src="/assets/smiley/smiley_annoyed_gray.5534ff50.svg"></div>
+                        </div>
+  
+                      </div>
+                    </td>
+                    <td>
+                      <div class='sim1'>
+  
+                        <div style="border-radius: 100%; " (click)="enableDisableRulep2($event)" class='sim1'>
+  
+                          <div [style.background-color]="togglep2 ? '' : '#FBDC25'" style="border-radius: 100%; "> <img
+                              class="smiley3" src="/assets/smiley/smiley_neutral_gray.abd60ee6.svg"></div>
+                        </div>
+  
+                      </div>
+                    </td>
+                    <td>
+                      <div class='sim1'>
+  
+                        <div style="border-radius: 100%; " (click)="enableDisableRulep3($event)" class='sim1'>
+  
+                          <div [style.background-color]="togglep3 ? '' : '#FBDC25'" style="border-radius: 100%; "> <img
+                              class="smiley4" src="/assets/smiley/smiley_happy_gray.9aa04fd8.svg"></div>
+                        </div>
+  
+  
+                      </div>
+                    </td>
+                    <td>
+                      <div class='sim1'>
+                        <div style="border-radius: 100%; " (click)="enableDisableRulep4($event)" class='sim1'>
+  
+                          <div [style.background-color]="togglep4 ? '' : '#FBDC25'" style="border-radius: 100%;  "> <img
+                              class="smiley5" src="/assets/smiley/smiley_very_happy_gray.c046d495.svg"></div>
+                        </div>
+  
+                      </div>
+  
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <p style="font-size: 9px">Not Interested</p>
+                    </td>
+                    <td>
+                      <p style="font-size: 9px">Don't &nbsp;Know</p>
+                    </td>
+                    <td>
+                      <p style="font-size: 9px">Maybe</p>
+                    </td>
+                    <td>
+                      <p style="font-size: 9px">Interested</p>
+                    </td>
+                    <td>
+                      <p style="font-size: 9px">Let's do it</p>
+                    </td>
+  
+                  </tr>
+                </table>
+            </div>
+            <!-- </mat-form-field>                -->
+          </mat-card>
+
+          <mat-card>
+            Transcripts of talks delivered at your conference: Headlined, search engine optimized and written as a blog
+            to enable organic discovery on search.
+
+            <a (click)="showBlogs()"><span style = "color:#336699;"> Click here to see an Example.</span></a>
+            <!-- <mat-form-field class="example-full-width">
+                                  <input name="investment" 
+                                  matInput placeholder="Your Answer" [(ngModel)]="kp1_model.investment" required >
+                                  <mat-error *ngIf="kpFormControl.hasError('required')">This field is required.</mat-error> -->
+
+            <div *ngIf="showBlog">
+
+              <img src="/assets/smiley/blog.png">
+              <br><br>
+              <p style="text-align: center;"> Please share your level of interest?</p><br>
+              <table>
+                  <tr>
+                    <td>
+                      <p style="font-size: 9px">0%</p>
+                    </td>
+                    <td>
+                      <p style="font-size: 9px">25%</p>
+                    </td>
+                    <td>
+                      <p style="font-size: 9px">50%</p>
+                    </td>
+                    <td>
+                      <p style="font-size: 9px">75%</p>
+                    </td>
+                    <td>
+                      <p style="font-size: 9px">100%</p>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class='sim1'>
+                        <div style="border-radius: 100%; " (click)="enableDisableRuleb($event)" class='sim1'>
+                          <div [style.background-color]="toggleb ? '' : '#EB7F84'" style=" border-radius:100%">
+  
+                            <img class="smiley1" src="/assets/smiley/smiley_angry_gray.22ea6062.svg">
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                    <td>
+                      <div class='sim1'>
+                        <div style="border-radius: 100%" (click)="enableDisableRuleb1($event)" class='sim1'>
+                          <div [style.background-color]="toggleb1 ? '' : '#FBDC25'" style="border-radius: 100%; ">
+  
+                            <img class="smiley2" src="/assets/smiley/smiley_annoyed_gray.5534ff50.svg"></div>
+                        </div>
+  
+                      </div>
+                    </td>
+                    <td>
+                      <div class='sim1'>
+  
+                        <div style="border-radius: 100%; " (click)="enableDisableRuleb2($event)" class='sim1'>
+  
+                          <div [style.background-color]="toggleb2 ? '' : '#FBDC25'" style="border-radius: 100%; "> <img
+                              class="smiley3" src="/assets/smiley/smiley_neutral_gray.abd60ee6.svg"></div>
+                        </div>
+  
+                      </div>
+                    </td>
+                    <td>
+                      <div class='sim1'>
+  
+                        <div style="border-radius: 100%; " (click)="enableDisableRuleb3($event)" class='sim1'>
+  
+                          <div [style.background-color]="toggleb3 ? '' : '#FBDC25'" style="border-radius: 100%; "> <img
+                              class="smiley4" src="/assets/smiley/smiley_happy_gray.9aa04fd8.svg"></div>
+                        </div>
+  
+  
+                      </div>
+                    </td>
+                    <td>
+                      <div class='sim1'>
+                        <div style="border-radius: 100%; " (click)="enableDisableRuleb4($event)" class='sim1'>
+  
+                          <div [style.background-color]="toggleb4 ? '' : '#FBDC25'" style="border-radius: 100%;  "> <img
+                              class="smiley5" src="/assets/smiley/smiley_very_happy_gray.c046d495.svg"></div>
+                        </div>
+  
+                      </div>
+  
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <p style="font-size: 9px">Not Interested</p>
+                    </td>
+                    <td>
+                      <p style="font-size: 9px">Don't &nbsp;Know</p>
+                    </td>
+                    <td>
+                      <p style="font-size: 9px">Maybe</p>
+                    </td>
+                    <td>
+                      <p style="font-size: 9px">Interested</p>
+                    </td>
+                    <td>
+                      <p style="font-size: 9px">Let's do it</p>
+                    </td>
+  
+                  </tr>
+                </table>
+            </div>
+            <!-- </mat-form-field>                -->
+          </mat-card>
+
+          <mat-card>
+            All presentations from your conference optimized for easy search , discovery and sharing.
+
+            <a (click)="showSlides()"><br><span style = "color:#336699;"> Click here to see an Example.</span></a>
+            <!-- <mat-form-field class="example-full-width">
+                                  <input name="investment" 
+                                  matInput placeholder="Your Answer" [(ngModel)]="kp1_model.investment" required >
+                                  <mat-error *ngIf="kpFormControl.hasError('required')">This field is required.</mat-error> -->
+
+            <div *ngIf="showSlide">
+
+              <img src="/assets/smiley/prakesh_dedwania.PNG">
+              <br><br>
+              <p style="text-align: center;"> Please share your level of interest?</p><br>
+              <table>
+                  <tr>
+                    <td>
+                      <p style="font-size: 9px">0%</p>
+                    </td>
+                    <td>
+                      <p style="font-size: 9px">25%</p>
+                    </td>
+                    <td>
+                      <p style="font-size: 9px">50%</p>
+                    </td>
+                    <td>
+                      <p style="font-size: 9px">75%</p>
+                    </td>
+                    <td>
+                      <p style="font-size: 9px">100%</p>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class='sim1'>
+                        <div style="border-radius: 100%; " (click)="enableDisableRuleSlide($event)" class='sim1'>
+                          <div [style.background-color]="toggleSlide ? '' : '#EB7F84'" style=" border-radius:100%">
+  
+                            <img class="smiley1" src="/assets/smiley/smiley_angry_gray.22ea6062.svg">
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                    <td>
+                      <div class='sim1'>
+                        <div style="border-radius: 100%" (click)="enableDisableRuleSlide1($event)" class='sim1'>
+                          <div [style.background-color]="toggleSlide1 ? '' : '#FBDC25'" style="border-radius: 100%; ">
+  
+                            <img class="smiley2" src="/assets/smiley/smiley_annoyed_gray.5534ff50.svg"></div>
+                        </div>
+  
+                      </div>
+                    </td>
+                    <td>
+                      <div class='sim1'>
+  
+                        <div style="border-radius: 100%; " (click)="enableDisableRuleSlide2($event)" class='sim1'>
+  
+                          <div [style.background-color]="toggleSlide2 ? '' : '#FBDC25'" style="border-radius: 100%; "> <img
+                              class="smiley3" src="/assets/smiley/smiley_neutral_gray.abd60ee6.svg"></div>
+                        </div>
+  
+                      </div>
+                    </td>
+                    <td>
+                      <div class='sim1'>
+  
+                        <div style="border-radius: 100%; " (click)="enableDisableRuleSlide3($event)" class='sim1'>
+  
+                          <div [style.background-color]="toggleSlide3 ? '' : '#FBDC25'" style="border-radius: 100%; "> <img
+                              class="smiley4" src="/assets/smiley/smiley_happy_gray.9aa04fd8.svg"></div>
+                        </div>
+  
+  
+                      </div>
+                    </td>
+                    <td>
+                      <div class='sim1'>
+                        <div style="border-radius: 100%; " (click)="enableDisableRuleSlide4($event)" class='sim1'>
+  
+                          <div [style.background-color]="toggleSlide4 ? '' : '#FBDC25'" style="border-radius: 100%;  "> <img
+                              class="smiley5" src="/assets/smiley/smiley_very_happy_gray.c046d495.svg"></div>
+                        </div>
+  
+                      </div>
+  
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <p style="font-size: 9px">Not Interested</p>
+                    </td>
+                    <td>
+                      <p style="font-size: 9px">Don't &nbsp;Know</p>
+                    </td>
+                    <td>
+                      <p style="font-size: 9px">Maybe</p>
+                    </td>
+                    <td>
+                      <p style="font-size: 9px">Interested</p>
+                    </td>
+                    <td>
+                      <p style="font-size: 9px">Let's do it</p>
+                    </td>
+  
+                  </tr>
+                </table>
+            </div>
+            <!-- </mat-form-field>                -->
+          </mat-card>
+          <!-- <div *ngIf="!toggleb4">
+            <mat-card>
+              <mat-radio-group style="margin-bottom:15px;" name=blog fxLayout="column" [(ngModel)]="kp1_model.blog"
+                required>
+                Show me how it will look.
+                <mat-radio-button value="Yes">Yes</mat-radio-button>
+                <mat-radio-button value="No">No</mat-radio-button>
+              </mat-radio-group>
+            </mat-card>
+          </div> -->
+          <mat-card>
+            If there is something which we have not mentioned that you would like us to do , please share details of the same :
+            <br><mat-form-field class="example-full-width" >
+              <mat-label>Share your thoughts </mat-label>
+              <textarea name="details_if_any" [(ngModel)]="kp1_model.details_if_any" matInput placeholder="Ex. It makes me feel..."></textarea>
+            </mat-form-field>
+            <!-- <mat-form-field class="example-full-width">
+              <input name=”name“ matInput placeholder="Name" [(ngModel)]="kp1_model.name_follow_up">
+            </mat-form-field> <br> -->
+          </mat-card>
+
+
+          <mat-card>
+            <h6>Would you like to proceed ? <span
+                style="color: red;"></span></h6>
+            <!-- <mat-form-field class="example-full-width">
+                                      <input name="investment" 
+                                      matInput placeholder="Your Answer" [(ngModel)]="kp1_model.investment" required >
+                                      <mat-error *ngIf="kpFormControl.hasError('required')">This field is required.</mat-error> -->
+            <mat-radio-group style="margin-bottom:15px;" name=”investment“ fxLayout="column"
+                                          [(ngModel)]="kp1_model.investment" required>
+                                          <mat-radio-button value="callme">Call me</mat-radio-button>
+                                          <div *ngIf="kp1_model.investment=='callme'">
+                                            Mobile number<br>
+                                            <mat-form-field class="example-full-width">
+                                              <input name=”mobile“ matInput placeholder="Mobile Number" [(ngModel)]="kp1_model.mobile">
+                                            </mat-form-field><br>
+                                            Please confirm a convenient date<br>
+                                            <!-- <mat-form-field class="example-full-width">
+                                                                    <input name=”date_and_time“ 
+                                                                    matInput placeholder="Date and Time" [(ngModel)]="date_and_time">
+                                                                </mat-form-field>  -->
+                                            <mat-form-field>
+                                              <input matInput [matDatepicker]="picker" placeholder="Choose a date" name="date"
+                                                [(ngModel)]="kp1_model.date">
+                                              <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                                              <mat-datepicker #picker></mat-datepicker>
+                                            </mat-form-field><br>
+                                            Please confirm a convenient Time<br>
+                                            <mat-form-field>
+                                              <input matInput type="time" name="time" class="bg-none" placeholder="Time" [(ngModel)]="kp1_model.time">
+                                            </mat-form-field>                                                     
+                                          </div>
+                                          <mat-radio-button value="email">Be in touch with me on email</mat-radio-button>
+                                          <div *ngIf="kp1_model.investment == 'email'">
+                                            <h6>Please confirm your email-id</h6>
+                                            <mat-form-field class="example-full-width">
+                                              <input name=”email“ matInput placeholder="E-mail ID " [(ngModel)]="kp1_model.email">
+                                            </mat-form-field>
+                                          </div>
+                                          <mat-radio-button value="alldetails">Follow up with the following person</mat-radio-button>
+            </mat-radio-group>
+            <!-- <table>
+                <tr>
+                  <td>
+                    <p style="font-size: 9px">0%</p>
+                  </td>
+                  <td>
+                    <p style="font-size: 9px">25%</p>
+                  </td>
+                  <td>
+                    <p style="font-size: 9px">50%</p>
+                  </td>
+                  <td>
+                    <p style="font-size: 9px">75%</p>
+                  </td>
+                  <td>
+                    <p style="font-size: 9px">100%</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class='sim1'>
+                      <div style="border-radius: 100%; " (click)="enableDisableRuleCall($event)" class='sim1'>
+                        <div [style.background-color]="toggleCall ? '' : '#EB7F84'" style=" border-radius:100%">
+
+                          <img class="smiley1" src="/assets/smiley/smiley_angry_gray.22ea6062.svg">
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    <div class='sim1'>
+                      <div style="border-radius: 100%" (click)="enableDisableRuleCall1($event)" class='sim1'>
+                        <div [style.background-color]="toggleCall1 ? '' : '#FBDC25'" style="border-radius: 100%; ">
+
+                          <img class="smiley2" src="/assets/smiley/smiley_annoyed_gray.5534ff50.svg"></div>
+                      </div>
+
+                    </div>
+                  </td>
+                  <td>
+                    <div class='sim1'>
+
+                      <div style="border-radius: 100%; " (click)="enableDisableRuleCall2($event)" class='sim1'>
+
+                        <div [style.background-color]="toggleCall2 ? '' : '#FBDC25'" style="border-radius: 100%; "> <img
+                            class="smiley3" src="/assets/smiley/smiley_neutral_gray.abd60ee6.svg"></div>
+                      </div>
+
+                    </div>
+                  </td>
+                  <td>
+                    <div class='sim1'>
+
+                      <div style="border-radius: 100%; " (click)="enableDisableRuleCall3($event)" class='sim1'>
+
+                        <div [style.background-color]="toggleCall3 ? '' : '#FBDC25'" style="border-radius: 100%; "> <img
+                            class="smiley4" src="/assets/smiley/smiley_happy_gray.9aa04fd8.svg"></div>
+                      </div>
+
+
+                    </div>
+                  </td>
+                  <td>
+                    <div class='sim1'>
+                      <div style="border-radius: 100%; " (click)="enableDisableRuleCall4($event)" class='sim1'>
+
+                        <div [style.background-color]="toggleCall4 ? '' : '#FBDC25'" style="border-radius: 100%;  "> <img
+                            class="smiley5" src="/assets/smiley/smiley_very_happy_gray.c046d495.svg"></div>
+                      </div>
+
+                    </div>
+
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <p style="font-size: 9px">Not Interested</p>
+                  </td>
+                  <td>
+                    <p style="font-size: 9px">Don't &nbsp;Know</p>
+                  </td>
+                  <td>
+                    <p style="font-size: 9px">Maybe</p>
+                  </td>
+                  <td>
+                    <p style="font-size: 9px">Interested</p>
+                  </td>
+                  <td>
+                    <p style="font-size: 9px">Let's do it</p>
+                  </td>
+
+                </tr>
+              </table> -->
+            <!-- </mat-form-field>                -->
+            <!-- <div *ngIf="kp1_model.investment=='callme'">
+              <h6>Please confirm your mobile number</h6>
+              <mat-form-field class="example-full-width">
+                <input name=”mobile“ matInput placeholder="Mobile Number" [(ngModel)]="kp1_model.mobile">
+              </mat-form-field>
+            </div>
+            <div *ngIf="kp1_model.investment == 'email'">
+              <h6>Please confirm your email-id</h6>
+              <mat-form-field class="example-full-width">
+                <input name=”email“ matInput placeholder="E-mail ID " [(ngModel)]="kp1_model.email">
+              </mat-form-field>
+            </div> -->
+          </mat-card>
+          <div *ngIf="kp1_model.investment=='alldetails'">
+            <mat-card>
+              <h6>Name :</h6>
+              <mat-form-field class="example-full-width">
+                <input name=”name“ matInput placeholder="Name" [(ngModel)]="kp1_model.name_follow_up">
+              </mat-form-field> <br>
+              <h6>Mobile number :</h6>
+              <mat-form-field class="example-full-width">
+                <input name=”mobile“ matInput placeholder="Mobile Number" [(ngModel)]="kp1_model.mobile_follow_up">
+              </mat-form-field><br>
+              <h6>Email-id :</h6>
+              <mat-form-field class="example-full-width">
+                <input name=”email“ matInput placeholder="E-mail ID " [(ngModel)]="kp1_model.email_follow_up">
+              </mat-form-field>
+            </mat-card>
+          </div>
+
+        </div>
+        <div class="submit">
+          <button mat-flat-button style="color:#fff;background-color: #3f51b5;">SUBMIT</button>
+          <!-- <button mat-flat-button style="color:#000;background-color: #fff;">SUBMIT</button> -->
+        </div>
+        <!-- <div class="submit" *ngIf="!(f.form.valid)">
+          <p style="color: red;">Please fill all the details to Submit.</p>
+          
+        </div> -->
+      </form>
+      <div class="footer" fxLayoutAlign="center center">
+        <img src="https://storage.googleapis.com/web-assets/quiz/trdkp.png" style="width:200px;">
+      </div>
+      <!-- <div fxLayout="row" style="">
+              <div fxFlex="20%" fxLayout="column">
+                <div fxLayout="row"><p style="font-size:10px;color:#000;">Powered by:</p></div>
+                <div fxLayout="row" fxLayoutAlign="center center" class="google-cloud"><img style="width:100%" src="https://storage.googleapis.com/web-assets/footer/google%20cloud%20platform%20(1).png"></div>
+              </div>
+              <div fxFlex="3%"></div>
+              <div fxFlex="77%" fxLayout="column">
+                <div fxLayout="row"><p style="font-size:10px;color:#000;">Awards and Recognitions:</p></div>
+                <div fxLayout="row">
+                  <div fxFlex="25%" fxLayoutAlign="center center"><img src="https://storage.googleapis.com/web-assets/footer/awars01.png" style="width:100%;"></div>
+                  <div fxFlex="25%" fxLayoutAlign="center center"><img src="https://storage.googleapis.com/web-assets/footer/1000awards.png" style="width:100%;"></div>
+                  <div fxFlex="25%" fxLayoutAlign="center center"><img src="https://storage.googleapis.com/web-assets/footer/SBC_global_logo-L-2.png" style="width:100%;"></div>
+                  <div fxFlex="25%" fxLayoutAlign="center center"><img src="https://storage.googleapis.com/web-assets/footer/startup.png" style="width:100%;"></div>
+                </div>
+              </div>
+            </div> -->
+          </div><div fxLayout="row" style="margin-top:12px;"> 
+            <div fxLayout="row" fxFlex.lt-sm="100%" fxFlex.gt-xs="100%" style="" class="footer">
+                                <div fxFlex="30%" fxLayout="column">
+                                  <div fxLayout="row">
+                                    <h6 style="font-size: 14px;color:#000 !important;font-weight: bold;">Powered by:</h6>
+                                  </div>
+                                  <div fxLayout="row" fxLayoutAlign="center center" style="height:100%;">
+                                    <img alt="new-poweredby-google" src="../../assets/img/new-poweredby-google.png" style="width:100%;">
+                                  </div>
+                                </div>
+                                <div fxFlex="70%" fxLayout="column">
+                                  <div fxLayout="row">
+                                    <h6 style="font-size: 14px;color:#000 !important;font-weight: bold;">Awards & Recognitions:</h6>
+                                  </div>
+                                  <div fxLayout="row" fxLayoutAlign="center center" style="height:100%;">
+                                    <div fxFlex="25%">
+                                      <img alt="award" src="assets/img/awars01.png" style="width:100%;">
+                                    </div>
+                                    <div fxFlex="25%" fxLayoutAlign="center center">
+                                      <img alt="1000 awards" src="assets/img/1000awards.png" style="width:100%;">
+                                    </div>
+                                    <div fxFlex="25%" fxLayoutAlign="center center">
+                                      <img alt="SBC Global Logo" src="assets/img/SBC_global_logo-L-2.png" style="width:100%;">
+                                    </div>
+                                    <div fxFlex="25%" fxLayoutAlign="center center">
+                                      <img alt="Start Up" src="assets/img/startup.png" style="width:100%;">
+                                    </div>
+                                  </div>
+                                </div>
+                            </div>
+                          </div>
+    </div>
+  </div>

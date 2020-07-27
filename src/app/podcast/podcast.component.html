@@ -1,0 +1,182 @@
+<app-nav></app-nav>
+
+<style>
+
+
+    .panel_six {
+        height: 340px !important;
+        margin-top: 10px !important;
+    }
+
+    @media (max-width:599px) {
+        .panel_six {
+            height: 260px !important;
+            margin-top: 10px;
+        }
+        .hd5 {
+            font-size: 12px !important;
+            font-weight: 400 !important;
+            color:#666;
+        }
+        .pdg1{
+            padding:0px 10px ;
+        }
+
+    }
+</style>
+<div>
+    <img style="width: 100%;" src="../../assets/img/All Doctors2.jpg">
+</div>
+
+<section class="back2" *ngIf="audio_list.length>0">
+    <section class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h2 class="main_heading mrg_btm">{{new_event}} Podcast <span class="hdg_line"></span></h2>
+            </div>
+        </div>
+        <div class="row mrg_btm" *ngIf="audio_list.length>0">
+            <ng-template ngFor let-item [ngForOf]="createRange(audio_list.length)" let-currentIndex="index">
+                <a [routerLink]="['/'+'podcast'+'/'+audio_list[currentIndex]['slug']]">
+                    <div class="col-md-3 col-sm-12 col-xs-12">
+                        <div class="panel_sixx panel_light_grey border_yellow">
+                            <img src="{{audio_list[currentIndex]['image_url']}}"  alt="images" style="width:100%"/>
+                            <div class="pdg1">
+                                <h4 class="hd4 dis1">{{audio_list[currentIndex]['headline']}}</h4>
+                                <h4 class="hd4 dis1"><span
+                                        class="color_orange">{{audio_list[currentIndex]['sub_headline']}}</span></h4>
+
+
+                                <h4 class="hd4_mobile dis">{{ audio_list[currentIndex]['headline']}}</h4>
+                                <h4 class="hd4 dis"><span
+                                        class="color_orange hd4_mobile">{{ audio_list[currentIndex]['sub_headline'] }}</span></h4>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                </a>
+            </ng-template>
+        </div>
+
+        <!--<div class="row" >
+            <div class="col-md-12">
+                <a [routerLink]="['highlights']">
+                    <button class="btn btn-primary mar-top" style="margin-top:20px;">View All Highlights</button>
+                </a>
+            </div>
+        </div>-->
+
+    </section>
+</section>
+
+<div class="banner">
+</div>
+
+
+
+<!--<div class="section-content">
+      <div class="container">
+          <div class="row">
+                 <div class="col-md-12">
+                      <div class="row">
+                           <div class="col-md-4" align="center" >
+                    <div class="img-part">
+                         <img src="/assets/new-home-page/single/images/logo.jpg" />
+                             <h4 style="    margin-top: 21px!important;
+    font-style: italic;
+    font-size: 25px;font-weight:600;"><span style="color:#ff0000;">TheRightDoctors </span> Podcast </h4></div>
+
+                             <div class="content">
+
+                                <p> TheRightDoctors Podcast hosted by TheRightDoctors Team. Check out the Youtube Channel and take a listen to
+                                    Insights from the World's Best Medical Minds podcast below. </p>
+
+                                 <p>  This is a podcast that will help you with interviews of Best Doctors Insights.</p>
+
+                             </div>
+                           </div>
+
+
+                           <div class="col-md-8" >
+                               <ng-template ngFor let-item [ngForOf]="createRange(audio_list.length)" let-currentIndex="index">
+                             <div class="part-audio">
+                               <h1 class="head-podcast"><span>1:</span>{{audio_list[currentIndex]['event']}}: {{audio_list[currentIndex]['category']}}</h1>
+                               <div style="font-size:13px;color:#aaa; padding-left:5px;">
+                                 <i class="fa fa-calendar margin-right3"></i>
+                                   {{audio_list[currentIndex]['created_at']}}
+                               </div>
+                                <h4 class="head-cheak">Check out our other podcast: </h4>
+
+                                 <a style=" text-decoration: none;" [routerLink]="['/'+'podcast'+'/'+audio_list[currentIndex]['slug']]">
+                                     <div align="center">
+                                           <img src="{{audio_list[currentIndex]['image_url']}}" style="width:100%"/>
+                                      </div>
+                                 </a>
+                               <audio controls style="width:100%" >
+                                 <source src="{{audio_list[currentIndex]['video_url']}}" type="audio/mp3">
+                                 <source src="{{audio_list[currentIndex]['video_url']}}" type="audio/mp3">
+                                 Your browser does not support the audio element.
+                               </audio>
+                               <div class="divider divider-rounded divider-center margin-top0 padding-top0"><i class="fa fa-headphones"></i></div>
+                           </div>
+
+                             &lt;!&ndash;<div class="part-audio">
+                               <h1 class="head-podcast"><span>1:</span>&nbsp;STEMI India tv 2018 : Highlights</h1>
+                               <div style="font-size:13px;color:#aaa; padding-left:5px;">
+                                 <i class="fa fa-calendar margin-right3"></i>
+                                 Sep 14, 2018
+                               </div>
+                               <h4 class="head-cheak">Check out our other podcast: </h4>
+                               <audio controls style="width:100%">
+                                 <source src="assets/bell-ringing-01.mp3" type="audio/ogg">
+                                 <source src="assets/bell-ringing-01.mp3" type="audio/mpeg">
+                                 Your browser does not support the audio element.
+                               </audio>
+                               <div class="divider divider-rounded divider-center margin-top0 padding-top0"><i class="fa fa-headphones"></i></div>
+                             </div>
+
+                             <div class="part-audio">
+                               <h1 class="head-podcast"><span>1:</span>&nbsp;STEMI India tv 2018 : Highlights</h1>
+                               <div style="font-size:13px;color:#aaa; padding-left:5px;">
+                                 <i class="fa fa-calendar margin-right3"></i>
+                                 Sep 14, 2018
+                               </div>
+                               <h4 class="head-cheak">Check out our other podcast: </h4>
+                               <audio controls style="width:100%">
+                                 <source src="assets/bell-ringing-01.mp3" type="audio/ogg">
+                                 <source src="assets/bell-ringing-01.mp3" type="audio/mpeg">
+                                 Your browser does not support the audio element.
+                               </audio>
+                               <div class="divider divider-rounded divider-center margin-top0 padding-top0"><i class="fa fa-headphones"></i></div>
+                             </div>
+
+                             <div class="part-audio">
+                               <h1 class="head-podcast"><span>1:</span>&nbsp;Heading audio</h1>
+                               <div style="font-size:13px;color:#aaa; padding-left:5px;">
+                                 <i class="fa fa-calendar margin-right3"></i>
+                                 Sep 14, 2018
+                               </div>
+                               <h4 class="head-cheak">Check out our other podcast: </h4>
+                               <audio controls style="width:100%">
+                                 <source src="horse.ogg" type="audio/ogg">
+                                 <source src="horse.mp3" type="audio/mpeg">
+                                 Your browser does not support the audio element.
+                               </audio>
+                               <div class="divider divider-rounded divider-center margin-top0 padding-top0"><i class="fa fa-headphones"></i></div>
+                             </div>&ndash;&gt;
+                               </ng-template>
+                           </div>
+
+                 </div>
+          </div>
+      </div>
+</div>
+</div>-->
+
+
+
+<app-footer></app-footer>
+
+
+
+

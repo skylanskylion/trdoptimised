@@ -1,0 +1,189 @@
+<!--<section class="back2">
+  <section class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="hd2 mrg_btm no_mrg_m">In Conversation</div>
+      </div>
+    </div>
+    <div class="mrg_btm no_mrg_m">
+      <div class="row">
+        <div class="col-md-6 col-sm-12 col-xs-12">
+          <div class="panel_four panel_dark_grey back_white_m border_yellow border_m">
+            <div class="row">
+              <a
+                [routerLink]="['/wccicc-2017/in-conversation/emcure-dr-ramakrishnan-hk-chopra-mona-bhatia-in-conversation-role-of-ct-angio-in-predicting-cardiac-risks']">
+                <div class="col-md-12 col-sm-4 col-xs-5 pull_right_m"><img
+                  src="../../assets/new-home-page/images/HK%20chopraMonaRamakrishnan-large.jpg"
+                  alt="Dr. HK Chopra and Dr. Mona Bhatia and Dr.S Ramakrishnan"></div>
+                <div class="col-md-12 col-sm-8 col-xs-7 pull_left_m pdg_no_rt_m">
+                  <div class="pdg1 pdgrt"><h4 class="hd4 color_white color_base_m line-clamp line-clamp-2">Role Of CT
+                    Angio In Predicting Cardiac Risks</h4>
+                    <p class="color_yellow color_base_m"><b>Dr. HK Chopra and Dr. Mona Bhatia and Dr.S Ramakrishnan</b>
+                    </p>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+        <ng-template ngFor let-item [ngForOf]="createRange(2)" let-currentIndex="index">
+          <div class="col-md-3 col-sm-12 col-xs-12">
+            <div class="">
+              <div class="panel_four panel_dark_grey back_white_m border_yellow border_m">
+                <div class="row">
+                  <a
+                    [routerLink]="['/'+in_conversation['data']['in-conversation'][currentIndex]['event']+'/'+in_conversation['data']['in-conversation'][currentIndex]['category']+'/'+in_conversation['data']['in-conversation'][currentIndex]['slug']]">
+                    <div class="col-md-12 col-sm-12 col-xs-5 pull_right_m"><img
+                      src="{{in_conversation['data']['in-conversation'][currentIndex]['image_url'] }}"
+                      alt="{{in_conversation['data']['in-conversation'][currentIndex]['image_alt'] }}"></div>
+                    <div class="col-md-12 col-sm-12 col-xs-7 pull_left_m pdg_no_rt_m">
+                      <div class="pdg1 "><h4 class="hd4 color_white color_base_m line-clamp line-clamp-2">
+                        {{in_conversation['data']['in-conversation'][currentIndex]['headline']  }}</h4>
+                        <h5 class="hd5 color_white display_none_m">
+                          {{in_conversation['data']['in-conversation'][currentIndex]['headline2'] }}</h5>
+                        <p class="color_yellow color_base_m"><b>{{in_conversation['data']['in-conversation'][currentIndex]['sub_headline']
+                          }}</b></p>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </ng-template>
+      </div>
+      <div class="clearfix"></div>
+    </div>
+    <div class="mrg_btm">
+      <div class="row">
+        <ng-template ngFor let-item [ngForOf]="createRange(4)" let-currentIndex="index+2">
+          <div class="col-md-3 col-sm-12 col-xs-12">
+            <div class="panel_one panel_dark_grey back_white_m border_yellow border_m">
+              <div class="row">
+                <a
+                  [routerLink]="['/'+in_conversation['data']['in-conversation'][currentIndex]['event']+'/'+in_conversation['data']['in-conversation'][currentIndex]['category']+'/'+in_conversation['data']['in-conversation'][currentIndex]['slug']]">
+                  <div class="col-md-12 col-sm-4 col-xs-5 pull_right_m"><img
+                    src="{{in_conversation['data']['in-conversation'][currentIndex]['image_url'] }}"
+                    alt="{{in_conversation['data']['in-conversation'][currentIndex]['image_alt'] }}"></div>
+                  <div class="col-md-12 col-sm-8 col-xs-7 pull_left_m pdg_no_rt_m">
+                    <div class="pdg1 pdgrt"><h4 class="hd4 color_white color_base_m line-clamp line-clamp-2">
+                      {{in_conversation['data']['in-conversation'][currentIndex]['headline'] }}</h4>
+                      <p class="color_yellow color_base_m"><b>{{in_conversation['data']['in-conversation'][currentIndex]['sub_headline']
+                        }}</b></p>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </ng-template>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <a [routerLink]="['/in-conversation/all']">
+          <button class="btn btn-primary btn_sm_m">View All</button>
+        </a>
+      </div>
+    </div>
+  </section>
+</section>-->
+<!-- <style>
+  @media (max-width:768px){
+    .bod{
+      font-weight:600;
+    }
+  }
+
+
+</style>
+<section class="back2">
+  <section class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="hd2 mrg_btm no_mrg_m">In Conversation</div>
+      </div>
+    </div>
+<div class="row">
+  <div class="col-md-4 col-sm-6 col-xs-12">
+
+    <div class=" panel_thin_grey  back_white_m border_yellow ">
+      <a class="testvideo"
+        [routerLink]="['/wccicc-2017/in-conversation/emcure-dr-ramakrishnan-hk-chopra-mona-bhatia-in-conversation-role-of-ct-angio-in-predicting-cardiac-risks']">
+      <img src="../../assets/new-home-page/images/HK-chopraMonaRamakrishnan-large.jpg" style="width:100%" alt="Dr. HK Chopra Dr. Mona Bhatia Dr. Ramakrishna"/>
+      </a>
+        <div class="content-part">
+          <a class="testvideo"
+            [routerLink]="['/wccicc-2017/in-conversation/emcure-dr-ramakrishnan-hk-chopra-mona-bhatia-in-conversation-role-of-ct-angio-in-predicting-cardiac-risks']">
+            <div class="head-st-m">
+          <h4 class="hd4 color_white color_base_m line-clamp clr-m-inc inc-heading-m">Role Of CT Angio In Predicting Cardiac Risks</h4>
+      <p class="color_orange color_base_m bod">Dr. HK Chopra and Dr. Mona Bhatia and Dr.S Ramakrishnan</p></div>
+          </a>
+      <ul class="list-items2">
+        <ng-template ngFor let-item [ngForOf]="createRange(2)" let-currentIndex="index">
+          <a class="testvideo" [routerLink]="['/'+in_conversation['data']['in-conversation'][currentIndex]['event']+'/'+in_conversation['data']['in-conversation'][currentIndex]['category']+'/'+in_conversation['data']['in-conversation'][currentIndex]['slug']]">
+          <li><span class="bor-left-blue">{{in_conversation['data']['in-conversation'][currentIndex]['headline'] | slice:0:40}}...  </span><p  class="color_orange color_base_m bor-left-red">{{in_conversation['data']['in-conversation'][currentIndex]['sub_headline'] | slice:0:35}}...</p></li>
+          </a>
+        </ng-template>
+      </ul>
+    </div>
+  </div>
+</div>
+
+  <div class="col-md-4 col-sm-6 col-xs-12 mar_m-inc">
+    <div class=" panel_thin_grey  back_white_m border_yellow ">
+      <div class="content-part ">
+        <ul class="list-items2">
+          <a class="testvideo" [routerLink]="['/'+in_conversation['data']['in-conversation'][3]['event']+'/'+in_conversation['data']['in-conversation'][3]['category']+'/'+in_conversation['data']['in-conversation'][3]['slug']]">
+          <li class="no-bor"><span class="bor-left-blue">{{in_conversation['data']['in-conversation'][3]['headline'] | slice:0:40}}... </span> <p  class="color_orange color_base_m bor-left-red">{{in_conversation['data']['in-conversation'][3]['sub_headline'] | slice:0:40}}...</p></li>
+          </a>
+           <ng-template ngFor let-item [ngForOf]="createRange(1)" let-currentIndex="index+4">
+            <a class="testvideo" [routerLink]="['/'+in_conversation['data']['in-conversation'][currentIndex]['event']+'/'+in_conversation['data']['in-conversation'][currentIndex]['category']+'/'+in_conversation['data']['in-conversation'][currentIndex]['slug']]">
+              <li><span class="bor-left-blue">{{in_conversation['data']['in-conversation'][currentIndex]['headline'] | slice:0:40}}... </span><p  class="color_orange  color_base_m bor-left-red">{{in_conversation['data']['in-conversation'][currentIndex]['sub_headline'] | slice:0:35}}...</p></li>
+            </a> </ng-template>
+        </ul>
+        <a class="testvideo" [routerLink]="['/in-conversation/dr-h-K-chopra-with-dr-m-k-das-dr-shiv-Kumar-and-dr-amal-banerjee']">
+  <div class="head-st-m mar-top-m">
+        <h4 class="hd4 color_white color_base_m line-clamp clr-m-inc bor-top inc-heading-m">Smoking: A Deadly Addiction</h4><p class="color_orange color_base_m bod">Dr. MK Das, Dr. J Shiv Kumar,Dr. Amal K Banerjee</p>
+       </div> </a>
+      </div>
+      <a class="testvideo" [routerLink]="['/in-conversation/dr-h-K-chopra-with-dr-m-k-das-dr-shiv-Kumar-and-dr-amal-banerjee']">
+      <img alt="Dr.H.K.Chopra with Dr.M.K.Das, Dr.J Shiv Kumar and Dr.Amal banerjee" src="../../assets/rMKDasDrShivKumarDrAmalKBanerjee-large.jpg" style="width:100%"/>
+      </a>
+    </div>
+
+  </div>
+ 
+  <div class="col-md-4 col-sm-12 col-xs-12 mar_m-inc">
+
+    <div class=" panel_thin_grey  back_white_m border_yellow mar-top-tab-10">
+      <img src="../../assets/DrRKSaranDrRishiSethiDrVSNarain-large.jpg" alt="Dr.R.K.Saran with Dr.Rishi Sethi and Dr.V.S.Narain" style="width:100%"/>
+      <div class="content-part ">
+        <a class="testvideo" [routerLink]="['/in-conversation/dr-r-k-saran-with-dr-rishi-sethi-and-dr-v-s-narain']">
+          <div class="head-st-m">
+        <h4 class="hd4 color_white color_base_m line-clamp  clr-m-inc inc-heading-m">BP control can reduce Cerebrovascular mortality by 25%: Dr. VS Narain</h4><p class="color_orange color_base_m bod">Dr. RK Saran, Dr. Rishi Sethi, Dr. VS Narain</p>
+        </div></a>
+        <ul class="list-items2">
+          <ng-template ngFor let-item [ngForOf]="createRange(2)" let-currentIndex="index+4">
+            <a class="testvideo" [routerLink]="['/'+in_conversation['data']['in-conversation'][currentIndex]['event']+'/'+in_conversation['data']['in-conversation'][currentIndex]['category']+'/'+in_conversation['data']['in-conversation'][currentIndex]['slug']]">
+              <li><span class="bor-left-blue">{{in_conversation['data']['in-conversation'][currentIndex]['headline'] | slice:0:40}}...  </span>.<p  class="color_orange color_base_m bor-left-red">{{in_conversation['data']['in-conversation'][currentIndex]['sub_headline'] | slice:0:35}}...</p></li>
+            </a> </ng-template>
+        </ul>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+</div>
+    <div class="row mar-top-view">
+      <div class="col-md-12">
+        <a [routerLink]="['/in-conversation/all']">
+          <button class="btn btn-primary btn_sm_m">View All</button>
+        </a>
+      </div>
+    </div>
+  </section>
+</section> -->

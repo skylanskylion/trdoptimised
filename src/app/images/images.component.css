@@ -1,0 +1,25 @@
+.form-horizontal {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.example-full-width {
+  width: 100%;
+}
+
+.textarea {
+  box-shadow: none !important;
+}
+
+.mat-table example-container mat-elevation-z8 {
+  width: 100%;
+}
+
+.mat-header-row {
+  width: 480%;
+}
+
+.mat-row {
+  width: 480%;
+}

@@ -1,0 +1,12 @@
+<p style="margin: 10px;
+    text-align: center;
+    font-size: 20px;
+    margin-top: 10%;">
+  <span *ngIf="!verified && !message">Verifying...</span>
+  <span *ngIf="message" style="color:tomato">{{message}}</span>
+
+  <span *ngIf="verified">
+  <strong style="color:lightseagreen">Your email ( {{email}} ) has been verified successfully...</strong><br/><br/>
+  <small>Please <a style="color:orange" href="https://therightdoctors.com/specials/dr-ulhas-pandurangi-fifteenth-annual-electrocardiology-course-basics-and-beyond-madras-medical-mission-2018">click here</a> to redirect to TheRightDoctors Presentation page</small>
+    </span>
+</p>

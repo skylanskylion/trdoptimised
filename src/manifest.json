@@ -1,0 +1,53 @@
+{
+  "name": "RightDoctors",
+  "short_name": "TRD",
+  "description": "A PWA built with angular",
+  "theme_color": "#1976d2",
+  "background_color": "#fafafa",
+ "gcm_sender_id": "103953800507",
+  "display": "minimal_ui",
+  "scope": "/",
+  "start_url": "./",
+  "icons": [
+    {
+      "src": "assets/icons/logo.jpg",
+      "sizes": "72x72",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/icons/android-chrome-96x96.png",
+      "sizes": "96x96",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/icons/icon_1.png",
+      "sizes": "128x128",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/icons/icon_2.png",
+      "sizes": "144x144",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/icons/icon_3.png",
+      "sizes": "152x152",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/icons/icon_4.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/icons/icon_5.png",
+      "sizes": "384x384",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/icons/icon_5.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

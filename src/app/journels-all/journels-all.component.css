@@ -1,0 +1,36 @@
+.heading-journel{
+    color: #0c58a5;
+    font-size: 16px;
+    background: #efefef;
+    padding: 6px;
+    font-weight: 600;
+    margin-bottom:15px;
+    font-family: 'Roboto', sans-serif;
+}
+.journal-list li{
+    padding:10px 0px;
+    border-bottom: 1px solid #ccc;
+}
+.bor-left-blue2 {
+    border-left: 2px solid #0a568c;
+    padding-left: 10px;
+    font-weight: 600;
+    color: #5f5c5c;
+}
+.bor-left-red2 {
+    border-left: 2px solid red;
+    padding-left: 10px;
+    margin-top: 10px;
+}
+.hd5{
+    color:#5f5c5c!important;
+}
+@media (max-width:599px){
+    .mar-m{
+        margin-top:10px;
+    }
+    .m-top-journel{
+margin-top:70px;
+    }
+}
+

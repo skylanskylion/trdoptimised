@@ -1,0 +1,235 @@
+<app-nav></app-nav>
+
+<section class="back2">
+  <section class="container">
+
+    <div class="row">
+      <div class="col-md-12">
+        <h1 class="main_heading mrg_btm">Revolution Talk<span class="hdg_line"></span></h1>
+      </div>
+    </div>
+
+
+    <ng-template ngFor let-item [ngForOf]="createRange(2)" let-currentIndex="index+2">
+      <div class="back_panel2 mrg_btm">
+        <div class="row">
+          <a href="/{{revolution[currentIndex]['event']}}/{{revolution[currentIndex]['category']}}/{{revolution[currentIndex]['slug']}}">
+            <div class="col-md-4"><img src="{{revolution[currentIndex]['image_url']}}"></div>
+            <div class="col-md-8">
+             <span class="dis1"> <h1 class="hd4">{{revolution[currentIndex]['headline']}} </h1>
+              <h1 class="hd5">{{revolution[currentIndex]['headline2']}} </h1>
+              <p class="color_orange"><b style="font-size:15px">{{revolution[currentIndex]['sub_headline']}}</b></p>
+              <h5 class="color_orange"><b>{{revolution[currentIndex]['designation'] }}</b></h5></span>
+             <span class="dis"> <h1 class="hd4">{{revolution[currentIndex]['headline'] | slice:0:35}}...</h1>
+              <h1 class="hd5">{{revolution[currentIndex]['headline2'] | slice:0:35}}...</h1>
+              <p class="color_orange"><b style="font-size:15px">{{revolution[currentIndex]['sub_headline'] | slice:0:17}}...</b></p>
+              <h5 class="color_orange"><b>{{revolution[currentIndex]['designation'] | slice:0:17}}...</b></h5></span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </ng-template>
+
+    <ng-template ngFor let-item [ngForOf]="createRange(2)" let-currentIndex="index+4">
+      <div class="back_panel1 mrg_btm">
+        <div class="row">
+          <a href="/{{revolution[currentIndex]['event']}}/{{revolution[currentIndex]['category']}}/{{revolution[currentIndex]['slug']}}">
+            <div class="col-md-4"><img src="{{revolution[currentIndex]['image_url']}}"></div>
+            <div class="col-md-8">
+              <span class="dis1"> <h1 class="hd4">{{revolution[currentIndex]['headline']}} </h1>
+              <h1 class="hd5">{{revolution[currentIndex]['headline2']}} </h1>
+              <p class="color_orange"><b style="font-size:15px">{{revolution[currentIndex]['sub_headline']}}</b></p>
+              <h5 class="color_orange"><b>{{revolution[currentIndex]['designation'] }}</b></h5></span>
+              <span class="dis"> <h1 class="hd4">{{revolution[currentIndex]['headline'] | slice:0:35}}...</h1>
+              <h1 class="hd5">{{revolution[currentIndex]['headline2'] | slice:0:35}}...</h1>
+              <p class="color_orange"><b style="font-size:15px">{{revolution[currentIndex]['sub_headline'] | slice:0:17}}...</b></p>
+              <h5 class="color_orange"><b>{{revolution[currentIndex]['designation'] | slice:0:17}}...</b></h5></span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </ng-template>
+
+    <ng-template ngFor let-item [ngForOf]="createRange(2)" let-currentIndex="index+6">
+      <div class="back_panel2 mrg_btm">
+        <div class="row">
+          <a href="/{{revolution[currentIndex]['event']}}/{{revolution[currentIndex]['category']}}/{{revolution[currentIndex]['slug']}}">
+            <div class="col-md-4"><img src="{{revolution[currentIndex]['image_url']}}"></div>
+            <div class="col-md-8">
+              <span class="dis1"> <h1 class="hd4">{{revolution[currentIndex]['headline']}} </h1>
+              <h1 class="hd5">{{revolution[currentIndex]['headline2']}} </h1>
+              <p class="color_orange"><b style="font-size:15px">{{revolution[currentIndex]['sub_headline']}}</b></p>
+              <h5 class="color_orange"><b>{{revolution[currentIndex]['designation'] }}</b></h5></span>
+              <span class="dis"> <h1 class="hd4">{{revolution[currentIndex]['headline'] | slice:0:35}}...</h1>
+              <h1 class="hd5">{{revolution[currentIndex]['headline2'] | slice:0:35}}...</h1>
+              <p class="color_orange"><b style="font-size:15px">{{revolution[currentIndex]['sub_headline'] | slice:0:17}}...</b></p>
+              <h5 class="color_orange"><b>{{revolution[currentIndex]['designation'] | slice:0:17}}...</b></h5></span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </ng-template>
+
+    <ng-template ngFor let-item [ngForOf]="createRange(2)" let-currentIndex="index+8">
+      <div class="back_panel1 mrg_btm">
+        <div class="row">
+          <a href="/{{revolution[currentIndex]['event']}}/{{revolution[currentIndex]['category']}}/{{revolution[currentIndex]['slug']}}">
+            <div class="col-md-4"><img src="{{revolution[currentIndex]['image_url']}}"></div>
+            <div class="col-md-8">
+              <span class="dis1"> <h1 class="hd4">{{revolution[currentIndex]['headline']}} </h1>
+              <h1 class="hd5">{{revolution[currentIndex]['headline2']}} </h1>
+              <p class="color_orange"><b style="font-size:15px">{{revolution[currentIndex]['sub_headline']}}</b></p>
+              <h5 class="color_orange"><b>{{revolution[currentIndex]['designation'] }}</b></h5></span>
+              <span class="dis"> <h1 class="hd4">{{revolution[currentIndex]['headline'] | slice:0:35}}...</h1>
+              <h1 class="hd5">{{revolution[currentIndex]['headline2'] | slice:0:35}}...</h1>
+              <p class="color_orange"><b style="font-size:15px">{{revolution[currentIndex]['sub_headline'] | slice:0:17}}...</b></p>
+              <h5 class="color_orange"><b>{{revolution[currentIndex]['designation'] | slice:0:17}}...</b></h5></span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </ng-template>
+
+    <ng-template ngFor let-item [ngForOf]="createRange(2)" let-currentIndex="index+10">
+      <div class="back_panel2 mrg_btm">
+        <div class="row">
+          <a href="/{{revolution[currentIndex]['event']}}/{{revolution[currentIndex]['category']}}/{{revolution[currentIndex]['slug']}}">
+            <div class="col-md-4"><img src="{{revolution[currentIndex]['image_url']}}"></div>
+            <div class="col-md-8">
+              <span class="dis1"> <h1 class="hd4">{{revolution[currentIndex]['headline']}} </h1>
+              <h1 class="hd5">{{revolution[currentIndex]['headline2']}} </h1>
+              <p class="color_orange"><b style="font-size:15px">{{revolution[currentIndex]['sub_headline']}}</b></p>
+              <h5 class="color_orange"><b>{{revolution[currentIndex]['designation'] }}</b></h5></span>
+              <span class="dis"> <h1 class="hd4">{{revolution[currentIndex]['headline'] | slice:0:35}}...</h1>
+              <h1 class="hd5">{{revolution[currentIndex]['headline2'] | slice:0:35}}...</h1>
+              <p class="color_orange"><b style="font-size:15px">{{revolution[currentIndex]['sub_headline'] | slice:0:17}}...</b></p>
+              <h5 class="color_orange"><b>{{revolution[currentIndex]['designation'] | slice:0:17}}...</b></h5></span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </ng-template>
+
+    <ng-template ngFor let-item [ngForOf]="createRange(2)" let-currentIndex="index+12">
+      <div class="back_panel1 mrg_btm">
+        <div class="row">
+          <a href="/{{revolution[currentIndex]['event']}}/{{revolution[currentIndex]['category']}}/{{revolution[currentIndex]['slug']}}">
+            <div class="col-md-4"><img src="{{revolution[currentIndex]['image_url']}}"></div>
+            <div class="col-md-8">
+              <span class="dis1"> <h1 class="hd4">{{revolution[currentIndex]['headline']}} </h1>
+              <h1 class="hd5">{{revolution[currentIndex]['headline2']}} </h1>
+              <p class="color_orange"><b style="font-size:15px">{{revolution[currentIndex]['sub_headline']}}</b></p>
+              <h5 class="color_orange"><b>{{revolution[currentIndex]['designation'] }}</b></h5></span>
+              <span class="dis"> <h1 class="hd4">{{revolution[currentIndex]['headline'] | slice:0:35}}...</h1>
+              <h1 class="hd5">{{revolution[currentIndex]['headline2'] | slice:0:35}}...</h1>
+              <p class="color_orange"><b style="font-size:15px">{{revolution[currentIndex]['sub_headline'] | slice:0:17}}...</b></p>
+              <h5 class="color_orange"><b>{{revolution[currentIndex]['designation'] | slice:0:17}}...</b></h5></span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </ng-template>
+
+    <ng-template ngFor let-item [ngForOf]="createRange(2)" let-currentIndex="index+14">
+      <div class="back_panel2 mrg_btm">
+        <div class="row">
+          <a href="/{{revolution[currentIndex]['event']}}/{{revolution[currentIndex]['category']}}/{{revolution[currentIndex]['slug']}}">
+            <div class="col-md-4"><img src="{{revolution[currentIndex]['image_url']}}"></div>
+            <div class="col-md-8">
+              <span class="dis1"> <h1 class="hd4">{{revolution[currentIndex]['headline']}} </h1>
+              <h1 class="hd5">{{revolution[currentIndex]['headline2']}} </h1>
+              <p class="color_orange"><b style="font-size:15px">{{revolution[currentIndex]['sub_headline']}}</b></p>
+              <h5 class="color_orange"><b>{{revolution[currentIndex]['designation'] }}</b></h5></span>
+              <span class="dis"> <h1 class="hd4">{{revolution[currentIndex]['headline'] | slice:0:35}}...</h1>
+              <h1 class="hd5">{{revolution[currentIndex]['headline2'] | slice:0:35}}...</h1>
+              <p class="color_orange"><b style="font-size:15px">{{revolution[currentIndex]['sub_headline'] | slice:0:17}}...</b></p>
+              <h5 class="color_orange"><b>{{revolution[currentIndex]['designation'] | slice:0:17}}...</b></h5></span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </ng-template>
+
+    <ng-template ngFor let-item [ngForOf]="createRange(2)" let-currentIndex="index+16">
+      <div class="back_panel1 mrg_btm">
+        <div class="row">
+          <a href="/{{revolution[currentIndex]['event']}}/{{revolution[currentIndex]['category']}}/{{revolution[currentIndex]['slug']}}">
+            <div class="col-md-4"><img src="{{revolution[currentIndex]['image_url']}}"></div>
+            <div class="col-md-8">
+              <span class="dis1"> <h1 class="hd4">{{revolution[currentIndex]['headline']}} </h1>
+              <h1 class="hd5">{{revolution[currentIndex]['headline2']}} </h1>
+              <p class="color_orange"><b style="font-size:15px">{{revolution[currentIndex]['sub_headline']}}</b></p>
+              <h5 class="color_orange"><b>{{revolution[currentIndex]['designation'] }}</b></h5></span>
+              <span class="dis"> <h1 class="hd4">{{revolution[currentIndex]['headline'] | slice:0:35}}...</h1>
+              <h1 class="hd5">{{revolution[currentIndex]['headline2'] | slice:0:35}}...</h1>
+              <p class="color_orange"><b style="font-size:15px">{{revolution[currentIndex]['sub_headline'] | slice:0:17}}...</b></p>
+              <h5 class="color_orange"><b>{{revolution[currentIndex]['designation'] | slice:0:17}}...</b></h5></span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </ng-template>
+
+    <ng-template ngFor let-item [ngForOf]="createRange(2)" let-currentIndex="index+18">
+      <div class="back_panel2 mrg_btm">
+        <div class="row">
+          <a href="/{{revolution[currentIndex]['event']}}/{{revolution[currentIndex]['category']}}/{{revolution[currentIndex]['slug']}}">
+            <div class="col-md-4"><img src="{{revolution[currentIndex]['image_url']}}"></div>
+            <div class="col-md-8">
+              <span class="dis1"> <h1 class="hd4">{{revolution[currentIndex]['headline']}} </h1>
+              <h1 class="hd5">{{revolution[currentIndex]['headline2']}} </h1>
+              <p class="color_orange"><b style="font-size:15px">{{revolution[currentIndex]['sub_headline']}}</b></p>
+              <h5 class="color_orange"><b>{{revolution[currentIndex]['designation'] }}</b></h5></span>
+              <span class="dis"> <h1 class="hd4">{{revolution[currentIndex]['headline'] | slice:0:35}}...</h1>
+              <h1 class="hd5">{{revolution[currentIndex]['headline2'] | slice:0:35}}...</h1>
+              <p class="color_orange"><b style="font-size:15px">{{revolution[currentIndex]['sub_headline'] | slice:0:17}}...</b></p>
+              <h5 class="color_orange"><b>{{revolution[currentIndex]['designation'] | slice:0:17}}...</b></h5></span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </ng-template>
+
+    <ng-template ngFor let-item [ngForOf]="createRange(1)" let-currentIndex="index+20">
+      <div class="back_panel1 mrg_btm">
+        <div class="row">
+          <a href="/{{revolution[currentIndex]['event']}}/{{revolution[currentIndex]['category']}}/{{revolution[currentIndex]['slug']}}">
+            <div class="col-md-4"><img src="{{revolution[currentIndex]['image_url']}}"></div>
+            <div class="col-md-8">
+              <span class="dis1"> <h1 class="hd4">{{revolution[currentIndex]['headline']}} </h1>
+              <h1 class="hd5">{{revolution[currentIndex]['headline2']}} </h1>
+              <p class="color_orange"><b style="font-size:15px">{{revolution[currentIndex]['sub_headline']}}</b></p>
+              <h5 class="color_orange"><b>{{revolution[currentIndex]['designation'] }}</b></h5></span>
+              <span class="dis"> <h1 class="hd4">{{revolution[currentIndex]['headline'] | slice:0:35}}...</h1>
+              <h1 class="hd5">{{revolution[currentIndex]['headline2'] | slice:0:35}}...</h1>
+              <p class="color_orange"><b style="font-size:15px">{{revolution[currentIndex]['sub_headline'] | slice:0:17}}...</b></p>
+              <h5 class="color_orange"><b>{{revolution[currentIndex]['designation'] | slice:0:17}}...</b></h5></span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </ng-template>
+
+    <ng-template ngFor let-item [ngForOf]="createRange(2)" let-currentIndex="index">
+      <div class="back_panel2 mrg_btm">
+        <div class="row">
+          <a href="/{{revolution[currentIndex]['event']}}/{{revolution[currentIndex]['category']}}/{{revolution[currentIndex]['slug']}}">
+            <div class="col-md-4"><img src="{{revolution[currentIndex]['image_url']}}"></div>
+            <div class="col-md-8">
+              <span class="dis1"> <h1 class="hd4">{{revolution[currentIndex]['headline']}} </h1>
+              <h1 class="hd5">{{revolution[currentIndex]['headline2']}} </h1>
+              <p class="color_orange"><b style="font-size:15px">{{revolution[currentIndex]['sub_headline']}}</b></p>
+              <h5 class="color_orange"><b>{{revolution[currentIndex]['designation'] }}</b></h5></span>
+              <span class="dis"> <h1 class="hd4">{{revolution[currentIndex]['headline'] | slice:0:35}}...</h1>
+              <h1 class="hd5">{{revolution[currentIndex]['headline2'] | slice:0:35}}...</h1>
+              <p class="color_orange"><b style="font-size:15px">{{revolution[currentIndex]['sub_headline'] | slice:0:17}}...</b></p>
+              <h5 class="color_orange"><b>{{revolution[currentIndex]['designation'] | slice:0:17}}...</b></h5></span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </ng-template>
+
+  </section>
+</section>
+<app-footer></app-footer>

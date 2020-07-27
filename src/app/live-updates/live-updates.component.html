@@ -1,0 +1,265 @@
+
+<app-nav xmlns="http://www.w3.org/1999/html"></app-nav>
+
+<!-- <div class="container mar-top mar-btm-con" style="clear: both"> -->
+    <!-- <p class="live-updates"> TheRightDoctors | Live Updates  </p> -->
+  <!-- <div fxLayout="row" fxLayoutGap="30px" fxLayoutGap.lt-sm="0px" fxLayout.lt-sm="column" fxLayout.lt-md="column"> -->
+   
+  
+
+      <!-- <ngx-twitter-timeline 
+    [data]="{sourceType: 'url', url: 'https://twitter.com/therightdoctors'}"
+    [opts]="{tweetLimit: 5, height:'30%' , width:'20%'}"
+></ngx-twitter-timeline>
+      -->
+      <!-- <div *ngIf="finaldata">
+      <div  *ngFor="let d of finaldata"> 
+      <div fxLayout="row" fxLayoutGap="30px" fxLayoutGap.lt-sm="0px" class="marg-btm-news" fxLayout.lt-sm="column" >
+         -->
+
+<!--         
+        <div fxFlex="80%" class="head-news">
+            <button mat-stroked-button color="primary" class="btn-radius">{{d['f_date']}}</button>
+          <h2 style="color:#000; font-weight:bold; word-break: break-all;">{{d['f_title']}}</h2>
+          <img src="{{d['f_image_url']}}">
+          <div class="justi-text" style="word-break: break-all;font-family: OpenSans-Semibold;" [innerHtml]="d['f_description']"></div>
+
+        </div> -->
+      <!-- </div>
+      </div>
+    </div> -->
+
+     
+
+
+   
+  <!-- </div> -->
+
+
+<!-- </div> -->
+
+
+
+<div class="live1">
+  <div class="container">
+    <div fxLayout.lt-md="column" fxLayout.gt-sm="row">
+  
+      <div fxFlex.lt-md="100%" fxFlex.gt-sm="50%" fxFlexOrder.lt-md="2" fxFlexOrder.gt-sm="1" fxLayoutAlign.gt-sm="center start" fxLayout="column">
+          <div class="live-title" fxLayout="row">
+            <div fxLayoutAlign="start center" fxLayoutGap="10px">
+              <div class="circle red"></div>
+              <h6>Live Updates</h6>
+            </div>
+          </div>
+           <div *ngIf="finaldata2">
+            <div  *ngFor="let d of finaldata2">
+              
+          <div class="topic-title">
+            <h1>{{d['f_title']}}</h1>
+            <!-- <p>Dr. Name</p> -->
+            <blockquote><div class="paras" style="" [innerHtml]="d['f_description']"></div></blockquote>
+            <p>{{d['f_date'] | date:"MMMM dd, y h:mm:ss a"}}</p>
+          </div>
+          <div fxLayout="row wrap" class="social-media" fxLayoutGap="10px" fxLayoutAlign="start center">
+            <p>Share</p>
+            <a  href="https://www.facebook.com/dialog/feed?app_id=1066226316760891&
+&rredirect_uri=https://therightdoctors.com/live-updates
+&link=https://therightdoctors.com/live-updates
+&picture={{ d['f_image_url'] }}
+&description={{ d['f_title']}}"><img src="https://storage.googleapis.com/web-assets/social-media-icons/new/fb-icon.png" style="width:32px;"></a> 
+            <a href=""><img src="https://storage.googleapis.com/web-assets/social-media-icons/new/linked-in.png"style="width:32px;"></a>
+            <a href="https://twitter.com/intent/tweet?url=https://therightdoctors.com/live-updates&text={{d['f_title']}}&via=TheRightDoctors"><img src="https://storage.googleapis.com/web-assets/social-media-icons/new/twitter.png" style="width:32px;"></a>
+           
+            <!-- <a href="#"><i class="fa  fa-envelope envo" style="background:#0a97b9;color:white;border-radius: 100%;padding: 5px;font-size: 22px;"></i></a> --> 
+          </div>
+</div>
+</div>
+      </div>
+      <div *ngIf="finaldata2" fxFlex.lt-md="100%" fxFlex.gt-sm="50%" fxFlexOrder.lt-md="1" fxFlexOrder.gt-sm="2">
+        <div  *ngFor="let d of finaldata2" let i = "index" >
+      <div>
+        <div class="img/video">
+         <div class="live2-title"> </div>
+          <!-- <img src="{{d['f_image_url']}}" style="width:100%;"> -->
+          <!-- <video  autoplay controls style="width:100%" poster=""> -->
+              <!-- <source src="https://storage.googleapis.com/web-assets/sPhone-in-2020/Pradeep%20Seth/Pradeep%20Seth-360p.mp4"> -->
+                  <!-- <source src="https://storage.googleapis.com/web-assets/IAGES_2020/Videos-2020/Final-3-Days/Final-3-Days-360p.mp4
+                  "> -->
+          <!-- </video> -->`
+    
+          <video id="myvideo" (ended)="nextVideo()" *ngFor="let video of sources"
+                             style="width:100%"  autoplay controls  >
+                         <source [src]="video.src" type="video/mp4">
+          </video>
+          <div class="img-videotext">
+            <div class="live2-title">
+            
+            <!-- <p>{{d['f_title']}}</p> -->
+            <!-- <p class="subtitle">Telecon with Dr. Pradeep Seth, Former AIIMS Virology HOD on Coronavirus </p> -->
+            <!-- <p>{{d['f_image_source']}}</p>
+            <p>Updated Time: {{d['f_date'] | date:"MMMM dd, y h:mm:ss a"}}</p> -->
+          </div>
+          </div>
+        </div>
+      </div>
+</div>
+</div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+<div class="live2">
+  <div class="container">
+    <div fxLayout.lt-md="column" fxLayout.gt-sm="row" fxLayoutGap.gt-sm="64px">
+      <div fxFlex.lt-md="100%" fxFlex.gt-sm="30%">
+        <div class="side-pres">
+        <div class="live2-title">
+          <h2>Top Stories</h2>
+        </div>
+         
+          <div *ngIf="finaldata1">
+            <div  *ngFor="let d of finaldata1"> 
+              <div class="live2list">
+              
+              <!-- <div fxFlex="10">
+              </div> -->
+              <ul fxLayout="column" style="list-style-type: disc;">
+                <li>
+                    <div class="live2-title">
+                  <h6>{{d['f_title']}}</h6>
+                </div>
+                </li>
+                
+              </ul>
+            </div>
+      
+              </div>
+            
+            </div>
+        </div>
+           <div class="side-tweet" fxHide.lt-md="true" fxShow.gt-sm="true">  
+        <!-- <ngx-twitter-timeline 
+    [data]="{sourceType: 'url', url: 'https://twitter.com/therightdoctors'}"
+    [opts]="{tweetLimit: , height:'30%' , width:'100%'}"
+></ngx-twitter-timeline> -->
+      </div>
+      </div>
+          
+      
+      <div fxFlex.lt-md="100%" fxFlex.gt-sm="70%" class="live3pos">
+        <div>
+            <mat-tab-group fxLayout="column">
+               <div *ngFor="let a of cateogry">
+                <mat-tab label="{{a}}">
+                    
+                 
+                  
+                  <div #Top>
+                    <div style="margin-bottom: 10px; margin-top: 10px;">
+                    <button class="class=previous" (click) = "prevPage()">&laquo; First Page </button>
+                    <button class="next" (click) = "nextPage()">Next Page &raquo;</button>
+                  </div>
+                  <div *ngIf="finaldata">
+                      
+                    <div  *ngFor="let d of finaldata " (mouseover) = "changeUrl(d)"  > 
+                      <div *ngIf="d['f_category'] == a || a == 'All'">
+                          
+                              
+                      
+                    <div fxLayout="row" fxLayoutGap="10px" fxLayoutGap.lt-sm="0px" class="marg-btm-news" fxLayout.lt-sm="column" >
+                      
+                      <div fxLayout="column" class="news">
+                        <div fxLayout="row" class="time">
+                          <p>{{d['f_date'] | date:"MMMM dd, y h:mm:ss a" }}</p>
+                        </div>
+                        <div fxLayout="column">
+                          
+                            <div class="live2-title" id = "livetitle" >
+                                <a href="{{final_new_url}}"><h2>{{d['f_title']}}</h2></a></div>
+                          <p class="subtitle">{{d['f_subheadline']}}</p>
+                          <div *ngIf="d['f_posted_by']" align="right">
+                            <p class="subtitle"> Posted By : {{d['f_posted_by']}}</p>
+                            </div>
+                         
+                          <hr style="width:100%">
+
+                          <div *ngIf="d['f_video_url']">
+                            <video controls  >
+                         <source src="{{d['f_audio_url']}}" type="video/mp4">
+                           </video>
+                          </div>
+                          <div *ngIf="!d['f_video_url']">
+                            <!-- <div *ngIf = "d['final_new_url']"> -->
+                          <img src="{{d['f_image_url']}}" style="width:100%">
+                          <p>{{d['f_image_source']}}</p>
+                          <div *ngIf="d['f_audio_url']">
+                            <audio controls style="width:100%" src="{{d['f_audio_url']}}">
+                              Your browser does not support the audio element.
+                           </audio>
+                          </div>
+                        </div>
+                          
+                          <hr style="width:100%;margin-top:0px;">
+                          <div class="paras" style="" [innerHtml]="d['f_description']"></div>
+                          <div *ngIf = "d['f_twitter_url']" >
+                              <div [innerHTML]="d['f_twitter_url']"></div>
+                            
+                          </div>
+                        
+                          <div fxLayout="row wrap" class="social-media" fxLayoutGap="10px" fxLayoutAlign="start center">
+                            <p style="border-right:1px solid gray;padding-right: 10px;">Share</p>
+                            <a href="https://www.facebook.com/dialog/feed?app_id=1066226316760891
+                            &redirect_uri=https://therightdoctors.com/live-updates/{{url}}
+                            &link=https://therightdoctors.com/live-updates/{{url}}
+                            &picture={{d['f_image_url']}}
+                            &caption={{d['f_title']}}
+                            &description={{d['f_description']}}
+                            &name={{d['f_title']}}"><img src="https://storage.googleapis.com/web-assets/social-media-icons/new/fb-icon.png" style="width:32px;"></a>
+                            <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://therightdoctors.com/live-updates/{{url}}/&title={{d['f_title']}}
+                            &summary={{d['f_description']}}&source=therightdoctors.com"><img src="https://storage.googleapis.com/web-assets/social-media-icons/new/linked-in.png" style="width:32px;"></a>
+                            <a href="https://twitter.com/intent/tweet?url=https://therightdoctors.com/live-updates/{{url}}&text={{d['f_description']}}%20-{{d['f_title']}}&via=TheRightDoctors"><img src="https://storage.googleapis.com/web-assets/social-media-icons/new/twitter.png" style="width:32px;"></a>
+
+                            </div>
+                        </div>
+                        </div>
+                      </div> 
+                    </div>
+
+                      
+                      <!-- <div fxFlex="80%" class="head-news">
+                          <button mat-stroked-button color="primary" class="btn-radius">{{d['f_date']}}</button>
+                        <h2 style="color:#000; font-weight:bold; word-break: break-all;">{{d['f_title']}}</h2>
+                        <img src="{{d['f_image_url']}}">
+                        <p class="justi-text">{{d['f_description']}}</p>
+                        <div class="justi-text" style="word-break: break-all;font-family: OpenSans-Semibold;" [innerHtml]="d['f_description']"></div>
+              
+                      </div> -->
+                    </div>
+                    <!-- <div
+                         infiniteScroll 
+                         [infiniteScrollDistance]="2"
+                         [infiniteScrollThrottle]="1000"
+                         (scrolled)="nextPage()">
+                    </div> -->
+                
+                   
+
+                    <!-- <div *ngIf="finished">FINIHSED</div> -->
+                    </div>
+                  </div>
+                </mat-tab>
+              </div>
+                <!-- <mat-tab label="Second"> Content 2 </mat-tab>
+                <mat-tab label="Third"> Content 3 </mat-tab> -->
+            </mat-tab-group>
+        </div>
+      </div>
+    </div>
+ </div>
+ </div>
+ <app-footer></app-footer>

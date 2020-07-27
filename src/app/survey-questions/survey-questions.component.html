@@ -1,0 +1,317 @@
+<app-nav></app-nav>
+<div class="container">
+  <h1 class="heading-h1">SURVEY TO IDENTIFY ACADEMIC NEEDS OF DM CARDIOLOGY STUDENTS</h1>
+   <div class="work-space">
+     <mat-horizontal-stepper  class="questions" linear>
+
+
+       <!--<mat-step [stepControl]="collegeFormGroup" >
+
+         <form [formGroup]="collegeFormGroup">
+
+         <p>Hospital / Medical College</p>
+         <div fxLayout="row" fxLayout.lt-md="column">
+           <div fxFlex="40">
+         <div class="example-container">
+           <mat-form-field>
+             <input matInput placeholder="Enter Hospital / Medical College Name" formControlName="hospital_college" [(ngModel)]="model.hospital_college" required>
+           </mat-form-field>
+         </div></div>
+           <div fxFlex="60"></div>
+         </div>
+         <div>
+           <button  mat-raised-button color="primary" matStepperNext>Next&nbsp;<i class="fa fa-arrow-right" aria-hidden="true"></i></button>
+         </div>
+         </form>
+       </mat-step>-->
+       <mat-step [stepControl]="dmStudentFormGroup">
+         <form [formGroup]="dmStudentFormGroup">
+           <p>Are you a DM Cardiology Student?</p>
+           <mat-radio-group class="example-radio-group" [(ngModel)]="model.student" formControlName="student" required>
+             <mat-radio-button class="example-radio-button" *ngFor="let season of seasons" [value]="season">
+               {{season}}
+             </mat-radio-button>
+           </mat-radio-group>
+           <div>
+             <button  mat-raised-button color="primary" matStepperNext>Next&nbsp;<i class="fa fa-arrow-right" aria-hidden="true"></i></button>
+           </div>
+         </form>
+       </mat-step>
+
+       <mat-step [stepControl]="genderFormGroup">
+         <form [formGroup]="genderFormGroup">
+         <p>Please Select your Gender</p>
+         <mat-radio-group class="example-radio-group" [(ngModel)]="model.gender" formControlName="gender" required>
+           <mat-radio-button class="example-radio-button" *ngFor="let gender of genders" [value]="gender">
+             {{gender}}
+           </mat-radio-button>
+         </mat-radio-group>
+         <div>
+           <button mat-raised-button  matStepperPrevious><i class="fa fa-arrow-left" aria-hidden="true"></i>&nbsp;Back</button>
+           <button  mat-raised-button color="primary" matStepperNext>Next&nbsp;<i class="fa fa-arrow-right" aria-hidden="true"></i></button>
+         </div>
+         </form>
+       </mat-step>
+
+       <mat-step [stepControl]="onlineResourceFormGroup">
+         <form [formGroup]="onlineResourceFormGroup">
+           <p>Do you use any online resource for your academics ?</p>
+           <mat-radio-group class="example-radio-group" name="" [(ngModel)]="model.online_resource" formControlName="online_resource" required>
+             <mat-radio-button class="example-radio-button" *ngFor="let resource of Online_resource" [value]="resource">
+               {{resource}}
+             </mat-radio-button>
+           </mat-radio-group>
+           <div>
+             <button mat-raised-button matStepperPrevious><i class="fa fa-arrow-left" aria-hidden="true"></i>&nbsp;Back</button>
+             <button mat-raised-button color="primary" matStepperNext>Next&nbsp;<i class="fa fa-arrow-right" aria-hidden="true"></i></button>
+           </div>
+         </form>
+       </mat-step>
+
+       <mat-step [stepControl]="presentationExamFormGroup">
+         <form [formGroup]="presentationExamFormGroup">
+           <p>How do you prepare for your exams?</p>
+           <mat-radio-group class="example-radio-group" [(ngModel)]="model.preparation_for_exams" formControlName="preparation_for_exams" required>
+             <mat-radio-button class="example-radio-button" *ngFor="let prepare of preparations" [value]="prepare">
+               {{prepare}}
+             </mat-radio-button>
+           </mat-radio-group>
+           <div fxLayout="row" fxLayout.lt-md="column">
+             <div fxFlex="40">
+               <div class="example-container">
+                 <mat-form-field>
+                   <input matInput placeholder="Other" name="preparation_for_exams" [(ngModel)]="model.preparation_for_exams" formControlName="preparation_for_exams" required >
+                 </mat-form-field>
+               </div></div>
+             <div fxFlex="60"></div>
+           </div>
+           <div>
+             <button mat-raised-button  matStepperPrevious><i class="fa fa-arrow-left" aria-hidden="true"></i>&nbsp;Back</button>
+             <button mat-raised-button color="primary" matStepperNext>Next&nbsp;<i class="fa fa-arrow-right" aria-hidden="true"></i></button>
+           </div>
+         </form>
+       </mat-step>
+
+       <mat-step [stepControl]="passOutYearFormGroup">
+         <form [formGroup]="passOutYearFormGroup">
+        <p>Year of passing out?</p>
+         <div fxLayout="row" fxLayout.lt-md="column">
+           <div fxFlex="40">
+             <div class="example-container">
+           <mat-form-field>
+             <input matInput placeholder="Year (Ex: 2016)" name="pass_out_year" [(ngModel)]="model.pass_out_year" formControlName="pass_out_year" required>
+           </mat-form-field></div>
+         </div>
+
+           <div fxFlex="60"></div>
+         </div>
+
+         <div>
+           <button mat-raised-button  matStepperPrevious><i class="fa fa-arrow-left" aria-hidden="true"></i>&nbsp;Back</button>
+           <button mat-raised-button color="primary" matStepperNext>Next&nbsp;<i class="fa fa-arrow-right" aria-hidden="true"></i></button>
+         </div>
+         </form>
+       </mat-step>
+       <mat-step [stepControl]="sourceOfKnowledgeFormGroup">
+         <form [formGroup]="sourceOfKnowledgeFormGroup">
+         <p>What is the current major source of academic knowledge for you? If it's a book, kindly specify the name and author. If it is online, then kindly specify the website</p>
+         <div fxLayout="row" fxLayout.lt-md="column">
+           <div fxFlex="40">
+             <div class="example-container">
+               <mat-form-field>
+                 <input matInput placeholder="Enter current major source of academic knowledge" name="source_of_knowledge" [(ngModel)]="model.source_of_knowledge" formControlName="source_of_knowledge" required>
+               </mat-form-field>
+             </div></div>
+           <div fxFlex="60"></div>
+         </div>
+         <div>
+           <button mat-raised-button  matStepperPrevious><i class="fa fa-arrow-left" aria-hidden="true"></i>&nbsp;Back</button>
+           <button mat-raised-button color="primary" matStepperNext>Next&nbsp;<i class="fa fa-arrow-right" aria-hidden="true"></i></button>
+         </div>
+         </form>
+       </mat-step>
+
+
+       <mat-step *ngIf="model.online_resource === 'Yes'" [stepControl]="onlineResourceWebFormGroup">
+         <form class="example-form" [formGroup]="onlineResourceWebFormGroup">
+           <p>If Yes Kindly mention the names of the Apps / website you're currently using</p>
+         <mat-form-field class="example-full-width">
+           <textarea matInput placeholder="Textarea" style="box-shadow:none;" name="online_resource_websites" [(ngModel)]="model.online_resource_websites" formControlName="online_resource_websites" required></textarea>
+         </mat-form-field>
+         <div>
+           <button mat-raised-button  matStepperPrevious><i class="fa fa-arrow-left" aria-hidden="true"></i>&nbsp;Back</button>
+           <button mat-raised-button color="primary" matStepperNext>Next&nbsp;<i class="fa fa-arrow-right" aria-hidden="true"></i></button>
+         </div>
+         </form>
+       </mat-step>
+
+
+       <mat-step [stepControl]="usefullOnlineAccessFormGroup">
+         <form [formGroup]="usefullOnlineAccessFormGroup">
+         <p>Would it be useful to have an online access to the last 10 years papers from leading institutes like AIIMS/PGI/JIMPER/ Others?</p>
+         <mat-radio-group class="example-radio-group" [(ngModel)]="model.useful_online_access" formControlName="useful_online_access" required>
+           <mat-radio-button class="example-radio-button" *ngFor="let season of Online_resource" [value]="season">
+             {{season}}
+           </mat-radio-button>
+         </mat-radio-group>
+
+         <div>
+           <button mat-raised-button  matStepperPrevious><i class="fa fa-arrow-left" aria-hidden="true"></i>&nbsp;Back</button>
+           <button mat-raised-button color="primary" matStepperNext>Next&nbsp;<i class="fa fa-arrow-right" aria-hidden="true"></i></button>
+         </div>
+         </form>
+       </mat-step>
+       <mat-step [stepControl]="videoTutorialsFormGroup">
+         <form [formGroup]="videoTutorialsFormGroup">
+         <p>Would video tutorials on major / minor bedside cases from empaneled examiners be useful in preparing for your practicals?</p>
+         <mat-radio-group class="example-radio-group" [(ngModel)]="model.video_tutorials" formControlName="video_tutorials" required>
+           <mat-radio-button class="example-radio-button" *ngFor="let season of Online_resource" [value]="season">
+             {{season}}
+           </mat-radio-button>
+         </mat-radio-group>
+
+         <div>
+           <button mat-raised-button  matStepperPrevious><i class="fa fa-arrow-left" aria-hidden="true"></i>&nbsp;Back</button>
+           <button mat-raised-button color="primary" matStepperNext>Next&nbsp;<i class="fa fa-arrow-right" aria-hidden="true"></i></button>
+         </div>
+         </form>
+       </mat-step>
+
+       <mat-step [stepControl]="domainExpertFormGroup">
+         <form [formGroup]="domainExpertFormGroup">
+         <p>Who are the domain experts globally whose lectures you would like to watch?</p>
+         <div fxLayout="row" fxLayout.lt-md="column">
+           <div fxFlex="40">
+             <div class="example-container">
+               <mat-form-field>
+                 <input matInput placeholder="Input" name="domain_expets_lectures" [(ngModel)]="model.domain_expets_lectures" formControlName="domain_expets_lectures" required>
+               </mat-form-field>
+             </div></div>
+           <div fxFlex="60"></div>
+         </div>
+         <div>
+           <button mat-raised-button  matStepperPrevious><i class="fa fa-arrow-left" aria-hidden="true"></i>&nbsp;Back</button>
+           <button mat-raised-button color="primary" matStepperNext>Next&nbsp;<i class="fa fa-arrow-right" aria-hidden="true"></i></button>
+         </div>
+         </form>
+       </mat-step>
+
+       <mat-step [stepControl]="biggestAcadminNeedFormGroup">
+         <form [formGroup]="biggestAcadminNeedFormGroup">
+         <p>What is your biggest academic need ?</p>
+         <div fxLayout="row" fxLayout.lt-md="column">
+           <div fxFlex="40">
+             <div class="example-container">
+               <mat-form-field>
+                 <input matInput placeholder="Input" name="biggest_academic_need" [(ngModel)]="model.biggest_academic_need" formControlName="biggest_academic_need" required>
+               </mat-form-field>
+             </div></div>
+           <div fxFlex="60"></div>
+         </div>
+         <div>
+           <button mat-raised-button  matStepperPrevious><i class="fa fa-arrow-left" aria-hidden="true"></i>&nbsp;Back</button>
+           <button mat-raised-button color="primary" matStepperNext>Next&nbsp;<i class="fa fa-arrow-right" aria-hidden="true"></i></button>
+         </div>
+         </form>
+       </mat-step>
+
+       <mat-step [stepControl]="fulfilAcademicNeedFormGroup">
+         <form [formGroup]="fulfilAcademicNeedFormGroup">
+         <p>Please mention how a Pharma company can help fulfil your academic needs</p>
+         <div fxLayout="row" fxLayout.lt-md="column">
+           <div fxFlex="40">
+             <div class="example-container">
+               <mat-form-field>
+                 <input matInput placeholder="Input" name="fulfil_academic_need" [(ngModel)]="model.fulfil_academic_need" formControlName="fulfil_academic_need" required>
+               </mat-form-field>
+             </div></div>
+           <div fxFlex="60"></div>
+         </div>
+         <div>
+           <button mat-raised-button  matStepperPrevious><i class="fa fa-arrow-left" aria-hidden="true"></i>&nbsp;Back</button>
+           <button mat-raised-button color="primary" matStepperNext>Next&nbsp;<i class="fa fa-arrow-right" aria-hidden="true"></i></button>
+         </div>
+         </form>
+       </mat-step>
+
+       <mat-step [stepControl]="aboutTrdFormGroup">
+         <form [formGroup]="aboutTrdFormGroup">
+         <p>Have you heard of TheRightDoctors.com?</p>
+         <mat-radio-group class="example-radio-group" [(ngModel)]="model.about_trd" formControlName="about_trd" required>
+           <mat-radio-button class="example-radio-button" *ngFor="let season of Online_resource" [value]="season">
+             {{season}}
+           </mat-radio-button>
+         </mat-radio-group>
+
+         <div>
+           <button mat-raised-button  matStepperPrevious><i class="fa fa-arrow-left" aria-hidden="true"></i>&nbsp;Back</button>
+           <button mat-raised-button color="primary" matStepperNext>Next&nbsp;<i class="fa fa-arrow-right" aria-hidden="true"></i></button>
+         </div>
+         </form>
+       </mat-step>
+
+       <mat-step [stepControl]="nameFormGroup">
+        <form [formGroup]="nameFormGroup">
+        <p>Name</p>
+        <mat-form-field>
+          <input matInput placeholder="Enter your Name" name="name" [(ngModel)]="model.name" formControlName="name" required>
+        </mat-form-field>
+
+        <div>
+          <button mat-raised-button  matStepperPrevious><i class="fa fa-arrow-left" aria-hidden="true"></i>&nbsp;Back</button>
+          <button mat-raised-button color="primary" matStepperNext>Next&nbsp;<i class="fa fa-arrow-right" aria-hidden="true"></i></button>
+        </div>
+        </form>
+      </mat-step>
+
+      <mat-step [stepControl]="mobileNumberFormGroup">
+        <form [formGroup]="mobileNumberFormGroup">
+        <p>Mobile Number</p>
+        <mat-form-field>
+          <input matInput placeholder="Enter your Mobile Number" name="mobile_number" [(ngModel)]="model.mobile_number" formControlName="mobile_number" required>
+        </mat-form-field>
+
+        <div>
+          <button mat-raised-button  matStepperPrevious><i class="fa fa-arrow-left" aria-hidden="true"></i>&nbsp;Back</button>
+          <button mat-raised-button color="primary" matStepperNext>Next&nbsp;<i class="fa fa-arrow-right" aria-hidden="true"></i></button>
+        </div>
+        </form>
+      </mat-step>
+
+       <mat-step [stepControl]="emailFormGroup">
+         <form [formGroup]="emailFormGroup">
+         <p>Click below to subscribe to TheRightDoctors YouTube Channel where you'll find Interviews on current topics from the top Cardiologists of the country:</p>
+         <p><a href=" https://goo.gl/jdMxpa"> https://goo.gl/jdMxpa</a></p>
+         <br>
+         <p>Email</p>
+         <div fxLayout="row" fxLayout.lt-md="column">
+           <div fxFlex="40">
+             <div class="example-container">
+               <mat-form-field>
+                 <input matInput placeholder="Enter Email" name="email" [(ngModel)]="model.email" formControlName="email" required>
+               </mat-form-field>
+             </div></div>
+           <div fxFlex="60"></div>
+         </div>
+         <div>
+           <button mat-raised-button  matStepperPrevious><i class="fa fa-arrow-left" aria-hidden="true"></i>&nbsp;Back</button>
+           <button mat-raised-button color="primary" (click)="submit_review()">Submit</button>
+         </div>
+         </form>
+       </mat-step>
+
+       <mat-step>
+         <ng-template matStepLabel>Done</ng-template>
+         You are now done.
+         <div>
+           <button mat-button matStepperPrevious><i class="fa fa-arrow-left" aria-hidden="true"></i>&nbsp;Back</button>
+           <button mat-button >Reset</button>
+         </div>
+       </mat-step>
+     </mat-horizontal-stepper>
+
+
+   </div>
+
+</div>
+<app-footer></app-footer>

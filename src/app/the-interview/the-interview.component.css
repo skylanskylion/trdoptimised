@@ -1,0 +1,107 @@
+
+.iconsdiv {
+  margin-bottom: 20px;
+}
+
+.director {
+  float: left;
+  padding-right: 30px;
+}
+
+a {
+  text-decoration: none;
+}
+
+.hdg_line {
+  border-bottom: 3px solid #d9534f;
+  border-top: 3px solid #d9534f;
+  height: 1px;
+  position: absolute;
+  width: 100%;
+@include margin(20 px);
+}
+
+.right-side {
+  float: right;
+}
+
+.mar_top {
+  margin-top: 30px;
+}
+
+
+.para-whatsup2{
+  padding-bottom:10px;
+}
+
+.icons-fallow-new i{
+  font-size:14px;
+  color: #fff;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  line-height: 30px;
+  border-radius: 50%;}
+.icons-fallow-new li{
+  float: left;
+  color: #000;
+  background: #f9f9f9;
+  width: 100%;
+  padding:5px 5px 5px 18px;
+  margin-bottom: 5px;
+  font-size: 14px;
+
+}
+
+.twit-clr{
+  background:#1dcaff;
+}
+.google-plus{
+  background:#d34836;
+}
+.linkd{
+  background: #0d77b7;
+}
+.pin{
+  background: #cd2029;
+}
+.fb{
+  background:#3B5998;
+}
+.insta{
+  background: #f09433;
+}
+.youtube{
+  background:#cc181e;
+}
+.rss{
+  background:#ffaf00;
+}
+.content-sing{
+  margin-top:10px;
+}
+/*.list-icons-tops i{
+  height: 30px;
+  width: 30px;
+  line-height: 30px;
+  color: #fff;
+  text-align: center;
+  border-radius: 100%;
+  font-size: 16px;
+  !* float: right; *!
+}
+.views{
+  border-right: 1px solid #ccc;
+  padding-right: 10px;
+  position: relative;
+  top: 10px;
+  text-align: center;
+}
+.whats-app{
+  background-color: #1fa67a;
+}*/
+@media (max-width: 768px){
+  .panel_thin_grey{
+    margin-top:0px !important;
+  }
+}

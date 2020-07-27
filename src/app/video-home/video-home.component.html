@@ -1,0 +1,95 @@
+<div class="full_vid">
+    <div class="container">
+      <div class="row">
+  <div class="item item-1 col-md-9"  >
+
+            <div >
+              <h1 class="videoheader">STEMI INDIA 2018</h1>
+              <!--<vg-player class="vid_img ratio-4-3" style="width:100%" *ngIf="sources.length>0">
+                <vg-overlay-play></vg-overlay-play>
+                <vg-buffering></vg-buffering>
+                <vg-scrub-bar>
+                  <vg-scrub-bar-current-time></vg-scrub-bar-current-time>
+                  <vg-scrub-bar-buffering-time></vg-scrub-bar-buffering-time>
+                </vg-scrub-bar>
+                <vg-controls>
+                  <vg-play-pause></vg-play-pause>
+                  <vg-playback-button></vg-playback-button>
+
+                  <vg-time-display vgProperty="current" vgFormat="mm:ss"></vg-time-display>
+                  <vg-scrub-bar style="pointer-events: none;"></vg-scrub-bar>
+
+                  <vg-time-display vgProperty="total" vgFormat="mm:ss"></vg-time-display>
+
+                  <vg-track-selector></vg-track-selector>
+                  <vg-mute></vg-mute>
+                  <vg-volume></vg-volume>
+
+                  <vg-fullscreen></vg-fullscreen>
+                </vg-controls>
+                  <video [vgMedia]="media" autoplay (ended)="nextVideo()" #media id="singleVideo" (play)="loveit(catagory['anchor'])" poster="{{catagory['image_url']}}">
+                      <source *ngFor="let item of sources" [src]="item.src" type="video/mp4">
+                  </video>
+                &lt;!&ndash;<video [vgMedia]="media" #media id="singleVideo" preload="auto" (play)="loveit(catagory[0]['anchor'],catagory[0]['slug'])" >
+
+                  <source src="https://www.youtube.com/embed/LN_YIN71doA" type="video/mp4" >
+
+                </video>&ndash;&gt;
+              </vg-player>-->
+
+              <vg-player class="vid_img ratio-4-3" style="width:100%" *ngIf="sources.length>0">
+                <vg-overlay-play></vg-overlay-play>
+                <vg-buffering></vg-buffering>
+                <vg-scrub-bar style="bottom: 36px !important;">
+                  <vg-scrub-bar-current-time></vg-scrub-bar-current-time>
+                  <vg-scrub-bar-buffering-time></vg-scrub-bar-buffering-time>
+                </vg-scrub-bar>
+                <vg-controls style="height:36px !important;">
+                  <vg-play-pause></vg-play-pause>
+                  <vg-playback-button></vg-playback-button>
+                  <vg-time-display vgProperty="current" vgFormat="mm:ss"></vg-time-display>
+                  <vg-scrub-bar style="pointer-events: none;"></vg-scrub-bar>
+                  <vg-time-display vgProperty="total" vgFormat="mm:ss"></vg-time-display>
+
+                  <vg-track-selector></vg-track-selector>
+                  <vg-mute></vg-mute>
+                  <vg-volume></vg-volume>
+                  <vg-fullscreen></vg-fullscreen>
+                </vg-controls>
+                <video [vgMedia]="media" autoplay (ended)="nextVideo()" #media id="singleVideo" preload="none" (play)="loveit(catagory['anchor'])" poster="{{catagory['image_url']}}">
+                  <source *ngFor="let item of sources" [src]="item.src" type="video/mp4">
+                </video>
+              </vg-player>
+
+
+            </div></div>
+  <div  class="item item-2 col-md-3 scroll-class">
+    <div class="mar-btm">
+      <h3 class="imgheader">Latest heading </h3>
+      <a [routerLink]="['/stemi-india-lucknow-2018/the-interview/stemi-india-tv-dr-thomas-alexander-the-stemi-india-model-has-reduced-deaths-by-22-percentage']"> 
+      <img src="https://storage.googleapis.com/web-assets/images/STEMIINDIA-2018/thomas/thomas-large.jpg" width="100%">
+    </a>
+    </div>
+
+    <div class="mar-btm">
+    <a [routerLink]="['/stemi-india-lucknow-2018/the-interview/stemi-india-tv-dr-thomas-alexander-the-stemi-india-model-has-reduced-deaths-by-22-percentage']">   <h3 class="imgheader">The Stemi India Model Cuts Mortality...</h3></a>
+<ul class="list-video">
+<li><a [routerLink]="['/stemi-india-lucknow-2018/the-interview/stem-india-tv-dr-dharam-khumbani-troponin-integral-in-diagnoses-and-prognosis-of-acute-mi']"> Troponin: Integral In Diagnoses... </a></li>
+<li><a [routerLink]="['/stemi-india-lucknow-2018/the-interview/stemi-india-tv-dr-brahmajee-nallamothe-cath-lab-a-boon-for-stemi-patients']">Cath Lab, A Boon For STEMI Patients... </a></li>
+<li><a [routerLink]="['/stemi-india-lucknow-2018/the-interview/stemi-india-tv-dr-pp-mohanan-newer-molecules-have-helped-in-treating-stemi-patients']"> Newer molecules Have Helped...</a></li>
+
+</ul></div>
+<div class="mar-btm">
+   <h3 class="imgheader">Featured Stories </h3>
+<ul class="list-video">
+<li><a [routerLink]="['/stemi-india-lucknow-2018/the-interview/stemi-india-tv-dr-nishit-chandra-every-minute-delay-after-a-heart-attack-causes-damage-to-the-heart-muscle']">Every Minute Delay After A Heart...</a></li>
+<li><a [routerLink]="['/stemi-india-lucknow-2018/the-interview/stemi-india-tv-dr-ajit-mullasari-lack-of-funding-&-infrastructure-big-reason-for-stemi-deaths-in-india']" >Lack Of Funding & Infrastructure...</a></li>
+<li><a [routerLink]="['/stemi-india-lucknow-2018/the-interview/stemi-india-tv-dr-zs-meherwal-mi-ventricular-septal-defect-rare-but-fatal']">Ventricular Septal Defect After MI...</a></li>
+
+</ul>
+    </div>
+  </div>
+
+</div>
+</div>
+</div>

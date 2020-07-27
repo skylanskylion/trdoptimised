@@ -1,0 +1,17 @@
+.mobile-view {
+  display: none;
+}
+
+@media (max-width: 959px) {
+  .mobile-view {
+    display: block;
+  }
+
+  .desktop-view {
+    display: none;
+  }
+
+  .nav-desk {
+    display: none;
+  }
+}

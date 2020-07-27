@@ -1,0 +1,181 @@
+button,a{
+    cursor:pointer;
+}
+.quiz{
+    /* width: 320px; */
+    display: block;
+    margin: auto;
+    /* position: relative;
+    top: 100%;
+  
+    transform: translateY(50%); */
+    /* background-color: aliceblue; */
+    /* padding:0px 0px 20px 0px; */
+    /* background-image: linear-gradient(#dff6fe,#d3f1f9); */
+    width:100%;
+}
+h3{
+    font-weight: bold;
+}
+
+@media(max-width:600px){
+    /* .quiz{
+        width:290px;
+    } */
+    h3{
+        font-size: 18px;
+    }
+    .footer h6{
+        font-size: 10px;
+    }
+    /* body{
+        height: 100vh;
+        background-color: aliceblue;
+    } */
+    .title h3{
+        margin-top: 0px;
+    }
+    .quiz{
+        padding:0px 15px;
+    }
+    .footer3{
+        padding-top:20px;
+    }
+}
+@media(min-width:601px){
+    .quiz{
+        width:400px;
+    }
+    h3{
+        font-size: 18px;
+    }
+    .footer h6{
+        font-size: 11px;
+    }
+    body{
+        height: 100vh;
+        /* background-color: aliceblue; */
+    }
+    .form1{
+        margin:0px;
+    }
+    .title{
+        margin: 0px 15px;
+    }
+}
+@media(min-width:960px){
+    .quiz{
+        width:600px;
+    }
+    h3{
+        font-size: 22px;
+    }
+    .quiz{
+        /* width: 320px; */
+        display: block;
+        margin: auto;
+        position: relative;
+        top: 50%;
+      
+        transform: translateY(10%);
+       
+        /* padding:0px 0px 20px 0px; */
+    }
+    .footer h6{
+        font-size: 11px;
+    }
+    .footer1{
+        padding-bottom: 20px;
+    }
+}
+/* padding:0px 10px 10px 10px; */
+
+mat-radio-button {
+    align-items: end !important;
+  }
+  
+
+  @media(min-width:960px){
+      .aoc1{
+          height:80px;
+      }
+  }
+  @media(max-width:599px){
+      .aoc-des{ 
+          display: none !important;
+      }
+      body{
+        background-image: linear-gradient(#dff6fe,#d3f1f9);width:100%;
+        height: 100vh;
+      }
+  }
+
+.custom-dialog-container .mat-dialog-container {
+    /* add your styles */
+      padding: 0px !important;
+  }
+  @media(max-width:600px){
+      .aoc1{
+         padding-top:10px;
+     }
+  }
+  
+  
+  
+  /*  */
+  :host ::ng-deep .mat-radio-container{
+      height: 10px;
+      width: 10px;
+    }
+    :host ::ng-deep .mat-radio-outer-circle{
+      height: 10px;
+      width: 10px;
+    }
+    :host ::ng-deep .mat-radio-inner-circle{
+      height: 10px;
+      width: 10px;
+    }
+    :host ::ng-deep .mat-radio-button .mat-radio-ripple{
+      height: 20px; /*double of your required circle radius*/
+      width: 20px;  /*double of your required circle radius*/
+      left: calc(50% - 10px); /*'10px'-same as your required circle radius*/
+      top: calc(50% - 10px); /*'10px'-same as your required circle radius*/
+    }
+    button{
+        background-color:#4c813c !important;
+        color:#fff;
+    }
+    button:hover{
+        background-color: #1e6b74 !important;
+        color:#fff !important;
+    }
+    .mat-form-field .matInput{
+        color:#fff !important;
+    }
+    /* ::ng-deep .form1 .mat-form-field .mat-form-field-wrapper .mat-form-field-flex .mat-form-field-appearance-legacy .mat-form-field-infix, ::ng-deep .form1 .mat-form-field .mat-form-field-wrapper .mat-form-field-flex .mat-form-field-appearance-legacy .mat-form-field-infix .mat-form-field-label-wrapper .mat-form-field-appearance-legacy.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label{
+        color:#fff !important;
+    } */
+    .mat-form-field-appearance-outline .mat-form-field-outline {
+        color: white;
+      }
+      /* Font color */
+      input.mat-input-element {
+        color: white;
+      }
+      
+      ::ng-deep .mat-focused .mat-form-field-label {
+        /*change color of label*/
+        color: white !important;
+       }
+       ::ng-deep.mat-form-field-underline {
+        /*change color of underline*/
+        background-color: white !important;
+      } 
+      
+      ::ng-deep.mat-form-field-ripple {
+       /*change color of underline when focused*/
+       background-color: white !important;;
+      }
+      .mat-form-field-empty.mat-form-field-label {
+        color: white;
+    }

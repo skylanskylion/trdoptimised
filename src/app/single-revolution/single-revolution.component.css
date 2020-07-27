@@ -1,0 +1,25 @@
+.head1 {
+  font-family: Roboto Slab, serif;
+  font-size: 42px;
+  font-weight: 300;
+  color: #333;
+  margin: 20px 0 0;
+  text-align: center;
+
+}
+
+.head2 {
+  font-family: Roboto Slab, serif;
+  font-size: 20px;
+  color: #666;
+  margin: 10px 0 0;
+  text-align: center;
+}
+
+.head3 {
+  text-align: center;
+  font-family: Roboto Slab, serif;
+  font-size: 16px;
+  color: #e5002d;
+  margin: 10px 0 0;
+}

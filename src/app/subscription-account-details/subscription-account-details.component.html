@@ -1,0 +1,74 @@
+<div class="layer-top">
+    <div class="container">
+        <div fxLayout="row" fxLayoutAlign="end">
+            <button mat-button [matMenuTriggerFor]="menu">
+                <span class="material-icons">person</span><span class="material-icons">expand_more</span></button>
+                <mat-menu #menu="matMenu">
+                <h6 style="margin:0px;padding:10px 10px 5px 10px;">Web Developer</h6>
+                <h6 style="margin-bottom: 16px;padding:0px 10px;color:orange;">Digital Subscriber</h6>
+                <h6 class="bor-top">Account</h6>
+                <ul fxLayout="column" style="list-style-type: none !important;margin-bottom:20px;padding:10px 10px !important">
+                    <li><a href="#">Profile</a></li>
+                    <li><a href="#">Subscription</a></li>
+                    <li><a href="#">What's included</a></li>
+                    <li><a href="#">Billing</a></li>
+                    <li><a href="#">Settings</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+                <hr style="color:#000;background-color: #000;width:100%;">
+                <h6 style="text-align: center;margin:10px;"><a href="#">LOG OUT</a></h6>
+                </mat-menu>
+        </div>
+    </div>
+</div>
+
+<div class="sub-layer1">
+    <div class="container">
+        <div fxLayout.lt-md="column" fxLayout.gt-sm="row" fxLayoutGap.gt-sm="60px">
+            <div fxFlex.lt-md="0%" fxFlex.gt-sm="20%" class="desk-view">
+                <div fxLayout="column" class="topone">
+                    <h6>Account</h6>
+                    <ul fxLayout="column">
+                        <li><a href="#">Profile</a></li>
+                        <li>Subscription</li>
+                        <li style="padding-left: 15px;"><a href="#">What's included</a></li>
+                        <li style="padding-left: 15px;"><a href="#">Billing</a></li>
+                        <li><a href="#">Settings</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <div fxLayout="column" class="toptwo">
+                    <h4>Need help?</h4>
+                    <p>Review <a href="#">our help <br>yopics</a>or chat with <br>one of our <br>customer care advocates</p>
+                </div>
+            </div>
+            <Div fxFlex.lt-md="100%" fxFlex.gt-sm="80%">
+                <div fxLayout="column">
+                    <div fxLayout="column" class="br-btm">
+                    <h3>Good Morning</h3>
+                    <p>You have been a subscriber since 2020</p>
+                </div>
+                    <div fxLayout.lt-md="column" fxLayout.gt-sm="row" class="border-top2" fxLayoutGap.gt-sm="30px">
+                        <div fxFlex.lt-md="100%" fxFlex.gt-sm="50%" class="mrgbtm">
+                            <h6 class="headinga">Account Details</h6>
+                            <p class="heading-acc">Account Number</p>
+                            <p class="head-des">1165767</p>
+                            <p class="heading-acc">Email</p>
+                            <p class="head-des">wd@therightdoctors.com&nbsp;<span class="material-icons" style="color:#3f51b5;font-size: 18px;">create</span></p>
+                            <p class="heading-acc">Bonus Subscriptions</p>
+                            <p class="head-des">You currently are not able to share you subscriptions to other TRD</p>
+
+                        </div>
+                        <div fxFlex.lt-md="100%" fxFlex.gt-sm="50%">
+                            <h6 class="headinga">Subscription Details</h6>
+                            <p class="heading-acc">Subscription</p>
+                            <p class="head-des"><a href="#">Basic Digital access</a></p>
+                            <p class="heading-acc">Rate</p>
+                            <p class="head-des"><a href="#"> 60 until May 26, 2020</a></p>
+                        </div>
+                    </div>
+                </div>
+            </Div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,90 @@
+
+
+
+<div class = "container text-center">
+  <label class="for-checkbox" for="general"></label>
+    <h1 style="font-family: 'Times New Roman', Times, serif;color: cornflowerblue; font-size:40px;text-align: center;"><b>TheRightDoctors</b></h1>
+    
+    <h4 style="margin-top: 10px; font-size:20px;text-align: center;">Insights from World's Best Medical Minds.</h4>
+  </div>
+
+
+  <div class="form-v4">
+    <div class="page-content">
+      <div class="form-v4-content" fxLayout.lt-md="column" fxLayout.gt-sm="row">
+        <div class="form-left" fxFlex.lt-md="100%" fxFlex.gt-sm="30%">
+          <h2 style="color:#fff !important;">Basic Digital Access</h2>
+          <p class="text-1">Your payment method will be automatically charged ₹100.00 every 30 days for the first year.
+          </p>
+          <p class="text-2"> It will then be automatically charged ₹260.00 every 30 days thereafter, starting after a
+            year of subscription..</p>
+          <p class="text-2"> Your subscription will continue until you cancel. You can cancel anytime.</p>
+
+          <!-- <div class="form-left-last">
+            <input type="submit" name="account" class="account" value="Have An Account">
+          </div> -->
+        </div>
+        <div fxLayout="column" fxFlex.lt-md="100%" fxFlex.gt-sm="70%">
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="form-detail" method="post" id="myform">
+
+          <h2>Sign In</h2>
+      
+          <div class="form-row">
+            <label class="control-label col-sm-2" for="email">Email</label>
+            <input type="text" class="input-text" id="email" formControlName="email" matInput placeholder="Email">
+          </div>
+
+
+          <div class="form-row ">
+            <label class="control-label col-sm-2" for="password">Password</label>
+            
+          </div>
+         
+
+          <div style="text-align: center;">
+            <button style="align-self: auto;" [disabled]="loginForm.invalid" type="submit" class="btn btn-primary">Log
+              in</button>
+          </div>
+          <div>
+            <a routerLink="../contribution-forgot-pass" routerLinkActive="active">Forgot Password?</a>
+          </div>
+          <div class="valida" style="padding-top:10px">
+            <div *ngIf="email.invalid && (email.dirty || email.touched)" class="alert alert-danger" style="margin:0px !important;">
+              <div *ngIf="email.errors.required">
+                Email is required.
+              </div>
+              <div *ngIf="email.errors.email">
+                Email is of invalid type.
+              </div>
+            </div>
+
+            <div *ngIf="email.valid && password.invalid && (password.dirty || password.touched)"
+              class="alert alert-danger">
+              <div *ngIf="password.errors.required">
+                Password is required.
+              </div>
+              <div *ngIf="password.errors.minLength">
+                Password should be of minimum length 8.
+              </div>
+            </div>
+          </div>
+          <div class="login" style="background-color: white;">
+            <div>
+             
+              <h5 style="text-align: center;margin-bottom: 8px !important;">Don't have an account? <b><a routerLink="../subscription-register"
+                    routerLinkActive="active">Sign Up Now!</a> </b></h5>
+            </div>
+            <div class="fb-login-button" style="margin-top:8px !important;" data-size="medium" data-button-type="login_with" data-layout="rounded" data-auto-logout-link="true" data-use-continue-as="true" data-width=""(click)="login()">Login with Facebook</div>
+
+ 
+
+          </div>
+        
+        </form>
+      </div>
+
+      </div>
+    </div>
+
+  </div>
+

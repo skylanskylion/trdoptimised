@@ -1,0 +1,597 @@
+<!--book appointment-->
+<app-nav></app-nav>
+
+<section class="back2">
+  <section class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="mrg_btm"><img style="width: 100%;"
+                                  src="https://storage.googleapis.com/web-assets/images/CEW/cardiac-electrophysiology-workshop.jpg">
+        </div>
+        <div class="vid_p" style="margin-top:10px">
+          <p>Greetings !!!</p>
+          <p style="margin-top:10px;font-weight: 400;font-size: 16px;line-height: 20px;" ngStyle.lt-sm="font-size: 11px">It gives me great pleasure to share that TheRightDoctors.com is partnering with 6th live Cardiac Electrophysiology Workshop at Madras Medical Mission.</p>
+          <!-- STEMI INDIA tv is supported through an unrestricted medical grant by Emcure.-->
+          <p style="margin-top:10px;font-weight: 400;font-size: 16px;line-height: 20px;" ngStyle.lt-sm="font-size: 11px">Your wisdom will be transmitted globally across multiple digital and social media channels including
+            Facebook, Whatsapp, Twitter and Youtube.</p>
+          <p style="margin-top:10px;font-weight: 400;font-size: 16px;line-height: 20px;" ngStyle.lt-sm="font-size: 11px">Please fill in your personal details, key take away's for 6th live Cardiac Electrophysiology Workshop at Madras Medical Mission:</p>
+          <p style="margin-top:10px;font-weight: 600;font-size: 16px;line-height: 20px; color: rgb(51,51,51);"
+             ngStyle.lt-sm="font-size: 11px">Dr. Ulhas Pandurangi</p>
+          <p style="font-weight: 600;font-size: 16px;line-height: 20px; color: rgb(51,51,51);"
+             ngStyle.lt-sm="font-size: 11px">Chief – Cardiac Electrophysiology & Pacing
+            The Madras Medical Mission </p>
+
+
+          <!--
+          <p style="font-weight: 400;font-size: 14px;line-height: 20px;">We are a Google Launchpad Startup ( we won USD 100,000 in platform credit in a national competition last year ) and our vision is to spread Insights from the World's Best Medical Minds to a global audience. We are evangelists of Digital Heath and work globally to improve access to medical information. Information which can make the difference between life and death. Information, which can motivate people to lead healthier lives. Information which can Prevent Disease. Promote Wellness. Treat Illness.</p><br>
+
+          <p>Because if TheRightDoctors do not speak up and make themselves heard patients will believe other sources.</p><br>
+
+          <p style="font-weight: 400;font-size: 16px;line-height: 20px;">So Get ready to Speak Up and Be Heard at the WCCICC 2017.</p><br> -->
+          <!--
+          <div class="para2">Please click below to book your studio time :</div> -->
+
+        </div>
+      </div>
+    </div>
+
+    <div fxLayout="row" fxLayout.lt-md="column">
+      <div fxFlex="10" fxShow.lt-md="false"></div>
+      <div fxFlex="80">
+        <form name="form" (ngSubmit)="f.form.valid && register()" #f="ngForm" novalidate>
+          <mat-card class="mat-list-size">
+            <div fxLayout="row" fxLayout.lt-md="column">
+              <div fxFlex="30">
+                <mat-list>
+                  <mat-list-item>First Name</mat-list-item>
+                </mat-list>
+              </div>
+              <div fxFlex="70">
+                <mat-list>
+                  <mat-list-item>
+                    <form class="example-form">
+                      <mat-form-field class="example-full-width">
+                        <input matInput placeholder="Enter first Name" name="first_name_c"
+                               [(ngModel)]="model.first_name_c" #first_name_c="ngModel" required>
+                      </mat-form-field>
+                    </form>
+                  </mat-list-item>
+                </mat-list>
+
+              </div>
+            </div>
+            <div fxLayout="row" fxLayout.lt-md="column">
+              <div fxFlex="30">
+                <mat-list>
+                  <mat-list-item>Last Name</mat-list-item>
+                </mat-list>
+              </div>
+              <div fxFlex="70">
+                <mat-list>
+                  <mat-list-item>
+                    <form class="example-form">
+                      <mat-form-field class="example-full-width">
+                        <input matInput placeholder="Enter last Name" name="last_name_c"
+                               [(ngModel)]="model.last_name_c" #last_name_c="ngModel" required>
+                      </mat-form-field>
+                    </form>
+                  </mat-list-item>
+                </mat-list>
+
+              </div>
+            </div>
+            <div fxLayout="row" fxLayout.lt-md="column">
+              <div fxFlex="30">
+                <mat-list>
+                  <mat-list-item>Designation</mat-list-item>
+                </mat-list>
+              </div>
+              <div fxFlex="70">
+                <mat-list>
+                  <mat-list-item>
+                    <form class="example-form">
+                      <mat-form-field class="example-full-width">
+                        <input matInput placeholder="As you would like it to appear on video graphic"
+                               name="qualifications_c"
+                               [(ngModel)]="model.qualifications_c" #qualifications_c="ngModel" required>
+                      </mat-form-field>
+                    </form>
+                  </mat-list-item>
+                </mat-list>
+
+              </div>
+            </div>
+            <div fxLayout="row" fxLayout.lt-md="column">
+              <div fxFlex="30">
+                <mat-list>
+                  <mat-list-item>Institution Name</mat-list-item>
+                </mat-list>
+              </div>
+              <div fxFlex="70">
+                <mat-list>
+                  <mat-list-item>
+                    <form class="example-form">
+                      <mat-form-field class="example-full-width">
+                        <input matInput placeholder="As you would like it to appear on video graphic" name="event_name"
+                               [(ngModel)]="model.event_name" #event_name="ngModel" required>
+                      </mat-form-field>
+                    </form>
+                  </mat-list-item>
+                </mat-list>
+
+              </div>
+            </div>
+            <div fxLayout="row" fxLayout.lt-md="column">
+              <div fxFlex="30">
+                <mat-list>
+                  <mat-list-item>Email Address</mat-list-item>
+                </mat-list>
+              </div>
+              <div fxFlex="70">
+                <mat-list>
+                  <mat-list-item>
+                    <form class="example-form">
+                      <mat-form-field class="example-full-width">
+                        <input matInput placeholder="e.g. abc123@gmail.com" name="email_c"
+                               [(ngModel)]="model.email_c" #email_c="ngModel" required>
+                      </mat-form-field>
+                    </form>
+                  </mat-list-item>
+                </mat-list>
+
+              </div>
+            </div>
+            <div fxLayout="row" fxLayout.lt-md="column">
+              <div fxFlex="30">
+                <mat-list>
+                  <mat-list-item>Mobile Number</mat-list-item>
+                </mat-list>
+              </div>
+              <div fxFlex="70">
+                <mat-list>
+                  <mat-list-item>
+                    <form class="example-form">
+                      <mat-form-field class="example-full-width">
+                        <input matInput name="mobile_number_i" placeholder="e.g. +1 702 123 4567"
+                               [(ngModel)]="model.mobile_number_i" #mobile_number_i="ngModel" required>
+                      </mat-form-field>
+                    </form>
+                  </mat-list-item>
+                </mat-list>
+
+              </div>
+            </div>
+            <div fxLayout="row" fxLayout.lt-md="column">
+              <div fxFlex="30">
+                <mat-list>
+                  <mat-list-item>Title of Talk</mat-list-item>
+                </mat-list>
+              </div>
+              <div fxFlex="70">
+                <mat-list>
+                  <mat-list-item>
+                    <form class="example-form">
+                      <mat-form-field class="example-full-width">
+                        <input matInput placeholder="Enter Your Topic Name(60 characters limit)" name="topic_name"
+                               [(ngModel)]="model.topic_name" #topic_name="ngModel">
+                      </mat-form-field>
+                    </form>
+                  </mat-list-item>
+                </mat-list>
+
+              </div>
+            </div>
+
+            <!--<div fxLayout="row" fxLayout.lt-md="column">
+              <div fxFlex="30">
+                <mat-list>
+                  <mat-list-item>Time Slot</mat-list-item>
+                </mat-list>
+              </div>
+              <div fxFlex="70">
+                <mat-list>
+                  <mat-list-item><form class="example-form">
+                    <mat-form-field class="example-full-width">
+                      <input matInput placeholder="Enter Your Topic Name(60 characters limit)" name="topic_name"
+                             [(ngModel)]="model.topic_name" #topic_name="ngModel">
+                    </mat-form-field></form></mat-list-item>
+                </mat-list>
+
+              </div>
+            </div>-->
+
+            <!--<div fxLayout="row" fxLayout.lt-md="column">
+              <div fxFlex="30">
+                <mat-list>
+                  <mat-list-item>Date</mat-list-item>
+                </mat-list>
+              </div>
+              <div fxFlex="70">
+                <mat-list>
+                  <mat-list-item><form class="example-form">
+                    <mat-form-field class="example-full-width">
+                      <input matInput placeholder="First Name" value="">
+                    </mat-form-field></form></mat-list-item>
+                  <mat-list-item> <button mat-raised-button color="accent">Search Available Time On this Date </button></mat-list-item>
+                </mat-list>
+
+              </div>
+            </div>-->
+            <div fxLayout="row" fxLayout.lt-md="column">
+              <div fxFlex="30">
+                <mat-list>
+                  <mat-list-item>Headline</mat-list-item>
+                </mat-list>
+              </div>
+              <div fxFlex="70">
+                <mat-list>
+                  <mat-list-item>
+                    <form class="example-form">
+                      <mat-form-field class="example-full-width">
+                        <input matInput name="headline" [(ngModel)]="model.headline"
+                               #headline="ngModel" maxlength="70"
+                               placeholder="Enter headline of your talk(70 characters limit)">
+                      </mat-form-field>
+                    </form>
+                  </mat-list-item>
+                </mat-list>
+
+              </div>
+            </div>
+
+            <div fxLayout="row" fxLayout.lt-md="column">
+              <div fxFlex="30">
+                <mat-list>
+                  <mat-list-item>Key take Aways from your talk(1)<br>
+                  </mat-list-item>
+                </mat-list>
+              </div>
+              <div fxFlex="70">
+                <mat-list>
+                  <mat-list-item>
+                    <form class="example-form">
+                      <mat-form-field class="example-full-width">
+                    <textarea matInput name="key_values"
+                              [(ngModel)]="model.key_values" #key_values="ngModel"
+                              placeholder="Enter text for your quotation (250 characters limit)"></textarea>
+                      </mat-form-field>
+                    </form>
+                  </mat-list-item>
+                </mat-list>
+                <!-- <small class="clr-option2" (click)="openDialog()">(Click to see example of quotation)</small>-->
+              </div>
+            </div>
+            <div fxLayout="row" fxLayout.lt-md="column">
+              <div fxFlex="30">
+                <mat-list>
+                  <mat-list-item>Key take Aways from your talk(2)
+                  </mat-list-item>
+                  <small class="clr-option">(optional)</small>
+                </mat-list>
+              </div>
+              <div fxFlex="70">
+                <mat-list>
+                  <mat-list-item>
+                    <form class="example-form">
+                      <mat-form-field class="example-full-width">
+                    <textarea matInput name="headline1" [(ngModel)]="model.headline1"
+                              #headline1="ngModel" maxlength="300"
+                              placeholder="Enter headline of your talk(250 characters limit)"></textarea>
+                      </mat-form-field>
+                    </form>
+                  </mat-list-item>
+                </mat-list>
+                <!--<small class="clr-option2">(Click to see example of quotation)</small>-->
+              </div>
+            </div>
+            <div fxLayout="row" fxLayout.lt-md="column">
+              <div fxFlex="30">
+                <mat-list>
+                  <mat-list-item>Key take Aways from your talk(3)<br>
+                  </mat-list-item>
+                </mat-list>
+                <small class="clr-option">(optional)</small>
+              </div>
+              <div fxFlex="70">
+                <mat-list>
+                  <mat-list-item>
+                    <form class="example-form">
+                      <mat-form-field class="example-full-width">
+                    <textarea matInput maxlength="300" name="key_values2"
+                              [(ngModel)]="model.key_values2" #key_values2="ngModel"
+                              placeholder="Enter text for your quotation (250 characters limit)"></textarea>
+                      </mat-form-field>
+                    </form>
+                  </mat-list-item>
+                </mat-list>
+                <!--<small class="clr-option2">(Click to see example of quotation)</small>-->
+              </div>
+            </div>
+
+            <div fxLayout="row" fxLayout.lt-md="column">
+              <div fxFlex="30">
+                <mat-list>
+                  <mat-list-item>Key take Aways from your talk(4)<br>
+                  </mat-list-item>
+                </mat-list>
+                <small class="clr-option">(optional)</small>
+              </div>
+              <div fxFlex="70">
+                <mat-list>
+                  <mat-list-item>
+                    <form class="example-form">
+                      <mat-form-field class="example-full-width">
+                    <textarea matInput maxlength="300" name="key_values3"
+                              [(ngModel)]="model.key_values3" #key_values3="ngModel"
+                              placeholder="Enter text for your quotation (250 characters limit)"></textarea>
+                      </mat-form-field>
+                    </form>
+                  </mat-list-item>
+                </mat-list>
+                <!--<small class="clr-option2">(Click to see example of quotation)</small>-->
+              </div>
+            </div>
+
+            <div fxLayout="row" fxLayout.lt-md="column">
+              <div fxFlex="30">
+                <mat-list>
+                  <mat-list-item>Key take Aways from your talk(5)<br>
+                  </mat-list-item>
+                </mat-list>
+                <small class="clr-option">(optional)</small>
+              </div>
+              <div fxFlex="70">
+                <mat-list>
+                  <mat-list-item>
+                    <form class="example-form">
+                      <mat-form-field class="example-full-width">
+                    <textarea matInput maxlength="300" name="key_values4"
+                              [(ngModel)]="model.key_values4" #key_values4="ngModel"
+                              placeholder="Enter text for your quotation (250 characters limit)"></textarea>
+                      </mat-form-field>
+                    </form>
+                  </mat-list-item>
+                </mat-list>
+                <!--<small class="clr-option2">(Click to see example of quotation)</small>-->
+              </div>
+            </div>
+
+            <div fxLayout="row" fxLayout.lt-md="column">
+              <div fxFlex="30">
+                <mat-list>
+                  <mat-list-item>Key take Aways from your talk(6)<br>
+                  </mat-list-item>
+                </mat-list>
+                <small class="clr-option">(optional)</small>
+              </div>
+              <div fxFlex="70">
+                <mat-list>
+                  <mat-list-item>
+                    <form class="example-form">
+                      <mat-form-field class="example-full-width">
+                    <textarea matInput maxlength="300" name="key_values5"
+                              [(ngModel)]="model.key_values5" #key_values5="ngModel"
+                              placeholder="Enter text for your quotation (250 characters limit)"></textarea>
+                      </mat-form-field>
+                    </form>
+                  </mat-list-item>
+                </mat-list>
+                <!--<small class="clr-option2">(Click to see example of quotation)</small>-->
+              </div>
+            </div>
+
+            <div fxLayout="row" fxLayout.lt-md="column">
+              <div fxFlex="30">
+                <mat-list>
+                  <mat-list-item>Upload PPP<br>
+                  </mat-list-item>
+                </mat-list>
+                <small class="clr-option">(optional)</small>
+              </div>
+              <div fxFlex="70">
+                <mat-list>
+                  <mat-list-item>
+                    <form class="example-form">
+                      <div class="example-full-width">
+                        <input type="file" class="inputFile" (change)="selectFile($event)" style="float:left;">
+
+                        <input type="hidden" value="{{uploadedfile}}" name="image" [(ngModel)]="model.presentation" #image="ngModel">
+                      </div>
+                    </form>
+                  </mat-list-item>
+                </mat-list>
+                <!--<small class="clr-option2">(Click to see example of quotation)</small>-->
+              </div>
+            </div>
+
+
+            <br>
+            <mat-divider></mat-divider>
+            <br fxShow.lt-md="false">
+            <button mat-raised-button color="primary" type="submit" [disabled]="loading">Save</button>
+
+          </mat-card>
+        </form>
+
+
+      </div>
+      <div fxFlex="10" fxShow.lt-md="false"></div>
+    </div>
+
+
+    <br>
+
+    <div fxLayout="column" fxLayoutAlign="center center">
+      <img style="border:none;outline:none;text-decoration:none; width: 160px !important;
+    height: 53px !important;"
+           class="img-responsive center-block"
+           src="../../assets/img/160X53.png">
+      <p style="font-weight: 600; font-size: 14px;line-height: 20px; color: rgb(51,51,51);margin-top:15px">Insights from the World's Best Medical Minds</p>
+    </div>
+    <br/>
+    <div class="vid_p mrg_btm">
+
+      <div fxShow.xs="true" fxShow="false">
+        <p style="font-weight: 400;font-size: 11px;line-height: 20px;">TheRightDoctors.com is a Google Launchpad
+          Digital Health product Start Up (receiving USD 1,00,000 from Google in platform credit). They bring
+          Scientific Medical Content to Digital platforms.</p>
+        <p style="margin-top:10px;font-weight: 400;font-size: 11px;line-height: 20px;">In March last year they were chosen as StartUp of Substance
+          by StartUpNetworkz of Singapore. TheRightDoctors.com works closely with Dr. Ulhas Pandurangi 6th live Cardiac Electrophysiology Workshop as Digital Knowledge Partner
+          for its scientific events.</p><br>
+      </div>
+      <div fxShow="true" fxShow.xs="false">
+        <p style="font-weight: 400;font-size: 14px;line-height: 20px;">TheRightDoctors.com is a Google Launchpad
+          Digital Health product Start Up (receiving USD 1,00,000 from Google in platform credit). They bring
+          Scientific Medical Content to Digital platforms. In March last year they were chosen as StartUp of Substance
+          by StartUpNetworkz of Singapore. TheRightDoctors.com works closely with Dr. Ulhas Pandurangi 6th live Cardiac Electrophysiology Workshop as Digital Knowledge Partner
+          for its scientific events.</p><br>
+      </div>
+
+
+    </div>
+
+
+  </section>
+</section>
+<!--book appointment//-->
+<div fxShow="false" fxShow.xs="true">
+  <footer style="border: 0 !important;padding:0;">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-5 col-sm-12 col-xs-12 mrg_btm_m2">
+          <h1 style="font-size:14px">Get TheRightDoctors email updates</h1>
+          <p style="font-size:11px">Subscribe to receive TheRightDoctors email notifications whenever new talks are published</p>
+
+          <form role="form" #contactForm="ngForm" (submit)="email_sub()">
+            <div class="form-group">
+              <label for="Email" style="font-size:11px">Your Email Address:</label>
+              <input type="text" class="form-control" placeholder="Enter Your Email Address"
+                     pattern="(\W|^)[\w.+\-]*@gmail\.com(\W|$)" name="email" id="Email"
+                     [(ngModel)]="sumodel.email" #email="ngModel" style="font-size:11px;width:70%">
+              <div *ngIf="email.errors &&  (email.touched || email.dirty || email.pattern) " class="alert alert-danger">
+                <div [hidden]="!email.errors.required">
+                  Email is Required !
+                </div>
+                <div [hidden]="!email.errors.pattern">
+                  Email is Invalid
+                </div>
+              </div>
+              <button type="submit" [disabled]="!contactForm.valid" class="btn btn-default" style="float:right;margin-top:-50px">Submit</button>
+            </div>
+          </form>
+
+        </div></div>
+    </div>
+    <section class="container">
+      <!--  <div class="row" align="center">
+          <img _ngcontent-c3="" alt="TheRightDoctors Logo" src="/assets/new-home-page/single/images/logo.jpg">
+          <h4 class="foot-head">Insights from the World's Best Medical Minds</h4>
+        </div>-->
+      <section class="back2">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-4 " style="padding:0px">
+              <h5 class="head-power" style="font-size:14px">Powered by:</h5>
+              <img src="assets/img/new-poweredby-google.png" class="mar-top-d"/>
+
+            </div>
+
+            <div class="col-md-8 marg-btm-m" style="padding:0px">
+              <h5 class="head-power" style="font-size:14px">Awards & Recognitions:</h5>
+              <div class="row img-wid">
+                <div class="col-md-3 col-xs-3 col-sm-3">
+                  <img src="assets/img/awars01.png" />
+                </div>
+                <div class="col-md-3 col-xs-3 col-sm-3">
+                  <img src="assets/img/1000awards.png" />
+
+                </div>
+                <div class="col-md-3 col-xs-3 col-sm-3">
+
+                  <img src="assets/img/SBC_global_logo-L-2.png" style="margin-top:13px" />
+                </div>
+                <div class="col-md-3 col-xs-3 col-sm-3">
+                  <img src="assets/img/startup.png" style="margin-top: 13px;"/>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+
+    </section>
+    <div class="container" style="border-top:2px solid #d9534f">
+      <div class="row">
+
+        <div class="col-md-2 col-sm-3 col-xs-6 mrg_btm_m2">
+          <h1 style="font-size:14px">Segments</h1>
+          <ul>
+            <li><a [routerLink]="['/the-interview']" style="font-size:11px">The Interview</a></li>
+            <li><a [routerLink]="['/in-conversation']" style="font-size:11px">In Conversation</a></li>
+            <li><a [routerLink]="['/one-more-thing']" style="font-size:11px">One More Thing</a></li>
+            <li><a [routerLink]="['/the-speakers']" style="font-size:11px">The Speaker</a></li>
+            <!--
+
+            <li><a href="/cme">CME</a></li> -->
+          </ul>
+        </div>
+
+        <div class="col-md-2 col-sm-3 col-xs-6 mrg_btm_m2">
+          <h1>Specials</h1>
+          <ul>
+            <li><a [routerLink]="['/specials/stemi-india-lucknow-2018']" style="font-size:11px">STEMI India tv 2018</a></li>
+            <li><a href="https://aicogtv.therightdoctors.com/" style="font-size:11px">AICOG tv</a></li>
+            <li><a href="https://wcce2017.therightdoctors.com/" style="font-size:11px">WCCE 2017</a></li>
+            <li><a href="https://csitv.therightdoctors.com/" style="font-size:11px">CSI tv 2017</a></li>
+            <li><a [routerLink]="['/specials/wccicc-2017']" style="font-size:11px">WCCICC 2017</a></li>
+
+
+
+            <!--<li><a [routerLink]="['/specials/csicon-kochi-2016']">CSI tv 2016</a></li>
+            <li><a [routerLink]="['/specials/csinic-2016-hyderabad']">CSINIC</a></li>
+            <li><a [routerLink]="['/specials/csicardiacprevent2015']">Cardiac Prevent 2015</a></li>
+            <li><a [routerLink]="['/revolution-talk']">Revolution Talk</a></li>-->
+          </ul>
+        </div>
+
+        <!--<div class="col-md-2 col-sm-3 col-xs-6 mrg_btm_m2">
+          <h1>Synapse</h1>
+          <ul>
+            <li><a [routerLink]="['/synapse/benefits-of-yoga']">Benefits of yoga</a></li>
+            <li><a [routerLink]="['/synapse/get-a-good-start']">Get a good start</a></li>
+            <li><a [routerLink]="['/synapse/homemade-remedies']">Homemade remedies</a></li>
+            <li><a [routerLink]="['/synapse/Quote-of-the-day']">Quote of the day</a></li>
+            <li><a [routerLink]="['/synapse/the-last-word']">Buzz</a></li>
+          </ul>
+        </div>-->
+
+      </div>
+    </div>
+    <section class="back3 post_footer_pdg">
+      <section class="container">
+        <div class="row">
+          <div class="post_footer">
+            <div class="col-md-6 text-center">
+              <ul>
+                <li><a [routerLink]="['/terms-of-service']" style="font-size:11px">Terms of Service</a></li>
+                <li><a [routerLink]="['/privacy-policy']" style="font-size:11px">Privacy Policy</a></li>
+                <li><a [routerLink]="['/disclaimer']" style="font-size:11px">Disclaimer</a></li>
+              </ul>
+              <div class="clearfix"></div>
+            </div>
+            <div class="col-md-6" style="font-size:11px;text-align:center;">
+              Copyright © TheRightDoctors Network. All Rights Reserved
+              <div class="clearfix"></div>
+            </div>
+          </div>
+        </div>
+
+      </section>
+    </section>
+  </footer>
+</div>
+<div fxShow="true" fxShow.xs="false">
+  <app-footer></app-footer>
+</div>

@@ -1,0 +1,35 @@
+<app-nav></app-nav>
+
+<section class="back2">
+    <form class="example-form">
+    <mat-form-field class="example-full-width">
+        <input  matInput   placeholder="Enter Video Url " name="url" [(ngModel)]="url" >
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <input  matInput   placeholder="Enter Doctor Id " name="id" [(ngModel)]="id" >
+      </mat-form-field>
+  <button mat-raised-button color="primary" (click)="sendEmail()" class="btn-class" type="submit" style="padding:0px;margin-top:40px; display:block; margin: auto;">Send Email</button>
+    </form>
+</section>
+
+<section class="back3 post_footer_pdg">
+  <section class="container">
+    <div class="row">
+      <div class="post_footer">
+        <div class="col-md-6 col-sm-6  col-xs-12 text-left">
+          <ul>
+            <li><a [routerLink]="['/terms-of-service']">Terms of Service</a></li>
+            <li><a [routerLink]="['/privacy-policy']">Privacy Policy</a></li>
+            <li><a [routerLink]="['/disclaimer']">Disclaimer</a></li>
+          </ul>
+          <div class="clearfix"></div>
+        </div>
+        <div class="col-md-6 col-sm-6  col-xs-12 text-right text_left_m pad-text">
+          © TheRightDoctors Network. All Rights Reserved
+          <div class="clearfix"></div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+</section>

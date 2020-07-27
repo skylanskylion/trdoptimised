@@ -1,0 +1,19 @@
+.dis{
+    display: none;
+}
+@media (max-width: 599px) {
+    .dis{
+        display: block;
+    }
+}
+
+@media (max-width: 978px) {
+    .dis1{
+        display: block;
+    }
+}
+@media (max-width: 599px) {
+    .dis1{
+        display: none;
+    }
+}

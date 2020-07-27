@@ -1,0 +1,15 @@
+<app-nav></app-nav>
+<div class="container mar-top-profile" >
+    <div fxLayout="row">
+      <div fxFlex="20">
+        <h3> {{data['data'][0]['username']}} </h3>
+       <h4> {{data['data'][0]['email']}} </h4>
+          <a [routerLink]="['/profile-edit']"><button mat-stroked-button color="primary" style="margin-top:10px;">Edit Profile</button></a>
+      </div>
+      <div fxFlex="80" align="right">
+       <!-- <img src="https://storage.googleapis.com/web-assets/wccmm-2019/WCCMM-Interview/Pankaj-manoria/Pankaj-manoria-large.jpg" class="img-src"/> -->
+       <img [src]="data['data'][0]['photo1']"  class="img-src"/>
+      </div>
+    </div>
+</div>
+<app-footer></app-footer>

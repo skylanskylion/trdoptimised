@@ -1,0 +1,36 @@
+<app-nav></app-nav>
+<section class="back2">
+  <section class="container marg-top">
+    <div class="row">
+      <div fxFlex="100%">
+        <h2 class="main_heading">Quote Of The Day<span class="hdg_line"></span></h2>
+      </div>
+    </div>
+    <mat-grid-list cols="4" rowHeight="250px" fxShow.lg="true" fxShow.xl="true" fxShow.md="false" fxShow.sm="false"
+                   fxShow.xs="false" class="gap-part">
+      <ng-template ngFor let-item [ngForOf]="createRange(conv.length)" let-currentIndex="index">
+        <mat-grid-tile style="width: calc(((25% - 18.75px) * 1) + 0px)!important;" fxLayoutGap="40px">
+          <div class="tips_img mrg2">
+            <a [routerLink]="['/synapse/Quote-of-the-day/'+conv[currentIndex]['doctor_name']]" title="">
+              <img src="{{conv[currentIndex]['url']}}"/>
+            </a>
+          </div>
+        </mat-grid-tile>
+      </ng-template>
+    </mat-grid-list>
+    <div fxShow="false" fxShow.xs="true" fxShow.lt-md="true">
+
+      <ng-template ngFor let-item [ngForOf]="createRange(conv.length)" let-currentIndex="index">
+
+        <div class="tips_img mrg2">
+          <a [routerLink]="['/synapse/Quote-of-the-day/'+conv[currentIndex]['doctor_name']]" title="">
+            <img src="{{conv[currentIndex]['url']}}" width="100%"/>
+          </a>
+        </div>
+
+      </ng-template>
+
+    </div>
+  </section>
+</section>
+<app-footer></app-footer>

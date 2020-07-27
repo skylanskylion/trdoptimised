@@ -1,0 +1,28 @@
+.hdg_line3 {
+  margin: 10px;
+}
+
+.hdg_line, .hdg_line2, .hdg_line3 {
+
+  height: 2px !important;
+  position: absolute;
+  width: 100%;
+  margin: 10px;
+}
+
+@media (max-width: 599px) {
+
+  .marg-top {
+    margin-top: 110px;
+  }
+
+  hdg_line, .hdg_line2, .hdg_line3 {
+
+    display: none;
+  }
+
+  .main_heading3 {
+    font-size: 17px;
+    font-weight: 600;
+  }
+}

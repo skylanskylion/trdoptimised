@@ -1,0 +1,22 @@
+.hdg_line {
+  border-bottom: 3px solid #d9534f;
+  border-top: 3px solid #d9534f;
+  height: 1px;
+  position: absolute;
+  width: 100%;
+  margin: 20px;
+}
+
+.gap-part mat-grid-tile {
+  width: calc(((25% - 12.75px) * 1) + 0px) !important;
+  height: calc(208px) !important;
+  padding-bottom: 10px;
+
+}
+
+@media (max-width: 599px) {
+  .marg-top {
+    margin-top: 100px !important;
+  }
+
+}

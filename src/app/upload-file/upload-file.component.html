@@ -1,0 +1,40 @@
+<app-nav></app-nav>
+<div class="we-share">
+<div class="container">
+      <div fxLayout="row">
+        <div fxFlex="40">
+             <div class="upload-files">
+               <h3 class="upload-head"> Upload your Files</h3>
+               <div class="upload-btn-wrapper">
+                 <button class="btn"> <i class="fa fa-upload" aria-hidden="true"></i>&nbsp;Upload a file</button>
+                 <input type="file" name="myfile" value="myfile" multiple/>
+               </div>
+               <!--<label for="singleFile">Upload file</label>-->
+               <!--<input id="singleFile" type="file" [fileUploadInputFor]= "fileUploadQueue"/>-->
+               <!--<br>-->
+               <!--<div style="width: 500px">-->
+                 <!--<mat-file-upload-queue #fileUploadQueue-->
+                                        <!--[fileAlias]="'file'"-->
+                                        <!--[httpUrl]="'http://localhost:8180/jax-rs-jersey-application-sample'">-->
+                   <!--<mat-file-upload [file]="file" [id]="i" *ngFor="let file of fileUploadQueue.files; let i = index"></mat-file-upload>-->
+                 <!--</mat-file-upload-queue>-->
+               <!--</div>-->
+               <div class="example-container">
+                 <mat-form-field>
+                   <input matInput placeholder="Title of the Video">
+                 </mat-form-field>
+                 <mat-form-field>
+                   <input matInput placeholder="Vedio Urls">
+                 </mat-form-field>
+                 <mat-form-field style="box-shadow: none!important;">
+                   <textarea matInput placeholder="Vedio Description"></textarea>
+                 </mat-form-field>
+               </div>
+               <button mat-raised-button color="primary">Upload</button>
+             </div>
+        </div>
+        <div fxFlex="60"></div>
+      </div>
+</div>
+</div>
+<app-footer></app-footer>

@@ -1,0 +1,871 @@
+<app-nav></app-nav>
+<style>
+
+
+  .panel_six {
+    height: 340px !important;
+    margin-top: 10px;
+  }
+
+  @media (max-width:768px) {
+    .panel_six {
+      height: auto!important;
+      margin-top: 5px;
+    }
+    .hd5 {
+      font-size: 12px !important;
+      font-weight: 400 !important;
+      color:#666;
+    }
+
+  }
+</style>
+<div *ngIf="isvalid == 'wccmm-mumbai-2019'">
+  <img style="width: 100%;" src="https://storage.googleapis.com/web-assets/wccmm-2019/wccmm-2019.jpg">
+</div>
+
+<div *ngIf="isvalid == 'rssdi-ahmedabad-2018'">
+  <img style="width: 100%;" src="https://storage.googleapis.com/web-assets/images/RSSIDI/rssdi-banner-image.jpg">
+</div>
+
+<div *ngIf="isvalid == 'jacc'">
+  <img style="width: 100%;" src="/assets/new-home-page/single/images/Jac_large.jpg">
+</div>
+
+<div *ngIf="isvalid == 'dr-ulhas-pandurangi-sixth-live-cardiac-electrophysiology-workshop-madras-medical-mission-2018'">
+  <img style="width: 100%;" src="/assets/img/sixth-live-cardiac-electrophysiology-main.jpg">
+</div>
+
+<div *ngIf="isvalid == 'dr-ulhas-pandurangi-fifteenth-annual-electrocardiology-course-basics-and-beyond-madras-medical-mission-2018'">
+  <img style="width: 100%;" src="/assets/img/ECG-Large.jpg">
+</div>
+
+<div *ngIf="isvalid == 'stemi-india-lucknow-2018'">
+  <img style="width: 100%;"
+       src="../../assets/new-home-page/images/stemi-india-lucknow-2018.jpg">
+</div>
+
+<div *ngIf="isvalid == 'wccicc-2017'">
+  <img style="width: 100%;" src="../../assets/new-home-page/images/WCCICC%20Page%201234456.jpg">
+</div>
+<div *ngIf="isvalid == 'wccpci-2016'">
+  <img style="width: 100%;" src="/assets/new-home-page/single/images/1435X432.jpg">
+</div>
+<div *ngIf="isvalid == 'csikochi-2016'">
+  <img style="width: 100%;" src="/assets/new-home-page/single/images/Page 10.jpg">
+</div>
+<div *ngIf="isvalid == 'csinic-2016'">
+  <img style="width: 100%;" src="/assets/new-home-page/single/images/CSI-NIC.jpg">
+</div>
+<div *ngIf="isvalid == 'c3'">
+  <img style="width: 100%;" src="/assets/new-home-page/single/images/123.jpg">
+</div>
+<div *ngIf="isvalid == 'ihj-2015'">
+  <img style="width: 100%;" src="/assets/new-home-page/single/images/dr.sundeep_mishra.jpg">
+</div>
+<div *ngIf="isvalid == 'apvic'">
+  <img style="width: 100%;" src="assets/new-assets/styles/images/APVIC Thumbnail new Changes.jpg">
+</div>
+<div *ngIf="isvalid == 'csi-2017'">
+  <img style="width: 100%;" src="assets/csi-tv.jpg">
+</div>
+<div *ngIf="isvalid == 'aicog-2018'">
+  <img style="width: 100%;" src="assets/AICOG-big-thumbnail.jpg">
+</div>
+<div *ngIf="isvalid == 'wcce-2017'">
+  <img style="width: 100%;" src="assets/Ecce2017.jpg">
+</div>
+
+
+<section class="back3" *ngIf="spk.length>0">
+  <section class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h2 class="main_heading2 mrg_btm">The Speakers<span class="hdg_line2"></span></h2>
+      </div>
+    </div>
+
+    <div class="mrg_btm">
+      <div class="mobile-view" style="display:none" ngStyle.xs="display:block">
+        <div class="row">
+          <div class="col-md-6 col-sm-12 col-xs-12">
+            <ng-template ngFor let-item [ngForOf]="createRange(spk.length/2|round)" let-currentIndex="index">
+              <a [routerLink]="['/'+spk[currentIndex]['event']+'/'+spk[currentIndex]['category']+'/'+spk[currentIndex]['slug']]">
+                <div class="col-md-6 col-sm-12 col-xs-12">
+                  <div class="mrg_top_m">
+                    <div class="panel_five panel_dark_grey">
+                      <div class="row">
+                        <div class="col-md-12 col-sm-5 col-xs-5">
+                          <img src="{{ spk[currentIndex]['image_url']}}"
+                               alt="{{ spk[currentIndex]['image_alt']}}">
+                        </div>
+                        <div class="col-md-12 col-sm-7 col-xs-7 p-l-r">
+                          <h5 class="hd5 color_white">{{
+                            spk[currentIndex]['headline'] | slice:0:45}}...<br>
+                            <span class="color_yellow">{{ spk[currentIndex]['sub_headline'] | slice:0:17}}...</span>
+                          </h5>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </ng-template>
+          </div>
+        </div>
+      </div>
+      <!--desktop view-->
+      <div class="desktop-view" ngStyle.xs="display:none">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+          <ng-template ngFor let-item [ngForOf]="createRange(spk_len)" let-currentIndex="index">
+            <a [routerLink]="['/'+spk[currentIndex]['event']+'/'+spk[currentIndex]['category']+'/'+spk[currentIndex]['slug']]">
+              <div class="col-md-3 col-sm-12 col-xs-12">
+                <div class="mrg_top_m">
+                  <div class="panel_five panel_dark_grey">
+                    <div class="row">
+                      <div class="col-md-12 col-sm-4 col-xs-4">
+                        <img src="{{ spk[currentIndex]['image_url']}}"
+                             alt="{{ spk[currentIndex]['image_alt']}}" style="width:90%">
+                      </div>
+                      <div class="col-md-12 col-sm-8 col-xs-8">
+                        <h5 class="hd5 color_white">{{
+                          spk[currentIndex]['headline'] | slice:0:45}}...<br>
+                          <span class="color_yellow">{{ spk[currentIndex]['sub_headline'] | slice:0:17}}...</span>
+                        </h5>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </ng-template>
+        </div>
+      </div>
+
+      <!--<div class="mobile-view" style="display:none" ngStyle.xs="display:block">-->
+      <!--<div class="col-md-6 col-sm-12 col-xs-12">-->
+      <!--<ng-template ngFor let-item [ngForOf]="createRange(spk.length/2|round)" let-currentIndex="index+5">-->
+      <!--<div class="col-md-6 col-sm-12 col-xs-12">-->
+      <!--<div class="mrg_top_m">-->
+      <!--<div class="panel_five panel_dark_grey">-->
+      <!--<div class="row">-->
+      <!--<a [routerLink]="['/'+spk[currentIndex]['event']+'/'+spk[currentIndex]['category']+'/'+spk[currentIndex]['slug']]">-->
+      <!--<div class="col-md-12 col-sm-4 col-xs-4"><img src="{{ spk[currentIndex]['image_url']}}"-->
+      <!--alt="{{ spk[currentIndex]['image_alt']}}" style="width:90%"></div>-->
+      <!--<div class="col-md-12 col-sm-8 col-xs-8"><h5 class="hd5 color_white">{{-->
+      <!--spk[currentIndex]['headline'] |slice:0:40}}<br><span class="color_yellow">{{ spk[currentIndex]['sub_headline']}}</span>-->
+      <!--</h5></div>-->
+      <!--</a>-->
+      <!--</div>-->
+      <!--</div>-->
+      <!--</div>-->
+      <!--</div>-->
+      <!--</ng-template>-->
+      <!--</div>-->
+      <!--</div>-->
+      <!--&lt;!&ndash;desktop view&ndash;&gt;-->
+      <!--<div class="desktop-view" ngStyle.xs="display:none">-->
+      <!--<div class="col-md-6 col-sm-12 col-xs-12">-->
+      <!--<ng-template ngFor let-item [ngForOf]="createRange(spk.length/2|round)" let-currentIndex="index+5">-->
+      <!--<div class="col-md-6 col-sm-12 col-xs-12">-->
+      <!--<div class="mrg_top_m">-->
+      <!--<div class="panel_five panel_dark_grey">-->
+      <!--<div class="row">-->
+      <!--<a [routerLink]="['/'+spk[currentIndex]['event']+'/'+spk[currentIndex]['category']+'/'+spk[currentIndex]['slug']]">-->
+      <!--<div class="col-md-12 col-sm-4 col-xs-4"><img src="{{ spk[currentIndex]['image_url']}}"-->
+      <!--alt="{{ spk[currentIndex]['image_alt']}}" style="width:90%"></div>-->
+      <!--<div class="col-md-12 col-sm-8 col-xs-8"><h5 class="hd5 color_white">{{-->
+      <!--spk[currentIndex]['headline'] |slice:0:40}}<br><span class="color_yellow">{{ spk[currentIndex]['sub_headline']}}</span>-->
+      <!--</h5></div>-->
+      <!--</a>-->
+      <!--</div>-->
+      <!--</div>-->
+      <!--</div>-->
+      <!--</div>-->
+      <!--</ng-template>-->
+      <!--</div>-->
+      <!--</div>-->
+
+      <div class="row">
+        <div class="col-md-12">
+          <a class="testcategories" [routerLink]="['the-speakers']">
+            <button class="btn btn-danger" ngStyle.xs="margin-top:10px;">View All Speakers</button>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+</section>
+<!--Interview-new-->
+<section class="back2" *ngIf="intr_half>0">
+  <section class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h2 class="main_heading mrg_btm">The Interview <span class="hdg_line"></span></h2>
+      </div>
+    </div>
+
+    <!--   <div class="mrg_btm">
+         <div class="row">
+           <div class="col-md-6 col-sm-12 col-xs-12">
+             <ng-template ngFor let-item [ngForOf]="createRange(intr_half)" let-currentIndex="index">
+               <div class="mrg_btm no_mrg_m">
+                 <div class="panel_three panel_light_grey back_white_m brder_top border_m">
+                   <div class="row">
+                     <a [routerLink]="['/'+intr[currentIndex]['event']+'/'+intr[currentIndex]['category']+'/'+intr[currentIndex]['slug']]">
+                       <div class="col-md-4 col-sm-4 col-xs-5 pull_right_m"  >
+                         <img src="{{intr[currentIndex]['image_url']}}"/></div>
+                       <div class="col-md-8 col-sm-8 col-xs-7 pull_left_m pdg_no_rt_m">
+                         <div class="pdg_rt pdgrt">
+                           <h1 class="hd5 line-clamp line-clamp-2">
+                             {{intr[currentIndex]['headline'] | slice:0:40}}...
+                           </h1>
+                           <p class="color_orange color_base_m"><b>{{ intr[currentIndex]['sub_headline'] |slice:0:20}}</b></p>
+                         </div>
+                       </div>
+                     </a>
+                   </div>
+                 </div>
+                 <div class="clearfix"></div>
+               </div>
+             </ng-template>
+           </div>
+
+           &lt;!&ndash;another half&ndash;&gt;
+           <div class="col-md-6 col-sm-12 col-xs-12">
+             <ng-template ngFor let-item1 [ngForOf]="createRange(intr_half)" let-currentIndex="index+3">
+               <div class="mrg_btm">
+                 <div class="panel_three panel_light_grey back_white_m brder_top border_m">
+                   <div class="row">
+                     <a [routerLink]="['/'+intr[currentIndex]['event']+'/'+intr[currentIndex]['category']+'/'+intr[currentIndex]['slug']]">
+                       <div class="col-md-4 col-sm-4 col-xs-5 pull_right_m" ><img src="{{intr[currentIndex]['image_url']}}"/></div>
+                       <div class="col-md-8 col-sm-8 col-xs-7 pull_left_m pdg_no_rt_m">
+                         <div class="pdg_rt pdgrt">
+                           <h1 class="hd5">
+                             {{intr[currentIndex]['headline'] |slice:0:40}}... <br>
+                           </h1>
+
+                           <p class="color_orange color_base_m"><b
+                           >{{ intr[currentIndex]['sub_headline'] | slice:0:20}}</b></p>
+                         </div>
+                       </div>
+                     </a>
+                   </div>
+                 </div>
+                 <div class="clearfix"></div>
+               </div>
+             </ng-template>
+           </div>
+           &lt;!&ndash;another half&ndash;&gt;
+
+
+         </div>
+       </div>-->
+    <div class="mrg_btm">
+      <div class="row">
+          
+        <ng-template ngFor let-item [ngForOf]="createRange(1)" let-currentIndex="index">
+        <div class="col-md-8 col-sm-12 col-xs-12" style="margin-bottom:10px;">
+          <div class="interview-part">
+            <div class="row">
+              <a [routerLink]="['/'+intr[currentIndex]['event']+'/'+intr[currentIndex]['category']+'/'+intr[currentIndex]['slug']]">
+              <div class="col-md-4 col-xs-7 col-sm-7 float-right-m pad-left-o-m">
+                <div class="pdg_rt pdgrt"><span>
+                  <h1  class="hd5 line-clamp line-clamp-2"> {{ intr[currentIndex]['headline']}} </h1>
+                  <p  class="color_orange color_base_m"><b>{{ intr[currentIndex]['sub_headline']}}</b></p>
+                </span>
+                </div>
+              </div>
+              <div class="col-md-8 col-sm-5 col-xs-5 pad-m-img float-left-m">
+
+                <img src="{{ intr[currentIndex]['image_url']}}"
+                     alt="{{ intr[currentIndex]['image_alt']}}" style="width:100%"/>
+
+              </div>
+              </a>
+
+            </div>
+
+          </div>
+        </div>
+
+        <div class="col-md-4  col-md-12 col-xs-12">
+          <div class="inter-view-signle">
+            <div class="row">
+              <ng-template ngFor let-item [ngForOf]="createRange(1)" let-currentIndex="index+1">
+                <a [routerLink]="['/'+intr[currentIndex]['event']+'/'+intr[currentIndex]['category']+'/'+intr[currentIndex]['slug']]">
+              <div class="col-md-12 col-xs-5 col-sm-5">
+                <img src="{{ intr[currentIndex]['image_url']}}"
+                     alt="{{ intr[currentIndex]['image_alt']}}" style="width:100%"/></div>
+              <div class="col-md-12 col-xs-7 col-sm-7 pad-left-o-m">
+                <div class="pdg_rt pdgrt"><span>
+                  <h1  class="hd5 line-clamp line-clamp-2">{{ intr[currentIndex]['headline']}}  </h1>
+                  <p  class="color_orange color_base_m"><b>{{ intr[currentIndex]['sub_headline']}}</b></p></span>
+
+                </div></div>
+                </a>
+              </ng-template>
+            </div></div>
+        </div>
+        </ng-template>
+      </div>
+
+      <div class="row marg-top">
+        <div class="col-md-6 col-xs-12 col-xs-12">
+          <ng-template ngFor let-item [ngForOf]="createRange(4)" let-currentIndex="index+2">
+            <a [routerLink]="['/'+intr[currentIndex]['event']+'/'+intr[currentIndex]['category']+'/'+intr[currentIndex]['slug']]">
+          <div class="single-line-part">
+            <div class="row">
+
+              <div class="col-md-4 col-xs-5 col-sm-5">
+
+                <img src="{{ intr[currentIndex]['image_url']}}"
+                     alt="{{ intr[currentIndex]['image_alt']}}" style="width:100%"/>
+              </div>
+              <div class="col-md-8 col-xs-7 col-sm-7 pad-left-o-m">
+                <div class="pdg_rt pdgrt"><span>
+                  <h1  class="hd5 line-clamp line-clamp-2"> {{ intr[currentIndex]['headline']}}  </h1>
+                  <p  class="color_orange color_base_m"><b >{{ intr[currentIndex]['sub_headline']}}</b></p></span>
+                </div>
+
+              </div>
+            </div>
+          </div>
+            </a>
+          </ng-template>
+        </div>
+
+
+        <ng-template ngFor let-item [ngForOf]="createRange(2)" let-currentIndex="index+6">
+          <div *ngIf="intr.length > 7">
+          <a [routerLink]="['/'+intr[currentIndex]['event']+'/'+intr[currentIndex]['category']+'/'+intr[currentIndex]['slug']]">
+        <div class="col-md-3 col-xs-12 col-xs-12">
+          <div class="img-content">
+            <div class="row">
+              <div class="col-md-12 col-xs-5 col-sm-5">
+                <img src="{{ intr[currentIndex]['image_url']}}"
+                     alt="{{ intr[currentIndex]['image_alt']}}" style="width:100%"/></div>
+              <div class="col-md-12 col-xs-7 col-sm-7 pad-left-o-m">
+                <div class="pdg_rt pdgrt"><span>
+                  <h1  class="hd5 line-clamp line-clamp-2"> {{ intr[currentIndex]['headline']}}  </h1>
+                  <p  class="color_orange color_base_m"><b >{{ intr[currentIndex]['sub_headline']}}</b></p></span>
+                </div></div>
+            </div>
+          </div>
+        </div>
+          </a>
+          </div>
+
+        </ng-template>
+      </div>
+
+      <!--interview//-->
+      <br>
+      <div class="row">
+        <div class="col-md-12">
+          <a class="testcategories" [routerLink]="['the-interview']">
+            <button class="btn btn-primary">View All Interviews</button>
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </section>
+</section>
+
+<section class="back2" *ngIf="more_len>0">
+  <section class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h2 class="main_heading mrg_btm">One More Thing<span class="hdg_line"></span></h2>
+      </div>
+    </div>
+
+    <div class="mrg_btm">
+      <div class="row">
+        <ng-template ngFor let-item [ngForOf]="createRange(more_len)" let-currentIndex="index">
+          <div class="col-md-3 col-sm-12 col-xs-12">
+            <div class="mrg_btm">
+              <div class="panel_one panel_thin_grey border_yellow">
+                <div class="row">
+                  <a [routerLink]="['/'+more[currentIndex]['event']+'/'+more[currentIndex]['category']+'/'+more[currentIndex]['slug']]">
+                    <div class="col-md-12 col-sm-4 col-xs-5"><img src="{{ more[currentIndex]['image_url']}}"
+                                                                  alt="{{ more[currentIndex]['image_alt']}}"/></div>
+                    <div class="col-md-12 col-sm-8 col-xs-7">
+                      <div class="pdg1 pdgrt">
+                        <h3 class="hd4_mobile hd4_m color_white" style="font-size:14px">{{ more[currentIndex]['headline'] | slice:0:89}}...</h3>
+                        <p class="color_orange hd4_mobile">{{ more[currentIndex]['sub_headline'] | slice:0:47}}...</p>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+                <div class="clearfix"></div>
+              </div>
+            </div>
+          </div>
+        </ng-template>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <a class="testcategories" [routerLink]="['one-more-thing']">
+          <button class="btn btn-primary">View All One More Thing Videos </button>
+        </a>
+      </div>
+    </div>
+  </section>
+</section>
+
+<section class="back2" *ngIf="more_len>0">
+  <section class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h2 class="main_heading mrg_btm">MedBlogs<span class="hdg_line"></span></h2>
+      </div>
+    </div>
+
+    <div class="mrg_btm">
+      <div class="row">
+        <ng-template ngFor let-item [ngForOf]="createRange(more_len)" let-currentIndex="index">
+          <div class="col-md-3 col-sm-12 col-xs-12">
+            <div class="mrg_btm">
+              <div class="panel_one panel_thin_grey border_yellow">
+                <div class="row">
+                  <!-- <a [routerLink]="['/'+more[currentIndex]['event']+'/'+more[currentIndex]['category']+'/'+more[currentIndex]['slug']]"> -->
+                    <div class="col-md-12 col-sm-4 col-xs-5"><img src="{{blogdata[currentIndex]['image_url']}}"
+                                                                  alt="{{blogdata[currentIndex]['image_alt']}}"/></div>
+                    <div class="col-md-12 col-sm-8 col-xs-7">
+                      <div class="pdg1 pdgrt">
+                        <h3 class="hd4_mobile hd4_m color_white" style="font-size:14px">{{blogdata[currentIndex]['headline' ] | slice:0:89 }}...</h3>
+                        <p class="color_orange hd4_mobile">{{blogdata[currentIndex]['sub_headline'] | slice:0:49 }}...</p>
+                      </div>
+                    </div>
+                  <!-- </a> -->
+                </div>
+                <div class="clearfix"></div>
+              </div>
+            </div>
+          </div>
+        </ng-template>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <a class="testcategories" [routerLink]="['one-more-thing']">
+          <button class="btn btn-primary">View All One More Thing Videos </button>
+        </a>
+      </div>
+    </div>
+  </section>
+</section>
+
+<section class="back2" *ngIf="conv_len>0">
+  <section class="container">
+
+    <div class="row">
+      <div class="col-md-12">
+        <h2 class="main_heading mrg_btm">In Conversation<span class="hdg_line"></span></h2>
+      </div>
+    </div>
+
+    <div class="mrg_btm">
+      <div class="row">
+        <ng-template ngFor let-item [ngForOf]="createRange(1)" let-currentIndex="index">
+          <div class="col-md-3 col-sm-12 col-xs-12">
+            <div class="mrg_btm">
+              <div class="panel_one panel_thin_grey border_yellow">
+                <div class="row">
+                  <a [routerLink]="['/'+conv[currentIndex]['event']+'/'+conv[currentIndex]['category']+'/'+conv[currentIndex]['slug']]">
+                    <div class="col-md-12 col-sm-4 col-xs-5"><img src="{{ conv[currentIndex]['image_url']}}"
+                                                                  alt="{{ conv[currentIndex]['image_alt']}}"/></div>
+                    <div class="col-md-12 col-sm-8 col-xs-7">
+                      <div class="pdg1 pdgrt">
+                        <h3 class="hd4 hd4_m color_white">{{ conv[currentIndex]['headline']|slice:0:40}}</h3>
+                        <p class="color_orange">{{ conv[currentIndex]['sub_headline'] | slice:0:20}}</p>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+                <div class="clearfix"></div>
+              </div>
+            </div>
+          </div>
+        </ng-template>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <a class="testcategories" [routerLink]="['in-conversation']">
+          <button class="btn btn-primary">View All In Conversation Videos</button>
+        </a>
+      </div>
+    </div>
+  </section>
+</section>
+
+
+
+<section class="back2" *ngIf="event === 'csinic-2016'">
+  <section class="container">
+
+    <div class="row">
+      <div class="col-md-12">
+        <h2 class="main_heading mrg_btm">Live Surgeries<span class="hdg_line"></span></h2>
+      </div>
+    </div>
+
+    <div class="mrg_btm">
+      <div class="row">
+
+        <div class="col-md-6 col-sm-12 col-xs-12">
+          <div class="panel_six panel_light_grey border_yellow">
+            <a [routerLink]="['/live/videos/dr-m-s-hiremath-live-case-care-hospital-hyderabad']">
+              <img
+                      src="https://storage.googleapis.com/web-assets/images/CSI-NIC_Images/LiveCases/Hiremath/Hiremath-small.jpg"
+                      alt="Dr. MS Hiremath, Interventional Cardiologist, Care Hospital Hyderabad">
+              <div class="pdg1"><h4 class="hd4">Cross Over Stent From Care Hospital...<br><span class="color_orange">Dr. MS Hiremath and Dr.Narasa Raju</span>
+              </h4>
+
+
+                <div class="clearfix"></div>
+              </div>
+              <div class="clearfix"></div>
+            </a>
+          </div>
+        </div>
+
+        <div class="col-md-3 col-sm-12 col-xs-12">
+          <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+              <div class="mrg_top_m">
+                <div class="panel_six panel_thin_grey border_yellow">
+                  <a [routerLink]="['/live/videos/dr-chris-naber-live-case-apollo-secundrabad']">
+                    <img
+                            src="https://storage.googleapis.com/web-assets/images/CSI-NIC_Images/LiveCases/ChrisNaber/ChrisNaber-small.jpg"
+                            alt="Dr. Chris Naber, Interventional Cardiologist, Apollo, Secunderabad">
+                    <div class="pdg1"><h4 class="hd4"><span class="color_orange"></span><br><span class="color_white"> Live: PCI In The Right Coronary Artery by Dr. Chris Naber...</span>
+                    </h4>
+                      <h4 class="hd4"><span class="color_orange">Dr. Chris Naber</span></h4>
+                    </div>
+                    <div class="clearfix"></div>
+                  </a>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-3 col-sm-12 col-xs-12">
+          <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+              <div class="mrg_top_m">
+                <a [routerLink]="['/live/videos/dr-v-k-trehan-live-case-jayadeva-bangalore']">
+                  <div class="panel_six panel_light_grey border_yellow">
+                    <img
+                            src="https://storage.googleapis.com/web-assets/images/CSI-NIC_Images/LiveCases/VKTrehan/VKTrehan-small.jpg"
+                            alt="Dr. VK Trehan, Interventional Cardiologist, Jayadeva Institute, Bangalore">
+                    <div class="pdg1"><h4 class="hd4"> Live From Jaideva Bangalore on Femoral Approach To Left Main
+                      Disease...<br><span class="color_orange">Dr. VK Trehan</span></h4>
+                    </div>
+                  </div>
+                  <div class="clearfix"></div>
+                </a>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <a class="testcategories" [routerLink]="['live-case']">
+          <button class="btn btn-primary">View All Live Surgeries</button>
+        </a>
+      </div>
+    </div>
+
+  </section>
+</section>
+
+
+<section class="back2" *ngIf="event === 'wccpci-2016'|| event === 'wccpci-2015' || event === 'dr-ulhas-pandurangi-sixth-live-cardiac-electrophysiology-workshop-madras-medical-mission-2018' || event === 'dr-ulhas-pandurangi-fifteenth-annual-electrocardiology-course-basics-and-beyond-madras-medical-mission-2018'">
+  <section class="container" *ngIf="conv1.length > 0">
+    <div class="row">
+      <div class="col-md-12">
+        <h2 class="main_heading mrg_btm" *ngIf="event === 'wccpci-2016'|| event === 'wccpci-2015'">
+          Presentations<span class="hdg_line"></span></h2>
+        <h2 class="main_heading mrg_btm" *ngIf="event === 'dr-ulhas-pandurangi-sixth-live-cardiac-electrophysiology-workshop-madras-medical-mission-2018'">
+          Presentations of 6th Live Cardiac Electrophysiology Workshop, Madras Medical Mission <span class="hdg_line"></span></h2>
+        <h2 class="main_heading mrg_btm" *ngIf="event === 'dr-ulhas-pandurangi-fifteenth-annual-electrocardiology-course-basics-and-beyond-madras-medical-mission-2018'">
+          Presentations of 15th Annual ECG Course, Madras Medical Mission <span class="hdg_line"></span></h2>
+      </div>
+    </div>
+    <div class="mrg_btm">
+      <div class="row">
+        <ng-template ngFor let-item [ngForOf]="createRange(3)" let-currentIndex="index">
+          <div class="col-md-3 col-sm-12 col-xs-12">
+            <div class="mrg_btm">
+              <div class="panel_one panel_light_grey brder_top">
+                <div class="row">
+                  <a
+                          [routerLink]="['/specials/'+event+'/presentation/'+conv1[currentIndex]['slug']+'/'+conv1[currentIndex]['_id']]">
+                    <div class="col-md-12 col-sm-4 col-xs-4"><img src="{{conv1[currentIndex]['url']}}"
+                                                                  alt="{{conv1[currentIndex]['url']}}"/></div>
+                    <div class="col-md-12 col-sm-8 col-xs-8">
+                      <div class="pdg1 pdgrt">
+                        <h4 class="hd4_mobile hd4_m color_blue">{{conv1[currentIndex]['headline'] }}
+                          <h5 class="color_orange hd4_mobile"><b>{{conv1[currentIndex]['doctor_name']}}</b></h5></h4>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </ng-template>
+      </div>
+    </div>
+
+    <div class="row" *ngIf="event === 'wccpci-2016'">
+      <div class="col-md-12">
+        <a [routerLink]="['/specials/wccpci-2016/presentation/Dr.HK%20Chopra/57e3ee37ab1e463f67f08767']">
+          <button class="btn btn-primary">View All</button>
+        </a>
+      </div>
+    </div>
+    <div class="row" *ngIf="event === 'dr-ulhas-pandurangi-fifteenth-annual-electrocardiology-course-basics-and-beyond-madras-medical-mission-2018'">
+      <div class="col-md-12">
+        <a [routerLink]="['/specials/dr-ulhas-pandurangi-fifteenth-annual-electrocardiology-course-basics-and-beyond-madras-medical-mission-2018/presentation/dr-ulhas-m-pandurangi-normal-ecg/5b80f4aa49d928151dccd92b']">
+          <button class="btn btn-primary">View All</button>
+        </a>
+      </div>
+    </div>
+
+    <div class="row" *ngIf="event === 'dr-ulhas-pandurangi-sixth-live-cardiac-electrophysiology-workshop-madras-medical-mission-2018'">
+      <div class="col-md-12">
+        <a [routerLink]="['/specials/dr-ulhas-pandurangi-sixth-live-cardiac-electrophysiology-workshop-madras-medical-mission-2018/presentation/dr-r-vedivelu-friend-or-foe/5b8139a3c6c3cf270460f05d']">
+          <button class="btn btn-primary">View All</button>
+        </a>
+      </div>
+    </div>
+
+  </section>
+</section>
+
+<section class="back2" *ngIf="event==='apvic'">
+  <section class="container">
+    <div>
+      <h2 class="main_heading">Images<span class="hdg_line"></span></h2>
+    </div>
+    <mat-grid-list cols="4"   fxShow="true" fxShow.sm="false" fxShow.xs="false" class="gap-part" style="padding-bottom: 0px;">
+      <ng-template ngFor let-item [ngForOf]="createRangeImages(12)" let-i="index">
+        <mat-grid-tile fxShow="true" fxShow.sm="false" fxShow.xs="false" style="padding-top:0px;" >
+          <div class="tips_img mrg2">
+            <a [routerLink]="['/specials/apvic/gallery/'+i]">
+              <img src="https://storage.googleapis.com/web-assets/images/APVIC/Gallery/{{i}}/{{i}}-medium.jpg" alt="">
+            </a>
+          </div>
+        </mat-grid-tile>
+      </ng-template>
+    </mat-grid-list>
+
+    <ng-template ngFor let-item [ngForOf]="createRangeImages(12)" let-i="index">
+      <div class="tips_img mrg2" fxShow="false" fxShow.xs="true"  fxShow.lt-md="true">
+        <a [routerLink]="['/specials/apvic/gallery/'+i]">
+          <img src="https://storage.googleapis.com/web-assets/images/APVIC/Gallery/{{i}}/{{i}}-medium.jpg" alt="">
+        </a>
+      </div>
+    </ng-template>
+    <div class="row" *ngIf="event === 'apvic'">
+      <div class="col-md-12">
+        <a [routerLink]="['/specials/apvic/event-gallery']">
+          <button class="btn btn-primary">View All</button>
+        </a>
+      </div>
+    </div>
+  </section>
+</section>
+
+
+<section class="back2" *ngIf="event==='csi-2017'">
+  <section class="container">
+    <div>
+      <h2 class="main_heading">Images<span class="hdg_line"></span></h2>
+    </div>
+    <mat-grid-list cols="4"   fxShow="true" fxShow.sm="false" fxShow.xs="false" class="gap-part" style="padding-bottom: 0px;">
+      <ng-template ngFor let-item [ngForOf]="createRangeImages(12)" let-i="index">
+        <mat-grid-tile fxShow="true" fxShow.sm="false" fxShow.xs="false" style="padding-top:0px;" >
+          <div class="tips_img mrg2">
+            <a [routerLink]="['/synapse/csi-2017/'+i]">
+              <img src="https://storage.googleapis.com/web-assets/images/EMCURE_CSICON2017/Kolkata/({{i}})/({{i}})-large.jpg" alt="">
+            </a>
+          </div>
+        </mat-grid-tile>
+      </ng-template>
+    </mat-grid-list>
+
+    <ng-template ngFor let-item [ngForOf]="createRangeImages(12)" let-i="index">
+      <div class="tips_img mrg2" fxShow="false" fxShow.xs="true"  fxShow.lt-md="true">
+        <a [routerLink]="['/synapse/csi-2017/'+i]">
+          <img src="https://storage.googleapis.com/web-assets/images/EMCURE_CSICON2017/Kolkata/({{i}})/({{i}})-large.jpg" alt="">
+        </a>
+      </div>
+    </ng-template>
+    <div class="row" *ngIf="event === 'csi-2017'">
+      <div class="col-md-12">
+        <a [routerLink]="['/specials/csi-2017/event-gallery']">
+          <button class="btn btn-primary">View All</button>
+        </a>
+      </div>
+    </div>
+  </section>
+</section>
+<section class="back2" *ngIf="event==='wccpci-2016'">
+  <section class="container">
+    <div>
+      <h2 class="main_heading">Images<span class="hdg_line"></span></h2>
+    </div>
+    <mat-grid-list cols="4"   fxShow="true" fxShow.sm="false" fxShow.xs="false" class="gap-part" style="padding-bottom: 0px;">
+      <ng-template ngFor let-item [ngForOf]="createRangeImages(12)" let-i="index+1">
+        <!-- <div *ngFor="let item of createRangeImagescardiac(5); let currentElementIndex=('index+1')">-->
+        <mat-grid-tile fxShow="true" fxShow.sm="false" fxShow.xs="false" style="padding-top:0px;" >
+          <div class="tips_img mrg2">
+            <a [routerLink]="['/specials/wccpci-2016/wccpcigallery/'+[i+1]]">
+              <img src="https://storage.googleapis.com/web-assets/images/wccpci_2016/images/24-09-16-culture 1/Inugration 1/{{i}}/{{i}}-medium.jpg" height="150px"/>
+            </a>
+          </div><!-- <a [routerLink]="['/synapse/cardiac-prevent-2015/'+[i+4]]">GS0A{{i+4}}</a>-->
+        </mat-grid-tile>
+        <!-- </div>-->
+      </ng-template>
+    </mat-grid-list>
+    <ng-template ngFor let-item [ngForOf]="createRangeImages(12)" let-i="index+4936">
+      <div class="tips_img mrg2" fxShow="false" fxShow.xs="true"  fxShow.lt-md="true">
+        <a [routerLink]="['/specials/wccpci-2016/wccpcigallery/'+i]">
+          <img src="https://storage.googleapis.com/web-assets/images/wccpci_2016/images/24-09-16-culture 1/Inugration 1/{{i}}/{{i}}-medium.jpg" height="150px"/>
+        </a>
+      </div>
+    </ng-template>
+    <div class="row" *ngIf="event === 'wccpci-2016'">
+      <div class="col-md-12">
+        <a [routerLink]="['/specials/wccpci-2016/gallerywcc']">
+          <button class="btn btn-primary">View All</button>
+        </a>
+      </div>
+    </div>
+  </section>
+</section>
+
+<section  class="back2" *ngIf="event==='rssdi-ahmedabad-2018'">
+    <section  class="container" style="clear:both">
+      <div  fxlayout="row" fxlayout.lt-sm="column" fxlayoutgap="20px" fxlayoutwrap="" style="clear: both; flex-direction: row; box-sizing: border-box; display: flex;"><div  fxflex="100%" style="flex: 1 1 100%; box-sizing: border-box; max-width: 100%;">
+        <h2  class="main_heading">The Last Word<span  class="hdg_line"></span></h2></div>
+      </div>
+      <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap="20px" fxLayoutGap.lt-sm="10px" class="last-word-img">
+        <div   fxFlex="25">
+           <a  title="" href="/wockhardt-rssdi-tv-ahmedabad-2018/the-last-word/dr-rajeev-chawla/5bf7cae215d54b77b1caacda">
+              <img  src="https://storage.googleapis.com/web-assets/videos/RSSDI2018/Keytakeaways/Image/rajeevchawla/rajeevchawla-large.jpg"></a></div>
+        <div fxFlex="25" >
+          <a  title="" href="/wockhardt-rssdi-tv-ahmedabad-2018/the-last-word/dr-rajeev-chawla-rssdi/5bf7cb8715d54b77b1caacdd">
+            <img  src="https://storage.googleapis.com/web-assets/videos/RSSDI2018/Keytakeaways/Image/rajeevchawla1/rajeevchawla1-large.jpg"></a>
+        </div>
+        <div fxFlex="25"  >
+          <a  title="" href="/wockhardt-rssdi-tv-ahmedabad-2018/the-last-word/dr-pradeep-jain/5bf7cc0a15d54b77b1caace3">
+            <img  src="https://storage.googleapis.com/web-assets/videos/RSSDI2018/Keytakeaways/Image/rajeevchawla1/rajeevchawla1-large.jpg"></a>
+        </div>
+        <div  fxFlex="25">
+         <a  title="" href="/wockhardt-rssdi-tv-ahmedabad-2018/the-last-word/dr-pradeep-jain-rssdi/5bf7cc3e15d54b77b1caacec">
+              <img  src="https://storage.googleapis.com/web-assets/videos/RSSDI2018/Keytakeaways/Image/pradeep3/pradeep3-large.jpg"></a>
+            </div>
+      </div>
+      <div class="row" *ngIf="event === 'rssdi-ahmedabad-2018'">
+        <div class="col-md-12">
+          <a [routerLink]="['/wockhardt-rssdi-tv-ahmedabad-2018/the-last-word']">
+            <button class="btn btn-primary">View All</button>
+          </a>
+        </div>
+      </div>
+  </section></section>
+
+  <section  class="back2" *ngIf="word.length>0">
+    <section  class="container" style="clear:both">
+      <div  fxlayout="row" fxlayout.lt-sm="column" fxlayoutgap="20px" fxlayoutwrap="" style="clear: both; flex-direction: row; box-sizing: border-box; display: flex;"><div  fxflex="100%" style="flex: 1 1 100%; box-sizing: border-box; max-width: 100%;">
+        <h2  class="main_heading">The Last Word<span  class="hdg_line"></span></h2></div>
+      </div>
+      <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap="20px" fxLayoutGap.lt-sm="10px" class="last-word-img"><!---->
+        <div   fxFlex="25">
+           <a  title="" href="/{{event}}/the-last-word/{{word[0]['slug']}}/{{word[0]['_id']}}">
+              <img  src="{{word[0]['url']}}"></a></div>
+        <div fxFlex="25" >
+          <a  title="" href="/{{event}}/the-last-word/{{word[1]['slug']}}/{{word[1]['_id']}}">
+            <img  src="{{word[1]['url']}}"></a>
+        </div>
+        <div fxFlex="25"  >
+          <a  title="" href="/{{event}}/the-last-word/{{word[2]['slug']}}/{{word[2]['_id']}}">
+            <img  src="{{word[2]['url']}}"></a>
+        </div>
+        <div  fxFlex="25">
+         <a  title="" href="/{{event}}/the-last-word/{{word[3]['slug']}}/{{word[3]['_id']}}">
+              <img  src="{{word[3]['url']}}"></a>
+            </div>
+      </div>
+      <div class="row" *ngIf="word.length>0">
+        <div class="col-md-12">
+          <a [routerLink]="['/'+event+'/the-last-word']">
+            <button class="btn btn-primary">View All</button>
+          </a>
+        </div>
+      </div>
+  </section></section>
+
+  <!-- <ng-template ngFor let-item [ngForOf]="createRange(4)" let-currentIndex="index">
+        <div fxFlex="25">
+           <a  title="" href="">
+              <img src="{{word[currentIndex]['url']}}"></a>
+            
+            </div>
+       </ng-template> -->
+<section class="back2" *ngIf="high.length>0">
+  <section class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h2 class="main_heading mrg_btm">Highlights <span class="hdg_line"></span></h2>
+      </div>
+    </div>
+
+    <div class="conatiner">
+      <div class="row">
+        <ng-template ngFor let-item [ngForOf]="createRange(high.length)" let-currentIndex="index">
+          <a [routerLink]="['/'+high[currentIndex]['event']+'/'+high[currentIndex]['category']+'/'+high[currentIndex]['slug']]">
+            <div class="col-md-3">
+
+              <div class="panel_six panel_light_grey border_yellow pad-highlet">
+                <div class="row">
+                  <div class="col-md-12 col-xs-5 col-sm-5">
+                    <img src="{{ high[currentIndex]['image_url']}}" alt="{{high[currentIndex]['image_alt']}}"/></div>
+                  <div class="col-md-12 col-xs-7 col-sm-7 p-l-r">
+                    <h4 class="hd4 ">{{ high[currentIndex]['headline']}}</h4>
+                    <p class="p-class"><span class ="color_orange"><b>{{ high[currentIndex]['sub_headline']}}</b></span></p>
+                    <p class="p-class dis1">{{ high[currentIndex]['designation']}}</p></div>
+                  <!--<h4 class="hd4_mobile dis">{{ high[currentIndex]['headline']}}</h4>
+                  <p class="hd4 dis"><span class="color_orange hd4_mobile">{{ high[currentIndex]['sub_headline'] }}</span></p>-->
+                </div>
+              </div></div></a>
+        </ng-template>
+      </div>
+    </div>
+    <div class="row" >
+      <div class="col-md-12">
+        <a class="testcategories" [routerLink]="['highlights']">
+          <button class="btn btn-primary mar-top" style="margin-top:20px;">View All Highlights</button>
+        </a>
+      </div>
+    </div>
+  </section>
+</section>
+
+<app-footer></app-footer>

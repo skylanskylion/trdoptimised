@@ -1,0 +1,204 @@
+<!-- 
+<section class="back2">
+  <section class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="hd2 mrg_btm no_mrg_m">Torrent RSSDI tv</div>
+      </div>
+    </div>
+    <div class="row">
+
+      <div class="col-md-5 col-sm-6 col-xs-12">
+        <div class="card-style">
+          <a class="testvideo"
+          [routerLink]="['/'+wccmm[0]['event']+'/'+wccmm[0]['category']+'/'+wccmm[0]['slug']]">
+            <img src="{{wccmm[0]['image_url']}}"
+                 alt="{{wccmm[0]['image_alt']}}" style="width:100%"/>
+          </a>
+          <div class="content-part ">
+            <h5 class=" new-head-interview line-height-1" > <b>{{wccmm[0]['headline']}}</b></h5>
+            <ul class="list-items" >
+              <ng-template ngFor let-item [ngForOf]="Range(3)" let-currentIndex="index+1">
+                <a class="testvideo" [routerLink]="['/'+wccmm[currentIndex]['event']+'/'+wccmm[currentIndex]['category']+'/'+wccmm[currentIndex]['slug']]">
+                  <li><span class="bor-left-blue">{{wccmm[currentIndex]['headline']}}</span>
+                    <p  class="color_orange color_base_m bor-left-red"><b>{{wccmm[currentIndex]['sub_headline']}}</b></p></li>
+                </a>
+              </ng-template>
+              
+
+            </ul>
+          </div>
+        </div></div>
+      <div class="col-md-3 col-sm-6 col-xs-12">
+
+
+          <div class="card-style marg-btm">
+            <a class="testvideo"
+            [routerLink]="['/'+wccmm[4]['event']+'/'+wccmm[4]['category']+'/'+wccmm[4]['slug']]">
+              <img src="{{wccmm[4]['image_url']}}"
+              alt="{{wccmm[4]['image_alt']}}" style="width:100%"/>
+            </a> <div class="content-part">
+            <a class="testvideo"
+            [routerLink]="['/'+wccmm[4]['event']+'/'+wccmm[4]['category']+'/'+wccmm[4]['slug']]">
+
+              <ul class="list-items">
+                <li class="bor-no"><span class="bor-left-blue">{{wccmm[4]['headline']}}</span>
+                  <p  class="color_orange color_base_m bor-left-red"><b>{{wccmm[4]['sub_headline']}}</b></p></li>
+              </ul>
+            </a>
+          </div>
+          </div>
+
+
+
+          <div class="card-style marg-btm">
+            <a class="testvideo"
+            [routerLink]="['/'+wccmm[5]['event']+'/'+wccmm[5]['category']+'/'+wccmm[5]['slug']]">
+              <img src="{{wccmm[5]['image_url']}}"
+              alt="{{wccmm[5]['image_alt']}}" style="width:100%"/>
+            </a> <div class="content-part">
+            <a class="testvideo"
+            [routerLink]="['/'+wccmm[5]['event']+'/'+wccmm[5]['category']+'/'+wccmm[5]['slug']]">
+
+              <ul class="list-items">
+                <li class="bor-no"><span class="bor-left-blue">{{wccmm[5]['headline']}}</span>
+                  <p  class="color_orange color_base_m bor-left-red"><b>{{wccmm[5]['sub_headline']}}</b></p></li>
+              </ul>
+            </a>
+          </div>
+          </div>
+
+      </div>
+
+      <div class="col-md-4 col-sm-12 col-xs-12">
+        <div class="card-style">
+            
+          <a class="testvideo"
+          [routerLink]="['/'+wccmm[6]['event']+'/'+wccmm[6]['category']+'/'+wccmm[6]['slug']]">
+            <img src="{{wccmm[6]['image_url']}}"
+            alt="{{wccmm[6]['image_alt']}}" style="width:100%"/>
+          </a>
+          <div class="content-part ">
+            <h5 class="new-head-interview line-height-1"> <b>{{wccmm[6]['headline']}}</b></h5>
+            <ul class="list-items">
+                <ng-template ngFor let-item [ngForOf]="Range(3)" let-currentIndex="index+7">
+                <a class="testvideo"
+                [routerLink]="['/'+wccmm[currentIndex]['event']+'/'+wccmm[currentIndex]['category']+'/'+wccmm[currentIndex]['slug']]">
+                  <li><span class="bor-left-blue">{{wccmm[currentIndex]['headline']}}</span>
+                    <p  class="color_orange color_base_m bor-left-red"><b>{{wccmm[currentIndex]['sub_headline']}}</b></p></li>
+                </a>
+                 </ng-template>
+                
+
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row mar-top-view">
+      <div class="col-md-12">
+        <a href="http://rssdi2019.therightdoctors.com/">
+          <button class="btn btn-primary btn_sm_m">View All</button>
+        </a>
+      </div>
+    </div>
+  </section>
+</section>
+
+<section class="back2">
+  <section class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="hd2 mrg_btm no_mrg_m">The Interview</div>
+      </div>
+    </div>
+    <div class="row">
+
+      <div class="col-md-5 col-sm-6 col-xs-12">
+<div class="card-style">
+  <a class="testvideo"
+     [routerLink]="['/'+the_interview['data']['the-interview'][0]['event']+'/'+the_interview['data']['the-interview'][0]['category']+'/'+the_interview['data']['the-interview'][0]['slug']]">
+    <img src="{{the_interview['data']['the-interview'][0]['image_url'] }}" alt="{{the_interview['data']['the-interview'][0]['image_alt'] }}" style="width:100%"/>
+  </a>
+    <div class="content-part ">
+    <h5 class=" new-head-interview line-height-1" > <b>{{the_interview['data']['the-interview'][0]['headline'] }}</b></h5>
+    <ul class="list-items">
+      <ng-template ngFor let-item [ngForOf]="createRange(3)" let-currentIndex="index+3">
+        <a class="testvideo"
+           [routerLink]="['/'+the_interview['data']['the-interview'][currentIndex]['event']+'/'+the_interview['data']['the-interview'][currentIndex]['category']+'/'+the_interview['data']['the-interview'][currentIndex]['slug']]">
+        <li><span class="bor-left-blue">{{the_interview['data']['the-interview'][currentIndex]['headline'] }}</span><p  class="color_orange color_base_m bor-left-red"><b>{{the_interview['data']['the-interview'][currentIndex]['sub_headline'] }}</b></p></li>
+        </a>
+      </ng-template>
+       </ul>
+  </div>
+</div></div>
+      <div class="col-md-3 col-sm-6 col-xs-12">
+
+        <ng-template ngFor let-item [ngForOf]="createRange(1)" let-currentIndex="index+2">
+          <div class="card-style marg-btm">
+            <a class="testvideo"
+               [routerLink]="['/'+the_interview['data']['the-interview'][currentIndex]['event']+'/'+the_interview['data']['the-interview'][currentIndex]['category']+'/'+the_interview['data']['the-interview'][currentIndex]['slug']]">
+              <img src="{{the_interview['data']['the-interview'][currentIndex]['image_url'] }}"
+                   alt="{{the_interview['data']['the-interview'][currentIndex]['image_alt'] }}" style="width:100%"/>
+            </a> <div class="content-part">
+            <a class="testvideo"
+               [routerLink]="['/'+the_interview['data']['the-interview'][currentIndex]['event']+'/'+the_interview['data']['the-interview'][currentIndex]['category']+'/'+the_interview['data']['the-interview'][currentIndex]['slug']]">
+
+              <ul class="list-items">
+                <li class="bor-no"><span class="bor-left-blue"> {{the_interview['data']['the-interview'][currentIndex]['headline'] }} </span>
+                  <p  class="color_orange color_base_m bor-left-red"><b>{{the_interview['data']['the-interview'][currentIndex]['sub_headline'] }}</b></p></li>
+              </ul>
+            </a>
+          </div>
+          </div>
+        </ng-template>
+
+        <ng-template ngFor let-item [ngForOf]="createRange(1)" let-currentIndex="index+6">
+        <div class="card-style marg-btm">
+          <a class="testvideo"
+            [routerLink]="['/'+the_interview['data']['the-interview'][currentIndex]['event']+'/'+the_interview['data']['the-interview'][currentIndex]['category']+'/'+the_interview['data']['the-interview'][currentIndex]['slug']]">
+            <img src="{{the_interview['data']['the-interview'][currentIndex]['image_url'] }}"
+                 alt="{{the_interview['data']['the-interview'][currentIndex]['image_alt'] }}" style="width:100%"/>
+          </a> <div class="content-part">
+          <a class="testvideo"
+                  [routerLink]="['/'+the_interview['data']['the-interview'][currentIndex]['event']+'/'+the_interview['data']['the-interview'][currentIndex]['category']+'/'+the_interview['data']['the-interview'][currentIndex]['slug']]">
+
+          <ul class="list-items">
+              <li class="bor-no"><span class="bor-left-blue"> {{the_interview['data']['the-interview'][currentIndex]['headline'] }} </span>
+                <p  class="color_orange color_base_m bor-left-red"><b>{{the_interview['data']['the-interview'][currentIndex]['sub_headline'] }}</b></p></li>
+            </ul>
+          </a>
+          </div>
+        </div>
+        </ng-template>
+      </div>
+
+      <div class="col-md-4 col-sm-12 col-xs-12">
+        <div class="card-style">
+          <a class="testvideo"
+            [routerLink]="['/'+the_interview['data']['the-interview'][1]['event']+'/'+the_interview['data']['the-interview'][1]['category']+'/'+the_interview['data']['the-interview'][1]['slug']]">
+            <img src="{{the_interview['data']['the-interview'][1]['image_url'] }}" alt="{{the_interview['data']['the-interview'][1]['image_alt'] }}" style="width:100%"/>
+          </a>
+          <div class="content-part ">
+            <h5 class="new-head-interview line-height-1"> <b>{{the_interview['data']['the-interview'][1]['headline'] }}</b></h5>
+            <ul class="list-items">
+              <ng-template ngFor let-item [ngForOf]="createRange(3)" let-currentIndex="index+8">
+                <a class="testvideo"
+                  [routerLink]="['/'+the_interview['data']['the-interview'][currentIndex]['event']+'/'+the_interview['data']['the-interview'][currentIndex]['category']+'/'+the_interview['data']['the-interview'][currentIndex]['slug']]">
+                  <li><span class="bor-left-blue">{{the_interview['data']['the-interview'][currentIndex]['headline'] }}</span><p  class="color_orange color_base_m bor-left-red"><b>{{the_interview['data']['the-interview'][currentIndex]['sub_headline'] }}</b></p></li>
+                </a>
+              </ng-template>
+               </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row mar-top-view">
+      <div class="col-md-12">
+        <a [routerLink]="['/the-interview/all']">
+          <button class="btn btn-primary btn_sm_m">View All</button>
+        </a>
+      </div>
+    </div>
+  </section>
+</section> -->

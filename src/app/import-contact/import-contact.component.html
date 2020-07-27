@@ -1,0 +1,71 @@
+<app-nav></app-nav>
+<main>
+    <div class="back2" style="clear: both;">
+        <div class="container">
+            <div fxLayout="row">
+                <div fxFlex="10"></div>
+                <div fxFlex="80">
+                    <!-- <mat-card > -->
+                    <!--                    *ngIf="!doctor"-->
+                    <div class="media-head">
+                        <!--   <h4>TheRightDoctors
+                              Login</button></h4> -->
+                        <h4 class="sync-card-title">
+                            <!-- <img src="https://storage.googleapis.com/web-assets/images-extra/Logo_trd.png">  -->
+                            Share Insights with your Contacts on TheRightDoctors Knowledge Network</h4>
+                        <!--                             <button mat-raised-button  color="primary" matSuffix class="upload-btn" (click)="signInGoogle()">Login</button>-->
+                        <div class="icon-place">
+                            <i class="material-icons">group</i>
+                        </div>
+                    </div>
+                    <div *ngIf="!doctor" class="media-body">
+                        <h4 class="text-card-title">Sync your contacts to grow your network</h4>
+                        <h4 class="text-normal">Your contacts will be imported periodically to suggest connections whom you might want to share your content with </h4>
+                        Login using <button mat-raised-button color="primary" class="upload-btn" (click)="signInGoogle()">Gmail</button>
+                    </div>
+
+                    <div *ngIf="doctor" class="media-body">
+                        <h4 class="text-card-title">You decide who gets to see your content </h4>
+                        <div class="card-block">
+                            <h4 class="card-title">{{ doctor.name }}</h4>
+                            <p class="card-text">{{ doctor.email }}</p>
+                        </div>
+
+                        <br/>
+                        <button mat-raised-button color="primary" matSuffix (click)="inviteGoogle()">Import contacts</button>
+                        <br/>
+                        <div fxLayout="column">
+                            <div *ngIf="show">
+                                <h4 class="question">Select the contacts</h4>
+                                <div class="boxes" *ngFor="let data of emailAddrArr">
+                                    <input type="checkbox" (change)="onChange(data.name,data.email, $event.target.checked)"> {{data.name}} {{ data.email}}<br>
+                                </div>
+                                <h4 class="question">Select how you want to share</h4>
+                                <div class="boxes">
+                                    <input type="radio" name="option" [(ngModel)]="model.option" #option="ngModel" value="TheRightDoctors"> Mail wiil be sent by TheRightDoctors<br>
+                                    <input type="radio" name="option" [(ngModel)]="model.option" #option="ngModel" value="Yourself"> Mail sent on your behalf<br>
+                                </div>
+                                <!-- style="float: left;" -->
+                                <!-- <mat-radio-group  [(ngModel)]="model.gender" name="gender" #gender="ngModel">
+                                    <mat-radio-button style="padding-right: 14px;" type="radio" name="gender" value="Male"
+                                                     > Male</mat-radio-button>
+                                    <mat-radio-button type="radio"  name="gender" value="Female"
+                                                      > Female</mat-radio-button>
+                                  </mat-radio-group> -->
+
+                                <br/>
+                                <button mat-flat-button color="primary" (click)="submit(); signOut()"> Save </button>
+                                <br/>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- </mat-card> -->
+                </div>
+                <div fxFlex="10"></div>
+            </div>
+        </div>
+    </div>
+    <script async defer src="https://apis.google.com/js/platform.js"></script>
+    <script async defer src="https://apis.google.com/js/api.js"></script>
+</main>
+<app-footer></app-footer>

@@ -1,0 +1,158 @@
+<!--footer-->
+<footer>
+  <div class="container">
+    <div class="row">
+
+      <div class="col-md-2 col-sm-3 col-xs-6 mrg_btm_m2">
+        <h1>Segments</h1>
+        <ul>
+          <li><a [routerLink]="['/the-interview']">The Interview</a></li>
+          <li><a [routerLink]="['/in-conversation']">In Conversation</a></li>
+          <li><a [routerLink]="['/one-more-thing']">One More Thing</a></li>
+          <li><a [routerLink]="['/the-speakers']">The Speaker</a></li>
+          <li><a [routerLink]="['/podcast']">Podcast</a></li>
+        </ul>
+      </div>
+
+      <div class="col-md-2 col-sm-3 col-xs-6 mrg_btm_m2">
+        <h1>Specials</h1>
+        <ul>
+            <li><a href="https://rssdi2019.therightdoctors.com">Torrent RSSDI tv</a></li>
+          <li><a [routerLink]="['/specials/stemi-india-lucknow-2018']">STEMI India tv Lucknow</a></li>
+          <li><a href="https://aicogtv.therightdoctors.com/">AICOG tv Bhubaneswar</a></li>
+          <!-- <li><a href="https://wcce2017.therightdoctors.com/">WCCE tv Jaipur</a></li> -->
+          <li><a href="https://csitv.therightdoctors.com/">CSI tv Kolkata</a></li>
+          <li><a [routerLink]="['/specials/wccicc-2017']">WCCICC tv Mumbai</a></li>
+      </ul>
+      </div>
+
+
+      <div class="col-md-5 col-sm-12 col-xs-12 mrg_btm_m2">
+        <h1>Get TheRightDoctors email updates</h1>
+        <p>Subscribe to receive TheRightDoctors email notifications </p>
+          <!--whenever new talks are published-->
+        <form role="form" #contactForm="ngForm" (submit)="email_sub()">
+          <div class="form-group">
+            <!--<label for="Email">Your Email address:</label>-->
+            <input type="text" class="form-control" placeholder="Enter Your Email Address"
+                   pattern="(\W|^)[\w.+\-]*@gmail\.com(\W|$)" name="email"
+                   [(ngModel)]="sumodel.email" #email="ngModel" id="Email">
+            <div *ngIf="email.errors &&  (email.touched || email.dirty || email.pattern) " class="alert alert-danger">
+              <div [hidden]="!email.errors.required">
+                Email is Required !
+              </div>
+              <div [hidden]="!email.errors.pattern">
+                Email is Invalid
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="for_sign_in">
+              <button type="submit" [disabled]="!contactForm.valid" class="btn btn-default">Submit</button>
+            </div>
+          </div>
+        </form>
+
+      </div>
+      <div class="col-md-3 col-sm-12 col-xs-12 mrg_btm_m2">
+        <h1>Follow Us</h1>
+
+          <ul class="list-inline list-icons-top ul-li-mar-top">
+
+              <li >
+                  <a  class="" data-service="facebook" title="Share on Facebook"
+                      href="https://www.facebook.com/therightdoctors"><i
+                          class="fa fa-facebook fb" aria-hidden="true"></i></a></li>
+              <li >
+                  <a  class="" data-service="twitter" title="Follow us on Twitter"
+                      href="https://twitter.com/therightdoctors"><i
+                          class="fa fa-twitter twit-clr" aria-hidden="true"></i></a></li>
+              <li >
+                  <a  class="" data-service="linkedin" title="Follow us on Linkedin"
+                      href="https://www.linkedin.com/company/therightdoctors-com"><i class="fa fa-linkedin linkd" aria-hidden="true"></i></a></li>
+
+              <li ><a class="" data-service="youtube" title="Follow us by Youtube"
+                                              href="https://www.youtube.com/channel/UCUZIhLsNbgkCqymAZshSVHQ"><i class="fa fa-youtube youtube" aria-hidden="true"
+                                                                                                                 style="font-size:18px;"></i></a></li>
+
+              <li ><a data-flip-widget="shareflip" title="Follow us on Flipit"
+                      href="https://flipboard.com/@TheRightDoctors"><img src="../../assets/flipboard_srsw.png" alt="Flipboard" style="width: 27px;height: 27px;margin-top: -3px;
+    border-radius: 100%;"></a></li>
+          </ul>
+
+
+
+
+      </div>
+
+    </div>
+  </div>
+</footer>
+
+<section class="container">
+
+  <section class="back2">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 " style="padding:0px">
+           <h5 class="head-power">Powered by:</h5>
+            <img src="../../assets/img/new-poweredby-google.png" class="mar-top-d" alt="new-poweredby-google"/>
+
+        </div>
+
+          <div class="col-md-8 marg-btm-m" style="padding:0px">
+              <h5 class="head-power">Awards & Recognitions:</h5>
+              <div class="row img-wid">
+                    <div class="col-md-3 col-xs-3 col-sm-3">
+                        <img src="assets/img/awars01.png" alt="award"/>
+                    </div>
+                  <div class="col-md-3 col-xs-3 col-sm-3">
+                      <img src="assets/img/1000awards.png" alt="1000 awards"/>
+
+                  </div>
+                  <div class="col-md-3 col-xs-3 col-sm-3">
+
+                      <img src="assets/img/SBC_global_logo-L-2.png" style="margin-top:13px" alt="SBC Global Logo"/>
+                  </div>
+                  <div class="col-md-3 col-xs-3 col-sm-3">
+                      <img src="assets/img/startup.png" style="margin-top: 13px;" alt="Start Up"/>
+                  </div>
+              </div>
+          </div>
+      </div>
+    </div>
+  </section>
+
+
+
+</section>
+
+
+
+
+
+
+<section class="back3 post_footer_pdg">
+  <section class="container">
+    <div class="row">
+      <div class="post_footer">
+        <div class="col-md-6 col-sm-6  col-xs-12 text-left">
+          <ul>
+            <li><a [routerLink]="['/terms-of-service']">Terms of Service</a></li>
+            <li><a [routerLink]="['/privacy-policy']">Privacy Policy</a></li>
+            <li><a [routerLink]="['/disclaimer']">Disclaimer</a></li>
+          </ul>
+          <div class="clearfix"></div>
+        </div>
+        <div class="col-md-6 col-sm-6  col-xs-12 text-right text_left_m pad-text">
+           © TheRightDoctors Network. All Rights Reserved
+          <div class="clearfix"></div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+</section>
+
+<!--footer-->
+<!--login comment popup-->

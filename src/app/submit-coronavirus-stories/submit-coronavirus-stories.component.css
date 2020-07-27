@@ -1,0 +1,115 @@
+.headline1{
+    padding: 25px 10px 0;
+    color: #262626;
+    text-align:center;
+    margin-bottom: 0px;
+    font-weight: 700;
+}
+.subheadline{
+    color: #737373;
+    text-align: center;
+    padding: 0 10px;
+    -webkit-font-smoothing: antialiased;
+    font-size: 16px;
+    line-height: 1.75;
+    margin-bottom:32px;
+}
+.bg2 h5{
+    color: #262626;
+    font-size: 1.2rem;
+    line-height: 1.66667;
+}
+.headline2{
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.87) !important;
+}
+.bg2para{
+    margin-top: 16px;
+    color: rgb(38, 38, 38);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.57;
+}
+.form1{
+    margin-top: 24px;
+}
+.bottompara{
+    color: rgb(140, 140, 140);
+    font-size: 12px;
+    font-weight: normal;
+    line-height: 1.57;
+}
+.bg4 button{
+    width: fit-content;
+    background-color: #3f51b5;
+    color:#fff;
+    font-weight: bold;
+}
+.corona-stories{
+    padding:40px 0px;
+}
+hr{
+    width:100%;
+    color:#f2f2f2;
+}
+.bg4 .mat-card{
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12) !important;
+    border-top: 2px solid #de261c;
+}
+.bg5para{
+    font-weight: lighter;
+    color: #262626;
+    padding: 5px 0 0px;
+    text-align: left;
+    line-height: 1.25;
+    font-size: 18px;
+    overflow: hidden;
+}
+.borderline{
+    padding: 10px;
+    border:1px solid #f2f2f2;
+    cursor: pointer;
+}
+.bg5 .mat-card{
+    box-shadow: none;
+    padding: 10px;
+}
+.finalrow{
+    background-color: #3f51b5;
+    color:#ffff;
+    font-size: 26px;
+    line-height: 32px;
+    margin:0px;
+    padding: 5px;
+}
+.bg5 .borderbtm{
+    border-bottom: 2px solid #de261c;
+}
+/* ::ng-deep .text-area .mat-form-field-wrapper .mat-form-field-flex{
+    height:100px;
+} */
+@media(max-width:600px){
+    .headline1{
+        font-size: 1.46667rem !important;
+        line-height: 1.13636;
+    }
+    .headline2{
+        font-size: 24px !important;
+        line-height: 1.167;
+        text-align:left;
+    }
+}
+@media(min-width:601px){
+    .headline1{
+        font-size: 2.66667rem !important;
+        line-height: 1.15;
+    }
+    .headline2{
+        font-size: 26px !important;
+        line-height: 1.167;
+    }
+    .bg2 h5{
+        text-align: center;
+        padding: 0 10px;
+    }
+}

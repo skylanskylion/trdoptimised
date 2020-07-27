@@ -1,0 +1,822 @@
+<app-nav></app-nav>
+<style>
+  @media (max-width: 767px) {
+    .pdg_left, .pdg1, .no_pdg_m {
+      padding: 8px !important;}
+    .mrg_top_m{
+      margin-top:0px!important;
+    }
+  }
+
+</style>
+<div class="container"  >
+  <div flex fxLayout="row" fxLayout.xs="column" style="clear:both">
+
+    <div class="">
+
+      <h1 style="text-align: left;margin-top:15px;" class="video_hd1 mrg_btm">{{catagory[0]['sub_headline']}}:
+        {{catagory[0]['headline']}}</h1>
+      <div style="margin-bottom:20px;">
+        <div fxLayout="row" fxLayout.xs="column" fxLayoutAlign="end center">
+          <div fxFlex="50">
+
+            <div class="slab">{{ catagory[0]['sub_headline']}}</div>
+          </div>
+          <div fxFlex="50" style="text-align: right">
+
+            <ul class="list-inline list-icons-top" >
+              <li class="views">{{ catagory[0]['anchor']}}<br>Total Views</li>
+
+              <li><a href="https://www.facebook.com/dialog/feed?app_id=1066226316760891
+&redirect_uri=https://therightdoctors.com
+&link=https://therightdoctors.com/{{ catagory[0]['event']}}/{{ catagory[0]['category']}}/{{ catagory[0]['slug']}}
+&picture={{ catagory[0]['image_url'] }}
+&caption=TheRightDoctors.com%20|%20BY%20%20{{ catagory[0]['sub_headline']}},%20%20{{ catagory[0]['designation']}}
+&description={{ catagory[0]['description']}}
+&name={{ catagory[0]['headline']}}" title="Share on Facebook" data-service="facebook" target="_blank"><i
+                      class="fa fa-facebook fb" aria-hidden="true"></i> </a></li>
+              <li><a
+                      href="https://twitter.com/intent/tweet?url=https://therightdoctors.com/{{ catagory[0]['event']}}/{{ catagory[0]['category']}}/{{ catagory[0]['slug']}}&text={{ catagory[0]['sub_headline']}}%20-{{ catagory[0]['headline']}}&via=TheRightDoctors"
+                      title="Share on Twitter" data-service="twitter" target="_blank"> <i
+                      class="fa fa-twitter twit-clr" aria-hidden="true"></i></a></li>
+              <!-- <li><a
+                      href="https://plus.google.com/share?url=https://therightdoctors.com/{{ catagory[0]['event']}}/{{ catagory[0]['category']}}/{{ catagory[0]['slug']}}"
+                      title="Share on Google Plus" data-service="gplus" target="_blank"><i
+                      class="fa fa-google-plus google-plus" aria-hidden="true"></i></a></li> -->
+
+              <li><a href="https://www.linkedin.com/shareArticle?mini=true&url=https://therightdoctors.com/{{ catagory[0]['event']}}/{{ catagory[0]['category']}}/{{ catagory[0]['slug']}}&title={{ catagory[0]['headline']}}
+&summary={{ catagory[0]['headline2']}}&source=therightdoctors.com" title="Share on Linkedin" data-service="linkedin"
+                     target="_blank"><i class="fa fa-linkedin linkd" aria-hidden="true"></i></a></li>
+              <li><a
+                      href="https://api.whatsapp.com/send?text=https://therightdoctors.com/{{ catagory[0]['event']}}/{{ catagory[0]['category']}}/{{ catagory[0]['slug']}}"
+                      data-action="share/whatsapp/share" title="Share on Whatsapp" data-service="whatsapp"
+                      target="_blank"><i class="fa fa-whatsapp whats-app" aria-hidden="true"
+                                         style="font-size:18px;"></i></a></li>
+              <!--<li><a
+                      href="mailto:?subject={{ catagory[0]['sub_headline']}} : {{ catagory[0]['headline']}}&amp;body={{ catagory[0]['headline2']}}. Check out this site https://therightdoctors.com/{{ catagory[0]['event']}}/{{ catagory[0]['category']}}/{{ catagory[0]['slug']}} ."
+                      title="Share by Email" data-service="email" target="_blank"><i class="fa fa-envelope-o"></i></a></li>-->
+
+
+              <li><a data-flip-widget="shareflip" title="Share on Flipit" target="_blank"
+                     href="https://share.flipboard.com/bookmarklet/popout?ext=sharethis&
+title={{ catagory[0]['headline']}}&url=https://therightdoctors.com/{{ catagory[0]['event']}}/{{ catagory[0]['category']}}/{{ catagory[0]['slug']}}&utm_campaign=widgets&utm_content={{ catagory[0]['sub_headline']}}&utm_source=sharethis&v=2">
+                <img style="width: 27px;height: 27px;margin-top: -2px;
+    border-radius: 100%;" src="https://cdn.flipboard.com/badges/flipboard_srsw.png" alt="flipboard icon"/></a></li>
+              <!--<li>
+                <a class="share-btn sms-icon"
+                   href="sms:?body={{ catagory[0]['sub_headline']}} : {{ catagory[0]['headline']}} Check out this site https://therightdoctors.com/{{ catagory[0]['event']}}/{{ catagory[0]['category']}}/{{ catagory[0]['slug']}}"
+                   title="Share on SMS" data-service="sms" target="_blank">
+                </a>
+              </li>-->
+            </ul>
+
+
+            <!--<ul class="share-buttons  right-side">
+              <li class="story-views lazy slab">{{ catagory[0]['anchor']}}<br>Total Views</li>
+              <li>
+                <a class="share-btn fb-icon" href="https://www.facebook.com/dialog/feed?app_id=1066226316760891
+&redirect_uri=https://therightdoctors.com
+&link=https://therightdoctors.com/{{ catagory[0]['event']}}/{{ catagory[0]['category']}}/{{ catagory[0]['slug']}}
+&picture={{ catagory[0]['image_url'] }}
+&caption=TheRightDoctors.com%20|%20BY%20%20{{ catagory[0]['sub_headline']}},%20%20{{ catagory[0]['designation']}}
+&description={{ catagory[0]['description']}}
+&name={{ catagory[0]['headline']}}" title="Share on Facebook" data-service="facebook" target="_blank">
+                </a>
+              </li>
+              <li>
+                <a class="share-btn tw-icon"
+                   href="https://twitter.com/intent/tweet?url=https://therightdoctors.com/{{ catagory[0]['event']}}/{{ catagory[0]['category']}}/{{ catagory[0]['slug']}}&text={{ catagory[0]['sub_headline']}}%20-{{ catagory[0]['headline']}}&via=TheRightDoctors"
+                   title="Share on Twitter" data-service="twitter" target="_blank">
+                </a>
+              </li>
+              <li>
+                <a class="share-btn ln-icon" href="https://www.linkedin.com/shareArticle?mini=true&url=https://therightdoctors.com/{{ catagory[0]['event']}}/{{ catagory[0]['category']}}/{{ catagory[0]['slug']}}&title={{ catagory[0]['headline']}}
+&summary={{ catagory[0]['headline2']}}&source=therightdoctors.com" title="Share on Linkedin" data-service="linkedin"
+                   target="_blank">
+                </a>
+              </li>
+              <li>
+                <a class="share-btn gp-icon"
+                   href="https://plus.google.com/share?url=https://therightdoctors.com/{{ catagory[0]['event']}}/{{ catagory[0]['category']}}/{{ catagory[0]['slug']}}"
+                   title="Share on Google Plus" data-service="gplus" target="_blank">
+                </a>
+              </li>
+              &lt;!&ndash; <li>
+                <a class="share-btn yt-icon" href="https://www.youtube.com/channel/UCUZIhLsNbgkCqymAZshSVHQ" title="Share on Youtube" data-service="youtube" target="_blank">
+                </a>
+              </li> &ndash;&gt;
+              &lt;!&ndash; href="http://whatsapp://send?text=https://therightdoctors.com/{{ catagory[0]['event']}}/{{ catagory[0]['category']}}/{{ catagory[0]['slug']}}" &ndash;&gt;
+              <li><a class="share-btn wa-icon"
+                     href="https://api.whatsapp.com/send?text=https://therightdoctors.com/{{ catagory[0]['event']}}/{{ catagory[0]['category']}}/{{ catagory[0]['slug']}}"
+                     data-action="share/whatsapp/share" title="Share on Whatsapp" data-service="whatsapp"
+                     target="_blank">
+              </a>
+              </li>
+
+              <li>
+                <a class="share-btn email-icon"
+                   href="mailto:?subject={{ catagory[0]['sub_headline']}} : {{ catagory[0]['headline']}}&amp;body={{ catagory[0]['headline2']}}. Check out this site https://therightdoctors.com/{{ catagory[0]['event']}}/{{ catagory[0]['category']}}/{{ catagory[0]['slug']}} ."
+                   title="Share by Email" data-service="email" target="_blank">
+                </a>
+
+                &lt;!&ndash;<a routerLink="[/mail]">mail to child componenet</a>&ndash;&gt;
+              </li>
+
+              <li>
+                <a class="share-btn sms-icon"
+                   href="sms:?body={{ catagory[0]['sub_headline']}} : {{ catagory[0]['headline']}} Check out this site https://therightdoctors.com/{{ catagory[0]['event']}}/{{ catagory[0]['category']}}/{{ catagory[0]['slug']}}"
+                   title="Share on SMS" data-service="sms" target="_blank">
+                </a>
+              </li>
+            </ul>-->
+
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- playing video-->
+<div class="full_vid">
+  <div class="container" >
+    <video autoplay controls (ended)="nextVideo()" #media id="singleVideo" preload="auto" #video
+           (play)="loveit(catagory[0]['anchor'],catagory[0]['slug'])" style="width:100%">
+      <!--&lt;!&ndash;(play)="loveit(catagory[0]['anchor'],catagory[0]['slug'])" >&ndash;&gt;-->
+      <source *ngFor="let item of sources" [src]="item.src" type="video/mp4">
+    </video>
+  </div>
+</div>
+<!--player end-->
+<div class="back10">
+  <div class="container">
+    <div fxFlex="100" style="padding: 15px">
+      <div class="add_txt" *ngIf="catagory[0]['event'] === 'cardiac-prevent-2015'"><p>Supported by an Unrestricted
+        <br> Educational Grant from</p>
+        <img src="assets/new-home-page/single/images/add2.jpg" alt="Glenmark Logo">
+      </div>
+      <div class="add_txt" *ngIf="catagory[0]['event'] === 'csi-2017'"><p>Supported by an Unrestricted <br>
+        Educational Grant from</p>
+        <img src="assets/new-home-page/single/images/Emcure.png" style="height:35px" alt="Emcure Logo">
+      </div>
+      <hr class="hrcla">
+    </div>
+    <div class="mrg_btm no_mrg_m" flex fxLayout="row" fxLayout.xs="column">
+      <div *ngIf="catagory[0]['guest1']" fxFlex="50" class=" pdg_no_m mrg_btm">
+        <div flex fxLayout="row" fxLayoutGap="15px">
+          <div fxFlex="20" fxFlex.sm="16">
+            <img height="" width="" src="{{ catagory[0]['guest1_image_url']}}">
+          </div>
+          <div fxFlex="80" fxFlex.sm="84" class="">
+            <h1 class="doc_nm">{{ catagory[0]['guest1']}}</h1>
+            <p>{{ catagory[0]['guest1_designation']}}</p>
+            <p>{{ catagory[0]['guest1_hospital']}}</p>
+          </div>
+        </div>
+      </div>
+      <div *ngIf="catagory[0]['guest2']" fxFlex="50" class=" pdg_no_m mrg_btm">
+        <div class="" flex fxLayout="row" fxLayoutGap="20px">
+          <div fxFlex="20" fxFlex.sm="16" class="">
+            <img width="" height="" src="{{ catagory[0]['guest2_image_url']}}"></div>
+          <div fxFlex="80" fxFlex.sm="84" class="">
+            <h1 class="doc_nm">{{ catagory[0]['guest2']}}</h1>
+            <p>{{ catagory[0]['guest2_designation']}}</p>
+            <p>{{ catagory[0]['guest2_hospital']}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--another part-->
+<section class="back2">
+  <section class="container">
+    <div class="">
+      <h1 class="main_heading mrg_btm">In Conversation<span class="hdg_line"></span></h1>
+    </div>
+    <div class="mrg_btm">
+      <div class="" flex fxLayout="row" fxLayout.xs="column" fxLayout.sm="column" fxLayoutGap="30px"
+           fxLayoutGap.xs="5px"   fxLayoutGap.lt-md="10px">
+        <div fxFlex="55">
+          <div class="panel_four panel_dark_grey border_yellow">
+            <a style="text-decoration: none;" [routerLink]="['/'+catagory[0]['event']+'/'+catagory[0]['category']+'/'+catagory[0]['slug']]">
+              <div flex fxLayout="column" fxLayout.lt-md="row" fxLayout.xs="row" fxLayoutGap="20px" fxLayoutGap.lt-md="10px">
+                <div fxFlex.xs="40" fxFlex.lt-md="33"><img src="{{ catagory[0]['image_url']}}"></div>
+                <div fxFlex.xs="60" fxFlex.lt-md="66">
+                  <div class="pdg1 pdgrt">
+                    <h1 class="hd4 hd4_m color_white">{{ catagory[0]['headline']}}<br>
+                      <span class="color_yellow">{{ catagory[0]['sub_headline']}}</span></h1>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+        <!--<ng-template ngFor let-item [ngForOf]="createRange(2)" let-currentIndex="index">
+          <div fxFlex="23" class="" fxFlex.lt-md="50%">
+            <div class="">
+              <div class="panel_four panel_dark_grey border_yellow">
+
+                  <a style="text-decoration: none;"
+                     [routerLink]="['/'+catagory[currentIndex]['event']+'/'+catagory[currentIndex]['category']+'/'+catagory[currentIndex]['slug']]">
+                    <div  fxLayout="column" fxLayout.sm="row" fxLayout.lt-md="row" fxLayoutGap="20px" fxLayoutGap.lt-md="10px">
+                    <div fxFlex="33">
+                    <img src="{{ catagory[currentIndex]['image_url']}}">
+                    </div>
+                    <div fxFlex="67">
+                      <div class="pdg1 "><h1 class="hd4 color_white">{{ catagory[currentIndex]['headline']}}</h1>
+                        <h1 class="hd4 color_white"><span class="color_yellow">{{ catagory[currentIndex]['sub_headline']}}</span>
+                        </h1>
+                    </div></div></div>
+                  </a>
+
+              </div>
+            </div>
+          </div>
+
+
+
+
+
+        </ng-template>-->
+        <ng-template ngFor let-item [ngForOf]="createRange(2)" let-currentIndex="index">
+          <div fxFlex="23" >
+            <div class="panel_four panel_dark_grey border_yellow">
+              <a style="text-decoration: none;"
+                 [routerLink]="['/'+catagory[currentIndex]['event']+'/'+catagory[currentIndex]['category']+'/'+catagory[currentIndex]['slug']]">
+                <div flex fxLayout="column" fxLayout.lt-md="row" fxLayout.xs="row" fxLayoutGap="20px" fxLayoutGap.lt-md="10px">
+                  <div fxFlex.xs="40" fxFlex.lt-md="33"><img src="{{ catagory[currentIndex]['image_url']}}"></div>
+                  <div fxFlex.xs="60" fxFlex.lt-md="66">
+                    <div class="pdg1 pdgrt">
+                      <h1 class="hd4 color_white">{{ catagory[currentIndex]['headline']}}</h1>
+                      <h1 class="hd4 color_white"><span class="color_yellow">{{ catagory[currentIndex]['sub_headline']}}</span>
+                      </h1>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </ng-template>
+
+      </div>
+    </div>
+    <div class="mrg_btm ">
+      <div  fxLayout="row" fxLayout.xs="column" fxLayout.sm="column" fxLayoutGap="20px" fxLayoutGap.xs="0px" fxLayoutGap.lt-md="0px">
+        <ng-template ngFor let-item [ngForOf]="createRange(4)" let-currentIndex="index+3">
+          <div fxFlex="25" class="">
+            <div class="mrg_btm">
+              <div class="panel_one panel_dark_grey border_yellow">
+                <a style="text-decoration: none;"
+                   [routerLink]="['/'+catagory[currentIndex]['event']+'/'+catagory[currentIndex]['category']+'/'+catagory[currentIndex]['slug']]">
+                  <div flex fxLayout="column" fxLayout.sm="row" fxLayout.xs="row" fxLayoutGap="20px" fxLayoutGap.lt-md="10px">
+                    <div fxFlex.xs="40" fxFlex.sm="33" class=""><img src="{{ catagory[currentIndex]['image_url']}}">
+                    </div>
+                    <div fxFlex.xs="60" fxFlex.sm="67" class="">
+                      <div class="pdg1 pdgrt">
+                         <span class="dis1"> <h1 class="hd4 hd4_m color_white" >{{catagory[currentIndex]['headline']}}<br>
+                           <span class="color_yellow">{{ catagory[currentIndex]['sub_headline']}}</span>
+                         </h1></span>
+                        <span class="dis"> <h1 class="hd4_mobile hd4_m color_white" >{{catagory[currentIndex]['headline'] }}<br>
+                           <span class="color_yellow hd4_mobile">{{ catagory[currentIndex]['sub_headline'] }}</span>
+                         </h1></span>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </ng-template>
+      </div>
+    </div>
+
+    <div class="mrg_btm">
+      <div flex fxLayout="row" fxLayout.xs="column" fxLayout.sm="column" fxLayoutGap="30px" fxLayoutGap.lt-md="10px">
+        <ng-template ngFor let-item [ngForOf]="createRange(1)" let-currentIndex="index+7" >
+          <div fxFlex="55" class="">
+            <div class="panel_four panel_dark_grey border_yellow">
+              <div class="">
+                <a style="text-decoration: none"
+                   [routerLink]="['/'+catagory[currentIndex]['event']+'/'+catagory[currentIndex]['category']+'/'+catagory[currentIndex]['slug']]">
+                  <div flex fxLayout="column" fxLayout.sm="row" fxLayout.xs="row" fxLayoutGap="10px" fxLayout.xs="5px" fxLayoutGap.lt-sm="10px">
+                    <div fxFlex.xs="40" fxFlex.sm="33" class=""><img src="{{ catagory[currentIndex]['image_url']}}">
+                    </div>
+                    <div fxFlex.xs="60" fxFlex.sm="67" class="">
+                      <div class="pdg1 pdgrt">
+                          <span class="dis1"> <h1 class="hd4 hd4_m color_white">{{ catagory[currentIndex]['headline']}}<br>
+                            <span class="color_yellow">{{ catagory[currentIndex]['sub_headline']}}</span>
+                          </h1>
+                          </span>
+
+                        <span class="dis hd4_mobile"><h1 class="hd4_mobile hd4_m color_white">{{ catagory[currentIndex]['headline']}}<br>
+                          <span class="color_yellow hd4_mobile">{{ catagory[currentIndex]['sub_headline']}}</span>
+                        </h1></span>
+
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </ng-template>
+        <ng-template ngFor let-item [ngForOf]="createRange(2)" let-currentIndex="index+8">
+          <div fxFlex="23" fclass="">
+            <div class="">
+              <div class="panel_four panel_dark_grey border_yellow">
+                <div class="">
+                  <a style="text-decoration: none;"
+                     [routerLink]="['/'+catagory[currentIndex]['event']+'/'+catagory[currentIndex]['category']+'/'+catagory[currentIndex]['slug']]">
+                    <div flex fxLayout="column" fxLayout.sm="row" fxLayout.xs="row" fxLayoutGap="10px" fxLayout.xs="5px">
+                      <div fxFlex.xs="40" fxFlex.sm="33" class=""><img src="{{ catagory[currentIndex]['image_url']}}"></div>
+                      <div fxFlex.xs="60" fxFlex.sm="67" class="">
+                        <div class="pdg1 ">
+                         <span class="dis1"> <h1 class="hd4 color_white">{{ catagory[currentIndex]['headline']}}</h1>
+                         <h1 class="hd4 color_white"><span class="color_yellow">{{ catagory[currentIndex]['sub_headline']}}</span></h1>
+                         </span>
+
+                          <span class="dis"><h1 class="hd4_mobile color_white">{{ catagory[currentIndex]['headline']}}</h1>
+                          <h1 class="hd4 color_white"><span class="color_yellow hd4_mobile">{{ catagory[currentIndex]['sub_headline']}}</span></h1>
+                       </span>
+                        </div>
+                      </div></div>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </ng-template>
+      </div>
+    </div>
+
+
+    <div class="mrg_btm"  >
+      <div flex fxLayout="row" fxLayout.xs="column" fxLayout.sm="column" fxLayoutGap="30px" fxLayoutGap.xs="10px" fxLayoutGap.lt-md="0px">
+        <ng-template ngFor let-item [ngForOf]="createRange(4)" let-currentIndex="index+10">
+          <div fxFlex="25" class="">
+            <div class="mrg_btm">
+              <div class="panel_one panel_dark_grey border_yellow">
+                <a style="text-decoration: none;"
+                   [routerLink]="['/'+catagory[currentIndex]['event']+'/'+catagory[currentIndex]['category']+'/'+catagory[currentIndex]['slug']]">
+                  <div flex fxLayout="column" fxLayout.sm="row" fxLayout.xs="row" fxLayoutGap.lt-md="10px" >
+                    <div fxFlex.xs="40" fxFlex.sm="33" class=""><img src="{{ catagory[currentIndex]['image_url']}}">
+                    </div>
+                    <div fxFlex.xs="60" fxFlex.sm="67" class="">
+                      <div class="pdg1 pdgrt">
+                        <span class="dis1"><h1 class="hd4 hd4_m color_white" >{{catagory[currentIndex]['headline']}}<br>
+                          <span class="color_yellow">{{ catagory[currentIndex]['sub_headline']}}</span>
+                        </h1></span>
+
+                        <span class="dis"><h1 class="hd4_mobile hd4_m color_white" >{{catagory[currentIndex]['headline']}}<br>
+                            <span class="color_yellow hd4_mobile">{{ catagory[currentIndex]['sub_headline']}}</span>
+                          </h1></span>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </ng-template>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <a [routerLink]="['/in-conversation/all']">
+          <button class="btn btn-primary">More In Conversations</button>
+        </a>
+      </div>
+    </div>
+
+
+    <!-- another part-->
+
+    <section class="back2">
+      <section class="">
+
+        <div class="">
+          <div class="">
+            <h2 class="main_heading mrg_btm">The Interview<span class="hdg_line"></span></h2>
+          </div>
+        </div>
+
+        <div class="mrg_btm">
+          <div flex fxLayout="row" fxLayout.xs="column" fxLayout.sm="column" fxLayoutGap="30px" fxLayoutGap.lt-md="5px">
+            <div fxFlex="50" class="" >
+              <div class="mrg_btm">
+                <div class="panel_three panel_light_grey brder_top">
+
+                  <a style="text-decoration: none;"
+                     [routerLink]="['/wccpci-2015/the-interview/dr-sreenivas-kumar-citizens-hospital-hyderabad']">
+                    <div flex fxLayout="row" fxLayoutWrap fxFlexAlign="center center" fxLayoutGap="20px"  fxLayoutGap.lt-md="10px" >
+                      <div fxFlex="29" fxFlex.xs="40" class=""><img
+                              src="https://storage.googleapis.com/web-assets/images/wccpci_images/thumbnails/DrSreenivas/DrSreenivas-medium.jpg"
+                              alt="Dr.Sreenivas Kumar, Chief Cardiologist at Citizens Hospitals in Hyderabad on A Protocol for PCI and Non-PCI enabled center to follow when they have to transfer the patient to a  PCI Center."/>
+                      </div>
+                      <div fxFlex="71" fxFlex.xs="60" class="">
+                        <div class="pdg1 pdgrt"><h5 class="hd4_mobile">Management of STEMI in the absence of PCI<br><span
+                                class="color_orange hd4_mobile"><b>Dr. Sreenivas Kumar</b></span></h5></div>
+                      </div>
+                    </div>
+                  </a>
+
+                </div>
+              </div>
+
+              <div class="mrg_btm">
+                <div class="panel_three panel_thin_grey border_orange">
+
+                  <a style="text-decoration: none;"
+                     [routerLink]="['/wccpci-2015/the-interview/dr-r-r-kasliwal-medanta-the-medicity-gurgaon']">
+                    <div flex fxLayout="row" fxLayoutGap="20px" fxLayoutGap.lt-md="10px" >
+                      <div fxFlex="29" fxFlex.xs="40" class=""><img
+                              src="https://storage.googleapis.com/web-assets/images/wccpci_images/thumbnails/DrKasliwal/DrKasliwal-medium.jpg"
+                              alt="Dr.R.R.Kasliwal,Chairman of Clinical and Preventive Cardiology at Medanta-The Medicity,Gurgaon on Central Aortic Pressure"/>
+                      </div>
+                      <div fxFlex="71" fxFlex.xs="60" class="">
+                        <div class="pdg1 pdgrt"><h5 class="hd5"><span class="color_white hd4_mobile">Central Aortic Pressure: An important measure</span><br><span
+                                class="color_orange hd4_mobile"><b>Dr. RR Kasliwal</b></span></h5></div>
+                      </div>
+                    </div>
+                  </a>
+
+                </div>
+              </div>
+
+              <div class="mrg_btm">
+                <div class="panel_three panel_light_grey brder_top">
+
+                  <a style="text-decoration: none;" [routerLink]="['/wccpci-2015/the-interview/dr-j-s-hiremath-ruby-hall-clinic-pune']">
+                    <div flex fxLayout="row" fxLayoutGap="20px" fxLayoutGap.lt-md="10px">
+                      <div fxFlex="29" fxFlex.xs="40" class=""><img width="100%"
+                                                                    src="https://storage.googleapis.com/web-assets/images/wccpci_images/thumbnails/DrJSHiremath/DrJSHiremath-medium.jpg"
+                                                                    alt="Dr J S Hiremath, Director: Cath Lab, Ruby Hall Clinic, Pune on New Oral Anticoagulant Drugs"/>
+                      </div>
+                      <div fxFlex="71" fxFlex.xs="60" class="">
+                        <div class="pdg1 pdgrt"><h5 class="hd4_mobile">Drug talk: Anticoagulation and STEMI <br><span
+                                class="color_orange hd4_mobile"><b>Dr. JS Hiremath</b></span></h5></div>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+
+              <div class="mrg_btm">
+
+                <div class="panel_three panel_thin_grey border_orange">
+
+                  <a style="text-decoration: none;" [routerLink]="['/wccpci-2015/the-interview/dr-db-pahlajani-breach-candy-mumbai']">
+                    <div flex fxLayout="row" fxLayoutGap="20px" fxLayoutGap.lt-md="10px">
+                      <div fxFlex="29" fxFlex.xs="40" class=""><img
+                              src="https://storage.googleapis.com/web-assets/images/wccpci_images/thumbnails/DrPahlajani/DrPahlajani-medium.jpg"
+                              alt="Dr D B Pahlajani, Cardiologist from Breach Candy, Mumbai on Primordial Prevention for the Heart Attack"/>
+                      </div>
+                      <div fxFlex="71" fxFlex.xs="60" class="">
+                        <div class="pdg1 pdgrt"><h5 class="hd5"><span class="color_white hd4_mobile"> Effective management of STEMI in India</span><br><span
+                                class="color_orange hd4_mobile"><b>Dr. DB Pahlajani</b></span></h5></div>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+
+            </div>
+
+            <div fxFlex="50" class="">
+              <div  fxLayout="row" fxLayout.lt-md="row" fxLayout.xs="column" fxLayoutGap="30px" fxLayoutGap.lt-md="5px">
+                <div fxFlex="50" fxFlex.lt-md="50" class="">
+                  <div class="">
+                    <div class="panel_four panel_thin_grey brder_top">
+
+                      <a style="text-decoration: none;"
+                         [routerLink]="['/csinic-2016/the-interview/dr-h-k-chopra-dr-santanu-guha-preparing-the-future-generations']">
+                        <div flex fxLayout="column">
+                          <div class=""><img
+                                  src="https://storage.googleapis.com/web-assets/optimized-images/the-interview/DrHKChopra_26SantanuGuha-large.jpg"
+                                  alt="Dr. HK Chopra, Chairman National CSI Affairs, Dr. Santanu Guha, Senior Cardiologist, Nightingale Hospital, Kolkata">
+                          </div>
+                          <div class="">
+                            <div class="pdg1"><h4 class="hd4 "><span
+                                    class="color_white hd4_mobile">No Kidding! Cardiac Care For Kids</span></h4>
+                              <h5 class="hd4_mobile color_white">The Healthy Heart Initiative By The CSI In Kolkata Is The First
+                                Step In Ensuring...</h5>
+                              <h4 class="hd4 "><span class="color_orange hd4_mobile">Dr. HK Chopra, Dr. Santanu Guha</span></h4>
+                            </div>
+                          </div>
+                        </div>
+                      </a>
+
+                    </div>
+                  </div>
+                </div>
+
+                <div fxFlex="50"  fxFlex.lt-md="50" class="">
+                  <div class="">
+                    <div class="panel_four panel_light_grey brder_top">
+
+                      <a style="text-decoration: none;"
+                         [routerLink]="['/wccpci-2015/the-interview/dr-sandeep-bansal-safdarjung-hospital-delhi']">
+                        <div flex fxLayout="column">
+                          <div class=""><img
+                                  src="https://storage.googleapis.com/web-assets/images/wccpci_images/thumbnails/DrSandeepbansal/DrSandeepbansal-medium.jpg"
+                                  alt="Dr.Sandeep Bansal Sr. Cardiologist and HOD at Safdarjung Hospital at Delhi on Management of STEMI in difficult Situations"
+                                  width="100%"></div>
+                          <div class="">
+                            <div class="pdg1"><h4 class="hd4_mobile">Management of STEMI with renal failure...</h4>
+                              <h5 class="hd5 hd4_mobile">Angioplasty not a possibility for a STEMI patient with a renal failure: a
+                                myth
+                              </h5>
+                              <h4 class="hd4"><span class="color_orange hd4_mobile">Dr. Sandeep Bansal</span></h4>
+                            </div>
+                          </div>
+                        </div>
+                      </a>
+
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-12">
+            <a [routerLink]="['/the-interview/all']">
+              <button class="btn btn-primary">More Interviews</button>
+            </a>
+          </div>
+        </div>
+
+      </section>
+    </section>
+
+
+
+
+    <section class="back2">
+      <section class="">
+
+        <div class="row">
+          <div class="col-md-12">
+            <h2 class="main_heading mrg_btm">One More Thing<span class="hdg_line" style="height: 1px;"></span></h2>
+          </div>
+        </div>
+
+        <div class="mrg_btm">
+          <div flex fxLayout="row" fxLayout.xs="column" fxLayout.sm="column" fxLayoutGap="30px" fxLayoutGap.xs="5px">
+
+            <div fxFlex="25" class="">
+              <div class="panel_one panel_thin_grey border_yellow">
+                <div class="">
+                  <a style="text-decoration: none;"
+                     [routerLink]="['/one-more-thing/dr-naresh-trehan-chairman-and-managing-director-medanta-the-medicity-message-on-world-heart-day']">
+                    <div flex fxLayout="column" fxLayout.xs="row" fxLayout.sm="row" fxLayoutGap="10px">
+                      <div  fxFlex="33" fxFlex.lt-sm="40" class=""><img
+                              src="https://storage.googleapis.com/web-assets/images/Dr.Naresh%20Trehan.jpg"
+                              alt="Dr Naresh Trehan, Chairman and Managing Director, Medanta-The Medicity, Therefore My Message on World Heart Day"/>
+                      </div>
+                      <div  fxFlex="66" fxFlex.lt-sm="60" class="">
+                        <div class="pdg1 pdgrt">
+                          <h3 class="hd4_mobile hd4_m color_white">Incidence of heart disease in India is
+                            ...<p class="color_orange hd4_mobile">Dr.Naresh Trehan</p></h3>
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div fxFlex="25" class="">
+              <div class="">
+                <div class="panel_one panel_light_grey border_orange">
+                  <div class="">
+                    <a style="text-decoration: none;"
+                       [routerLink]="['/one-more-thing/dr-ak-pancholia-consultant-cardiologist-when-statins-are-insufficient-in-reducing-ldl']">
+                      <div flex fxLayout="column" fxLayout.xs="row" fxLayout.sm="row" fxLayoutGap="10px">
+                        <div  fxFlex="33" fxFlex.lt-sm="40" class=""><img
+                                src="https://storage.googleapis.com/web-assets/images/CSICON14/OMT/Dr.A.K.Pancholia2/Dr.A.K.Pancholia2-medium.jpg"
+                                alt="Dr. AK Pancholia, Consultant Cardiologist, Arihant Hospital and Research Center, Indore,  When Statins are insufficient in reducing LDL"/>
+                        </div>
+                        <div  fxFlex="66" fxFlex.lt-sm="60" class="">
+                          <div class="pdg1 pdgrt">
+                            <h3 class="hd4 hd4_m hd4_mobile">When Statins are insufficient in reducing ...<p class="color_orange hd4_mobile">
+                              Dr. AK Pancholia</p></h3>
+                          </div>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+            <div fxFlex="50" class="">
+              <div class="mrg_btm">
+                <div class="">
+                  <div class="panel_three panel_light_grey brder_top">
+                    <div class="">
+                      <a style="text-decoration: none;"
+                         [routerLink]="['/one-more-thing/dr-rajiv-aggarwal-sr-interventional-cardiologist-guideline-directed-therapy-essential-for-systolic-heart-failure']">
+                        <div fxLayout="row" fxLayoutGap="10px">
+                          <div fxFlex="33"  fxFlex.lt-sm="40" class=""><img
+                                  src="https://storage.googleapis.com/web-assets/images/CSICON14/OMT/Dr.RajivAgarwal2/Dr.RajivAgarwal2-medium.jpg"
+                                  alt="Dr. Rajiv Aggarwal, Senior Interventional Cardiologist, Batra Hospital and Medical Research Centre, Delhi, Guideline directed therapy essential for Systolic Heart Failure">
+                          </div>
+                          <div fxFlex="66"  fxFlex.lt-sm="60" class="
+">
+                            <div class="pdg1 pdgrt">
+                              <h3 class="hd5 hd4_mobile">Guideline directed therapy essential for ...<p
+                                      class="color_orange hd4_mobile"><b>Dr. Rajiv Aggarwal</b></p></h3>
+                            </div>
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="mrg_btm">
+                <div class="">
+                  <div class="panel_three panel_thin_grey border_yellow">
+                    <div class="">
+                      <a style="text-decoration: none;"
+                         [routerLink]="['/one-more-thing/dr-poonam-malhotra-associate-professor-dept-of-cardiac-anaesthesia-echmo-therapy-for-a-failing-lung-or-heart']">
+                        <div fxLayout="row" fxLayoutGap="10px">
+                          <div fxFlex="33" fxFlex.lt-sm="40" class=""><img
+                                  src="https://storage.googleapis.com/web-assets/images/CSICON14/OMT/Dr.PoonamMalhotra2/Dr.PoonamMalhotra2-medium.jpg"
+                                  alt="Dr. Poonam Malhotra, Associate Professor, Dept. of cardiac Anaesthesia, AIIMS, New Delhi, ECHMO: therapy for a failing lung or heart ">
+                          </div>
+                          <div fxFlex="66" fxFlex.lt-sm="60" class="
+">
+                            <div class="pdg1 pdgrt">
+                              <h3 class="hd5 color_white hd4_mobile">ECHMO: therapy for a failing lung or heart...<p
+                                      class="color_orange hd4_mobile"><b>Dr. Poonam Malhotra</b></p></h3>
+                            </div>
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="">
+                <div class="panel_three panel_light_grey border_orange">
+                  <div class="">
+                    <a style="text-decoration: none;"
+                       [routerLink]="['/one-more-thing/dr.deepak-koshal-lacking-awareness-and-understanding']">
+                      <div fxLayout="row" fxLayoutGap="10px">
+                        <div fxFlex="33" fxFlex.lt-sm="40" class=""><img
+                                src="https://storage.googleapis.com/web-assets/images/APVIC/Interviews/Dr.DeepakKhousal/Dr.DeepakKhousal-large.jpg"
+                                alt="Dr. Deepak Koshal,Director Cardiovascular, Heritage Heart, Delhi,Lacking awareness and understanding ">
+                        </div>
+                        <div fxFlex="66"  fxFlex.lt-sm="60" class="
+">
+                          <div class="pdg1 pdgrt">
+                            <h5 class="hd5 hd5_m hd4_mobile">basically citizens worldwide and especially in the
+                              ...<p class="color_orange hd4_mobile"><b>Dr. Deepak Koshal</b></p></h5>
+                          </div>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="clearfix"></div>
+
+            </div>
+          </div>
+
+        </div>
+        <div class="row">
+          <div class="col-md-12" style="padding-top: 15px">
+            <a [routerLink]="['/one-more-thing/all']">
+              <button class="btn btn-primary">More One More Thing Videos</button>
+            </a>
+          </div>
+        </div>
+      </section>
+    </section>
+  </section>
+  <!--speakers-->
+  <section class="back3">
+    <section class="container">
+
+      <div class="row">
+        <div class="col-md-12">
+          <h2 class="main_heading2 mrg_btm">The Speakers<span class="hdg_line" style="height:1px"></span></h2>
+        </div>
+      </div>
+
+      <div class="mrg_btm">
+        <div flex fxLayoutGap="30px" fxLayoutGap.xs="5px" fxLayout.xs="column" fxLayout.sm="column" fxLayout="row">
+
+          <div fxFlex="25" class="">
+            <div class="panel_five panel_dark_grey">
+              <div class="">
+                <a style="text-decoration: none;"
+                   [routerLink]="['/the-speakers/dr-ankit-bansal-asst-professor-cardiology-coronary-noflow-desperate-times-desperate-measures']">
+                  <div flex fxLayout="column" fxLayoutGap="20px" fxLayout.xs="row" fxLayout.sm="row"
+                       fxLayoutGap.xs="20px">
+                    <div fxFlex.xs="33" fxFlex.sm="33" class=""><img
+                            src="https://storage.googleapis.com/web-assets/optimized-images/the-speakers/DrAnkitBansal-medium.jpg"
+                            alt="Dr. Ankit Bansal, Asst Prof. Cardiology, GB Pant Hospital, New Delhi, Coronary No-Flow : Desperate Times Desperate Measures">
+                    </div>
+                    <div fxFlex.xs="66" fxFlex.sm="66" class=""><h5 class="hd5 color_white hd4_mobile">CSI NIC 2016 -
+                      TTT@NIC:Complication Session<br><span class="color_yellow hd4_mobile">Dr. Ankit Bansal</span></h5></div>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div fxFlex="25" class="">
+            <div class="">
+              <div class="panel_five panel_dark_grey">
+                <div class="">
+                  <a style="text-decoration: none;"
+                     [routerLink]="['/the-speakers/dr-lohitashwa-s-b-cardiologist-uterine-artery-embolization']">
+                    <div flex fxLayout="column" fxLayoutGap="20px" fxLayout.xs="row" fxLayout.sm="row"
+                         fxLayoutGap.xs="20px">
+                      <div fxFlex.xs="33" fxFlex.sm="33" class=""><img
+                              src="https://storage.googleapis.com/web-assets/optimized-images/the-speakers/DrLohitashwaSB-medium.jpg"
+                              alt="Dr. Lohitashwa S B, Cardiologist, St John's Medical College, Bangalore ,Uterine Artery Embolization ">
+                      </div>
+                      <div fxFlex.xs="66" fxFlex.sm="66" class=""><h5 class="hd5 color_white hd4_mobile">Exotic Vascular and
+                        Structural Interventions<br><span class="color_yellow hd4_mobile">Dr. Lohitashwa S B</span></h5></div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div fxFlex="25" class="">
+            <div class="">
+              <div class="panel_five panel_dark_grey">
+                <div class="">
+
+                  <a style="text-decoration: none;"
+                     [routerLink]="['/the-speakers/dr-Chiung-Jen-Wu-directorof-asian-interventional-cardiovascular-therapeutics-b-v-s-implantation-complication']">
+                    <div flex fxLayout="column" fxLayoutGap="20px" fxLayout.xs="row" fxLayout.sm="row"
+                         fxLayoutGap.xs="20px">
+                      <div fxFlex.xs="33" fxFlex.sm="33" class=""><img
+                              src="https://storage.googleapis.com/web-assets/optimized-images/the-speakers/DrChiung-JenWu-medium.jpg"
+                              alt="Dr.Chiung-Jen Wu, Director of Asian Interventional Cardiovascular Therapeutics Shin Kong Hospital, Taipei, Taiwan, BVS Implantation Complication ">
+                      </div>
+                      <div fxFlex.xs="66" fxFlex.sm="66" class=""><h5 class="hd5 color_white hd4_mobile">xCSI NIC 2016 - TTT@NIC:
+                        Complication Session<br><span class="color_yellow hd4_mobile">Dr. Lohitashwa S B</span></h5></div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div fxFlex="25" class="">
+            <div class="">
+              <div class="panel_five panel_dark_grey">
+
+                <a style="text-decoration: none;"
+                   [routerLink]="['/the-speakers/dr-mona-bhatia-hod-radiology-and-imaging-use-of-cardiac-mri-in-planning-coronary-interventions']">
+                  <div flex fxLayout="column" fxLayoutGap="20px" fxLayout.xs="row" fxLayout.sm="row"
+                       fxLayoutGap.xs="20px">
+
+                    <div fxFlex.xs="33" fxFlex.sm="33" class=""><img
+                            src="https://storage.googleapis.com/web-assets/images/CSI-NIC_Images/Speakers/images/DrMonaBhatia/DrMonaBhatia-medium.jpg"
+                            alt="Dr. Mona Bhatia, HOD-Radiology and Imaging,Fortis Escorts Heart Institute, New Delhi, Use of Cardiac MRI in Planning Coronary Interventions">
+                    </div>
+                    <div fxFlex.sm="66" fxFlex.xs="66" class=""><h5 class="hd5 color_white hd4_mobile">It has survived not only five
+                      It has survived<br><span class="color_yellow hd4_mobile">Dr. Mona Bhatia</span></h5></div>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-12" style="padding-top:  25px;">
+          <a style="text-decoration: none;" [routerLink]="['/the-speakers/all']">
+            <button class="btn btn-primary">More Speakers</button>
+          </a>
+        </div>
+      </div>
+    </section>
+  </section>
+  <!--speakers//-->
+  <app-footer></app-footer>
+</section>

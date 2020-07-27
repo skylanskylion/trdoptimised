@@ -1,0 +1,139 @@
+<body><div class="background">
+        <div fxLayout="row" fxHide fxShow.lt-sm="true">
+                <img src="https://storage.googleapis.com/web-assets/quiz/rssdipartnerlogo.jpg" style="width:100%;">
+            </div>
+    <div class="container">
+        <div fxLayout="column" fxLayoutAlign="center" class="quiz" style="">
+            <div fxLayout="row" fxShow fxHide.lt-sm="true">
+                <img src="https://storage.googleapis.com/web-assets/quiz/rssdipartnerlogo.jpg" style="width:100%;">
+            </div>
+            <div style="padding:20px 10px;" class="title">
+            <h3 style="border-bottom: 2px;color: #3f51b5;line-height: 1.25em;padding:0px 0px 20px 0px;">Welcome to the Torrent RSSDI tv Question of the Hour</h3>
+          
+              <div *ngIf="isRegister" style="background-color:aliceblue" class="text-center">
+                  <form role="form" (ngSubmit)="mail_check()" #f="ngForm" novalidate>
+                      <div>
+                          <mat-form-field style="width:100%;" ngStyle.xs="width:100%">
+                              <input matInput placeholder="Full Name" name="username" [(ngModel)]="model2.username" style="box-shadow:none;border:0;background:transparent" required>
+                          </mat-form-field>
+                          <mat-form-field style="width:100%;" ngStyle.xs="width:100%">
+                              <input matInput placeholder="Email" type="email" name="email" [(ngModel)]="model2.email" style="box-shadow:none;border:0;background:transparent" required>
+                          </mat-form-field>
+                          <mat-form-field style="width:100%;" ngStyle.xs="width:100%">
+                              <input matInput placeholder="Password" type="password" name="password" [(ngModel)]="model2.password" style="box-shadow:none;border:0;background:transparent" required>
+                          </mat-form-field>
+                          <mat-form-field style="width:100%;" ngStyle.xs="width:100%">
+                              <input matInput placeholder="Enter your mobile number" name="user_id" [(ngModel)]="model2.user_id" style="box-shadow:none;border:0;background:transparent" required>
+                          </mat-form-field>
+                      </div>
+                      <div>
+                          <div *ngIf="verification_code">
+                              <div fxLayout="row">
+                                  <div fxFlex="50%">
+                              <mat-form-field style="width:50%;" ngStyle.xs="width:100%">
+                                  <input matInput placeholder="Enter your code" name="token" [(ngModel)]="model2.token" style="box-shadow:none;border:0;background:transparent" required>
+                              </mat-form-field>
+                            </div>
+                            <div fxFlex="50%">
+                              <button mat-raised-button color="primary" type="button" (click)="verify_code()">Verify</button>
+                            </div>
+                            </div>
+                          </div>
+                          <button mat-raised-button color="primary" type="button" *ngIf="!m_verify" (click)="phone_btn_onclick()">Verify Mobile Number</button>
+                      </div>
+                      <div style="width:100%">
+                          <button type="submit" mat-raised-button color="primary" [disabled]="!(f.form.valid && m_verify && !verification_code)" style="cursor: pointer;margin: 20px 0px;">Register</button><br>
+                          Already Registered? 
+                          <span (click)="change_number()" style="color: blue;cursor: pointer;">Login</span>
+                      </div>
+                      <div fxLayout.lt-md="column" fxLayout.gt-sm="row"> 
+                            <div  fxFlex.lt-md="100%" fxFlex.gt-sm="60%" class="footer"><h6 style="font-weight:normal;line-height: 1.25em;padding: 20px 0px;
+                            text-align: left !important;">By registering you agree to paricipate in the Torrent RSSDI tv Question of the Hour. You will be receiving questions and names of the first 10 participants who answered correctly on your mobile.</h6></div>
+                        <div fxFlex.lt-md="100%" fxFlex.gt-sm="40%"> <img src="https://storage.googleapis.com/web-assets/quiz/trdkp.png" style="display: block;margin: auto;width:120px;"></div>
+                       
+                    </div>
+                  </form>
+              </div>
+              <!--login-->
+              <div *ngIf="isLogin" style="background-color:aliceblue;" class="text-center">
+                  <form role="form" (ngSubmit)="login_validation()" #ff="ngForm" novalidate>
+                      <div class="form1">
+                          <mat-form-field style="width:100%;" ngStyle.xs="width:100%">
+                              <input matInput placeholder="Email" type="email" name="user_id" [(ngModel)]="model3.user_id" style="box-shadow:none;border:0;background:transparent" required>
+                          </mat-form-field>
+                          <mat-form-field style="width:100%;" ngStyle.xs="width:100%">
+                              <input matInput placeholder="Password" type="password" name="password" [(ngModel)]="model3.password" style="box-shadow:none;border:0;background:transparent" required>
+                          </mat-form-field><br/>
+                          <button style="margin:20px 0px;" mat-raised-button color="primary" [disabled]="!ff.form.valid">Login</button><br/>
+                          <!-- Login with : 
+                          <button (click)="loginfb()" class="fa fa-facebook" style="border-radius:100px;margin:5px;"></button>
+                          <button (click)="email_login()" class="fa fa-google-plus" style="border-radius:100px;margin:5px;"></button><br/>
+                          <button (click)="logintwitter()" class="fa fa-twitter" style="border-radius:100px;margin:5px;"></button><br/> -->
+                          Create an account? <span (click)="check_verified()" style="color: blue;">Register</span>
+                      </div>
+                      <div fxLayout.lt-md="column" fxLayout.gt-sm="row" fxLayoutAlign="center center"> 
+                            <div  fxFlex.lt-md="100%" fxFlex.gt-sm="60%" class="footer"><h6 style="font-weight:normal;line-height: 1.25em;padding: 20px 0px;text-align: left !important;">By registering you agree to paricipate in the Torrent RSSDI tv Question of the Hour. You will be receiving questions and names of the first 10 participants who answered correctly on your mobile.</h6></div>
+                        <div fxFlex.lt-md="100%" fxFlex.gt-sm="40%"> <img src="https://storage.googleapis.com/web-assets/quiz/trdkp.png" style="display: block;margin: auto;width:120px;"></div>
+                       
+                    </div>
+                      
+                  </form>
+              </div>
+
+              <div *ngIf="!isLogin && !isRegister && question">
+                
+                      <form role="form" (ngSubmit)="polling()" #f="ngForm" novalidate>
+
+                            <h6 style="font-size: 16px; font-weight: bolder; padding-bottom: 10px;">{{question['question']}}</h6>
+      
+                            <div>
+                              <mat-radio-group aria-label="Select an option" [(ngModel)]="model.o_id" name="o_id" *ngFor="let opt of option" required  fxLayout="column" style="vertical-align:top;">
+                                      <mat-radio-button value="{{opt.o_id}}" style="align-items: flex-end;" value="1">{{opt.option}}</mat-radio-button>
+                                    </mat-radio-group>
+                      </div>
+
+
+
+                                                   <div fxLayout="row" fxLayoutAlign="center" >
+                            <button mat-button type="button" [disabled]="!f.form.valid && !verified" (click)="check_verified()" style="background-color: #3f51b5;width:80px;color:#ffffff;margin:20px 0px;">SUBMIT</button>
+                            </div>
+                          <!-- <div class="botton-section center-block">
+                              <button mat-raised-button color="primary" type="button" [disabled]="!f.form.valid && !verified" (click)="check_verified()">Vote</button>
+                              <!--<button mat-raised-button color="default" type="button">Hide Answers</button>-->
+                         <!--   </div> -->
+                      </form>
+                  <!-- <div class="col-md-12" *ngIf="p_voted">
+                      <div class="progress-sec">
+                          <p style="font-size:12px">{{opt1}} <span style="float:right">{{(opp1)}}%</span></p>
+                          <p style="font-size:12px">{{opt2}} <span style="float:right">{{(opp2)}}%</span></p>
+                          <p style="font-size:12px">{{opt3}} <span style="float:right">{{(opp3)}}%</span></p>
+                      </div>
+                  </div> -->
+              </div>
+              <div *ngIf="!question" style="margin:15px 15px 0px 15px;padding:10px;background-color:lightskyblue">
+                  <p style="color:tomato;text-align:center">Quiz Completed For The Day</p>
+              </div>
+              
+              <div *ngIf="!isLogin && !isRegister && question" fxLayout.lt-md="column" fxLayout.gt-sm="row" fxLayoutAlign="center center"> 
+                    <div  fxFlex.lt-md="100%" fxFlex.gt-sm="60%" class="footer"><h6 style="font-weight:normal;line-height: 1.25em;text-align: left !important;">By submitting the answer you agree to paricipate in the Torrent RSSDI tv Question of the Hour. You will be receiving questions and names of the first 10 participants who answered correctly on your mobile. This question will expire at {{expireDate}}</h6></div>
+                <div fxFlex.lt-md="100%" fxFlex.gt-sm="40%"> <img src="https://storage.googleapis.com/web-assets/quiz/trdkp.png" style="display: block;margin: auto;padding-top: 20px;width:120px;"></div>
+               
+            </div>
+           
+          </div>
+
+        
+        
+        </div>
+           
+    </div>
+
+</div>
+
+</body>
+
+
+
+
+
+          

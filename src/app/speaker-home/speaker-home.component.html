@@ -1,0 +1,254 @@
+<!--<section class="back3 back_white_m">
+  <section class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="hd2 mrg_btm no_mrg_m">The Speakers</div>
+
+      </div>
+    </div>
+    <div class="row" style="margin-bottom:20px;">
+      <ng-template ngFor let-item [ngForOf]="createRange(4)" let-currentIndex="index">
+        <div class="col-md-3 col-sm-12 col-xs-12">
+          <div class="panel_five panel_dark_grey back_white_m border_m">
+            <div class="row">
+              <a
+                [routerLink]="['/'+spk_data['data']['the-speaker'][currentIndex]['event']+'/'+spk_data['data']['the-speaker'][currentIndex]['category']+'/'+spk_data['data']['the-speaker'][currentIndex]['slug']]">
+                <div class="col-md-12 col-sm-4 col-xs-5 pull_right_m"><img
+                  src="{{spk_data['data']['the-speaker'][currentIndex]['image_url'] }}"
+                  alt="{{spk_data['data']['the-speaker'][currentIndex]['image_alt'] }}"></div>
+                <div class="col-md-12 col-sm-8 col-xs-7 pull_left_m pdg_no_rt_m"><h5
+                  class="hd5 color_white color_base_m line-clamp">
+                  {{spk_data['data']['the-speaker'][currentIndex]['headline']  }}</h5>
+                  <p class="color_yellow color_base_m"><b>{{spk_data['data']['the-speaker'][currentIndex]['sub_headline'] }}</b></p></div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </ng-template>
+      <div class="clearfix"></div>
+    </div>
+    <div class="mrg_btm">
+      <div class="row">
+        <div class="col-md-6 col-sm-12 col-xs-12">
+          <div class="row" style="margin-bottom:20px;">
+            <a
+              [routerLink]="['/'+spk_data['data']['the-speaker'][4]['event']+'/'+spk_data['data']['the-speaker'][4]['category']+'/'+spk_data['data']['the-speaker'][4]['slug']]">
+              <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="base_imge"><img src="{{spk_data['data']['the-speaker'][4]['image_url'] }}"
+                                            alt="{{spk_data['data']['the-speaker'][4]['image_alt'] }}">
+                  <div class="inner_hd1"><h2 class="hd1" ngStyle.xs="display:block!important;margin-bottom:-20px;">{{spk_data['data']['the-speaker'][4]['headline']
+                    }}</h2>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="row" style="margin-bottom:20px;">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+              <div class="">
+                <div class="panel_three panel_dark_grey back_white_m border_m">
+                  <div class="row">
+                    <a
+                      [routerLink]="['/'+spk_data['data']['the-speaker'][5]['event']+'/'+spk_data['data']['the-speaker'][5]['category']+'/'+spk_data['data']['the-speaker'][5]['slug']]">
+                      <div class="col-md-4 col-sm-4 col-xs-5 pull_right_m"><img
+                        src="{{spk_data['data']['the-speaker'][5]['image_url'] }}"
+                        alt="{{spk_data['data']['the-speaker'][5]['image_alt'] }}"></div>
+                      <div class="col-md-8 col-sm-8 col-xs-7 pull_left_m pdg_no_rt_m"><h5
+                        class="hd5 color_white color_base_m line-clamp line-clamp-2">
+                        {{spk_data['data']['the-speaker'][5]['headline'] }}</h5>
+                        <p class="color_yellow color_base_m"><b>{{spk_data['data']['the-speaker'][5]['sub_headline']
+                          }}</b></p></div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-sm-12 col-xs-12">
+          <div class="row" style="margin-bottom:20px;">
+            <ng-template ngFor let-item [ngForOf]="createRange(2)" let-currentIndex="index+6">
+              <div class="col-md-6 col-sm-12 col-xs-12">
+                <div class="">
+                  <div class="panel_five panel_dark_grey back_white_m border_m">
+                    <div class="row">
+                      <a
+                        [routerLink]="['/'+spk_data['data']['the-speaker'][currentIndex]['event']+'/'+spk_data['data']['the-speaker'][currentIndex]['category']+'/'+spk_data['data']['the-speaker'][currentIndex]['slug']]">
+                        <div class="col-md-12 col-sm-4 col-xs-5 pull_right_m"><img
+                          src="{{spk_data['data']['the-speaker'][currentIndex]['image_url'] }}"
+                          alt="{{spk_data['data']['the-speaker'][currentIndex]['image_alt'] }}"></div>
+                        <div class="col-md-12 col-sm-8 col-xs-7 pull_left_m pdg_no_rt_m"><h5
+                          class="hd5 color_white color_base_m line-clamp line-clamp-2">
+                          {{spk_data['data']['the-speaker'][currentIndex]['headline']  }}</h5>
+                          <p class="color_yellow color_base_m"><b>{{spk_data['data']['the-speaker'][currentIndex]['sub_headline']
+                            }}</b></p></div>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </ng-template>
+          </div>
+          <div class="row" style="margin-bottom: 20px;">
+            <ng-template ngFor let-item [ngForOf]="createRange(2)" let-currentIndex="index+8">
+              <div class="col-md-6 col-sm-12 col-xs-12">
+                <div class="">
+                  <div class="panel_five panel_dark_grey back_white_m border_m">
+                    <div class="row">
+                      <a
+                        [routerLink]="['/'+spk_data['data']['the-speaker'][currentIndex]['event']+'/'+spk_data['data']['the-speaker'][currentIndex]['category']+'/'+spk_data['data']['the-speaker'][currentIndex]['slug']]">
+                        <div class="col-md-12 col-sm-4 col-xs-5 pull_right_m"><img
+                          src="{{spk_data['data']['the-speaker'][currentIndex]['image_url'] }}"
+                          alt="{{spk_data['data']['the-speaker'][currentIndex]['image_alt'] }}"></div>
+                        <div class="col-md-12 col-sm-8 col-xs-7 pull_left_m pdg_no_rt_m"><h5
+                          class="hd5 color_white color_base_m line-clamp line-clamp-2"><br>{{spk_data['data']['the-speaker'][currentIndex]['headline']
+                           }}</h5>
+                          <p class="color_yellow color_base_m"><b>{{spk_data['data']['the-speaker'][currentIndex]['sub_headline']
+                            }}</b></p></div>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </ng-template>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <a [routerLink]="['/the-speakers/all']">
+          <button class="btn btn-primary btn_sm_m">View All</button>
+        </a>
+      </div>
+    </div>
+  </section>
+</section>-->
+
+<!-- <style>
+  .back3 {
+    padding: 40px 0;
+    background: #0c0c0c;
+  }
+  @media (max-width:599px){
+    .back3 {
+      padding: 0px 0px;
+      background: #fff;
+    }
+  }
+</style>
+  <div class="new-screen9">
+    <div class="container" fxLayout="column">
+      <h5 class="all-head">The Speaker</h5>
+      <div fxLayout.lt-md="column" fxLayout.gt-sm="row" fxLayoutGap.gt-sm="20px">
+        <div fxFlex.lt-md="100%" fxFlex.gt-sm="33.33%">
+          <div fxLayout="column">
+
+            
+            <div fxLayout="column" class="brdr-btm">
+              <a class="testvideo" [routerLink]="['/'+spk_data['data']['the-speaker'][0]['event']+'/'+spk_data['data']['the-speaker'][0]['category']+'/'+spk_data['data']['the-speaker'][0]['slug']]">
+                <div>
+                  <img src="{{spk_data['data']['the-speaker'][0]['image_url'] }}" alt="{{spk_data['data']['the-speaker'][0]['image_alt'] }}" style="width:100%"/>
+                </div>
+                </a>
+                <div class="head-black">
+                  <p  class="internal-dr-name">{{spk_data['data']['the-speaker'][0]['sub_headline']}}</p>
+                  <p class="internal-updates-head">{{spk_data['data']['the-speaker'][0]['headline'] }}</p>
+                </div>
+            </div>
+
+
+            <div fxLayout="column">
+              <ul>
+                <ng-template ngFor let-item [ngForOf]="createRange(3)" let-currentIndex="index+1">
+                  <a class="testvideo"
+                    [routerLink]="['/'+spk_data['data']['the-speaker'][currentIndex]['event']+'/'+spk_data['data']['the-speaker'][currentIndex]['category']+'/'+spk_data['data']['the-speaker'][currentIndex]['slug']]">
+                    <div fxLayout="row" fxLayoutGap="8px" class="brdr-btm">
+                      <div fxFlex="30%">
+                        <img src="{{spk_data['data']['the-speaker'][currentIndex]['image_url'] }}" alt="{{spk_data['data']['the-speaker'][currentIndex]['image_alt'] }}" style="width:100%"/>
+                      </div>
+                      <div fxFlex="70%">
+                        <li>
+                          <p  class="internal-dr-name">{{spk_data['data']['the-speaker'][currentIndex]['sub_headline']}}</p>
+                          <p class="internal-updates-head">{{spk_data['data']['the-speaker'][currentIndex]['headline']}} </p>
+                        </li>
+                        </div>
+                    </div>
+                    
+                  </a>
+                </ng-template>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div fxFlex.lt-md="100%" fxFlex.gt-sm="33.33%">
+          <div fxLayout="column">
+            <div fxLayout="column" class="brdr-btm">
+              <a [routerLink]="['/'+spk_data['data']['the-speaker'][4]['event']+'/'+spk_data['data']['the-speaker'][4]['category']+'/'+spk_data['data']['the-speaker'][4]['slug']]">
+                <div>
+                  <img src="{{spk_data['data']['the-speaker'][4]['image_url'] }}" alt="{{spk_data['data']['the-speaker'][4]['image_alt'] }}" style="width:100%"/>
+                </div>
+                </a>
+                <div class="head-black">
+                  <p  class="internal-dr-name">{{spk_data['data']['the-speaker'][4]['sub_headline']}}</p>
+                  <p class="internal-updates-head">{{spk_data['data']['the-speaker'][4]['headline'] }}</p>
+                </div>
+            </div>
+
+
+            <div fxLayout="column">
+              <ul>
+                <ng-template ngFor let-item [ngForOf]="createRange(3)" let-currentIndex="index+5">
+                  <a class="testvideo"
+                    [routerLink]="['/'+spk_data['data']['the-speaker'][currentIndex]['event']+'/'+spk_data['data']['the-speaker'][currentIndex]['category']+'/'+spk_data['data']['the-speaker'][currentIndex]['slug']]">
+                    <div fxLayout="row" fxLayoutGap="8px" class="brdr-btm">
+                      <div fxFlex="30%">
+                        <img src="{{spk_data['data']['the-speaker'][currentIndex]['image_url'] }}" alt="{{spk_data['data']['the-speaker'][currentIndex]['image_alt'] }}" style="width:100%"/>
+                      </div>
+                      <div fxFlex="70%">
+                        <li>
+                          <p  class="internal-dr-name">{{spk_data['data']['the-speaker'][currentIndex]['sub_headline']}}</p>
+                          <p class="internal-updates-head">{{spk_data['data']['the-speaker'][currentIndex]['headline']}} </p>
+                        </li>
+
+                      </div>
+                    </div>
+                    
+                  </a>
+                </ng-template>
+
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div fxFlex.lt-md="100%" fxFlex.gt-sm="33.33%">
+          <div fxLayout="column">
+            <div fxLayout="column">
+              <ul>
+                <ng-template ngFor let-item [ngForOf]="createRange(4)" let-currentIndex="index+1">
+                  <a class="testvideo"
+                    [routerLink]="['/'+spk_data['data']['the-speaker'][currentIndex]['event']+'/'+spk_data['data']['the-speaker'][currentIndex]['category']+'/'+spk_data['data']['the-speaker'][currentIndex]['slug']]">
+                     <li fxLayout="column" class="brdr-btm">
+                        <p  class="internal-dr-name">{{spk_data['data']['the-speaker'][currentIndex]['sub_headline']}}</p>
+                        <p class="internal-updates-head">{{spk_data['data']['the-speaker'][currentIndex]['headline']}} </p>
+                      </li>
+                  </a>
+                </ng-template>
+              </ul>
+            </div>
+
+
+            <div fxLayout="column">
+              <a class="testvideo" [routerLink]="['/'+spk_data['data']['the-speaker'][2]['event']+'/'+spk_data['data']['the-speaker'][2]['category']+'/'+spk_data['data']['the-speaker'][2]['slug']]">
+                <div class="mrg-after-imgvid">
+                  <img src="{{spk_data['data']['the-speaker'][2]['image_url'] }}" alt="{{spk_data['data']['the-speaker'][2]['image_alt'] }}" style="width:100%"/>
+                </div>
+                </a>
+                <p class="internal-updates-head">{{spk_data['data']['the-speaker'][2]['headline'] }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button mat-flat-button class="view-all-btn">View all</button>
+    </div>
+  </div> -->

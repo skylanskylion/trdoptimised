@@ -1,0 +1,344 @@
+<body><div class="background" style="">
+  <div fxLayout="row" fxHide fxShow.lt-sm="true">
+          <!-- <img src="https://storage.googleapis.com/web-assets/quiz/rssdipartnerlogo.jpg" style="width:100%;"> -->
+          <div fxLayout="row" class="aoc1" style="background-color:#68e1d5;width:100%;padding-top:30px;padding-bottom: 10px;" > 
+            <div fxFlex="30%" fxFlex.gt-sm="20%" fxLayoutAlign="center center">
+              <img src="/assets/aoc-mumbai.jpg" style="width:100px;height:70px;">
+            </div>
+            <div fxFlex="20%" fxFlex.gt-sm="30%" fxLayoutAlign="center center">
+              <h6 style="font-weight: bolder;font-size: 10px;color:#04306f;">PRESENTS</h6>
+            </div>
+            <div fxFlex="50%" fxLayout="column" fxLayoutAlign="center start" style="padding-left:10px;">
+              <p style="color:#04306f;font-weight: bold;">20<sup>th</sup>&nbsp;Annual Conference</p>
+              <h5 style="color:#fd2378;font-weight: bolder;font-family: 'Titillium Web', sans-serif !important;">"HEART DISEASES<br><span style="font-size:18px;">IN WOMEN"</span></h5>
+              <p style="color:#04306f;font-size: 10px;font-weight: bold;">11th & 12th January 2020 Taj Santacruz, Mumbai.</p>
+            </div>
+        </div>
+      </div>
+     <!---- <button mat-button [matMenuTriggerFor] = "menu"><h3>Menu</h3></button>
+<mat-menu #menu = "matMenu">
+   <button mat-menu-item>Logout</button>
+   <button mat-menu-item [matMenuTriggerFor] = "recent">Edit Password</button>
+</mat-menu>
+<mat-menu #recent = "matMenu">
+  
+   <button mat-menu-item [routerLink]="['/aoc-change-password']">Change Password</button>
+</mat-menu>-->
+<div class="container" style="padding:0px;">
+  <div fxLayout="column" fxLayoutAlign="center" class="quiz" style="">
+      <!-- <div fxLayout="row" fxShow fxHide.lt-sm="true">
+          <img src="https://storage.googleapis.com/web-assets/quiz/rssdipartnerlogo.jpg" style="width:100%;">
+      </div> -->
+      <div fxLayout="row" class="aoc1 aoc-des" fxShow.lt-md="true" fxHide.gt-sm="true" style="background-color:#68e1d5;"> 
+        <div fxFlex="30%" fxFlex.gt-sm="20%" fxLayoutAlign="center center">
+          <img src="/assets/aoc-mumbai.jpg" style="width:100px;height:70px;">
+        </div>
+        <div fxFlex="20%" fxFlex.gt-sm="30%" fxLayoutAlign="center center">
+          <h5 style="font-weight: bolder;font-size: 14px;color:#04306f;">PRESENTS</h5>
+        </div>
+        <div fxFlex="50%" fxLayout="column" fxLayoutAlign="center start" style="padding-left:10px;">
+          <p style="color:#04306f;font-weight: bold;">20<sup>th</sup>&nbsp;Annual Conference</p>
+          <h5 style="color:#fd2378;font-weight: bolder;font-family: 'Titillium Web', sans-serif !important;">"HEART DISEASES <span style="font-size:18px;">IN WOMEN"</span></h5>
+          <p style="color:#04306f;font-size: 10px;font-weight: bold;">11th & 12th January 2020 Taj Santacruz, Mumbai.</p>
+        </div>
+    </div>
+      <div fxLayout="row" class="aoc1" fxHide fxShow.gt-sm="true" style="background-color:#68e1d5;"> 
+        <div fxFlex="30%" fxFlex.gt-sm="20%" fxLayoutAlign="center center">
+          <img src="/assets/aoc-mumbai.jpg" style="width:100px;height:70px;">
+        </div>
+        <div fxFlex="20%" fxFlex.gt-sm="30%" fxLayoutAlign="center center">
+          <h5 style="font-weight: bolder;font-size: 18px;color:#04306f;">PRESENTS</h5>
+        </div>
+        <div fxFlex="50%" fxLayout="column" fxLayoutAlign="center center">
+          <p style="color:#04306f;font-weight: bold;">20<sup>th</sup>&nbsp;Annual Conference</p>
+          <h5 style="color:#fd2378;font-weight: bolder;font-family: 'Titillium Web', sans-serif !important;font-size: 16px;">"HEART DISEASES <span style="font-size:20px;">IN WOMEN"</span></h5>
+          <p style="color:#04306f;font-size: 10px;font-weight: bold;">11th & 12th January 2020 Taj Santacruz, Mumbai.</p>
+        </div>
+    </div>
+
+    <div fxLayout="row" style="padding-top:20px;">
+      <img src="https://storage.googleapis.com/web-assets/aoc-mumbai/For%20Web-02.png" style="height:130px;display:block;margin:auto;">
+    </div>
+
+
+      <div style="padding:0px 10px;" class="title">
+      <h3 style="border-bottom: 2px;color: #04306f;line-height: 1.25em; text-align:center; padding:5px 0px 5px 0px;font-size:16px !important">Welcome to the Academy of Cardiology </h3>
+  
+      <h3 style="border-bottom: 2px;color: #04306f; text-align:center; line-height: 1.25em;padding:0px 0px 5px 0px;font-size:16px !important">'Question of the Talk'</h3>
+  
+        <div *ngIf="isRegister" style="background-image: linear-gradient(#dff6fe,#d3f1f9);" class="text-center">
+            <form role="form" (ngSubmit)="mail_check()" #f="ngForm" novalidate>
+                <div>
+                    <mat-form-field style="width:100%;" ngStyle.xs="width:100%">
+                        <input matInput placeholder="First Name" name="first name" [(ngModel)]="model2.firstname" style="box-shadow:none;border:0;background:transparent" required>
+                    </mat-form-field>
+                    <mat-form-field style="width:100%;" ngStyle.xs="width:100%">
+                      <input matInput placeholder="Last Name" name="username" [(ngModel)]="model2.lastname" style="box-shadow:none;border:0;background:transparent" required>
+                  </mat-form-field>
+
+                    <mat-form-field style="width:100%;" ngStyle.xs="width:100%">
+                      <input matInput placeholder="Email" type="email" name="email" style="box-shadow:none;border:0;background:transparent"[(ngModel)]="model2.email" #email="ngModel" pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}$"  required>
+                        <mat-error *ngIf="emailFormControl.hasError('required')">
+                         Valid email address Required
+                        </mat-error>
+                    </mat-form-field> 
+                    <p>
+                    <mat-form-field style="width:100%;" ngStyle.xs="width:100%">
+                        <input matInput placeholder="Password" type="password"  name="password" [(ngModel)]="model2.password" pattern="[0-9a-zA-Z@_#$*]{8,30}" style="box-shadow:none;border:0;background:transparent" #password="ngModel" minlength="8" required>
+                        <!-- <i matSuffix
+                        class="material-icons"
+                        showHideTrigger="password_id"
+                        [showHideStatus]="{ materialIcon: true, id: 'password_id' }"
+                      ></i> -->
+                        <mat-error *ngIf="emailFormControl.hasError('required')">
+                          Password should be at least <strong>8 characters</strong> in length,  
+                          at least <strong>one lowercase</strong> character,
+                          at least <strong>one uppercase</strong> character,
+                          at least <strong>one number</strong> 
+                      </mat-error>
+                      </mat-form-field>
+                    
+                    <!-- <p>
+                      <mat-form-field style="width:100%;" ngStyle.xs="width:100%">
+                          <input matInput placeholder="Confirm Password" type="password"  name="confirm_password" [(ngModel)]="model2.confirmpassword" pattern="[0-9a-zA-Z@_#$*]{8,30}" style="box-shadow:none;border:0;background:transparent" #confirmpassword="ngModel" minlength="8" required> -->
+                          <!-- <i matSuffix
+                          class="material-icons"
+                          showHideTrigger="password_id"
+                          [showHideStatus]="{ materialIcon: true, id: 'password_id' }"
+                        ></i> 
+                          <mat-error *ngIf="emailFormControl.hasError('required')">
+                            Password should be at least <strong>8 characters</strong> in length,  
+                            at least <strong>one lowercase</strong> character,
+                            at least <strong>one uppercase</strong> character,
+                            at least <strong>one number</strong> 
+                        </mat-error>
+                        </mat-form-field>-->
+                    
+                    <mat-form-field style="width:100%;" ngStyle.xs="width:100%">
+                      <input matInput placeholder="Country Code" type="Country Code" name="country_code" style="box-shadow:none;border:0;background:transparent"[(ngModel)]="model2.country_code" #country_code="ngModel" pattern="[+][0-9]{0,12}"  required>
+                        <mat-error *ngIf="emailFormControl.hasError('required')">
+                         Enter Valid Country Code(Eg:+91)
+                        </mat-error>
+                    </mat-form-field>
+                    <!-- <mat-form-field style="width:100%;" ngStyle.xs="width:100%">
+                    <mat-label>Select Country Code</mat-label>
+                          <mat-select  name="country_code" placeholder="Select Country Code" [(value)]="selected" #country_code="ngModel"
+                                       [(ngModel)]="model2.country_code"  required>
+                              <mat-option> Select Country Code</mat-option>
+                              <mat-option value="+91">India +91</mat-option>
+                              <mat-option value="+1"> +1 United state +1</mat-option>
+                              <mat-option value="+44">+44 United Kingdom</mat-option>
+                              <mat-option value="+971"> +971 United Arab Emirates</mat-option>
+                              <mat-option value="+92">+92 pakistan</mat-option>
+                              <mat-option value="+977"> +977 Nepal</mat-option>
+                          </mat-select>
+                          <mat-error *ngIf="select.hasError('required')">You must make a selection</mat-error>
+                      </mat-form-field> -->
+                   <p>
+                    <mat-form-field style="width:100%;" ngStyle.xs="width:100%">
+                      <mat-label>Enter Your Mobile Number </mat-label>
+                        <input matInput type="number" name="user_id" id="user_id" placeholder="Mobile Number" style="box-shadow:none;border:0;background:transparent" [(ngModel)]="model2.user_id" #user_id="ngModel" pattern="[1-9]{1}[0-9]{9}" maxlength="10"required>
+                    </mat-form-field>
+                  </p> 
+                </div>
+                <div>
+                    <div *ngIf="verification_code">
+                        <div fxLayout="row">
+                            <div fxFlex="50%">
+                        <mat-form-field style="width:50%;" ngStyle.xs="width:100%">
+                            <input matInput placeholder="Enter your code" name="token" [(ngModel)]="model2.token" style="box-shadow:none;border:0;background:transparent" required>
+                        </mat-form-field>
+                      </div>
+                      <div fxFlex="50%">
+                        <button mat-raised-button color="primary" type="button" (click)="verify_code()">Verify</button>
+                      </div>
+                      </div>
+                    </div>
+                    <button mat-raised-button color="primary" type="button" *ngIf="!m_verify" (click)="phone_btn_onclick()">Verify Mobile Number</button>
+                </div>
+                <div style="width:100%">
+                    <button type="submit" mat-raised-button color="primary" [disabled]="!(f.form.valid && m_verify && !verification_code)" style="cursor: pointer;margin: 20px 0px;">Register</button><br>
+                    Already Registered? 
+                    <span (click)="change_number()" style="color: #04306f;cursor: pointer;">Login</span>
+                </div>
+                <div fxLayout.lt-md="column" fxLayout.gt-sm="row"> 
+                      <div  fxFlex.lt-md="100%" fxFlex.gt-sm="60%" class="footer"><h6 style="font-weight:normal;line-height: 1.25em;padding: 20px 0px;
+                      text-align: justify !important;">By registering you agree to participate in the Academy of Cardiology 'Question of the Talk'. You also agree to receive periodic newsletters and promotional materials from TheRightDoctors.com, a medical content publishing platform.</h6></div>
+                  <div fxFlex.lt-md="100%" fxFlex.gt-sm="40%"> <img src="https://storage.googleapis.com/web-assets/quiz/trdkp.png" style="display: block;margin: auto;width:120px;"></div>
+                 
+              </div>
+            </form>
+        </div>
+        <!--login-->
+        <div *ngIf="isLogin" style="background-image: linear-gradient(#dff6fe,#d3f1f9);" class="text-center">
+            <form role="form" (ngSubmit)="login_validation()" #ff="ngForm" novalidate>
+                <div class="form1">
+                    <mat-form-field style="width:100%;" ngStyle.xs="width:100%">
+                        <input matInput placeholder="Email" type="email" name="user_id" [(ngModel)]="model3.user_id" style="box-shadow:none;border:0;background:transparent" required>
+                    </mat-form-field>
+                    <mat-form-field style="width:100%;" ngStyle.xs="width:100%">
+                        <input matInput placeholder="Password" type="password" id="pass_login"name="password" [(ngModel)]="model3.password" style="box-shadow:none;border:0;background:transparent" required>
+                        <!-- <i matSuffix
+                        class="material-icons"
+                        showHideTrigger="pass_login"
+                        [showHideStatus]="{ materialIcon: true, id: 'pass_login' }"
+                      ></i> -->
+                    </mat-form-field><br/>
+                    <button style="margin:20px 0px;background-color: #04306f;color:#fff;" mat-raised-button [disabled]="!ff.form.valid">Login</button><br/>
+                    <!-- Login with : 
+                    <button (click)="loginfb()" class="fa fa-facebook" style="border-radius:100px;margin:5px;"></button>
+                    <button (click)="email_login()" class="fa fa-google-plus" style="border-radius:100px;margin:5px;"></button><br/>
+                    <button (click)="logintwitter()" class="fa fa-twitter" style="border-radius:100px;margin:5px;"></button><br/> -->
+                    <!-- <span><a [routerLink]="['/AOC-mumbai-forgot-password']"   style="color: blue;">Forgot Password</a></span> -->
+                    Create an account? <span (click)="check_verified()"  style="color: blue;">Register</span>
+                </div>
+                <div fxLayout="column" fxLayoutAlign="center center"> 
+                      <div  fxFlex.lt-md="100%" fxFlex.gt-sm="60%" class="footer"><h6 style="font-weight:normal;line-height: 1.25em;padding: 20px 0px;text-align: justify !important;">By registering you agree to paricipate in the Academy of Cardiology Question of the Talk. You also agree to receive periodic newsletters and promotional materials from TheRightDoctors.com, a medical content publishing platform.</h6></div>
+                  <div fxFlex.lt-md="100%" fxFlex.gt-sm="40%"> <img src="https://storage.googleapis.com/web-assets/quiz/trdkp.png" style="display: block;margin: auto;width:120px;"></div>
+                 
+                </div>                  <div fxFlex="100%"><h6 style="font-size: 11px;line-height: 1.2em;text-align: justify;padding-top:20px; padding-bottom:20px;">TheRightDoctors, a Google Launchpad Digital Health StartUp, is one of the leaders in production and dissemination of Medical Information. They bring Insights from the World's Best Medical Minds to digital audiences worldwide across leading digital and social media platforms. TheRightDoctors.com works closely with AOC as Digital Knowledge Partner for its scientific events. Contact us at cs@therightdoctors.com for your upcoming conference / CME / Workshop / Live Surgeries.</h6></div>
+                
+            </form>
+        </div>
+
+        <div *ngIf="!isLogin && !isRegister && question">
+ <!-- <div fxLayout.lt-sm="column" fxLayout="row" style="padding-bottom: 20px;" fxLayoutAlignGap.lt-sm="20px"> -->
+                 <!-- <div fxFlex.lt-sm="100%" fxFlex.gt-sm="40%">
+                   <img src="https://storage.googleapis.com/web-assets/aoc-mumbai/Dr.%20Sadanand%20Shetty.png" style="width:100%;">
+
+                 </div> -->
+                 <div fxFlex="100%" fxLayout="column">
+                   <div fxLayout="row" style="padding-top:20px;padding-bottom:10px;">
+                     <div fxFlex.gt-sm="15%" fxFlex.lt-sm="28%">
+                        <h6 style="font-size: 14px;font-weight: bold;color: black;">Session {{question['session_number']}} :</h6>
+                     </div>
+                     <div fxFlex.gt-sm="85%" fxFlex.lt-sm="72%">
+                        <h6 style="font-size: 14px;font-weight: bold;color: black;">{{question['session_name']}}</h6>
+                     </div>
+                   </div>
+                   <div fxLayout="row" style="padding-bottom: 10px;">
+                      <div fxFlex.gt-sm="15%" fxFlex.lt-sm="28%">
+                         <h6 style="font-size: 14px;font-weight: bold;color: black;">Topic :</h6>
+                      </div>
+                      <div fxFlex.gt-sm="85%" fxFlex.lt-sm="72%">
+                         <h6 style="font-size: 14px;font-weight: bold;color: black;">{{question['topic_name']}}</h6>
+                      </div>
+                    </div>
+                    <div fxLayout="row" style="padding-bottom: 20px;">
+                        <div fxFlex.gt-sm="15%" fxFlex.lt-sm="28%">
+                           <h6 style="font-size: 14px;font-weight: bold;color: black;">Speaker :</h6>
+                        </div>
+                        <div fxFlex.gt-sm="85%" fxFlex.lt-sm="72%">
+                           <h6 style="font-size: 14px;font-weight: bold;color: black;">{{question['doctor_name']}}</h6>
+                        </div>
+                      </div>
+                    <!-- <h6 style="font-size: 16px;font-weight: bold; padding-top: 20px;padding-bottom: 10px; color: black; text-align: center;">Session 4: "CASE BASED DISCUSSION" RHD AND PREGNANCY</h6>
+                    <h6 style="font-size: 16px;font-weight: bold; color: black;  text-align: center;  padding-bottom: 10px;">Topic: Anticoagulation Management</h6>
+                   
+                   <h6 style="font-size: 16px;font-weight: bold; text-align: center; color: black; padding-bottom: 20px;">Speaker: Dr. Sadanand Shetty</h6> -->
+                   <!-- <p>Anticoagulation Management</p> -->
+                 </div>
+              <!-- </div> -->
+                <form role="form" (ngSubmit)="polling()" #f="ngForm" novalidate>
+
+                      <h6 style="font-size: 16px; font-weight: bolder; padding-bottom: 10px;">{{question['question']}}</h6>
+
+                      <div>
+                        <mat-radio-group aria-label="Select an option" [(ngModel)]="model.o_id" name="o_id" *ngFor="let opt of option" required  fxLayout="column" style="vertical-align:top;">
+                                <mat-radio-button value="{{opt.o_id}}" style="align-items: flex-end;" value="1">{{opt.option}}</mat-radio-button>
+                              </mat-radio-group>
+                </div>
+
+
+
+                                             <div fxLayout="row" fxLayoutAlign="center" >
+                      <!-- <button mat-button type="button" [disabled]="!f.form.valid && !verified" (click)="check_verified()" style="background-color: #04306f;width:80px;color:#ffffff;margin:20px 0px;">SUBMIT</button> -->
+
+                      <button type="button" [disabled]="!f.form.valid && !verified" (click)="check_verified()" style="background-color: #04306f;border-color:#04306f;width:80px;height:30px;color:#ffffff;margin:0px 0px;">SUBMIT</button>
+                      </div>
+                    <!-- <div class="botton-section center-block">
+                        <button mat-raised-button color="primary" type="button" [disabled]="!f.form.valid && !verified" (click)="check_verified()">Vote</button>
+                        <!--<button mat-raised-button color="default" type="button">Hide Answers</button>-->
+                   <!--   </div> -->
+                </form>
+            <!-- <div class="col-md-12" *ngIf="p_voted">
+                <div class="progress-sec">
+                    <p style="font-size:12px">{{opt1}} <span style="float:right">{{(opp1)}}%</span></p>
+                    <p style="font-size:12px">{{opt2}} <span style="float:right">{{(opp2)}}%</span></p>
+                    <p style="font-size:12px">{{opt3}} <span style="float:right">{{(opp3)}}%</span></p>
+                </div>
+            </div> -->
+            <div fxLayout="column" fxLayoutAlign="center center"> 
+             
+                <div fxFlex.lt-md="100%"> <img src="https://storage.googleapis.com/web-assets/quiz/trdkp.png" style="display: block;margin: auto;width:120px;padding-bottom: 5px;"></div>
+                <div  fxFlex.lt-md="100%" class="footer"><h6 style="font-weight:normal;line-height: 1.25em;text-align: justify !important;padding-bottom:20px;">By submitting the answer you agree to paricipate in the Academy of Cardiology 'Question of the Talk'. You also agree to receive periodic newsletters and promotional materials from TheRightDoctors.com, a medical content publishing platform.</h6></div>
+      
+                
+                <!-- <div *ngIf="!isLogin && !isRegister && question" fxLayout.lt-md="column" fxLayout.gt-sm="row" fxLayoutAlign="center center"> 
+                    <div fxFlex.lt-md="100%" fxFlex.gt-sm="40%"> <img src="https://storage.googleapis.com/web-assets/quiz/trdkp.png" style="display: block;margin: auto;width:120px;" class="footer1"></div>
+                  <div  fxFlex.lt-md="100%" fxFlex.gt-sm="60%" class="footer"><h6 style="font-weight:normal;line-height: 1.25em;text-align: left !important;">By submitting the answer you agree to paricipate in the Academy of Cardiology Question of the Talk. You will be receiving questions and names of the first 10 participants who answered correctly on your mobile. This question will expires in 5Minutes.</h6></div>
+             
+            </div> -->
+           
+          </div>
+        </div>
+        <div *ngIf="!isLogin && !isRegister && !question">
+          
+            <h3 style="border-bottom: 2px;color: #04306f;line-height: 1.25em; text-align:center; padding:5px 0px 5px 0px;font-size:16px !important">Thank you for Registering!!! </h3>
+                
+            <h3 style="border-bottom: 2px;color: #04306f;line-height: 1.25em; text-align:center; padding:5px 0px 5px 0px;font-size:16px !important">Click the link below to follow the live updates. </h3>
+            <div fxLayout="row" fxLayoutAlign="center" >
+                <!-- <button mat-button type="button" [disabled]="!f.form.valid && !verified" (click)="check_verified()" style="background-color: #04306f;width:80px;color:#ffffff;margin:20px 0px;">SUBMIT</button> -->
+                <div fxLayout="row" fxLayoutGap="10px" style="padding-top:5px;">
+                    <div fxFlex="50%" fxLayoutAlign="start">
+                            <a [routerLink]="['/AOC-2020-Live-Updates']"><button mat-flat-button style="background-color: #04306f;border-color:#04306f;color:#ffffff;margin:0px 0px;">Live Updates</button></a>
+                    </div>
+
+                    <div fxFlex="50%" fxLayoutAlign="start">
+                            <a [routerLink]="['/live']"><button mat-flat-button style="background-color: #04306f;border-color:#04306f;color:#ffffff;margin:0px 0px;">Live Streaming</button></a>
+                        </div>
+                    </div>
+
+
+                </div>
+        <!-- <div class="col-md-12" *ngIf="p_voted">
+            <div class="progress-sec">
+                <p style="font-size:12px">{{opt1}} <span style="float:right">{{(opp1)}}%</span></p>
+                <p style="font-size:12px">{{opt2}} <span style="float:right">{{(opp2)}}%</span></p>
+                <p style="font-size:12px">{{opt3}} <span style="float:right">{{(opp3)}}%</span></p>
+            </div>
+        </div> -->
+        <div fxLayout="column" fxLayoutAlign="center center"> 
+             
+            <div fxFlex.lt-md="100%"> <img src="https://storage.googleapis.com/web-assets/quiz/trdkp.png" style="display: block;margin: auto;width:120px;padding-bottom: 5px;"></div>
+            <div  fxFlex.lt-md="100%" class="footer"><h6 style="font-weight:normal;line-height: 1.25em;text-align: justify !important;padding-bottom:20px;">By submitting the answer you agree to paricipate in the Academy of Cardiology 'Question of the Talk'. You also agree to receive periodic newsletters and promotional materials from TheRightDoctors.com, a medical content publishing platform.</h6></div>
+  
+            
+            <!-- <div *ngIf="!isLogin && !isRegister && question" fxLayout.lt-md="column" fxLayout.gt-sm="row" fxLayoutAlign="center center"> 
+                <div fxFlex.lt-md="100%" fxFlex.gt-sm="40%"> <img src="https://storage.googleapis.com/web-assets/quiz/trdkp.png" style="display: block;margin: auto;width:120px;" class="footer1"></div>
+              <div  fxFlex.lt-md="100%" fxFlex.gt-sm="60%" class="footer"><h6 style="font-weight:normal;line-height: 1.25em;text-align: left !important;">By submitting the answer you agree to paricipate in the Academy of Cardiology Question of the Talk. You will be receiving questions and names of the first 10 participants who answered correctly on your mobile. This question will expires in 5Minutes.</h6></div>
+         
+        </div> -->
+       
+      </div>
+    </div>
+
+
+        
+
+
+  
+  
+  </div>
+     
+</div>
+
+</div>
+</div>
+</body>
+
+
+
+
+
+    

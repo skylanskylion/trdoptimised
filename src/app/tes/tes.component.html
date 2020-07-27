@@ -1,0 +1,205 @@
+
+<app-nav></app-nav>
+<div class="container marg-top-sender">
+    <div fxLayout="row" fxLayout.lt-md="column">
+           <div fxFlex="20"></div>
+ <div fxFlex="60">
+  <h2 class="mail-sender">Mail Sender</h2>
+  <mat-card style="padding:10px;">
+  <form class="example-form">
+
+
+
+  <mat-form-field  class="example-full-width">
+      <mat-label>Select Event </mat-label>
+      <mat-select [(ngModel)]="event" id="as" name="as" #as='ngModel' required >
+        <mat-option *ngFor="let q of event_list" value={{q}}>
+          {{q}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  
+  <button mat-flat-button color="primary" (click)="get_cat(event)"> Go</button> 
+
+
+  <div  *ngIf="event">
+      <mat-form-field class="example-full-width">
+          <mat-label>Select Category</mat-label>
+          <mat-select [(ngModel)]="category" id="pass_out" name="pass_out" #pass_out='ngModel' required >
+            <mat-option *ngFor="let k of cat_list" value={{k}}>
+              {{k}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+         <button mat-flat-button color="primary"  (click)="get_doctors(category,event)"> Go</button>
+</div>
+
+
+ <div *ngIf="category">
+  <mat-form-field   class="example-full-width">
+    <mat-label>Select Doctor </mat-label>
+    <mat-select [(ngModel)]="docname" id="as2" name="as2" #as2='ngModel' required >
+      <div *ngIf="wccmm">
+          <mat-option *ngFor="let q1 of dl" value={{q1}}>
+              {{q1}}
+            </mat-option>
+      </div>
+      <div *ngIf="pp">
+          <mat-option *ngFor="let q1 of doc" value={{q1}}>
+              {{q1}}
+            </mat-option>
+      </div>
+    </mat-select>
+  </mat-form-field>
+
+<button mat-flat-button color="primary"  (click)="fun3()"> Go2</button>
+</div>
+
+<div  *ngIf="pp" >
+  <ng-container>
+    <div *ngFor="let datas of allarticles.data[category]; let i=index" style="margin-bottom:10px;" ngStyle.lt-sm="margin-bottom:0px;">
+      <div *ngIf="datas['event']==event" class="video-part">
+        <div *ngIf="datas.guest1==docname" class="video-part">
+            <img src="{{datas.image_url}}" style="width: 100%; margin-top: 10px;"/>
+             <mat-form-field class="example-full-width">
+              <input matInput  [(ngModel)]="doc_name" #comment="ngModel" name="comment"  placeholder="Change Name" ></mat-form-field>
+            <mat-form-field class="example-full-width">
+              <input matInput [(ngModel)]="events" #event="ngModel" name="event" placeholder=" Enter Event ">
+            </mat-form-field>
+        <!--  <button > Go2</button> -->
+          <mat-form-field class="example-full-width">
+            <input  matInput [(ngModel)]="datas.image_url" #image="ngModel" name="image" placeholder="Enter Image URL"   >
+          </mat-form-field>
+          <mat-form-field class="example-full-width">
+            <input matInput  placeholder="Enter Headline" #headline="ngModel" name="headline" [(ngModel)]="datas.headline" >
+          </mat-form-field>
+         <mat-form-field class="example-full-width">
+            <input  matInput placeholder="Enter Category " #category="ngModel" name="category" [(ngModel)]="datas.category" >
+          </mat-form-field>
+          <mat-form-field class="example-full-width">
+            <input  matInput placeholder="Enter Description " #description="ngModel" name="description" [(ngModel)]="datas.description" >
+          </mat-form-field>
+          <mat-form-field class="example-full-width">
+            <input  matInput   placeholder="Enter Email " name="email" [(ngModel)]="email" >
+          </mat-form-field>
+          <!-- <mat-form-field class="example-full-width">
+            <input  matInput placeholder="Enter Template " name="email" [(ngModel)]="template" >
+          </mat-form-field> -->
+         <button (click)="fun5(i)" mat-flat-button color="primary" > Send </button>
+        </div>
+
+        <!--        <a [routerLink]="['/articles'+'/'+data[i]['slug']+'/'+data[i]['doctor_articles_id']]">-->
+<!--          <div fxLayout="column" fxLayout.lt-sm="row" fxLayoutGap.lt-sm="10px">-->
+<!--            <div fxFlex.lt-sm="40">-->
+
+<!--              <img src="{{data[i].image_url}}" style="width: 100%; margin-top: 10px;"/>-->
+<!--            </div>-->
+<!--            <div fxFlex.lt-sm="60">-->
+<!--              <h5 class="post-head">{{data[i]['headline'] | titlecase}}</h5>-->
+<!--              <p>{{data[i]['doc_fname']}} {{data[i]['doc_lname']}}</p>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </a>-->
+      </div>
+    </div>
+  </ng-container>
+</div>
+
+<div *ngIf="wccmm1">
+    <ng-container>
+                <img src="{{doc_list.image_url}}" style="width: 100%; margin-top: 10px;"/>
+
+            <mat-form-field class="example-full-width">
+                  <input  matInput  [(ngModel)]="model.doc_name" #comment="ngModel" name="comment"  placeholder="Change Name" >
+              </mat-form-field>
+              
+              <mat-form-field class="example-full-width">
+                  <input matInput [(ngModel)]="model.head" #head="ngModel" name="heading" placeholder=" Enter Heading">
+              </mat-form-field>
+
+              <mat-form-field class="example-full-width">
+                <input  matInput [(ngModel)]="model.image_sp_ppt" #image_sp_ppt="ngModel" name="image_sp_ppt" placeholder="Enter Presentation image URL"   >
+              </mat-form-field>
+
+              <mat-form-field class="example-full-width">
+                <input  matInput [(ngModel)]="model.image_sp_pod" #image_sp_pod="ngModel" name="image_sp_pod" placeholder="Enter Scientific Session Podcase Image URL"   >
+              </mat-form-field>
+
+              <mat-form-field class="example-full-width">
+                <input  matInput [(ngModel)]="model.image_vid" #image_vid="ngModel" name="image_vid" placeholder="Enter Video Image URL"   >
+              </mat-form-field>
+
+              <mat-form-field class="example-full-width">
+                <input  matInput [(ngModel)]="model.image_sp_vid" #image_sp_vid="ngModel" name="image_sp_vid" placeholder="Enter Scientific Video Image URL"   >
+              </mat-form-field>
+
+              <mat-form-field class="example-full-width">
+                <input  matInput [(ngModel)]="model.image_pod" #image_pod="ngModel" name="image_pod" placeholder="Enter Podcast Image URL"   >
+              </mat-form-field>
+
+
+              <mat-form-field class="example-full-width">
+                <input  matInput [(ngModel)]="model.sp_ppt" #sp_ppt="ngModel" name="sp_ppt" placeholder="Enter Presentation URL"   >
+              </mat-form-field>
+
+              <mat-form-field class="example-full-width">
+                <input  matInput [(ngModel)]="model.sp_pod" #sp_pod="ngModel" name="sp_pod" placeholder="Enter Scientific Session Podcast  URL"   >
+              </mat-form-field>
+
+              <mat-form-field class="example-full-width">
+                <input  matInput [(ngModel)]="model.vid" #vid="ngModel" name="vid" placeholder="Enter Video URL"   >
+              </mat-form-field>
+
+              <mat-form-field class="example-full-width">
+                <input  matInput [(ngModel)]="model.sp_vid" #sp_vid="ngModel" name="sp_vid" placeholder="Enter Scientific Video URL"   >
+              </mat-form-field>
+
+              <mat-form-field class="example-full-width">
+                <input  matInput [(ngModel)]="model.pod" #pod="ngModel" name="pod" placeholder="Enter Podcast URL"   >
+              </mat-form-field>
+
+              <mat-form-field class="example-full-width">
+                <input  matInput [(ngModel)]="model.yurl" #pod="ngModel" name="yurl" placeholder="Enter Youtube URL"   >
+              </mat-form-field>
+
+              <mat-form-field class="example-full-width">
+                <input  matInput [(ngModel)]="model.yimage" #pod="ngModel" name="yimage" placeholder="Enter Youtube Image URL"   >
+              </mat-form-field>
+
+              <mat-form-field class="example-full-width">
+                <input  matInput [(ngModel)]="model.y_h" #pod="ngModel" name="y_h" placeholder="Enter Youtube Headline URL"   >
+              </mat-form-field>
+
+              <mat-form-field class="example-full-width">
+                <input  matInput   placeholder="Enter Email " name="email" [(ngModel)]="email" >
+              </mat-form-field>
+
+              <!-- <mat-form-field class="example-full-width">
+                <input  matInput placeholder="Enter Template " name="email" [(ngModel)]="template" >
+              </mat-form-field> -->
+             <button (click)="send_email()" mat-flat-button color="primary" > Send </button>
+            
+    
+            <!--        <a [routerLink]="['/articles'+'/'+data[i]['slug']+'/'+data[i]['doctor_articles_id']]">-->
+    <!--          <div fxLayout="column" fxLayout.lt-sm="row" fxLayoutGap.lt-sm="10px">-->
+    <!--            <div fxFlex.lt-sm="40">-->
+    
+    <!--              <img src="{{data[i].image_url}}" style="width: 100%; margin-top: 10px;"/>-->
+    <!--            </div>-->
+    <!--            <div fxFlex.lt-sm="60">-->
+    <!--              <h5 class="post-head">{{data[i]['headline'] | titlecase}}</h5>-->
+    <!--              <p>{{data[i]['doc_fname']}} {{data[i]['doc_lname']}}</p>-->
+    <!--            </div>-->
+    <!--          </div>-->
+    <!--        </a>-->
+          
+      </ng-container>
+</div>
+
+</form>
+</mat-card>
+</div>
+<div fxFlex="20"></div>
+</div>
+</div>
+<app-footer></app-footer>

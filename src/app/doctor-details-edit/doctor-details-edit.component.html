@@ -1,0 +1,402 @@
+<!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+&lt;!&ndash; Required CSS &ndash;&gt;
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.9/css/jquery.dataTables.min.css">
+<style>
+  div.hidden {
+    visibility: hidden
+  }
+</style>-->
+<div class="container">
+  <h2>Edit Doctor Details</h2>
+  <div class="panel panel-default">
+    <!--<mat-accordion>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Edit Item
+          </mat-panel-title>
+        </mat-expansion-panel-header>-->
+    <div id="collapseCreate" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+      <div class="panel-body">
+
+        <!--  <form class="col-sm-12" (ngSubmit)="edit_form(e_slug)">
+            <div fxLayout="row" fxLayout.lt-sm="column">
+              <div fxFlex="83"><mat-label fxFlex="25%" class="control-label col-sm-2" for="e_slug">Enter article slug:</mat-label></div>
+              <input matInput placeholder="enter slug" name="e_slug" [(ngModel)]="model.e_slug" #e_slug="ngModel" >
+            </div>
+            <button mat-raised-button color="primary" type="submit" id="btnArticleSearch">Search</button>
+
+          </form>
+    -->
+        <br><br>
+
+        <form class="form-horizontal" role="form" (submit)="update_dotor_details_edit()">
+          <div style="background-color: #ddd">
+            <div class="form-group">
+              <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap="10px">
+                <div fxFlex="17">
+                  <mat-label class="control-label col-sm-2" for="doctor_name">Doctor Name</mat-label>
+                </div>
+                <div fxFlex="83">
+                  <input matInput placeholder="Enter Doctor Name" [value]="model.doctor_name" name="doctor_name"
+                         [(ngModel)]="model.doctor_name" #doctor_name="ngModel">
+                </div>
+              </div>
+            </div>
+
+
+            <div class="form-group">
+              <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap="10px">
+                <div fxFlex="17">
+                  <mat-label class="control-label col-sm-2" for="designation">Designation</mat-label>
+                </div>
+                <div fxFlex="83">
+                  <input matInput placeholder="Enter Doctor Designation" [value]="model.designation"
+                         #designation="ngModel" name="designation" [(ngModel)]="model.designation">
+                </div>
+              </div>
+            </div>
+
+
+            <div class="form-group">
+              <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap="10px">
+                <div fxFlex="17">
+                  <mat-label class="control-label col-sm-2" for="speciality"> Doctor Speciality:</mat-label>
+                </div>
+                <div fxFlex="83">
+                  <textarea matInput placeholder="Enter speciality" [value]="model.speciality" name="doctor_speciality"
+                            [(ngModel)]="model.speciality" #speciality="ngModel"></textarea>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="form-group">
+              <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap="10px">
+                <div fxFlex="17">
+                  <mat-label class="control-label col-sm-2" for="hospital">Hospital Name</mat-label>
+                </div>
+                <div fxFlex="83">
+                  <input matInput placeholder="Enter Hospital Name" [value]="model.hospital" name="hospital_name"
+                         [(ngModel)]="model.hospital" #hospital="ngModel">
+                </div>
+              </div>
+            </div>
+
+
+            <div class="form-group">
+              <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap="10px">
+                <div fxFlex="17">
+                  <mat-label class="control-label col-sm-2" for="number">Mobile no</mat-label>
+                </div>
+                <div fxFlex="83">
+                  <input matInput placeholder="Enter doctor number" [value]="model.number" name="mobile_no"
+                         [(ngModel)]="model.number" #number="ngModel">
+                </div>
+              </div>
+            </div>
+
+
+            <div class="form-group">
+              <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap="10px">
+                <div fxFlex="17">
+                  <mat-label class="control-label col-sm-2" for="land_line">Landline no:</mat-label>
+                </div>
+                <div fxFlex="83">
+                  <input matInput [value]="model.land_line" placeholder="Enter doctor number" name="landline_no"
+                         [(ngModel)]="model.landline_no" #landline_no="ngModel">
+                </div>
+              </div>
+            </div>
+
+
+            <div class="form-group">
+              <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap="10px">
+                <div fxFlex="17">
+                  <mat-label class="control-label col-sm-2" for="email">Email</mat-label>
+                </div>
+                <div fxFlex="83">
+              <textarea matInput placeholder="Enter Doctor Email" [value]="model.email" name="email"
+                        [(ngModel)]="model.email" #email="ngModel">
+
+              </textarea>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap="10px">
+                <div fxFlex="17">
+                  <mat-label class="control-label col-sm-2" for="img_url">Small Image URL</mat-label>
+                </div>
+                <div fxFlex="83">
+                  <textarea matInput id="img_url" [value]="model.img_url" placeholder="Enter small image url"
+                            name="small_image_url" [(ngModel)]="model.img_url" #img_url="ngModel"></textarea>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap="10px">
+                <div fxFlex="17">
+                  <mat-label class="control-label col-sm-2" for="large_img_url">Large Image URL</mat-label>
+                </div>
+                <div fxFlex="83">
+              <textarea matInput placeholder="Enter largeimage url" [value]="model.large_img_url" name="large_image_url"
+                        [(ngModel)]="model.large_image_url" #large_image_url="ngModel">
+              </textarea>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <div class="form-group">
+            <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap="10px">
+              <div fxFlex="17">
+                <mat-label class="control-label col-sm-2" for="college">Name of college</mat-label>
+              </div>
+              <div fxFlex="83">
+            <textarea matInput placeholder="Enter College" [value]="model.college" name="name_of_college"
+                      [(ngModel)]="model.name_of_college" #name_of_college="ngModel">
+            </textarea>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap="10px">
+              <div fxFlex="17">
+                <mat-label class="control-label col-sm-2" for="degree_yr">Year of Acquiring Speciality Degree
+                </mat-label>
+              </div>
+              <div fxFlex="83">
+            <textarea matInput placeholder="Enter Year of Acquiring Speciality" [value]="model.degree_yr"
+                      name="year_of_acquiring_speciality_degree" [(ngModel)]="model.degree_yr" #degree_yr="ngModel">
+            </textarea>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap="10px">
+              <div fxFlex="17">
+                <mat-label class="control-label col-sm-2" for="designation_yr">Designated Year</mat-label>
+              </div>
+              <div fxFlex="83">
+                <input matInput placeholder="Enter Doctor Designated year" [value]="model.designation_yr"
+                       id="designation_yr" name="designated_year" [(ngModel)]="model.designated_year"
+                       #designation_yr="ngModel">
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap="10px">
+              <div fxFlex="17">
+                <mat-label class="control-label col-sm-2" for="number1">Mobile no. 2</mat-label>
+              </div>
+              <div fxFlex="83">
+                <input matInput placeholder="Enter doctor Mobile number2" [value]="model.number1" name="number1"
+                       [(ngModel)]="model.number1" #number1="ngModel">
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap="10px">
+              <div fxFlex="17">
+                <mat-label class="control-label col-sm-2" for="land_line1">Landline no. 2</mat-label>
+              </div>
+              <div fxFlex="83">
+                <input matInput placeholder="Enter doctor Landline number2" [value]="model.land_line1" name="land_line1"
+                       [(ngModel)]="model.land_line1" #land_line1="ngModel">
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap="10px">
+              <div fxFlex="17">
+                <mat-label class="control-label col-sm-2" for="city">City</mat-label>
+              </div>
+              <div fxFlex="83">
+                <input matInput placeholder="Enter City" name="city" [(ngModel)]="model.city" #city="ngModel"
+                       [value]="model.city">
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap="10px">
+              <div fxFlex="17">
+                <mat-label class="control-label col-sm-2" for="country">Country</mat-label>
+              </div>
+              <div fxFlex="83">
+                <input matInput placeholder="Enter Country" name="country" [(ngModel)]="model.country"
+                       #country="ngModel" [value]="model.country">
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap="10px">
+              <div fxFlex="17">
+                <mat-label class="control-label col-sm-2" for="contact_source">Contact Source</mat-label>
+              </div>
+              <div fxFlex="83">
+                <input matInput placeholder="Enter Contact Source" [value]="model.contact_source" name="contact_source"
+                       [(ngModel)]="model.contact_source" #contact_source="ngModel">
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap="10px">
+              <div fxFlex="17">
+                <mat-label class="control-label col-sm-2" for="dept">Department</mat-label>
+              </div>
+              <div fxFlex="83">
+                <input matInput placeholder="Enter Department" [value]="model.dept" id="dept" name="department"
+                       [(ngModel)]="model.dept" #dept="ngModel">
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap="10px">
+              <div fxFlex="17">
+                <mat-label class="control-label col-sm-2" for="status">Status</mat-label>
+              </div>
+              <div fxFlex="83">
+                <input matInput placeholder="Enter Status" class="form-control" [value]="model.status" name="status"
+                       [(ngModel)]="model.status" #status="ngModel">
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap="10px">
+              <div fxFlex="17">
+                <mat-label class="control-label col-sm-2" for="business">Business Intelligence</mat-label>
+              </div>
+              <div fxFlex="83">
+                <input matInput placeholder="Enter Business Intelligence" [value]="model.business" name="business"
+                       [(ngModel)]="model.business" #business="ngModel">
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap="10px">
+              <div fxFlex="17">
+                <mat-label class="control-label col-sm-2" for="dob">Date of birth</mat-label>
+              </div>
+              <div fxFlex="83">
+                <input matInput placeholder="Enter Date of birth" [value]="model.dob" name="date_of_birth"
+                       [(ngModel)]="model.dob" #dob="ngModel">
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap="10px">
+              <div fxFlex="17">
+                <mat-label class="control-label col-sm-2" for="marriage">Marriage Anniversary</mat-label>
+              </div>
+              <div fxFlex="83">
+                <input matInput placeholder="Enter Marriage Anniversary" [value]="model.marriage"
+                       name="marriage_anniversary" [(ngModel)]="model.marriage" #marriage="ngModel">
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap="10px">
+              <div fxFlex="17">
+                <mat-label class="control-label col-sm-2" for="doc_personal_website">Doctor Personal Website</mat-label>
+              </div>
+              <div fxFlex="83">
+                <textarea matInput placeholder="doctor personal website" [value]="model.doc_personal_website"
+                          name="doctor_personal_website" [(ngModel)]="model.doc_personal_website"
+                          #doc_personal_website="ngModel"></textarea>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap="10px">
+              <div fxFlex="17">
+                <mat-label class="control-label col-sm-2" for="doc_official_website">Doctor Official Website</mat-label>
+              </div>
+              <div fxFlex="83">
+            <textarea matInput placeholder="Enter doctor official website" name="doctor_official_website"
+                      [(ngModel)]="model.doc_official_website" #doc_official_website="ngModel"
+                      [value]="model.doc_official_website">
+
+            </textarea>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap="10px">
+              <div fxFlex="17">
+                <mat-label class="control-label col-sm-2" for="email1">Email 2</mat-label>
+              </div>
+              <div fxFlex="83">
+                <input matInput placeholder="Enter email 2" [value]="model.email1" name="email2"
+                       [(ngModel)]="model.email1" #email1="ngModel">
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap="10px">
+              <div fxFlex="17">
+                <mat-label class="control-label col-sm-2" for="assistant">Assistant Name</mat-label>
+              </div>
+              <div fxFlex="83">
+                <input matInput placeholder="Enter Assistant name" [value]="model.assistant" name="assistant name"
+                       [(ngModel)]="model.assistant" #assistant="ngModel">
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap="10px">
+              <div fxFlex="17">
+                <mat-label class="control-label col-sm-2" for="assistant_num">Assistant Contact Number</mat-label>
+              </div>
+              <div fxFlex="83">
+                <input matInput placeholder="Enter Assistant Contact Number" [value]="model.assistant_num1"
+                       name="assistant_contact_number" [(ngModel)]="model.assistant_num1" #assistant_num1="ngModel">
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap="10px">
+              <div fxFlex="17">
+                <mat-label class="control-label col-sm-2" for="assistant_num1">Assistant mobile Number</mat-label>
+              </div>
+              <div fxFlex="83">
+                <input matInput placeholder="Enter Assistant mobile Number" [value]="model.assistant_num"
+                       name="assistant_mobile_number" [(ngModel)]="model.assistant_num" #assistant_num="ngModel">
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap="10px">
+              <div class="col-sm-offset-2 col-sm-10" fxFlexOffset="20" fxFlex="80">
+                <button mat-raised-button color="primary" id="btnUpdateArticle">Update</button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <!--</mat-expansion-panel>
+  </mat-accordion>-->
+  </div>
+</div>

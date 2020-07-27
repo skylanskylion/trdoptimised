@@ -1,0 +1,445 @@
+<app-nav></app-nav>
+<style>.panel_one {
+  /* height: 260px ;*/
+}
+/*@media (max-width:599px){
+  .panel_one {
+    height: auto!important;
+  }*/
+@media (max-width:599px) {
+  .panel_one {
+    /*height: 60px !important;*/
+  }
+}
+
+</style>
+
+<div *ngIf="event == 'rssdi-ahmedabad-2018'">
+  <img style="width: 100%;" src="https://storage.googleapis.com/web-assets/images/RSSIDI/rssdi-banner-image.jpg">
+</div>
+
+
+<div *ngIf="event == 'wccicc-2017'">
+  <img style="width: 100%;" src="../../assets/new-home-page/images/WCCICC%20Page%201234456.jpg">
+</div>
+
+<div *ngIf="event == 'dr-ulhas-pandurangi-sixth-live-cardiac-electrophysiology-workshop-madras-medical-mission-2018'">
+  <img style="width: 100%;" src="/assets/img/sixth-live-cardiac-electrophysiology-main.jpg">
+</div>
+
+<div *ngIf="event == 'dr-ulhas-pandurangi-fifteenth-annual-electrocardiology-course-basics-and-beyond-madras-medical-mission-2018'">
+  <img style="width: 100%;" src="/assets/img/ECG-Large.jpg">
+</div>
+
+<div *ngIf="event == 'stemi-india-lucknow-2018'">
+  <img style="width: 100%;"
+       src="../../assets/new-home-page/images/stemi-india-lucknow-2018.jpg">
+</div>
+<div *ngIf="event == 'wccpci-2016'">
+  <img style="width: 100%;" src="/assets/new-home-page/single/images/1435X432.jpg">
+</div>
+<div *ngIf="event == 'csikochi-2016'">
+  <img style="width: 100%;" src="/assets/new-home-page/single/images/Page 10.jpg">
+</div>
+<div *ngIf="event == 'csinic-2016'">
+  <img style="width: 100%;" src="/assets/new-home-page/single/images/CSI-NIC.jpg">
+</div>
+<div *ngIf="event == 'c3'">
+  <img style="width: 100%;" src="/assets/new-home-page/single/images/123.jpg">
+</div>
+<div *ngIf="event == 'ihj-2015'">
+  <img style="width: 100%;" src="/assets/new-home-page/single/images/dr.sundeep_mishra.jpg">
+</div>
+<div *ngIf="event == 'apvic'">
+  <img style="width: 100%;" src="assets/new-assets/styles/images/APVIC Thumbnail new Changes.jpg">
+</div>
+<section class="back2">
+  <section class="container">
+
+
+
+    <div class="row">
+      <div class="col-md-12" *ngIf="a!=1">
+        <h2 class="main_heading mrg_btm">{{head}}: {{new_event}} <span class="hdg_line"></span></h2>
+      </div>
+    </div>
+
+    <div class="">
+      <div class="row">
+        <!--@foreach ($in_conversation as $article)-->
+      
+        <div class="col-md-3 col-sm-12 col-xs-12 mrg_btm" *ngFor="let art of article">
+          <div class="panel_one panel_light_grey back_white_m brder_top border_m">
+            <div class="row no_mrg_m">
+              <a class="testslugs testvideo" [routerLink]="['/'+ art['event']+'/'+art['category']+'/'+ art['slug'] ]">
+                <div class="col-md-12 col-sm-4 col-xs-5 pull_right_m" ngStyle.lt-md="padding-right:0px;"><img src="{{ art['image_url'] }}"
+                                                                                                              alt="{{ art['image_alt'] }}"/></div>
+                <div class="col-md-12 col-sm-8 col-xs-7 pull_left_m pdg_no_rt_m" ngStyle.lt-md="padding-left:0px;">
+                  <div class="pdg1 pdgrt">
+                    <h4 class="hd4 hd4_m dis1">{{ art['headline'] }}</h4>
+                    <p class="color_orange color_base_m dis1"><b>{{art['sub_headline'] }}</b></p>
+
+                    <h4 class="hd4_mobile hd4_m dis">{{ art['headline']}}</h4>
+                    <p class="hd4_mobile color_orange1  dis"><b>{{art['sub_headline']}}</b></p>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+
+  </section>
+</section>
+
+<!--
+<section class="back2" *ngIf="event==='aicog-2018'">
+  <section class="container">
+    <div>
+      <h2 class="main_heading" *ngIf="a===1">aicog-2018: Images<span class="hdg_line"></span></h2>
+    </div>
+    <mat-grid-list cols="4"   fxShow="true" fxShow.sm="false" fxShow.xs="false" class="gap-part" style="padding-bottom: 0px;">
+      <ng-template ngFor let-item [ngForOf]="createRangeImages(130)" let-i="index">
+        <mat-grid-tile fxShow="true" fxShow.sm="false" fxShow.xs="false" style="padding-top:0px;" >
+          <div class="tips_img mrg2">
+            <a [routerLink]="['/synapse/aicog/'+i]">
+              <img src="https://storage.googleapis.com/web-assets/images/AICOG2018/Event-images/Photos/({{i}}).JPG" height="150px"/>
+            </a>
+          </div>
+        </mat-grid-tile>
+      </ng-template>
+    </mat-grid-list>
+    <ng-template ngFor let-item [ngForOf]="createRangeImages(130)" let-i="index">
+      <div class="tips_img mrg2" fxShow="false" fxShow.xs="true"  fxShow.lt-md="true">
+        <a [routerLink]="['/synapse/aicog/'+i]">
+          <img src="https://storage.googleapis.com/web-assets/images/AICOG2018/Event-images/Photos/({{i}}).JPG"/>
+        </a>
+      </div>
+    </ng-template>
+  </section>
+</section>
+
+&lt;!&ndash;one ore thing//&ndash;&gt;
+
+
+<section class="back2" *ngIf="event==='c3'">
+  <section class="container">
+    <div>
+      <h2 class="main_heading">Images<span class="hdg_line"></span></h2>
+    </div>
+    <mat-grid-list cols="4"   fxShow="true" fxShow.sm="false" fxShow.xs="false" class="gap-part" style="padding-bottom: 0px;">
+      <ng-template ngFor let-item [ngForOf]="createRangeImages(95)" let-i="index">
+        <mat-grid-tile fxShow="true" fxShow.sm="false" fxShow.xs="false" style="padding-top:0px;" >
+          <div class="tips_img mrg2">
+            <a [routerLink]="['/synapse/c3/'+i]">
+              <img src="https://storage.googleapis.com/web-assets/images/c3_conference/Full_Gallery/Friday_01/{{i}}/{{i}}-medium.jpg" height="150px"/>
+            </a>
+          </div>
+        </mat-grid-tile>
+      </ng-template>
+      <ng-template ngFor let-item [ngForOf]="createRangeImages1(83)" let-i="index">
+        <mat-grid-tile fxShow="true" fxShow.sm="false" fxShow.xs="false" style="padding-top:0px;" >
+          <div class="tips_img mrg2">
+            <a [routerLink]="['/synapse/gallery1/c3/'+i]">
+              <img src="https://storage.googleapis.com/web-assets/images/c3_conference/Gallery/{{i}}/{{i}}-medium.jpg" height="150px"/>
+            </a>
+          </div>
+        </mat-grid-tile>
+      </ng-template>
+      <ng-template ngFor let-item [ngForOf]="createRangeImages(32)" let-i="index">
+        <mat-grid-tile fxShow="true" fxShow.sm="false" fxShow.xs="false" style="padding-top:0px;" >
+          <div class="tips_img mrg2">
+            <a [routerLink]="['/synapse/gallery2/c3/'+i]">
+              <img src="https://storage.googleapis.com/web-assets/images/c3_conference/Gallery/{{i}}/{{i}}-medium.jpg"  height="150px"/>
+            </a>
+          </div>
+        </mat-grid-tile>
+      </ng-template>
+      <ng-template ngFor let-item [ngForOf]="createRangeImages(241)" let-i="index">
+        <mat-grid-tile fxShow="true" fxShow.sm="false" fxShow.xs="false" style="padding-top:0px;" >
+          <div class="tips_img mrg2">
+            <a [routerLink]="['/synapse/gallery3/c3/'+i]">
+              <img src="https://storage.googleapis.com/web-assets/images/c3_conference/Full_Gallery/Wednesday_29/{{i}}/{{i}}-medium.jpg"  height="150px"/>
+            </a>
+          </div>
+        </mat-grid-tile>
+      </ng-template>
+      <ng-template ngFor let-item [ngForOf]="createRangeImages2(106)" let-i="index">
+        <mat-grid-tile fxShow="true" fxShow.sm="false" fxShow.xs="false" style="padding-top:0px;" >
+          <div class="tips_img mrg2">
+            <a [routerLink]="['/synapse/gallery4/c3/'+i]">
+              <img src="https://storage.googleapis.com/web-assets/images/c3_conference/Gallery/photos/{{i}}/{{i}}-medium.jpg"   height="150px"/>
+            </a>
+          </div>
+        </mat-grid-tile>
+      </ng-template>
+      <ng-template ngFor let-item [ngForOf]="createRangeImages(42)" let-i="index">
+        <mat-grid-tile fxShow="true" fxShow.sm="false" fxShow.xs="false" style="padding-top:0px;" >
+          <div class="tips_img mrg2">
+            <a [routerLink]="['/synapse/gallery5/c3/'+i]">
+              <img src="https://storage.googleapis.com/web-assets/images/c3_conference/Gallery/{{i}}/{{i}}-medium.jpg"   height="150px"/>
+            </a>
+          </div>
+        </mat-grid-tile>
+      </ng-template>
+      <ng-template ngFor let-item [ngForOf]="createRangeImages3(160)" let-i="index">
+        <mat-grid-tile fxShow="true" fxShow.sm="false" fxShow.xs="false" style="padding-top:0px;" >
+          <div class="tips_img mrg2">
+            <a [routerLink]="['/synapse/gallery6/c3/'+i]">
+              <img src="https://storage.googleapis.com/web-assets/images/c3_conference/Gallery/{{i}}/{{i}}-medium.jpg"   height="150px"/>
+            </a>
+          </div>
+        </mat-grid-tile>
+      </ng-template>
+
+    </mat-grid-list>
+
+    <ng-template ngFor let-item [ngForOf]="createRangeImages(95)" let-i="index">
+      <div class="tips_img mrg2" fxShow="false" fxShow.xs="true"  fxShow.lt-md="true">
+        <a [routerLink]="['/synapse/c3/'+i]">
+          <img src="https://storage.googleapis.com/web-assets/images/c3_conference/Full_Gallery/Friday_01/{{i}}/{{i}}-medium.jpg"/>
+        </a>
+      </div>
+    </ng-template>
+    <ng-template ngFor let-item [ngForOf]="createRangeImages1(83)" let-i="index">
+      <div class="tips_img mrg2" fxShow="false" fxShow.xs="true"  fxShow.lt-md="true">
+        <a [routerLink]="['/synapse/c3/'+i]">
+          <img src="https://storage.googleapis.com/web-assets/images/c3_conference/Gallery/{{i}}/{{i}}-medium.jpg"/>
+        </a>
+      </div>
+    </ng-template>
+    <ng-template ngFor let-item [ngForOf]="createRangeImages(32)" let-i="index">
+      <div class="tips_img mrg2" fxShow="false" fxShow.xs="true"  fxShow.lt-md="true">
+        <a [routerLink]="['/synapse/c3/'+i]">
+          <img src="https://storage.googleapis.com/web-assets/images/c3_conference/Gallery/{{i}}/{{i}}-medium.jpg"/>
+        </a>
+      </div>
+    </ng-template>
+    <ng-template ngFor let-item [ngForOf]="createRangeImages(241)" let-i="index">
+      <div class="tips_img mrg2" fxShow="false" fxShow.xs="true"  fxShow.lt-md="true">
+        <a [routerLink]="['/synapse/c3/'+i]">
+          <img src="https://storage.googleapis.com/web-assets/images/c3_conference/Full_Gallery/Wednesday_29/{{i}}/{{i}}-medium.jpg"/>
+        </a>
+      </div>
+    </ng-template>
+    <ng-template ngFor let-item [ngForOf]="createRangeImages2(106)" let-i="index">
+      <div class="tips_img mrg2" fxShow="false" fxShow.xs="true"  fxShow.lt-md="true">
+        <a [routerLink]="['/synapse/c3/'+i]">
+          <img src="https://storage.googleapis.com/web-assets/images/c3_conference/Gallery/photos/{{i}}/{{i}}-medium.jpg"/>
+        </a>
+      </div>
+    </ng-template>
+    <ng-template ngFor let-item [ngForOf]="createRangeImages(42)" let-i="index">
+      <div class="tips_img mrg2" fxShow="false" fxShow.xs="true"  fxShow.lt-md="true">
+        <a [routerLink]="['/synapse/c3/'+i]">
+          <img src="https://storage.googleapis.com/web-assets/images/c3_conference/Gallery/{{i}}/{{i}}-medium.jpg" />
+        </a>
+      </div>
+    </ng-template>
+    <ng-template ngFor let-item [ngForOf]="createRangeImages3(160)" let-i="index">
+      <div class="tips_img mrg2" fxShow="false" fxShow.xs="true"  fxShow.lt-md="true">
+        <a [routerLink]="['/synapse/c3/'+i]">
+          <img src="https://storage.googleapis.com/web-assets/images/c3_conference/Gallery/{{i}}/{{i}}-medium.jpg"  />
+        </a>
+      </div>
+    </ng-template>
+  </section>
+</section>
+
+<section class="back2" *ngIf="event==='csi-2017'">
+  <section class="container">
+    <div>
+      <h2 class="main_heading">Images<span class="hdg_line"></span></h2>
+    </div>
+    <mat-grid-list cols="4"   fxShow="true" fxShow.sm="false" fxShow.xs="false" class="gap-part" style="padding-bottom: 0px;">
+      <ng-template ngFor let-item [ngForOf]="createRangeImages(38)" let-i="index">
+        <mat-grid-tile fxShow="true" fxShow.sm="false" fxShow.xs="false" style="padding-top:0px;" >
+          <div class="tips_img mrg2">
+            <a [routerLink]="['/synapse/csi-2017/'+i]">
+              <img src="https://storage.googleapis.com/web-assets/images/EMCURE_CSICON2017/Kolkata/({{i}})/({{i}})-large.jpg"/>
+            </a>
+          </div>
+        </mat-grid-tile>
+      </ng-template>
+    </mat-grid-list>
+    <ng-template ngFor let-item [ngForOf]="createRangeImages(38)" let-i="index">
+      <div class="tips_img mrg2" fxShow="false" fxShow.xs="true"  fxShow.lt-md="true">
+        <a [routerLink]="['/synapse/csi-2017/'+i]">
+          <img src="https://storage.googleapis.com/web-assets/images/EMCURE_CSICON2017/Kolkata/({{i}})/({{i}})-large.jpg"/>
+        </a>
+      </div>
+    </ng-template>
+
+  </section>
+</section>
+
+<section class="back2" *ngIf="event==='cardiac-prevent-2015'">
+  <section class="container">
+    <div>
+      <h2 class="main_heading">Images<span class="hdg_line"></span></h2>
+    </div>
+    <mat-grid-list cols="4"   fxShow="true" fxShow.sm="false" fxShow.xs="false" class="gap-part" style="padding-bottom: 0px;">
+      <ng-template ngFor let-item [ngForOf]="createRangeImagescardiac(5099)" let-i="index">
+        &lt;!&ndash; <div *ngFor="let item of createRangeImagescardiac(5); let currentElementIndex=('index+1')">&ndash;&gt;
+        <mat-grid-tile fxShow="true" fxShow.sm="false" fxShow.xs="false" style="padding-top:0px;" >
+          <div class="tips_img mrg2">
+            <a [routerLink]="['/synapse/cardiac-prevent-2015/'+[i+4936]]">
+              <img src="https://storage.googleapis.com/web-assets/images/events/csicardiacprevent2015/gallery/day-3/GS0A{{i+4936}}/GS0A{{i+4936}}-thumb.jpg"/>
+            </a>
+          </div>&lt;!&ndash; <a [routerLink]="['/synapse/cardiac-prevent-2015/'+[i+4]]">GS0A{{i+4}}</a>&ndash;&gt;
+        </mat-grid-tile>
+        &lt;!&ndash; </div>&ndash;&gt;
+      </ng-template>
+    </mat-grid-list>
+    <mat-grid-list cols="4"   fxShow="true" fxShow.sm="false" fxShow.xs="false" class="gap-part" style="padding-bottom: 0px;">
+      <ng-template ngFor let-item [ngForOf]="createRangeImagescardiac(5079)" let-i="index">
+        &lt;!&ndash; <div *ngFor="let item of createRangeImagescardiac(5); let currentElementIndex=('index+1')">&ndash;&gt;
+        <mat-grid-tile fxShow="true" fxShow.sm="false" fxShow.xs="false" style="padding-top:0px;" >
+          <div class="tips_img mrg2">
+            <a [routerLink]="['/synapse/gallery1/'+[i+3729]]">
+              <img src="https://storage.googleapis.com/web-assets/images/events/csicardiacprevent2015/gallery/all/GS0A{{i+3729}}/GS0A{{i+3729}}-thumb.jpg"/>
+            </a>
+          </div>&lt;!&ndash; <a [routerLink]="['/synapse/cardiac-prevent-2015/'+[i+4]]">GS0A{{i+4}}</a>&ndash;&gt;
+        </mat-grid-tile>
+        &lt;!&ndash; </div>&ndash;&gt;
+      </ng-template>
+    </mat-grid-list>
+
+    <ng-template ngFor let-item [ngForOf]="createRangeImagescardiac(4950)" let-i="index+4936">
+      <div class="tips_img mrg2" fxShow="false" fxShow.xs="true"  fxShow.lt-md="true">
+        <a [routerLink]="['/synapse/cardiac-prevent-2015/'+[i+4936]]">
+          <img src=src="https://storage.googleapis.com/web-assets/images/events/csicardiacprevent2015/gallery/day-3/GS0A{{i+4936}}/GS0A{{i+4936}}-thumb.jpg"/>
+        </a>
+      </div>
+    </ng-template>
+    <ng-template ngFor let-item [ngForOf]="createRangeImagescardiac(5079)" let-i="index+4936">
+      <div class="tips_img mrg2" fxShow="false" fxShow.xs="true"  fxShow.lt-md="true">
+        <a [routerLink]="['/synapse/gallery1/'+[i+3729]]">
+          <img src="https://storage.googleapis.com/web-assets/images/events/csicardiacprevent2015/gallery/all/GS0A{{i+3729}}/GS0A{{i+3729}}-thumb.jpg"/>
+        </a>
+      </div>
+    </ng-template>
+  </section>
+</section>
+
+
+<section class="back2" *ngIf="event==='csinic-2016'">
+  <section class="container">
+    <div>
+      <h2 class="main_heading">Images<span class="hdg_line"></span></h2>
+    </div>
+    <mat-grid-list cols="4"   fxShow="true" fxShow.sm="false" fxShow.xs="false" class="gap-part" style="padding-bottom: 0px;">
+      <ng-template ngFor let-item [ngForOf]="createRangeImagescsicon1(20)" let-i="index">
+        <mat-grid-tile fxShow="true" fxShow.sm="false" fxShow.xs="false" style="padding-top:0px;" >
+          <div class="tips_img mrg2">
+            <a [routerLink]="['/synapse/csinic-2016/'+i]">
+              <img src="https://storage.googleapis.com/web-assets/images/CSI-NIC_Images/Firsttenrowsphotos/{{i}}/{{i}}-medium.jpg" height="150px"/>
+            </a>
+          </div>
+        </mat-grid-tile>
+      </ng-template>
+    </mat-grid-list>
+    <mat-grid-list cols="4"   fxShow="true" fxShow.sm="false" fxShow.xs="false" class="gap-part" style="padding-bottom: 0px;">
+      <ng-template ngFor let-item [ngForOf]="createRangeImagescsicon2(39)" let-i="index">
+        <mat-grid-tile fxShow="true" fxShow.sm="false" fxShow.xs="false" style="padding-top:0px;" >
+          <div class="tips_img mrg2">
+            <a [routerLink]="['/synapse/gallery1/csinic-2016/'+[i+36]]">
+              <img src="https://storage.googleapis.com/web-assets/images/CSI-NIC_Images/Firsttenrowsphotos/{{i+36}}/{{i+36}}-medium.jpg" height="150px"/>
+            </a>
+          </div>
+        </mat-grid-tile>
+      </ng-template>
+    </mat-grid-list>
+    <mat-grid-list cols="4"   fxShow="true" fxShow.sm="false" fxShow.xs="false" class="gap-part" style="padding-bottom: 0px;">
+      <ng-template ngFor let-item [ngForOf]="createRangeImagescsicon3(16)" let-i="index">
+        <mat-grid-tile fxShow="true" fxShow.sm="false" fxShow.xs="false" style="padding-top:0px;" >
+          <div class="tips_img mrg2">
+            <a [routerLink]="['/synapse/gallery2/csinic-2016/'+[i+9]]">
+              <img src="https://storage.googleapis.com/web-assets/images/CSI-NIC_Images/Firsttenrowsphotos/{{i+9}}/{{i+9}}-medium.jpg" height="150px"/>
+            </a>
+          </div>
+        </mat-grid-tile>
+      </ng-template>
+    </mat-grid-list>
+    <ng-template ngFor let-item [ngForOf]="createRangeImagescsicon3(16)" let-i="index">
+      <div class="tips_img mrg2" fxShow="false" fxShow.xs="true"  fxShow.lt-md="true">
+        <a [routerLink]="['/synapse/gallery2/csinic-2016/'+[i+9]]">
+          <img src="https://storage.googleapis.com/web-assets/images/CSI-NIC_Images/Firsttenrowsphotos/{{i+9}}/{i+9}}-medium.jpg"/>
+        </a>
+      </div>
+    </ng-template>
+    <ng-template ngFor let-item [ngForOf]="createRangeImagescsicon1(20)" let-i="index">
+      <div class="tips_img mrg2" fxShow="false" fxShow.xs="true"  fxShow.lt-md="true">
+        <a [routerLink]="['/synapse/csinic-2016/'+i]">
+          <img src="https://storage.googleapis.com/web-assets/images/CSI-NIC_Images/Firsttenrowsphotos/{{i}}/{{i}}-medium.jpg"/>
+        </a>
+      </div>
+    </ng-template>
+    <ng-template ngFor let-item [ngForOf]="createRangeImagescsicon2(39)" let-i="index">
+      <div class="tips_img mrg2" fxShow="false" fxShow.xs="true"  fxShow.lt-md="true">
+        <a [routerLink]="['/synapse/gallery1/csinic-2016/'+[i+36]]">
+          <img src="https://storage.googleapis.com/web-assets/images/CSI-NIC_Images/Firsttenrowsphotos/{{i+36}}/{{i+36}}-medium.jpg"/>
+        </a>
+      </div>
+    </ng-template>
+  </section>
+</section>
+
+<section class="back2" *ngIf="event==='apvic'">
+  <section class="container">
+    <div>
+      <h2 class="main_heading">Images<span class="hdg_line"></span></h2>
+    </div>
+    <mat-grid-list cols="4"   fxShow="true" fxShow.sm="false" fxShow.xs="false" class="gap-part" style="padding-bottom: 0px;">
+      <ng-template ngFor let-item [ngForOf]="createRangeImages(93)" let-i="index">
+        <mat-grid-tile fxShow="true" fxShow.sm="false" fxShow.xs="false" style="padding-top:0px;" >
+          <div class="tips_img mrg2">
+            <a [routerLink]="['/synapse/apvic/'+i]">
+              <img src="https://storage.googleapis.com/web-assets/images/APVIC/Gallery/{{i}}/{{i}}-medium.jpg" alt="">
+            </a>
+          </div>
+        </mat-grid-tile>
+      </ng-template>
+    </mat-grid-list>
+    <ng-template ngFor let-item [ngForOf]="createRangeImages(93)" let-i="index">
+      <div class="tips_img mrg2" fxShow="false" fxShow.xs="true"  fxShow.lt-md="true">
+        <a [routerLink]="['/synapse/apvic/'+i]">
+          <img src="https://storage.googleapis.com/web-assets/images/APVIC/Gallery/{{i}}/{{i}}-medium.jpg" alt="">
+        </a>
+      </div>
+    </ng-template>
+  </section>
+</section>
+
+
+<section class="back2" *ngIf="event==='csi-2017'">
+  <section class="container">
+    <div>
+      <h2 class="main_heading">Images<span class="hdg_line"></span></h2>
+    </div>
+    <mat-grid-list cols="4"   fxShow="true" fxShow.sm="false" fxShow.xs="false" class="gap-part" style="padding-bottom: 0px;">
+      <ng-template ngFor let-item [ngForOf]="createRangeImages(50)" let-i="index">
+        <mat-grid-tile fxShow="true" fxShow.sm="false" fxShow.xs="false" style="padding-top:0px;" >
+          <div class="tips_img mrg2">
+            <a [routerLink]="['/synapse/csi-2017/'+i]">
+              <img src="https://storage.googleapis.com/web-assets/images/EMCURE_CSICON2017/Kolkata/({{i}})/({{i}})-large.jpg" alt="">
+            </a>
+          </div>
+        </mat-grid-tile>
+      </ng-template>
+    </mat-grid-list>
+    <ng-template ngFor let-item [ngForOf]="createRangeImages(50)" let-i="index">
+      <div class="tips_img mrg2" fxShow="false" fxShow.xs="true"  fxShow.lt-md="true">
+        <a [routerLink]="['/synapse/csi-2017/'+i]">
+          <img src="https://storage.googleapis.com/web-assets/images/EMCURE_CSICON2017/Kolkata/({{i}})/({{i}})-large.jpg" alt="">
+        </a>
+      </div>
+    </ng-template>
+  </section>
+</section>-->
+
+
+<app-footer></app-footer>

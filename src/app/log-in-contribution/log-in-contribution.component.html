@@ -1,0 +1,96 @@
+<!-- <form id="msform">
+  <ul id="progressbar">
+    <li class="active">Plan Details</li>
+    <li class ="active">Account</li>
+    <li>Payment</li>
+  </ul>
+</form> -->
+
+<app-nav></app-nav>
+
+<div class="container">
+<div  class="login-wrapper" fxLayout="row" fxLayoutAlign="center center" style="width:100%;">
+
+  
+
+
+  
+  <!-- <mat-card class="box" style="height: auto;"> -->
+    <!-- <mat-card-header> -->
+    <!-- <mat-card-title>Sign In</mat-card-title> -->
+    <!-- </mat-card-header> -->
+
+    <!-- <router-outlet></router-outlet> -->
+    
+    <div class="login" style="margin-top: 50px;" fxLayout="column">
+      <div>
+        <h1 style="text-align: center;font-family: 'Times New Roman', Times, serif;"><b>Sign In To TheRightDoctors</b></h1>
+        <h3 style="text-align: center;margin-top: 15px;">Don't have an account? <b><a routerLink="../contribution-register" routerLinkActive="active">Sign Up Now!</a> </b></h3>
+      </div>
+
+      <!-- <h2 style="text-align: center;">Sign In</h2> -->
+      <div fxLayout="row">
+      <div fxFlex.lt-md="0%" fxFlex.gt-sm="20%"></div>
+<div fxFlex.lt-md="100%" fxFlex.gt-sm="60%" style="padding:15px;">
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="form-horizontal">
+      <!-- <mat-card-content> -->
+        <!-- <mat-form-field class="example-full-width"> -->
+
+          <div class="form-group" style="margin:0px;">
+            <label class="control-label col-sm-2" for="email" style="text-align: left !important;padding-left: 0px;">Email</label>
+            
+            <input type="email" class="form-control" id="email" formControlName="email" matInput placeholder="Email">
+
+          </div>
+
+        <!-- </mat-form-field> -->
+
+        <!-- <mat-form-field class="example-full-width"> -->
+          <div class="form-group" style="margin:0px;">
+            <label class="control-label col-sm-2" for="password" style="text-align: left !important;padding-left: 0px;">Password</label>
+            <input type="password" class="form-control" formControlName="password" matInput id="password" placeholder="Password">
+
+          </div>
+        <!-- </mat-form-field> -->
+      <!-- </mat-card-content> -->
+        <div style="text-align: center;margin-top:15px;">
+          <button style="align-self: auto;" [disabled]="loginForm.invalid" type="submit" class="btn btn-primary">Log in</button>
+
+        </div>
+
+        <div>
+          <a routerLink="../contribution-forget-pass" routerLinkActive="active">Forgot Password?</a>
+        </div>
+
+    </form>
+  </div>
+  <div fxFlex.lt-md="0%" fxFlex.gt-sm="20%"></div>
+    </div>
+    <div class="container" style="padding-top:10px">
+      <div *ngIf="email.invalid && (email.dirty || email.touched)" class="alert alert-danger">
+        <div *ngIf="email.errors.required">
+          Email is required.
+        </div>
+        <div *ngIf="email.errors.email">
+          Email is of invalid type.
+        </div>
+      </div>
+  
+      <div *ngIf="email.valid && password.invalid && (password.dirty || password.touched)" class="alert alert-danger">
+        <div *ngIf="password.errors.required">
+          Password is required.
+        </div>
+        <div *ngIf="password.errors.minLength">
+          Password should be of minimum length 8.
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <!-- </mat-card> -->
+
+</div>
+</div>
+
+
+<app-footer></app-footer>

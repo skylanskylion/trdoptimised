@@ -1,0 +1,263 @@
+<!--book appointment-->
+<app-nav></app-nav>
+<section class="back2">
+  <section class="container">
+    <div class="book-slot-page">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="vid_p mrg_btm paragrph">
+         <div class="row">
+           <div class="col-md-3"></div>
+           <div class="col-md-6" align="center">
+          <img src="https://storage.googleapis.com/web-assets/esicon-2019/Organizing%20Secreatry.png"/>
+             <p><b>Dr. Pramod Gandhi</b><br><i>ORGANISING SECRETARY, ESICON 2019, Nagpur</i></p>
+
+           </div>
+           <div class="col-md-3"></div>
+         </div>
+          <br>
+          <p><b>Greetings !!!</b></p>
+          <p >It gives me great pleasure to share that a High Definition Multi Cam TV studio is being set up at ESICON 2019 , Hotel Le Meridien on 21st & 24th Nov 2019.
+
+          <p> ESICON tv is being produced by our award winning Digital Knowledge Partner TheRightDoctors.com</p>
+
+          <p>ESICON tv will record Interviews, Panel Discussions, Debates and Key Take Aways of our esteemed faculty.</p>
+
+          <p> Your wisdom will be transmitted globally across multiple digital and social media channels including Facebook, Whatsapp, Twitter and Youtube.</p>
+
+        </div>
+      </div>
+    </div>
+    <div fxLayout="row" fxLayout.lt-md="column">
+      <div fxFlex="10" fxShow.lt-md="false"></div>
+      <div fxFlex="80">
+        <form name="form" (ngSubmit)="f.form.valid && register()" #f="ngForm" novalidate>
+            <div fxLayout="row" fxLayout.lt-md="column">
+              <div fxFlex="20"></div>
+              <div fxFlex="60">
+                <h2 class="book-heading"> Kindly Book Your Studio Time</h2>
+
+                <mat-card>
+                    <form class="example-form">
+                      <mat-form-field class="example-full-width">
+                        <input matInput placeholder="Enter first Name" name="first_name_c"
+                               [(ngModel)]="model.first_name_c" #first_name_c="ngModel" required>
+                      </mat-form-field>
+                      <mat-form-field class="example-full-width">
+                        <input matInput placeholder="Enter last Name" name="last_name_c"
+                               [(ngModel)]="model.last_name_c" #last_name_c="ngModel" required>
+                      </mat-form-field>
+                      <mat-form-field class="example-full-width">
+                        <input matInput placeholder="Designation"
+                               name="qualifications_c"
+                               [(ngModel)]="model.qualifications_c" #qualifications_c="ngModel" required>
+                      </mat-form-field>
+                      <mat-form-field class="example-full-width">
+                        <input matInput placeholder="Institution Name" name="event_name"
+                               [(ngModel)]="model.event_name" #event_name="ngModel" required>
+                      </mat-form-field>
+                      <mat-form-field class="example-full-width">
+                        <input matInput placeholder="Emal" name="email_c"
+                               [(ngModel)]="model.email_c" #email_c="ngModel" required>
+                      </mat-form-field>
+                      <mat-form-field class="example-full-width">
+                        <input type="number" matInput name="mobile_number_i" placeholder="Mobile"
+                               [(ngModel)]="model.mobile_number_i" #mobile_number_i="ngModel" required>
+                      </mat-form-field>
+                      <mat-form-field class="example-full-width">
+                        <input matInput placeholder="Enter Your Topic Name(60 characters limit)" name="topic_name"
+                               [(ngModel)]="model.topic_name" #topic_name="ngModel">
+                      </mat-form-field>
+                      <mat-form-field class="example-full-width">
+                        <input matInput name="headline" [(ngModel)]="model.headline"
+                               #headline="ngModel" maxlength="70"
+                               placeholder="Enter headline of your talk(70 characters limit)">
+                      </mat-form-field>
+                      <mat-form-field class="example-full-width">
+                        <input matInput [min]="minDate" [max]="maxDate" [matDatepicker]="picker" placeholder="Choose a date" name="s_date"
+                               [(ngModel)]="model.s_date" #s_date="ngModel">
+                        <mat-datepicker-toggle matSuffix [for]="picker">
+                          <i class="fa fa-calendar" aria-hidden="true"></i>
+                        </mat-datepicker-toggle>
+                        <mat-datepicker #picker ></mat-datepicker>
+                      </mat-form-field>
+                      <!--<mat-form-field>-->
+                        <!--<mat-select name="s_time"-->
+                                    <!--[(ngModel)]="model.s_time" #s_time="ngModel" placeholder="Select Your Time slot">-->
+                          <!---->
+                        <!--</mat-select>-->
+                      <!--</mat-form-field>-->
+
+
+                      <select style="
+    width: 100%;
+    height: 31px;
+    color: #858383;
+    border: none;
+    border-bottom: 1px solid #ccc;"   name="s_time"
+                              [(ngModel)]="model.s_time" #s_time="ngModel" placeholder="Select Your Time slot" value="select your time slot">
+                        <option value="8:00-8:15">8:00-8:15</option>
+                        <option value="8:15-8:30">8:15-8:30</option>
+                        <option value="8:30-8:45">8:30-8:45</option>
+                        <option value="8:45-9:00">8:45-9:00</option>
+                        <option value="9:00-9:15">9:00-9:15</option>
+                        <option value="9:15-9:30">9:15-9:30</option>
+                        <option value="9:30-9:45">9:30-9:45</option>
+                        <option value="9:45-10:00">9:45-10:00</option>
+                        <option value="10:45-11:00">10:45-11:00</option>
+                        <option value="11:00-11:15" >11:00-11:15</option>
+                        <option value="11:15-11:30">11:15-11:30</option>
+                        <option value="11:30-11:45">11:30-11:45</option>
+                        <option value="11:45-12:00">11:45-12:00</option>
+                        <option value="12:00-12:15">12:00-12:15</option>
+                        <option value="12:15-12:30">12:15-12:30</option>
+                        <option value="12:30-12:45">12:30-12:45</option>
+                        <option value="12:45-13:00">12:45-13:00</option>
+                        <option value="13:00-14:15">13:00-14:15</option>
+                        <option value="13:15-14:30">13:15-14:30</option>
+                        <option value="13:30-14:45">13:30-14:45</option>
+                        <option value="13:45-14:00">13:45-14:00</option>
+                        <option value="14:00-14:15">14:00-14:15</option>
+                        <option value="14:15-14:30">14:15-14:30</option>
+                        <option value="14:30-14:45">14:30-14:45</option>
+                        <option value="14:45-15:00">14:45-15:00</option>
+                        <option value="15:00-15:15">15:00-15:15</option>
+                        <option value="15:15-15:30">15:15-15:30</option>
+                        <option value="15:30-15:45">15:30-15:45</option>
+                        <option value="15:45-16:00">15:45-16:00</option>
+                        <option value="16:00-16:15">16:00-16:15</option>
+                        <option value="16:15-16:30">16:15-16:30</option>
+                        <option value="16:30-16:45">16:30-16:45</option>
+                        <option value="16:45-17:00">16:45-17:00</option>
+                        <option value="17:00-17:15">17:00-17:15</option>
+                        <option value="17:15-17:30">17:15-17:30</option>
+                        <option value="17:30-17:45">17:30-17:45</option>
+                        <option value="17:45-18:00">17:45-18:00</option>
+                        <option value="18:00-18:15">18:00-18:15</option>
+                        <option value="18:15-18:30">18:15-18:30</option>
+                        <option value="18:30-18:45">18:30-18:45</option>
+                        <option value="18:45-19:00">18:45-19:00</option>
+                        <option value="19:00-19:15">19:00-19:15</option>
+                        <option value="19:15-19:30">19:15-19:30</option>
+                        <option value="19:30-19:45">19:30-19:45</option>
+                        <option value="19:45-20:00">19:45-20:00</option>
+
+                      </select>
+                      <p class="key-t-away">Key take Aways from your talk(1)</p>
+                      <mat-form-field class="example-full-width">
+                    <textarea matInput name="key_values"
+                              [(ngModel)]="model.key_values" #key_values="ngModel"
+                              placeholder="Enter text for your quotation (250 characters limit)"></textarea>
+                      </mat-form-field>
+                      <p class="key-t-away">Key take Aways from your talk(2)(optional)</p>
+                      <mat-form-field class="example-full-width">
+                    <textarea matInput name="headline1" [(ngModel)]="model.headline1"
+                              #headline1="ngModel" maxlength="300"
+                              placeholder="Enter headline of your talk(250 characters limit)"></textarea>
+                      </mat-form-field>
+                      <p class="key-t-away">Key take Aways from your talk(3)(optional)</p>
+                      <mat-form-field class="example-full-width">
+                    <textarea matInput maxlength="300" name="key_values2"
+                              [(ngModel)]="model.key_values2" #key_values2="ngModel"
+                              placeholder="Enter text for your quotation (250 characters limit)"></textarea>
+                      </mat-form-field>
+                    </form>
+                  <button mat-raised-button color="primary"  class="btn-class" type="submit" [disabled]="loading">Save</button>
+                </mat-card>
+              </div>
+              <div fxFlex="20"></div>
+            </div>
+        </form>
+      </div>
+      <div fxFlex="10" fxShow.lt-md="false"></div>
+    </div>
+    <!--<div fxLayout="column" fxLayoutAlign="center center">-->
+      <!--<img style="border:none;outline:none;text-decoration:none;-->
+    <!--margin-bottom:5px;"-->
+           <!--class="img-responsive center-block"-->
+           <!--src="https://storage.googleapis.com/web-assets/images/RSSIDI/Logo-f-c.png">-->
+      <!--<p >-->
+        <!--Wockhardt</p>-->
+    <!--</div>-->
+    <br/>
+    <!--<div class="vid_p mrg_btm ">-->
+      <!--<p  class="small-text-p">-->
+        <!--Wockhardt Ltd. is a Global pharmaceutical and biotechnology company headquartered in Mumbai, India. The company has manufacturing plants in India, UK, Ireland,-->
+        <!--France and US, and subsidiaries in US, UK, Ireland and France. It is a global company with more than half of its revenue coming from Europe.</p><br>-->
+    <!--</div>-->
+
+    <div fxLayout="column" fxLayoutAlign="center center">
+      <img style="border:none;outline:none;text-decoration:none; margin-bottom:5px;"
+           class="img-responsive center-block"
+           src="https://storage.googleapis.com/web-assets/images/salesforce/trd-knowledge-partner-logo.png">
+      <p >
+        Insights from the World's Best Medical Minds</p>
+    </div>
+    <br/>
+    <div class="vid_p mrg_btm">
+      <p   class="small-text-p">
+        TheRightDoctors.com is a Google Launchpad Digital Health product Start Up. They bring Scientific Medical Content to Digital platforms.
+        TheRightDoctors.com works closely with ESICON as Digital Knowledge Partner for its scientific events.</p><br>
+    </div>
+    </div>
+  </section>
+</section>
+<!--book appointment//-->
+<!--<app-footer></app-footer>-->
+<br>
+<section class="container">
+  <section >
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 " style="padding:0px">
+          <h5 class="head-power">Powered by:</h5>
+          <img src="../../assets/img/new-poweredby-google.png" class="mar-top-d" alt="new-poweredby-google"/>
+
+        </div>
+
+        <div class="col-md-8 marg-btm-m" style="padding:0px">
+          <h5 class="head-power">Awards & Recognitions:</h5>
+          <div class="row img-wid">
+            <div class="col-md-3 col-xs-3 col-sm-3">
+              <img src="assets/img/awars01.png" alt="award"/>
+            </div>
+            <div class="col-md-3 col-xs-3 col-sm-3">
+              <img src="assets/img/1000awards.png" alt="1000 awards"/>
+
+            </div>
+            <div class="col-md-3 col-xs-3 col-sm-3">
+
+              <img src="assets/img/SBC_global_logo-L-2.png" style="margin-top:13px" alt="SBC Global Logo"/>
+            </div>
+            <div class="col-md-3 col-xs-3 col-sm-3">
+              <img src="assets/img/startup.png" style="margin-top: 13px;" alt="Start Up"/>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</section>
+
+
+<section class="back3 post_footer_pdg">
+  <section class="container">
+    <div class="row">
+      <div class="post_footer">
+        <div class="col-md-6 col-sm-6  col-xs-12 text-left">
+          <ul>
+            <li><a [routerLink]="['/terms-of-service']">Terms of Service</a></li>
+            <li><a [routerLink]="['/privacy-policy']">Privacy Policy</a></li>
+            <li><a [routerLink]="['/disclaimer']">Disclaimer</a></li>
+          </ul>
+          <div class="clearfix"></div>
+        </div>
+        <div class="col-md-6 col-sm-6  col-xs-12 text-right text_left_m pad-text">
+          © TheRightDoctors Network. All Rights Reserved
+          <div class="clearfix"></div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+</section>

@@ -1,0 +1,32 @@
+.hd5_m
+{
+    font-size: 12px!important;
+}
+.dis{
+    display: none;
+}
+@media (max-width: 599px) {
+    .dis{
+        display: block;
+    }
+}
+
+@media (max-width: 978px) {
+    .dis1{
+        display: block;
+    }
+}
+@media (max-width: 599px) {
+    .dis1{
+        display: none;
+    }
+}
+@media (max-width: 768px){
+    .hd4_mobile{
+        font-size: 12.5px !important;
+
+    }
+    .color_orange1 {
+        color: #e27520;
+    }
+}

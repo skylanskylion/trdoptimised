@@ -1,0 +1,145 @@
+<style>
+  @media (max-width:768px){
+    .back2{
+      padding:0px !important;
+    }
+    .mar-top{
+      margin-top:60px;
+    }
+  }
+
+  .mar-top{
+    padding:20px 0px;
+  }
+</style>
+
+
+<section class="back2" *ngIf="logged">
+  <app-nav></app-nav>
+  <section class="container">
+    <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap="20px" class="mar-top" style="clear:both">
+      <div fxFlex="25%" *ngIf="event!='aicog' && event!='apvic' && event!='c3'">
+        <a [routerLink]="[conv[0]['url']]">
+          <img src="{{conv[0]['url']}}"/>
+        </a>
+      </div>
+      <div fxFlex="25%" *ngIf="event==='aicog'">
+        <img src="https://storage.googleapis.com/web-assets/images/AICOG2018/Event-images/Photos/({{id1}}).JPG" height="150px"/>
+      </div>
+      <div fxFlex="25%" *ngIf="event==='apvic'">
+        <img src="https://storage.googleapis.com/web-assets/images/APVIC/Gallery/{{id1}}/{{id1}}-medium.jpg" height="150px"/>
+      </div>
+      <div fxFlex="25%" *ngIf="event==='c3'">
+        <img src="https://storage.googleapis.com/web-assets/images/c3_conference/Full_Gallery/Friday_01/{{i}}/{{i}}-medium.jpg" height="150px"/>
+      </div>
+      <!-- <div fxFlex="25%" *ngIf="event==='c3' && id1==83">
+            <img src="https://storage.googleapis.com/web-assets/images/c3_conference/Gallery/{{i}}/{{i}}-medium.jpg" height="150px"/>
+        </div>-->
+      <!-- <div fxFlex="25%" *ngIf="event==='c3' && v3=='32'">
+           <img src="https://storage.googleapis.com/web-assets/images/c3_conference/Gallery/{{i}}/{{i}}-medium.jpg" height="150px"/>
+       </div>
+       <div fxFlex="25%" *ngIf="event==='c3' && v4=='241'">
+           <img src="https://storage.googleapis.com/web-assets/images/c3_conference/Full_Gallery/Wednesday_29/{{i}}/{{i}}-medium.jpg" height="150px"/>
+       </div>
+       <div fxFlex="25%" *ngIf="event==='c3' && v5=='106'">
+           <img src="https://storage.googleapis.com/web-assets/images/c3_conference/Gallery/photos/{{i}}/{{i}}-medium.jpg" height="150px"/>
+       </div>
+       <div fxFlex="25%" *ngIf="event==='c3' && v6=='42'">
+           <img src="https://storage.googleapis.com/web-assets/images/c3_conference/Gallery/{{i}}/{{i}}-medium.jpg" height="150px"/>
+       </div>
+       <div fxFlex="25%" *ngIf="event==='c3' && v7=='160'">
+           <img src="https://storage.googleapis.com/web-assets/images/c3_conference/Gallery/{{i}}/{{i}}-medium.jpg" height="150px"/>
+       </div>-->
+
+
+
+
+      <div class="mrg">
+        <!-- <div fxFlex="50%">-->
+        <div class="share-buttons mrg_top_m">
+          <mat-nav-list>
+            <a class="share-btn fb-icon" href="https://www.facebook.com/dialog/feed?app_id=1066226316760891
+&redirect_uri=https://therightdoctors.com/synapse/{{id}}
+&link=https://therightdoctors.com/synapse/{{id}}/{{slug}}
+&picture={{conv[0]['url']}}
+&caption=The Last Word
+&description= Event Images
+&name= The Last Word" title="Share on Facebook" data-service="facebook" target="_blank">
+            </a>
+          </mat-nav-list>
+
+          <mat-nav-list>
+            <a class="share-btn tw-icon"
+               href="https://twitter.com/intent/tweet?url=https://therightdoctors.com/synapse/{{id}}/{{slug}}  &image-src={{conv[0]['url']}} &hashtags=Synapse images &text=TheRightDoctors.com  &via=TheRightDoctors"
+               title="Share on Twitter" data-service="twitter" target="_blank">
+            </a>
+          </mat-nav-list>
+          <mat-nav-list>
+            <a class="share-btn ln-icon"
+               href="https://www.linkedin.com/shareArticle?mini=true&url=https://therightdoctors.com/synapse/{{id}}/{{slug}}"
+               title="Share on Linkedin" data-service="linkedin"
+               target="_blank">
+            </a>
+          </mat-nav-list>
+          <!-- <mat-nav-list>
+            <a class="share-btn gp-icon"
+               href="https://plus.google.com/share?url=https://therightdoctors.com/synapse/{{id}}/{{slug}}"
+               title="Share on Google Plus" data-service="gplus" target="_blank">
+            </a>
+          </mat-nav-list> -->
+          <!-- <li>
+            <a class="share-btn yt-icon" href="https://www.youtube.com/channel/UCUZIhLsNbgkCqymAZshSVHQ" title="Share on Youtube" data-service="youtube" target="_blank">
+            </a>
+          </li> -->
+          <!-- href="http://whatsapp://send?text=https://therightdoctors.com/{{ catagory[0]['category']}}/{{ catagory[0]['slug']}}" -->
+          <mat-nav-list><a class="share-btn wa-icon"
+                           href="https://api.whatsapp.com/send?text=https://therightdoctors.com/synapse/benefits-of-yoga/{{conv[0]['url']}}"
+                           data-action="share/whatsapp/share" title="Share on Whatsapp" data-service="whatsapp"
+                           target="_blank">
+          </a>
+          </mat-nav-list>
+          <mat-nav-list>
+            <a class="share-btn email-icon"
+               href="mailto:?subject= TheRightDoctors Images &amp; body=Snapse Images. Check out this site https://therightdoctors.com/synapse/{{id}}/{{slug}}/ ."
+               title="Share by Email" data-service="email" target="_blank">
+            </a>
+            <!--<a routerLink="[/mail]">mail to child componenet</a>-->
+          </mat-nav-list>
+          <mat-nav-list>
+            <a class="share-btn sms-icon"
+               href="sms:?body=Snapse Images Check out this site https://therightdoctors.com/synapse/{{id}}/{{slug}}/"
+               title="Share on SMS" data-service="sms" target="_blank">
+            </a>
+          </mat-nav-list>
+        </div>
+      </div>
+    </div>
+
+    <div *ngIf="islogin1">
+      <a href="https://storage.googleapis.com/web-assets/images/OneLiners/Dr.D.S.Gambhir/Dr.D.S.Gambhir-medium.jpg" download> <button  class="btn-sm btn-primary btn mrg_btm" style="margin-top:30px" ><i class="fa fa-download" style="padding-right: 10px;padding: 1px;width: 10px;font-size: 10px"></i>Download</button></a>
+    </div>
+
+    <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap="20px">
+
+      <!--<div class="mrg">
+        <h2 class="main_heading mrg_btm">More Tips | <a [routerLink]="['/synapse/'+id]" class="color_blue_nav">See All</a><span class="hdg_line"></span></h2>
+      </div>-->
+      <div fxFlex="100%">
+        <h2 class="main_heading">More Tips | <a [routerLink]="['/specials/c3/gallery']" class="color_blue_nav">See All</a><span
+                class="hdg_line"></span></h2>
+      </div>
+
+
+    </div>
+
+  </section>
+  <app-footer></app-footer>
+</section>
+
+<div *ngIf="!logged">
+  <p align="center" style="margin-top: 250px;font-size: 15px;color: brown">Please login to see image
+    <!--<li *ngIf="!logged" (click)="changestoPage('login')">Login </li>
+    <li *ngIf="!logged" style="margin-right:0px;" (click)="changestoPage('register')">Sign Up </li>-->
+    <button (click)="changestoPage('login')">Signup</button></p>
+</div>
+

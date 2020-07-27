@@ -1,0 +1,40 @@
+<app-nav></app-nav>
+<div class="container marg-top-sender">
+  <div fxLayout="row" fxLayout.lt-md="column">
+         <div fxFlex="20"></div>
+<div fxFlex="60">
+<h2 class="mail-sender">Send Jounrnal Mails</h2>
+<mat-card style="padding:10px;">
+<form class="example-form">
+
+    
+   <mat-form-field class="example-full-width">
+      <input matInput placeholder="If you want to send through salesforce, Enter AccountId else leave it blank" 
+      name="acc_id" [(ngModel)]="acc_id" >
+    </mat-form-field>
+  
+
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Enter From Address name - Without spaces 
+      (ex: Event Organising Secretary name - Dr_PC_Manoria)" 
+      name="from_name" [(ngModel)]="from_name" >
+    </mat-form-field>
+
+    
+  <div  *ngIf="acc_id">
+
+  <button mat-flat-button color="primary" (click) = "send_email()"> Send </button>
+  </div>
+
+  <div  *ngIf="!acc_id">
+
+    <button mat-flat-button color="primary" (click) = "send_email_db()"> Send </button>
+    </div>
+
+  </form>
+  </mat-card>
+  </div>
+  <div fxFlex="20"></div>
+  </div>
+  </div>
+  <app-footer></app-footer>

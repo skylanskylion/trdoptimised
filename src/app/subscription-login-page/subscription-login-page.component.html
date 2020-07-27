@@ -1,0 +1,131 @@
+<!-- <app-nav></app-nav> -->
+
+<div class="main-div"> 
+    <div fxLayout.lt-md="column" fxLayout.gt-sm="row">
+            <div fxFlex.lt-md="0%" fxFlex.gt-sm="15%"></div>
+
+    <div fxFlex.lt-md="0%" fxFlex.gt-sm="70%">
+    <div class="layer2" fxLayout="column">
+        <div class="layer1">
+            <div fxLayout="column">
+                <div fxLayout="row" class="one">
+                    <div fxFlex.lt-sm="100%" fxFlex.gt-xs="50%" fxLayoutAlign="start center">
+                        <h4>TheRightDoctors</h4>
+                    </div>
+                    <div class="mob-hide" fxFlex.lt-sm="0%" fxFlex.gt-xs="50%" fxLayoutAlign="end center">
+                        <p>Need help?<a href="mailto: bt@therightdoctors.com">Email Customer Care</a></p>
+                    </div>
+                </div>
+            </div>
+      
+    </div>
+        <div class="layer3" fxLayout="column" fxLayoutAlign="center center">
+            <div fxLayout="row" class="heads">
+                <div fxFlex="33.33%" fxLayoutAlign="center center">
+                    <p>Account</p>
+                </div>
+                <div fxFlex="33.33%" fxLayoutAlign="center center">
+                    <p>Billing</p>
+                </div>
+                <div fxFlex="33.33%" fxLayoutAlign="center center">
+                    <p>Confirmation</p>
+                </div>
+            </div>
+            <mat-progress-bar mode="determinate" value="30"></mat-progress-bar>
+        </div>
+        <div fxLayout="column" class="log-width">
+            <img src="assets/bg-log.jpg">
+        </div>
+        <div fxLayout="column" class="center-pos" fxLayoutAlign="center center">
+            <div fxLayout="column" class="mob-inner">
+        <div fxLayout="row" fxLayoutAlign="center center">
+            <h5>Welcome back – please log in</h5>
+        </div>
+        <div fxLayout.lt-md="column" fxLayout.gt-sm="row" fxLayoutGap.gt-sm="50px">
+            <div fxFlex.lt-md="100%" fxFlex.gt-sm="50%" fxLayout="column">
+                <div fxLayout="column">
+                    <!-- <p style="text-align: center;margin:14px 0px 16px 0px;font-size: 0.875em;">Or use your mail</p> -->
+                    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="form-detail" method="post" id="myform" style="background-color: white;">
+
+                        <mat-form-field class="example-full-width" style="background-color: white;">
+                          <mat-label>Email</mat-label>
+                          <input matInput id="email" formControlName="email" placeholder="Email">
+                          <mat-error *ngIf="email.hasError('email') && !email.hasError('required')">
+                            Please enter a valid email address
+                          </mat-error>
+                          <mat-error *ngIf="email.hasError('required')">
+                            Email is <strong>required</strong>
+                          </mat-error>
+                        </mat-form-field>
+                        <mat-form-field appearance="fill">
+                            <mat-label>Enter your password</mat-label>
+                            <input matInput type="password" formControlName="password"  id="password"
+                              placeholder="Password" >
+                            <!-- <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide"> -->
+                            <!-- <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon> -->
+                            <!-- </button> -->
+                          </mat-form-field>
+                           <div *ngIf="email.valid && password.invalid && (password.dirty || password.touched)"
+                              class="alert alert-danger">
+                              <div *ngIf="password.errors.required">
+                                Password is required.
+                              </div>
+                              <div *ngIf="password.errors.minLength">
+                                Password should be of minimum length 8.
+                              </div>
+                            </div>
+                          <div fxLayout="row" fxLayoutalign="start center" class="mrg-all">
+                              <div fxFlex="50%" fxLayoutAlign="start center">
+                                  <mat-checkbox>Remember me</mat-checkbox>
+                              </div>
+                              <div fxFlex="50%" fxLayoutAlign="end center">
+                                  <p class="forg-pawd">Forgot your password?</p>
+                              </div>
+                          </div>
+                          <button style="align-self: auto;" [disabled]="loginForm.invalid" type="submit" class="btn btn-primary" mat-flat-button>Login</button>
+                          <p class="mrg-all">Don’t have a TheRightDoctors account?<a href="https://therightdoctors.com/subscription-register"><b> Create one</b></a></p>
+                          <div fxLayout="row" class="secure" fxLayoutAlign="center center" fxLayoutGap="5px" fxHide fxShow.gt-sm="true">
+                            <span class="material-icons" style="font-size: 10px;">lock</span><p style="font-size: 10px;">secure transaction</p>
+                        </div>
+                      </form>
+                </div>
+            </div>
+            <div fxFlex.lt-md="100%" fxFlex.gt-sm="50%">
+                <div fxLayout="column" class="over-all-pad">
+                    <div fxLayout="row" class="basic">
+                        <div fxFlex="70%">
+                            <h6 class="pay-head">BASIC DIGITAL ACCESS</h6>
+                        </div>
+                        <div fxFlex="30%" fxLayoutAlign="end">
+                            <h6 class="pay-head">₹60.00</h6>
+                        </div>
+                    </div>
+                    <div fxLayout="column" class="paras">
+                        <p class="para-font">Enjoy unlimited articles, podcasts, videos and more on TheRightDoctors.com and the Progressive Web application.</p>
+                        <h6 class="para-head">PAYMENT INFORMATION</h6>
+                        <p class="para-font">Your payment method will be automatically charged ₹60.00 every 30 days for the first year.</p>
+                        <p class="para-font">It will then be automatically charged ₹270.00 every 30 days thereafter.</p>
+                        <p class="para-font">Your subscription will continue until you cancel. You can cancel anytime.</p>
+                        <p class="para-font-last">Sales tax may apply.</p>
+                        <div fxLayout="row" class="total">
+                            <div fxFlex="70%">
+                                <h6 class="pay-head">TOTAL</h6>
+                            </div>
+                            <div fxFlex="30%" fxLayoutAlign="end">
+                                <h6 class="pay-head"><s>270₹&nbsp;</s>&nbsp;₹60.00</h6>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+  
+</div>
+    </div>
+    </div>
+
+    <div fxFlex.lt-md="0%" fxFlex.gt-sm="15%"></div>
+</div>
+</div>

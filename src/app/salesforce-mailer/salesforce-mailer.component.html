@@ -1,0 +1,40 @@
+<app-nav></app-nav>
+<div class="container marg-top-sender">
+  <div fxLayout="row" fxLayout.lt-md="column">
+         <div fxFlex="20"></div>
+<div fxFlex="60">
+<h2 class="mail-sender">Send Mail To Salesforce Contacts</h2>
+<mat-card style="padding:10px;">
+<form class="example-form">
+
+    <mat-form-field  class="example-full-width">
+        <mat-label>Select Event </mat-label>
+        <mat-select [(ngModel)]="event" id="as" name="as" #as='ngModel' required >
+          <mat-option *ngFor="let q of event_list" value={{q}}>
+            {{q}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    
+   <mat-form-field class="example-full-width">
+      <input matInput placeholder="Enter AccountId - Without spaces 
+      (ex: 1hjkagb1rhgjkgh)" 
+      name="acc_id" [(ngModel)]="acc_id" >
+    </mat-form-field>
+  
+
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Enter From Address name - Without spaces 
+      (ex: Event Organising Secretary name - Dr_PC_Manoria)" 
+      name="from_name" [(ngModel)]="from_name" >
+    </mat-form-field>
+
+  <button mat-flat-button color="primary" (click) = "send_email()"> Send </button>
+  
+  </form>
+  </mat-card>
+  </div>
+  <div fxFlex="20"></div>
+  </div>
+  </div>
+  <app-footer></app-footer>
